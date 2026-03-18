@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import coursesData from "@/data/date-courses.json";
 
@@ -42,40 +42,82 @@ const stepIcons: Record<string, string> = {
   관광: "📸",
 };
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
-
 export default function DateCoursePage() {
   const [region, setRegion] = useState("전체");
   const [time, setTime] = useState("");
   const [preference, setPreference] = useState("");
-  const [results, setResults] = useState<Course[]>([]);
-  const [searched, setSearched] = useState(false);
+  const [spinning, setSpinning] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [result, setResult] = useState<Course | null>(null);
+  const [candidates, setCandidates] = useState<Course[]>([]);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const stopSlot = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    return () => stopSlot();
+  }, [stopSlot]);
+
+  const getFiltered = () => {
     let filtered = [...coursesData] as Course[];
-
-    if (region !== "전체") {
-      filtered = filtered.filter((c) => c.region === region);
-    }
-    if (time) {
-      filtered = filtered.filter((c) => c.time === time);
-    }
-    if (preference) {
-      filtered = filtered.filter((c) => c.preference === preference);
-    }
-
-    setResults(filtered);
-    setSearched(true);
+    if (region !== "전체") filtered = filtered.filter((c) => c.region === region);
+    if (time) filtered = filtered.filter((c) => c.time === time);
+    if (preference) filtered = filtered.filter((c) => c.preference === preference);
+    return filtered;
   };
+
+  const startSlot = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const filtered = getFiltered();
+    if (filtered.length === 0) {
+      setCandidates([]);
+      setResult(null);
+      setSpinning(false);
+      return;
+    }
+
+    setCandidates(filtered);
+    setResult(null);
+    setSpinning(true);
+
+    const finalIndex = Math.floor(Math.random() * filtered.length);
+    let tick = 0;
+    const totalTicks = 25 + Math.floor(Math.random() * 12);
+
+    stopSlot();
+
+    const runPhase = () => {
+      tick++;
+      setCurrentIndex((prev) => (prev + 1) % filtered.length);
+
+      if (tick >= totalTicks) {
+        stopSlot();
+        setCurrentIndex(finalIndex);
+        setTimeout(() => {
+          setSpinning(false);
+          setResult(filtered[finalIndex]);
+        }, 300);
+        return;
+      }
+
+      const progress = tick / totalTicks;
+      let delay: number;
+      if (progress < 0.5) delay = 70;
+      else if (progress < 0.75) delay = 70 + (progress - 0.5) * 500;
+      else delay = 195 + (progress - 0.75) * 900;
+
+      intervalRef.current = setTimeout(runPhase, delay);
+    };
+
+    intervalRef.current = setTimeout(runPhase, 70);
+  };
+
+  const displayCourse = candidates.length > 0 ? candidates[currentIndex % candidates.length] : null;
 
   return (
     <PageTransition>
@@ -92,7 +134,7 @@ export default function DateCoursePage() {
             </span>
           </h1>
           <p className="text-slate-500 dark:text-slate-400">
-            완벽한 데이트 코스를 만들어 드립니다
+            슬롯머신이 완벽한 데이트 코스를 골라드립니다
           </p>
         </motion.div>
 
@@ -100,121 +142,132 @@ export default function DateCoursePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          onSubmit={handleSubmit}
+          onSubmit={startSlot}
           className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                지역
-              </label>
-              <select
-                value={region}
-                onChange={(e) => setRegion(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-              >
-                {regions.map((r) => (
-                  <option key={r} value={r}>{r}</option>
-                ))}
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">지역</label>
+              <select value={region} onChange={(e) => setRegion(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                {regions.map((r) => (<option key={r} value={r}>{r}</option>))}
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                시간대
-              </label>
-              <select
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-              >
-                {times.map((t) => (
-                  <option key={t.value} value={t.value}>{t.label}</option>
-                ))}
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">시간대</label>
+              <select value={time} onChange={(e) => setTime(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                {times.map((t) => (<option key={t.value} value={t.value}>{t.label}</option>))}
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                취향
-              </label>
-              <select
-                value={preference}
-                onChange={(e) => setPreference(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
-              >
-                {preferences.map((p) => (
-                  <option key={p.value} value={p.value}>{p.label}</option>
-                ))}
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">취향</label>
+              <select value={preference} onChange={(e) => setPreference(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                {preferences.map((p) => (<option key={p.value} value={p.value}>{p.label}</option>))}
               </select>
             </div>
           </div>
-          <button
-            type="submit"
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg hover:shadow-pink-500/25 transition-all"
-          >
-            코스 추천받기
+          <button type="submit" disabled={spinning} className="w-full py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg hover:shadow-pink-500/25 transition-all disabled:opacity-50">
+            {spinning ? "추천 중..." : "코스 추천받기"}
           </button>
         </motion.form>
 
-        {searched && (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="space-y-6"
-          >
-            {results.length === 0 ? (
-              <motion.div
-                variants={itemVariants}
-                className="text-center py-12 text-slate-500"
-              >
-                조건에 맞는 코스가 없습니다. 조건을 변경해 보세요.
-              </motion.div>
-            ) : (
-              results.map((course) => (
-                <motion.div
-                  key={course.id}
-                  variants={itemVariants}
-                  className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="px-3 py-1 text-xs font-semibold rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400">
-                      {course.region}
-                    </span>
-                    <span className="px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
-                      {course.time === "day" ? "낮" : "밤"}
-                    </span>
-                    <span className="px-3 py-1 text-xs font-semibold rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                      {course.preference}
-                    </span>
-                  </div>
-
-                  <div className="space-y-3">
-                    {course.course.map((step, i) => (
-                      <div key={step.step} className="flex items-start gap-3">
-                        <div className="flex flex-col items-center">
-                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white text-lg">
-                            {stepIcons[step.type] || "📍"}
-                          </div>
-                          {i < course.course.length - 1 && (
-                            <div className="w-0.5 h-8 bg-slate-200 dark:bg-slate-600 mt-1" />
-                          )}
+        {/* Slot Machine Display */}
+        {(spinning || result) && candidates.length > 0 && (
+          <div className="mb-8">
+            <AnimatePresence mode="wait">
+              {spinning && displayCourse && (
+                <motion.div key="slot" className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 p-1 mb-4">
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-8 text-center">
+                    <div className="text-sm text-slate-400 mb-2">오늘의 데이트 코스는...</div>
+                    <div className="h-24 flex items-center justify-center overflow-hidden">
+                      <motion.div
+                        key={currentIndex}
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 50, opacity: 0 }}
+                        transition={{ duration: 0.05 }}
+                        className="text-center"
+                      >
+                        <div className="text-2xl md:text-3xl font-bold mb-1">
+                          {displayCourse.region} · {displayCourse.time === "day" ? "낮" : "밤"}
                         </div>
-                        <div className="flex-1 pb-2">
-                          <h4 className="font-semibold text-sm">
-                            {step.place}
-                          </h4>
-                          <div className="flex items-center gap-2 text-xs text-slate-400 mt-0.5">
-                            <span>{step.type}</span>
-                            <span>·</span>
-                            <span>{step.duration}</span>
-                          </div>
+                        <div className="text-slate-400 text-sm">
+                          {displayCourse.course.map((s) => s.place).join(" → ")}
                         </div>
-                      </div>
-                    ))}
+                      </motion.div>
+                    </div>
                   </div>
                 </motion.div>
-              ))
-            )}
+              )}
+            </AnimatePresence>
+
+            {/* Result Card */}
+            <AnimatePresence>
+              {!spinning && result && (
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                >
+                  <div className="rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 p-1">
+                    <div className="bg-white dark:bg-slate-800 rounded-xl p-8">
+                      <div className="text-center mb-6">
+                        <div className="text-sm text-pink-500 font-medium mb-2">오늘의 데이트 코스</div>
+                        <div className="flex items-center justify-center gap-2 mb-4">
+                          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400">{result.region}</span>
+                          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">{result.time === "day" ? "낮" : "밤"}</span>
+                          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">{result.preference}</span>
+                        </div>
+                      </div>
+
+                      <div className="space-y-4 mb-6">
+                        {result.course.map((step, i) => (
+                          <motion.div
+                            key={step.step}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: i * 0.15 }}
+                            className="flex items-start gap-3"
+                          >
+                            <div className="flex flex-col items-center">
+                              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white text-xl shadow-lg">
+                                {stepIcons[step.type] || "📍"}
+                              </div>
+                              {i < result.course.length - 1 && (
+                                <div className="w-0.5 h-10 bg-gradient-to-b from-pink-300 to-purple-300 dark:from-pink-700 dark:to-purple-700 mt-1" />
+                              )}
+                            </div>
+                            <div className="flex-1 pt-1">
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className="text-xs font-bold text-pink-500">STEP {step.step}</span>
+                              </div>
+                              <h4 className="font-bold text-lg">{step.place}</h4>
+                              <div className="flex items-center gap-2 text-sm text-slate-400 mt-0.5">
+                                <span>{step.type}</span>
+                                <span>·</span>
+                                <span>{step.duration}</span>
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      <button
+                        onClick={() => startSlot()}
+                        className="w-full py-3 rounded-xl border-2 border-pink-400 text-pink-500 font-semibold hover:bg-pink-50 dark:hover:bg-pink-900/10 transition-colors"
+                      >
+                        다시 뽑기
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        )}
+
+        {!spinning && !result && candidates.length === 0 && region !== "전체" && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-12 text-slate-500">
+            조건에 맞는 코스가 없습니다. 조건을 변경해 보세요.
           </motion.div>
         )}
       </div>

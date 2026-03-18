@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import foodsData from "@/data/foods.json";
 
@@ -32,27 +32,30 @@ const reasonLabels: Record<string, string> = {
   계절: "계절 추천",
 };
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-};
-
 export default function FoodPage() {
   const [category, setCategory] = useState("전체");
   const [priceRange, setPriceRange] = useState("");
   const [people, setPeople] = useState("");
-  const [results, setResults] = useState<Food[]>([]);
-  const [searched, setSearched] = useState(false);
+  const [spinning, setSpinning] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [result, setResult] = useState<Food | null>(null);
+  const [candidates, setCandidates] = useState<Food[]>([]);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const phaseRef = useRef(0);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const stopSlot = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    return () => stopSlot();
+  }, [stopSlot]);
+
+  const getFiltered = () => {
     let filtered = [...foodsData] as Food[];
-
     if (category !== "전체") {
       filtered = filtered.filter((f) => f.category === category);
     }
@@ -66,11 +69,61 @@ export default function FoodPage() {
         return num >= min && num <= max;
       });
     }
-
-    filtered.sort((a, b) => b.rating - a.rating);
-    setResults(filtered.slice(0, 5));
-    setSearched(true);
+    return filtered;
   };
+
+  const startSlot = (e: React.FormEvent) => {
+    e.preventDefault();
+    const filtered = getFiltered();
+    if (filtered.length === 0) {
+      setCandidates([]);
+      setResult(null);
+      setSpinning(false);
+      return;
+    }
+
+    setCandidates(filtered);
+    setResult(null);
+    setSpinning(true);
+    phaseRef.current = 0;
+
+    const finalIndex = Math.floor(Math.random() * filtered.length);
+    let tick = 0;
+    const totalTicks = 30 + Math.floor(Math.random() * 15);
+
+    stopSlot();
+
+    const runPhase = () => {
+      tick++;
+      setCurrentIndex((prev) => (prev + 1) % filtered.length);
+
+      if (tick >= totalTicks) {
+        stopSlot();
+        setCurrentIndex(finalIndex);
+        setTimeout(() => {
+          setSpinning(false);
+          setResult(filtered[finalIndex]);
+        }, 300);
+        return;
+      }
+
+      const progress = tick / totalTicks;
+      let delay: number;
+      if (progress < 0.5) {
+        delay = 60;
+      } else if (progress < 0.75) {
+        delay = 60 + (progress - 0.5) * 400;
+      } else {
+        delay = 160 + (progress - 0.75) * 800;
+      }
+
+      intervalRef.current = setTimeout(runPhase, delay);
+    };
+
+    intervalRef.current = setTimeout(runPhase, 60);
+  };
+
+  const displayFood = candidates.length > 0 ? candidates[currentIndex % candidates.length] : null;
 
   return (
     <PageTransition>
@@ -87,7 +140,7 @@ export default function FoodPage() {
             </span>
           </h1>
           <p className="text-slate-500 dark:text-slate-400">
-            조건에 맞는 최적의 메뉴를 추천해 드립니다
+            슬롯머신이 오늘의 메뉴를 골라드립니다
           </p>
         </motion.div>
 
@@ -95,7 +148,7 @@ export default function FoodPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          onSubmit={handleSubmit}
+          onSubmit={startSlot}
           className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -144,66 +197,103 @@ export default function FoodPage() {
           </div>
           <button
             type="submit"
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all"
+            disabled={spinning}
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all disabled:opacity-50"
           >
-            추천받기
+            {spinning ? "추천 중..." : "추천받기"}
           </button>
         </motion.form>
 
-        {searched && (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="space-y-4"
-          >
-            {results.length === 0 ? (
-              <motion.div
-                variants={itemVariants}
-                className="text-center py-12 text-slate-500"
-              >
-                조건에 맞는 메뉴가 없습니다. 조건을 변경해 보세요.
-              </motion.div>
-            ) : (
-              results.map((food, index) => (
+        {/* Slot Machine Display */}
+        {(spinning || result) && candidates.length > 0 && (
+          <div className="mb-8">
+            {/* Spinning Slot */}
+            <AnimatePresence mode="wait">
+              {spinning && displayFood && (
                 <motion.div
-                  key={food.id}
-                  variants={itemVariants}
-                  className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow"
+                  key="slot"
+                  className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 p-1 mb-4"
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-2xl font-bold text-primary-500">
-                          {index + 1}
-                        </span>
-                        <h3 className="text-lg font-bold">{food.name}</h3>
-                        <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                          {food.category}
-                        </span>
-                      </div>
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">
-                        {food.description}
-                      </p>
-                      <div className="flex items-center gap-3 text-xs text-slate-400">
-                        <span>
-                          {food.priceRange === "low" ? "💰 저렴" : food.priceRange === "mid" ? "💰💰 보통" : "💰💰💰 고급"}
-                        </span>
-                        <span>{food.servings}인</span>
-                      </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-xl p-8 text-center">
+                    <div className="text-sm text-slate-400 mb-2">오늘의 메뉴는...</div>
+                    <div className="h-20 flex items-center justify-center overflow-hidden">
+                      <motion.div
+                        key={currentIndex}
+                        initial={{ y: -40, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 40, opacity: 0 }}
+                        transition={{ duration: 0.05 }}
+                        className="text-4xl md:text-5xl font-bold"
+                      >
+                        {displayFood.name}
+                      </motion.div>
                     </div>
-                    <div className="text-right">
-                      <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 text-orange-600 dark:text-orange-400">
-                        {reasonLabels[food.reason] || food.reason}
-                      </span>
-                      <div className="mt-2 text-sm font-medium text-yellow-500">
-                        {"★".repeat(Math.floor(food.rating))} {food.rating}
+                    <div className="mt-3 text-slate-400 text-sm">{displayFood.category}</div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Result Card */}
+            <AnimatePresence>
+              {!spinning && result && (
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                >
+                  <div className="rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 p-1">
+                    <div className="bg-white dark:bg-slate-800 rounded-xl p-8">
+                      <div className="text-center mb-6">
+                        <div className="text-sm text-orange-500 font-medium mb-2">오늘의 추천 메뉴</div>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-2">{result.name}</h2>
+                        <span className="inline-block px-3 py-1 text-sm rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                          {result.category}
+                        </span>
                       </div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div className="text-center p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+                          <div className="text-xs text-slate-400 mb-1">추천 이유</div>
+                          <div className="font-semibold text-orange-500">{reasonLabels[result.reason] || result.reason}</div>
+                        </div>
+                        <div className="text-center p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+                          <div className="text-xs text-slate-400 mb-1">가격대</div>
+                          <div className="font-semibold">
+                            {result.priceRange === "low" ? "저렴" : result.priceRange === "mid" ? "보통" : "고급"}
+                          </div>
+                        </div>
+                        <div className="text-center p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+                          <div className="text-xs text-slate-400 mb-1">인원</div>
+                          <div className="font-semibold">{result.servings}인</div>
+                        </div>
+                        <div className="text-center p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+                          <div className="text-xs text-slate-400 mb-1">평점</div>
+                          <div className="font-semibold text-yellow-500">{"★".repeat(Math.floor(result.rating))} {result.rating}</div>
+                        </div>
+                      </div>
+                      <p className="text-center text-slate-500 dark:text-slate-400 mb-6">{result.description}</p>
+                      <button
+                        onClick={startSlot as unknown as () => void}
+                        className="w-full py-3 rounded-xl border-2 border-orange-400 text-orange-500 font-semibold hover:bg-orange-50 dark:hover:bg-orange-900/10 transition-colors"
+                      >
+                        다시 뽑기
+                      </button>
                     </div>
                   </div>
                 </motion.div>
-              ))
-            )}
+              )}
+            </AnimatePresence>
+          </div>
+        )}
+
+        {/* No results */}
+        {!spinning && !result && candidates.length === 0 && category !== "전체" && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-12 text-slate-500"
+          >
+            조건에 맞는 메뉴가 없습니다. 조건을 변경해 보세요.
           </motion.div>
         )}
       </div>

@@ -4,11 +4,19 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 
-type Participant = {
+type Expense = {
   id: number;
   name: string;
-  paid: number;
-  shouldPay: number;
+  amount: number;
+  payer: string;
+  excluded: string[];
+};
+
+type Settlement = {
+  name: string;
+  spent: number;
+  share: number;
+  balance: number;
 };
 
 type Transfer = {
@@ -17,19 +25,49 @@ type Transfer = {
   amount: number;
 };
 
-type Mode = "equal" | "custom";
+function calculateSettlement(
+  participants: string[],
+  expenses: Expense[]
+): { settlements: Settlement[]; transfers: Transfer[] } {
+  const totalSpent: Record<string, number> = {};
+  const totalShare: Record<string, number> = {};
+  participants.forEach((name) => {
+    totalSpent[name] = 0;
+    totalShare[name] = 0;
+  });
 
-function calculateMinTransfers(participants: Participant[]): Transfer[] {
-  const balances: { name: string; balance: number }[] = participants.map((p) => ({
-    name: p.name,
-    balance: p.paid - p.shouldPay,
+  expenses.forEach((expense) => {
+    const { amount, payer, excluded } = expense;
+    if (!amount || !payer) return;
+
+    const validParticipants = participants.filter((p) => !excluded.includes(p));
+    totalSpent[payer] = (totalSpent[payer] || 0) + amount;
+
+    if (validParticipants.length > 0) {
+      const sharePerPerson = Math.floor(amount / validParticipants.length);
+      const remainder = amount - sharePerPerson * validParticipants.length;
+
+      validParticipants.forEach((p) => {
+        totalShare[p] += sharePerPerson;
+      });
+      totalShare[payer] += remainder;
+    }
+  });
+
+  const settlements: Settlement[] = participants.map((name) => ({
+    name,
+    spent: totalSpent[name],
+    share: totalShare[name],
+    balance: totalSpent[name] - totalShare[name],
   }));
 
-  const debtors = balances
-    .filter((b) => b.balance < 0)
+  const debtors = settlements
+    .filter((s) => s.balance < 0)
+    .map((s) => ({ ...s }))
     .sort((a, b) => a.balance - b.balance);
-  const creditors = balances
-    .filter((b) => b.balance > 0)
+  const creditors = settlements
+    .filter((s) => s.balance > 0)
+    .map((s) => ({ ...s }))
     .sort((a, b) => b.balance - a.balance);
 
   const transfers: Transfer[] = [];
@@ -42,100 +80,141 @@ function calculateMinTransfers(participants: Participant[]): Transfer[] {
       transfers.push({
         from: debtors[i].name,
         to: creditors[j].name,
-        amount: Math.round(amount),
+        amount,
       });
     }
     debtors[i].balance += amount;
     creditors[j].balance -= amount;
-
-    if (Math.abs(debtors[i].balance) < 1) i++;
-    if (Math.abs(creditors[j].balance) < 1) j++;
+    if (debtors[i].balance === 0) i++;
+    if (creditors[j].balance === 0) j++;
   }
 
-  return transfers;
+  return { settlements, transfers };
 }
+
+let nextExpenseId = 1;
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 export default function SettlementPage() {
-  const [totalAmount, setTotalAmount] = useState("");
-  const [names, setNames] = useState("");
-  const [mode, setMode] = useState<Mode>("equal");
-  const [participants, setParticipants] = useState<Participant[]>([]);
+  const [participants, setParticipants] = useState<string[]>(["", ""]);
+  const [participantsConfirmed, setParticipantsConfirmed] = useState(false);
+  const [expenses, setExpenses] = useState<Expense[]>([]);
+  const [settlements, setSettlements] = useState<Settlement[]>([]);
   const [transfers, setTransfers] = useState<Transfer[]>([]);
   const [showResult, setShowResult] = useState(false);
-  const [setupDone, setSetupDone] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const handleSetup = (e: React.FormEvent) => {
-    e.preventDefault();
-    const nameList = names
-      .split(",")
-      .map((n) => n.trim())
-      .filter(Boolean);
-    if (nameList.length < 2) return;
+  const addParticipant = () => setParticipants([...participants, ""]);
 
-    const total = parseInt(totalAmount);
-    if (!total || total <= 0) return;
-
-    const perPerson = Math.floor(total / nameList.length);
-    const remainder = total - perPerson * nameList.length;
-    const newParticipants: Participant[] = nameList.map((name, i) => ({
-      id: i,
-      name,
-      paid: 0,
-      shouldPay: mode === "equal" ? perPerson + (i < remainder ? 1 : 0) : 0,
-    }));
-
-    setParticipants(newParticipants);
-    setSetupDone(true);
-    setShowResult(false);
+  const removeParticipant = (index: number) => {
+    if (participants.length <= 2) return;
+    setParticipants(participants.filter((_, i) => i !== index));
   };
 
-  const updatePaid = (id: number, value: string) => {
-    setParticipants((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, paid: parseInt(value) || 0 } : p))
+  const updateParticipant = (index: number, value: string) => {
+    const updated = [...participants];
+    updated[index] = value;
+    setParticipants(updated);
+  };
+
+  const confirmParticipants = () => {
+    const valid = participants.map((p) => p.trim()).filter(Boolean);
+    if (valid.length < 2) return;
+    if (new Set(valid).size !== valid.length) return;
+    setParticipants(valid);
+    setParticipantsConfirmed(true);
+    setExpenses([
+      { id: nextExpenseId++, name: "", amount: 0, payer: "", excluded: [] },
+      { id: nextExpenseId++, name: "", amount: 0, payer: "", excluded: [] },
+      { id: nextExpenseId++, name: "", amount: 0, payer: "", excluded: [] },
+    ]);
+  };
+
+  const addExpense = () => {
+    setExpenses([
+      ...expenses,
+      { id: nextExpenseId++, name: "", amount: 0, payer: "", excluded: [] },
+    ]);
+  };
+
+  const removeExpense = (id: number) => {
+    if (expenses.length <= 1) return;
+    setExpenses(expenses.filter((e) => e.id !== id));
+  };
+
+  const updateExpense = (id: number, field: keyof Expense, value: string | number | string[]) => {
+    setExpenses(
+      expenses.map((e) => (e.id === id ? { ...e, [field]: value } : e))
     );
   };
 
-  const updateShouldPay = (id: number, value: string) => {
-    setParticipants((prev) =>
-      prev.map((p) =>
-        p.id === id ? { ...p, shouldPay: parseInt(value) || 0 } : p
-      )
+  const toggleExclude = (expenseId: number, participant: string) => {
+    setExpenses(
+      expenses.map((e) => {
+        if (e.id !== expenseId) return e;
+        const excluded = e.excluded.includes(participant)
+          ? e.excluded.filter((p) => p !== participant)
+          : [...e.excluded, participant];
+        return { ...e, excluded };
+      })
     );
   };
 
-  const handleCalculate = () => {
-    const result = calculateMinTransfers(participants);
-    setTransfers(result);
+  const handleSettle = () => {
+    const validExpenses = expenses.filter(
+      (e) => e.name.trim() && e.amount > 0 && e.payer
+    );
+    if (validExpenses.length === 0) return;
+
+    const result = calculateSettlement(participants, validExpenses);
+    setSettlements(result.settlements);
+    setTransfers(result.transfers);
     setShowResult(true);
   };
 
   const handleCopy = () => {
-    const text = transfers
-      .map((t) => `${t.from} → ${t.to}: ${t.amount.toLocaleString()}원`)
-      .join("\n");
-    navigator.clipboard.writeText(text);
+    const lines = [
+      "[ 정산 결과 ]",
+      "",
+      ...settlements.map(
+        (s) =>
+          `${s.name}: 지출 ${s.spent.toLocaleString()}원 / 부담 ${s.share.toLocaleString()}원 / ${s.balance >= 0 ? "+" : ""}${s.balance.toLocaleString()}원`
+      ),
+      "",
+      "[ 송금 방법 ]",
+      ...transfers.map(
+        (t) => `${t.from} → ${t.to}: ${t.amount.toLocaleString()}원`
+      ),
+    ];
+    navigator.clipboard.writeText(lines.join("\n"));
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   const handleReset = () => {
-    setSetupDone(false);
-    setShowResult(false);
-    setParticipants([]);
+    setParticipantsConfirmed(false);
+    setExpenses([]);
+    setSettlements([]);
     setTransfers([]);
-    setTotalAmount("");
-    setNames("");
+    setShowResult(false);
+    setParticipants(["", ""]);
+  };
+
+  const formatAmount = (value: string): number => {
+    return parseInt(value.replace(/,/g, "")) || 0;
+  };
+
+  const displayAmount = (amount: number): string => {
+    return amount > 0 ? amount.toLocaleString() : "";
   };
 
   return (
@@ -153,220 +232,311 @@ export default function SettlementPage() {
             </span>
           </h1>
           <p className="text-slate-500 dark:text-slate-400">
-            최소 송금으로 깔끔하게 정산하세요
+            항목별 지출을 입력하면 최소 송금으로 정산해 드립니다
           </p>
         </motion.div>
 
-        {!setupDone ? (
-          <motion.form
+        {/* Step 1: Participants */}
+        {!participantsConfirmed && (
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            onSubmit={handleSetup}
             className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
           >
-            <div className="space-y-4 mb-6">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  총 금액 (원)
-                </label>
-                <input
-                  type="number"
-                  required
-                  min="1"
-                  value={totalAmount}
-                  onChange={(e) => setTotalAmount(e.target.value)}
-                  placeholder="예: 150000"
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  참여자 이름 (쉼표로 구분)
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={names}
-                  onChange={(e) => setNames(e.target.value)}
-                  placeholder="예: 철수, 영희, 민수, 지영"
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                  정산 방식
-                </label>
-                <div className="flex gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setMode("equal")}
-                    className={`flex-1 py-2.5 rounded-lg border font-medium transition-all ${
-                      mode === "equal"
-                        ? "border-green-500 bg-green-50 dark:bg-green-900/20 text-green-600"
-                        : "border-slate-300 dark:border-slate-600 text-slate-500"
-                    }`}
-                  >
-                    균등 분할 (더치페이)
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setMode("custom")}
-                    className={`flex-1 py-2.5 rounded-lg border font-medium transition-all ${
-                      mode === "custom"
-                        ? "border-green-500 bg-green-50 dark:bg-green-900/20 text-green-600"
-                        : "border-slate-300 dark:border-slate-600 text-slate-500"
-                    }`}
-                  >
-                    차등 분할
-                  </button>
+            <h2 className="text-lg font-bold mb-4">참여자 입력</h2>
+            <div className="space-y-3 mb-4">
+              {participants.map((name, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => updateParticipant(i, e.target.value)}
+                    placeholder={`참여자 ${i + 1}`}
+                    className="flex-1 px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  />
+                  {participants.length > 2 && (
+                    <button
+                      onClick={() => removeParticipant(i)}
+                      className="p-2 text-slate-400 hover:text-red-500 transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
                 </div>
-              </div>
+              ))}
             </div>
             <button
-              type="submit"
+              onClick={addParticipant}
+              className="w-full py-2.5 mb-3 rounded-lg border border-dashed border-slate-300 dark:border-slate-600 text-slate-500 hover:border-green-400 hover:text-green-500 transition-colors"
+            >
+              + 참여자 추가
+            </button>
+            <button
+              onClick={confirmParticipants}
               className="w-full py-3 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500 text-white font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all"
             >
-              다음 단계로
+              참여자 확정
             </button>
-          </motion.form>
-        ) : (
-          <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
-            >
+          </motion.div>
+        )}
+
+        {/* Step 2: Expenses */}
+        {participantsConfirmed && !showResult && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-4"
+          >
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg font-bold">결제 금액 입력</h2>
-                <span className="text-sm text-slate-500">
-                  총 {parseInt(totalAmount).toLocaleString()}원
-                </span>
-              </div>
-              <div className="space-y-3">
-                {participants.map((p) => (
-                  <div
-                    key={p.id}
-                    className="flex items-center gap-3 flex-wrap"
-                  >
-                    <span className="w-16 font-medium text-sm truncate">
-                      {p.name}
+                <h2 className="text-lg font-bold">지출 내역</h2>
+                <div className="flex items-center gap-2 text-sm text-slate-500">
+                  <span>참여자:</span>
+                  {participants.map((p) => (
+                    <span key={p} className="px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-medium">
+                      {p}
                     </span>
-                    <div className="flex-1 min-w-[120px]">
-                      <label className="text-xs text-slate-400 mb-1 block">
-                        실제 결제액
-                      </label>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {expenses.map((expense) => (
+                  <div
+                    key={expense.id}
+                    className="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-600"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                       <input
-                        type="number"
-                        min="0"
-                        value={p.paid || ""}
-                        onChange={(e) => updatePaid(p.id, e.target.value)}
-                        placeholder="0"
-                        className="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        type="text"
+                        value={expense.name}
+                        onChange={(e) =>
+                          updateExpense(expense.id, "name", e.target.value)
+                        }
+                        placeholder="항목 (예: 저녁식사)"
+                        className="px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       />
-                    </div>
-                    {mode === "custom" && (
-                      <div className="flex-1 min-w-[120px]">
-                        <label className="text-xs text-slate-400 mb-1 block">
-                          부담해야 할 금액
-                        </label>
-                        <input
-                          type="number"
-                          min="0"
-                          value={p.shouldPay || ""}
+                      <input
+                        type="text"
+                        inputMode="numeric"
+                        value={displayAmount(expense.amount)}
+                        onChange={(e) =>
+                          updateExpense(
+                            expense.id,
+                            "amount",
+                            formatAmount(e.target.value)
+                          )
+                        }
+                        placeholder="금액"
+                        className="px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      />
+                      <div className="flex gap-2">
+                        <select
+                          value={expense.payer}
                           onChange={(e) =>
-                            updateShouldPay(p.id, e.target.value)
+                            updateExpense(expense.id, "payer", e.target.value)
                           }
-                          placeholder="0"
-                          className="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                        />
+                          className="flex-1 px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-sm focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        >
+                          <option value="">지불자</option>
+                          {participants.map((p) => (
+                            <option key={p} value={p}>{p}</option>
+                          ))}
+                        </select>
+                        {expenses.length > 1 && (
+                          <button
+                            onClick={() => removeExpense(expense.id)}
+                            className="p-2 text-slate-400 hover:text-red-500 transition-colors"
+                          >
+                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        )}
                       </div>
-                    )}
+                    </div>
+                    {/* Exclude toggles */}
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-xs text-slate-400">제외:</span>
+                      {participants.map((p) => (
+                        <button
+                          key={p}
+                          onClick={() => toggleExclude(expense.id, p)}
+                          className={`px-2 py-0.5 text-xs rounded-full border transition-colors ${
+                            expense.excluded.includes(p)
+                              ? "border-red-400 bg-red-50 dark:bg-red-900/20 text-red-500"
+                              : "border-slate-300 dark:border-slate-600 text-slate-400 hover:border-red-300"
+                          }`}
+                        >
+                          {p}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
-              <div className="flex gap-3 mt-6">
-                <button
-                  onClick={handleReset}
-                  className="flex-1 py-3 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
-                >
-                  처음으로
-                </button>
-                <button
-                  onClick={handleCalculate}
-                  className="flex-1 py-3 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500 text-white font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all"
-                >
-                  정산하기
-                </button>
-              </div>
-            </motion.div>
 
-            <AnimatePresence>
-              {showResult && (
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit={{ opacity: 0 }}
-                  className="space-y-3"
-                >
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-lg font-bold">정산 결과</h2>
-                    <button
-                      onClick={handleCopy}
-                      className="px-4 py-1.5 text-sm rounded-lg border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              <button
+                onClick={addExpense}
+                className="w-full py-2.5 mt-4 rounded-lg border border-dashed border-slate-300 dark:border-slate-600 text-slate-500 hover:border-green-400 hover:text-green-500 transition-colors"
+              >
+                + 지출 항목 추가
+              </button>
+            </div>
+
+            <div className="flex gap-3">
+              <button
+                onClick={handleReset}
+                className="flex-1 py-3 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              >
+                처음으로
+              </button>
+              <button
+                onClick={handleSettle}
+                className="flex-1 py-3 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500 text-white font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all"
+              >
+                정산하기
+              </button>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Step 3: Results */}
+        <AnimatePresence>
+          {showResult && (
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{ opacity: 0 }}
+              className="space-y-6"
+            >
+              {/* Expense Summary */}
+              <motion.div
+                variants={itemVariants}
+                className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700"
+              >
+                <h2 className="text-lg font-bold mb-4">지출 내역</h2>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-slate-200 dark:border-slate-700">
+                        <th className="text-left py-2 font-medium text-slate-500">항목</th>
+                        <th className="text-right py-2 font-medium text-slate-500">금액</th>
+                        <th className="text-left py-2 pl-4 font-medium text-slate-500">지불자</th>
+                        <th className="text-left py-2 pl-4 font-medium text-slate-500">제외</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {expenses
+                        .filter((e) => e.name && e.amount > 0 && e.payer)
+                        .map((e) => (
+                          <tr key={e.id} className="border-b border-slate-100 dark:border-slate-700/50">
+                            <td className="py-2">{e.name}</td>
+                            <td className="py-2 text-right">{e.amount.toLocaleString()}원</td>
+                            <td className="py-2 pl-4">{e.payer}</td>
+                            <td className="py-2 pl-4 text-slate-400">{e.excluded.join(", ") || "-"}</td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
+              </motion.div>
+
+              {/* Per-person Summary */}
+              <motion.div
+                variants={itemVariants}
+                className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700"
+              >
+                <h2 className="text-lg font-bold mb-4">참여자별 정산</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {settlements.map((s) => (
+                    <div
+                      key={s.name}
+                      className="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-600"
                     >
-                      {copied ? "복사됨!" : "결과 복사"}
-                    </button>
+                      <div className="font-bold text-lg mb-2">{s.name}</div>
+                      <div className="grid grid-cols-3 gap-2 text-sm">
+                        <div>
+                          <div className="text-slate-400 text-xs">지출</div>
+                          <div className="font-medium">{s.spent.toLocaleString()}원</div>
+                        </div>
+                        <div>
+                          <div className="text-slate-400 text-xs">부담</div>
+                          <div className="font-medium">{s.share.toLocaleString()}원</div>
+                        </div>
+                        <div>
+                          <div className="text-slate-400 text-xs">결과</div>
+                          <div
+                            className={`font-bold ${
+                              s.balance > 0
+                                ? "text-green-500"
+                                : s.balance < 0
+                                ? "text-red-500"
+                                : "text-slate-500"
+                            }`}
+                          >
+                            {s.balance > 0 ? "+" : ""}
+                            {s.balance.toLocaleString()}원
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Transfer Methods */}
+              <motion.div
+                variants={itemVariants}
+                className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-lg font-bold">송금 방법</h2>
+                  <button
+                    onClick={handleCopy}
+                    className="px-4 py-1.5 text-sm rounded-lg border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                  >
+                    {copied ? "복사됨!" : "결과 복사"}
+                  </button>
+                </div>
+                {transfers.length === 0 ? (
+                  <div className="text-center py-6 text-slate-500">
+                    정산할 금액이 없습니다.
                   </div>
-                  {transfers.length === 0 ? (
-                    <motion.div
-                      variants={itemVariants}
-                      className="text-center py-8 text-slate-500 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700"
-                    >
-                      정산할 내역이 없습니다.
-                    </motion.div>
-                  ) : (
-                    transfers.map((t, i) => (
+                ) : (
+                  <div className="space-y-3">
+                    {transfers.map((t, i) => (
                       <motion.div
                         key={i}
                         variants={itemVariants}
-                        className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700"
+                        className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-600"
                       >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
-                            <span className="font-semibold text-red-500">
-                              {t.from}
-                            </span>
-                            <svg
-                              className="w-5 h-5 text-slate-400"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"
-                              />
-                            </svg>
-                            <span className="font-semibold text-green-500">
-                              {t.to}
-                            </span>
-                          </div>
-                          <span className="text-lg font-bold">
-                            {t.amount.toLocaleString()}원
-                          </span>
+                        <div className="flex items-center gap-3">
+                          <span className="font-semibold text-red-500">{t.from}</span>
+                          <svg className="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                          <span className="font-semibold text-green-500">{t.to}</span>
                         </div>
+                        <span className="text-lg font-bold">{t.amount.toLocaleString()}원</span>
                       </motion.div>
-                    ))
-                  )}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        )}
+                    ))}
+                  </div>
+                )}
+              </motion.div>
+
+              <button
+                onClick={handleReset}
+                className="w-full py-3 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              >
+                처음으로
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </PageTransition>
   );
