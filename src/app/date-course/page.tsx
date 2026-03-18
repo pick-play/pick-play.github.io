@@ -265,9 +265,39 @@ export default function DateCoursePage() {
           </div>
         )}
 
-        {!spinning && !result && candidates.length === 0 && region !== "전체" && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-12 text-slate-500">
-            조건에 맞는 코스가 없습니다. 조건을 변경해 보세요.
+        {!spinning && !result && candidates.length === 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 text-center"
+          >
+            <div className="text-4xl mb-4">💑</div>
+            <h3 className="text-lg font-bold mb-2">조건에 맞는 코스가 없어요</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">
+              조건을 바꿔보시거나, 전체 코스에서 랜덤으로 뽑아볼까요?
+            </p>
+            <div className="flex gap-3 justify-center flex-wrap">
+              <button
+                onClick={() => { setRegion("전체"); setTime(""); setPreference(""); }}
+                className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              >
+                조건 초기화
+              </button>
+              <button
+                onClick={() => {
+                  setRegion("전체");
+                  setTime("");
+                  setPreference("");
+                  setTimeout(() => {
+                    const form = document.querySelector("form");
+                    if (form) form.requestSubmit();
+                  }, 50);
+                }}
+                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg transition-all"
+              >
+                전체에서 랜덤 뽑기
+              </button>
+            </div>
           </motion.div>
         )}
       </div>
