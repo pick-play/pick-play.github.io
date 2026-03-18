@@ -6,122 +6,194 @@ import PageTransition from "@/components/PageTransition";
 
 const services = [
   {
-    title: "오늘 뭐 먹지",
-    description: "가격대, 인원, 위치 기반으로 최적의 음식을 추천해 드립니다.",
+    title: "뭐 먹지?",
+    description: "130가지 메뉴에서 취향 저격 맛 지도로 골라드립니다. 담백한 것? 자극적인 것? 클릭 한 번이면 끝.",
     href: "/food",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-      </svg>
-    ),
+    emoji: "🍽️",
     gradient: "from-orange-400 to-red-500",
+    bg: "bg-orange-50 dark:bg-orange-950/20",
+    stat: "130+ 메뉴",
   },
   {
     title: "회식비 정산",
-    description: "더치페이부터 차등 분할까지, 최소 송금으로 깔끔하게 정산하세요.",
+    description: "복잡한 더치페이도 깔끔하게. 항목별 제외, 차등 분할, 최소 송금까지 한 번에.",
     href: "/settlement",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-      </svg>
-    ),
+    emoji: "💰",
     gradient: "from-green-400 to-emerald-500",
+    bg: "bg-emerald-50 dark:bg-emerald-950/20",
+    stat: "최소 송금",
   },
   {
-    title: "데이트 코스 추천",
-    description: "지역, 시간, 취향에 맞는 완벽한 데이트 코스를 만들어 드립니다.",
+    title: "데이트 코스",
+    description: "전국 10개 도시, 100가지 코스. 분위기 지도에서 원하는 느낌을 찍으면 완벽한 동선을 짜드립니다.",
     href: "/date-course",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-      </svg>
-    ),
+    emoji: "💑",
     gradient: "from-pink-400 to-purple-500",
+    bg: "bg-pink-50 dark:bg-pink-950/20",
+    stat: "10개 도시",
   },
+];
+
+const floatingEmoji = [
+  { emoji: "🍕", x: "10%", y: "20%", delay: 0, duration: 6 },
+  { emoji: "🍜", x: "85%", y: "15%", delay: 1.5, duration: 7 },
+  { emoji: "☕", x: "75%", y: "65%", delay: 0.8, duration: 5.5 },
+  { emoji: "🎮", x: "15%", y: "70%", delay: 2.2, duration: 6.5 },
+  { emoji: "💸", x: "90%", y: "45%", delay: 0.5, duration: 7.5 },
+  { emoji: "🗺️", x: "5%", y: "45%", delay: 1.8, duration: 6.2 },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 
 export default function Home() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 pt-20 pb-16 text-center">
+      <section className="relative max-w-6xl mx-auto px-4 pt-20 pb-20 text-center overflow-hidden">
+        {/* Floating decorative emoji */}
+        {floatingEmoji.map((item, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-3xl md:text-4xl opacity-[0.12] dark:opacity-[0.08] pointer-events-none select-none"
+            style={{ left: item.x, top: item.y }}
+            animate={{
+              y: [0, -18, 0, 18, 0],
+              rotate: [0, 8, 0, -8, 0],
+            }}
+            transition={{
+              duration: item.duration,
+              repeat: Infinity,
+              delay: item.delay,
+              ease: "easeInOut",
+            }}
+          >
+            {item.emoji}
+          </motion.div>
+        ))}
+
+        {/* Gradient orbs */}
+        <div className="absolute top-10 left-1/4 w-72 h-72 bg-primary-400/10 dark:bg-primary-400/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-pink-400/10 dark:bg-pink-400/5 rounded-full blur-3xl pointer-events-none" />
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400 text-sm font-medium"
+        >
+          전국 10개 도시 · 130+ 메뉴 · 100+ 데이트 코스
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-bold mb-6"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight"
         >
-          선택이 어려울 때,{" "}
-          <span className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
-            LifePick
+          고민은 줄이고
+          <br />
+          <span className="bg-gradient-to-r from-primary-500 via-pink-500 to-orange-400 bg-clip-text text-transparent">
+            선택은 빠르게
           </span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 max-w-2xl mx-auto"
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed"
         >
-          오늘 뭐 먹지? 회식비는 어떻게 나누지? 데이트는 어디로?
-          <br />
-          고민은 줄이고, 최적의 선택을 내려드립니다.
+          뭐 먹을지, 어디 갈지, 돈은 어떻게 나눌지
+          <br className="hidden md:block" />
+          — 취향 지도 한 번이면 끝.
         </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex items-center justify-center gap-3"
         >
           <Link
             href="/food"
-            className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all hover:-translate-y-0.5"
+            className="px-7 py-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all hover:-translate-y-0.5"
           >
-            시작하기
+            메뉴 추천받기
+          </Link>
+          <Link
+            href="/date-course"
+            className="px-7 py-3 rounded-full border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:-translate-y-0.5"
+          >
+            코스 추천받기
           </Link>
         </motion.div>
       </section>
 
       {/* Service Cards */}
-      <section className="max-w-6xl mx-auto px-4 pb-20">
+      <section className="max-w-6xl mx-auto px-4 pb-24">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          viewport={{ once: true, margin: "-80px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-5"
         >
           {services.map((service) => (
             <motion.div key={service.href} variants={itemVariants}>
-              <Link href={service.href} className="block group">
-                <div className="relative p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <Link href={service.href} className="block group h-full">
+                <div
+                  className={`relative h-full p-7 rounded-2xl ${service.bg} border border-slate-200/60 dark:border-slate-700/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 overflow-hidden`}
+                >
+                  {/* Subtle gradient accent */}
                   <div
-                    className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.gradient} text-white mb-4`}
-                  >
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary-500 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                  <div className="mt-4 text-primary-500 text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    바로가기
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${service.gradient} opacity-[0.06] rounded-bl-full`}
+                  />
+
+                  <div className="relative">
+                    <div className="text-4xl mb-4">{service.emoji}</div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="text-xl font-bold group-hover:text-primary-500 transition-colors">
+                        {service.title}
+                      </h3>
+                      <span
+                        className={`px-2 py-0.5 text-[11px] font-bold rounded-full bg-gradient-to-r ${service.gradient} text-white`}
+                      >
+                        {service.stat}
+                      </span>
+                    </div>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                      {service.description}
+                    </p>
+                    <div className="flex items-center gap-1 text-sm font-medium text-primary-500 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
+                      시작하기
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </Link>

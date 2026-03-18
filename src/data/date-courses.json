@@ -1,155 +1,545 @@
 [
-  { "id": 1, "region": "강남", "time": "day", "preference": "카페", "x": 30, "y": 60, "course": [
+  { "id": 1, "city": "서울", "region": "강남", "time": "day", "preference": "카페", "x": 30, "y": 60, "course": [
     { "step": 1, "place": "강남 카페거리", "type": "카페", "duration": "1시간" },
     { "step": 2, "place": "압구정 맛집", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "한강 반포 산책", "type": "산책", "duration": "1시간" }
   ]},
-  { "id": 2, "region": "홍대", "time": "night", "preference": "실내", "x": 70, "y": 22, "course": [
+  { "id": 2, "city": "서울", "region": "홍대", "time": "night", "preference": "실내", "x": 70, "y": 22, "course": [
     { "step": 1, "place": "홍대 이자카야", "type": "식사", "duration": "2시간" },
     { "step": 2, "place": "방탈출 카페", "type": "액티비티", "duration": "1시간" },
     { "step": 3, "place": "루프탑 바", "type": "카페", "duration": "1시간 30분" }
   ]},
-  { "id": 3, "region": "여의도", "time": "day", "preference": "야외", "x": 38, "y": 72, "course": [
+  { "id": 3, "city": "서울", "region": "여의도", "time": "day", "preference": "야외", "x": 38, "y": 72, "course": [
     { "step": 1, "place": "여의도 한강공원", "type": "산책", "duration": "1시간" },
     { "step": 2, "place": "IFC몰 레스토랑", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "63빌딩 전망대", "type": "관광", "duration": "1시간" }
   ]},
-  { "id": 4, "region": "성수", "time": "day", "preference": "카페", "x": 42, "y": 65, "course": [
+  { "id": 4, "city": "서울", "region": "성수", "time": "day", "preference": "카페", "x": 42, "y": 65, "course": [
     { "step": 1, "place": "성수동 갤러리 카페", "type": "카페", "duration": "1시간" },
     { "step": 2, "place": "서울숲 산책", "type": "산책", "duration": "1시간" },
     { "step": 3, "place": "성수 뚝섬 맛집", "type": "식사", "duration": "1시간 30분" },
     { "step": 4, "place": "대림창고 갤러리", "type": "관광", "duration": "1시간" }
   ]},
-  { "id": 5, "region": "이태원", "time": "night", "preference": "실내", "x": 28, "y": 32, "course": [
+  { "id": 5, "city": "서울", "region": "이태원", "time": "night", "preference": "실내", "x": 28, "y": 32, "course": [
     { "step": 1, "place": "경리단길 와인바", "type": "카페", "duration": "1시간 30분" },
     { "step": 2, "place": "이태원 스테이크하우스", "type": "식사", "duration": "2시간" },
     { "step": 3, "place": "해방촌 야경 포인트", "type": "산책", "duration": "30분" }
   ]},
-  { "id": 6, "region": "잠실", "time": "day", "preference": "액티비티", "x": 85, "y": 55, "course": [
+  { "id": 6, "city": "서울", "region": "잠실", "time": "day", "preference": "액티비티", "x": 85, "y": 55, "course": [
     { "step": 1, "place": "롯데월드 어드벤처", "type": "액티비티", "duration": "3시간" },
     { "step": 2, "place": "잠실 맛집 거리", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "석촌호수 산책", "type": "산책", "duration": "1시간" }
   ]},
-  { "id": 7, "region": "북촌", "time": "day", "preference": "야외", "x": 25, "y": 72, "course": [
+  { "id": 7, "city": "서울", "region": "북촌", "time": "day", "preference": "야외", "x": 25, "y": 72, "course": [
     { "step": 1, "place": "북촌 한옥마을 산책", "type": "산책", "duration": "1시간 30분" },
     { "step": 2, "place": "삼청동 한식당", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "삼청동 전통 찻집", "type": "카페", "duration": "1시간" }
   ]},
-  { "id": 8, "region": "강남", "time": "night", "preference": "실내", "x": 45, "y": 15, "course": [
+  { "id": 8, "city": "서울", "region": "강남", "time": "night", "preference": "실내", "x": 45, "y": 15, "course": [
     { "step": 1, "place": "강남 오마카세", "type": "식사", "duration": "2시간" },
     { "step": 2, "place": "코엑스 영화관", "type": "액티비티", "duration": "2시간" },
     { "step": 3, "place": "강남 칵테일바", "type": "카페", "duration": "1시간 30분" }
   ]},
-  { "id": 9, "region": "홍대", "time": "day", "preference": "카페", "x": 32, "y": 58, "course": [
+  { "id": 9, "city": "서울", "region": "홍대", "time": "day", "preference": "카페", "x": 32, "y": 58, "course": [
     { "step": 1, "place": "연남동 카페 골목", "type": "카페", "duration": "1시간" },
     { "step": 2, "place": "연남동 브런치", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "경의선 숲길", "type": "산책", "duration": "1시간" }
   ]},
-  { "id": 10, "region": "여의도", "time": "night", "preference": "야외", "x": 35, "y": 75, "course": [
+  { "id": 10, "city": "서울", "region": "여의도", "time": "night", "preference": "야외", "x": 35, "y": 75, "course": [
     { "step": 1, "place": "여의도 세빛섬", "type": "관광", "duration": "1시간" },
     { "step": 2, "place": "여의도 레스토랑", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "한강 야경 산책", "type": "산책", "duration": "1시간" }
   ]},
-  { "id": 11, "region": "성수", "time": "night", "preference": "실내", "x": 50, "y": 28, "course": [
+  { "id": 11, "city": "서울", "region": "성수", "time": "night", "preference": "실내", "x": 50, "y": 28, "course": [
     { "step": 1, "place": "성수 수제 버거집", "type": "식사", "duration": "1시간 30분" },
     { "step": 2, "place": "성수 팝업스토어", "type": "관광", "duration": "1시간" },
     { "step": 3, "place": "성수 루프탑 바", "type": "카페", "duration": "1시간 30분" }
   ]},
-  { "id": 12, "region": "잠실", "time": "night", "preference": "액티비티", "x": 48, "y": 40, "course": [
+  { "id": 12, "city": "서울", "region": "잠실", "time": "night", "preference": "액티비티", "x": 48, "y": 40, "course": [
     { "step": 1, "place": "롯데타워 전망대", "type": "관광", "duration": "1시간" },
     { "step": 2, "place": "잠실 이자카야", "type": "식사", "duration": "2시간" },
     { "step": 3, "place": "석촌호수 야경", "type": "산책", "duration": "30분" }
   ]},
-  { "id": 13, "region": "강남", "time": "day", "preference": "야외", "x": 30, "y": 78, "course": [
+  { "id": 13, "city": "서울", "region": "강남", "time": "day", "preference": "야외", "x": 30, "y": 78, "course": [
     { "step": 1, "place": "양재 시민의 숲", "type": "산책", "duration": "1시간" },
     { "step": 2, "place": "양재동 카페거리", "type": "카페", "duration": "1시간" },
     { "step": 3, "place": "강남 파스타 맛집", "type": "식사", "duration": "1시간 30분" }
   ]},
-  { "id": 14, "region": "강남", "time": "night", "preference": "카페", "x": 22, "y": 42, "course": [
+  { "id": 14, "city": "서울", "region": "강남", "time": "night", "preference": "카페", "x": 22, "y": 42, "course": [
     { "step": 1, "place": "도산공원 디저트 카페", "type": "카페", "duration": "1시간" },
     { "step": 2, "place": "청담 이탈리안", "type": "식사", "duration": "2시간" },
     { "step": 3, "place": "가로수길 야경 산책", "type": "산책", "duration": "30분" }
   ]},
-  { "id": 15, "region": "강남", "time": "day", "preference": "액티비티", "x": 65, "y": 18, "course": [
+  { "id": 15, "city": "서울", "region": "강남", "time": "day", "preference": "액티비티", "x": 65, "y": 18, "course": [
     { "step": 1, "place": "코엑스 아쿠아리움", "type": "액티비티", "duration": "1시간 30분" },
     { "step": 2, "place": "코엑스몰 맛집", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "별마당 도서관", "type": "관광", "duration": "1시간" }
   ]},
-  { "id": 16, "region": "홍대", "time": "night", "preference": "카페", "x": 55, "y": 42, "course": [
+  { "id": 16, "city": "서울", "region": "홍대", "time": "night", "preference": "카페", "x": 55, "y": 42, "course": [
     { "step": 1, "place": "상수동 분위기 카페", "type": "카페", "duration": "1시간" },
     { "step": 2, "place": "합정 숨은 맛집", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "홍대 거리 공연", "type": "관광", "duration": "1시간" },
     { "step": 4, "place": "망원동 루프탑", "type": "카페", "duration": "1시간" }
   ]},
-  { "id": 17, "region": "홍대", "time": "day", "preference": "액티비티", "x": 72, "y": 55, "course": [
+  { "id": 17, "city": "서울", "region": "홍대", "time": "day", "preference": "액티비티", "x": 72, "y": 55, "course": [
     { "step": 1, "place": "홍대 공방 체험", "type": "액티비티", "duration": "2시간" },
     { "step": 2, "place": "연남동 타코 맛집", "type": "식사", "duration": "1시간" },
     { "step": 3, "place": "경의선 숲길 산책", "type": "산책", "duration": "1시간" }
   ]},
-  { "id": 18, "region": "홍대", "time": "night", "preference": "야외", "x": 35, "y": 68, "course": [
+  { "id": 18, "city": "서울", "region": "홍대", "time": "night", "preference": "야외", "x": 35, "y": 68, "course": [
     { "step": 1, "place": "망원 한강공원", "type": "산책", "duration": "1시간" },
     { "step": 2, "place": "합정 야경 레스토랑", "type": "식사", "duration": "2시간" },
     { "step": 3, "place": "망원동 디저트 카페", "type": "카페", "duration": "1시간" }
   ]},
-  { "id": 19, "region": "성수", "time": "day", "preference": "야외", "x": 35, "y": 82, "course": [
+  { "id": 19, "city": "서울", "region": "성수", "time": "day", "preference": "야외", "x": 35, "y": 82, "course": [
     { "step": 1, "place": "서울숲 나들이", "type": "산책", "duration": "1시간 30분" },
     { "step": 2, "place": "성수 베이커리 카페", "type": "카페", "duration": "1시간" },
     { "step": 3, "place": "뚝섬 한강공원", "type": "산책", "duration": "1시간" },
     { "step": 4, "place": "성수 파스타 맛집", "type": "식사", "duration": "1시간 30분" }
   ]},
-  { "id": 20, "region": "성수", "time": "day", "preference": "액티비티", "x": 58, "y": 35, "course": [
+  { "id": 20, "city": "서울", "region": "성수", "time": "day", "preference": "액티비티", "x": 58, "y": 35, "course": [
     { "step": 1, "place": "성수 팝업스토어 투어", "type": "관광", "duration": "1시간 30분" },
     { "step": 2, "place": "성수 브런치", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "언더스탠드에비뉴", "type": "관광", "duration": "1시간" }
   ]},
-  { "id": 21, "region": "여의도", "time": "day", "preference": "카페", "x": 35, "y": 52, "course": [
+  { "id": 21, "city": "서울", "region": "여의도", "time": "day", "preference": "카페", "x": 35, "y": 52, "course": [
     { "step": 1, "place": "더현대 서울", "type": "관광", "duration": "1시간 30분" },
     { "step": 2, "place": "여의도 카페", "type": "카페", "duration": "1시간" },
     { "step": 3, "place": "한강공원 피크닉", "type": "산책", "duration": "1시간 30분" }
   ]},
-  { "id": 22, "region": "여의도", "time": "night", "preference": "실내", "x": 22, "y": 28, "course": [
+  { "id": 22, "city": "서울", "region": "여의도", "time": "night", "preference": "실내", "x": 22, "y": 28, "course": [
     { "step": 1, "place": "63빌딩 레스토랑", "type": "식사", "duration": "2시간" },
     { "step": 2, "place": "여의도 와인바", "type": "카페", "duration": "1시간 30분" },
     { "step": 3, "place": "한강 야경 드라이브", "type": "산책", "duration": "30분" }
   ]},
-  { "id": 23, "region": "이태원", "time": "day", "preference": "카페", "x": 28, "y": 25, "course": [
+  { "id": 23, "city": "서울", "region": "이태원", "time": "day", "preference": "카페", "x": 28, "y": 25, "course": [
     { "step": 1, "place": "한남동 디저트 카페", "type": "카페", "duration": "1시간" },
     { "step": 2, "place": "한남동 파인다이닝", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "리움미술관", "type": "관광", "duration": "1시간 30분" }
   ]},
-  { "id": 24, "region": "이태원", "time": "night", "preference": "카페", "x": 30, "y": 30, "course": [
+  { "id": 24, "city": "서울", "region": "이태원", "time": "night", "preference": "카페", "x": 30, "y": 30, "course": [
     { "step": 1, "place": "한남동 스페셜티 카페", "type": "카페", "duration": "1시간" },
     { "step": 2, "place": "이태원 다국적 레스토랑", "type": "식사", "duration": "2시간" },
     { "step": 3, "place": "해방촌 야경 카페", "type": "카페", "duration": "1시간" }
   ]},
-  { "id": 25, "region": "이태원", "time": "day", "preference": "야외", "x": 45, "y": 85, "course": [
+  { "id": 25, "city": "서울", "region": "이태원", "time": "day", "preference": "야외", "x": 45, "y": 85, "course": [
     { "step": 1, "place": "남산 둘레길", "type": "산책", "duration": "1시간 30분" },
     { "step": 2, "place": "경리단길 브런치", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "용산가족공원", "type": "산책", "duration": "1시간" }
   ]},
-  { "id": 26, "region": "잠실", "time": "day", "preference": "카페", "x": 30, "y": 55, "course": [
+  { "id": 26, "city": "서울", "region": "잠실", "time": "day", "preference": "카페", "x": 30, "y": 55, "course": [
     { "step": 1, "place": "석촌호수 카페", "type": "카페", "duration": "1시간" },
     { "step": 2, "place": "송리단길 맛집", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "석촌호수 산책", "type": "산책", "duration": "1시간" }
   ]},
-  { "id": 27, "region": "잠실", "time": "night", "preference": "실내", "x": 40, "y": 10, "course": [
+  { "id": 27, "city": "서울", "region": "잠실", "time": "night", "preference": "실내", "x": 40, "y": 10, "course": [
     { "step": 1, "place": "롯데타워 레스토랑", "type": "식사", "duration": "2시간" },
     { "step": 2, "place": "롯데시네마 프리미엄", "type": "액티비티", "duration": "2시간" },
     { "step": 3, "place": "송리단길 디저트", "type": "카페", "duration": "1시간" }
   ]},
-  { "id": 28, "region": "북촌", "time": "day", "preference": "카페", "x": 22, "y": 55, "course": [
+  { "id": 28, "city": "서울", "region": "북촌", "time": "day", "preference": "카페", "x": 22, "y": 55, "course": [
     { "step": 1, "place": "익선동 한옥 카페", "type": "카페", "duration": "1시간" },
     { "step": 2, "place": "익선동 한식 레스토랑", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "창덕궁 후원 산책", "type": "산책", "duration": "1시간 30분" }
   ]},
-  { "id": 29, "region": "북촌", "time": "night", "preference": "실내", "x": 22, "y": 32, "course": [
+  { "id": 29, "city": "서울", "region": "북촌", "time": "night", "preference": "실내", "x": 22, "y": 32, "course": [
     { "step": 1, "place": "인사동 전통주 바", "type": "카페", "duration": "1시간 30분" },
     { "step": 2, "place": "종로 한정식", "type": "식사", "duration": "2시간" },
     { "step": 3, "place": "청계천 야경 산책", "type": "산책", "duration": "30분" }
   ]},
-  { "id": 30, "region": "북촌", "time": "day", "preference": "액티비티", "x": 55, "y": 42, "course": [
+  { "id": 30, "city": "서울", "region": "북촌", "time": "day", "preference": "액티비티", "x": 55, "y": 42, "course": [
     { "step": 1, "place": "한옥 체험관", "type": "액티비티", "duration": "1시간 30분" },
     { "step": 2, "place": "삼청동 퓨전한식", "type": "식사", "duration": "1시간 30분" },
     { "step": 3, "place": "국립현대미술관", "type": "관광", "duration": "1시간 30분" }
+  ]},
+  { "id": 31, "city": "부산", "region": "해운대", "time": "day", "preference": "야외", "x": 40, "y": 88, "course": [
+    { "step": 1, "place": "해운대 해수욕장", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "해운대 횟집 거리", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "동백섬 해안 산책로", "type": "산책", "duration": "1시간" }
+  ]},
+  { "id": 32, "city": "부산", "region": "해운대", "time": "night", "preference": "카페", "x": 35, "y": 60, "course": [
+    { "step": 1, "place": "해운대 해변 카페", "type": "카페", "duration": "1시간" },
+    { "step": 2, "place": "마린시티 레스토랑", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "해운대 야경 산책", "type": "산책", "duration": "30분" }
+  ]},
+  { "id": 33, "city": "부산", "region": "해운대", "time": "day", "preference": "액티비티", "x": 78, "y": 80, "course": [
+    { "step": 1, "place": "해운대 수상레저", "type": "액티비티", "duration": "2시간" },
+    { "step": 2, "place": "더베이101 레스토랑", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "엘시티 전망대", "type": "관광", "duration": "1시간" }
+  ]},
+  { "id": 34, "city": "부산", "region": "서면", "time": "night", "preference": "실내", "x": 62, "y": 18, "course": [
+    { "step": 1, "place": "서면 먹자골목", "type": "식사", "duration": "1시간 30분" },
+    { "step": 2, "place": "서면 클럽 거리", "type": "액티비티", "duration": "2시간" },
+    { "step": 3, "place": "서면 카페 골목", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 35, "city": "부산", "region": "서면", "time": "day", "preference": "카페", "x": 30, "y": 32, "course": [
+    { "step": 1, "place": "전포 카페거리", "type": "카페", "duration": "1시간 30분" },
+    { "step": 2, "place": "서면 브런치 맛집", "type": "식사", "duration": "1시간" },
+    { "step": 3, "place": "부산 시민공원", "type": "산책", "duration": "1시간" }
+  ]},
+  { "id": 36, "city": "부산", "region": "광안리", "time": "night", "preference": "야외", "x": 42, "y": 82, "course": [
+    { "step": 1, "place": "광안리 해수욕장 야경", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "광안대교 야경 포인트", "type": "관광", "duration": "30분" },
+    { "step": 3, "place": "광안리 해산물 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 4, "place": "광안리 루프탑 바", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 37, "city": "부산", "region": "광안리", "time": "day", "preference": "카페", "x": 28, "y": 70, "course": [
+    { "step": 1, "place": "광안리 오션뷰 카페", "type": "카페", "duration": "1시간" },
+    { "step": 2, "place": "민락동 회센터", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "광안리 해변 산책", "type": "산책", "duration": "1시간" }
+  ]},
+  { "id": 38, "city": "부산", "region": "남포동", "time": "day", "preference": "야외", "x": 35, "y": 65, "course": [
+    { "step": 1, "place": "자갈치 시장", "type": "관광", "duration": "1시간" },
+    { "step": 2, "place": "남포동 회국수 골목", "type": "식사", "duration": "1시간" },
+    { "step": 3, "place": "용두산공원 부산타워", "type": "관광", "duration": "1시간" },
+    { "step": 4, "place": "보수동 책방골목 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 39, "city": "부산", "region": "남포동", "time": "night", "preference": "실내", "x": 25, "y": 20, "course": [
+    { "step": 1, "place": "BIFF광장 영화관", "type": "액티비티", "duration": "2시간" },
+    { "step": 2, "place": "남포동 곱창 골목", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "광복동 야경 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 40, "city": "부산", "region": "기장", "time": "day", "preference": "야외", "x": 50, "y": 90, "course": [
+    { "step": 1, "place": "기장 해안 드라이브", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "기장 대변항 해산물", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "아홉산숲 트레킹", "type": "액티비티", "duration": "1시간 30분" }
+  ]},
+  { "id": 41, "city": "부산", "region": "기장", "time": "day", "preference": "카페", "x": 38, "y": 75, "course": [
+    { "step": 1, "place": "일광해수욕장", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "기장 카페 거리", "type": "카페", "duration": "1시간 30분" },
+    { "step": 3, "place": "기장 수산물 시장", "type": "식사", "duration": "1시간" }
+  ]},
+  { "id": 42, "city": "부산", "region": "해운대", "time": "day", "preference": "실내", "x": 45, "y": 30, "course": [
+    { "step": 1, "place": "부산 아쿠아리움", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 2, "place": "해운대 갈비집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "영화의전당", "type": "관광", "duration": "1시간" }
+  ]},
+  { "id": 43, "city": "대구", "region": "동성로", "time": "day", "preference": "카페", "x": 32, "y": 38, "course": [
+    { "step": 1, "place": "동성로 카페 골목", "type": "카페", "duration": "1시간" },
+    { "step": 2, "place": "동성로 파스타 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "중앙로 지하상가 쇼핑", "type": "관광", "duration": "1시간" }
+  ]},
+  { "id": 44, "city": "대구", "region": "동성로", "time": "night", "preference": "실내", "x": 55, "y": 15, "course": [
+    { "step": 1, "place": "동성로 이자카야", "type": "식사", "duration": "2시간" },
+    { "step": 2, "place": "동성로 볼링장", "type": "액티비티", "duration": "1시간" },
+    { "step": 3, "place": "동성로 칵테일 바", "type": "카페", "duration": "1시간 30분" }
+  ]},
+  { "id": 45, "city": "대구", "region": "수성못", "time": "day", "preference": "야외", "x": 30, "y": 80, "course": [
+    { "step": 1, "place": "수성못 둘레길 산책", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "수성못 오리배", "type": "액티비티", "duration": "1시간" },
+    { "step": 3, "place": "수성못 카페 거리", "type": "카페", "duration": "1시간" },
+    { "step": 4, "place": "수성못 한식 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 46, "city": "대구", "region": "수성못", "time": "night", "preference": "야외", "x": 35, "y": 72, "course": [
+    { "step": 1, "place": "수성못 야경 산책", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "수성못 레스토랑", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "수성못 뷰 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 47, "city": "대구", "region": "앞산", "time": "day", "preference": "액티비티", "x": 72, "y": 88, "course": [
+    { "step": 1, "place": "앞산 케이블카", "type": "액티비티", "duration": "1시간" },
+    { "step": 2, "place": "앞산 정상 트레킹", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 3, "place": "앞산 산자락 카페", "type": "카페", "duration": "1시간" },
+    { "step": 4, "place": "대명동 삼겹살 골목", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 48, "city": "대구", "region": "앞산", "time": "day", "preference": "야외", "x": 45, "y": 85, "course": [
+    { "step": 1, "place": "앞산공원 산책", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "안지랑 곱창 골목", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "앞산 전망 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 49, "city": "대구", "region": "김광석거리", "time": "day", "preference": "카페", "x": 25, "y": 55, "course": [
+    { "step": 1, "place": "김광석 다시그리기 길", "type": "관광", "duration": "1시간" },
+    { "step": 2, "place": "방천시장 먹거리", "type": "식사", "duration": "1시간" },
+    { "step": 3, "place": "대봉동 감성 카페", "type": "카페", "duration": "1시간 30분" }
+  ]},
+  { "id": 50, "city": "대구", "region": "김광석거리", "time": "night", "preference": "카페", "x": 28, "y": 45, "course": [
+    { "step": 1, "place": "김광석거리 야경", "type": "관광", "duration": "1시간" },
+    { "step": 2, "place": "대봉동 와인바", "type": "카페", "duration": "1시간 30분" },
+    { "step": 3, "place": "봉리단길 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 51, "city": "인천", "region": "송도", "time": "day", "preference": "야외", "x": 42, "y": 75, "course": [
+    { "step": 1, "place": "센트럴파크 산책", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "트리플스트리트 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "송도 컨벤시아 주변 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 52, "city": "인천", "region": "송도", "time": "night", "preference": "카페", "x": 30, "y": 60, "course": [
+    { "step": 1, "place": "센트럴파크 야경 산책", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "송도 루프탑 레스토랑", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "G타워 전망 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 53, "city": "인천", "region": "송도", "time": "day", "preference": "액티비티", "x": 80, "y": 55, "course": [
+    { "step": 1, "place": "송도 워터파크", "type": "액티비티", "duration": "3시간" },
+    { "step": 2, "place": "현대프리미엄아울렛 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "센트럴파크 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 54, "city": "인천", "region": "차이나타운", "time": "day", "preference": "카페", "x": 28, "y": 48, "course": [
+    { "step": 1, "place": "인천 차이나타운 탐방", "type": "관광", "duration": "1시간" },
+    { "step": 2, "place": "공화춘 짜장면", "type": "식사", "duration": "1시간" },
+    { "step": 3, "place": "신포시장 먹거리", "type": "식사", "duration": "1시간" },
+    { "step": 4, "place": "개항로 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 55, "city": "인천", "region": "차이나타운", "time": "day", "preference": "야외", "x": 38, "y": 68, "course": [
+    { "step": 1, "place": "자유공원 산책", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "차이나타운 거리 탐방", "type": "관광", "duration": "1시간" },
+    { "step": 3, "place": "개항장 근대건축 투어", "type": "관광", "duration": "1시간" },
+    { "step": 4, "place": "신포동 닭강정", "type": "식사", "duration": "1시간" }
+  ]},
+  { "id": 56, "city": "인천", "region": "월미도", "time": "day", "preference": "액티비티", "x": 75, "y": 70, "course": [
+    { "step": 1, "place": "월미도 놀이공원", "type": "액티비티", "duration": "2시간" },
+    { "step": 2, "place": "월미도 해산물 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "월미도 해안 산책", "type": "산책", "duration": "1시간" }
+  ]},
+  { "id": 57, "city": "인천", "region": "월미도", "time": "night", "preference": "야외", "x": 40, "y": 80, "course": [
+    { "step": 1, "place": "월미도 선착장 야경", "type": "관광", "duration": "1시간" },
+    { "step": 2, "place": "월미도 항구 레스토랑", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "월미공원 산책", "type": "산책", "duration": "30분" }
+  ]},
+  { "id": 58, "city": "인천", "region": "강화도", "time": "day", "preference": "야외", "x": 35, "y": 92, "course": [
+    { "step": 1, "place": "마니산 등산", "type": "액티비티", "duration": "2시간" },
+    { "step": 2, "place": "강화도 밴댕이 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "강화 갯벌 산책", "type": "산책", "duration": "1시간" }
+  ]},
+  { "id": 59, "city": "광주", "region": "충장로", "time": "day", "preference": "카페", "x": 28, "y": 40, "course": [
+    { "step": 1, "place": "충장로 카페 거리", "type": "카페", "duration": "1시간" },
+    { "step": 2, "place": "충장로 한식 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "광주 문화전당", "type": "관광", "duration": "1시간" }
+  ]},
+  { "id": 60, "city": "광주", "region": "충장로", "time": "night", "preference": "실내", "x": 50, "y": 18, "course": [
+    { "step": 1, "place": "충장로 이자카야", "type": "식사", "duration": "2시간" },
+    { "step": 2, "place": "광주 CGV 충장로", "type": "액티비티", "duration": "2시간" },
+    { "step": 3, "place": "충장로 디저트 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 61, "city": "광주", "region": "상무지구", "time": "day", "preference": "야외", "x": 38, "y": 68, "course": [
+    { "step": 1, "place": "상무시민공원 산책", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "상무지구 브런치 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "상무지구 레스토랑", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 62, "city": "광주", "region": "상무지구", "time": "night", "preference": "카페", "x": 32, "y": 35, "course": [
+    { "step": 1, "place": "상무지구 스카이라운지", "type": "카페", "duration": "1시간 30분" },
+    { "step": 2, "place": "상무지구 스테이크 맛집", "type": "식사", "duration": "2시간" },
+    { "step": 3, "place": "상무시민공원 야경", "type": "산책", "duration": "30분" }
+  ]},
+  { "id": 63, "city": "광주", "region": "양림동", "time": "day", "preference": "야외", "x": 25, "y": 75, "course": [
+    { "step": 1, "place": "양림동 역사문화마을 탐방", "type": "관광", "duration": "1시간 30분" },
+    { "step": 2, "place": "양림동 감성 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "사직공원 산책", "type": "산책", "duration": "1시간" },
+    { "step": 4, "place": "양림동 한정식", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 64, "city": "광주", "region": "양림동", "time": "day", "preference": "카페", "x": 22, "y": 50, "course": [
+    { "step": 1, "place": "양림동 펭귄마을", "type": "관광", "duration": "1시간" },
+    { "step": 2, "place": "양림동 한옥 카페", "type": "카페", "duration": "1시간 30분" },
+    { "step": 3, "place": "양림동 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 65, "city": "대전", "region": "둔산동", "time": "day", "preference": "카페", "x": 30, "y": 45, "course": [
+    { "step": 1, "place": "둔산동 카페 거리", "type": "카페", "duration": "1시간" },
+    { "step": 2, "place": "둔산동 파스타 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "엑스포과학공원", "type": "관광", "duration": "1시간 30분" }
+  ]},
+  { "id": 66, "city": "대전", "region": "둔산동", "time": "night", "preference": "실내", "x": 48, "y": 20, "course": [
+    { "step": 1, "place": "둔산동 오마카세", "type": "식사", "duration": "2시간" },
+    { "step": 2, "place": "대전 CGV 둔산", "type": "액티비티", "duration": "2시간" },
+    { "step": 3, "place": "둔산동 루프탑 바", "type": "카페", "duration": "1시간 30분" }
+  ]},
+  { "id": 67, "city": "대전", "region": "유성", "time": "day", "preference": "야외", "x": 40, "y": 78, "course": [
+    { "step": 1, "place": "유성온천 족욕 카페", "type": "카페", "duration": "1시간 30분" },
+    { "step": 2, "place": "갑천 자전거 길", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 3, "place": "유성 충남대 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 68, "city": "대전", "region": "유성", "time": "night", "preference": "카페", "x": 35, "y": 40, "course": [
+    { "step": 1, "place": "유성 온천 스파", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 2, "place": "유성 갈비 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "유성 야경 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 69, "city": "대전", "region": "대청호", "time": "day", "preference": "야외", "x": 45, "y": 92, "course": [
+    { "step": 1, "place": "대청호 오백리길 트레킹", "type": "액티비티", "duration": "2시간" },
+    { "step": 2, "place": "대청호반 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "대청호 근처 민물 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 70, "city": "대전", "region": "대청호", "time": "day", "preference": "카페", "x": 28, "y": 82, "course": [
+    { "step": 1, "place": "대청호 드라이브", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "대청호 뷰 카페", "type": "카페", "duration": "1시간 30분" },
+    { "step": 3, "place": "대청댐 전망대", "type": "관광", "duration": "30분" },
+    { "step": 4, "place": "청원 흑돼지 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 71, "city": "울산", "region": "태화강", "time": "day", "preference": "야외", "x": 38, "y": 85, "course": [
+    { "step": 1, "place": "태화강 국가정원 산책", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "십리대숲 산책로", "type": "산책", "duration": "1시간" },
+    { "step": 3, "place": "태화동 카페", "type": "카페", "duration": "1시간" },
+    { "step": 4, "place": "울산 중앙시장 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 72, "city": "울산", "region": "태화강", "time": "night", "preference": "야외", "x": 32, "y": 75, "course": [
+    { "step": 1, "place": "태화강 야경 산책", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "태화동 야경 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "울산 삼겹살 골목", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 73, "city": "울산", "region": "간절곶", "time": "day", "preference": "야외", "x": 50, "y": 90, "course": [
+    { "step": 1, "place": "간절곶 등대 산책", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "간절곶 해안 드라이브", "type": "산책", "duration": "30분" },
+    { "step": 3, "place": "서생 해산물 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 4, "place": "간절곶 뷰 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 74, "city": "울산", "region": "간절곶", "time": "day", "preference": "카페", "x": 35, "y": 78, "course": [
+    { "step": 1, "place": "간절곶 오션뷰 카페", "type": "카페", "duration": "1시간 30분" },
+    { "step": 2, "place": "온양 갈비 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "간절곶 해안 산책", "type": "산책", "duration": "1시간" }
+  ]},
+  { "id": 75, "city": "울산", "region": "장생포", "time": "day", "preference": "액티비티", "x": 65, "y": 60, "course": [
+    { "step": 1, "place": "장생포 고래박물관", "type": "관광", "duration": "1시간 30분" },
+    { "step": 2, "place": "장생포 고래문화마을", "type": "관광", "duration": "1시간" },
+    { "step": 3, "place": "울산 남구 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 76, "city": "울산", "region": "장생포", "time": "day", "preference": "야외", "x": 42, "y": 80, "course": [
+    { "step": 1, "place": "장생포 항구 산책", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "고래바다여행선 탑승", "type": "액티비티", "duration": "2시간" },
+    { "step": 3, "place": "장생포 해산물 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 77, "city": "세종", "region": "세종호수공원", "time": "day", "preference": "야외", "x": 35, "y": 88, "course": [
+    { "step": 1, "place": "세종호수공원 산책", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "호수공원 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "세종 신도시 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 78, "city": "세종", "region": "세종호수공원", "time": "night", "preference": "야외", "x": 30, "y": 82, "course": [
+    { "step": 1, "place": "세종호수공원 야경", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "호수공원 야경 레스토랑", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "호수공원 루프탑 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 79, "city": "세종", "region": "세종시내", "time": "day", "preference": "카페", "x": 28, "y": 42, "course": [
+    { "step": 1, "place": "세종 전통시장", "type": "관광", "duration": "1시간" },
+    { "step": 2, "place": "세종 스페셜티 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "세종 브런치 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 80, "city": "세종", "region": "세종시내", "time": "day", "preference": "액티비티", "x": 60, "y": 55, "course": [
+    { "step": 1, "place": "국립세종도서관", "type": "관광", "duration": "1시간" },
+    { "step": 2, "place": "세종 자전거 투어", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 3, "place": "세종 신도시 레스토랑", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 81, "city": "경기북부", "region": "일산", "time": "day", "preference": "야외", "x": 40, "y": 78, "course": [
+    { "step": 1, "place": "일산 호수공원 산책", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "라페스타 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "일산 카페 거리", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 82, "city": "경기북부", "region": "일산", "time": "night", "preference": "카페", "x": 32, "y": 60, "course": [
+    { "step": 1, "place": "일산 호수공원 야경", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "웨스턴돔 레스토랑", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "일산 루프탑 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 83, "city": "경기북부", "region": "일산", "time": "day", "preference": "액티비티", "x": 72, "y": 45, "course": [
+    { "step": 1, "place": "킨텍스 전시 관람", "type": "관광", "duration": "2시간" },
+    { "step": 2, "place": "원마운트 워터파크", "type": "액티비티", "duration": "2시간" },
+    { "step": 3, "place": "일산 갈비 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 84, "city": "경기북부", "region": "파주", "time": "day", "preference": "야외", "x": 38, "y": 82, "course": [
+    { "step": 1, "place": "헤이리 예술마을", "type": "관광", "duration": "1시간 30분" },
+    { "step": 2, "place": "프로방스 마을 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "파주 출판도시 탐방", "type": "관광", "duration": "1시간" },
+    { "step": 4, "place": "파주 장어 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 85, "city": "경기북부", "region": "파주", "time": "day", "preference": "카페", "x": 25, "y": 65, "course": [
+    { "step": 1, "place": "파주 프리미엄아울렛", "type": "관광", "duration": "1시간 30분" },
+    { "step": 2, "place": "파주 카페 거리", "type": "카페", "duration": "1시간 30분" },
+    { "step": 3, "place": "파주 갈비찜 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 86, "city": "경기북부", "region": "의정부", "time": "day", "preference": "카페", "x": 30, "y": 40, "course": [
+    { "step": 1, "place": "의정부 부대찌개 거리", "type": "식사", "duration": "1시간" },
+    { "step": 2, "place": "의정부 근린공원 산책", "type": "산책", "duration": "1시간" },
+    { "step": 3, "place": "의정부 카페 골목", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 87, "city": "경기북부", "region": "의정부", "time": "night", "preference": "실내", "x": 45, "y": 18, "course": [
+    { "step": 1, "place": "의정부 이자카야", "type": "식사", "duration": "2시간" },
+    { "step": 2, "place": "의정부 볼링장", "type": "액티비티", "duration": "1시간" },
+    { "step": 3, "place": "의정부 루프탑 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 88, "city": "경기북부", "region": "파주", "time": "day", "preference": "액티비티", "x": 65, "y": 72, "course": [
+    { "step": 1, "place": "임진각 평화누리공원", "type": "관광", "duration": "1시간 30분" },
+    { "step": 2, "place": "파주 DMZ 투어", "type": "액티비티", "duration": "2시간" },
+    { "step": 3, "place": "파주 한정식", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 89, "city": "경기남부", "region": "수원", "time": "day", "preference": "야외", "x": 30, "y": 80, "course": [
+    { "step": 1, "place": "수원 화성 성곽길 산책", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "행궁동 갈비 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "행궁동 카페 골목", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 90, "city": "경기남부", "region": "수원", "time": "day", "preference": "카페", "x": 25, "y": 60, "course": [
+    { "step": 1, "place": "화성행궁 관람", "type": "관광", "duration": "1시간 30분" },
+    { "step": 2, "place": "행궁동 브런치 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "광교 호수공원 산책", "type": "산책", "duration": "1시간" },
+    { "step": 4, "place": "광교 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 91, "city": "경기남부", "region": "수원", "time": "night", "preference": "실내", "x": 42, "y": 22, "course": [
+    { "step": 1, "place": "수원 왕갈비 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 2, "place": "수원 CGV 영화관", "type": "액티비티", "duration": "2시간" },
+    { "step": 3, "place": "광교 루프탑 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 92, "city": "경기남부", "region": "판교", "time": "day", "preference": "카페", "x": 35, "y": 45, "course": [
+    { "step": 1, "place": "판교 카카오프렌즈 스토어", "type": "관광", "duration": "1시간" },
+    { "step": 2, "place": "판교 테크노밸리 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "판교 레스토랑", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 93, "city": "경기남부", "region": "판교", "time": "night", "preference": "실내", "x": 52, "y": 20, "course": [
+    { "step": 1, "place": "현대백화점 판교 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 2, "place": "판교 스파", "type": "액티비티", "duration": "2시간" },
+    { "step": 3, "place": "판교 루프탑 바", "type": "카페", "duration": "1시간 30분" }
+  ]},
+  { "id": 94, "city": "경기남부", "region": "판교", "time": "day", "preference": "액티비티", "x": 70, "y": 38, "course": [
+    { "step": 1, "place": "판교 넥슨 컴퓨터박물관", "type": "관광", "duration": "1시간 30분" },
+    { "step": 2, "place": "판교 VR 체험관", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 3, "place": "판교 IT거리 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 95, "city": "경기남부", "region": "용인", "time": "day", "preference": "액티비티", "x": 88, "y": 60, "course": [
+    { "step": 1, "place": "에버랜드 테마파크", "type": "액티비티", "duration": "4시간" },
+    { "step": 2, "place": "에버랜드 푸드코트", "type": "식사", "duration": "1시간" },
+    { "step": 3, "place": "용인 카페 거리", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 96, "city": "경기남부", "region": "용인", "time": "day", "preference": "야외", "x": 42, "y": 85, "course": [
+    { "step": 1, "place": "한국민속촌 관람", "type": "관광", "duration": "2시간" },
+    { "step": 2, "place": "용인 한정식 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "용인 자연농원 산책", "type": "산책", "duration": "1시간" }
+  ]},
+  { "id": 97, "city": "경기남부", "region": "용인", "time": "day", "preference": "카페", "x": 28, "y": 58, "course": [
+    { "step": 1, "place": "처인구 전원 카페", "type": "카페", "duration": "1시간 30분" },
+    { "step": 2, "place": "용인 갈비 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "용인 수지 공원 산책", "type": "산책", "duration": "1시간" }
+  ]},
+  { "id": 98, "city": "경기남부", "region": "수원", "time": "day", "preference": "액티비티", "x": 68, "y": 70, "course": [
+    { "step": 1, "place": "광교호수공원 자전거", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 2, "place": "광교 카페 거리", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "광교 맛집 거리", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 99, "city": "부산", "region": "서면", "time": "day", "preference": "야외", "x": 38, "y": 62, "course": [
+    { "step": 1, "place": "부산 시민공원 산책", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "서면 브런치 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "전포 카페거리 탐방", "type": "관광", "duration": "1시간" },
+    { "step": 4, "place": "서면 돼지국밥 맛집", "type": "식사", "duration": "1시간" }
+  ]},
+  { "id": 100, "city": "대구", "region": "동성로", "time": "day", "preference": "야외", "x": 45, "y": 65, "course": [
+    { "step": 1, "place": "달성공원 산책", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "대구 근대골목 투어", "type": "관광", "duration": "1시간 30분" },
+    { "step": 3, "place": "동인동 찜갈비 골목", "type": "식사", "duration": "1시간 30분" },
+    { "step": 4, "place": "동성로 감성 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 101, "city": "인천", "region": "강화도", "time": "day", "preference": "카페", "x": 30, "y": 70, "course": [
+    { "step": 1, "place": "강화도 전등사", "type": "관광", "duration": "1시간 30분" },
+    { "step": 2, "place": "강화도 순무 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "강화 버터 카페", "type": "카페", "duration": "1시간" }
+  ]},
+  { "id": 102, "city": "광주", "region": "충장로", "time": "day", "preference": "야외", "x": 35, "y": 68, "course": [
+    { "step": 1, "place": "무등산 등산로 입구", "type": "산책", "duration": "1시간 30분" },
+    { "step": 2, "place": "광주 순창 맛집", "type": "식사", "duration": "1시간 30분" },
+    { "step": 3, "place": "광주 5.18 자유공원", "type": "관광", "duration": "1시간" }
+  ]},
+  { "id": 103, "city": "대전", "region": "둔산동", "time": "day", "preference": "야외", "x": 42, "y": 72, "course": [
+    { "step": 1, "place": "보라매공원 산책", "type": "산책", "duration": "1시간" },
+    { "step": 2, "place": "갑천 수변공원 자전거", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 3, "place": "둔산동 브런치 카페", "type": "카페", "duration": "1시간" },
+    { "step": 4, "place": "둔산동 한식 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 104, "city": "울산", "region": "태화강", "time": "day", "preference": "액티비티", "x": 65, "y": 70, "course": [
+    { "step": 1, "place": "태화강 카누 체험", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 2, "place": "태화루 전망 감상", "type": "관광", "duration": "1시간" },
+    { "step": 3, "place": "울산 언양불고기 맛집", "type": "식사", "duration": "1시간 30분" }
+  ]},
+  { "id": 105, "city": "세종", "region": "세종호수공원", "time": "day", "preference": "액티비티", "x": 62, "y": 75, "course": [
+    { "step": 1, "place": "세종호수공원 자전거", "type": "액티비티", "duration": "1시간 30분" },
+    { "step": 2, "place": "호수공원 피크닉 카페", "type": "카페", "duration": "1시간" },
+    { "step": 3, "place": "세종 현대식 맛집", "type": "식사", "duration": "1시간 30분" }
   ]}
 ]
