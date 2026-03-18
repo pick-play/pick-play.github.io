@@ -55,7 +55,7 @@ export default function FoodPage() {
   const [mode, setMode] = useState<"map" | "filter">("map");
   const [category, setCategory] = useState("전체");
   const [priceRange, setPriceRange] = useState("");
-  const [people, setPeople] = useState("");
+
   const [spinning, setSpinning] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [result, setResult] = useState<Food | null>(null);
@@ -78,13 +78,6 @@ export default function FoodPage() {
     let filtered = [...foodsData] as Food[];
     if (category !== "전체") filtered = filtered.filter((f) => f.category === category);
     if (priceRange) filtered = filtered.filter((f) => f.priceRange === priceRange);
-    if (people) {
-      const num = parseInt(people);
-      filtered = filtered.filter((f) => {
-        const [min, max] = f.servings.split("-").map(Number);
-        return num >= min && num <= max;
-      });
-    }
     return filtered;
   };
 
@@ -174,7 +167,7 @@ export default function FoodPage() {
           {mode === "filter" && (
             <motion.div key="filter" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.2 }}>
               <form onSubmit={startSlot} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">음식 종류</label>
                     <select value={category} onChange={(e) => setCategory(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
@@ -186,10 +179,6 @@ export default function FoodPage() {
                     <select value={priceRange} onChange={(e) => setPriceRange(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                       {priceRanges.map((p) => (<option key={p.value} value={p.value}>{p.label}</option>))}
                     </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">인원</label>
-                    <input type="number" min="1" max="20" value={people} onChange={(e) => setPeople(e.target.value)} placeholder="인원 수" className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent" />
                   </div>
                 </div>
                 <button type="submit" disabled={spinning} className="w-full py-3 rounded-xl bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold hover:shadow-lg hover:shadow-orange-500/25 transition-all disabled:opacity-50">
@@ -229,23 +218,10 @@ export default function FoodPage() {
                         <h2 className="text-4xl md:text-5xl font-bold mb-2">{result.name}</h2>
                         <span className="inline-block px-3 py-1 text-sm rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">{result.category}</span>
                       </div>
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                        <div className="text-center p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50">
-                          <div className="text-xs text-slate-400 mb-1">추천 이유</div>
-                          <div className="font-semibold text-orange-500">{reasonLabels[result.reason] || result.reason}</div>
-                        </div>
-                        <div className="text-center p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50">
-                          <div className="text-xs text-slate-400 mb-1">가격대</div>
-                          <div className="font-semibold">{result.priceRange === "low" ? "저렴" : result.priceRange === "mid" ? "보통" : "고급"}</div>
-                        </div>
-                        <div className="text-center p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50">
-                          <div className="text-xs text-slate-400 mb-1">인원</div>
-                          <div className="font-semibold">{result.servings}인</div>
-                        </div>
-                        <div className="text-center p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50">
-                          <div className="text-xs text-slate-400 mb-1">평점</div>
-                          <div className="font-semibold text-yellow-500">{"★".repeat(Math.floor(result.rating))} {result.rating}</div>
-                        </div>
+                      <div className="flex justify-center gap-3 mb-6">
+                        <span className="px-4 py-1.5 text-sm font-semibold rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400">
+                          {result.priceRange === "low" ? "저렴" : result.priceRange === "mid" ? "보통" : "고급"}
+                        </span>
                       </div>
                       <p className="text-center text-slate-500 dark:text-slate-400 mb-6">{result.description}</p>
                       <button onClick={() => startSlot()} className="w-full py-3 rounded-xl border-2 border-orange-400 text-orange-500 font-semibold hover:bg-orange-50 dark:hover:bg-orange-900/10 transition-colors">
@@ -265,8 +241,8 @@ export default function FoodPage() {
             <h3 className="text-lg font-bold mb-2">조건에 맞는 메뉴가 없어요</h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">조건을 바꿔보시거나, 전체 메뉴에서 랜덤으로 뽑아볼까요?</p>
             <div className="flex gap-3 justify-center flex-wrap">
-              <button onClick={() => { setCategory("전체"); setPriceRange(""); setPeople(""); }} className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">조건 초기화</button>
-              <button onClick={() => { setCategory("전체"); setPriceRange(""); setPeople(""); setTimeout(() => { const form = document.querySelector("form"); if (form) form.requestSubmit(); }, 50); }} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold hover:shadow-lg transition-all">전체에서 랜덤 뽑기</button>
+              <button onClick={() => { setCategory("전체"); setPriceRange(""); }} className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">조건 초기화</button>
+              <button onClick={() => { setCategory("전체"); setPriceRange(""); setTimeout(() => { const form = document.querySelector("form"); if (form) form.requestSubmit(); }, 50); }} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold hover:shadow-lg transition-all">전체에서 랜덤 뽑기</button>
             </div>
           </motion.div>
         )}

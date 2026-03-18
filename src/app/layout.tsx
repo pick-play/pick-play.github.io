@@ -5,7 +5,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lifepick.vercel.app"),
+  metadataBase: new URL("https://pick-ai.github.io/flowday"),
+  verification: {
+    google: "0c1Q1LUKx3fTxGQ9BHGViwcOtcz7ETY-vhjnSw11oMU",
+  },
   title: {
     default: "LifePick - 오늘 뭐 먹지 | 회식비 정산 | 데이트 코스 추천",
     template: "%s | LifePick",
@@ -26,7 +29,7 @@ export const metadata: Metadata = {
       "오늘 뭐 먹지? 회식비 정산, 데이트 코스 추천까지 한 곳에서.",
     type: "website",
     locale: "ko_KR",
-    url: "https://lifepick.vercel.app",
+    url: "https://pick-ai.github.io/flowday",
     siteName: "LifePick",
     images: [
       {
@@ -38,9 +41,9 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://lifepick.vercel.app",
+    canonical: "https://pick-ai.github.io/flowday",
     languages: {
-      "ko-KR": "https://lifepick.vercel.app",
+      "ko-KR": "https://pick-ai.github.io/flowday",
     },
   },
   robots: {

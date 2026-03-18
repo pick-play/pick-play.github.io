@@ -369,9 +369,9 @@ export default function TasteMap<T extends { id: number }>({
                     <circle
                       cx={c.x}
                       cy={cy}
-                      r={5}
+                      r={3.5}
                       fill={accent}
-                      fillOpacity={0.18}
+                      fillOpacity={0.12}
                       filter="url(#tm-glow)"
                       className="tastemap-dot-selected"
                     />
@@ -382,11 +382,11 @@ export default function TasteMap<T extends { id: number }>({
                     <circle
                       cx={c.x}
                       cy={cy}
-                      r={3.5}
+                      r={2.5}
                       fill="none"
                       stroke={color}
-                      strokeWidth={0.4}
-                      opacity={0.4}
+                      strokeWidth={0.3}
+                      opacity={0.5}
                     />
                   )}
 
@@ -394,13 +394,12 @@ export default function TasteMap<T extends { id: number }>({
                   <circle
                     cx={c.x}
                     cy={cy}
-                    r={sel ? 2.6 : hov ? 2.3 : 1.9}
+                    r={sel ? 1.6 : hov ? 1.4 : 1.1}
                     fill={sel ? accent : color}
-                    opacity={center ? (sel ? 1 : 0.22) : 0.72}
-                    stroke={sel ? "rgba(255,255,255,0.8)" : hov ? "rgba(255,255,255,0.35)" : "rgba(255,255,255,0.12)"}
-                    strokeWidth={sel ? 0.5 : 0.3}
-                    filter={sel ? "url(#tm-glow)" : "url(#tm-glass)"}
-                    style={{ transition: "r 0.2s, opacity 0.2s, stroke 0.2s" }}
+                    opacity={center ? (sel ? 1 : 0.35) : 0.85}
+                    stroke="none"
+                    filter={sel ? "url(#tm-glow)" : undefined}
+                    style={{ transition: "r 0.2s, opacity 0.2s" }}
                   />
 
                   {/* Label tooltip */}

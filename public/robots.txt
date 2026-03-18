@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lifepick.vercel.app/sitemap.xml
+Sitemap: https://pick-ai.github.io/flowday/sitemap.xml
