@@ -19,11 +19,6 @@ type Course = {
 };
 
 const cities = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기북부", "경기남부"];
-const times = [
-  { value: "", label: "전체" },
-  { value: "day", label: "낮" },
-  { value: "night", label: "밤" },
-];
 const preferences = [
   { value: "", label: "전체" },
   { value: "카페", label: "카페" },
@@ -53,7 +48,7 @@ export default function DateCoursePage() {
   const [city, setCity] = useState("서울");
   const [mode, setMode] = useState<"map" | "filter">("map");
   const [region, setRegion] = useState("전체");
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState<"day" | "night">("day");
   const [preference, setPreference] = useState("");
   const [spinning, setSpinning] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -67,18 +62,29 @@ export default function DateCoursePage() {
     [city]
   );
 
+  const cityCoursesFiltered = useMemo(
+    () => cityCourses.filter((c) => c.time === time),
+    [cityCourses, time]
+  );
+
   const cityRegions = useMemo(() => {
     const regs = new Set(cityCourses.map((c) => c.region));
     return ["전체", ...Array.from(regs)];
   }, [cityCourses]);
 
-  // Reset region when city changes
+  // Reset region and selections when city or time changes
   useEffect(() => {
     setRegion("전체");
     setResult(null);
     setCandidates([]);
     setMapSelected([]);
   }, [city]);
+
+  useEffect(() => {
+    setResult(null);
+    setCandidates([]);
+    setMapSelected([]);
+  }, [time]);
 
   const stopSlot = useCallback(() => {
     if (intervalRef.current) { clearInterval(intervalRef.current); intervalRef.current = null; }
@@ -87,9 +93,8 @@ export default function DateCoursePage() {
   useEffect(() => { return () => stopSlot(); }, [stopSlot]);
 
   const getFiltered = () => {
-    let filtered = [...cityCourses];
+    let filtered = cityCourses.filter((c) => c.time === time);
     if (region !== "전체") filtered = filtered.filter((c) => c.region === region);
-    if (time) filtered = filtered.filter((c) => c.time === time);
     if (preference) filtered = filtered.filter((c) => c.preference === preference);
     return filtered;
   };
@@ -166,6 +171,32 @@ export default function DateCoursePage() {
           </div>
         </motion.div>
 
+        {/* Day / Night Toggle */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }} className="flex justify-center mb-6">
+          <div className="inline-flex rounded-xl bg-amber-50 dark:bg-slate-800 p-1 border border-amber-200 dark:border-slate-700 gap-1">
+            <button
+              onClick={() => setTime("day")}
+              className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-1.5 ${
+                time === "day"
+                  ? "bg-gradient-to-r from-amber-400 to-orange-400 text-white shadow-sm shadow-amber-400/30"
+                  : "text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300"
+              }`}
+            >
+              <span>☀️</span> 낮
+            </button>
+            <button
+              onClick={() => setTime("night")}
+              className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-1.5 ${
+                time === "night"
+                  ? "bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-sm shadow-indigo-500/30"
+                  : "text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300"
+              }`}
+            >
+              <span>🌙</span> 밤
+            </button>
+          </div>
+        </motion.div>
+
         {/* Mode Toggle */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="flex justify-center mb-6">
           <div className="inline-flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700">
@@ -180,10 +211,10 @@ export default function DateCoursePage() {
 
         <AnimatePresence mode="wait">
           {mode === "map" && (
-            <motion.div key={`map-${city}`} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.2 }} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
+            <motion.div key={`map-${city}-${time}`} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.2 }} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
               <div className="max-w-md mx-auto">
                 <TasteMap
-                  items={cityCourses}
+                  items={cityCoursesFiltered}
                   getCoords={(item) => ({ x: item.x, y: item.y })}
                   getLabel={(item) => `${item.region}`}
                   getColor={(item) => prefColors[item.preference] || "#94a3b8"}
@@ -204,17 +235,11 @@ export default function DateCoursePage() {
           {mode === "filter" && (
             <motion.div key="filter" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.2 }}>
               <form onSubmit={startSlot} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">지역</label>
                     <select value={region} onChange={(e) => setRegion(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
                       {cityRegions.map((r) => (<option key={r} value={r}>{r}</option>))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">시간대</label>
-                    <select value={time} onChange={(e) => setTime(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                      {times.map((t) => (<option key={t.value} value={t.value}>{t.label}</option>))}
                     </select>
                   </div>
                   <div>
@@ -296,8 +321,8 @@ export default function DateCoursePage() {
             <h3 className="text-lg font-bold mb-2">조건에 맞는 코스가 없어요</h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">조건을 바꿔보시거나, 전체 코스에서 랜덤으로 뽑아볼까요?</p>
             <div className="flex gap-3 justify-center flex-wrap">
-              <button onClick={() => { setRegion("전체"); setTime(""); setPreference(""); }} className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">조건 초기화</button>
-              <button onClick={() => { setRegion("전체"); setTime(""); setPreference(""); setTimeout(() => { const form = document.querySelector("form"); if (form) form.requestSubmit(); }, 50); }} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg transition-all">전체에서 랜덤 뽑기</button>
+              <button onClick={() => { setRegion("전체"); setPreference(""); }} className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">조건 초기화</button>
+              <button onClick={() => { setRegion("전체"); setPreference(""); setTimeout(() => { const form = document.querySelector("form"); if (form) form.requestSubmit(); }, 50); }} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg transition-all">전체에서 랜덤 뽑기</button>
             </div>
           </motion.div>
         )}
