@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
+import TasteMap from "@/components/TasteMap";
 import coursesData from "@/data/date-courses.json";
 
 type CourseStep = {
@@ -17,6 +18,8 @@ type Course = {
   region: string;
   time: string;
   preference: string;
+  x: number;
+  y: number;
   course: CourseStep[];
 };
 
@@ -43,6 +46,7 @@ const stepIcons: Record<string, string> = {
 };
 
 export default function DateCoursePage() {
+  const [mode, setMode] = useState<"map" | "filter">("map");
   const [region, setRegion] = useState("전체");
   const [time, setTime] = useState("");
   const [preference, setPreference] = useState("");
@@ -50,6 +54,7 @@ export default function DateCoursePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [result, setResult] = useState<Course | null>(null);
   const [candidates, setCandidates] = useState<Course[]>([]);
+  const [mapSelected, setMapSelected] = useState<Course[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const stopSlot = useCallback(() => {
@@ -65,15 +70,17 @@ export default function DateCoursePage() {
 
   const getFiltered = () => {
     let filtered = [...coursesData] as Course[];
-    if (region !== "전체") filtered = filtered.filter((c) => c.region === region);
+    if (region !== "전체")
+      filtered = filtered.filter((c) => c.region === region);
     if (time) filtered = filtered.filter((c) => c.time === time);
-    if (preference) filtered = filtered.filter((c) => c.preference === preference);
+    if (preference)
+      filtered = filtered.filter((c) => c.preference === preference);
     return filtered;
   };
 
   const startSlot = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    const filtered = getFiltered();
+    const filtered = mode === "map" ? mapSelected : getFiltered();
     if (filtered.length === 0) {
       setCandidates([]);
       setResult(null);
@@ -117,7 +124,13 @@ export default function DateCoursePage() {
     intervalRef.current = setTimeout(runPhase, 70);
   };
 
-  const displayCourse = candidates.length > 0 ? candidates[currentIndex % candidates.length] : null;
+  const displayCourse =
+    candidates.length > 0
+      ? candidates[currentIndex % candidates.length]
+      : null;
+
+  const getCourseLabel = (c: Course) =>
+    `${c.region} · ${c.time === "day" ? "낮" : "밤"}`;
 
   return (
     <PageTransition>
@@ -138,46 +151,161 @@ export default function DateCoursePage() {
           </p>
         </motion.div>
 
-        <motion.form
+        {/* Mode Toggle */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          onSubmit={startSlot}
-          className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8"
+          transition={{ delay: 0.05 }}
+          className="flex justify-center mb-6"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">지역</label>
-              <select value={region} onChange={(e) => setRegion(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                {regions.map((r) => (<option key={r} value={r}>{r}</option>))}
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">시간대</label>
-              <select value={time} onChange={(e) => setTime(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                {times.map((t) => (<option key={t.value} value={t.value}>{t.label}</option>))}
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">취향</label>
-              <select value={preference} onChange={(e) => setPreference(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
-                {preferences.map((p) => (<option key={p.value} value={p.value}>{p.label}</option>))}
-              </select>
-            </div>
+          <div className="inline-flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700">
+            <button
+              onClick={() => setMode("map")}
+              className={`px-5 py-2 rounded-lg text-sm font-medium transition-all ${
+                mode === "map"
+                  ? "bg-white dark:bg-slate-700 text-pink-500 shadow-sm"
+                  : "text-slate-500 dark:text-slate-400 hover:text-slate-700"
+              }`}
+            >
+              분위기 지도
+            </button>
+            <button
+              onClick={() => setMode("filter")}
+              className={`px-5 py-2 rounded-lg text-sm font-medium transition-all ${
+                mode === "filter"
+                  ? "bg-white dark:bg-slate-700 text-pink-500 shadow-sm"
+                  : "text-slate-500 dark:text-slate-400 hover:text-slate-700"
+              }`}
+            >
+              필터
+            </button>
           </div>
-          <button type="submit" disabled={spinning} className="w-full py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg hover:shadow-pink-500/25 transition-all disabled:opacity-50">
-            {spinning ? "추천 중..." : "코스 추천받기"}
-          </button>
-        </motion.form>
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          {/* Map Mode */}
+          {mode === "map" && (
+            <motion.div
+              key="map"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.2 }}
+              className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8"
+            >
+              <div className="max-w-md mx-auto">
+                <TasteMap
+                  items={coursesData as Course[]}
+                  getCoords={(item) => ({ x: item.x, y: item.y })}
+                  getLabel={getCourseLabel}
+                  xLabels={["조용한", "활동적"]}
+                  yLabels={["실내", "야외"]}
+                  accent="#ec4899"
+                  onSelect={setMapSelected}
+                />
+              </div>
+              <button
+                onClick={() => startSlot()}
+                disabled={spinning || mapSelected.length === 0}
+                className="w-full mt-6 py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg hover:shadow-pink-500/25 transition-all disabled:opacity-50"
+              >
+                {spinning
+                  ? "추천 중..."
+                  : mapSelected.length > 0
+                  ? `${mapSelected.length}개 코스 중 추천받기`
+                  : "맵에서 위치를 선택하세요"}
+              </button>
+            </motion.div>
+          )}
+
+          {/* Filter Mode */}
+          {mode === "filter" && (
+            <motion.div
+              key="filter"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.2 }}
+            >
+              <form
+                onSubmit={startSlot}
+                className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                      지역
+                    </label>
+                    <select
+                      value={region}
+                      onChange={(e) => setRegion(e.target.value)}
+                      className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    >
+                      {regions.map((r) => (
+                        <option key={r} value={r}>
+                          {r}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                      시간대
+                    </label>
+                    <select
+                      value={time}
+                      onChange={(e) => setTime(e.target.value)}
+                      className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    >
+                      {times.map((t) => (
+                        <option key={t.value} value={t.value}>
+                          {t.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                      취향
+                    </label>
+                    <select
+                      value={preference}
+                      onChange={(e) => setPreference(e.target.value)}
+                      className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                    >
+                      {preferences.map((p) => (
+                        <option key={p.value} value={p.value}>
+                          {p.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  disabled={spinning}
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg hover:shadow-pink-500/25 transition-all disabled:opacity-50"
+                >
+                  {spinning ? "추천 중..." : "코스 추천받기"}
+                </button>
+              </form>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Slot Machine Display */}
         {(spinning || result) && candidates.length > 0 && (
           <div className="mb-8">
             <AnimatePresence mode="wait">
               {spinning && displayCourse && (
-                <motion.div key="slot" className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 p-1 mb-4">
+                <motion.div
+                  key="slot"
+                  className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 p-1 mb-4"
+                >
                   <div className="bg-white dark:bg-slate-800 rounded-xl p-8 text-center">
-                    <div className="text-sm text-slate-400 mb-2">오늘의 데이트 코스는...</div>
+                    <div className="text-sm text-slate-400 mb-2">
+                      오늘의 데이트 코스는...
+                    </div>
                     <div className="h-24 flex items-center justify-center overflow-hidden">
                       <motion.div
                         key={currentIndex}
@@ -188,10 +316,13 @@ export default function DateCoursePage() {
                         className="text-center"
                       >
                         <div className="text-2xl md:text-3xl font-bold mb-1">
-                          {displayCourse.region} · {displayCourse.time === "day" ? "낮" : "밤"}
+                          {displayCourse.region} ·{" "}
+                          {displayCourse.time === "day" ? "낮" : "밤"}
                         </div>
                         <div className="text-slate-400 text-sm">
-                          {displayCourse.course.map((s) => s.place).join(" → ")}
+                          {displayCourse.course
+                            .map((s) => s.place)
+                            .join(" → ")}
                         </div>
                       </motion.div>
                     </div>
@@ -200,7 +331,6 @@ export default function DateCoursePage() {
               )}
             </AnimatePresence>
 
-            {/* Result Card */}
             <AnimatePresence>
               {!spinning && result && (
                 <motion.div
@@ -211,11 +341,19 @@ export default function DateCoursePage() {
                   <div className="rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 p-1">
                     <div className="bg-white dark:bg-slate-800 rounded-xl p-8">
                       <div className="text-center mb-6">
-                        <div className="text-sm text-pink-500 font-medium mb-2">오늘의 데이트 코스</div>
+                        <div className="text-sm text-pink-500 font-medium mb-2">
+                          오늘의 데이트 코스
+                        </div>
                         <div className="flex items-center justify-center gap-2 mb-4">
-                          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400">{result.region}</span>
-                          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">{result.time === "day" ? "낮" : "밤"}</span>
-                          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">{result.preference}</span>
+                          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400">
+                            {result.region}
+                          </span>
+                          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+                            {result.time === "day" ? "낮" : "밤"}
+                          </span>
+                          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                            {result.preference}
+                          </span>
                         </div>
                       </div>
 
@@ -238,9 +376,13 @@ export default function DateCoursePage() {
                             </div>
                             <div className="flex-1 pt-1">
                               <div className="flex items-center gap-2 mb-1">
-                                <span className="text-xs font-bold text-pink-500">STEP {step.step}</span>
+                                <span className="text-xs font-bold text-pink-500">
+                                  STEP {step.step}
+                                </span>
                               </div>
-                              <h4 className="font-bold text-lg">{step.place}</h4>
+                              <h4 className="font-bold text-lg">
+                                {step.place}
+                              </h4>
                               <div className="flex items-center gap-2 text-sm text-slate-400 mt-0.5">
                                 <span>{step.type}</span>
                                 <span>·</span>
@@ -265,20 +407,26 @@ export default function DateCoursePage() {
           </div>
         )}
 
-        {!spinning && !result && candidates.length === 0 && (
+        {!spinning && !result && candidates.length === 0 && mode === "filter" && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 text-center"
           >
             <div className="text-4xl mb-4">💑</div>
-            <h3 className="text-lg font-bold mb-2">조건에 맞는 코스가 없어요</h3>
+            <h3 className="text-lg font-bold mb-2">
+              조건에 맞는 코스가 없어요
+            </h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">
               조건을 바꿔보시거나, 전체 코스에서 랜덤으로 뽑아볼까요?
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <button
-                onClick={() => { setRegion("전체"); setTime(""); setPreference(""); }}
+                onClick={() => {
+                  setRegion("전체");
+                  setTime("");
+                  setPreference("");
+                }}
                 className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
               >
                 조건 초기화
