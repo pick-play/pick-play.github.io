@@ -19,9 +19,24 @@ interface Option {
 interface Question {
   id: number;
   question: string;
+  category?: string;
   optionA: Option;
   optionB: Option;
   tiebreaker?: boolean;
+}
+
+interface PercentageRange {
+  min: number;
+  label: string;
+  text: string;
+}
+
+interface DetailedAnalysis {
+  strongTeto: string;
+  moderateTeto: string;
+  balanced: string;
+  moderateEgen: string;
+  strongEgen: string;
 }
 
 interface ResultData {
@@ -36,10 +51,42 @@ interface ResultData {
   bestMatchDesc: string;
   worstMatch: string;
   worstMatchDesc: string;
+  strengths: string[];
+  weaknesses: string[];
+  detailedAnalysis: DetailedAnalysis;
+  percentageAnalysis: {
+    extreme: PercentageRange;
+    strong: PercentageRange;
+    moderate: PercentageRange;
+    slight: PercentageRange;
+  };
 }
 
-const results = testData.results as Record<ResultKey, ResultData>;
+const results = testData.results as unknown as Record<ResultKey, ResultData>;
 const loveChain = testData.loveChain;
+
+function getPercentageAnalysis(result: ResultData, dominantPercent: number): { label: string; text: string } {
+  const pa = result.percentageAnalysis;
+  if (dominantPercent >= pa.extreme.min) return pa.extreme;
+  if (dominantPercent >= pa.strong.min) return pa.strong;
+  if (dominantPercent >= pa.moderate.min) return pa.moderate;
+  return pa.slight;
+}
+
+function getDetailedAnalysis(result: ResultData, dominantPercent: number): string {
+  const da = result.detailedAnalysis;
+  if (dominantPercent >= 80) {
+    // Strong dominant type
+    return result.title.includes("테토") ? da.strongTeto : da.strongEgen;
+  } else if (dominantPercent >= 65) {
+    return result.title.includes("테토") ? da.moderateTeto : da.moderateEgen;
+  } else if (dominantPercent >= 55) {
+    return da.balanced;
+  } else {
+    // Near the boundary
+    return result.title.includes("테토") ? da.moderateTeto : da.moderateEgen;
+  }
+}
 
 // Map result color gradient strings to solid Tailwind-safe bg classes for bars
 const tetoBarColor: Record<ResultKey, string> = {
@@ -152,6 +199,13 @@ export default function TetoEgenPage() {
   }, [resultKey, tetoPercent, egenPercent]);
 
   const result = resultKey ? results[resultKey] : null;
+
+  // Determine the dominant percent for percentage analysis
+  const dominantPercent = resultKey
+    ? resultKey.startsWith("teto") ? tetoPercent : egenPercent
+    : 50;
+  const analysis = result ? getPercentageAnalysis(result, dominantPercent) : null;
+  const detailed = result ? getDetailedAnalysis(result, dominantPercent) : null;
 
   return (
     <PageTransition>
@@ -268,6 +322,11 @@ export default function TetoEgenPage() {
 
                 {/* Question card */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+                  {currentQuestion.category && (
+                    <p className="text-xs font-medium text-violet-500 dark:text-violet-400 text-center mb-2">
+                      {currentQuestion.category}
+                    </p>
+                  )}
                   <p className="text-xl font-bold text-slate-800 dark:text-slate-100 text-center leading-snug">
                     {currentQuestion.question}
                   </p>
@@ -351,7 +410,7 @@ export default function TetoEgenPage() {
                   <p className="text-white/85 text-sm leading-relaxed">{result.description}</p>
                 </motion.div>
 
-                {/* Percentage bar */}
+                {/* Percentage bar + analysis */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -381,7 +440,46 @@ export default function TetoEgenPage() {
                       transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
                     />
                   </div>
+
+                  {/* Percentage analysis badge + text */}
+                  {analysis && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 }}
+                      className="mt-4"
+                    >
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${result.color}`}>
+                          {analysis.label}
+                        </span>
+                        <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                          {dominantPercent}%
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        {analysis.text}
+                      </p>
+                    </motion.div>
+                  )}
                 </motion.div>
+
+                {/* Detailed analysis */}
+                {detailed && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
+                  >
+                    <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+                      상세 분석
+                    </h3>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                      {detailed}
+                    </p>
+                  </motion.div>
+                )}
 
                 {/* Traits */}
                 <motion.div
@@ -399,7 +497,7 @@ export default function TetoEgenPage() {
                         key={i}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.4 + i * 0.07 }}
+                        transition={{ delay: 0.4 + i * 0.05 }}
                         className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300"
                       >
                         <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-violet-400 mt-2" />
@@ -407,6 +505,57 @@ export default function TetoEgenPage() {
                       </motion.li>
                     ))}
                   </ul>
+                </motion.div>
+
+                {/* Strengths & Weaknesses */}
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
+                >
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="text-sm font-semibold text-green-600 dark:text-green-400 mb-2 flex items-center gap-1.5">
+                        <span className="w-4 h-4 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center text-[10px]">+</span>
+                        강점
+                      </h3>
+                      <ul className="space-y-1.5">
+                        {result.strengths.map((s, i) => (
+                          <motion.li
+                            key={i}
+                            initial={{ opacity: 0, x: -8 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.45 + i * 0.05 }}
+                            className="text-sm text-slate-700 dark:text-slate-300 flex items-start gap-2"
+                          >
+                            <span className="flex-shrink-0 text-green-500 mt-0.5">+</span>
+                            {s}
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="border-t border-slate-100 dark:border-slate-700 pt-4">
+                      <h3 className="text-sm font-semibold text-amber-600 dark:text-amber-400 mb-2 flex items-center gap-1.5">
+                        <span className="w-4 h-4 rounded-full bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center text-[10px]">!</span>
+                        주의할 점
+                      </h3>
+                      <ul className="space-y-1.5">
+                        {result.weaknesses.map((w, i) => (
+                          <motion.li
+                            key={i}
+                            initial={{ opacity: 0, x: -8 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.55 + i * 0.05 }}
+                            className="text-sm text-slate-700 dark:text-slate-300 flex items-start gap-2"
+                          >
+                            <span className="flex-shrink-0 text-amber-500 mt-0.5">!</span>
+                            {w}
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </motion.div>
 
                 {/* Love style */}

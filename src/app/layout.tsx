@@ -3,6 +3,7 @@ import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SidebarAds from "@/components/SidebarAds";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pick-korea.github.io"),
@@ -113,6 +114,9 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
+        <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <meta name="google-adsense-account" content="ca-pub-7766090864059500" />
         <script
           async
@@ -127,7 +131,11 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
         <ThemeProvider>
           <Header />
-          <main className="flex-1">{children}</main>
+          <div className="flex-1 flex">
+            <SidebarAds side="left" />
+            <main className="flex-1 min-w-0">{children}</main>
+            <SidebarAds side="right" />
+          </div>
           <Footer />
         </ThemeProvider>
       </body>

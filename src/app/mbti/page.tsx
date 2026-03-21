@@ -12,12 +12,37 @@ type ScoreKey = "E" | "I" | "S" | "N" | "T" | "F" | "J" | "P";
 
 type Scores = Record<ScoreKey, number>;
 
-type TypeData = {
+interface TypeData {
   title: string;
   emoji: string;
   desc: string;
   traits: string[];
   color: string;
+  strengths?: string[];
+  weaknesses?: string[];
+  famousPeople?: string[];
+  careers?: string[];
+}
+
+const typesData = testData.types as Record<string, TypeData>;
+const compatibilityData = testData.compatibility as Record<string, string[]>;
+const questions = testData.questions;
+
+// Weight map: question ID -> weight (1-3) for weighted scoring
+// weight 3 = very strong indicator, 2 = moderate, 1 = mild
+const QUESTION_WEIGHTS: Record<number, number> = {
+  1: 3, 2: 3, 10: 3, 12: 3,
+  3: 2, 4: 2, 5: 2, 6: 2, 9: 2, 11: 2,
+  7: 1, 8: 1,
+  17: 3, 23: 3,
+  13: 2, 14: 2, 15: 2, 16: 2, 20: 2, 21: 2, 24: 2,
+  18: 1, 19: 1, 22: 1,
+  25: 3, 26: 3, 34: 3,
+  27: 2, 28: 2, 29: 2, 30: 2, 31: 2, 33: 2,
+  32: 1, 35: 1, 36: 1,
+  39: 3, 40: 3, 47: 3,
+  37: 2, 38: 2, 41: 2, 42: 2, 44: 2, 45: 2, 46: 2,
+  43: 1, 48: 1,
 };
 
 const DIMENSION_LABELS: Record<string, { label: string; left: string; right: string }> = {
@@ -40,10 +65,6 @@ const ALL_16_TYPES = [
   "ESTP", "ESFP", "ENFP", "ENTP",
   "ESTJ", "ESFJ", "ENFJ", "ENTJ",
 ] as const;
-
-const typesData = testData.types as Record<string, TypeData>;
-const compatibilityData = testData.compatibility as Record<string, string[]>;
-const questions = testData.questions;
 
 function DimensionBar({
   leftLabel,
@@ -114,13 +135,11 @@ export default function MbtiPage() {
       if (selected !== null) return;
       setSelected(choice);
 
-      const answerType = (
-        choice === "A"
-          ? currentQuestion.optionA.type
-          : currentQuestion.optionB.type
-      ) as ScoreKey;
+      const option = choice === "A" ? currentQuestion.optionA : currentQuestion.optionB;
+      const answerType = option.type as ScoreKey;
+      const weight = QUESTION_WEIGHTS[currentQuestion.id] ?? 1;
 
-      const newScores = { ...scores, [answerType]: scores[answerType] + 1 };
+      const newScores = { ...scores, [answerType]: scores[answerType] + weight };
       setScores(newScores);
 
       setTimeout(() => {
@@ -151,20 +170,27 @@ export default function MbtiPage() {
     setCopied(false);
   }, []);
 
+  const pct = (a: number, b: number) => {
+    const total = a + b;
+    if (total === 0) return { l: 50, r: 50 };
+    return { l: Math.round((a / total) * 100), r: Math.round((b / total) * 100) };
+  };
+
   const handleCopyResult = useCallback(() => {
     if (!mbtiResult) return;
     const typeInfo = typesData[mbtiResult];
-    const text = `나의 MBTI는 ${mbtiResult} (${typeInfo.title})!\nE${scores.E * 20}% / I${scores.I * 20}% | S${scores.S * 20}% / N${scores.N * 20}% | T${scores.T * 20}% / F${scores.F * 20}% | J${scores.J * 20}% / P${scores.P * 20}%\nPickPlay에서 MBTI 검사 해보기: https://pick-korea.github.io/mbti`;
+    const p = (a: number, b: number) => { const t = a + b; return t === 0 ? 50 : Math.round((a / t) * 100); };
+    const text = `나의 MBTI는 ${mbtiResult} (${typeInfo.title})!\nE${p(scores.E, scores.I)}% / I${p(scores.I, scores.E)}% | S${p(scores.S, scores.N)}% / N${p(scores.N, scores.S)}% | T${p(scores.T, scores.F)}% / F${p(scores.F, scores.T)}% | J${p(scores.J, scores.P)}% / P${p(scores.P, scores.J)}%\nPickPlay에서 MBTI 검사 해보기: https://pick-korea.github.io/mbti`;
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
   }, [mbtiResult, scores]);
 
-  const eiPercent = { E: scores.E * 20, I: scores.I * 20 };
-  const snPercent = { S: scores.S * 20, N: scores.N * 20 };
-  const tfPercent = { T: scores.T * 20, F: scores.F * 20 };
-  const jpPercent = { J: scores.J * 20, P: scores.P * 20 };
+  const eiPercent = pct(scores.E, scores.I);
+  const snPercent = pct(scores.S, scores.N);
+  const tfPercent = pct(scores.T, scores.F);
+  const jpPercent = pct(scores.J, scores.P);
 
   const resultType = mbtiResult ? typesData[mbtiResult] : null;
   const compatibleTypes = mbtiResult ? compatibilityData[mbtiResult] ?? [] : [];
@@ -184,7 +210,7 @@ export default function MbtiPage() {
               MBTI 성격유형 검사
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              20가지 질문으로 알아보는 나의 성격 유형
+              {questions.length}가지 질문으로 알아보는 나의 성격 유형
             </p>
           </motion.div>
 
@@ -213,7 +239,7 @@ export default function MbtiPage() {
                     나의 성격 유형은?
                   </h2>
                   <p className="text-slate-500 dark:text-slate-400 text-sm mb-8 leading-relaxed">
-                    총 20문항에 솔직하게 답하면<br />
+                    총 {questions.length}문항 · 정밀 분석<br />
                     지표별 퍼센트와 함께 결과를 알려드려요
                   </p>
 
@@ -292,93 +318,61 @@ export default function MbtiPage() {
 
                 {/* Options */}
                 <div className="flex flex-col gap-4">
-                  {/* Option A */}
-                  <motion.button
-                    onClick={() => handleSelect("A")}
-                    disabled={selected !== null}
-                    animate={
-                      selected === null
-                        ? { scale: 1, opacity: 1 }
-                        : selected === "A"
-                        ? { scale: 1.03, opacity: 1 }
-                        : { scale: 0.95, opacity: 0.45 }
-                    }
-                    whileHover={selected === null ? { scale: 1.02 } : {}}
-                    whileTap={selected === null ? { scale: 0.98 } : {}}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className={`relative w-full min-h-20 rounded-2xl p-5 flex items-center gap-4 text-left shadow-sm border-2 transition-shadow cursor-pointer disabled:cursor-default ${
-                      selected === "A"
-                        ? "bg-gradient-to-r from-violet-500 to-indigo-500 border-violet-400 shadow-violet-400/40 shadow-lg text-white"
-                        : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-100 hover:border-violet-300 dark:hover:border-violet-600 hover:shadow-md"
-                    }`}
-                  >
-                    <span
-                      className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm ${
-                        selected === "A"
-                          ? "bg-white/20 text-white"
-                          : "bg-violet-100 dark:bg-violet-900/40 text-violet-600 dark:text-violet-300"
-                      }`}
-                    >
-                      A
-                    </span>
-                    <span className="font-medium text-sm leading-snug flex-1">
-                      {currentQuestion.optionA.text}
-                    </span>
-                    {selected === "A" && (
-                      <motion.span
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 300, delay: 0.05 }}
-                        className="flex-shrink-0 text-white text-lg"
-                      >
-                        ✓
-                      </motion.span>
-                    )}
-                  </motion.button>
+                  {(["A", "B"] as const).map((opt) => {
+                    const option = opt === "A" ? currentQuestion.optionA : currentQuestion.optionB;
+                    const isSelected = selected === opt;
+                    const isOther = selected !== null && selected !== opt;
+                    const gradientClass = opt === "A"
+                      ? "bg-gradient-to-r from-violet-500 to-indigo-500 border-violet-400 shadow-violet-400/40"
+                      : "bg-gradient-to-r from-indigo-500 to-blue-500 border-indigo-400 shadow-indigo-400/40";
+                    const pillClass = opt === "A"
+                      ? "bg-violet-100 dark:bg-violet-900/40 text-violet-600 dark:text-violet-300"
+                      : "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300";
 
-                  {/* Option B */}
-                  <motion.button
-                    onClick={() => handleSelect("B")}
-                    disabled={selected !== null}
-                    animate={
-                      selected === null
-                        ? { scale: 1, opacity: 1 }
-                        : selected === "B"
-                        ? { scale: 1.03, opacity: 1 }
-                        : { scale: 0.95, opacity: 0.45 }
-                    }
-                    whileHover={selected === null ? { scale: 1.02 } : {}}
-                    whileTap={selected === null ? { scale: 0.98 } : {}}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className={`relative w-full min-h-20 rounded-2xl p-5 flex items-center gap-4 text-left shadow-sm border-2 transition-shadow cursor-pointer disabled:cursor-default ${
-                      selected === "B"
-                        ? "bg-gradient-to-r from-indigo-500 to-blue-500 border-indigo-400 shadow-indigo-400/40 shadow-lg text-white"
-                        : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-100 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md"
-                    }`}
-                  >
-                    <span
-                      className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm ${
-                        selected === "B"
-                          ? "bg-white/20 text-white"
-                          : "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300"
-                      }`}
-                    >
-                      B
-                    </span>
-                    <span className="font-medium text-sm leading-snug flex-1">
-                      {currentQuestion.optionB.text}
-                    </span>
-                    {selected === "B" && (
-                      <motion.span
-                        initial={{ scale: 0, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", stiffness: 300, delay: 0.05 }}
-                        className="flex-shrink-0 text-white text-lg"
+                    return (
+                      <motion.button
+                        key={opt}
+                        onClick={() => handleSelect(opt)}
+                        disabled={selected !== null}
+                        animate={
+                          selected === null
+                            ? { scale: 1, opacity: 1 }
+                            : isSelected
+                            ? { scale: 1.03, opacity: 1 }
+                            : { scale: 0.95, opacity: 0.45 }
+                        }
+                        whileHover={selected === null ? { scale: 1.02 } : {}}
+                        whileTap={selected === null ? { scale: 0.98 } : {}}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className={`relative w-full min-h-20 rounded-2xl p-5 flex items-center gap-4 text-left shadow-sm border-2 transition-shadow cursor-pointer disabled:cursor-default ${
+                          isSelected
+                            ? `${gradientClass} shadow-lg text-white`
+                            : `bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-100 hover:border-violet-300 dark:hover:border-violet-600 hover:shadow-md`
+                        }`}
                       >
-                        ✓
-                      </motion.span>
-                    )}
-                  </motion.button>
+                        <span
+                          className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm ${
+                            isSelected ? "bg-white/20 text-white" : pillClass
+                          }`}
+                        >
+                          {opt}
+                        </span>
+                        <span className="font-medium text-sm leading-snug flex-1">
+                          {option.text}
+                        </span>
+                        {isSelected && (
+                          <motion.span
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ type: "spring", stiffness: 300, delay: 0.05 }}
+                            className="flex-shrink-0 text-white text-lg"
+                          >
+                            ✓
+                          </motion.span>
+                        )}
+                      </motion.button>
+                    );
+                  })}
                 </div>
 
                 {selected === null && (
@@ -452,35 +446,42 @@ export default function MbtiPage() {
                   <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-4">
                     지표별 분석
                   </h3>
-                  <DimensionBar
-                    leftLabel="E 외향"
-                    rightLabel="I 내향"
-                    leftPercent={eiPercent.E}
-                    rightPercent={eiPercent.I}
-                    delay={0.3}
-                  />
-                  <DimensionBar
-                    leftLabel="S 감각"
-                    rightLabel="N 직관"
-                    leftPercent={snPercent.S}
-                    rightPercent={snPercent.N}
-                    delay={0.4}
-                  />
-                  <DimensionBar
-                    leftLabel="T 사고"
-                    rightLabel="F 감정"
-                    leftPercent={tfPercent.T}
-                    rightPercent={tfPercent.F}
-                    delay={0.5}
-                  />
-                  <DimensionBar
-                    leftLabel="J 판단"
-                    rightLabel="P 인식"
-                    leftPercent={jpPercent.J}
-                    rightPercent={jpPercent.P}
-                    delay={0.6}
-                  />
+                  <DimensionBar leftLabel="E 외향" rightLabel="I 내향" leftPercent={eiPercent.l} rightPercent={eiPercent.r} delay={0.3} />
+                  <DimensionBar leftLabel="S 감각" rightLabel="N 직관" leftPercent={snPercent.l} rightPercent={snPercent.r} delay={0.4} />
+                  <DimensionBar leftLabel="T 사고" rightLabel="F 감정" leftPercent={tfPercent.l} rightPercent={tfPercent.r} delay={0.5} />
+                  <DimensionBar leftLabel="J 판단" rightLabel="P 인식" leftPercent={jpPercent.l} rightPercent={jpPercent.r} delay={0.6} />
                 </motion.div>
+
+                {/* Strengths & Weaknesses */}
+                {(resultType.strengths || resultType.weaknesses) && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.25 }}
+                    className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
+                  >
+                    {resultType.strengths && (
+                      <div className="mb-4">
+                        <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-3">💪 강점</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {resultType.strengths.map((s) => (
+                            <span key={s} className="px-3 py-1.5 rounded-full bg-green-50 dark:bg-green-950/30 text-green-700 dark:text-green-400 text-sm font-medium border border-green-200 dark:border-green-800/50">{s}</span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    {resultType.weaknesses && (
+                      <div>
+                        <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-3">⚡ 약점</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {resultType.weaknesses.map((w) => (
+                            <span key={w} className="px-3 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/30 text-amber-700 dark:text-amber-400 text-sm font-medium border border-amber-200 dark:border-amber-800/50">{w}</span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                )}
 
                 {/* Compatibility */}
                 <motion.div
@@ -489,17 +490,12 @@ export default function MbtiPage() {
                   transition={{ delay: 0.3 }}
                   className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
                 >
-                  <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-4">
-                    💕 나와 잘 맞는 유형
-                  </h3>
+                  <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-4">💕 나와 잘 맞는 유형</h3>
                   <div className="flex gap-3">
                     {compatibleTypes.map((typeCode) => {
                       const info = typesData[typeCode];
                       return (
-                        <div
-                          key={typeCode}
-                          className={`flex-1 rounded-xl p-4 text-center text-white bg-gradient-to-br ${info.color}`}
-                        >
+                        <div key={typeCode} className={`flex-1 rounded-xl p-4 text-center text-white bg-gradient-to-br ${info.color}`}>
                           <div className="text-3xl mb-1">{info.emoji}</div>
                           <div className="font-extrabold text-lg">{typeCode}</div>
                           <div className="text-xs text-white/80 mt-0.5">{info.title}</div>
@@ -509,11 +505,38 @@ export default function MbtiPage() {
                   </div>
                 </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.35 }}
-                >
+                {/* Careers & Famous People */}
+                {(resultType.careers || resultType.famousPeople) && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.33 }}
+                    className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
+                  >
+                    {resultType.careers && (
+                      <div className="mb-4">
+                        <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-3">🎯 추천 직업</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {resultType.careers.map((c) => (
+                            <span key={c} className="px-3 py-1.5 rounded-full bg-violet-50 dark:bg-violet-950/30 text-violet-700 dark:text-violet-400 text-sm font-medium border border-violet-200 dark:border-violet-800/50">{c}</span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    {resultType.famousPeople && (
+                      <div>
+                        <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-3">🌟 같은 유형 유명인</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {resultType.famousPeople.map((fp) => (
+                            <span key={fp} className="px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/30 text-indigo-700 dark:text-indigo-400 text-sm font-medium border border-indigo-200 dark:border-indigo-800/50">{fp}</span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.36 }}>
                   <AdBanner format="rectangle" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </motion.div>
 
@@ -524,9 +547,7 @@ export default function MbtiPage() {
                   transition={{ delay: 0.4 }}
                   className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
                 >
-                  <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-4">
-                    16가지 성격 유형
-                  </h3>
+                  <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-4">16가지 성격 유형</h3>
                   <div className="grid grid-cols-4 gap-2">
                     {ALL_16_TYPES.map((typeCode) => {
                       const info = typesData[typeCode];
@@ -544,9 +565,7 @@ export default function MbtiPage() {
                           }`}
                         >
                           <div className="text-xl mb-0.5">{info.emoji}</div>
-                          <div className={`text-xs font-bold ${isResult ? "text-white" : ""}`}>
-                            {typeCode}
-                          </div>
+                          <div className={`text-xs font-bold ${isResult ? "text-white" : ""}`}>{typeCode}</div>
                         </motion.div>
                       );
                     })}

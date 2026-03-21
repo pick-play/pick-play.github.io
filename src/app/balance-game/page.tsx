@@ -15,7 +15,7 @@ type Question = {
 
 type Phase = "play" | "result";
 
-const CATEGORIES = ["전체", "상황", "음식", "연애", "취향", "극한"] as const;
+const CATEGORIES = ["전체", "상황", "음식", "연애", "취향", "극한", "학교/직장", "여행", "슈퍼파워"] as const;
 
 const categoryIcons: Record<string, string> = {
   전체: "🎮",
@@ -24,6 +24,9 @@ const categoryIcons: Record<string, string> = {
   연애: "💕",
   취향: "🎨",
   극한: "🔥",
+  "학교/직장": "🏫",
+  여행: "✈️",
+  슈퍼파워: "⚡",
 };
 
 function shuffle<T>(arr: T[]): T[] {

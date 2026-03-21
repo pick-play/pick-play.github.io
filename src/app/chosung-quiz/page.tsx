@@ -20,7 +20,7 @@ interface Word {
 
 const ALL_WORDS: Word[] = wordsData as Word[];
 
-const CATEGORIES = ["전체", "음식", "동물", "영화", "장소", "유명인"] as const;
+const CATEGORIES = ["전체", "음식", "동물", "영화", "장소", "유명인", "브랜드", "게임", "노래/가수", "학교"] as const;
 type Category = (typeof CATEGORIES)[number];
 
 const CATEGORY_ICONS: Record<string, string> = {
@@ -30,6 +30,10 @@ const CATEGORY_ICONS: Record<string, string> = {
   영화: "🎬",
   장소: "📍",
   유명인: "🌟",
+  브랜드: "🏷️",
+  게임: "🎮",
+  "노래/가수": "🎵",
+  학교: "🏫",
 };
 
 const TIMER_OPTIONS: { label: string; value: TimerMode }[] = [
