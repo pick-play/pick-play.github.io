@@ -1,0 +1,227 @@
+{
+  "male": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "친구들과의 모임에서 나는?",
+        "optionA": { "text": "분위기를 주도하고 리드하는 편", "type": "teto", "weight": 10 },
+        "optionB": { "text": "조용히 리액션하며 따라가는 편", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 2,
+        "question": "마음에 드는 사람이 생기면?",
+        "optionA": { "text": "직진! 먼저 다가가서 표현한다", "type": "teto", "weight": 10 },
+        "optionB": { "text": "상대가 다가오길 기다리며 은근히 신호를 보낸다", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 3,
+        "question": "갈등이 생겼을 때 나는?",
+        "optionA": { "text": "직접 말해서 바로 해결하는 편", "type": "teto", "weight": 10 },
+        "optionB": { "text": "혼자 생각을 정리한 뒤 조심스럽게 꺼내는 편", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 4,
+        "question": "평소 옷 스타일은?",
+        "optionA": { "text": "깔끔한 기본템 위주, 실용적인 스타일", "type": "teto", "weight": 8 },
+        "optionB": { "text": "트렌디하고 감각적인 스타일링", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 5,
+        "question": "문제가 생기면 먼저 드는 생각은?",
+        "optionA": { "text": "해결 방법부터 찾는다", "type": "teto", "weight": 10 },
+        "optionB": { "text": "왜 이런 일이 생겼는지 원인을 고민한다", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 6,
+        "question": "연애에서 더 중요한 건?",
+        "optionA": { "text": "신뢰와 책임감", "type": "teto", "weight": 10 },
+        "optionB": { "text": "설렘과 감정적 교류", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 7,
+        "question": "회식이나 단체 모임 자리에서 나는?",
+        "optionA": { "text": "적극적으로 분위기를 띄우고 사람들과 어울린다", "type": "teto", "weight": 8 },
+        "optionB": { "text": "빨리 끝나길 바라며 조용히 있는다", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 8,
+        "question": "친구가 힘들다고 연락했을 때?",
+        "optionA": { "text": "해결책부터 제시한다", "type": "teto", "weight": 10 },
+        "optionB": { "text": "먼저 공감하고 들어준다", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 9,
+        "question": "데이트 코스를 정할 때 나는?",
+        "optionA": { "text": "내가 계획을 다 짜서 알려준다", "type": "teto", "weight": 8 },
+        "optionB": { "text": "같이 의논하면서 정한다", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 10,
+        "question": "나에게 더 중요한 가치는?",
+        "optionA": { "text": "능력과 실력, 성과", "type": "teto", "weight": 10 },
+        "optionB": { "text": "배려와 따뜻함, 관계", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 11,
+        "question": "상대가 화를 내기 시작하면 나는?",
+        "optionA": { "text": "화의 원인을 먼저 짚고 넘어간다", "type": "teto", "weight": 6 },
+        "optionB": { "text": "일단 감정을 누그러뜨리려고 한다", "type": "egen", "weight": 6 },
+        "tiebreaker": true
+      }
+    ]
+  },
+  "female": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "친구들과의 모임에서 나는?",
+        "optionA": { "text": "내가 대화의 중심! 분위기를 이끈다", "type": "teto", "weight": 10 },
+        "optionB": { "text": "옆에서 조용히 웃으며 따라간다", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 2,
+        "question": "연애할 때 나는?",
+        "optionA": { "text": "주도적으로 리드하는 편", "type": "teto", "weight": 10 },
+        "optionB": { "text": "상대의 흐름에 맞추는 편", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 3,
+        "question": "갈등이 생겼을 때 나는?",
+        "optionA": { "text": "직접적으로 내 감정을 표현한다", "type": "teto", "weight": 10 },
+        "optionB": { "text": "조용히 마음을 닫고 거리를 둔다", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 4,
+        "question": "평소 옷 스타일은?",
+        "optionA": { "text": "힙하고 자유로운 스타일", "type": "teto", "weight": 8 },
+        "optionB": { "text": "단정하고 깔끔한 스타일", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 5,
+        "question": "친구가 고민을 털어놓았을 때 나는?",
+        "optionA": { "text": "현실적인 조언과 해결책을 제시한다", "type": "teto", "weight": 10 },
+        "optionB": { "text": "공감과 위로를 먼저 해준다", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 6,
+        "question": "내가 더 중요하게 생각하는 건?",
+        "optionA": { "text": "성취, 성장, 커리어", "type": "teto", "weight": 10 },
+        "optionB": { "text": "가족, 친구, 정서적 안정", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 7,
+        "question": "연애가 끝난 뒤 나는?",
+        "optionA": { "text": "미련 없이 빠르게 정리하고 앞으로 간다", "type": "teto", "weight": 10 },
+        "optionB": { "text": "감정이 오래 남아서 쉽게 잊지 못한다", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 8,
+        "question": "집에 혼자 있을 때 나는?",
+        "optionA": { "text": "운동하거나 자기계발에 시간을 쓴다", "type": "teto", "weight": 8 },
+        "optionB": { "text": "영화, 취미 활동, 감성적인 시간을 보낸다", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 9,
+        "question": "친구가 '넌 너무 직설적이야'라고 한다면?",
+        "optionA": { "text": "직접 말하는 게 서로 편하지!", "type": "teto", "weight": 10 },
+        "optionB": { "text": "다음엔 좀 더 돌려 말해야겠다...", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 10,
+        "question": "내가 더 편한 모임은?",
+        "optionA": { "text": "활기차고 시끌벅적한 자리", "type": "teto", "weight": 8 },
+        "optionB": { "text": "조용하고 소수의 친한 사람들과의 자리", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 11,
+        "question": "내 의견이 맞는데 상대가 자꾸 틀렸다고 할 때?",
+        "optionA": { "text": "상대가 인정할 때까지 굽히지 않는다", "type": "teto", "weight": 6 },
+        "optionB": { "text": "그냥 대충 맞춰주고 넘어간다", "type": "egen", "weight": 6 },
+        "tiebreaker": true
+      }
+    ]
+  },
+  "results": {
+    "tetoMale": {
+      "title": "테토남",
+      "subtitle": "테스토스테론 남성",
+      "emoji": "🦁",
+      "color": "from-blue-500 to-indigo-600",
+      "description": "강한 리더십과 추진력의 소유자! 목표가 생기면 거침없이 직진하고, 주변 사람들을 자연스럽게 이끕니다.",
+      "traits": [
+        "행동 우선주의 - 생각보다 행동이 먼저",
+        "직설적 소통 - 돌려 말하기보다 솔직하게",
+        "강한 리더십 - 무리의 중심에 서는 타입",
+        "실용적 사고 - 감정보다 해결책을 찾는 편",
+        "독립적 성향 - 혼자서도 잘 해내는 타입"
+      ],
+      "loveStyle": "직진형 연애! 마음에 드는 사람에게 적극적으로 다가가며, 연애에서도 리드하는 편입니다. 신뢰와 책임감을 중시하고, 갈등이 생기면 바로 해결하려 합니다.",
+      "bestMatch": "에겐녀",
+      "bestMatchDesc": "부드럽고 감성적인 에겐녀와 만나면, 서로의 부족한 부분을 채워주는 환상의 궁합!",
+      "worstMatch": "테토녀",
+      "worstMatchDesc": "둘 다 주도적이라 주도권 다툼이 생길 수 있어요."
+    },
+    "egenMale": {
+      "title": "에겐남",
+      "subtitle": "에스트로겐 남성",
+      "emoji": "🐱",
+      "color": "from-purple-500 to-pink-500",
+      "description": "섬세하고 감성적인 매력의 소유자! 상대의 감정을 잘 읽고 공감 능력이 뛰어나며, 따뜻한 분위기를 만듭니다.",
+      "traits": [
+        "높은 공감 능력 - 상대 감정을 잘 읽는 편",
+        "감성적 표현 - 말과 분위기로 감정을 전달",
+        "섬세한 관찰력 - 작은 변화도 놓치지 않음",
+        "예술적 감각 - 미적 감각이 뛰어남",
+        "평화주의 - 갈등을 피하고 조화를 중시"
+      ],
+      "loveStyle": "감성형 연애! 분위기와 감정선을 중시하며, 상대에게 세심한 배려를 합니다. 설렘과 로맨틱한 순간을 좋아하고, 이별 후에도 감정이 오래 남는 편입니다.",
+      "bestMatch": "테토녀",
+      "bestMatchDesc": "주도적이고 활발한 테토녀가 리드해주면 편안하게 자신을 표현할 수 있어요!",
+      "worstMatch": "에겐남",
+      "worstMatchDesc": "둘 다 수동적이라 관계가 진전되기 어려울 수 있어요."
+    },
+    "tetoFemale": {
+      "title": "테토녀",
+      "subtitle": "테스토스테론 여성",
+      "emoji": "🐯",
+      "color": "from-orange-500 to-red-500",
+      "description": "독립적이고 진취적인 에너지의 소유자! 자신의 길을 스스로 개척하며, 커리어와 성장을 중시합니다.",
+      "traits": [
+        "독립심 강함 - 혼자서도 거뜬히 해내는 타입",
+        "솔직한 감정표현 - 좋고 싫음이 확실",
+        "커리어 지향 - 성취와 성장을 중요시",
+        "활동적 라이프 - 운동과 자기계발을 즐김",
+        "빠른 회복력 - 이별 후에도 빠르게 일어남"
+      ],
+      "loveStyle": "쿨한 연애! 연애에서도 주도적이며 솔직하게 감정을 표현합니다. 의존보다는 서로 성장하는 관계를 원하며, 끝났으면 미련 없이 정리하는 편입니다.",
+      "bestMatch": "에겐남",
+      "bestMatchDesc": "섬세하고 감성적인 에겐남과 만나면, 서로 부족한 부분을 채워주는 보완적 관계!",
+      "worstMatch": "테토남",
+      "worstMatchDesc": "둘 다 강한 성격이라 부딪힐 수 있지만, 서로 존중하면 파워 커플!"
+    },
+    "egenFemale": {
+      "title": "에겐녀",
+      "subtitle": "에스트로겐 여성",
+      "emoji": "🐰",
+      "color": "from-pink-400 to-rose-500",
+      "description": "따뜻하고 감성적인 분위기의 소유자! 타인에 대한 배려심이 깊고, 관계에서 안정감과 정서적 유대를 중시합니다.",
+      "traits": [
+        "깊은 공감 능력 - 상대 감정을 잘 이해함",
+        "따뜻한 배려 - 주변 사람을 세심하게 챙김",
+        "감성적 내면 - 풍부한 감수성의 소유자",
+        "안정 추구 - 평화롭고 따뜻한 관계를 원함",
+        "여운이 긴 감정 - 좋은 것도 나쁜 것도 오래 남음"
+      ],
+      "loveStyle": "감성형 연애! 상대의 대시를 받으며 시작하는 것을 선호하고, 감성적 유대와 안정감을 중시합니다. 작은 것에도 감동하며, 이별의 여운이 오래 남는 편입니다.",
+      "bestMatch": "테토남",
+      "bestMatchDesc": "듬직하고 리드해주는 테토남과 만나면, 안정감 속에서 사랑받는 느낌!",
+      "worstMatch": "에겐녀",
+      "worstMatchDesc": "둘 다 수동적이라 관계 시작이 어려울 수 있어요."
+    }
+  },
+  "loveChain": {
+    "description": "연애 먹이사슬",
+    "chain": "에겐녀 → 에겐남 → 테토녀 → 테토남 → 에겐녀",
+    "explanation": "화살표 방향이 '끌리는 방향'입니다. 에겐녀는 에겐남에게, 에겐남은 테토녀에게, 테토녀는 테토남에게, 테토남은 에겐녀에게 끌리는 경향이 있어요."
+  }
+}

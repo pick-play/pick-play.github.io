@@ -4,51 +4,117 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 
-const services = [
+const categories = [
   {
-    title: "뭐 먹지?",
-    description: "130가지 메뉴에서 취향 저격 맛 지도로 골라드립니다. 담백한 것? 자극적인 것? 클릭 한 번이면 끝.",
-    href: "/food",
-    emoji: "🍽️",
-    gradient: "from-orange-400 to-red-500",
-    bg: "bg-orange-50 dark:bg-orange-950/20",
-    stat: "130+ 메뉴",
+    id: "life",
+    name: "생활 도구",
+    tagline: "일상의 결정을 빠르고 스마트하게",
+    services: [
+      {
+        title: "뭐 먹지?",
+        description: "130가지 메뉴에서 취향 저격 맛 지도로 골라드립니다.",
+        href: "/food",
+        emoji: "🍽️",
+        gradient: "from-orange-400 to-red-500",
+        bg: "bg-orange-50 dark:bg-orange-950/20",
+        stat: "130+ 메뉴",
+      },
+      {
+        title: "회식비 정산",
+        description: "복잡한 더치페이도 깔끔하게. 항목별 제외, 차등 분할, 최소 송금까지.",
+        href: "/settlement",
+        emoji: "💰",
+        gradient: "from-green-400 to-emerald-500",
+        bg: "bg-emerald-50 dark:bg-emerald-950/20",
+        stat: "최소 송금",
+      },
+      {
+        title: "데이트 코스",
+        description: "전국 10개 도시, 200가지 코스. 분위기 지도에서 완벽한 동선을.",
+        href: "/date-course",
+        emoji: "💑",
+        gradient: "from-pink-400 to-purple-500",
+        bg: "bg-pink-50 dark:bg-pink-950/20",
+        stat: "10개 도시",
+      },
+      {
+        title: "랜덤 룰렛",
+        description: "뭐 먹을지, 누가 할지 고민될 때! 돌려서 결정하세요.",
+        href: "/roulette",
+        emoji: "🎯",
+        gradient: "from-cyan-400 to-blue-500",
+        bg: "bg-cyan-50 dark:bg-cyan-950/20",
+        stat: "커스텀 룰렛",
+      },
+    ],
   },
   {
-    title: "회식비 정산",
-    description: "복잡한 더치페이도 깔끔하게. 항목별 제외, 차등 분할, 최소 송금까지 한 번에.",
-    href: "/settlement",
-    emoji: "💰",
-    gradient: "from-green-400 to-emerald-500",
-    bg: "bg-emerald-50 dark:bg-emerald-950/20",
-    stat: "최소 송금",
+    id: "party",
+    name: "파티 게임",
+    tagline: "친구들과 함께 즐기는 실시간 게임",
+    services: [
+      {
+        title: "라이어 게임",
+        description: "친구들과 함께하는 파티 게임! 라이어를 찾아내세요.",
+        href: "/liar-game",
+        emoji: "🕵️",
+        gradient: "from-violet-500 to-fuchsia-500",
+        bg: "bg-violet-50 dark:bg-violet-950/20",
+        stat: "8개 주제",
+      },
+      {
+        title: "조 뽑기",
+        description: "랜덤으로 공정하게 조를 나눠드립니다. 긴장감 넘치는 애니메이션!",
+        href: "/random-team",
+        emoji: "🎲",
+        gradient: "from-blue-500 to-cyan-500",
+        bg: "bg-blue-50 dark:bg-blue-950/20",
+        stat: "랜덤 배정",
+      },
+      {
+        title: "밸런스 게임",
+        description: "이거 vs 저거! 다양한 주제의 밸런스 게임을 즐겨보세요.",
+        href: "/balance-game",
+        emoji: "⚖️",
+        gradient: "from-amber-400 to-orange-500",
+        bg: "bg-amber-50 dark:bg-amber-950/20",
+        stat: "50+ 질문",
+      },
+      {
+        title: "초성 퀴즈",
+        description: "초성만 보고 단어를 맞춰보세요! 힌트와 타이머로 더 재밌게.",
+        href: "/chosung-quiz",
+        emoji: "🔤",
+        gradient: "from-teal-400 to-green-500",
+        bg: "bg-teal-50 dark:bg-teal-950/20",
+        stat: "100+ 단어",
+      },
+    ],
   },
   {
-    title: "데이트 코스",
-    description: "전국 10개 도시, 200가지 코스. 분위기 지도에서 원하는 느낌을 찍으면 완벽한 동선을 짜드립니다.",
-    href: "/date-course",
-    emoji: "💑",
-    gradient: "from-pink-400 to-purple-500",
-    bg: "bg-pink-50 dark:bg-pink-950/20",
-    stat: "10개 도시",
-  },
-  {
-    title: "라이어 게임",
-    description: "친구들과 함께하는 파티 게임! 다양한 주제에서 라이어를 찾아내세요. 모바일에서도 편하게 플레이.",
-    href: "/liar-game",
-    emoji: "🕵️",
-    gradient: "from-violet-500 to-fuchsia-500",
-    bg: "bg-violet-50 dark:bg-violet-950/20",
-    stat: "8개 주제",
-  },
-  {
-    title: "조 뽑기",
-    description: "랜덤으로 공정하게 조를 나눠드립니다. 긴장감 넘치는 애니메이션과 함께 팀 배정!",
-    href: "/random-team",
-    emoji: "🎲",
-    gradient: "from-blue-500 to-cyan-500",
-    bg: "bg-blue-50 dark:bg-blue-950/20",
-    stat: "랜덤 배정",
+    id: "psych",
+    name: "심리 테스트",
+    tagline: "나를 알아가는 재미있는 성향 분석",
+    services: [
+      {
+        title: "테토 vs 에겐",
+        description: "나는 테토일까 에겐일까? 성향 테스트로 알아보세요.",
+        href: "/teto-egen",
+        emoji: "🧬",
+        gradient: "from-rose-400 to-pink-500",
+        bg: "bg-rose-50 dark:bg-rose-950/20",
+        stat: "성향 분석",
+      },
+      {
+        title: "MBTI 검사",
+        description: "20문항으로 알아보는 나의 MBTI 성격유형과 궁합.",
+        href: "/mbti",
+        emoji: "🧠",
+        gradient: "from-indigo-400 to-purple-500",
+        bg: "bg-indigo-50 dark:bg-indigo-950/20",
+        stat: "16가지 유형",
+      },
+    ],
   },
 ];
 
@@ -74,6 +140,15 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
+const sectionHeaderVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
     transition: { duration: 0.5, ease: "easeOut" },
   },
 };
@@ -114,7 +189,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400 text-sm font-medium"
         >
-          130+ 메뉴 · 200+ 데이트 코스 · 파티 게임 · 조 뽑기
+          10가지 도구 · 파티 게임 · 심리 테스트
         </motion.div>
 
         <motion.h1
@@ -161,64 +236,93 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Service Cards */}
-      <section className="max-w-6xl mx-auto px-4 pb-24">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-        >
-          {services.map((service) => (
-            <motion.div key={service.href} variants={itemVariants}>
-              <Link href={service.href} className="block group h-full">
-                <div
-                  className={`relative h-full p-7 rounded-2xl ${service.bg} border border-slate-200/60 dark:border-slate-700/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 overflow-hidden`}
-                >
-                  {/* Subtle gradient accent */}
-                  <div
-                    className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${service.gradient} opacity-[0.06] rounded-bl-full`}
-                  />
-
-                  <div className="relative">
-                    <div className="text-4xl mb-4">{service.emoji}</div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <h3 className="text-xl font-bold group-hover:text-primary-500 transition-colors">
-                        {service.title}
-                      </h3>
-                      <span
-                        className={`px-2 py-0.5 text-[11px] font-bold rounded-full bg-gradient-to-r ${service.gradient} text-white`}
-                      >
-                        {service.stat}
-                      </span>
-                    </div>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center gap-1 text-sm font-medium text-primary-500 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
-                      시작하기
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+      {/* Categorized Service Cards */}
+      <section className="max-w-6xl mx-auto px-4 pb-24 space-y-16">
+        {categories.map((category, categoryIndex) => (
+          <div key={category.id}>
+            {/* Category Header */}
+            <motion.div
+              variants={sectionHeaderVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              className="flex items-center gap-4 mb-6"
+            >
+              <div>
+                <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">
+                  {category.name}
+                </h2>
+                <p className="text-sm text-slate-400 dark:text-slate-500 mt-0.5">
+                  {category.tagline}
+                </p>
+              </div>
+              <div className="flex-1 h-px bg-slate-200 dark:bg-slate-700/60" />
             </motion.div>
-          ))}
-        </motion.div>
+
+            {/* Service Cards Grid */}
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              className={
+                category.services.length === 2
+                  ? "grid grid-cols-1 md:grid-cols-2 gap-5"
+                  : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
+              }
+            >
+              {category.services.map((service) => (
+                <motion.div key={service.href} variants={itemVariants}>
+                  <Link href={service.href} className="block group h-full">
+                    <div
+                      className={`relative h-full p-7 rounded-2xl ${service.bg} border border-slate-200/60 dark:border-slate-700/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 overflow-hidden`}
+                    >
+                      {/* Subtle gradient accent */}
+                      <div
+                        className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${service.gradient} opacity-[0.06] rounded-bl-full`}
+                      />
+
+                      <div className="relative">
+                        <div className="text-4xl mb-4">{service.emoji}</div>
+                        <div className="flex items-center gap-2 mb-3">
+                          <h3 className="text-xl font-bold group-hover:text-primary-500 transition-colors">
+                            {service.title}
+                          </h3>
+                          <span
+                            className={`px-2 py-0.5 text-[11px] font-bold rounded-full bg-gradient-to-r ${service.gradient} text-white`}
+                          >
+                            {service.stat}
+                          </span>
+                        </div>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                          {service.description}
+                        </p>
+                        <div className="flex items-center gap-1 text-sm font-medium text-primary-500 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
+                          시작하기
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        ))}
       </section>
+
       {/* SEO Content Section */}
       <section className="max-w-4xl mx-auto px-4 pb-20">
         <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
@@ -243,6 +347,10 @@ export default function Home() {
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">랜덤 조 뽑기</h3>
               <p>회사 팀빌딩, 학교 조편성에 딱! 긴장감 넘치는 애니메이션으로 공정하게 팀을 나눠드립니다.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">심리 테스트</h3>
+              <p>테토 vs 에겐, MBTI 등 다양한 성향 테스트로 나를 알아가세요. 친구들과 함께 결과를 비교해 보세요.</p>
             </div>
           </div>
         </div>

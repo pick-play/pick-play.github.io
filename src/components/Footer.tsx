@@ -1,11 +1,40 @@
 import Link from "next/link";
 
+const footerCategories = [
+  {
+    label: "생활 도구",
+    links: [
+      { href: "/food", label: "뭐 먹지?" },
+      { href: "/settlement", label: "회식비 정산" },
+      { href: "/date-course", label: "데이트 코스" },
+      { href: "/roulette", label: "랜덤 룰렛" },
+    ],
+  },
+  {
+    label: "파티 게임",
+    links: [
+      { href: "/liar-game", label: "라이어 게임" },
+      { href: "/random-team", label: "조 뽑기" },
+      { href: "/balance-game", label: "밸런스 게임" },
+      { href: "/chosung-quiz", label: "초성 퀴즈" },
+    ],
+  },
+  {
+    label: "심리 테스트",
+    links: [
+      { href: "/teto-egen", label: "테토 vs 에겐" },
+      { href: "/mbti", label: "MBTI 검사" },
+    ],
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-4 py-10">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8">
-          <div>
+        <div className="flex flex-col md:flex-row gap-10 mb-8">
+          {/* Brand */}
+          <div className="shrink-0">
             <Link
               href="/"
               className="text-xl font-bold bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent"
@@ -16,39 +45,31 @@ export default function Footer() {
               고민은 줄이고, 선택은 빠르게.
             </p>
           </div>
-          <nav className="flex items-center gap-6">
-            <Link
-              href="/food"
-              className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors"
-            >
-              뭐 먹지
-            </Link>
-            <Link
-              href="/settlement"
-              className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors"
-            >
-              정산
-            </Link>
-            <Link
-              href="/date-course"
-              className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors"
-            >
-              데이트 코스
-            </Link>
-            <Link
-              href="/liar-game"
-              className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors"
-            >
-              라이어 게임
-            </Link>
-            <Link
-              href="/random-team"
-              className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors"
-            >
-              조 뽑기
-            </Link>
+
+          {/* Category link columns */}
+          <nav className="flex flex-wrap gap-10 md:gap-12">
+            {footerCategories.map((category) => (
+              <div key={category.label}>
+                <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-3">
+                  {category.label}
+                </p>
+                <ul className="space-y-2">
+                  {category.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </nav>
         </div>
+
         <div className="pt-6 border-t border-slate-200/60 dark:border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-400">
           <span>&copy; {new Date().getFullYear()} PickPlay</span>
           <span>

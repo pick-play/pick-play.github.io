@@ -1,0 +1,53 @@
+{
+  "questions": [
+    { "id": 1, "dimension": "EI", "question": "새로운 사람들이 많은 모임에 갔을 때 나는?", "optionA": { "text": "적극적으로 여러 사람에게 먼저 말을 건다", "type": "E" }, "optionB": { "text": "아는 사람 옆에서 조용히 있는 편이다", "type": "I" } },
+    { "id": 2, "dimension": "EI", "question": "에너지를 충전하는 방법은?", "optionA": { "text": "친구들과 만나서 수다 떨기", "type": "E" }, "optionB": { "text": "혼자만의 시간 보내기", "type": "I" } },
+    { "id": 3, "dimension": "EI", "question": "주말에 갑자기 약속이 잡히면?", "optionA": { "text": "좋아! 어디 가자!", "type": "E" }, "optionB": { "text": "음... 집에서 쉬려고 했는데...", "type": "I" } },
+    { "id": 4, "dimension": "EI", "question": "대화할 때 나는?", "optionA": { "text": "말하면서 생각이 정리된다", "type": "E" }, "optionB": { "text": "생각을 정리한 후에 말한다", "type": "I" } },
+    { "id": 5, "dimension": "EI", "question": "친구 범위는?", "optionA": { "text": "아는 사람이 많고 폭이 넓다", "type": "E" }, "optionB": { "text": "소수의 깊은 관계를 선호한다", "type": "I" } },
+
+    { "id": 6, "dimension": "SN", "question": "여행 계획을 세울 때 나는?", "optionA": { "text": "구체적인 일정과 장소를 정한다", "type": "S" }, "optionB": { "text": "대략적인 방향만 정하고 즉흥적으로", "type": "N" } },
+    { "id": 7, "dimension": "SN", "question": "새로운 것을 배울 때 선호하는 방식은?", "optionA": { "text": "단계별로 차근차근 실습하며 배운다", "type": "S" }, "optionB": { "text": "전체 개념을 먼저 이해하고 응용한다", "type": "N" } },
+    { "id": 8, "dimension": "SN", "question": "대화할 때 더 끌리는 주제는?", "optionA": { "text": "실제 경험, 사실, 현실적인 이야기", "type": "S" }, "optionB": { "text": "아이디어, 가능성, 미래에 대한 이야기", "type": "N" } },
+    { "id": 9, "dimension": "SN", "question": "일을 할 때 나는?", "optionA": { "text": "검증된 방법을 따르는 편이다", "type": "S" }, "optionB": { "text": "새로운 방법을 시도하는 편이다", "type": "N" } },
+    { "id": 10, "dimension": "SN", "question": "나를 더 잘 설명하는 것은?", "optionA": { "text": "현실적이고 실용적인 사람", "type": "S" }, "optionB": { "text": "상상력이 풍부하고 창의적인 사람", "type": "N" } },
+
+    { "id": 11, "dimension": "TF", "question": "친구가 고민을 이야기할 때 나는?", "optionA": { "text": "객관적으로 분석하고 해결책을 제시한다", "type": "T" }, "optionB": { "text": "감정에 공감하고 위로해준다", "type": "F" } },
+    { "id": 12, "dimension": "TF", "question": "중요한 결정을 내릴 때 기준은?", "optionA": { "text": "논리적 분석과 합리적 판단", "type": "T" }, "optionB": { "text": "관계와 감정, 가치관을 고려", "type": "F" } },
+    { "id": 13, "dimension": "TF", "question": "피드백을 줄 때 나는?", "optionA": { "text": "사실 위주로 솔직하게 말한다", "type": "T" }, "optionB": { "text": "상대 기분을 고려해서 부드럽게 말한다", "type": "F" } },
+    { "id": 14, "dimension": "TF", "question": "갈등 상황에서 나는?", "optionA": { "text": "옳고 그름을 따져서 해결한다", "type": "T" }, "optionB": { "text": "서로의 감정을 먼저 살핀다", "type": "F" } },
+    { "id": 15, "dimension": "TF", "question": "칭찬받을 때 더 기분 좋은 말은?", "optionA": { "text": "일을 정말 잘한다, 능력 있다", "type": "T" }, "optionB": { "text": "정말 따뜻하고 좋은 사람이다", "type": "F" } },
+
+    { "id": 16, "dimension": "JP", "question": "약속 시간에 대한 나의 태도는?", "optionA": { "text": "항상 시간을 지키고 미리 도착한다", "type": "J" }, "optionB": { "text": "시간에 유연하고 가끔 늦는다", "type": "P" } },
+    { "id": 17, "dimension": "JP", "question": "할 일이 있을 때 나는?", "optionA": { "text": "리스트를 만들고 하나씩 체크한다", "type": "J" }, "optionB": { "text": "상황에 따라 유연하게 처리한다", "type": "P" } },
+    { "id": 18, "dimension": "JP", "question": "마감이 다가올 때 나는?", "optionA": { "text": "미리미리 끝내놓는 편이다", "type": "J" }, "optionB": { "text": "마감 직전에 집중력이 폭발한다", "type": "P" } },
+    { "id": 19, "dimension": "JP", "question": "일상생활에서 나는?", "optionA": { "text": "규칙적이고 계획적으로 산다", "type": "J" }, "optionB": { "text": "자유롭고 즉흥적으로 산다", "type": "P" } },
+    { "id": 20, "dimension": "JP", "question": "결정을 내릴 때 나는?", "optionA": { "text": "빠르게 결정하고 실행한다", "type": "J" }, "optionB": { "text": "여러 가능성을 열어두고 천천히 결정한다", "type": "P" } }
+  ],
+  "types": {
+    "ISTJ": { "title": "청렴결백한 논리주의자", "emoji": "📋", "desc": "사실에 근거한 철저하고 신뢰할 수 있는 유형. 한번 시작한 일은 끝까지 해내는 책임감의 아이콘.", "traits": ["책임감 강함", "체계적", "신뢰할 수 있는", "전통 중시"], "color": "from-slate-500 to-slate-700" },
+    "ISFJ": { "title": "용감한 수호자", "emoji": "🛡️", "desc": "따뜻하고 헌신적인 수호자. 주변 사람들을 세심하게 챙기며, 묵묵히 자신의 역할을 다합니다.", "traits": ["헌신적", "따뜻함", "세심함", "겸손한"], "color": "from-green-500 to-teal-600" },
+    "INFJ": { "title": "선의의 옹호자", "emoji": "🌌", "desc": "이상주의적이면서도 단호한 성격. 깊은 통찰력으로 세상을 더 나은 곳으로 만들고자 합니다.", "traits": ["통찰력", "이상주의", "결단력", "창의적"], "color": "from-purple-600 to-indigo-700" },
+    "INTJ": { "title": "용의주도한 전략가", "emoji": "🧠", "desc": "독립적이고 전략적인 사고의 소유자. 높은 기준을 가지고 끊임없이 발전을 추구합니다.", "traits": ["전략적 사고", "독립적", "결단력", "지적 호기심"], "color": "from-indigo-600 to-blue-800" },
+    "ISTP": { "title": "만능 재주꾼", "emoji": "🔧", "desc": "호기심 많고 실용적인 문제 해결사. 손으로 직접 만지고 분석하며 세상을 이해합니다.", "traits": ["분석적", "실용적", "적응력", "문제해결"], "color": "from-gray-500 to-zinc-700" },
+    "ISFP": { "title": "호기심 많은 예술가", "emoji": "🎨", "desc": "유연하고 매력적인 예술가 기질. 현재를 즐기며, 자신만의 공간과 자유를 소중히 여깁니다.", "traits": ["예술적", "온화함", "자유로움", "감수성"], "color": "from-rose-400 to-pink-600" },
+    "INFP": { "title": "열정적인 중재자", "emoji": "🦋", "desc": "이상적인 세상을 꿈꾸는 낭만가. 깊은 내면의 가치관을 가지고 진정성 있는 삶을 살아갑니다.", "traits": ["이상주의", "공감 능력", "창의적", "열정적"], "color": "from-violet-400 to-purple-600" },
+    "INTP": { "title": "논리적인 사색가", "emoji": "🔬", "desc": "끝없는 지적 호기심의 소유자. 복잡한 이론과 아이디어를 분석하고 탐구하는 것을 즐깁니다.", "traits": ["분석적", "독창적", "논리적", "탐구심"], "color": "from-cyan-500 to-blue-600" },
+    "ESTP": { "title": "모험을 즐기는 사업가", "emoji": "🏄", "desc": "에너지 넘치는 모험가! 지금 이 순간을 즐기며, 빠른 판단력으로 문제를 해결합니다.", "traits": ["대담함", "현실적", "직접 경험", "사교적"], "color": "from-amber-500 to-orange-600" },
+    "ESFP": { "title": "자유로운 영혼의 연예인", "emoji": "🎤", "desc": "사교적이고 활기찬 분위기 메이커! 주변 사람들에게 즐거움을 주며, 순간을 최대한 즐깁니다.", "traits": ["사교적", "즉흥적", "낙관적", "활기찬"], "color": "from-yellow-400 to-amber-500" },
+    "ENFP": { "title": "재기발랄한 활동가", "emoji": "🌈", "desc": "열정적이고 창의적인 자유로운 영혼! 새로운 가능성을 발견하고, 사람들에게 영감을 줍니다.", "traits": ["열정적", "창의적", "호기심", "공감 능력"], "color": "from-orange-400 to-pink-500" },
+    "ENTP": { "title": "뜨거운 논쟁을 즐기는 변론가", "emoji": "⚡", "desc": "도전을 즐기는 혁신가! 기존 관념에 도전하고, 날카로운 지적 토론을 즐깁니다.", "traits": ["혁신적", "논리적", "도전적", "다재다능"], "color": "from-red-500 to-orange-500" },
+    "ESTJ": { "title": "엄격한 관리자", "emoji": "👔", "desc": "체계적이고 실용적인 관리자! 규칙과 질서를 중시하며, 높은 책임감으로 조직을 이끕니다.", "traits": ["체계적", "실용적", "리더십", "책임감"], "color": "from-blue-600 to-indigo-700" },
+    "ESFJ": { "title": "사교적인 외교관", "emoji": "🤝", "desc": "따뜻하고 사교적인 조화의 달인! 주변 사람들의 필요를 잘 파악하고 적극적으로 도와줍니다.", "traits": ["사교적", "배려심", "협동적", "헌신적"], "color": "from-emerald-500 to-green-600" },
+    "ENFJ": { "title": "정의로운 사회운동가", "emoji": "🌟", "desc": "카리스마 넘치는 리더! 사람들의 잠재력을 발견하고, 함께 성장하는 것을 가장 큰 보람으로 여깁니다.", "traits": ["카리스마", "이타적", "영감", "소통 능력"], "color": "from-teal-500 to-emerald-600" },
+    "ENTJ": { "title": "대담한 통솔자", "emoji": "👑", "desc": "비전을 가진 전략적 리더! 효율성을 추구하며, 목표를 향해 팀을 이끄는 것에 탁월합니다.", "traits": ["리더십", "전략적", "효율적", "결단력"], "color": "from-red-600 to-rose-700" }
+  },
+  "compatibility": {
+    "ISTJ": ["ESFP", "ESTP"], "ISFJ": ["ESFP", "ESTP"], "INFJ": ["ENFP", "ENTP"],
+    "INTJ": ["ENFP", "ENTP"], "ISTP": ["ESFJ", "ESTJ"], "ISFP": ["ESFJ", "ESTJ"],
+    "INFP": ["ENFJ", "ENTJ"], "INTP": ["ENFJ", "ENTJ"], "ESTP": ["ISFJ", "ISTJ"],
+    "ESFP": ["ISFJ", "ISTJ"], "ENFP": ["INFJ", "INTJ"], "ENTP": ["INFJ", "INTJ"],
+    "ESTJ": ["ISFP", "ISTP"], "ESFJ": ["ISFP", "ISTP"], "ENFJ": ["INFP", "INTP"],
+    "ENTJ": ["INFP", "INTP"]
+  }
+}

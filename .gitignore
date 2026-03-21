@@ -36,3 +36,7 @@ next-env.d.ts
 # project docs (private)
 AGENTS.md
 .omc/
+
+# local files
+favicon.png
+setting.json
