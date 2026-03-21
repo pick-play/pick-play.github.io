@@ -184,7 +184,7 @@ export default function MbtiPage() {
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    });
+    }).catch(() => {});
   }, [mbtiResult, scores]);
 
   const eiPercent = pct(scores.E, scores.I);
