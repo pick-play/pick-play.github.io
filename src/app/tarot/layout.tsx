@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     title: "Yes or No 타로 - 무료 타로 카드 점 | PickPlay",
     description:
       "고민이 있을 때 타로 카드에 물어보세요! 22장의 메이저 아르카나 카드로 Yes 또는 No 답을 알려드립니다.",
-    url: "https://pick-korea.github.io/tarot",
+    url: "https://pick-play.github.io/tarot",
   },
-  alternates: { canonical: "https://pick-korea.github.io/tarot" },
+  alternates: { canonical: "https://pick-play.github.io/tarot" },
 };
 
 const jsonLd = {
@@ -20,7 +20,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Yes or No 타로 - 무료 타로 카드 점",
-      url: "https://pick-korea.github.io/tarot",
+      url: "https://pick-play.github.io/tarot",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -34,13 +34,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Yes or No 타로",
-          item: "https://pick-korea.github.io/tarot",
+          item: "https://pick-play.github.io/tarot",
         },
       ],
     },

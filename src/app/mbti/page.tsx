@@ -180,7 +180,7 @@ export default function MbtiPage() {
     if (!mbtiResult) return;
     const typeInfo = typesData[mbtiResult];
     const p = (a: number, b: number) => { const t = a + b; return t === 0 ? 50 : Math.round((a / t) * 100); };
-    const text = `나의 MBTI는 ${mbtiResult} (${typeInfo.title})!\nE${p(scores.E, scores.I)}% / I${p(scores.I, scores.E)}% | S${p(scores.S, scores.N)}% / N${p(scores.N, scores.S)}% | T${p(scores.T, scores.F)}% / F${p(scores.F, scores.T)}% | J${p(scores.J, scores.P)}% / P${p(scores.P, scores.J)}%\nPickPlay에서 MBTI 검사 해보기: https://pick-korea.github.io/mbti`;
+    const text = `나의 MBTI는 ${mbtiResult} (${typeInfo.title})!\nE${p(scores.E, scores.I)}% / I${p(scores.I, scores.E)}% | S${p(scores.S, scores.N)}% / N${p(scores.N, scores.S)}% | T${p(scores.T, scores.F)}% / F${p(scores.F, scores.T)}% | J${p(scores.J, scores.P)}% / P${p(scores.P, scores.J)}%\nPickPlay에서 MBTI 검사 해보기: https://pick-play.github.io/mbti`;
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);

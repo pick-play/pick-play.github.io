@@ -19,10 +19,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "D-Day 계산기 - 디데이 카운트다운 | PickPlay",
     description: "중요한 날까지 남은 일수를 계산하세요",
-    url: "https://pick-korea.github.io/d-day",
+    url: "https://pick-play.github.io/d-day",
   },
   alternates: {
-    canonical: "https://pick-korea.github.io/d-day",
+    canonical: "https://pick-play.github.io/d-day",
   },
 };
 
@@ -33,7 +33,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "D-Day 계산기",
       description: "D-Day 카운트다운 계산기",
-      url: "https://pick-korea.github.io/d-day",
+      url: "https://pick-play.github.io/d-day",
       applicationCategory: "UtilityApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -45,13 +45,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "D-Day 계산기",
-          item: "https://pick-korea.github.io/d-day",
+          item: "https://pick-play.github.io/d-day",
         },
       ],
     },

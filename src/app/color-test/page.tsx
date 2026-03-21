@@ -154,7 +154,7 @@ export default function ColorTestPage() {
   const handleShare = useCallback(() => {
     if (!primaryColor) return;
     const r = results[primaryColor];
-    const text = `나의 색깔 성격 유형은 ${r.name}(${r.title})!\n${r.traits.slice(0, 3).join(", ")}\nPickPlay에서 색깔 심리 테스트 해보기: https://pick-korea.github.io/color-test`;
+    const text = `나의 색깔 성격 유형은 ${r.name}(${r.title})!\n${r.traits.slice(0, 3).join(", ")}\nPickPlay에서 색깔 심리 테스트 해보기: https://pick-play.github.io/color-test`;
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);

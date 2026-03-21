@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "초성 퀴즈 - 초성만 보고 맞춰봐",
     description: "100개 이상의 단어! 초성만 보고 맞추는 재미있는 퀴즈 게임",
-    url: "https://pick-korea.github.io/chosung-quiz",
+    url: "https://pick-play.github.io/chosung-quiz",
   },
-  alternates: { canonical: "https://pick-korea.github.io/chosung-quiz" },
+  alternates: { canonical: "https://pick-play.github.io/chosung-quiz" },
 };
 
 const jsonLd = {
@@ -26,7 +26,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "초성 퀴즈 - 초성만 보고 맞춰봐",
-      url: "https://pick-korea.github.io/chosung-quiz",
+      url: "https://pick-play.github.io/chosung-quiz",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -40,13 +40,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "초성 퀴즈",
-          item: "https://pick-korea.github.io/chosung-quiz",
+          item: "https://pick-play.github.io/chosung-quiz",
         },
       ],
     },

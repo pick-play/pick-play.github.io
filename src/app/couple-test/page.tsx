@@ -222,7 +222,7 @@ export default function CoupleTestPage() {
 
   const handleShare = useCallback(() => {
     if (!result) return;
-    const text = `[커플 궁합 테스트 결과]\n${result.name1} ❤ ${result.name2}\n\n${result.emoji} ${result.title} - ${result.overall}%\n\n${result.desc}\n\n궁합 테스트 해보기: https://pick-korea.github.io/couple-test`;
+    const text = `[커플 궁합 테스트 결과]\n${result.name1} ❤ ${result.name2}\n\n${result.emoji} ${result.title} - ${result.overall}%\n\n${result.desc}\n\n궁합 테스트 해보기: https://pick-play.github.io/couple-test`;
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);

@@ -191,7 +191,7 @@ export default function TetoEgenPage() {
   const handleShare = useCallback(() => {
     if (!resultKey) return;
     const r = results[resultKey];
-    const text = `[테토 vs 에겐 성향 테스트 결과]\n${r.emoji} ${r.title} - ${r.subtitle}\n테토 ${tetoPercent}% / 에겐 ${egenPercent}%\n\n${r.description}\n\n최고 궁합: ${r.bestMatch}\n최악 궁합: ${r.worstMatch}\n\n테스트 해보기: https://pick-korea.github.io/teto-egen`;
+    const text = `[테토 vs 에겐 성향 테스트 결과]\n${r.emoji} ${r.title} - ${r.subtitle}\n테토 ${tetoPercent}% / 에겐 ${egenPercent}%\n\n${r.description}\n\n최고 궁합: ${r.bestMatch}\n최악 궁합: ${r.worstMatch}\n\n테스트 해보기: https://pick-play.github.io/teto-egen`;
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);

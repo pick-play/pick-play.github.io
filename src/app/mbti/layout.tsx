@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MBTI 성격유형 검사 - 나의 MBTI는?",
     description: "20문항으로 알아보는 나의 MBTI! 각 지표별 % 결과와 궁합까지",
-    url: "https://pick-korea.github.io/mbti",
+    url: "https://pick-play.github.io/mbti",
   },
-  alternates: { canonical: "https://pick-korea.github.io/mbti" },
+  alternates: { canonical: "https://pick-play.github.io/mbti" },
 };
 
 const jsonLd = {
@@ -26,7 +26,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "MBTI 성격유형 검사",
-      url: "https://pick-korea.github.io/mbti",
+      url: "https://pick-play.github.io/mbti",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -40,13 +40,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "MBTI 성격유형 검사",
-          item: "https://pick-korea.github.io/mbti",
+          item: "https://pick-play.github.io/mbti",
         },
       ],
     },

@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     title: "회식비 정산 계산기 - 더치페이 / N빵",
     description:
       "회식비, 모임비를 간편하게 정산하세요. 누가 얼마를 내야 하는지 한눈에!",
-    url: "https://pick-korea.github.io/settlement",
+    url: "https://pick-play.github.io/settlement",
   },
   alternates: {
-    canonical: "https://pick-korea.github.io/settlement",
+    canonical: "https://pick-play.github.io/settlement",
   },
 };
 
@@ -35,7 +35,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "회식비 정산 계산기 - 더치페이 / N빵",
-      url: "https://pick-korea.github.io/settlement",
+      url: "https://pick-play.github.io/settlement",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -44,8 +44,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-korea.github.io" },
-        { "@type": "ListItem", position: 2, name: "회식비 정산", item: "https://pick-korea.github.io/settlement" },
+        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-play.github.io" },
+        { "@type": "ListItem", position: 2, name: "회식비 정산", item: "https://pick-play.github.io/settlement" },
       ],
     },
     {

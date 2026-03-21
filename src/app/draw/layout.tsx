@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "제비뽑기 - 온라인 추첨 | PickPlay",
     description: "공정한 온라인 제비뽑기로 추첨하세요",
-    url: "https://pick-korea.github.io/draw",
+    url: "https://pick-play.github.io/draw",
   },
-  alternates: { canonical: "https://pick-korea.github.io/draw" },
+  alternates: { canonical: "https://pick-play.github.io/draw" },
 };
 
 const jsonLd = {
@@ -20,7 +20,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "제비뽑기",
       description: "온라인 추첨 도구",
-      url: "https://pick-korea.github.io/draw",
+      url: "https://pick-play.github.io/draw",
       applicationCategory: "UtilityApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -32,13 +32,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "제비뽑기",
-          item: "https://pick-korea.github.io/draw",
+          item: "https://pick-play.github.io/draw",
         },
       ],
     },

@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     title: "라이어 게임 - 파티 필수 게임",
     description:
       "라이어를 찾아라! 다양한 주제의 단어로 친구들과 즐기는 파티 게임",
-    url: "https://pick-korea.github.io/liar-game",
+    url: "https://pick-play.github.io/liar-game",
   },
-  alternates: { canonical: "https://pick-korea.github.io/liar-game" },
+  alternates: { canonical: "https://pick-play.github.io/liar-game" },
 };
 
 const jsonLd = {
@@ -28,7 +28,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "라이어 게임 - 파티 필수 게임",
-      url: "https://pick-korea.github.io/liar-game",
+      url: "https://pick-play.github.io/liar-game",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -42,13 +42,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "라이어 게임",
-          item: "https://pick-korea.github.io/liar-game",
+          item: "https://pick-play.github.io/liar-game",
         },
       ],
     },

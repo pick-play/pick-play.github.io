@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     title: "커플 궁합 테스트 - 이름으로 보는 우리의 궁합",
     description:
       "이름만 입력하면 커플 궁합을 알 수 있어요! 5가지 카테고리로 분석하는 재미있는 궁합 테스트.",
-    url: "https://pick-korea.github.io/couple-test",
+    url: "https://pick-play.github.io/couple-test",
   },
-  alternates: { canonical: "https://pick-korea.github.io/couple-test" },
+  alternates: { canonical: "https://pick-play.github.io/couple-test" },
 };
 
 const jsonLd = {
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "커플 궁합 테스트",
-      url: "https://pick-korea.github.io/couple-test",
+      url: "https://pick-play.github.io/couple-test",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -43,13 +43,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "커플 궁합 테스트",
-          item: "https://pick-korea.github.io/couple-test",
+          item: "https://pick-play.github.io/couple-test",
         },
       ],
     },

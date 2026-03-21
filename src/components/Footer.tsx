@@ -75,12 +75,12 @@ export default function Footer() {
           <span>
             Made by{" "}
             <a
-              href="https://github.com/pick-korea"
+              href="https://github.com/pick-play"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 hover:text-primary-500 transition-colors"
             >
-              pick-korea
+              pick-play
             </a>
           </span>
         </div>

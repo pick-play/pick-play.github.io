@@ -226,7 +226,7 @@ export default function SeatPage() {
         .join(" | ");
       lines.push(`${r + 1}행 | ${rowStr}`);
     }
-    lines.push("", "PickPlay에서 생성 - https://pick-korea.github.io/seat");
+    lines.push("", "PickPlay에서 생성 - https://pick-play.github.io/seat");
     try {
       await navigator.clipboard.writeText(lines.join("\n"));
       setCopySuccess(true);

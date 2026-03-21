@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     title: "진실 혹은 도전 - 파티 필수 게임",
     description:
       "진실 or 도전! 200개 이상의 질문과 미션으로 친구들과 더 재미있게",
-    url: "https://pick-korea.github.io/truth-dare",
+    url: "https://pick-play.github.io/truth-dare",
   },
-  alternates: { canonical: "https://pick-korea.github.io/truth-dare" },
+  alternates: { canonical: "https://pick-play.github.io/truth-dare" },
 };
 
 const jsonLd = {
@@ -27,7 +27,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "진실 혹은 도전 - 파티 필수 게임",
-      url: "https://pick-korea.github.io/truth-dare",
+      url: "https://pick-play.github.io/truth-dare",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -41,13 +41,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "진실 혹은 도전",
-          item: "https://pick-korea.github.io/truth-dare",
+          item: "https://pick-play.github.io/truth-dare",
         },
       ],
     },

@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "색깔 심리 테스트 - 나를 나타내는 색깔은?",
     description: "10가지 질문으로 알아보는 나의 색깔 성격! 8가지 색깔 유형 중 나는 어떤 색?",
-    url: "https://pick-korea.github.io/color-test",
+    url: "https://pick-play.github.io/color-test",
   },
-  alternates: { canonical: "https://pick-korea.github.io/color-test" },
+  alternates: { canonical: "https://pick-play.github.io/color-test" },
 };
 
 const jsonLd = {
@@ -26,7 +26,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "색깔 심리 테스트",
-      url: "https://pick-korea.github.io/color-test",
+      url: "https://pick-play.github.io/color-test",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -40,13 +40,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "색깔 심리 테스트",
-          item: "https://pick-korea.github.io/color-test",
+          item: "https://pick-play.github.io/color-test",
         },
       ],
     },

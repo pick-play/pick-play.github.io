@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "밸런스 게임 - 이거 vs 저거",
     description: "다양한 주제의 밸런스 게임을 친구들과 즐겨보세요!",
-    url: "https://pick-korea.github.io/balance-game",
+    url: "https://pick-play.github.io/balance-game",
   },
-  alternates: { canonical: "https://pick-korea.github.io/balance-game" },
+  alternates: { canonical: "https://pick-play.github.io/balance-game" },
 };
 
 const jsonLd = {
@@ -26,7 +26,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "밸런스 게임 - 이거 vs 저거",
-      url: "https://pick-korea.github.io/balance-game",
+      url: "https://pick-play.github.io/balance-game",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -40,13 +40,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-korea.github.io",
+          item: "https://pick-play.github.io",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "밸런스 게임",
-          item: "https://pick-korea.github.io/balance-game",
+          item: "https://pick-play.github.io/balance-game",
         },
       ],
     },
