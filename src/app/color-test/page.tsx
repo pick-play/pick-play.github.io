@@ -158,7 +158,7 @@ export default function ColorTestPage() {
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    });
+    }).catch(() => {});
   }, [primaryColor]);
 
   const resultData = primaryColor ? results[primaryColor] : null;

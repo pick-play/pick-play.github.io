@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
@@ -93,8 +93,6 @@ function calculateSettlement(
   return { settlements, transfers };
 }
 
-let nextExpenseId = 1;
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
@@ -106,6 +104,7 @@ const itemVariants = {
 };
 
 export default function SettlementPage() {
+  const nextExpenseIdRef = useRef(1);
   const [participants, setParticipants] = useState<string[]>(["", ""]);
   const [participantsConfirmed, setParticipantsConfirmed] = useState(false);
   const [expenses, setExpenses] = useState<Expense[]>([]);
@@ -134,16 +133,16 @@ export default function SettlementPage() {
     setParticipants(valid);
     setParticipantsConfirmed(true);
     setExpenses([
-      { id: nextExpenseId++, name: "", amount: 0, payer: "", excluded: [] },
-      { id: nextExpenseId++, name: "", amount: 0, payer: "", excluded: [] },
-      { id: nextExpenseId++, name: "", amount: 0, payer: "", excluded: [] },
+      { id: nextExpenseIdRef.current++, name: "", amount: 0, payer: "", excluded: [] },
+      { id: nextExpenseIdRef.current++, name: "", amount: 0, payer: "", excluded: [] },
+      { id: nextExpenseIdRef.current++, name: "", amount: 0, payer: "", excluded: [] },
     ]);
   };
 
   const addExpense = () => {
     setExpenses([
       ...expenses,
-      { id: nextExpenseId++, name: "", amount: 0, payer: "", excluded: [] },
+      { id: nextExpenseIdRef.current++, name: "", amount: 0, payer: "", excluded: [] },
     ]);
   };
 
@@ -182,7 +181,7 @@ export default function SettlementPage() {
     setShowResult(true);
   };
 
-  const handleCopy = () => {
+  const handleCopy = async () => {
     const lines = [
       "[ 정산 결과 ]",
       "",
@@ -196,9 +195,14 @@ export default function SettlementPage() {
         (t) => `${t.from} → ${t.to}: ${t.amount.toLocaleString()}원`
       ),
     ];
-    navigator.clipboard.writeText(lines.join("\n"));
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(lines.join("\n"));
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
   };
 
   const handleReset = () => {

@@ -36,7 +36,7 @@ function hashNames(a: string, b: string): number {
 
 function seededRand(seed: number, index: number): number {
   const s = ((seed ^ (index * 2654435761)) >>> 0) * 1234567891;
-  return ((s ^ (s >>> 16)) >>> 0) / 0xffffffff;
+  return ((s ^ (s >>> 16)) >>> 0) / 0x100000000;
 }
 
 function calcScore(seed: number, index: number): number {
@@ -110,7 +110,7 @@ function useCountUp(target: number, active: boolean, duration = 1200) {
   const rafRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!active) return;
+    if (!active) { setValue(0); return; }
     const start = performance.now();
     const tick = (now: number) => {
       const elapsed = now - start;
@@ -226,7 +226,7 @@ export default function CoupleTestPage() {
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    });
+    }).catch(() => {});
   }, [result]);
 
   const canSubmit = name1.trim().length > 0 && name2.trim().length > 0;

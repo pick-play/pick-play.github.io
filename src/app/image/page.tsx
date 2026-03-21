@@ -20,8 +20,10 @@ function downloadBlob(blob: Blob, filename: string) {
   const a = document.createElement("a");
   a.href = url;
   a.download = filename;
+  document.body.appendChild(a);
   a.click();
-  setTimeout(() => URL.revokeObjectURL(url), 10000);
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
 
 function convertImage(
@@ -159,6 +161,12 @@ function ConvertPngJpg() {
   const idCounter = useRef(0);
   const itemsRef = useRef<Item[]>([]);
   itemsRef.current = items;
+
+  useEffect(() => {
+    return () => {
+      itemsRef.current.forEach((it) => URL.revokeObjectURL(it.previewUrl));
+    };
+  }, []);
 
   const handleFiles = useCallback((files: FileList) => {
     const newItems: Item[] = Array.from(files)
@@ -304,6 +312,14 @@ function ConvertWebp() {
 
   const [items, setItems] = useState<Item[]>([]);
   const idCounter = useRef(0);
+  const itemsRef = useRef<Item[]>([]);
+  itemsRef.current = items;
+
+  useEffect(() => {
+    return () => {
+      itemsRef.current.forEach((it) => URL.revokeObjectURL(it.previewUrl));
+    };
+  }, []);
 
   const handleFiles = useCallback((files: FileList) => {
     const newItems: Item[] = Array.from(files)
@@ -456,6 +472,17 @@ function CompressTab() {
   const [items, setItems] = useState<Item[]>([]);
   const [targetMB, setTargetMB] = useState(0.5);
   const idCounter = useRef(0);
+  const itemsRef = useRef<Item[]>([]);
+  itemsRef.current = items;
+
+  useEffect(() => {
+    return () => {
+      itemsRef.current.forEach((it) => {
+        URL.revokeObjectURL(it.previewUrl);
+        if (it.resultUrl) URL.revokeObjectURL(it.resultUrl);
+      });
+    };
+  }, []);
 
   const handleFiles = useCallback((files: FileList) => {
     const newItems: Item[] = Array.from(files)
@@ -988,9 +1015,37 @@ function CropTab() {
               onMouseMove={onMouseMove}
               onMouseUp={onMouseUp}
               onMouseLeave={onMouseUp}
-              onTouchStart={(e) => { e.preventDefault(); onMouseDown(e as unknown as React.MouseEvent); }}
-              onTouchMove={(e) => { e.preventDefault(); onMouseMove(e as unknown as React.MouseEvent); }}
-              onTouchEnd={onMouseUp}
+              onTouchStart={(e) => {
+                e.preventDefault();
+                if (!e.touches.length) return;
+                const touch = e.touches[0];
+                const rect = containerRef.current?.getBoundingClientRect();
+                if (!rect) return;
+                const x = touch.clientX - rect.left;
+                const y = touch.clientY - rect.top;
+                setDragStart({ x, y });
+                setDragging(true);
+                setCropRect({ x, y, w: 0, h: 0 });
+              }}
+              onTouchMove={(e) => {
+                e.preventDefault();
+                if (!dragging || !dragStart || !e.touches.length) return;
+                const touch = e.touches[0];
+                const rect = containerRef.current?.getBoundingClientRect();
+                if (!rect) return;
+                const cx = Math.max(0, Math.min(touch.clientX - rect.left, rect.width));
+                const cy = Math.max(0, Math.min(touch.clientY - rect.top, rect.height));
+                setCropRect({
+                  x: Math.min(dragStart.x, cx),
+                  y: Math.min(dragStart.y, cy),
+                  w: Math.abs(cx - dragStart.x),
+                  h: Math.abs(cy - dragStart.y),
+                });
+              }}
+              onTouchEnd={(e) => {
+                e.preventDefault();
+                onMouseUp();
+              }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -1105,6 +1160,14 @@ function BatchTab() {
   const [progress, setProgress] = useState(0);
   const [running, setRunning] = useState(false);
   const idCounter = useRef(0);
+  const itemsRef = useRef<BatchItem[]>([]);
+  itemsRef.current = items;
+
+  useEffect(() => {
+    return () => {
+      itemsRef.current.forEach((it) => URL.revokeObjectURL(it.previewUrl));
+    };
+  }, []);
 
   const handleFiles = useCallback((files: FileList) => {
     const newItems: BatchItem[] = Array.from(files)

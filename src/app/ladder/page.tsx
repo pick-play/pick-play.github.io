@@ -428,6 +428,7 @@ export default function LadderPage() {
   const [animating, setAnimating] = useState(false);
   const [allRevealed, setAllRevealed] = useState(false);
   const animationTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const revealAllTimersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   // Sync arrays when playerCount changes
   useEffect(() => {
@@ -508,23 +509,27 @@ export default function LadderPage() {
       (i) => !revealedPlayers.has(i)
     );
 
+    revealAllTimersRef.current = [];
     unrevealed.forEach((playerIdx, seq) => {
       const delay = seq * (ANIM_DURATION * 0.6);
-      setTimeout(() => {
+      const t1 = setTimeout(() => {
         setRevealedPlayers((prev) => new Set(Array.from(prev).concat(playerIdx)));
         setAnimatingPlayer(playerIdx);
-        setTimeout(() => {
+        const t2 = setTimeout(() => {
           setAnimatingPlayer(null);
         }, ANIM_DURATION);
+        revealAllTimersRef.current.push(t2);
       }, delay);
+      revealAllTimersRef.current.push(t1);
     });
 
     const totalDuration = unrevealed.length * (ANIM_DURATION * 0.6) + ANIM_DURATION;
-    setTimeout(() => {
+    const tFinal = setTimeout(() => {
       setAnimating(false);
       setAllRevealed(true);
       setAnimatingPlayer(null);
     }, totalDuration);
+    revealAllTimersRef.current.push(tFinal);
   }, [animating, playerCount, revealedPlayers, ANIM_DURATION]);
 
   // Check if all revealed
@@ -536,6 +541,8 @@ export default function LadderPage() {
 
   const resetGame = useCallback(() => {
     if (animationTimerRef.current) clearTimeout(animationTimerRef.current);
+    revealAllTimersRef.current.forEach(clearTimeout);
+    revealAllTimersRef.current = [];
     setPhase("setup");
     setRungs([]);
     setRevealedPlayers(new Set());

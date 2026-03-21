@@ -139,12 +139,12 @@ export default function MbtiPage() {
       const answerType = option.type as ScoreKey;
       const weight = QUESTION_WEIGHTS[currentQuestion.id] ?? 1;
 
-      const newScores = { ...scores, [answerType]: scores[answerType] + weight };
-      setScores(newScores);
+      setScores(prev => ({ ...prev, [answerType]: prev[answerType] + weight }));
 
       setTimeout(() => {
         const nextIndex = currentIndex + 1;
         if (nextIndex >= questions.length) {
+          const newScores = { ...scores, [answerType]: scores[answerType] + weight };
           const result =
             (newScores.E >= newScores.I ? "E" : "I") +
             (newScores.S >= newScores.N ? "S" : "N") +

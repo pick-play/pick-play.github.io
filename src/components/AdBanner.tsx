@@ -58,7 +58,8 @@ export default function AdBanner({
         style={{ display: "block", width: "100%" }}
         data-ad-client="ca-pub-7766090864059500"
         data-ad-slot="auto"
-        data-ad-format="auto"
+        data-ad-format={format === "in-article" ? "fluid" : "auto"}
+        {...(format === "in-article" ? { "data-ad-layout": "in-article" } : {})}
         data-full-width-responsive="true"
       />
     </div>

@@ -263,7 +263,7 @@ export default function FoodPage() {
                         </span>
                       </div>
                       <p className="text-center text-slate-500 dark:text-slate-400 mb-6">{result.description}</p>
-                      <button onClick={() => startSlot()} className="w-full py-3 rounded-xl border-2 border-orange-400 text-orange-500 font-semibold hover:bg-orange-50 dark:hover:bg-orange-900/10 transition-colors">
+                      <button onClick={() => startSlot()} disabled={spinning} className="w-full py-3 rounded-xl border-2 border-orange-400 text-orange-500 font-semibold hover:bg-orange-50 dark:hover:bg-orange-900/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                         다시 뽑기
                       </button>
                       <div className="flex gap-3 mt-3">

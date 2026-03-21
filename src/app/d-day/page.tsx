@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
@@ -211,9 +211,8 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" } },
 };
 
-let nextId = 1;
-
 export default function DdayPage() {
+  const nextIdRef = useRef(1);
   const [events, setEvents] = useState<DayEvent[]>([]);
   const [title, setTitle] = useState("");
   const [emoji, setEmoji] = useState("📅");
@@ -225,7 +224,7 @@ export default function DdayPage() {
     if (!title.trim() || !targetDate) return;
     setEvents((prev) => [
       ...prev,
-      { id: nextId++, title: title.trim(), emoji, targetDate },
+      { id: nextIdRef.current++, title: title.trim(), emoji, targetDate },
     ]);
     setTitle("");
     setEmoji("📅");

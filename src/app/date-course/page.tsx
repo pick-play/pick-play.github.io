@@ -314,7 +314,7 @@ export default function DateCoursePage() {
                           </motion.div>
                         ))}
                       </div>
-                      <button onClick={() => startSlot()} className="w-full py-3 rounded-xl border-2 border-pink-400 text-pink-500 font-semibold hover:bg-pink-50 dark:hover:bg-pink-900/10 transition-colors">다시 뽑기</button>
+                      <button onClick={() => startSlot()} disabled={spinning} className="w-full py-3 rounded-xl border-2 border-pink-400 text-pink-500 font-semibold hover:bg-pink-50 dark:hover:bg-pink-900/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">다시 뽑기</button>
                       <div className="flex gap-3 mt-3">
                         <a href={`https://map.naver.com/v5/search/${encodeURIComponent(result.region + ' 데이트')}`} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold transition-colors">
                           <span>📍</span> 네이버 지도에서 검색

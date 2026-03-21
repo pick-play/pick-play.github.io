@@ -410,7 +410,7 @@ export default function Home() {
                         <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-4">
                           {service.description}
                         </p>
-                        <div className="flex items-center gap-1 text-sm font-medium text-primary-500 opacity-0 group-hover:opacity-100 translate-x-0 group-hover:translate-x-1 transition-all">
+                        <div className="flex items-center gap-1 text-sm font-medium text-primary-500 translate-x-0 group-hover:translate-x-1 transition-all">
                           시작하기
                           <svg
                             className="w-4 h-4"

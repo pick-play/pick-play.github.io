@@ -445,7 +445,7 @@ export default function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="fixed top-14 left-0 right-0 z-50 md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-lg"
+              className="fixed top-14 left-0 right-0 z-50 md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-lg max-h-[calc(100dvh-3.5rem)] overflow-y-auto"
             >
               <div className="max-w-6xl mx-auto px-4 py-5 space-y-5">
                 {navCategories.map((category, ci) => {

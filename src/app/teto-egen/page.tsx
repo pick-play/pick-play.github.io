@@ -195,7 +195,7 @@ export default function TetoEgenPage() {
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    });
+    }).catch(() => {});
   }, [resultKey, tetoPercent, egenPercent]);
 
   const result = resultKey ? results[resultKey] : null;

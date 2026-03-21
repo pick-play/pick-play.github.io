@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
@@ -42,7 +42,7 @@ function getWinnerIndex(totalRotation: number, count: number): number {
   // Segment index is calculated from how far we rotated into the wheel
   // Since segment 0 was originally at top, after rotating `normalized` deg,
   // the segment at top is the one that was `normalized` degrees behind the start.
-  const idx = Math.floor(normalized / segmentDeg) % count;
+  const idx = (count - Math.floor(normalized / segmentDeg)) % count;
   return idx;
 }
 
@@ -55,14 +55,18 @@ interface ConfettiPiece {
 }
 
 function Confetti({ active }: { active: boolean }) {
-  if (!active) return null;
-  const pieces: ConfettiPiece[] = Array.from({ length: 24 }, (_, i) => ({
+  const pieces = useMemo(() => Array.from({ length: 24 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     color: COLORS[i % COLORS.length],
     size: 6 + Math.random() * 8,
     delay: Math.random() * 0.4,
-  }));
+    rotateDelta: Math.random() > 0.5 ? 360 : -360,
+    duration: 1.4 + Math.random() * 0.8,
+    borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+  })), []);
+
+  if (!active) return null;
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
@@ -70,8 +74,8 @@ function Confetti({ active }: { active: boolean }) {
         <motion.div
           key={p.id}
           initial={{ y: -20, x: `${p.x}vw`, opacity: 1, rotate: 0 }}
-          animate={{ y: "110%", opacity: 0, rotate: 360 * (Math.random() > 0.5 ? 1 : -1) }}
-          transition={{ duration: 1.4 + Math.random() * 0.8, delay: p.delay, ease: "easeIn" }}
+          animate={{ y: "110%", opacity: 0, rotate: p.rotateDelta }}
+          transition={{ duration: p.duration, delay: p.delay, ease: "easeIn" }}
           style={{
             position: "absolute",
             top: 0,
@@ -79,7 +83,7 @@ function Confetti({ active }: { active: boolean }) {
             width: p.size,
             height: p.size,
             backgroundColor: p.color,
-            borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+            borderRadius: p.borderRadius,
           }}
         />
       ))}

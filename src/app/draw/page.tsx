@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
@@ -78,15 +78,18 @@ interface ConfettiPiece {
 }
 
 function Confetti({ active }: { active: boolean }) {
-  if (!active) return null;
-  const pieces: ConfettiPiece[] = Array.from({ length: 30 }, (_, i) => ({
+  const pieces = useMemo(() => Array.from({ length: 30 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
     size: 6 + Math.random() * 8,
     delay: Math.random() * 0.5,
     duration: 1.2 + Math.random() * 0.8,
-  }));
+    rotateDelta: Math.random() > 0.5 ? 360 : -360,
+    borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+  })), []);
+
+  if (!active) return null;
 
   return (
     <div className="pointer-events-none fixed inset-0 overflow-hidden z-50">
@@ -97,7 +100,7 @@ function Confetti({ active }: { active: boolean }) {
           animate={{
             y: "110vh",
             opacity: [1, 1, 0],
-            rotate: 360 * (Math.random() > 0.5 ? 1 : -1),
+            rotate: p.rotateDelta,
             scale: [1, 1.2, 0.8],
           }}
           transition={{ duration: p.duration, delay: p.delay, ease: "easeIn" }}
@@ -107,7 +110,7 @@ function Confetti({ active }: { active: boolean }) {
             left: 0,
             width: p.size,
             height: p.size,
-            borderRadius: Math.random() > 0.5 ? "50%" : "2px",
+            borderRadius: p.borderRadius,
             backgroundColor: p.color,
           }}
         />
@@ -274,18 +277,27 @@ export default function DrawPage() {
 
   // Trigger confetti when a winner is first revealed
   const confettiTriggeredRef = useRef(false);
-  if (hasWinnerFlipped && !confettiTriggeredRef.current) {
-    confettiTriggeredRef.current = true;
-    setTimeout(() => setShowConfetti(true), 0);
-    setTimeout(() => setShowConfetti(false), 2500);
-  }
+  useEffect(() => {
+    if (hasWinnerFlipped && !confettiTriggeredRef.current) {
+      confettiTriggeredRef.current = true;
+      const t1 = setTimeout(() => setShowConfetti(true), 0);
+      const t2 = setTimeout(() => setShowConfetti(false), 2500);
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+      };
+    }
+  }, [hasWinnerFlipped]);
 
   // Go to result when all flipped
   const resultTriggeredRef = useRef(false);
-  if (allFlipped && phase === "draw" && !resultTriggeredRef.current) {
-    resultTriggeredRef.current = true;
-    setTimeout(() => setPhase("result"), 800);
-  }
+  useEffect(() => {
+    if (allFlipped && phase === "draw" && !resultTriggeredRef.current) {
+      resultTriggeredRef.current = true;
+      const t = setTimeout(() => setPhase("result"), 800);
+      return () => clearTimeout(t);
+    }
+  }, [allFlipped, phase]);
 
   const resetAll = () => {
     setItems([]);

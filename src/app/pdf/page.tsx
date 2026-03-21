@@ -27,8 +27,10 @@ function downloadBlob(blob: Blob, filename: string) {
   const a = document.createElement("a");
   a.href = url;
   a.download = filename;
+  document.body.appendChild(a);
   a.click();
-  setTimeout(() => URL.revokeObjectURL(url), 10000);
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
 
 function parsePageRanges(input: string, totalPages: number): number[] {
@@ -40,7 +42,9 @@ function parsePageRanges(input: string, totalPages: number): number[] {
       const start = parseInt(startStr.trim(), 10);
       const end = parseInt(endStr.trim(), 10);
       if (!isNaN(start) && !isNaN(end)) {
-        for (let i = start; i <= end; i++) {
+        const lo = Math.min(start, end);
+        const hi = Math.max(start, end);
+        for (let i = lo; i <= hi; i++) {
           if (i >= 1 && i <= totalPages) pages.push(i);
         }
       }
@@ -399,7 +403,7 @@ function SplitTab() {
               쉼표(,)로 구분, 하이픈(-)으로 범위 지정. 전체 {totalPages}페이지
             </p>
           </div>
-          {processing && <StatusBadge status={status} />}
+          {status && <StatusBadge status={status} />}
           {!processing && (
             <button
               onClick={handleSplit}
@@ -432,10 +436,11 @@ function Pdf2JpgTab() {
     if (!file) return;
     setProcessing(true);
     setImages([]);
+    let pdf: Awaited<ReturnType<Awaited<ReturnType<typeof getPdfJs>>["getDocument"]>["promise"]> | null = null;
     try {
       const arrayBuffer = await file.arrayBuffer();
       const pdfjsLib = await getPdfJs();
-      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
       const total = pdf.numPages;
       const results: string[] = [];
 
@@ -449,6 +454,8 @@ function Pdf2JpgTab() {
         const ctx = canvas.getContext("2d")!;
         await page.render({ canvas, canvasContext: ctx, viewport }).promise;
         results.push(canvas.toDataURL("image/jpeg", 0.92));
+        canvas.width = 0;
+        canvas.height = 0;
       }
       setImages(results);
       setStatus("");
@@ -456,6 +463,7 @@ function Pdf2JpgTab() {
       setStatus("변환 중 오류가 발생했습니다.");
       console.error(e);
     } finally {
+      if (pdf) pdf.destroy();
       setProcessing(false);
     }
   };
@@ -770,10 +778,11 @@ function ReorderTab() {
     setDeleted(new Set());
     setStatus("썸네일 생성 중...");
     setProcessing(true);
+    let pdf: Awaited<ReturnType<Awaited<ReturnType<typeof getPdfJs>>["getDocument"]>["promise"]> | null = null;
     try {
       const arrayBuffer = await f.arrayBuffer();
       const pdfjsLib = await getPdfJs();
-      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
       const total = pdf.numPages;
       const results: PageThumb[] = [];
       for (let i = 1; i <= total; i++) {
@@ -786,6 +795,8 @@ function ReorderTab() {
         const ctx = canvas.getContext("2d")!;
         await page.render({ canvas, canvasContext: ctx, viewport }).promise;
         results.push({ index: i - 1, dataUrl: canvas.toDataURL("image/jpeg", 0.7) });
+        canvas.width = 0;
+        canvas.height = 0;
       }
       setThumbs(results);
       setOrder(results.map((_, i) => i));
@@ -794,6 +805,7 @@ function ReorderTab() {
       setStatus("파일을 읽을 수 없습니다.");
       console.error(e);
     } finally {
+      if (pdf) pdf.destroy();
       setProcessing(false);
     }
   }, []);
@@ -970,10 +982,11 @@ function ExtractTab() {
     setProcessing(true);
     setText("");
     setStatus("텍스트 추출 중...");
+    let pdf: Awaited<ReturnType<Awaited<ReturnType<typeof getPdfJs>>["getDocument"]>["promise"]> | null = null;
     try {
       const arrayBuffer = await file.arrayBuffer();
       const pdfjsLib = await getPdfJs();
-      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
       const total = pdf.numPages;
       const lines: string[] = [];
 
@@ -996,6 +1009,7 @@ function ExtractTab() {
       setStatus("텍스트 추출에 실패했습니다.");
       console.error(e);
     } finally {
+      if (pdf) pdf.destroy();
       setProcessing(false);
     }
   };

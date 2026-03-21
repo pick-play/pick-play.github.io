@@ -75,6 +75,12 @@ function assignSeats(names: string[], rows: number, cols: number): SeatAssignmen
 }
 
 function ShuffleCard({ name, delay, phase }: { name: string; delay: number; phase: "shuffling" | "settling" }) {
+  const [randomVals] = useState(() => ({
+    x1: Math.random() * 80 - 40, x2: Math.random() * 50 - 25,
+    y1: Math.random() * 50 - 25, y2: Math.random() * 25 - 12,
+    r1: Math.random() * 24 - 12, r2: Math.random() * 12 - 6,
+  }));
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -83,9 +89,9 @@ function ShuffleCard({ name, delay, phase }: { name: string; delay: number; phas
           ? {
               opacity: [0, 1, 1, 1],
               scale: [0.5, 1, 1, 1],
-              x: [0, Math.random() * 80 - 40, Math.random() * 50 - 25, 0],
-              y: [0, Math.random() * 50 - 25, Math.random() * 25 - 12, 0],
-              rotate: [0, Math.random() * 24 - 12, Math.random() * 12 - 6, 0],
+              x: [0, randomVals.x1, randomVals.x2, 0],
+              y: [0, randomVals.y1, randomVals.y2, 0],
+              rotate: [0, randomVals.r1, randomVals.r2, 0],
               filter: ["blur(0px)", "blur(2px)", "blur(1px)", "blur(0px)"],
             }
           : {

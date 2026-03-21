@@ -59,6 +59,12 @@ function assignTeams(names: string[], numTeams: number): TeamResult[] {
 
 // Shuffle animation card component
 function ShuffleCard({ name, delay, phase }: { name: string; delay: number; phase: "shuffling" | "dealing" }) {
+  const [randomVals] = useState(() => ({
+    x1: Math.random() * 60 - 30, x2: Math.random() * 40 - 20,
+    y1: Math.random() * 40 - 20, y2: Math.random() * 20 - 10,
+    r1: Math.random() * 20 - 10, r2: Math.random() * 10 - 5,
+  }));
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -67,9 +73,9 @@ function ShuffleCard({ name, delay, phase }: { name: string; delay: number; phas
           ? {
               opacity: [0, 1, 1, 1],
               scale: [0.5, 1, 1, 1],
-              x: [0, Math.random() * 60 - 30, Math.random() * 40 - 20, 0],
-              y: [0, Math.random() * 40 - 20, Math.random() * 20 - 10, 0],
-              rotate: [0, Math.random() * 20 - 10, Math.random() * 10 - 5, 0],
+              x: [0, randomVals.x1, randomVals.x2, 0],
+              y: [0, randomVals.y1, randomVals.y2, 0],
+              rotate: [0, randomVals.r1, randomVals.r2, 0],
               filter: ["blur(0px)", "blur(2px)", "blur(1px)", "blur(0px)"],
             }
           : {

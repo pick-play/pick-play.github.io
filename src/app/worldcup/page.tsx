@@ -49,6 +49,7 @@ export default function WorldcupPage() {
   const [phase, setPhase] = useState<Phase>("select");
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
   const [roundSize, setRoundSize] = useState<RoundSize>(16);
+  const [copied, setCopied] = useState(false);
 
   // Tournament state
   const [bracket, setBracket] = useState<Candidate[]>([]);
@@ -133,9 +134,12 @@ export default function WorldcupPage() {
     if (!champion || !selectedTopic) return;
     const text = `이상형 월드컵 결과: ${selectedTopic.name}에서 "${champion.emoji} ${champion.name}"이(가) 최종 우승했습니다! | PickPlay`;
     if (navigator.share) {
-      navigator.share({ title: "이상형 월드컵 결과", text });
+      navigator.share({ title: "이상형 월드컵 결과", text }).catch(() => {});
     } else {
-      navigator.clipboard.writeText(text).then(() => alert("결과가 복사되었습니다!"));
+      navigator.clipboard.writeText(text).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }).catch(() => {});
     }
   }, [champion, selectedTopic]);
 
@@ -588,7 +592,7 @@ export default function WorldcupPage() {
                         transition={{ delay: 0.75 }}
                         className="flex-1 py-3 rounded-2xl bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
                       >
-                        🔗 결과 공유
+                        {copied ? "✓ 복사됨!" : "🔗 결과 공유"}
                       </motion.button>
                     </div>
                   </div>
