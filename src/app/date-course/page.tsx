@@ -343,6 +343,8 @@ export default function DateCoursePage() {
           </motion.div>
         )}
         <AdBanner format="in-article" className="mt-8 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
+        <AdBanner format="rectangle" className="my-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
+
         {/* SEO FAQ Section */}
         <section className="mt-16 mb-8">
           <h2 className="text-2xl font-bold mb-6 text-center">자주 묻는 질문</h2>

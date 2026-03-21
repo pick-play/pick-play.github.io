@@ -515,6 +515,8 @@ export default function RandomTeamPage() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
         </div>
       </div>
     </PageTransition>
