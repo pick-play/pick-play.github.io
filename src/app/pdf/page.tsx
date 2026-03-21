@@ -446,7 +446,8 @@ function Pdf2JpgTab() {
         const canvas = document.createElement("canvas");
         canvas.width = viewport.width;
         canvas.height = viewport.height;
-        await page.render({ canvas, viewport }).promise;
+        const ctx = canvas.getContext("2d")!;
+        await page.render({ canvas, canvasContext: ctx, viewport }).promise;
         results.push(canvas.toDataURL("image/jpeg", 0.92));
       }
       setImages(results);
@@ -782,7 +783,8 @@ function ReorderTab() {
         const canvas = document.createElement("canvas");
         canvas.width = viewport.width;
         canvas.height = viewport.height;
-        await page.render({ canvas, viewport }).promise;
+        const ctx = canvas.getContext("2d")!;
+        await page.render({ canvas, canvasContext: ctx, viewport }).promise;
         results.push({ index: i - 1, dataUrl: canvas.toDataURL("image/jpeg", 0.7) });
       }
       setThumbs(results);

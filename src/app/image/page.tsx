@@ -854,6 +854,16 @@ function CropTab() {
   const [dragging, setDragging] = useState(false);
   const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null);
 
+  // Lock body scroll while cropping on mobile
+  useEffect(() => {
+    if (dragging) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [dragging]);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const previewUrl = useRef<string | null>(null);
