@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://pick-korea.github.io"),
   verification: {
     google: "0c1Q1LUKx3fTxGQ9BHGViwcOtcz7ETY-vhjnSw11oMU",
+    other: {
+      "naver-site-verification": ["0de4f1f5c8536f458ea65e9716ff8fa1d18fd585"],
+    },
   },
   title: {
     default: "LifePick - 오늘 뭐 먹지 | 회식비 정산 | 데이트 코스 추천",
