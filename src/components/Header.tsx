@@ -222,7 +222,7 @@ function DropdownNav() {
                     border ${s.dropdown}
                     p-2 min-w-[160px]
                   `}
-                  style={{ width: `${cols * 88}px` }}
+                  style={{ width: `${cols * 116}px` }}
                 >
                   {/* Arrow pointer */}
                   <div

@@ -326,14 +326,19 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
         let col1: number, row1: number, col2: number, row2: number;
 
         if (cur.direction === "down") {
-          col1 = prev.col; row1 = prev.row;
-          col2 = cur.col; row2 = cur.row;
+          col1 = prev.col;
+          col2 = cur.col;
+          // If previous step was horizontal (right/left), start from the rung Y (row + 0.5)
+          row1 = prev.direction === "right" || prev.direction === "left"
+            ? prev.row + 0.5
+            : prev.row;
+          row2 = cur.row;
         } else if (cur.direction === "right") {
-          col1 = prev.col; row1 = cur.row;
-          col2 = prev.col + 1; row2 = cur.row;
+          col1 = prev.col; row1 = cur.row + 0.5;
+          col2 = prev.col + 1; row2 = cur.row + 0.5;
         } else {
-          col1 = prev.col; row1 = cur.row;
-          col2 = prev.col - 1; row2 = cur.row;
+          col1 = prev.col; row1 = cur.row + 0.5;
+          col2 = prev.col - 1; row2 = cur.row + 0.5;
         }
 
         const isVertical = col1 === col2;
