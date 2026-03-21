@@ -64,6 +64,38 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pick-korea.github.io/#organization",
+      name: "LifePick",
+      url: "https://pick-korea.github.io",
+      logo: "https://pick-korea.github.io/apple-touch-icon.png",
+      description: "오늘 뭐 먹지? 회식비 정산, 데이트 코스 추천까지. 선택을 대신 내려주는 라이프스타일 서비스",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pick-korea.github.io/#website",
+      url: "https://pick-korea.github.io",
+      name: "LifePick",
+      publisher: { "@id": "https://pick-korea.github.io/#organization" },
+      inLanguage: "ko-KR",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://pick-korea.github.io/#breadcrumb",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-korea.github.io" },
+        { "@type": "ListItem", position: 2, name: "오늘 뭐 먹지?", item: "https://pick-korea.github.io/food" },
+        { "@type": "ListItem", position: 3, name: "데이트 코스", item: "https://pick-korea.github.io/date-course" },
+        { "@type": "ListItem", position: 4, name: "회식비 정산", item: "https://pick-korea.github.io/settlement" },
+      ],
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -71,6 +103,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
         <ThemeProvider>
           <Header />

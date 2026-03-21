@@ -201,6 +201,26 @@ export default function Home() {
           ))}
         </motion.div>
       </section>
+      {/* SEO Content Section */}
+      <section className="max-w-4xl mx-auto px-4 pb-20">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+          <h2 className="text-xl font-bold mb-4 text-center">LifePick이 도와드릴게요</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">오늘 뭐 먹지?</h3>
+              <p>매일 반복되는 메뉴 고민, LifePick이 해결해 드립니다. 한식, 일식, 중식, 양식 등 130가지 메뉴 중에서 맛 지도로 취향에 맞는 음식을 추천받으세요. 점심 메뉴 추천, 저녁 메뉴 추천, 혼밥 메뉴까지 모두 가능합니다.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">데이트 코스 추천</h3>
+              <p>서울, 부산, 대구 등 전국 10개 도시의 100가지 데이트 코스를 추천받으세요. 카페, 야외, 실내, 액티비티 등 취향별 맞춤 코스를 낮/밤 시간대에 맞게 제공합니다.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">회식비 정산 계산기</h3>
+              <p>복잡한 더치페이, N빵 정산을 간편하게. 항목별 지출과 참여자를 입력하면 최소 송금 횟수로 정산 결과를 계산해 드립니다. 결과를 복사해서 바로 공유하세요.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </PageTransition>
   );
 }

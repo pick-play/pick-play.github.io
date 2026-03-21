@@ -246,6 +246,39 @@ export default function FoodPage() {
             </div>
           </motion.div>
         )}
+        {/* SEO FAQ Section */}
+        <section className="mt-16 mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-center">자주 묻는 질문</h2>
+          <div className="space-y-4">
+            <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-orange-500 transition-colors">
+                오늘 뭐 먹지? 메뉴 추천은 어떻게 받나요?
+                <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
+                맛 지도에서 담백~자극, 가벼운~고급 축으로 취향 위치를 클릭하면, 근처에 있는 메뉴들 중 슬롯머신이 랜덤으로 하나를 골라드립니다. 한식, 일식, 중식, 양식, 아시안, 분식, 디저트, 패스트푸드 등 130가지 메뉴를 지원합니다.
+              </p>
+            </details>
+            <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-orange-500 transition-colors">
+                점심 메뉴 추천, 저녁 메뉴 추천도 가능한가요?
+                <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
+                네! 맛 지도 모드에서 취향 위치를 선택하거나, 필터 모드에서 음식 종류와 가격대를 설정하면 점심·저녁 구분 없이 상황에 맞는 메뉴를 추천받을 수 있습니다. 혼밥 메뉴, 회식 메뉴, 배달 메뉴 추천 모두 가능합니다.
+              </p>
+            </details>
+            <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-orange-500 transition-colors">
+                무료로 사용할 수 있나요?
+                <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
+                네, LifePick의 모든 기능은 완전 무료입니다. 회원가입 없이, 앱 설치 없이 웹 브라우저에서 바로 사용할 수 있습니다. 오늘 뭐 먹지 고민될 때 언제든 방문하세요!
+              </p>
+            </details>
+          </div>
+        </section>
       </div>
     </PageTransition>
   );

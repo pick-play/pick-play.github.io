@@ -31,10 +31,69 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      name: "오늘 뭐 먹지? - 메뉴 추천 룰렛",
+      url: "https://pick-korea.github.io/food",
+      applicationCategory: "LifestyleApplication",
+      operatingSystem: "Web",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
+      description: "130가지 메뉴 중 취향에 맞는 음식을 맛 지도에서 추천받으세요.",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-korea.github.io" },
+        { "@type": "ListItem", position: 2, name: "오늘 뭐 먹지?", item: "https://pick-korea.github.io/food" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "오늘 뭐 먹지? 메뉴 추천은 어떻게 받나요?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "맛 지도에서 담백~자극, 가벼운~고급 축으로 취향 위치를 클릭하면, 근처에 있는 메뉴들 중 슬롯머신이 랜덤으로 하나를 골라드립니다. 한식, 일식, 중식, 양식, 아시안, 분식, 디저트, 패스트푸드 등 130가지 메뉴를 지원합니다.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "점심 메뉴 추천받을 수 있나요?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "네! 맛 지도 모드에서 취향 위치를 선택하거나, 필터 모드에서 음식 종류와 가격대를 설정하면 점심·저녁 구분 없이 상황에 맞는 메뉴를 추천받을 수 있습니다.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "무료로 사용할 수 있나요?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "네, LifePick의 모든 기능은 완전 무료입니다. 회원가입도 필요 없고, 앱 설치 없이 웹 브라우저에서 바로 사용할 수 있습니다.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function FoodLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  );
 }

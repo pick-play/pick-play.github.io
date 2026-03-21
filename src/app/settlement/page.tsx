@@ -537,6 +537,39 @@ export default function SettlementPage() {
             </motion.div>
           )}
         </AnimatePresence>
+        {/* SEO FAQ Section */}
+        <section className="mt-16 mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-center">자주 묻는 질문</h2>
+          <div className="space-y-4">
+            <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-emerald-500 transition-colors">
+                회식비 정산은 어떻게 하나요?
+                <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
+                참여자 이름을 입력하고, 각 지출 항목(식사, 2차 등)의 금액과 지불자를 입력하면 자동으로 최소 송금 횟수로 정산 결과를 계산해 드립니다. 특정 항목에 참여하지 않은 사람은 제외할 수도 있습니다.
+              </p>
+            </details>
+            <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-emerald-500 transition-colors">
+                더치페이와 N빵의 차이가 뭔가요?
+                <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
+                더치페이는 각자 먹은 만큼 내는 방식이고, N빵은 총액을 인원수로 균등하게 나누는 방식입니다. LifePick 정산 계산기는 두 방식 모두 지원하며, 항목별로 참여자를 제외하는 차등 정산도 가능합니다.
+              </p>
+            </details>
+            <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-emerald-500 transition-colors">
+                정산 결과를 공유할 수 있나요?
+                <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
+                네, 정산 결과 화면에서 &apos;결과 복사&apos; 버튼을 누르면 텍스트 형태로 클립보드에 복사됩니다. 카카오톡이나 메신저에 바로 붙여넣기하여 공유할 수 있습니다.
+              </p>
+            </details>
+          </div>
+        </section>
       </div>
     </PageTransition>
   );

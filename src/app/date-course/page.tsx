@@ -326,6 +326,39 @@ export default function DateCoursePage() {
             </div>
           </motion.div>
         )}
+        {/* SEO FAQ Section */}
+        <section className="mt-16 mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-center">자주 묻는 질문</h2>
+          <div className="space-y-4">
+            <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-pink-500 transition-colors">
+                데이트 코스 추천은 어떻게 받나요?
+                <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
+                도시를 선택하고 낮/밤 시간대를 고른 뒤, 분위기 지도에서 조용한~활동적, 실내~야외 축으로 원하는 느낌을 클릭하세요. 슬롯머신이 카페, 식사, 산책, 액티비티, 관광 등으로 구성된 완벽한 데이트 코스를 짜드립니다.
+              </p>
+            </details>
+            <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-pink-500 transition-colors">
+                어떤 도시의 데이트 코스를 추천받을 수 있나요?
+                <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
+                서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기북부, 경기남부 총 10개 도시의 100가지 이상 데이트 코스를 지원합니다. 각 도시별 인기 장소와 숨겨진 명소를 포함한 코스를 추천해 드립니다.
+              </p>
+            </details>
+            <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-pink-500 transition-colors">
+                낮 데이트와 밤 데이트 코스가 다른가요?
+                <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
+                네, 낮과 밤에 따라 완전히 다른 데이트 코스를 추천합니다. 낮에는 야외 산책, 카페, 관광 중심의 코스를, 밤에는 분위기 있는 식사, 야경, 실내 액티비티 위주의 코스를 제공합니다.
+              </p>
+            </details>
+          </div>
+        </section>
       </div>
     </PageTransition>
   );
