@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
+import AdBanner from "@/components/AdBanner";
 
 const categories = [
   {
@@ -236,6 +237,8 @@ export default function Home() {
         </motion.div>
       </section>
 
+      <div className="max-w-6xl mx-auto px-4"><AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" /></div>
+
       {/* Categorized Service Cards */}
       <section className="max-w-6xl mx-auto px-4 pb-24 space-y-16">
         {categories.map((category, categoryIndex) => (
@@ -319,9 +322,17 @@ export default function Home() {
                 </motion.div>
               ))}
             </motion.div>
+
+            {categoryIndex === 1 && (
+              <div className="mt-10">
+                <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
+              </div>
+            )}
           </div>
         ))}
       </section>
+
+      <div className="max-w-4xl mx-auto px-4 mb-8"><AdBanner format="horizontal" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" /></div>
 
       {/* SEO Content Section */}
       <section className="max-w-4xl mx-auto px-4 pb-20">

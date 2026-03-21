@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
+import AdBanner from "@/components/AdBanner";
 import testData from "@/data/teto-egen-test.json";
 
 type Gender = "male" | "female";
@@ -457,6 +458,14 @@ export default function TetoEgenPage() {
                       </div>
                     </div>
                   </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.52 }}
+                >
+                  <AdBanner format="rectangle" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </motion.div>
 
                 {/* Love chain */}

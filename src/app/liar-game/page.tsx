@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
+import AdBanner from "@/components/AdBanner";
 
 type Phase = "setup" | "assign" | "discuss" | "result";
 
@@ -606,6 +607,7 @@ export default function LiarGamePage() {
                   >
                     다시 하기
                   </motion.button>
+                  <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </div>
               </motion.div>
             )}

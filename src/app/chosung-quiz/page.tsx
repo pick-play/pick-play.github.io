@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
+import AdBanner from "@/components/AdBanner";
 import wordsData from "@/data/chosung-words.json";
 
 type Phase = "setup" | "game" | "result";
@@ -694,6 +695,7 @@ export default function ChosungQuizPage() {
                       설정 변경
                     </motion.button>
                   </div>
+                  <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </div>
               </motion.div>
             )}

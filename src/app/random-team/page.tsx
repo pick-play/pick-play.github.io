@@ -3,6 +3,7 @@
 import { useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
+import AdBanner from "@/components/AdBanner";
 
 type Phase = "input" | "animating" | "result";
 
@@ -507,6 +508,7 @@ export default function RandomTeamPage() {
                     처음부터
                   </button>
                 </motion.div>
+                <AdBanner format="horizontal" className="mt-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
               </motion.div>
             )}
           </AnimatePresence>

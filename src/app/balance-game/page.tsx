@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
+import AdBanner from "@/components/AdBanner";
 import allQuestions from "@/data/balance-questions.json";
 
 type Question = {
@@ -365,6 +366,7 @@ export default function BalanceGamePage() {
                   >
                     다시 하기
                   </motion.button>
+                  <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </div>
               </motion.div>
             )}

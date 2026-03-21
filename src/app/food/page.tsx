@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import TasteMap from "@/components/TasteMap";
+import AdBanner from "@/components/AdBanner";
 import foodsData from "@/data/foods.json";
 
 type Food = {
@@ -141,6 +142,8 @@ export default function FoodPage() {
             </button>
           </div>
         </motion.div>
+
+        <AdBanner format="horizontal" className="my-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
         <AnimatePresence mode="wait">
           {mode === "map" && (
@@ -282,6 +285,7 @@ export default function FoodPage() {
             </div>
           </motion.div>
         )}
+        <AdBanner format="in-article" className="mt-8 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
         {/* SEO FAQ Section */}
         <section className="mt-16 mb-8">
           <h2 className="text-2xl font-bold mb-6 text-center">자주 묻는 질문</h2>
