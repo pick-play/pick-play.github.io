@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 
-type Phase = "setup" | "assign" | "discuss" | "vote" | "result";
+type Phase = "setup" | "assign" | "discuss" | "result";
 
 const topics: Record<string, string[]> = {
   일반: [
@@ -62,17 +62,27 @@ function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function pickMultipleIndices(total: number, count: number): number[] {
+  const indices: number[] = [];
+  while (indices.length < count) {
+    const idx = Math.floor(Math.random() * total);
+    if (!indices.includes(idx)) indices.push(idx);
+  }
+  return indices;
+}
+
 export default function LiarGamePage() {
   // Setup state
   const [playerCount, setPlayerCount] = useState(5);
+  const [liarCount, setLiarCount] = useState(1);
   const [selectedTopic, setSelectedTopic] = useState("일반");
   const [discussionTime, setDiscussionTime] = useState(120);
 
   // Game state
   const [phase, setPhase] = useState<Phase>("setup");
   const [word, setWord] = useState("");
-  const [liarIndex, setLiarIndex] = useState(0); // 0-based
-  const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0); // 0-based, for assign phase
+  const [liarIndices, setLiarIndices] = useState<number[]>([]);
+  const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
   const [showingWord, setShowingWord] = useState(false);
   const [coverCountdown, setCoverCountdown] = useState<number | null>(null);
 
@@ -80,13 +90,16 @@ export default function LiarGamePage() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
 
-  // Voting state
-  const [votes, setVotes] = useState<Record<number, number>>({}); // playerNum -> voteCount
-  const [selectedVote, setSelectedVote] = useState<number | null>(null);
-  const [votingDone, setVotingDone] = useState(false);
+  // Refs for tap-to-skip
+  const wordTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Result
-  const [mostVoted, setMostVoted] = useState<number | null>(null);
+  // Max liars = floor(playerCount / 2) - 1 (at least 1, at most half minus 1 to keep game fair)
+  const maxLiars = Math.max(1, Math.floor(playerCount / 2));
+
+  // Adjust liar count if player count changes
+  useEffect(() => {
+    if (liarCount > maxLiars) setLiarCount(maxLiars);
+  }, [playerCount, liarCount, maxLiars]);
 
   // Timer effect
   useEffect(() => {
@@ -101,80 +114,82 @@ export default function LiarGamePage() {
   const startGame = useCallback(() => {
     const wordList = topics[selectedTopic];
     const chosenWord = pickRandom(wordList);
-    const chosenLiar = Math.floor(Math.random() * playerCount);
+    const chosenLiars = pickMultipleIndices(playerCount, liarCount);
     setWord(chosenWord);
-    setLiarIndex(chosenLiar);
+    setLiarIndices(chosenLiars);
     setCurrentPlayerIndex(0);
     setShowingWord(false);
     setCoverCountdown(null);
-    setVotes({});
-    setSelectedVote(null);
-    setVotingDone(false);
-    setMostVoted(null);
+    setTimerRunning(false);
+    setTimeLeft(0);
     setPhase("assign");
-  }, [playerCount, selectedTopic]);
+  }, [playerCount, liarCount, selectedTopic]);
+
+  const advanceToNext = useCallback(() => {
+    if (wordTimerRef.current) {
+      clearTimeout(wordTimerRef.current);
+      wordTimerRef.current = null;
+    }
+    setShowingWord(false);
+    setCoverCountdown(null);
+    const next = currentPlayerIndex + 1;
+    if (next >= playerCount) {
+      setTimeLeft(discussionTime);
+      setTimerRunning(false);
+      setPhase("discuss");
+    } else {
+      setCurrentPlayerIndex(next);
+    }
+  }, [currentPlayerIndex, playerCount, discussionTime]);
 
   const handleReveal = useCallback(() => {
     setShowingWord(true);
-    setTimeout(() => {
+    wordTimerRef.current = setTimeout(() => {
       setShowingWord(false);
-      // Start cover countdown
       setCoverCountdown(3);
     }, 3000);
   }, []);
 
+  // Tap to skip word display
+  const handleTapSkipWord = useCallback(() => {
+    if (wordTimerRef.current) {
+      clearTimeout(wordTimerRef.current);
+      wordTimerRef.current = null;
+    }
+    setShowingWord(false);
+    setCoverCountdown(3);
+  }, []);
+
+  // Cover countdown
   useEffect(() => {
     if (coverCountdown === null) return;
     if (coverCountdown <= 0) {
-      setCoverCountdown(null);
-      const next = currentPlayerIndex + 1;
-      if (next >= playerCount) {
-        // All players assigned — go to discuss
-        setTimeLeft(discussionTime);
-        setTimerRunning(false);
-        setPhase("discuss");
-      } else {
-        setCurrentPlayerIndex(next);
-        setShowingWord(false);
-      }
+      advanceToNext();
       return;
     }
     const id = setTimeout(() => setCoverCountdown((c) => (c !== null ? c - 1 : null)), 1000);
     return () => clearTimeout(id);
-  }, [coverCountdown, currentPlayerIndex, playerCount, discussionTime]);
+  }, [coverCountdown, advanceToNext]);
 
-  const submitVote = useCallback(() => {
-    if (selectedVote === null) return;
-    const newVotes = { ...votes };
-    newVotes[selectedVote] = (newVotes[selectedVote] ?? 0) + 1;
-    setVotes(newVotes);
-    setVotingDone(true);
-
-    // Determine most voted
-    let maxVotes = 0;
-    let maxPlayer = selectedVote;
-    Object.entries(newVotes).forEach(([p, v]) => {
-      if (v > maxVotes) {
-        maxVotes = v;
-        maxPlayer = Number(p);
-      }
-    });
-    setMostVoted(maxPlayer);
-  }, [selectedVote, votes]);
+  // Tap to skip countdown
+  const handleTapSkipCountdown = useCallback(() => {
+    setCoverCountdown(null);
+    advanceToNext();
+  }, [advanceToNext]);
 
   const resetGame = useCallback(() => {
     setPhase("setup");
     setWord("");
-    setLiarIndex(0);
+    setLiarIndices([]);
     setCurrentPlayerIndex(0);
     setShowingWord(false);
     setCoverCountdown(null);
-    setVotes({});
-    setSelectedVote(null);
-    setVotingDone(false);
-    setMostVoted(null);
     setTimerRunning(false);
     setTimeLeft(0);
+    if (wordTimerRef.current) {
+      clearTimeout(wordTimerRef.current);
+      wordTimerRef.current = null;
+    }
   }, []);
 
   const formatTime = (s: number) => {
@@ -190,6 +205,8 @@ export default function LiarGamePage() {
       : timerPercent > 20
       ? "from-amber-400 to-orange-500"
       : "from-red-400 to-rose-500";
+
+  const isLiar = (index: number) => liarIndices.includes(index);
 
   return (
     <PageTransition>
@@ -229,7 +246,6 @@ export default function LiarGamePage() {
                     <button
                       onClick={() => setPlayerCount((n) => Math.max(3, n - 1))}
                       className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-violet-100 dark:hover:bg-violet-900/40 text-slate-700 dark:text-slate-200 text-2xl font-bold transition-colors flex items-center justify-center"
-                      aria-label="플레이어 줄이기"
                     >
                       −
                     </button>
@@ -237,14 +253,40 @@ export default function LiarGamePage() {
                       {playerCount}
                     </span>
                     <button
-                      onClick={() => setPlayerCount((n) => Math.min(10, n + 1))}
+                      onClick={() => setPlayerCount((n) => Math.min(20, n + 1))}
                       className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-violet-100 dark:hover:bg-violet-900/40 text-slate-700 dark:text-slate-200 text-2xl font-bold transition-colors flex items-center justify-center"
-                      aria-label="플레이어 늘리기"
                     >
                       +
                     </button>
                   </div>
-                  <p className="text-center text-xs text-slate-400 mt-3">3명 ~ 10명</p>
+                  <p className="text-center text-xs text-slate-400 mt-3">3명 ~ 20명</p>
+                </div>
+
+                {/* Liar count */}
+                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+                  <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
+                    라이어 수
+                  </h2>
+                  <div className="flex items-center justify-center gap-6">
+                    <button
+                      onClick={() => setLiarCount((n) => Math.max(1, n - 1))}
+                      className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-violet-100 dark:hover:bg-violet-900/40 text-slate-700 dark:text-slate-200 text-2xl font-bold transition-colors flex items-center justify-center"
+                    >
+                      −
+                    </button>
+                    <span className="text-5xl font-extrabold bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent w-16 text-center">
+                      {liarCount}
+                    </span>
+                    <button
+                      onClick={() => setLiarCount((n) => Math.min(maxLiars, n + 1))}
+                      className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-violet-100 dark:hover:bg-violet-900/40 text-slate-700 dark:text-slate-200 text-2xl font-bold transition-colors flex items-center justify-center"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <p className="text-center text-xs text-slate-400 mt-3">
+                    1명 ~ {maxLiars}명 (전체의 절반까지)
+                  </p>
                 </div>
 
                 {/* Topic selection */}
@@ -314,7 +356,10 @@ export default function LiarGamePage() {
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-700 text-center min-h-72 flex flex-col items-center justify-center gap-6">
                   {/* Cover countdown */}
                   {coverCountdown !== null ? (
-                    <>
+                    <button
+                      onClick={handleTapSkipCountdown}
+                      className="w-full flex flex-col items-center gap-6 focus:outline-none"
+                    >
                       <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">
                         화면을 가려주세요
                       </p>
@@ -328,16 +373,19 @@ export default function LiarGamePage() {
                         {coverCountdown}
                       </motion.div>
                       <p className="text-slate-400 text-sm">
-                        다음 플레이어에게 화면을 넘겨주세요
+                        터치하면 바로 넘어갑니다
                       </p>
-                    </>
+                    </button>
                   ) : showingWord ? (
-                    /* Word reveal */
-                    <>
+                    /* Word reveal - tap to skip */
+                    <button
+                      onClick={handleTapSkipWord}
+                      className="w-full flex flex-col items-center gap-4 focus:outline-none"
+                    >
                       <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
                         플레이어 {currentPlayerIndex + 1}의 단어
                       </p>
-                      {currentPlayerIndex === liarIndex ? (
+                      {isLiar(currentPlayerIndex) ? (
                         <motion.div
                           initial={{ scale: 0.5, opacity: 0 }}
                           animate={{ scale: 1, opacity: 1 }}
@@ -369,9 +417,9 @@ export default function LiarGamePage() {
                         </motion.div>
                       )}
                       <p className="text-slate-400 text-xs animate-pulse">
-                        3초 후 자동으로 가려집니다
+                        터치하면 바로 넘어갑니다
                       </p>
-                    </>
+                    </button>
                   ) : (
                     /* Ready screen */
                     <>
@@ -430,8 +478,11 @@ export default function LiarGamePage() {
                   <h2 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 mb-1">
                     토론 시간!
                   </h2>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-8">
+                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-2">
                     단어를 직접 말하지 말고 설명하세요
+                  </p>
+                  <p className="text-violet-500 dark:text-violet-400 text-xs font-medium mb-8">
+                    라이어 {liarCount}명이 숨어있습니다
                   </p>
 
                   {/* Timer ring */}
@@ -483,88 +534,13 @@ export default function LiarGamePage() {
                     <button
                       onClick={() => {
                         setTimerRunning(false);
-                        setPhase("vote");
+                        setPhase("result");
                       }}
                       className="flex-1 py-4 rounded-xl font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-violet-50 dark:hover:bg-violet-900/30 transition-colors"
                     >
-                      투표하기
+                      라이어 공개
                     </button>
                   </div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* ── VOTE PHASE ── */}
-            {phase === "vote" && (
-              <motion.div
-                key="vote"
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -24 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-6"
-              >
-                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
-                  <p className="text-3xl text-center mb-3">🗳️</p>
-                  <h2 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 text-center mb-1">
-                    라이어를 지목하세요!
-                  </h2>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm text-center mb-6">
-                    누가 라이어라고 생각하나요?
-                  </p>
-
-                  {!votingDone ? (
-                    <>
-                      <div className="grid grid-cols-3 gap-3 mb-6">
-                        {Array.from({ length: playerCount }).map((_, i) => (
-                          <motion.button
-                            key={i}
-                            whileTap={{ scale: 0.94 }}
-                            onClick={() => setSelectedVote(i + 1)}
-                            className={`py-4 rounded-xl font-bold text-lg transition-all ${
-                              selectedVote === i + 1
-                                ? "bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-md scale-105"
-                                : "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-violet-50 dark:hover:bg-violet-900/30"
-                            }`}
-                          >
-                            {i + 1}번
-                          </motion.button>
-                        ))}
-                      </div>
-                      <motion.button
-                        whileTap={{ scale: 0.97 }}
-                        onClick={submitVote}
-                        disabled={selectedVote === null}
-                        className={`w-full py-4 rounded-2xl font-bold text-lg transition-all ${
-                          selectedVote !== null
-                            ? "bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white shadow-md"
-                            : "bg-slate-200 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed"
-                        }`}
-                      >
-                        투표 완료
-                      </motion.button>
-                    </>
-                  ) : (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="text-center space-y-4"
-                    >
-                      <p className="text-slate-500 dark:text-slate-400">
-                        가장 많은 표를 받은 플레이어
-                      </p>
-                      <div className="text-6xl font-extrabold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-                        {mostVoted}번
-                      </div>
-                      <motion.button
-                        whileTap={{ scale: 0.97 }}
-                        onClick={() => setPhase("result")}
-                        className="w-full py-4 rounded-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold text-lg shadow-md"
-                      >
-                        결과 공개
-                      </motion.button>
-                    </motion.div>
-                  )}
                 </div>
               </motion.div>
             )}
@@ -588,17 +564,23 @@ export default function LiarGamePage() {
                     className="mb-6"
                   >
                     <div className="text-7xl mb-4">🕵️</div>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-2">
-                      라이어는...
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-3">
+                      {liarCount === 1 ? "라이어는..." : `라이어 ${liarCount}명은...`}
                     </p>
-                    <p className="text-5xl font-extrabold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent mb-1">
-                      {liarIndex + 1}번 플레이어
-                    </p>
-                    <p className="text-slate-400 text-sm">
-                      {mostVoted === liarIndex + 1
-                        ? "정답! 라이어를 찾았습니다 🎉"
-                        : "아쉽! 라이어가 살아남았습니다 😈"}
-                    </p>
+                    <div className="flex flex-wrap justify-center gap-3 mb-2">
+                      {liarIndices.map((idx, i) => (
+                        <motion.span
+                          key={idx}
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ type: "spring", stiffness: 200, delay: 0.2 + i * 0.15 }}
+                          className="text-3xl font-extrabold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent"
+                        >
+                          {idx + 1}번
+                        </motion.span>
+                      ))}
+                    </div>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">플레이어</p>
                   </motion.div>
 
                   {/* Word reveal */}
@@ -615,22 +597,6 @@ export default function LiarGamePage() {
                       {topicIcons[selectedTopic]} {word}
                     </p>
                     <p className="text-slate-400 text-xs mt-1">카테고리: {selectedTopic}</p>
-                  </motion.div>
-
-                  {/* Win/lose banner */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6 }}
-                    className={`rounded-xl py-4 px-5 mb-6 font-bold text-lg ${
-                      mostVoted === liarIndex + 1
-                        ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300"
-                        : "bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300"
-                    }`}
-                  >
-                    {mostVoted === liarIndex + 1
-                      ? "일반 플레이어 승리!"
-                      : "라이어 승리!"}
                   </motion.div>
 
                   <motion.button

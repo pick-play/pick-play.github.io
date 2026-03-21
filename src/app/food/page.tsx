@@ -55,7 +55,7 @@ export default function FoodPage() {
   const [mode, setMode] = useState<"map" | "filter">("map");
   const [category, setCategory] = useState("전체");
   const [priceRange, setPriceRange] = useState("");
-  const [mapCategory, setMapCategory] = useState("전체");
+  const [mapCategories, setMapCategories] = useState<Set<string>>(new Set(["전체"]));
 
   const [spinning, setSpinning] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -147,12 +147,31 @@ export default function FoodPage() {
             <motion.div key="map" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.2 }} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
               <div className="flex gap-2 overflow-x-auto pb-2 mb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 {categories.map((cat) => {
-                  const isSelected = mapCategory === cat;
+                  const isSelected = mapCategories.has(cat);
                   const accentColor = cat === "전체" ? "#f97316" : categoryColors[cat] || "#f97316";
                   return (
                     <button
                       key={cat}
-                      onClick={() => { setMapCategory(cat); setMapSelected([]); }}
+                      onClick={() => {
+                        setMapSelected([]);
+                        if (cat === "전체") {
+                          setMapCategories(new Set(["전체"]));
+                        } else {
+                          const next = new Set(mapCategories);
+                          next.delete("전체");
+                          if (next.has(cat)) {
+                            next.delete(cat);
+                            if (next.size === 0) next.add("전체");
+                          } else {
+                            next.add(cat);
+                            if (next.size === categories.length - 1) {
+                              setMapCategories(new Set(["전체"]));
+                              return;
+                            }
+                          }
+                          setMapCategories(next);
+                        }
+                      }}
                       className={`flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${isSelected ? "text-white" : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"}`}
                       style={isSelected ? { backgroundColor: accentColor } : undefined}
                     >
@@ -163,14 +182,14 @@ export default function FoodPage() {
               </div>
               <div className="max-w-md mx-auto">
                 <TasteMap
-                  items={(mapCategory === "전체" ? foodsData : foodsData.filter((f) => f.category === mapCategory)) as Food[]}
+                  items={(mapCategories.has("전체") ? foodsData : foodsData.filter((f) => mapCategories.has(f.category))) as Food[]}
                   getCoords={(item) => ({ x: item.x, y: item.y })}
                   getLabel={(item) => item.name}
                   getColor={(item) => categoryColors[item.category] || "#94a3b8"}
                   xLabels={["담백", "자극적"]}
                   yLabels={["가벼운", "고급"]}
                   quadrantHints={["고급 담백", "고급 자극", "가벼운 담백", "가벼운 자극"]}
-                  accent={mapCategory === "전체" ? "#f97316" : categoryColors[mapCategory] || "#f97316"}
+                  accent={mapCategories.has("전체") || mapCategories.size > 1 ? "#f97316" : categoryColors[Array.from(mapCategories)[0]] || "#f97316"}
                   legend={foodLegend}
                   onSelect={setMapSelected}
                 />
