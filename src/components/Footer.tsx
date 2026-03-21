@@ -8,6 +8,10 @@ const footerCategories = [
       { href: "/settlement", label: "회식비 정산" },
       { href: "/date-course", label: "데이트 코스" },
       { href: "/roulette", label: "랜덤 룰렛" },
+      { href: "/d-day", label: "D-Day 계산기" },
+      { href: "/draw", label: "제비뽑기" },
+      { href: "/seat", label: "자리 배치" },
+      { href: "/nickname", label: "닉네임 생성기" },
     ],
   },
   {
@@ -17,13 +21,19 @@ const footerCategories = [
       { href: "/random-team", label: "조 뽑기" },
       { href: "/balance-game", label: "밸런스 게임" },
       { href: "/chosung-quiz", label: "초성 퀴즈" },
+      { href: "/ladder", label: "사다리 타기" },
+      { href: "/truth-dare", label: "진실 or 도전" },
+      { href: "/worldcup", label: "이상형 월드컵" },
     ],
   },
   {
-    label: "심리 테스트",
+    label: "테스트",
     links: [
       { href: "/teto-egen", label: "테토 vs 에겐" },
       { href: "/mbti", label: "MBTI 검사" },
+      { href: "/couple-test", label: "커플 궁합" },
+      { href: "/color-test", label: "색깔 테스트" },
+      { href: "/tarot", label: "Yes or No 타로" },
     ],
   },
 ];

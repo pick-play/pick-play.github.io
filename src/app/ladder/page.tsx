@@ -135,16 +135,22 @@ function LadderVisualization({
   onPlayerClick,
   animating,
 }: LadderVisualizationProps) {
-  // Layout constants (in percent of container width/height)
-  const colPercent = (col: number) => (col / (playerCount - 1)) * 100;
+  const PAD = 24; // px padding inside ladder body
+  // Returns a CSS calc expression for the X position of a column
+  const colLeft = (col: number) => {
+    const frac = playerCount <= 1 ? 0 : col / (playerCount - 1);
+    return `calc(${PAD}px + (100% - ${PAD * 2}px) * ${frac})`;
+  };
   const rowPercent = (row: number) => (row / RUNG_ROWS) * 100;
+  // Fraction for one column gap
+  const oneColFrac = playerCount <= 1 ? 0 : 1 / (playerCount - 1);
 
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="w-full select-none">
+    <div className="w-full select-none overflow-x-auto">
       {/* Player name row */}
-      <div className="relative flex mb-1" style={{ height: "40px" }}>
+      <div className="relative flex mb-1" style={{ height: "44px", minWidth: playerCount > 6 ? `${playerCount * 56}px` : undefined }}>
         {Array.from({ length: playerCount }).map((_, i) => (
           <button
             key={i}
@@ -153,7 +159,7 @@ function LadderVisualization({
             className={`absolute -translate-x-1/2 flex flex-col items-center transition-all ${
               revealedPlayers.has(i) ? "cursor-default" : "cursor-pointer hover:scale-110"
             }`}
-            style={{ left: `${colPercent(i)}%`, top: 0 }}
+            style={{ left: colLeft(i), top: 0 }}
           >
             <div
               className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-md transition-all"
@@ -176,7 +182,7 @@ function LadderVisualization({
       <div
         ref={containerRef}
         className="relative w-full bg-white/60 dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700"
-        style={{ height: "320px", paddingLeft: "16px", paddingRight: "16px" }}
+        style={{ height: "320px", minWidth: playerCount > 6 ? `${playerCount * 56}px` : undefined }}
       >
         {/* Vertical lines */}
         {Array.from({ length: playerCount }).map((_, i) => (
@@ -184,7 +190,7 @@ function LadderVisualization({
             key={`vline-${i}`}
             className="absolute top-0 bottom-0"
             style={{
-              left: `calc(16px + ${colPercent(i)}% * (100% - 32px) / 100)`,
+              left: colLeft(i),
               width: "3px",
               transform: "translateX(-50%)",
               backgroundColor: "#cbd5e1",
@@ -194,17 +200,14 @@ function LadderVisualization({
 
         {/* Horizontal rungs */}
         {rungs.map((rung, idx) => {
-          const left = `calc(16px + ${colPercent(rung.col)}% * (100% - 32px) / 100)`;
-          const top = `calc(${rowPercent(rung.row + 0.5)}%)`;
-          const width = `calc(${colPercent(1)}% * (100% - 32px) / 100)`;
           return (
             <div
               key={`rung-${idx}`}
               className="absolute"
               style={{
-                left,
-                top,
-                width,
+                left: colLeft(rung.col),
+                top: `${rowPercent(rung.row + 0.5)}%`,
+                width: `calc((100% - ${PAD * 2}px) * ${oneColFrac})`,
                 height: "3px",
                 transform: "translateY(-50%)",
                 backgroundColor: "#94a3b8",
@@ -224,15 +227,15 @@ function LadderVisualization({
               color={color}
               playerCount={playerCount}
               isAnimating={animatingPlayer === playerIdx}
+              pad={PAD}
             />
           );
         })}
       </div>
 
       {/* Result row */}
-      <div className="relative flex mt-1" style={{ height: "40px" }}>
+      <div className="relative flex mt-1" style={{ height: "44px", minWidth: playerCount > 6 ? `${playerCount * 56}px` : undefined }}>
         {Array.from({ length: playerCount }).map((_, i) => {
-          // Find which player lands at position i
           const playerAtI = destinations.indexOf(i);
           const isRevealed = playerAtI !== -1 && revealedPlayers.has(playerAtI);
 
@@ -240,7 +243,7 @@ function LadderVisualization({
             <div
               key={i}
               className="absolute -translate-x-1/2 flex items-center justify-center"
-              style={{ left: `${colPercent(i)}%`, top: 0, height: "40px" }}
+              style={{ left: colLeft(i), top: 0, height: "44px" }}
             >
               <AnimatePresence>
                 {isRevealed ? (
@@ -279,9 +282,10 @@ interface AnimatedPathProps {
   color: string;
   playerCount: number;
   isAnimating: boolean;
+  pad: number;
 }
 
-function AnimatedPath({ path, color, playerCount, isAnimating }: AnimatedPathProps) {
+function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPathProps) {
   const [visibleSteps, setVisibleSteps] = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -298,7 +302,6 @@ function AnimatedPath({ path, color, playerCount, isAnimating }: AnimatedPathPro
       };
       timerRef.current = setTimeout(advance, 60);
     } else {
-      // Not animating: show all steps immediately (already revealed)
       setVisibleSteps(path.length);
     }
     return () => {
@@ -306,40 +309,38 @@ function AnimatedPath({ path, color, playerCount, isAnimating }: AnimatedPathPro
     };
   }, [isAnimating, path.length]);
 
-  const colPercent = (col: number) =>
-    (col / (playerCount - 1)) * 100;
+  const colFrac = (col: number) =>
+    playerCount <= 1 ? 0 : col / (playerCount - 1);
   const rowPercent = (row: number) => (row / RUNG_ROWS) * 100;
 
-  // Render segment lines for each revealed step
+  const colCalc = (col: number) =>
+    `calc(${pad}px + (100% - ${pad * 2}px) * ${colFrac(col)})`;
+
   return (
     <>
       {path.slice(0, visibleSteps).map((step, idx) => {
-        if (idx === 0) return null; // no segment to draw for first step
+        if (idx === 0) return null;
         const prev = path[idx - 1];
         const cur = step;
 
-        // Convert logical positions to percentage-based CSS
-        // "down" segment: same col, prev.row → cur.row
-        // "right"/"left": same row, moving col
-        let x1Pct: number, y1Pct: number, x2Pct: number, y2Pct: number;
+        let col1: number, row1: number, col2: number, row2: number;
 
         if (cur.direction === "down") {
-          x1Pct = colPercent(prev.col);
-          y1Pct = rowPercent(prev.row);
-          x2Pct = colPercent(cur.col);
-          y2Pct = rowPercent(cur.row);
+          col1 = prev.col; row1 = prev.row;
+          col2 = cur.col; row2 = cur.row;
         } else if (cur.direction === "right") {
-          x1Pct = colPercent(prev.col);
-          y1Pct = rowPercent(cur.row);
-          x2Pct = colPercent(prev.col + 1);
-          y2Pct = rowPercent(cur.row);
+          col1 = prev.col; row1 = cur.row;
+          col2 = prev.col + 1; row2 = cur.row;
         } else {
-          // left
-          x1Pct = colPercent(prev.col);
-          y1Pct = rowPercent(cur.row);
-          x2Pct = colPercent(prev.col - 1);
-          y2Pct = rowPercent(cur.row);
+          col1 = prev.col; row1 = cur.row;
+          col2 = prev.col - 1; row2 = cur.row;
         }
+
+        const isVertical = col1 === col2;
+        const minCol = Math.min(col1, col2);
+        const maxCol = Math.max(col1, col2);
+        const minRow = Math.min(row1, row2);
+        const maxRow = Math.max(row1, row2);
 
         return (
           <motion.div
@@ -349,17 +350,15 @@ function AnimatedPath({ path, color, playerCount, isAnimating }: AnimatedPathPro
             transition={{ duration: 0.05 }}
             className="absolute pointer-events-none"
             style={{
-              left: `calc(16px + ${Math.min(x1Pct, x2Pct)}% * (100% - 32px) / 100)`,
-              top: `${Math.min(y1Pct, y2Pct)}%`,
-              width:
-                x1Pct === x2Pct
-                  ? "5px"
-                  : `calc(${Math.abs(x2Pct - x1Pct)}% * (100% - 32px) / 100 + 5px)`,
-              height: y1Pct === y2Pct ? "5px" : `${Math.abs(y2Pct - y1Pct)}%`,
+              left: colCalc(minCol),
+              top: `${rowPercent(minRow)}%`,
+              width: isVertical
+                ? "5px"
+                : `calc((100% - ${pad * 2}px) * ${colFrac(maxCol) - colFrac(minCol)} + 5px)`,
+              height: isVertical ? `${rowPercent(maxRow) - rowPercent(minRow)}%` : "5px",
               backgroundColor: color,
               borderRadius: "3px",
-              transform:
-                x1Pct === x2Pct ? "translateX(-50%)" : "translateY(-50%)",
+              transform: isVertical ? "translateX(-50%)" : "translateY(-50%)",
               boxShadow: `0 0 8px 2px ${color}66`,
               zIndex: 10,
             }}
@@ -581,7 +580,7 @@ export default function LadderPage() {
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
                     참가자 이름 (선택)
                   </h2>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {Array.from({ length: playerCount }).map((_, i) => (
                       <div key={i} className="flex items-center gap-2">
                         <div
@@ -631,7 +630,7 @@ export default function LadderPage() {
                       </button>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {Array.from({ length: playerCount }).map((_, i) => (
                       <input
                         key={i}

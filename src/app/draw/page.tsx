@@ -134,7 +134,7 @@ function FlipCard({ card, index, onFlip, isShuffling, shuffleDelay }: FlipCardPr
   return (
     <motion.div
       className="cursor-pointer"
-      style={{ perspective: 1000 }}
+      style={{ perspective: "1000px" }}
       initial={{ opacity: 0, y: 30, scale: 0.85 }}
       animate={
         isShuffling
