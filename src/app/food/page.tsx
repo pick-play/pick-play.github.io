@@ -55,6 +55,7 @@ export default function FoodPage() {
   const [mode, setMode] = useState<"map" | "filter">("map");
   const [category, setCategory] = useState("전체");
   const [priceRange, setPriceRange] = useState("");
+  const [mapCategory, setMapCategory] = useState("전체");
 
   const [spinning, setSpinning] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -144,16 +145,32 @@ export default function FoodPage() {
         <AnimatePresence mode="wait">
           {mode === "map" && (
             <motion.div key="map" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.2 }} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
+              <div className="flex gap-2 overflow-x-auto pb-2 mb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                {categories.map((cat) => {
+                  const isSelected = mapCategory === cat;
+                  const accentColor = cat === "전체" ? "#f97316" : categoryColors[cat] || "#f97316";
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => { setMapCategory(cat); setMapSelected([]); }}
+                      className={`flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${isSelected ? "text-white" : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"}`}
+                      style={isSelected ? { backgroundColor: accentColor } : undefined}
+                    >
+                      {cat}
+                    </button>
+                  );
+                })}
+              </div>
               <div className="max-w-md mx-auto">
                 <TasteMap
-                  items={foodsData as Food[]}
+                  items={(mapCategory === "전체" ? foodsData : foodsData.filter((f) => f.category === mapCategory)) as Food[]}
                   getCoords={(item) => ({ x: item.x, y: item.y })}
                   getLabel={(item) => item.name}
                   getColor={(item) => categoryColors[item.category] || "#94a3b8"}
                   xLabels={["담백", "자극적"]}
                   yLabels={["가벼운", "고급"]}
                   quadrantHints={["고급 담백", "고급 자극", "가벼운 담백", "가벼운 자극"]}
-                  accent="#f97316"
+                  accent={mapCategory === "전체" ? "#f97316" : categoryColors[mapCategory] || "#f97316"}
                   legend={foodLegend}
                   onSelect={setMapSelected}
                 />
@@ -274,7 +291,7 @@ export default function FoodPage() {
                 <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </summary>
               <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
-                네, LifePick의 모든 기능은 완전 무료입니다. 회원가입 없이, 앱 설치 없이 웹 브라우저에서 바로 사용할 수 있습니다. 오늘 뭐 먹지 고민될 때 언제든 방문하세요!
+                네, PickPlay의 모든 기능은 완전 무료입니다. 회원가입 없이, 앱 설치 없이 웹 브라우저에서 바로 사용할 수 있습니다. 오늘 뭐 먹지 고민될 때 언제든 방문하세요!
               </p>
             </details>
           </div>

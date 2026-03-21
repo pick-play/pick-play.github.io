@@ -9,6 +9,8 @@ const navLinks = [
   { href: "/food", label: "오늘 뭐 먹지" },
   { href: "/settlement", label: "회식비 정산" },
   { href: "/date-course", label: "데이트 코스" },
+  { href: "/liar-game", label: "라이어 게임" },
+  { href: "/random-team", label: "조 뽑기" },
 ];
 
 export default function Header() {
@@ -22,7 +24,7 @@ export default function Header() {
           href="/"
           className="text-xl font-bold bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent"
         >
-          LifePick
+          PickPlay
         </Link>
 
         {/* Desktop nav */}

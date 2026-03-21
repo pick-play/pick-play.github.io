@@ -345,7 +345,7 @@ export default function DateCoursePage() {
                 <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </summary>
               <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
-                서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기북부, 경기남부 총 10개 도시의 100가지 이상 데이트 코스를 지원합니다. 각 도시별 인기 장소와 숨겨진 명소를 포함한 코스를 추천해 드립니다.
+                서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기북부, 경기남부 총 10개 도시의 200가지 이상 데이트 코스를 지원합니다. 각 도시별 인기 장소와 숨겨진 명소를 포함한 코스를 추천해 드립니다.
               </p>
             </details>
             <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">

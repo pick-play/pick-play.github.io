@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "데이트 코스 추천 - 전국 10개 도시",
   description:
-    "서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기 등 전국 10개 도시 100가지 데이트 코스를 추천받으세요. 낮/밤 시간대별, 카페·야외·실내·액티비티 취향별 맞춤 코스를 분위기 지도에서 골라드립니다.",
+    "서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기 등 전국 10개 도시 200가지 데이트 코스를 추천받으세요. 낮/밤 시간대별, 카페·야외·실내·액티비티 취향별 맞춤 코스를 분위기 지도에서 골라드립니다.",
   keywords: [
     "데이트 코스 추천",
     "서울 데이트",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "데이트 플래너",
   ],
   openGraph: {
-    title: "데이트 코스 추천 - 전국 10개 도시 100+ 코스",
+    title: "데이트 코스 추천 - 전국 10개 도시 200+ 코스",
     description:
       "분위기 지도에서 원하는 느낌을 찍으면, 완벽한 데이트 코스를 짜드립니다. 서울부터 경기까지!",
     url: "https://pick-korea.github.io/date-course",
@@ -43,7 +43,7 @@ const jsonLd = {
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
-      description: "전국 10개 도시 100가지 데이트 코스를 분위기 지도에서 추천받으세요.",
+      description: "전국 10개 도시 200가지 데이트 코스를 분위기 지도에서 추천받으세요.",
     },
     {
       "@type": "BreadcrumbList",
@@ -68,7 +68,7 @@ const jsonLd = {
           name: "어떤 도시의 데이트 코스를 추천받을 수 있나요?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기북부, 경기남부 총 10개 도시의 100가지 이상 데이트 코스를 지원합니다.",
+            text: "서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기북부, 경기남부 총 10개 도시의 200가지 이상 데이트 코스를 지원합니다.",
           },
         },
         {

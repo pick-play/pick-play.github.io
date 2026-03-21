@@ -25,12 +25,30 @@ const services = [
   },
   {
     title: "데이트 코스",
-    description: "전국 10개 도시, 100가지 코스. 분위기 지도에서 원하는 느낌을 찍으면 완벽한 동선을 짜드립니다.",
+    description: "전국 10개 도시, 200가지 코스. 분위기 지도에서 원하는 느낌을 찍으면 완벽한 동선을 짜드립니다.",
     href: "/date-course",
     emoji: "💑",
     gradient: "from-pink-400 to-purple-500",
     bg: "bg-pink-50 dark:bg-pink-950/20",
     stat: "10개 도시",
+  },
+  {
+    title: "라이어 게임",
+    description: "친구들과 함께하는 파티 게임! 다양한 주제에서 라이어를 찾아내세요. 모바일에서도 편하게 플레이.",
+    href: "/liar-game",
+    emoji: "🕵️",
+    gradient: "from-violet-500 to-fuchsia-500",
+    bg: "bg-violet-50 dark:bg-violet-950/20",
+    stat: "8개 주제",
+  },
+  {
+    title: "조 뽑기",
+    description: "랜덤으로 공정하게 조를 나눠드립니다. 긴장감 넘치는 애니메이션과 함께 팀 배정!",
+    href: "/random-team",
+    emoji: "🎲",
+    gradient: "from-blue-500 to-cyan-500",
+    bg: "bg-blue-50 dark:bg-blue-950/20",
+    stat: "랜덤 배정",
   },
 ];
 
@@ -96,7 +114,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400 text-sm font-medium"
         >
-          전국 10개 도시 · 130+ 메뉴 · 100+ 데이트 코스
+          130+ 메뉴 · 200+ 데이트 코스 · 파티 게임 · 조 뽑기
         </motion.div>
 
         <motion.h1
@@ -117,7 +135,7 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed"
         >
-          뭐 먹을지, 어디 갈지, 돈은 어떻게 나눌지
+          뭐 먹을지, 어디 갈지, 누가 라이어인지
           <br className="hidden md:block" />
           — 취향 지도 한 번이면 끝.
         </motion.p>
@@ -150,7 +168,7 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-5"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           {services.map((service) => (
             <motion.div key={service.href} variants={itemVariants}>
@@ -204,19 +222,27 @@ export default function Home() {
       {/* SEO Content Section */}
       <section className="max-w-4xl mx-auto px-4 pb-20">
         <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-xl font-bold mb-4 text-center">LifePick이 도와드릴게요</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+          <h2 className="text-xl font-bold mb-4 text-center">PickPlay가 도와드릴게요</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">오늘 뭐 먹지?</h3>
-              <p>매일 반복되는 메뉴 고민, LifePick이 해결해 드립니다. 한식, 일식, 중식, 양식 등 130가지 메뉴 중에서 맛 지도로 취향에 맞는 음식을 추천받으세요. 점심 메뉴 추천, 저녁 메뉴 추천, 혼밥 메뉴까지 모두 가능합니다.</p>
+              <p>매일 반복되는 메뉴 고민, PickPlay가 해결해 드립니다. 한식, 일식, 중식, 양식 등 130가지 메뉴 중에서 맛 지도로 취향에 맞는 음식을 추천받으세요.</p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">데이트 코스 추천</h3>
-              <p>서울, 부산, 대구 등 전국 10개 도시의 100가지 데이트 코스를 추천받으세요. 카페, 야외, 실내, 액티비티 등 취향별 맞춤 코스를 낮/밤 시간대에 맞게 제공합니다.</p>
+              <p>서울, 부산, 대구 등 전국 10개 도시의 200가지 데이트 코스를 추천받으세요. 취향별 맞춤 코스를 낮/밤 시간대에 맞게 제공합니다.</p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">회식비 정산 계산기</h3>
-              <p>복잡한 더치페이, N빵 정산을 간편하게. 항목별 지출과 참여자를 입력하면 최소 송금 횟수로 정산 결과를 계산해 드립니다. 결과를 복사해서 바로 공유하세요.</p>
+              <p>복잡한 더치페이, N빵 정산을 간편하게. 항목별 지출과 참여자를 입력하면 최소 송금 횟수로 정산 결과를 계산해 드립니다.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">라이어 게임</h3>
+              <p>친구들과 함께하는 파티 게임! 8가지 주제에서 라이어를 찾아내세요. 다음 사람이 못 보게 하는 안전한 진행 방식.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">랜덤 조 뽑기</h3>
+              <p>회사 팀빌딩, 학교 조편성에 딱! 긴장감 넘치는 애니메이션으로 공정하게 팀을 나눠드립니다.</p>
             </div>
           </div>
         </div>

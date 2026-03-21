@@ -10,7 +10,7 @@ export default function Footer() {
               href="/"
               className="text-xl font-bold bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent"
             >
-              LifePick
+              PickPlay
             </Link>
             <p className="text-sm text-slate-400 mt-1">
               고민은 줄이고, 선택은 빠르게.
@@ -35,10 +35,22 @@ export default function Footer() {
             >
               데이트 코스
             </Link>
+            <Link
+              href="/liar-game"
+              className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors"
+            >
+              라이어 게임
+            </Link>
+            <Link
+              href="/random-team"
+              className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors"
+            >
+              조 뽑기
+            </Link>
           </nav>
         </div>
         <div className="pt-6 border-t border-slate-200/60 dark:border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-400">
-          <span>&copy; {new Date().getFullYear()} LifePick</span>
+          <span>&copy; {new Date().getFullYear()} PickPlay</span>
           <span>
             Made by{" "}
             <a

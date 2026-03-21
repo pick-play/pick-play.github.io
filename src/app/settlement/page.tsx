@@ -556,7 +556,7 @@ export default function SettlementPage() {
                 <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </summary>
               <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
-                더치페이는 각자 먹은 만큼 내는 방식이고, N빵은 총액을 인원수로 균등하게 나누는 방식입니다. LifePick 정산 계산기는 두 방식 모두 지원하며, 항목별로 참여자를 제외하는 차등 정산도 가능합니다.
+                더치페이는 각자 먹은 만큼 내는 방식이고, N빵은 총액을 인원수로 균등하게 나누는 방식입니다. PickPlay 정산 계산기는 두 방식 모두 지원하며, 항목별로 참여자를 제외하는 차등 정산도 가능합니다.
               </p>
             </details>
             <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
