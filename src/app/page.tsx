@@ -47,6 +47,42 @@ const categories = [
         bg: "bg-cyan-50 dark:bg-cyan-950/20",
         stat: "커스텀 룰렛",
       },
+      {
+        title: "D-Day 계산기",
+        description: "중요한 날까지 남은 일수를 한눈에. 수능, 생일, 기념일까지.",
+        href: "/d-day",
+        emoji: "📅",
+        gradient: "from-sky-400 to-indigo-500",
+        bg: "bg-sky-50 dark:bg-sky-950/20",
+        stat: "D-Day",
+      },
+      {
+        title: "제비뽑기",
+        description: "공정한 랜덤 뽑기! 당첨자를 카드 뒤집기로 드라마틱하게.",
+        href: "/draw",
+        emoji: "🎫",
+        gradient: "from-yellow-400 to-amber-500",
+        bg: "bg-yellow-50 dark:bg-yellow-950/20",
+        stat: "카드 뽑기",
+      },
+      {
+        title: "자리 배치",
+        description: "교실, 회의실, 스터디카페 자리를 랜덤으로 깔끔하게 배정.",
+        href: "/seat",
+        emoji: "💺",
+        gradient: "from-slate-400 to-zinc-500",
+        bg: "bg-slate-50 dark:bg-slate-950/20",
+        stat: "프리셋",
+      },
+      {
+        title: "닉네임 생성기",
+        description: "귀여운, 멋진, 웃긴 등 6가지 스타일의 랜덤 닉네임 생성.",
+        href: "/nickname",
+        emoji: "✏️",
+        gradient: "from-lime-400 to-green-500",
+        bg: "bg-lime-50 dark:bg-lime-950/20",
+        stat: "6가지 스타일",
+      },
     ],
   },
   {
@@ -58,7 +94,7 @@ const categories = [
         title: "라이어 게임",
         description: "친구들과 함께하는 파티 게임! 라이어를 찾아내세요.",
         href: "/liar-game",
-        emoji: "🕵️",
+        emoji: "🎭",
         gradient: "from-violet-500 to-fuchsia-500",
         bg: "bg-violet-50 dark:bg-violet-950/20",
         stat: "8개 주제",
@@ -90,18 +126,45 @@ const categories = [
         bg: "bg-teal-50 dark:bg-teal-950/20",
         stat: "100+ 단어",
       },
+      {
+        title: "사다리 타기",
+        description: "누가 당첨될지 두근두근! 경로 추적 애니메이션으로 흥미진진하게.",
+        href: "/ladder",
+        emoji: "🪜",
+        gradient: "from-emerald-400 to-teal-500",
+        bg: "bg-emerald-50 dark:bg-emerald-950/20",
+        stat: "경로 추적",
+      },
+      {
+        title: "진실 or 도전",
+        description: "392개의 질문과 미션! 강도별로 즐기는 파티 필수 게임.",
+        href: "/truth-dare",
+        emoji: "🔥",
+        gradient: "from-red-400 to-rose-500",
+        bg: "bg-red-50 dark:bg-red-950/20",
+        stat: "392개 미션",
+      },
+      {
+        title: "이상형 월드컵",
+        description: "6가지 주제, 96명의 후보! 토너먼트로 나의 이상형을 찾아보세요.",
+        href: "/worldcup",
+        emoji: "🏆",
+        gradient: "from-yellow-400 to-orange-500",
+        bg: "bg-yellow-50 dark:bg-yellow-950/20",
+        stat: "96 후보",
+      },
     ],
   },
   {
-    id: "psych",
-    name: "심리 테스트",
+    id: "test",
+    name: "테스트",
     tagline: "나를 알아가는 재미있는 성향 분석",
     services: [
       {
         title: "테토 vs 에겐",
         description: "나는 테토일까 에겐일까? 성향 테스트로 알아보세요.",
         href: "/teto-egen",
-        emoji: "🧬",
+        emoji: "🧠",
         gradient: "from-rose-400 to-pink-500",
         bg: "bg-rose-50 dark:bg-rose-950/20",
         stat: "성향 분석",
@@ -110,10 +173,37 @@ const categories = [
         title: "MBTI 검사",
         description: "20문항으로 알아보는 나의 MBTI 성격유형과 궁합.",
         href: "/mbti",
-        emoji: "🧠",
+        emoji: "✨",
         gradient: "from-indigo-400 to-purple-500",
         bg: "bg-indigo-50 dark:bg-indigo-950/20",
         stat: "16가지 유형",
+      },
+      {
+        title: "커플 궁합",
+        description: "이름으로 알아보는 우리의 궁합! 5가지 카테고리 분석.",
+        href: "/couple-test",
+        emoji: "💕",
+        gradient: "from-pink-400 to-red-500",
+        bg: "bg-pink-50 dark:bg-pink-950/20",
+        stat: "5가지 분석",
+      },
+      {
+        title: "색깔 테스트",
+        description: "나를 대표하는 색깔은? 10문항으로 알아보는 컬러 성격.",
+        href: "/color-test",
+        emoji: "🎨",
+        gradient: "from-fuchsia-400 to-purple-500",
+        bg: "bg-fuchsia-50 dark:bg-fuchsia-950/20",
+        stat: "8가지 색깔",
+      },
+      {
+        title: "Yes or No 타로",
+        description: "고민이 있을 때 타로 카드에 물어보세요! 22장 메이저 아르카나.",
+        href: "/tarot",
+        emoji: "🔮",
+        gradient: "from-purple-500 to-indigo-600",
+        bg: "bg-purple-50 dark:bg-purple-950/20",
+        stat: "22장 카드",
       },
     ],
   },
@@ -190,7 +280,7 @@ export default function Home() {
           transition={{ duration: 0.3 }}
           className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400 text-sm font-medium"
         >
-          10가지 도구 · 파티 게임 · 심리 테스트
+          20가지 도구 · 파티 게임 · 심리 테스트
         </motion.div>
 
         <motion.h1
@@ -220,19 +310,25 @@ export default function Home() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, delay: 0.28 }}
-          className="flex items-center justify-center gap-3"
+          className="flex flex-wrap items-center justify-center gap-3"
         >
           <Link
             href="/food"
             className="px-7 py-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all hover:-translate-y-0.5"
           >
-            메뉴 추천받기
+            🍽️ 뭐 먹지?
           </Link>
           <Link
-            href="/date-course"
+            href="/liar-game"
+            className="px-7 py-3 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold hover:shadow-lg hover:shadow-violet-500/25 transition-all hover:-translate-y-0.5"
+          >
+            🎭 라이어 게임
+          </Link>
+          <Link
+            href="/mbti"
             className="px-7 py-3 rounded-full border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:-translate-y-0.5"
           >
-            코스 추천받기
+            ✨ MBTI 검사
           </Link>
         </motion.div>
       </section>
@@ -268,11 +364,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
-              className={
-                category.services.length === 2
-                  ? "grid grid-cols-1 md:grid-cols-2 gap-5"
-                  : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
-              }
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
             >
               {category.services.map((service) => (
                 <motion.div key={service.href} variants={itemVariants}>
@@ -344,24 +436,24 @@ export default function Home() {
               <p>매일 반복되는 메뉴 고민, PickPlay가 해결해 드립니다. 한식, 일식, 중식, 양식 등 130가지 메뉴 중에서 맛 지도로 취향에 맞는 음식을 추천받으세요.</p>
             </div>
             <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">파티 게임 모음</h3>
+              <p>라이어 게임, 밸런스 게임, 초성 퀴즈, 진실 or 도전, 사다리 타기, 이상형 월드컵까지! 친구들과 즐길 수 있는 7가지 파티 게임.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">생활 편의 도구</h3>
+              <p>회식비 정산, D-Day 계산, 제비뽑기, 자리 배치, 닉네임 생성까지. 일상에서 자주 쓰는 도구들을 한곳에 모았습니다.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">심리 & 성향 테스트</h3>
+              <p>MBTI 검사, 테토 vs 에겐, 커플 궁합, 색깔 테스트, 타로까지. 다양한 테스트로 나를 알아가세요.</p>
+            </div>
+            <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">데이트 코스 추천</h3>
               <p>서울, 부산, 대구 등 전국 10개 도시의 200가지 데이트 코스를 추천받으세요. 취향별 맞춤 코스를 낮/밤 시간대에 맞게 제공합니다.</p>
             </div>
             <div>
-              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">회식비 정산 계산기</h3>
-              <p>복잡한 더치페이, N빵 정산을 간편하게. 항목별 지출과 참여자를 입력하면 최소 송금 횟수로 정산 결과를 계산해 드립니다.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">라이어 게임</h3>
-              <p>친구들과 함께하는 파티 게임! 8가지 주제에서 라이어를 찾아내세요. 다음 사람이 못 보게 하는 안전한 진행 방식.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">랜덤 조 뽑기</h3>
-              <p>회사 팀빌딩, 학교 조편성에 딱! 긴장감 넘치는 애니메이션으로 공정하게 팀을 나눠드립니다.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">심리 테스트</h3>
-              <p>테토 vs 에겐, MBTI 등 다양한 성향 테스트로 나를 알아가세요. 친구들과 함께 결과를 비교해 보세요.</p>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">랜덤 결정 도구</h3>
+              <p>룰렛, 제비뽑기, 사다리 타기, 조 뽑기 등 결정이 어려울 때 랜덤으로 공정하게! 드라마틱한 애니메이션으로 재미까지.</p>
             </div>
           </div>
         </div>

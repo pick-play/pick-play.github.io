@@ -16,6 +16,10 @@ const navCategories = [
       { href: "/settlement", label: "정산", emoji: "💰" },
       { href: "/date-course", label: "데이트", emoji: "💌" },
       { href: "/roulette", label: "룰렛", emoji: "🎯" },
+      { href: "/d-day", label: "D-Day", emoji: "📅" },
+      { href: "/draw", label: "제비뽑기", emoji: "🎫" },
+      { href: "/seat", label: "자리배치", emoji: "💺" },
+      { href: "/nickname", label: "닉네임", emoji: "✏️" },
     ],
   },
   {
@@ -26,6 +30,9 @@ const navCategories = [
       { href: "/random-team", label: "조뽑기", emoji: "🎲" },
       { href: "/balance-game", label: "밸런스", emoji: "⚖️" },
       { href: "/chosung-quiz", label: "초성", emoji: "🔤" },
+      { href: "/ladder", label: "사다리", emoji: "🪜" },
+      { href: "/truth-dare", label: "진실도전", emoji: "🔥" },
+      { href: "/worldcup", label: "월드컵", emoji: "🏆" },
     ],
   },
   {
@@ -34,6 +41,9 @@ const navCategories = [
     links: [
       { href: "/teto-egen", label: "테토에겐", emoji: "🧠" },
       { href: "/mbti", label: "MBTI", emoji: "✨" },
+      { href: "/couple-test", label: "궁합", emoji: "💕" },
+      { href: "/color-test", label: "색깔", emoji: "🎨" },
+      { href: "/tarot", label: "타로", emoji: "🔮" },
     ],
   },
 ];
