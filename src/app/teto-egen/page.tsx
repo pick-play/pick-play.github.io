@@ -273,6 +273,9 @@ export default function TetoEgenPage() {
                   </motion.button>
                 </div>
 
+                {/* Ad: in gender selection */}
+                <AdBanner format="horizontal" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
+
                 {/* Info card */}
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -666,6 +669,8 @@ export default function TetoEgenPage() {
                     {loveChain.explanation}
                   </p>
                 </motion.div>
+
+                <AdBanner format="in-article" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
                 {/* Action buttons */}
                 <motion.div

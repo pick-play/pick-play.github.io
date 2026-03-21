@@ -264,6 +264,8 @@ export default function MbtiPage() {
                     ))}
                   </div>
 
+                  <AdBanner format="horizontal" className="mb-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
+
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.97 }}
@@ -571,6 +573,8 @@ export default function MbtiPage() {
                     })}
                   </div>
                 </motion.div>
+
+                <AdBanner format="in-article" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
                 {/* Action buttons */}
                 <motion.div

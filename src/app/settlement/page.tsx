@@ -274,6 +274,7 @@ export default function SettlementPage() {
             >
               + 참여자 추가
             </button>
+            <AdBanner format="horizontal" className="mb-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
             <button
               onClick={confirmParticipants}
               className="w-full py-3 rounded-xl bg-gradient-to-r from-green-400 to-emerald-500 text-white font-semibold hover:shadow-lg hover:shadow-green-500/25 transition-all"

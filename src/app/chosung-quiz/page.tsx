@@ -377,6 +377,9 @@ export default function ChosungQuizPage() {
                   </div>
                 </div>
 
+                {/* Ad: between settings and start */}
+                <AdBanner format="horizontal" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
+
                 {/* Word count info */}
                 <p className="text-center text-xs text-slate-400">
                   {selectedCategory === "전체"
@@ -701,6 +704,7 @@ export default function ChosungQuizPage() {
                   </div>
                   <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </div>
+                <AdBanner format="in-article" className="mt-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
               </motion.div>
             )}
           </AnimatePresence>

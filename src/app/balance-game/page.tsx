@@ -141,6 +141,9 @@ export default function BalanceGamePage() {
             ))}
           </motion.div>
 
+          {/* Ad: after category selection */}
+          <AdBanner format="horizontal" className="mb-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
+
           <AnimatePresence mode="wait">
             {/* ── PLAY PHASE ── */}
             {phase === "play" && currentQuestion && (
@@ -371,6 +374,7 @@ export default function BalanceGamePage() {
                   </motion.button>
                   <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </div>
+                <AdBanner format="in-article" className="mt-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
               </motion.div>
             )}
           </AnimatePresence>

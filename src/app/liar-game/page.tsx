@@ -401,6 +401,9 @@ export default function LiarGamePage() {
                   </div>
                 </div>
 
+                {/* Ad: between settings and start */}
+                <AdBanner format="horizontal" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
+
                 {/* Start button */}
                 <motion.button
                   whileTap={{ scale: 0.97 }}
@@ -676,6 +679,7 @@ export default function LiarGamePage() {
                   </motion.button>
                   <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </div>
+                <AdBanner format="in-article" className="mt-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
               </motion.div>
             )}
           </AnimatePresence>
