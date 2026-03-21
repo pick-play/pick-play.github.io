@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
+import { useTheme } from "@/components/ThemeProvider";
 
 type LegendItem = { label: string; color: string };
 
@@ -29,6 +30,8 @@ export default function TasteMap<T extends { id: number }>({
   legend,
   onSelect,
 }: TasteMapProps<T>) {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   const [center, setCenter] = useState<{ x: number; y: number } | null>(null);
   const [radius, setRadius] = useState(20);
   const [hovered, setHovered] = useState<number | null>(null);
@@ -114,12 +117,12 @@ export default function TasteMap<T extends { id: number }>({
           height: 18px;
           border-radius: 50%;
           background: ${accent};
-          box-shadow: 0 0 0 3px rgba(255,255,255,0.9), 0 0 12px 2px ${accent}66;
+          box-shadow: 0 0 0 3px ${isDark ? "rgba(255,255,255,0.9)" : "rgba(0,0,0,0.1)"}, 0 0 12px 2px ${accent}66;
           cursor: pointer;
           transition: box-shadow 0.2s, transform 0.2s;
         }
         .tastemap-slider::-webkit-slider-thumb:hover {
-          box-shadow: 0 0 0 4px rgba(255,255,255,0.95), 0 0 20px 4px ${accent}88;
+          box-shadow: 0 0 0 4px ${isDark ? "rgba(255,255,255,0.95)" : "rgba(0,0,0,0.12)"}, 0 0 20px 4px ${accent}88;
           transform: scale(1.15);
         }
         .tastemap-slider::-moz-range-thumb {
@@ -128,7 +131,7 @@ export default function TasteMap<T extends { id: number }>({
           border-radius: 50%;
           border: none;
           background: ${accent};
-          box-shadow: 0 0 0 3px rgba(255,255,255,0.9), 0 0 12px 2px ${accent}66;
+          box-shadow: 0 0 0 3px ${isDark ? "rgba(255,255,255,0.9)" : "rgba(0,0,0,0.1)"}, 0 0 12px 2px ${accent}66;
           cursor: pointer;
           transition: box-shadow 0.2s, transform 0.2s;
         }
@@ -192,8 +195,8 @@ export default function TasteMap<T extends { id: number }>({
             <defs>
               {/* Background radial gradient */}
               <radialGradient id="tm-bg-radial" cx="50%" cy="50%" r="70%">
-                <stop offset="0%" stopColor="#1e293b" stopOpacity="1" />
-                <stop offset="100%" stopColor="#0f172a" stopOpacity="1" />
+                <stop offset="0%" stopColor={isDark ? "#1e293b" : "#ffffff"} stopOpacity="1" />
+                <stop offset="100%" stopColor={isDark ? "#0f172a" : "#f1f5f9"} stopOpacity="1" />
               </radialGradient>
 
               {/* Accent radial for selection area */}
@@ -246,7 +249,7 @@ export default function TasteMap<T extends { id: number }>({
                 key={r}
                 cx="50" cy="50" r={r}
                 fill="none"
-                stroke="rgba(255,255,255,0.025)"
+                stroke={isDark ? "rgba(255,255,255,0.025)" : "rgba(0,0,0,0.04)"}
                 strokeWidth="0.3"
               />
             ))}
@@ -256,13 +259,13 @@ export default function TasteMap<T extends { id: number }>({
               <g key={v}>
                 <line
                   x1={v} y1={0} x2={v} y2={100}
-                  stroke="rgba(255,255,255,0.07)"
+                  stroke={isDark ? "rgba(255,255,255,0.07)" : "rgba(0,0,0,0.08)"}
                   strokeWidth={v === 50 ? 0.4 : 0.2}
                   strokeDasharray={v === 50 ? undefined : "1.5,2"}
                 />
                 <line
                   x1={0} y1={v} x2={100} y2={v}
-                  stroke="rgba(255,255,255,0.07)"
+                  stroke={isDark ? "rgba(255,255,255,0.07)" : "rgba(0,0,0,0.08)"}
                   strokeWidth={v === 50 ? 0.4 : 0.2}
                   strokeDasharray={v === 50 ? undefined : "1.5,2"}
                 />
@@ -287,13 +290,13 @@ export default function TasteMap<T extends { id: number }>({
                       width={label.length * 3}
                       height={5}
                       rx={1.5}
-                      fill="rgba(255,255,255,0.04)"
+                      fill={isDark ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.03)"}
                     />
                     <text
                       x={x} y={y}
                       textAnchor="middle"
                       fontSize={3}
-                      fill="rgba(255,255,255,0.22)"
+                      fill={isDark ? "rgba(255,255,255,0.22)" : "rgba(0,0,0,0.25)"}
                       fontWeight={500}
                       letterSpacing="0.02em"
                     >
@@ -418,8 +421,8 @@ export default function TasteMap<T extends { id: number }>({
                           width={pw}
                           height={4.5}
                           rx={2}
-                          fill="rgba(15,23,42,0.82)"
-                          stroke="rgba(255,255,255,0.10)"
+                          fill={isDark ? "rgba(15,23,42,0.82)" : "rgba(255,255,255,0.92)"}
+                          stroke={isDark ? "rgba(255,255,255,0.10)" : "rgba(0,0,0,0.10)"}
                           strokeWidth={0.25}
                         />
                         {/* Accent underline */}
@@ -437,7 +440,7 @@ export default function TasteMap<T extends { id: number }>({
                           y={tipY - 0.4}
                           textAnchor="middle"
                           fontSize={2.4}
-                          fill="rgba(255,255,255,0.92)"
+                          fill={isDark ? "rgba(255,255,255,0.92)" : "rgba(15,23,42,0.9)"}
                           fontWeight={600}
                           letterSpacing="0.01em"
                         >
