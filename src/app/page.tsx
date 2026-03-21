@@ -83,6 +83,24 @@ const categories = [
         bg: "bg-lime-50 dark:bg-lime-950/20",
         stat: "6가지 스타일",
       },
+      {
+        title: "PDF 도구",
+        description: "PDF 합치기, 분할, JPG 변환, 압축까지. 브라우저에서 안전하게.",
+        href: "/pdf",
+        emoji: "📄",
+        gradient: "from-red-400 to-rose-500",
+        bg: "bg-red-50 dark:bg-red-950/20",
+        stat: "7가지 기능",
+      },
+      {
+        title: "이미지 도구",
+        description: "이미지 변환, 압축, 크기 변경, 자르기. 한 번에 여러 장도 OK.",
+        href: "/image",
+        emoji: "🖼️",
+        gradient: "from-blue-400 to-cyan-500",
+        bg: "bg-blue-50 dark:bg-blue-950/20",
+        stat: "6가지 기능",
+      },
     ],
   },
   {
@@ -280,7 +298,7 @@ export default function Home() {
           transition={{ duration: 0.3 }}
           className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400 text-sm font-medium"
         >
-          20가지 도구 · 파티 게임 · 심리 테스트
+          22가지 도구 · 파티 게임 · 심리 테스트
         </motion.div>
 
         <motion.h1

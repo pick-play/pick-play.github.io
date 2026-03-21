@@ -102,6 +102,8 @@ const jsonLd = {
         { "@type": "ListItem", position: 9, name: "초성 퀴즈", item: "https://pick-play.github.io/chosung-quiz" },
         { "@type": "ListItem", position: 10, name: "테토 vs 에겐", item: "https://pick-play.github.io/teto-egen" },
         { "@type": "ListItem", position: 11, name: "MBTI 검사", item: "https://pick-play.github.io/mbti" },
+        { "@type": "ListItem", position: 12, name: "PDF 도구", item: "https://pick-play.github.io/pdf" },
+        { "@type": "ListItem", position: 13, name: "이미지 도구", item: "https://pick-play.github.io/image" },
       ],
     },
   ],

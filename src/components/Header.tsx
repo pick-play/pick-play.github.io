@@ -20,6 +20,8 @@ const navCategories = [
       { href: "/draw", label: "제비뽑기", emoji: "🎫" },
       { href: "/seat", label: "자리배치", emoji: "💺" },
       { href: "/nickname", label: "닉네임", emoji: "✏️" },
+      { href: "/pdf", label: "PDF", emoji: "📄" },
+      { href: "/image", label: "이미지", emoji: "🖼️" },
     ],
   },
   {

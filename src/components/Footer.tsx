@@ -12,6 +12,8 @@ const footerCategories = [
       { href: "/draw", label: "제비뽑기" },
       { href: "/seat", label: "자리 배치" },
       { href: "/nickname", label: "닉네임 생성기" },
+      { href: "/pdf", label: "PDF 도구" },
+      { href: "/image", label: "이미지 도구" },
     ],
   },
   {
