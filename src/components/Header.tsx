@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 
@@ -57,6 +57,11 @@ const categoryStyles: Record<
     pill: string;
     pillHover: string;
     dot: string;
+    btn: string;
+    btnHover: string;
+    dropdown: string;
+    dropdownArrow: string;
+    linkHover: string;
   }
 > = {
   sky: {
@@ -67,6 +72,11 @@ const categoryStyles: Record<
     pillHover:
       "hover:bg-sky-100 dark:hover:bg-sky-900/40 hover:text-sky-600 dark:hover:text-sky-300",
     dot: "bg-sky-400",
+    btn: "text-sky-600 dark:text-sky-400",
+    btnHover: "hover:bg-sky-50 dark:hover:bg-sky-950/40",
+    dropdown: "border-sky-100 dark:border-sky-900/40",
+    dropdownArrow: "border-b-sky-100 dark:border-b-sky-900/40",
+    linkHover: "hover:bg-sky-50 dark:hover:bg-sky-950/40 hover:text-sky-600 dark:hover:text-sky-300",
   },
   violet: {
     group:
@@ -76,6 +86,11 @@ const categoryStyles: Record<
     pillHover:
       "hover:bg-violet-100 dark:hover:bg-violet-900/40 hover:text-violet-600 dark:hover:text-violet-300",
     dot: "bg-violet-400",
+    btn: "text-violet-600 dark:text-violet-400",
+    btnHover: "hover:bg-violet-50 dark:hover:bg-violet-950/40",
+    dropdown: "border-violet-100 dark:border-violet-900/40",
+    dropdownArrow: "border-b-violet-100 dark:border-b-violet-900/40",
+    linkHover: "hover:bg-violet-50 dark:hover:bg-violet-950/40 hover:text-violet-600 dark:hover:text-violet-300",
   },
   amber: {
     group:
@@ -85,6 +100,11 @@ const categoryStyles: Record<
     pillHover:
       "hover:bg-amber-100 dark:hover:bg-amber-900/40 hover:text-amber-600 dark:hover:text-amber-300",
     dot: "bg-amber-400",
+    btn: "text-amber-600 dark:text-amber-400",
+    btnHover: "hover:bg-amber-50 dark:hover:bg-amber-950/40",
+    dropdown: "border-amber-100 dark:border-amber-900/40",
+    dropdownArrow: "border-b-amber-100 dark:border-b-amber-900/40",
+    linkHover: "hover:bg-amber-50 dark:hover:bg-amber-950/40 hover:text-amber-600 dark:hover:text-amber-300",
   },
 };
 
@@ -142,6 +162,121 @@ function HamburgerIcon() {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
+function DropdownNav() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleMouseEnter = (index: number) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpenIndex(null), 80);
+  };
+
+  return (
+    <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
+      {navCategories.map((category, index) => {
+        const s = categoryStyles[category.color];
+        const isOpen = openIndex === index;
+        const cols = category.links.length <= 4 ? 2 : category.links.length <= 6 ? 3 : 4;
+
+        return (
+          <div
+            key={category.label}
+            className="relative"
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+          >
+            {/* Category button */}
+            <button
+              className={`
+                flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold
+                transition-colors duration-150 select-none
+                text-slate-600 dark:text-slate-300
+                ${s.btnHover}
+              `}
+            >
+              <span className={`inline-block w-2 h-2 rounded-full ${s.dot}`} />
+              <span className={s.btn}>{category.label}</span>
+              <svg
+                className={`w-3 h-3 transition-transform duration-200 text-slate-400 ${isOpen ? "rotate-180" : ""}`}
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Dropdown panel */}
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -6, scale: 0.97 }}
+                  transition={{ duration: 0.15, ease: "easeOut" }}
+                  className={`
+                    absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50
+                    bg-white dark:bg-slate-900 rounded-xl shadow-lg
+                    border ${s.dropdown}
+                    p-2 min-w-[160px]
+                  `}
+                  style={{ width: `${cols * 88}px` }}
+                >
+                  {/* Arrow pointer */}
+                  <div
+                    className={`
+                      absolute -top-[7px] left-1/2 -translate-x-1/2
+                      w-0 h-0
+                      border-l-[7px] border-l-transparent
+                      border-r-[7px] border-r-transparent
+                      border-b-[7px] border-b-white dark:border-b-slate-900
+                    `}
+                  />
+                  {/* Border arrow (slightly larger, sits behind) */}
+                  <div
+                    className={`
+                      absolute -top-2 left-1/2 -translate-x-1/2
+                      w-0 h-0
+                      border-l-[8px] border-l-transparent
+                      border-r-[8px] border-r-transparent
+                      border-b-[8px] ${s.dropdownArrow}
+                    `}
+                  />
+
+                  {/* Links grid */}
+                  <div
+                    className="grid gap-0.5"
+                    style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
+                  >
+                    {category.links.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setOpenIndex(null)}
+                        className={`
+                          flex items-center gap-2 px-2.5 py-2 rounded-lg
+                          text-sm font-medium text-slate-600 dark:text-slate-300
+                          transition-colors duration-100 whitespace-nowrap
+                          ${s.linkHover}
+                        `}
+                      >
+                        <span className="text-base leading-none">{link.emoji}</span>
+                        <span>{link.label}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -158,38 +293,8 @@ export default function Header() {
             PickPlay
           </Link>
 
-          {/* Desktop nav — category pill groups */}
-          <div className="hidden md:flex items-center gap-2 flex-1 justify-center">
-            {navCategories.map((category) => {
-              const s = categoryStyles[category.color];
-              return (
-                <div
-                  key={category.label}
-                  className={`flex items-center gap-0.5 rounded-xl px-2 py-1.5 ${s.group}`}
-                >
-                  {/* Category label with color dot */}
-                  <span className={`flex items-center gap-1 pr-2 text-[10px] font-bold uppercase tracking-wider select-none ${s.label}`}>
-                    <span className={`inline-block w-1.5 h-1.5 rounded-full ${s.dot}`} />
-                    {category.label}
-                  </span>
-                  {/* Nav links as subtle pills */}
-                  {category.links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`
-                        px-2.5 py-1 rounded-lg text-sm font-medium whitespace-nowrap
-                        transition-colors duration-150
-                        ${s.pill} ${s.pillHover}
-                      `}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              );
-            })}
-          </div>
+          {/* Desktop nav — hover dropdown menus */}
+          <DropdownNav />
 
           {/* Desktop: theme toggle */}
           <div className="hidden md:flex items-center shrink-0">

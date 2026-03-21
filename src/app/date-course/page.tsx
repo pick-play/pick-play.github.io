@@ -301,7 +301,12 @@ export default function DateCoursePage() {
                             </div>
                             <div className="flex-1 pt-1">
                               <div className="flex items-center gap-2 mb-1"><span className="text-xs font-bold text-pink-500">STEP {step.step}</span></div>
-                              <h4 className="font-bold text-lg">{step.place}</h4>
+                              <div className="flex items-center gap-2">
+                                <h4 className="font-bold text-lg">{step.place}</h4>
+                                <a href={`https://map.naver.com/v5/search/${encodeURIComponent(step.place + ' ' + result.city)}`} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 hover:bg-green-200 dark:hover:bg-green-800/50 transition-colors text-xs" title="네이버 지도에서 검색">
+                                  📍
+                                </a>
+                              </div>
                               <div className="flex items-center gap-2 text-sm text-slate-400 mt-0.5">
                                 <span>{step.type}</span><span>·</span><span>{step.duration}</span>
                               </div>
@@ -310,6 +315,14 @@ export default function DateCoursePage() {
                         ))}
                       </div>
                       <button onClick={() => startSlot()} className="w-full py-3 rounded-xl border-2 border-pink-400 text-pink-500 font-semibold hover:bg-pink-50 dark:hover:bg-pink-900/10 transition-colors">다시 뽑기</button>
+                      <div className="flex gap-3 mt-3">
+                        <a href={`https://map.naver.com/v5/search/${encodeURIComponent(result.region + ' 데이트')}`} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-white text-sm font-semibold transition-colors">
+                          <span>📍</span> 네이버 지도에서 검색
+                        </a>
+                        <a href={`https://www.google.com/maps/search/${encodeURIComponent(result.region + ' 데이트')}`} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold transition-colors">
+                          <span>📍</span> 구글 맵에서 검색
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
