@@ -210,6 +210,7 @@ export default function ChosungQuizPage() {
   }, [clearTimers, timerMode]);
 
   const startGame = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     clearTimers();
     const pool =
       selectedCategory === "전체"

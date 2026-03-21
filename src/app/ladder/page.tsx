@@ -370,6 +370,43 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
           />
         );
       })}
+      {isAnimating && visibleSteps > 0 && (() => {
+        const lastStep = path[visibleSteps - 1];
+        const prevStep = visibleSteps >= 2 ? path[visibleSteps - 2] : null;
+
+        let dotCol = lastStep.col;
+        let dotRow = lastStep.row;
+
+        if (lastStep.direction === "right" && prevStep) {
+          dotCol = prevStep.col + 1;
+          dotRow = lastStep.row + 0.5;
+        } else if (lastStep.direction === "left" && prevStep) {
+          dotCol = prevStep.col - 1;
+          dotRow = lastStep.row + 0.5;
+        } else if (lastStep.direction === "down") {
+          dotCol = lastStep.col;
+          dotRow = lastStep.row;
+        }
+
+        return (
+          <motion.div
+            key="needle-dot"
+            className="absolute pointer-events-none rounded-full"
+            animate={{ scale: [1, 1.5, 1], opacity: [1, 0.7, 1] }}
+            transition={{ duration: 0.5, repeat: Infinity }}
+            style={{
+              left: colCalc(dotCol),
+              top: `${rowPercent(dotRow)}%`,
+              width: "12px",
+              height: "12px",
+              backgroundColor: color,
+              transform: "translate(-50%, -50%)",
+              boxShadow: `0 0 16px 6px ${color}AA, 0 0 32px 12px ${color}44`,
+              zIndex: 20,
+            }}
+          />
+        );
+      })()}
     </>
   );
 }
@@ -435,6 +472,7 @@ export default function LadderPage() {
   );
 
   const startGame = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const generated = generateRungs(playerCount);
     setRungs(generated);
     setRevealedPlayers(new Set());

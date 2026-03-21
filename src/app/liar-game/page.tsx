@@ -180,6 +180,7 @@ export default function LiarGamePage() {
   }, [timerRunning, timeLeft]);
 
   const startGame = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const wordList = topics[selectedTopic];
     const chosenWord = pickRandom(wordList);
     const chosenLiars = pickMultipleIndices(playerCount, liarCount);

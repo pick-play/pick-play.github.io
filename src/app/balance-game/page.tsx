@@ -90,6 +90,7 @@ export default function BalanceGamePage() {
   );
 
   const handleRestart = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setCurrentIndex(0);
     setSelected(null);
     setPhase("play");

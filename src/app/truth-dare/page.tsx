@@ -128,6 +128,7 @@ export default function TruthDarePage() {
   }, []);
 
   const startGame = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setPhase("game");
     setCurrentCard(null);
     setFlipped(false);
