@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   verification: {
     google: "0c1Q1LUKx3fTxGQ9BHGViwcOtcz7ETY-vhjnSw11oMU",
     other: {
-      "naver-site-verification": ["0de4f1f5c8536f458ea65e9716ff8fa1d18fd585"],
+      "naver-site-verification": ["4b7849490bde02d9a26e3f216598d9df8b45e25d"],
     },
   },
   title: {
