@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     title: "오늘 뭐 먹지? - 130가지 메뉴 추천 룰렛",
     description:
       "고민은 줄이고 선택은 빠르게! 맛 지도에서 취향을 찍으면 슬롯머신이 메뉴를 골라드립니다.",
-    url: "https://pick-ai.github.io/flowday/food",
+    url: "https://pick-korea.github.io/food",
   },
   alternates: {
-    canonical: "https://pick-ai.github.io/flowday/food",
+    canonical: "https://pick-korea.github.io/food",
   },
 };
 

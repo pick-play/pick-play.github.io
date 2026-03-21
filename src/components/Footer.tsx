@@ -42,12 +42,12 @@ export default function Footer() {
           <span>
             Made by{" "}
             <a
-              href="https://github.com/pick-ai"
+              href="https://github.com/pick-korea"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 hover:text-primary-500 transition-colors"
             >
-              pick-ai
+              pick-korea
             </a>
           </span>
         </div>

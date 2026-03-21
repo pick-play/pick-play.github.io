@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pick-ai.github.io/flowday/sitemap.xml
+Sitemap: https://pick-korea.github.io/sitemap.xml

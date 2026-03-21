@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pick-ai.github.io/flowday"),
+  metadataBase: new URL("https://pick-korea.github.io"),
   verification: {
     google: "0c1Q1LUKx3fTxGQ9BHGViwcOtcz7ETY-vhjnSw11oMU",
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "오늘 뭐 먹지? 회식비 정산, 데이트 코스 추천까지 한 곳에서.",
     type: "website",
     locale: "ko_KR",
-    url: "https://pick-ai.github.io/flowday",
+    url: "https://pick-korea.github.io",
     siteName: "LifePick",
     images: [
       {
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-ai.github.io/flowday",
+    canonical: "https://pick-korea.github.io",
     languages: {
-      "ko-KR": "https://pick-ai.github.io/flowday",
+      "ko-KR": "https://pick-korea.github.io",
     },
   },
   robots: {

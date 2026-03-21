@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     title: "회식비 정산 계산기 - 더치페이 / N빵",
     description:
       "회식비, 모임비를 간편하게 정산하세요. 누가 얼마를 내야 하는지 한눈에!",
-    url: "https://pick-ai.github.io/flowday/settlement",
+    url: "https://pick-korea.github.io/settlement",
   },
   alternates: {
-    canonical: "https://pick-ai.github.io/flowday/settlement",
+    canonical: "https://pick-korea.github.io/settlement",
   },
 };
 

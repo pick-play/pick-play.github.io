@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     title: "데이트 코스 추천 - 전국 10개 도시 100+ 코스",
     description:
       "분위기 지도에서 원하는 느낌을 찍으면, 완벽한 데이트 코스를 짜드립니다. 서울부터 경기까지!",
-    url: "https://pick-ai.github.io/flowday/date-course",
+    url: "https://pick-korea.github.io/date-course",
   },
   alternates: {
-    canonical: "https://pick-ai.github.io/flowday/date-course",
+    canonical: "https://pick-korea.github.io/date-course",
   },
 };
 
