@@ -14,6 +14,7 @@ const footerCategories = [
       { href: "/nickname", label: "닉네임 생성기" },
       { href: "/pdf", label: "PDF 도구" },
       { href: "/image", label: "이미지 도구" },
+      { href: "/ladder", label: "사다리 타기" },
     ],
   },
   {
@@ -23,7 +24,6 @@ const footerCategories = [
       { href: "/random-team", label: "조 뽑기" },
       { href: "/balance-game", label: "밸런스 게임" },
       { href: "/chosung-quiz", label: "초성 퀴즈" },
-      { href: "/ladder", label: "사다리 타기" },
       { href: "/truth-dare", label: "진실 or 도전" },
       { href: "/worldcup", label: "이상형 월드컵" },
     ],

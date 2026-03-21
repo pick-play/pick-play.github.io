@@ -21,7 +21,7 @@ function downloadBlob(blob: Blob, filename: string) {
   a.href = url;
   a.download = filename;
   a.click();
-  URL.revokeObjectURL(url);
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
 }
 
 function convertImage(
@@ -156,7 +156,9 @@ function ConvertPngJpg() {
   };
 
   const [items, setItems] = useState<Item[]>([]);
-  let idCounter = useRef(0);
+  const idCounter = useRef(0);
+  const itemsRef = useRef<Item[]>([]);
+  itemsRef.current = items;
 
   const handleFiles = useCallback((files: FileList) => {
     const newItems: Item[] = Array.from(files)
@@ -175,7 +177,7 @@ function ConvertPngJpg() {
     setItems((prev) =>
       prev.map((it) => (it.id === id ? { ...it, status: "processing" } : it))
     );
-    const item = items.find((it) => it.id === id);
+    const item = itemsRef.current.find((it) => it.id === id);
     if (!item) return;
     const targetFormat =
       item.file.type === "image/png" ? "image/jpeg" : "image/png";
@@ -195,7 +197,7 @@ function ConvertPngJpg() {
         )
       );
     }
-  }, [items]);
+  }, []);
 
   const handleDownload = useCallback((item: { file: File; resultBlob: Blob | null }) => {
     if (!item.resultBlob) return;
@@ -655,12 +657,13 @@ function ResizeTab() {
   const [processing, setProcessing] = useState(false);
   const [resultBlob, setResultBlob] = useState<Blob | null>(null);
   const [resultUrl, setResultUrl] = useState<string | null>(null);
+  const resultUrlRef = useRef<string | null>(null);
 
   const handleFiles = useCallback((files: FileList) => {
     const f = files[0];
     if (!f || !f.type.startsWith("image/")) return;
     if (previewUrl) URL.revokeObjectURL(previewUrl);
-    if (resultUrl) URL.revokeObjectURL(resultUrl);
+    if (resultUrlRef.current) URL.revokeObjectURL(resultUrlRef.current);
     setResultBlob(null);
     setResultUrl(null);
     const url = URL.createObjectURL(f);
@@ -713,8 +716,9 @@ function ResizeTab() {
         canvas.toBlob(
           (blob) => {
             if (!blob) { reject(new Error("실패")); return; }
-            if (resultUrl) URL.revokeObjectURL(resultUrl);
+            if (resultUrlRef.current) URL.revokeObjectURL(resultUrlRef.current);
             const rUrl = URL.createObjectURL(blob);
+            resultUrlRef.current = rUrl;
             setResultBlob(blob);
             setResultUrl(rUrl);
             resolve();
@@ -726,7 +730,7 @@ function ResizeTab() {
     } finally {
       setProcessing(false);
     }
-  }, [file, targetW, targetH, resultUrl]);
+  }, [file, targetW, targetH]);
 
   return (
     <div className="space-y-6">
@@ -843,18 +847,20 @@ function CropTab() {
   const containerRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const previewUrl = useRef<string | null>(null);
+  const resultUrlRef = useRef<string | null>(null);
 
   const handleFiles = useCallback((files: FileList) => {
     const f = files[0];
     if (!f || !f.type.startsWith("image/")) return;
     if (previewUrl.current) URL.revokeObjectURL(previewUrl.current);
-    if (resultUrl) URL.revokeObjectURL(resultUrl);
+    if (resultUrlRef.current) URL.revokeObjectURL(resultUrlRef.current);
+    resultUrlRef.current = null;
     setResultBlob(null);
     setResultUrl(null);
     setCropRect(null);
     previewUrl.current = URL.createObjectURL(f);
     setFile(f);
-  }, [resultUrl]);
+  }, []);
 
   const getRelativePos = (e: React.MouseEvent | React.TouchEvent) => {
     const el = containerRef.current;
@@ -897,6 +903,7 @@ function CropTab() {
   const handleCrop = useCallback(async () => {
     if (!file || !cropRect || cropRect.w < 5 || cropRect.h < 5) return;
     if (!imgRef.current || !containerRef.current) return;
+    if (imgNaturalW === 0 || imgNaturalH === 0) return;
     const dispW = containerRef.current.getBoundingClientRect().width;
     const dispH = containerRef.current.getBoundingClientRect().height;
     const scaleX = imgNaturalW / dispW;
@@ -926,8 +933,9 @@ function CropTab() {
         canvas.toBlob(
           (blob) => {
             if (!blob) { reject(new Error("실패")); return; }
-            if (resultUrl) URL.revokeObjectURL(resultUrl);
+            if (resultUrlRef.current) URL.revokeObjectURL(resultUrlRef.current);
             const rUrl = URL.createObjectURL(blob);
+            resultUrlRef.current = rUrl;
             setResultBlob(blob);
             setResultUrl(rUrl);
             resolve();
@@ -939,7 +947,7 @@ function CropTab() {
     } finally {
       setProcessing(false);
     }
-  }, [file, cropRect, imgNaturalW, imgNaturalH, resultUrl]);
+  }, [file, cropRect, imgNaturalW, imgNaturalH]);
 
   return (
     <div className="space-y-6">

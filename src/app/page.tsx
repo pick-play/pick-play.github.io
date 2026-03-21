@@ -101,6 +101,15 @@ const categories = [
         bg: "bg-blue-50 dark:bg-blue-950/20",
         stat: "6가지 기능",
       },
+      {
+        title: "사다리 타기",
+        description: "누가 당첨될지 두근두근! 경로 추적 애니메이션으로 흥미진진하게.",
+        href: "/ladder",
+        emoji: "🪜",
+        gradient: "from-emerald-400 to-teal-500",
+        bg: "bg-emerald-50 dark:bg-emerald-950/20",
+        stat: "경로 추적",
+      },
     ],
   },
   {
@@ -143,15 +152,6 @@ const categories = [
         gradient: "from-teal-400 to-green-500",
         bg: "bg-teal-50 dark:bg-teal-950/20",
         stat: "100+ 단어",
-      },
-      {
-        title: "사다리 타기",
-        description: "누가 당첨될지 두근두근! 경로 추적 애니메이션으로 흥미진진하게.",
-        href: "/ladder",
-        emoji: "🪜",
-        gradient: "from-emerald-400 to-teal-500",
-        bg: "bg-emerald-50 dark:bg-emerald-950/20",
-        stat: "경로 추적",
       },
       {
         title: "진실 or 도전",

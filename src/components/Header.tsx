@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 
@@ -22,6 +22,7 @@ const navCategories = [
       { href: "/nickname", label: "닉네임", emoji: "✏️" },
       { href: "/pdf", label: "PDF", emoji: "📄" },
       { href: "/image", label: "이미지", emoji: "🖼️" },
+      { href: "/ladder", label: "사다리", emoji: "🪜" },
     ],
   },
   {
@@ -32,7 +33,6 @@ const navCategories = [
       { href: "/random-team", label: "조뽑기", emoji: "🎲" },
       { href: "/balance-game", label: "밸런스", emoji: "⚖️" },
       { href: "/chosung-quiz", label: "초성", emoji: "🔤" },
-      { href: "/ladder", label: "사다리", emoji: "🪜" },
       { href: "/truth-dare", label: "진실도전", emoji: "🔥" },
       { href: "/worldcup", label: "월드컵", emoji: "🏆" },
     ],
@@ -164,6 +164,162 @@ function HamburgerIcon() {
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
+function DropdownItem({
+  category,
+  index,
+  isOpen,
+  onMouseEnter,
+  onMouseLeave,
+  onClose,
+}: {
+  category: (typeof navCategories)[number];
+  index: number;
+  isOpen: boolean;
+  onMouseEnter: (index: number) => void;
+  onMouseLeave: () => void;
+  onClose: () => void;
+}) {
+  const s = categoryStyles[category.color];
+  const cols = category.links.length <= 4 ? 2 : category.links.length <= 6 ? 3 : 4;
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [positionStyle, setPositionStyle] = useState<React.CSSProperties>({
+    left: "50%",
+    transform: "translateX(-50%)",
+  });
+  const [arrowStyle, setArrowStyle] = useState<React.CSSProperties>({
+    left: "50%",
+    transform: "translateX(-50%)",
+  });
+
+  useEffect(() => {
+    if (!isOpen || !dropdownRef.current) return;
+
+    const rect = dropdownRef.current.getBoundingClientRect();
+    const overflowRight = rect.right - window.innerWidth;
+    const overflowLeft = -rect.left;
+
+    if (overflowRight > 0) {
+      // Shift left by the overflow amount (plus a small margin)
+      const shift = overflowRight + 8;
+      setPositionStyle({
+        left: "50%",
+        transform: `translateX(calc(-50% - ${shift}px))`,
+      });
+      // Move arrow right to stay above the button
+      setArrowStyle({
+        left: `calc(50% + ${shift}px)`,
+        transform: "translateX(-50%)",
+      });
+    } else if (overflowLeft > 0) {
+      const shift = overflowLeft + 8;
+      setPositionStyle({
+        left: "50%",
+        transform: `translateX(calc(-50% + ${shift}px))`,
+      });
+      setArrowStyle({
+        left: `calc(50% - ${shift}px)`,
+        transform: "translateX(-50%)",
+      });
+    } else {
+      setPositionStyle({ left: "50%", transform: "translateX(-50%)" });
+      setArrowStyle({ left: "50%", transform: "translateX(-50%)" });
+    }
+  }, [isOpen]);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => onMouseEnter(index)}
+      onMouseLeave={onMouseLeave}
+    >
+      {/* Category button */}
+      <button
+        className={`
+          flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold
+          transition-colors duration-150 select-none
+          text-slate-600 dark:text-slate-300
+          ${s.btnHover}
+        `}
+      >
+        <span className={`inline-block w-2 h-2 rounded-full ${s.dot}`} />
+        <span className={s.btn}>{category.label}</span>
+        <svg
+          className={`w-3 h-3 transition-transform duration-200 text-slate-400 ${isOpen ? "rotate-180" : ""}`}
+          fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {/* Dropdown panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            ref={dropdownRef}
+            initial={{ opacity: 0, y: -6, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -6, scale: 0.97 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className={`
+              absolute top-full mt-2 z-50
+              bg-white dark:bg-slate-900 rounded-xl shadow-lg
+              border ${s.dropdown}
+              p-2 min-w-[160px]
+            `}
+            style={{ width: `${cols * 116}px`, ...positionStyle }}
+          >
+            {/* Arrow pointer */}
+            <div
+              className={`
+                absolute -top-[7px]
+                w-0 h-0
+                border-l-[7px] border-l-transparent
+                border-r-[7px] border-r-transparent
+                border-b-[7px] border-b-white dark:border-b-slate-900
+              `}
+              style={arrowStyle}
+            />
+            {/* Border arrow (slightly larger, sits behind) */}
+            <div
+              className={`
+                absolute -top-2
+                w-0 h-0
+                border-l-[8px] border-l-transparent
+                border-r-[8px] border-r-transparent
+                border-b-[8px] ${s.dropdownArrow}
+              `}
+              style={arrowStyle}
+            />
+
+            {/* Links grid */}
+            <div
+              className="grid gap-0.5"
+              style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
+            >
+              {category.links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={onClose}
+                  className={`
+                    flex items-center gap-2 px-2.5 py-2 rounded-lg
+                    text-sm font-medium text-slate-600 dark:text-slate-300
+                    transition-colors duration-100 whitespace-nowrap
+                    ${s.linkHover}
+                  `}
+                >
+                  <span className="text-base leading-none">{link.emoji}</span>
+                  <span>{link.label}</span>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 function DropdownNav() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -179,102 +335,17 @@ function DropdownNav() {
 
   return (
     <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
-      {navCategories.map((category, index) => {
-        const s = categoryStyles[category.color];
-        const isOpen = openIndex === index;
-        const cols = category.links.length <= 4 ? 2 : category.links.length <= 6 ? 3 : 4;
-
-        return (
-          <div
-            key={category.label}
-            className="relative"
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* Category button */}
-            <button
-              className={`
-                flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold
-                transition-colors duration-150 select-none
-                text-slate-600 dark:text-slate-300
-                ${s.btnHover}
-              `}
-            >
-              <span className={`inline-block w-2 h-2 rounded-full ${s.dot}`} />
-              <span className={s.btn}>{category.label}</span>
-              <svg
-                className={`w-3 h-3 transition-transform duration-200 text-slate-400 ${isOpen ? "rotate-180" : ""}`}
-                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            {/* Dropdown panel */}
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -6, scale: 0.97 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -6, scale: 0.97 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
-                  className={`
-                    absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50
-                    bg-white dark:bg-slate-900 rounded-xl shadow-lg
-                    border ${s.dropdown}
-                    p-2 min-w-[160px]
-                  `}
-                  style={{ width: `${cols * 116}px` }}
-                >
-                  {/* Arrow pointer */}
-                  <div
-                    className={`
-                      absolute -top-[7px] left-1/2 -translate-x-1/2
-                      w-0 h-0
-                      border-l-[7px] border-l-transparent
-                      border-r-[7px] border-r-transparent
-                      border-b-[7px] border-b-white dark:border-b-slate-900
-                    `}
-                  />
-                  {/* Border arrow (slightly larger, sits behind) */}
-                  <div
-                    className={`
-                      absolute -top-2 left-1/2 -translate-x-1/2
-                      w-0 h-0
-                      border-l-[8px] border-l-transparent
-                      border-r-[8px] border-r-transparent
-                      border-b-[8px] ${s.dropdownArrow}
-                    `}
-                  />
-
-                  {/* Links grid */}
-                  <div
-                    className="grid gap-0.5"
-                    style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
-                  >
-                    {category.links.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setOpenIndex(null)}
-                        className={`
-                          flex items-center gap-2 px-2.5 py-2 rounded-lg
-                          text-sm font-medium text-slate-600 dark:text-slate-300
-                          transition-colors duration-100 whitespace-nowrap
-                          ${s.linkHover}
-                        `}
-                      >
-                        <span className="text-base leading-none">{link.emoji}</span>
-                        <span>{link.label}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        );
-      })}
+      {navCategories.map((category, index) => (
+        <DropdownItem
+          key={category.label}
+          category={category}
+          index={index}
+          isOpen={openIndex === index}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClose={() => setOpenIndex(null)}
+        />
+      ))}
     </div>
   );
 }

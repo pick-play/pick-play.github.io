@@ -9,7 +9,7 @@ import { PDFDocument } from "pdf-lib";
 // Lazy-load pdfjs-dist only in the browser to avoid SSR DOMMatrix errors
 async function getPdfJs() {
   const pdfjsLib = await import("pdfjs-dist");
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
   return pdfjsLib;
 }
 
@@ -27,7 +27,7 @@ function downloadBlob(blob: Blob, filename: string) {
   a.href = url;
   a.download = filename;
   a.click();
-  URL.revokeObjectURL(url);
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
 }
 
 function parsePageRanges(input: string, totalPages: number): number[] {
@@ -64,7 +64,7 @@ type Tab =
 
 const TABS: { id: Tab; label: string; emoji: string }[] = [
   { id: "merge", label: "PDF 합치기", emoji: "🔗" },
-  { id: "split", label: "PDF 분할", emoji: "✂️" },
+  { id: "split", label: "페이지 추출", emoji: "✂️" },
   { id: "pdf2jpg", label: "PDF → JPG", emoji: "🖼️" },
   { id: "jpg2pdf", label: "JPG → PDF", emoji: "📄" },
   { id: "compress", label: "PDF 압축", emoji: "🗜️" },
@@ -258,7 +258,7 @@ function MergeTab() {
       }
       setStatus("파일 생성 중...");
       const pdfBytes = await merged.save();
-      downloadBlob(new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" }), "merged.pdf");
+      downloadBlob(new Blob([pdfBytes as BlobPart], { type: "application/pdf" }), "merged.pdf");
       setStatus("");
     } catch (e) {
       setStatus("오류가 발생했습니다. 파일을 확인해주세요.");
@@ -341,7 +341,7 @@ function SplitTab() {
       copied.forEach((page) => newDoc.addPage(page));
       const pdfBytes = await newDoc.save();
       downloadBlob(
-        new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" }),
+        new Blob([pdfBytes as BlobPart], { type: "application/pdf" }),
         `split_${rangeInput.replace(/[^0-9,-]/g, "")}.pdf`
       );
       setStatus("");
@@ -556,7 +556,7 @@ function Jpg2PdfTab() {
 
   const handleFiles = useCallback((newFiles: File[]) => {
     const valid = newFiles.filter(
-      (f) => f.type === "image/jpeg" || f.type === "image/png" || f.type === "image/jpg"
+      (f) => f.type === "image/jpeg" || f.type === "image/png"
     );
     setFiles((prev) => [...prev, ...valid]);
   }, []);
@@ -599,7 +599,7 @@ function Jpg2PdfTab() {
       }
       setStatus("파일 생성 중...");
       const pdfBytes = await doc.save();
-      downloadBlob(new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" }), "images.pdf");
+      downloadBlob(new Blob([pdfBytes as BlobPart], { type: "application/pdf" }), "images.pdf");
       setStatus("");
     } catch (e) {
       setStatus("오류가 발생했습니다. 이미지 파일을 확인해주세요.");
@@ -660,7 +660,7 @@ function CompressTab() {
       doc.setProducer("");
       doc.setCreator("");
       const compressed = await doc.save({ useObjectStreams: true });
-      const blob = new Blob([compressed.buffer as ArrayBuffer], { type: "application/pdf" });
+      const blob = new Blob([compressed as BlobPart], { type: "application/pdf" });
       setResult({ original: file.size, compressed: compressed.length });
       downloadBlob(blob, `compressed_${file.name}`);
       setStatus("");
@@ -828,7 +828,7 @@ function ReorderTab() {
       const copied = await newDoc.copyPages(sourceDoc, activePages);
       copied.forEach((page) => newDoc.addPage(page));
       const pdfBytes = await newDoc.save();
-      downloadBlob(new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" }), `edited_${file.name}`);
+      downloadBlob(new Blob([pdfBytes as BlobPart], { type: "application/pdf" }), `edited_${file.name}`);
       setStatus("");
     } catch (e) {
       setStatus("오류가 발생했습니다.");
@@ -1253,7 +1253,7 @@ export default function PdfPage() {
                   </svg>
                 </summary>
                 <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
-                  네, &apos;PDF 분할&apos; 탭에서 원하는 페이지 범위를 입력하면 됩니다. 예를 들어 &apos;1-3, 5, 7-10&apos;처럼 입력하면 1~3페이지, 5페이지, 7~10페이지만 추출하여 새로운 PDF로 저장합니다. &apos;페이지 편집&apos; 탭에서는 썸네일을 보며 삭제할 페이지를 직접 선택할 수도 있습니다.
+                  네, &apos;페이지 추출&apos; 탭에서 원하는 페이지 범위를 입력하면 됩니다. 예를 들어 &apos;1-3, 5, 7-10&apos;처럼 입력하면 1~3페이지, 5페이지, 7~10페이지만 추출하여 새로운 PDF로 저장합니다. &apos;페이지 편집&apos; 탭에서는 썸네일을 보며 삭제할 페이지를 직접 선택할 수도 있습니다.
                 </p>
               </details>
             </div>
