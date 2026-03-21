@@ -5,11 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import { PDFDocument } from "pdf-lib";
+import JSZip from "jszip";
 
 // Lazy-load pdfjs-dist only in the browser to avoid SSR DOMMatrix errors
 async function getPdfJs() {
   const pdfjsLib = await import("pdfjs-dist");
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
   return pdfjsLib;
 }
 
@@ -465,8 +466,14 @@ function Pdf2JpgTab() {
     a.click();
   };
 
-  const downloadAll = () => {
-    images.forEach((dataUrl, i) => downloadImage(dataUrl, i + 1));
+  const downloadAll = async () => {
+    const zip = new JSZip();
+    images.forEach((dataUrl, i) => {
+      const base64 = dataUrl.split(",")[1];
+      zip.file(`page_${String(i + 1).padStart(3, "0")}.jpg`, base64, { base64: true });
+    });
+    const blob = await zip.generateAsync({ type: "blob" });
+    downloadBlob(blob, "pdf_images.zip");
   };
 
   return (
@@ -716,8 +723,8 @@ function CompressTab() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 mb-1">절감</p>
-                  <p className={`font-bold ${ratio > 0 ? "text-green-600 dark:text-green-400" : "text-slate-500"}`}>
-                    {ratio > 0 ? `-${ratio}%` : "변화 없음"}
+                  <p className={`font-bold ${ratio > 0 ? "text-green-600 dark:text-green-400" : ratio < 0 ? "text-red-500" : "text-slate-500"}`}>
+                    {ratio > 0 ? `-${ratio}%` : ratio < 0 ? `+${Math.abs(ratio)}%` : "변화 없음"}
                   </p>
                 </div>
               </div>

@@ -322,7 +322,11 @@ function ConvertWebp() {
     setItems((prev) => [...prev, ...newItems]);
   }, []);
 
+  const [running, setRunning] = useState(false);
+
   const handleConvertAll = useCallback(async () => {
+    if (running) return;
+    setRunning(true);
     const pending = items.filter((it) => it.status === "idle");
     for (const item of pending) {
       setItems((prev) =>
@@ -343,7 +347,8 @@ function ConvertWebp() {
         );
       }
     }
-  }, [items]);
+    setRunning(false);
+  }, [items, running]);
 
   const handleRemove = useCallback((id: number) => {
     setItems((prev) => {
@@ -466,7 +471,11 @@ function CompressTab() {
     setItems((prev) => [...prev, ...newItems]);
   }, []);
 
+  const [running, setRunning] = useState(false);
+
   const handleCompressAll = useCallback(async () => {
+    if (running) return;
+    setRunning(true);
     const pending = items.filter((it) => it.status === "idle");
     for (const item of pending) {
       setItems((prev) =>
@@ -494,7 +503,8 @@ function CompressTab() {
         );
       }
     }
-  }, [items, targetMB]);
+    setRunning(false);
+  }, [items, targetMB, running]);
 
   const handleRemove = useCallback((id: number) => {
     setItems((prev) => {
@@ -677,7 +687,7 @@ function ResizeTab() {
       setTargetH(img.height);
     };
     img.src = url;
-  }, [previewUrl, resultUrl]);
+  }, [previewUrl]);
 
   const handleWidthChange = (val: number) => {
     setTargetW(val);
@@ -968,6 +978,9 @@ function CropTab() {
               onMouseMove={onMouseMove}
               onMouseUp={onMouseUp}
               onMouseLeave={onMouseUp}
+              onTouchStart={(e) => { e.preventDefault(); onMouseDown(e as unknown as React.MouseEvent); }}
+              onTouchMove={(e) => { e.preventDefault(); onMouseMove(e as unknown as React.MouseEvent); }}
+              onTouchEnd={onMouseUp}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -985,9 +998,7 @@ function CropTab() {
               {/* Dim overlay */}
               {cropRect && cropRect.w > 2 && cropRect.h > 2 && (
                 <>
-                  {/* dark overlay via svg clip or simple divs */}
-                  <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-                  {/* Crop window cutout */}
+                  {/* Crop window cutout with shadow overlay */}
                   <div
                     className="absolute border-2 border-blue-400 pointer-events-none"
                     style={{
@@ -995,7 +1006,7 @@ function CropTab() {
                       top: cropRect.y,
                       width: cropRect.w,
                       height: cropRect.h,
-                      boxShadow: "0 0 0 9999px rgba(0,0,0,0.4)",
+                      boxShadow: "0 0 0 9999px rgba(0,0,0,0.5)",
                     }}
                   >
                     {/* Corner handles */}
