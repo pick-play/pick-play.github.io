@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     title: "초성 퀴즈 - 초성만 보고 맞춰봐",
     description: "100개 이상의 단어! 초성만 보고 맞추는 재미있는 퀴즈 게임",
     url: "https://pick-play.github.io/chosung-quiz",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/chosung-quiz" },
 };

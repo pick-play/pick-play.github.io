@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     description:
       "고민될 때는 룰렛에 맡겨! 커스텀 항목으로 나만의 룰렛을 만들어보세요.",
     url: "https://pick-play.github.io/roulette",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/roulette" },
 };

@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     description:
       "PDF 합치기, 분할, JPG 변환, 압축, 페이지 편집까지. 모든 작업이 브라우저에서 처리됩니다.",
     url: "https://pick-play.github.io/pdf",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: {
     canonical: "https://pick-play.github.io/pdf",

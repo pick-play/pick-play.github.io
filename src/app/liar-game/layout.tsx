@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     description:
       "라이어를 찾아라! 다양한 주제의 단어로 친구들과 즐기는 파티 게임",
     url: "https://pick-play.github.io/liar-game",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/liar-game" },
 };

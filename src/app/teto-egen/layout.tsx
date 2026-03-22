@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     title: "테토 vs 에겐 성향 테스트",
     description: "나는 테토일까 에겐일까? 11가지 질문으로 알아보는 내 성향!",
     url: "https://pick-play.github.io/teto-egen",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/teto-egen" },
 };

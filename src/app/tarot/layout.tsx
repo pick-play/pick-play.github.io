@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     description:
       "고민이 있을 때 타로 카드에 물어보세요! 22장의 메이저 아르카나 카드로 Yes 또는 No 답을 알려드립니다.",
     url: "https://pick-play.github.io/tarot",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/tarot" },
 };

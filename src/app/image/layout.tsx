@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     title: "이미지 도구 - 변환, 압축, 크기 변경, 자르기 | PickPlay",
     description: "PNG JPG WEBP 변환, 이미지 압축, 크기 변경, 자르기까지. 모든 작업이 브라우저에서 처리됩니다.",
     url: "https://pick-play.github.io/image",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: {
     canonical: "https://pick-play.github.io/image",

@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     description:
       "이름만 입력하면 커플 궁합을 알 수 있어요! 5가지 카테고리로 분석하는 재미있는 궁합 테스트.",
     url: "https://pick-play.github.io/couple-test",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/couple-test" },
 };

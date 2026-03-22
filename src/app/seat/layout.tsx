@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     description:
       "교실, 회의실, 모임 자리를 랜덤으로 배치하세요! 칠판 기준 자리 배치도를 즉시 만들어 드립니다.",
     url: "https://pick-play.github.io/seat",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/seat" },
 };

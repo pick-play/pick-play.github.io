@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     description:
       "고민은 줄이고 선택은 빠르게! 맛 지도에서 취향을 찍으면 슬롯머신이 메뉴를 골라드립니다.",
     url: "https://pick-play.github.io/food",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: {
     canonical: "https://pick-play.github.io/food",

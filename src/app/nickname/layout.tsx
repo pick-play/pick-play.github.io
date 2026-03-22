@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     description:
       "귀여운, 웃긴, 멋있는, 게임용, 판타지, 감성적 스타일로 나만의 닉네임을 자동 생성! 게임과 SNS에 딱 맞는 닉네임을 찾아보세요.",
     url: "https://pick-play.github.io/nickname",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: {
     canonical: "https://pick-play.github.io/nickname",

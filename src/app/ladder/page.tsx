@@ -358,13 +358,13 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
               left: colCalc(minCol),
               top: `${rowPercent(minRow)}%`,
               width: isVertical
-                ? "5px"
-                : `calc((100% - ${pad * 2}px) * ${colFrac(maxCol) - colFrac(minCol)} + 5px)`,
-              height: isVertical ? `${rowPercent(maxRow) - rowPercent(minRow)}%` : "5px",
+                ? "6px"
+                : `calc((100% - ${pad * 2}px) * ${colFrac(maxCol) - colFrac(minCol)} + 6px)`,
+              height: isVertical ? `${rowPercent(maxRow) - rowPercent(minRow)}%` : "6px",
               backgroundColor: color,
               borderRadius: "3px",
               transform: isVertical ? "translateX(-50%)" : "translateY(-50%)",
-              boxShadow: `0 0 8px 2px ${color}66`,
+              boxShadow: `0 0 6px 2px ${color}, 0 0 18px 6px ${color}CC, 0 0 36px 10px ${color}55`,
               zIndex: 10,
             }}
           />
@@ -392,16 +392,22 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
           <motion.div
             key="needle-dot"
             className="absolute pointer-events-none rounded-full"
-            animate={{ scale: [1, 1.5, 1], opacity: [1, 0.7, 1] }}
-            transition={{ duration: 0.5, repeat: Infinity }}
+            animate={{
+              scale: [1, 1.6, 1],
+              boxShadow: [
+                `0 0 10px 4px ${color}, 0 0 30px 12px ${color}CC, 0 0 60px 20px ${color}66`,
+                `0 0 20px 8px ${color}, 0 0 50px 20px ${color}EE, 0 0 90px 32px ${color}99`,
+                `0 0 10px 4px ${color}, 0 0 30px 12px ${color}CC, 0 0 60px 20px ${color}66`,
+              ],
+            }}
+            transition={{ duration: 0.6, repeat: Infinity, ease: "easeInOut" }}
             style={{
               left: colCalc(dotCol),
               top: `${rowPercent(dotRow)}%`,
-              width: "12px",
-              height: "12px",
+              width: "18px",
+              height: "18px",
               backgroundColor: color,
               transform: "translate(-50%, -50%)",
-              boxShadow: `0 0 16px 6px ${color}AA, 0 0 32px 12px ${color}44`,
               zIndex: 20,
             }}
           />

@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     title: "D-Day 계산기 - 디데이 카운트다운 | PickPlay",
     description: "중요한 날까지 남은 일수를 계산하세요",
     url: "https://pick-play.github.io/d-day",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: {
     canonical: "https://pick-play.github.io/d-day",

@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     description:
       "참가자를 입력하고 조 수를 설정하면 랜덤으로 팀을 나눠드립니다!",
     url: "https://pick-play.github.io/random-team",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/random-team" },
 };

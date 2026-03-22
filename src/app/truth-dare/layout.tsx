@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     description:
       "진실 or 도전! 200개 이상의 질문과 미션으로 친구들과 더 재미있게",
     url: "https://pick-play.github.io/truth-dare",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/truth-dare" },
 };

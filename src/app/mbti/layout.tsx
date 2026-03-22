@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     title: "MBTI 성격유형 검사 - 나의 MBTI는?",
     description: "20문항으로 알아보는 나의 MBTI! 각 지표별 % 결과와 궁합까지",
     url: "https://pick-play.github.io/mbti",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/mbti" },
 };

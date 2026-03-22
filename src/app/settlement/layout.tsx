@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     description:
       "회식비, 모임비를 간편하게 정산하세요. 누가 얼마를 내야 하는지 한눈에!",
     url: "https://pick-play.github.io/settlement",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: {
     canonical: "https://pick-play.github.io/settlement",

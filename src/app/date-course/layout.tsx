@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     description:
       "분위기 지도에서 원하는 느낌을 찍으면, 완벽한 데이트 코스를 짜드립니다. 서울부터 경기까지!",
     url: "https://pick-play.github.io/date-course",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: {
     canonical: "https://pick-play.github.io/date-course",

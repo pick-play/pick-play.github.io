@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     title: "밸런스 게임 - 이거 vs 저거",
     description: "다양한 주제의 밸런스 게임을 친구들과 즐겨보세요!",
     url: "https://pick-play.github.io/balance-game",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/balance-game" },
 };

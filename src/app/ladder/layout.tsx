@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     title: "사다리 타기 - 온라인 사다리 게임 | PickPlay",
     description: "친구들과 함께하는 온라인 사다리 타기",
     url: "https://pick-play.github.io/ladder",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/ladder" },
 };

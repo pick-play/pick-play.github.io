@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     title: "이상형 월드컵 - 나만의 최애를 찾아라!",
     description: "음식, 여행지, 동물, 취미 등 다양한 주제의 이상형 월드컵!",
     url: "https://pick-play.github.io/worldcup",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PickPlay - 선택과 재미를 한 번에",
+      },
+    ],
   },
   alternates: { canonical: "https://pick-play.github.io/worldcup" },
 };
