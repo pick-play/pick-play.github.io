@@ -43,7 +43,7 @@ export default function AnchorAd() {
             className="adsbygoogle"
             style={{ display: "block", width: "100%", minHeight: "50px", maxHeight: "60px" }}
             data-ad-client="ca-pub-7766090864059500"
-            data-ad-slot="auto"
+            data-ad-slot="5119492203"
             data-ad-format="horizontal"
             data-full-width-responsive="true"
           />

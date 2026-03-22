@@ -57,7 +57,7 @@ export default function AdBanner({
         className="adsbygoogle"
         style={{ display: "block", width: "100%" }}
         data-ad-client="ca-pub-7766090864059500"
-        data-ad-slot="auto"
+        data-ad-slot={format === "horizontal" ? "1539339846" : format === "rectangle" ? "2852421514" : "4598815705"}
         data-ad-format={format === "in-article" ? "fluid" : "auto"}
         {...(format === "in-article" ? { "data-ad-layout": "in-article" } : {})}
         data-full-width-responsive="true"

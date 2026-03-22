@@ -33,8 +33,8 @@ export default function SidebarAds({ side }: { side: "left" | "right" }) {
           className="adsbygoogle"
           style={{ display: "block", width: "160px", minHeight: "600px" }}
           data-ad-client="ca-pub-7766090864059500"
-          data-ad-slot="auto"
-          data-ad-format="auto"
+          data-ad-slot="9265786621"
+          data-ad-format="vertical"
           data-full-width-responsive="false"
         />
       </div>
