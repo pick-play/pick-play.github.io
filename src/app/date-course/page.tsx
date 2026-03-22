@@ -5,7 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import TasteMap from "@/components/TasteMap";
 import AdBanner from "@/components/AdBanner";
-import coursesData from "@/data/date-courses.json";
+import coursesKo from "@/data/date-courses.json";
+import coursesEn from "@/data/date-courses.en.json";
+import coursesJa from "@/data/date-courses.ja.json";
+import coursesZh from "@/data/date-courses.zh.json";
+import coursesEs from "@/data/date-courses.es.json";
 import { useLocale } from "@/hooks/useLocale";
 
 type CourseStep = { step: number; place: string; type: string; duration: string };
@@ -84,10 +88,10 @@ const translations = {
     filterPreference: "Vibe",
     preferences: [
       { value: "", label: "All" },
-      { value: "카페", label: "Café" },
-      { value: "야외", label: "Outdoor" },
-      { value: "실내", label: "Indoor" },
-      { value: "액티비티", label: "Activity" },
+      { value: "Cafe", label: "Café" },
+      { value: "Outdoor", label: "Outdoor" },
+      { value: "Indoor", label: "Indoor" },
+      { value: "Activity", label: "Activity" },
     ],
     btnSpinning: "Planning...",
     btnRecommendFilter: "Find a Course",
@@ -135,10 +139,10 @@ const translations = {
     filterPreference: "好み",
     preferences: [
       { value: "", label: "すべて" },
-      { value: "카페", label: "カフェ" },
-      { value: "야외", label: "屋外" },
-      { value: "실내", label: "室内" },
-      { value: "액티비티", label: "アクティビティ" },
+      { value: "カフェ", label: "カフェ" },
+      { value: "アウトドア", label: "屋外" },
+      { value: "インドア", label: "室内" },
+      { value: "アクティビティ", label: "アクティビティ" },
     ],
     btnSpinning: "提案中...",
     btnRecommendFilter: "コースを探す",
@@ -186,10 +190,10 @@ const translations = {
     filterPreference: "偏好",
     preferences: [
       { value: "", label: "全部" },
-      { value: "카페", label: "咖啡厅" },
-      { value: "야외", label: "户外" },
-      { value: "실내", label: "室内" },
-      { value: "액티비티", label: "活动" },
+      { value: "咖啡", label: "咖啡厅" },
+      { value: "户外", label: "户外" },
+      { value: "室内", label: "室内" },
+      { value: "活动", label: "活动" },
     ],
     btnSpinning: "推荐中...",
     btnRecommendFilter: "查找路线",
@@ -237,10 +241,10 @@ const translations = {
     filterPreference: "Ambiente",
     preferences: [
       { value: "", label: "Todo" },
-      { value: "카페", label: "Cafetería" },
-      { value: "야외", label: "Exterior" },
-      { value: "실내", label: "Interior" },
-      { value: "액티비티", label: "Actividad" },
+      { value: "Cafe", label: "Cafetería" },
+      { value: "Exterior", label: "Exterior" },
+      { value: "Interior", label: "Interior" },
+      { value: "Actividad", label: "Actividad" },
     ],
     btnSpinning: "Planificando...",
     btnRecommendFilter: "Buscar ruta",
@@ -278,32 +282,51 @@ const translations = {
   },
 };
 
-const cities = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기북부", "경기남부"];
-
-const stepIcons: Record<string, string> = {
-  카페: "☕",
-  식사: "🍽️",
-  산책: "🚶",
-  액티비티: "🎮",
-  관광: "📸",
+const coursesDataMap: Record<string, Course[]> = {
+  ko: coursesKo as Course[],
+  en: coursesEn as Course[],
+  ja: coursesJa as Course[],
+  zh: coursesZh as Course[],
+  es: coursesEs as Course[],
 };
 
-const prefColors: Record<string, string> = {
-  카페: "#92400e",
-  야외: "#16a34a",
-  실내: "#7c3aed",
-  액티비티: "#ea580c",
+const citiesMap: Record<string, string[]> = {
+  ko: ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기북부", "경기남부"],
+  en: ["Seoul", "Busan", "Daegu", "Incheon", "Gwangju", "Daejeon", "Ulsan", "Sejong", "Northern Gyeonggi", "Southern Gyeonggi"],
+  ja: ["ソウル", "釜山", "大邱", "仁川", "光州", "大田", "蔚山", "世宗", "京畿北部", "京畿南部"],
+  zh: ["首尔", "釜山", "大邱", "仁川", "光州", "大田", "蔚山", "世宗", "京畿北部", "京畿南部"],
+  es: ["Seúl", "Busan", "Daegu", "Incheon", "Gwangju", "Daejeon", "Ulsan", "Sejong", "Gyeonggi Norte", "Gyeonggi Sur"],
 };
 
-const courseLegend = Object.entries(prefColors).map(([label, color]) => ({ label, color }));
+const stepIconsMap: Record<string, Record<string, string>> = {
+  ko: { 카페: "☕", 식사: "🍽️", 산책: "🚶", 액티비티: "🎮", 관광: "📸" },
+  en: { Cafe: "☕", Dining: "🍽️", Walk: "🚶", Activity: "🎮", Sightseeing: "📸" },
+  ja: { カフェ: "☕", 食事: "🍽️", 散歩: "🚶", アクティビティ: "🎮", 観光: "📸" },
+  zh: { 咖啡: "☕", 用餐: "🍽️", 散步: "🚶", 活动: "🎮", 观光: "📸" },
+  es: { Cafe: "☕", Comida: "🍽️", Paseo: "🚶", Actividad: "🎮", Turismo: "📸" },
+};
+
+const prefColorsMap: Record<string, Record<string, string>> = {
+  ko: { 카페: "#92400e", 야외: "#16a34a", 실내: "#7c3aed", 액티비티: "#ea580c" },
+  en: { Cafe: "#92400e", Outdoor: "#16a34a", Indoor: "#7c3aed", Activity: "#ea580c" },
+  ja: { カフェ: "#92400e", アウトドア: "#16a34a", インドア: "#7c3aed", アクティビティ: "#ea580c" },
+  zh: { 咖啡: "#92400e", 户外: "#16a34a", 室内: "#7c3aed", 活动: "#ea580c" },
+  es: { Cafe: "#92400e", Exterior: "#16a34a", Interior: "#7c3aed", Actividad: "#ea580c" },
+};
 
 export default function DateCoursePage() {
   const locale = useLocale();
   const t = translations[locale];
 
-  const [city, setCity] = useState("서울");
+  const coursesData = coursesDataMap[locale] ?? coursesDataMap["ko"];
+  const cities = citiesMap[locale] ?? citiesMap["ko"];
+  const stepIcons = stepIconsMap[locale] ?? stepIconsMap["ko"];
+  const prefColors = prefColorsMap[locale] ?? prefColorsMap["ko"];
+  const courseLegend = Object.entries(prefColors).map(([label, color]) => ({ label, color }));
+
+  const [city, setCity] = useState(cities[0]);
   const [mode, setMode] = useState<"map" | "filter">("map");
-  const [region, setRegion] = useState("전체");
+  const [region, setRegion] = useState(t.regionAll);
   const [time, setTime] = useState<"day" | "night">("day");
   const [preference, setPreference] = useState("");
   const [spinning, setSpinning] = useState(false);
@@ -325,11 +348,11 @@ export default function DateCoursePage() {
 
   const cityRegions = useMemo(() => {
     const regs = new Set(cityCourses.map((c) => c.region));
-    return ["전체", ...Array.from(regs)];
-  }, [cityCourses]);
+    return [t.regionAll, ...Array.from(regs)];
+  }, [cityCourses, t.regionAll]);
 
   useEffect(() => {
-    setRegion("전체");
+    setRegion(t.regionAll);
     setResult(null);
     setCandidates([]);
     setMapSelected([]);
@@ -349,7 +372,7 @@ export default function DateCoursePage() {
 
   const getFiltered = () => {
     let filtered = cityCourses.filter((c) => c.time === time);
-    if (region !== "전체") filtered = filtered.filter((c) => c.region === region);
+    if (region !== t.regionAll) filtered = filtered.filter((c) => c.region === region);
     if (preference) filtered = filtered.filter((c) => c.preference === preference);
     return filtered;
   };
@@ -390,17 +413,13 @@ export default function DateCoursePage() {
 
   const displayCourse = candidates.length > 0 ? candidates[currentIndex % candidates.length] : null;
 
-  // Translate preference label for display
+  // Get display label for a preference value
   const getPrefLabel = (prefValue: string) => {
     const found = t.preferences.find((p) => p.value === prefValue);
     return found ? found.label : prefValue;
   };
 
-  // Translate legend labels
-  const translatedCourseLegend = courseLegend.map((item) => ({
-    label: getPrefLabel(item.label),
-    color: item.color,
-  }));
+  const translatedCourseLegend = courseLegend;
 
   return (
     <PageTransition>
@@ -510,7 +529,7 @@ export default function DateCoursePage() {
                     <select value={region} onChange={(e) => setRegion(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-pink-500 focus:border-transparent">
                       {cityRegions.map((r) => (
                         <option key={r} value={r}>
-                          {r === "전체" ? t.regionAll : r}
+                          {r}
                         </option>
                       ))}
                     </select>
@@ -607,8 +626,8 @@ export default function DateCoursePage() {
             <h3 className="text-lg font-bold mb-2">{t.emptyTitle}</h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">{t.emptyDesc}</p>
             <div className="flex gap-3 justify-center flex-wrap">
-              <button onClick={() => { setRegion("전체"); setPreference(""); }} className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">{t.btnReset}</button>
-              <button onClick={() => { setRegion("전체"); setPreference(""); setTimeout(() => { const form = document.querySelector("form"); if (form) form.requestSubmit(); }, 50); }} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg transition-all">{t.btnRandomAll}</button>
+              <button onClick={() => { setRegion(t.regionAll); setPreference(""); }} className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">{t.btnReset}</button>
+              <button onClick={() => { setRegion(t.regionAll); setPreference(""); setTimeout(() => { const form = document.querySelector("form"); if (form) form.requestSubmit(); }, 50); }} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 text-white font-semibold hover:shadow-lg transition-all">{t.btnRandomAll}</button>
             </div>
           </motion.div>
         )}

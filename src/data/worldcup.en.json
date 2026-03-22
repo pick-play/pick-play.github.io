@@ -1,0 +1,148 @@
+{
+  "topics": [
+    {
+      "id": "food",
+      "name": "Food Worldcup",
+      "emoji": "🍜",
+      "description": "Pick the best food!",
+      "candidates": [
+        { "id": 1, "name": "Fried Chicken", "emoji": "🍗", "desc": "Crispy fried & spicy glazed" },
+        { "id": 2, "name": "Pizza", "emoji": "🍕", "desc": "Loaded with cheese" },
+        { "id": 3, "name": "Tteokbokki", "emoji": "🌶️", "desc": "Sweet & spicy rice cake snack" },
+        { "id": 4, "name": "Pork Belly BBQ", "emoji": "🥓", "desc": "Golden meat on the grill" },
+        { "id": 5, "name": "Sushi", "emoji": "🍣", "desc": "The essence of fresh seafood" },
+        { "id": 6, "name": "Ramen", "emoji": "🍜", "desc": "Tastes even better late at night" },
+        { "id": 7, "name": "Burger", "emoji": "🍔", "desc": "Thick patty with fresh veggies" },
+        { "id": 8, "name": "Pasta", "emoji": "🍝", "desc": "Creamy Alfredo" },
+        { "id": 9, "name": "Kimchi Jjigae", "emoji": "🍲", "desc": "Hot and spicy kimchi stew" },
+        { "id": 10, "name": "Bibimbap", "emoji": "🥗", "desc": "Colorful and nutritious" },
+        { "id": 11, "name": "Jajangmyeon", "emoji": "🍜", "desc": "The magic of black bean sauce" },
+        { "id": 12, "name": "Naengmyeon", "emoji": "🍥", "desc": "Cool summer noodle specialty" },
+        { "id": 13, "name": "Bulgogi", "emoji": "🥩", "desc": "Sweet soy sauce marinade" },
+        { "id": 14, "name": "Tonkatsu", "emoji": "🍱", "desc": "Crispy breaded pork cutlet" },
+        { "id": 15, "name": "Malatang", "emoji": "🌶️", "desc": "Numbing Sichuan spices" },
+        { "id": 16, "name": "Sweet & Sour Pork", "emoji": "🍖", "desc": "Tangy sauce — pour or dip?" }
+      ]
+    },
+    {
+      "id": "travel",
+      "name": "Travel Worldcup",
+      "emoji": "✈️",
+      "description": "Where do you want to go most?",
+      "candidates": [
+        { "id": 1, "name": "Jeju Island", "emoji": "🌊", "desc": "Hallasan and emerald seas" },
+        { "id": 2, "name": "Paris", "emoji": "🗼", "desc": "The city of romance and the Eiffel Tower" },
+        { "id": 3, "name": "Tokyo", "emoji": "🗾", "desc": "Where cutting-edge meets tradition" },
+        { "id": 4, "name": "New York", "emoji": "🗽", "desc": "The city that never sleeps" },
+        { "id": 5, "name": "Bangkok", "emoji": "🛺", "desc": "Land of flavors and temples" },
+        { "id": 6, "name": "Bali", "emoji": "🌺", "desc": "Island of the Gods resort" },
+        { "id": 7, "name": "Hawaii", "emoji": "🌈", "desc": "Paradise in the Pacific" },
+        { "id": 8, "name": "London", "emoji": "🎡", "desc": "Big Ben and Buckingham Palace" },
+        { "id": 9, "name": "Barcelona", "emoji": "🏟️", "desc": "City of Gaudí architecture" },
+        { "id": 10, "name": "Rome", "emoji": "🏛️", "desc": "The eternal city of history" },
+        { "id": 11, "name": "Switzerland", "emoji": "🏔️", "desc": "Alpine snow fields and meadows" },
+        { "id": 12, "name": "Busan", "emoji": "🌉", "desc": "Gwangalli and Haeundae beach" },
+        { "id": 13, "name": "Maldives", "emoji": "🏝️", "desc": "Heaven of overwater villas" },
+        { "id": 14, "name": "Sydney", "emoji": "🦘", "desc": "Opera House and the harbor" },
+        { "id": 15, "name": "Prague", "emoji": "🏰", "desc": "A fairy-tale old town" },
+        { "id": 16, "name": "Dubai", "emoji": "🌆", "desc": "City of the future on the desert" }
+      ]
+    },
+    {
+      "id": "animal",
+      "name": "Animal Worldcup",
+      "emoji": "🐾",
+      "description": "Pick the cutest animal!",
+      "candidates": [
+        { "id": 1, "name": "Dog", "emoji": "🐶", "desc": "Loyal best friend of humans" },
+        { "id": 2, "name": "Cat", "emoji": "🐱", "desc": "Aloof yet adorable" },
+        { "id": 3, "name": "Rabbit", "emoji": "🐰", "desc": "Fluffy soft cotton ball" },
+        { "id": 4, "name": "Panda", "emoji": "🐼", "desc": "Black-and-white bamboo fairy" },
+        { "id": 5, "name": "Otter", "emoji": "🦦", "desc": "Playful cutie of the water" },
+        { "id": 6, "name": "Penguin", "emoji": "🐧", "desc": "Waddle-waddle gentleman" },
+        { "id": 7, "name": "Hamster", "emoji": "🐹", "desc": "Those chubby cheek pouches!" },
+        { "id": 8, "name": "Alpaca", "emoji": "🦙", "desc": "Fluffy woolly bundle" },
+        { "id": 9, "name": "Fox", "emoji": "🦊", "desc": "Clever and mysterious" },
+        { "id": 10, "name": "Dolphin", "emoji": "🐬", "desc": "The genius of the sea" },
+        { "id": 11, "name": "Koala", "emoji": "🐨", "desc": "Fairy of the eucalyptus tree" },
+        { "id": 12, "name": "Capybara", "emoji": "🦫", "desc": "The most chill giant rodent" },
+        { "id": 13, "name": "Hedgehog", "emoji": "🦔", "desc": "Cutie hiding beneath the spines" },
+        { "id": 14, "name": "Cheetah", "emoji": "🐆", "desc": "Fastest land animal on earth" },
+        { "id": 15, "name": "Red Panda", "emoji": "🦝", "desc": "The cuteness of the red panda" },
+        { "id": 16, "name": "Seal", "emoji": "🦭", "desc": "The clapping sea comedian" }
+      ]
+    },
+    {
+      "id": "hobby",
+      "name": "Hobby Worldcup",
+      "emoji": "🎨",
+      "description": "What is the best hobby activity?",
+      "candidates": [
+        { "id": 1, "name": "Netflix", "emoji": "📺", "desc": "The joy of binge-watching dramas" },
+        { "id": 2, "name": "Gaming", "emoji": "🎮", "desc": "Adventures in the virtual world" },
+        { "id": 3, "name": "Exercise", "emoji": "💪", "desc": "Healthy time sweating it out" },
+        { "id": 4, "name": "Reading", "emoji": "📚", "desc": "Getting lost in a good book" },
+        { "id": 5, "name": "Cooking", "emoji": "👨‍🍳", "desc": "Developing your own recipes" },
+        { "id": 6, "name": "Travel", "emoji": "✈️", "desc": "Recharging in new places" },
+        { "id": 7, "name": "Café Hopping", "emoji": "☕", "desc": "Discovering hidden cafés" },
+        { "id": 8, "name": "Listening to Music", "emoji": "🎵", "desc": "Time immersed in music" },
+        { "id": 9, "name": "Drawing", "emoji": "🎨", "desc": "Expressing emotions on canvas" },
+        { "id": 10, "name": "Photography", "emoji": "📸", "desc": "Making moments eternal" },
+        { "id": 11, "name": "Camping", "emoji": "⛺", "desc": "Healing in nature" },
+        { "id": 12, "name": "Hiking", "emoji": "🏔️", "desc": "The satisfaction of reaching the summit" },
+        { "id": 13, "name": "Shopping", "emoji": "🛍️", "desc": "The thrill of finding great deals" },
+        { "id": 14, "name": "Cinema", "emoji": "🎬", "desc": "Big screen and surround sound" },
+        { "id": 15, "name": "Board Games", "emoji": "🎲", "desc": "Brain battles with friends" },
+        { "id": 16, "name": "Playing Instruments", "emoji": "🎸", "desc": "Expressing emotion through melody" }
+      ]
+    },
+    {
+      "id": "season",
+      "name": "Season Worldcup",
+      "emoji": "🌸",
+      "description": "What is your favorite seasonal moment?",
+      "candidates": [
+        { "id": 1, "name": "Cherry Blossom Season", "emoji": "🌸", "desc": "Pink petals raining down" },
+        { "id": 2, "name": "Beach", "emoji": "🏖️", "desc": "Sound of waves and sandy shore" },
+        { "id": 3, "name": "Autumn Leaves", "emoji": "🍂", "desc": "Mountains ablaze in red" },
+        { "id": 4, "name": "First Snow", "emoji": "❄️", "desc": "The first snowflakes of winter" },
+        { "id": 5, "name": "Christmas", "emoji": "🎄", "desc": "Sparkling winter festival" },
+        { "id": 6, "name": "Autumn Camping", "emoji": "🏕️", "desc": "Campfire crunching through fallen leaves" },
+        { "id": 7, "name": "Summer Night", "emoji": "🌙", "desc": "The romance of a tropical night" },
+        { "id": 8, "name": "Spring Picnic", "emoji": "🧺", "desc": "On a field of new sprouts" },
+        { "id": 9, "name": "Winter Hot Spring", "emoji": "♨️", "desc": "Outdoor bath in the falling snow" },
+        { "id": 10, "name": "Summer Festival", "emoji": "🎆", "desc": "Fireworks and night markets" },
+        { "id": 11, "name": "Autumn Reading", "emoji": "📖", "desc": "A book to the sound of falling leaves" },
+        { "id": 12, "name": "Spring Stroll", "emoji": "🌼", "desc": "A walk following the flower scent" },
+        { "id": 13, "name": "Snowball Fight", "emoji": "⛄", "desc": "Becoming a kid in the snow" },
+        { "id": 14, "name": "Watermelon", "emoji": "🍉", "desc": "A refreshing summer bite" },
+        { "id": 15, "name": "Roasted Sweet Potato", "emoji": "🍠", "desc": "Winter street snack" },
+        { "id": 16, "name": "Rainy Season", "emoji": "🌧️", "desc": "Napping to the sound of rain" }
+      ]
+    },
+    {
+      "id": "dessert",
+      "name": "Dessert Worldcup",
+      "emoji": "🍰",
+      "description": "Find the most delicious dessert!",
+      "candidates": [
+        { "id": 1, "name": "Ice Cream", "emoji": "🍦", "desc": "The sweet summer essential" },
+        { "id": 2, "name": "Cake", "emoji": "🎂", "desc": "Moist and sweet layered delight" },
+        { "id": 3, "name": "Macaron", "emoji": "🫐", "desc": "Parisian-style cookie" },
+        { "id": 4, "name": "Chocolate", "emoji": "🍫", "desc": "Happiness hormone explosion" },
+        { "id": 5, "name": "Taiyaki", "emoji": "🐟", "desc": "Red bean or cream filling?" },
+        { "id": 6, "name": "Hotteok", "emoji": "🥞", "desc": "Sweet winter street snack" },
+        { "id": 7, "name": "Crepe", "emoji": "🫔", "desc": "Sweet goodness in thin batter" },
+        { "id": 8, "name": "Waffle", "emoji": "🧇", "desc": "Crispy sweet grid cake" },
+        { "id": 9, "name": "Donut", "emoji": "🍩", "desc": "Tempting glaze coating" },
+        { "id": 10, "name": "Tart", "emoji": "🥧", "desc": "Fruit on a crispy pastry shell" },
+        { "id": 11, "name": "Cookie", "emoji": "🍪", "desc": "Freshly baked buttery aroma" },
+        { "id": 12, "name": "Pudding", "emoji": "🍮", "desc": "Soft and jiggly caramel sauce" },
+        { "id": 13, "name": "Tiramisu", "emoji": "☕", "desc": "Coffee and mascarpone" },
+        { "id": 14, "name": "Brownie", "emoji": "🍫", "desc": "Rich dense chocolate chunk" },
+        { "id": 15, "name": "Croffle", "emoji": "🥐", "desc": "Croissant + waffle combo" },
+        { "id": 16, "name": "Honey Butter Chips", "emoji": "🍯", "desc": "Sweet & salty addictive snack" }
+      ]
+    }
+  ]
+}

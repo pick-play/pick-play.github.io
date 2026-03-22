@@ -1,0 +1,26 @@
+{
+  "귀여운": {
+    "prefix": ["Esponjoso", "Pequeño", "Brillante", "Nevado", "Acogedor", "Soleado", "Algodón", "Soñador", "Rosado", "Pudín", "Burbujeante", "Estrellado", "Mieloso", "Suave", "Pastel", "Sedoso", "Rocío", "Brote", "Pétalo", "Brisa"],
+    "suffix": ["Nube", "Estrella", "Luna", "Conejito", "Gatito", "Hámster", "Cielo", "Arcoíris", "Caramelo", "Pelusa", "Flor", "Mariposa", "Hada", "Pudín", "Malvavisco", "Gominola", "Mochi", "Tofú", "Fresa", "Cereza"]
+  },
+  "웃긴": {
+    "prefix": ["Torpe", "Perezoso", "Hambriento", "Tambaleante", "Patoso", "Adormilado", "Gruñón", "Mareado", "Tontín", "Patata", "Estornudador", "Chiflado", "Cabizbajo", "Despistado", "Bamboleante", "Dormilón", "Gordito", "Flacucho", "Desgreñado", "Atascado"],
+    "suffix": ["Señor", "Rey", "Héroe", "Maestro", "Doctor", "Mago", "Barón", "Duque", "Jefe", "Capitán", "Emperador", "General", "Profesor", "Comandante", "Jefazo", "Campeón", "Leyenda", "Caudillo", "Caballero", "Gurú"]
+  },
+  "멋있는": {
+    "prefix": ["Oscuro", "Sombra", "Noche", "Acero", "Negro", "Plata", "Oro", "Carmesí", "Hierro", "Tormenta", "Cuántico", "Neón", "Ciber", "Cobalto", "Titán", "Fantasma", "Láser", "Cuervo", "Infierno", "Cero"],
+    "suffix": ["Caballero", "Cazador", "Guerrero", "Verdugo", "Rey", "Espada", "Filo", "Alma", "Fuerza", "Golpe", "Jinete", "Maestro", "Guardián", "Leyenda", "Impacto", "Espíritu", "Asesino", "Guardabosques", "Francotirador", "Comandante"]
+  },
+  "게임용": {
+    "prefix": ["Shadow", "Nova", "Dark", "Storm", "Blaze", "Iron", "Cyber", "Ghost", "Venom", "Hyper", "Ultra", "Omega", "Alpha", "Neon", "Void", "Chaos", "Phoenix", "Savage", "Stealth", "Apex"],
+    "suffix": ["X", "99", "King", "Pro", "GG", "OP", "God", "ACE", "Max", "Zero", "One", "Elite", "Prime", "Force", "Strike", "Blade", "Hunter", "Sniper", "Wolf", "Dragon"]
+  },
+  "판타지": {
+    "prefix": ["Ar", "El", "Dragón", "Plata", "Dorado", "Oscuro", "Mago", "Héroe", "Paladín", "Demonio", "Hada", "Ángel", "Diablo", "Sabio", "Profeta", "Señor Oscuro", "Campeón", "Antiguo", "Legendario", "Divino"],
+    "suffix": ["Temis", "Rian", "Matador", "Ala", "Espada", "Lanza", "Artesano", "Corazón", "Alma", "Hoja", "Fuego", "Agua", "Tierra", "Luz", "Oscuridad", "Dragón", "Caballero", "Mago", "Sabio", "Guardián"]
+  },
+  "감성적": {
+    "prefix": ["Luz de Estrella", "Amanecer", "Luz de Luna", "Atardecer", "Neblina", "Rocío", "Lluvia Primaveral", "Noche de Verano", "Viento Otoñal", "Estrella Invernal", "Onírico", "Sobre el Cielo", "Bajo las Nubes", "Llevado por el Viento", "Como una Ola", "En la Luz Solar", "En la Oscuridad", "Brillante", "A la Deriva", "Fluyendo"],
+    "suffix": ["Viajero", "Viento", "Canción", "Poema", "Historia", "Recuerdo", "Aleteo", "Añoranza", "Luz", "Sonido", "Aroma", "Aliento", "Ola", "Estrella", "Luna", "Sueño", "Cielo", "Amanecer", "Atardecer", "Neblina"]
+  }
+}

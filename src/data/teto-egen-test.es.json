@@ -1,0 +1,487 @@
+{
+  "male": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "Cuando sientes que el proyecto de equipo va en la dirección equivocada, tú:",
+        "category": "Toma de decisiones",
+        "optionA": { "text": "Expresas tu opinión de inmediato y guías al grupo hacia la dirección que consideras correcta", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Lo meditas solo y, cuando el momento se presta, lo mencionas con cautela", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 2,
+        "question": "En una reunión llena de personas que no conoces, tú sueles:",
+        "category": "Sociabilidad",
+        "optionA": { "text": "Iniciar conversaciones y llevar la batuta del ambiente", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Sentarte junto a alguien de confianza e irte integrando poco a poco", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 3,
+        "question": "Cuando un amigo te cuenta sus preocupaciones durante mucho tiempo, tú:",
+        "category": "Expresión emocional",
+        "optionA": { "text": "Escuchas un rato y luego preguntas '¿Y qué vas a hacer?', buscando una solución", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Escuchas hasta el final y empatizas: 'Vaya, debiste haberlo pasado muy mal'", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 4,
+        "question": "Cuando surge un conflicto serio con tu pareja, tú:",
+        "category": "Resolución de conflictos",
+        "optionA": { "text": "Quieres hablar y resolverlo en ese momento, aunque las emociones estén a flor de piel", "type": "teto", "weight": 14 },
+        "optionB": { "text": "Prefieres calmarte solo primero y luego hablar con tranquilidad", "type": "egen", "weight": 14 }
+      },
+      {
+        "id": 5,
+        "question": "Cuando empiezas a gustarle alguien, tu primer movimiento es:",
+        "category": "Visión del amor",
+        "optionA": { "text": "Contactarle sin dudarlo o proponerle quedar para comer", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Dar señales sutiles de tu interés y esperar a que esa persona dé el primer paso", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 6,
+        "question": "Cuando sientes que te han tratado injustamente en el trabajo o la escuela:",
+        "category": "Resolución de conflictos",
+        "optionA": { "text": "Planteas el problema directamente en el momento o al día siguiente", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Te incomoda por dentro, pero prefieres esperar a que la situación mejore antes que decir algo", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 7,
+        "question": "Tu actitud hacia los aniversarios y los eventos especiales en una relación:",
+        "category": "Visión del amor",
+        "optionA": { "text": "Sabes que hay que celebrarlos, pero no va contigo y te resulta un poco incómodo", "type": "teto", "weight": 9 },
+        "optionB": { "text": "Recuerdas incluso las fechas pequeñas con detalle y has planeado sorpresas antes", "type": "egen", "weight": 9 }
+      },
+      {
+        "id": 8,
+        "question": "Ante una decisión importante en tu vida (cambio de trabajo, mudanza, etc.), tú:",
+        "category": "Toma de decisiones",
+        "optionA": { "text": "Confías en tu propio criterio por encima de la opinión de los demás, una vez que has valorado bien las cosas", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Escuchas los consejos de quienes te rodean e intentas decidir con la mayor cautela posible", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 9,
+        "question": "Cuando estás muy enfadado, lo habitual es que:",
+        "category": "Expresión emocional",
+        "optionA": { "text": "Digas enseguida el motivo de tu enfado y lo resuelvas rápidamente", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Te quedes callado y necesites tiempo para estar solo", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 10,
+        "question": "Si descubres después que tu pareja quedó a solas con tu amigo/a cercano/a:",
+        "category": "Visión del amor",
+        "optionA": { "text": "Le preguntas directamente por qué no te lo dijo antes", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Te molesta, pero te cuesta sacarlo y te lo guardas solo", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 11,
+        "question": "Cuando el estrés llega al límite, tú:",
+        "category": "Estilo de vida",
+        "optionA": { "text": "Liberas energía haciendo deporte, jugando o haciendo alguna actividad", "type": "teto", "weight": 8 },
+        "optionB": { "text": "Procesas tus emociones a través de la música o las películas", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 12,
+        "question": "Cuando un amigo cercano te dice 'Últimamente te noto un poco frío', tú:",
+        "category": "Sociabilidad",
+        "optionA": { "text": "Le explicas que no es frialdad, que simplemente eres así", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Te lo tomas a pecho y dices '¿Te ha parecido eso? Voy a esforzarme más'", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 13,
+        "question": "Al principio de una relación, cuando la otra persona empieza a escribirte menos:",
+        "category": "Visión del amor",
+        "optionA": { "text": "Se lo preguntas directamente o mantienes tu ritmo y esperas", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Te preguntas si habrás hecho algo mal y empiezas a andar con pies de plomo", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 14,
+        "question": "Lo que más priorizas en la vida:",
+        "category": "Valores",
+        "optionA": { "text": "La autorrealización a través de los logros, la carrera y el cumplimiento de metas", "type": "teto", "weight": 14 },
+        "optionB": { "text": "Las relaciones con las personas que quieres, la conexión emocional y la estabilidad", "type": "egen", "weight": 14 }
+      },
+      {
+        "id": 15,
+        "question": "Cuando tus planes del fin de semana se cancelan de repente:",
+        "category": "Estilo de vida",
+        "optionA": { "text": "Haces otros planes de inmediato o sales a hacer algo productivo", "type": "teto", "weight": 7 },
+        "optionB": { "text": "Lo ves como una buena oportunidad y descansas tranquilamente en casa", "type": "egen", "weight": 7 }
+      },
+      {
+        "id": 16,
+        "question": "En amistades de toda la vida, lo que más te importa:",
+        "category": "Sociabilidad",
+        "optionA": { "text": "Cumplir con la palabra, la lealtad y estar cuando se necesita", "type": "teto", "weight": 9 },
+        "optionB": { "text": "Las conversaciones profundas, el intercambio emocional y compartir las preocupaciones de cada uno", "type": "egen", "weight": 9 }
+      },
+      {
+        "id": 17,
+        "question": "Tu reacción inmediata cuando te comunican una ruptura:",
+        "category": "Expresión emocional",
+        "optionA": { "text": "Quieres saber claramente el motivo y exiges una explicación", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Te quedas en silencio por el impacto y tragas las lágrimas a solas", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 18,
+        "question": "Si tuvieras que describir tu propia personalidad:",
+        "category": "Valores",
+        "optionA": { "text": "Directo y honesto. Los rodeos me resultan más incómodos", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Sensible y emocional. Le doy mucha importancia al ambiente y a los sentimientos", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 19,
+        "question": "Cuando surgen imprevistos en un viaje (error de alojamiento, mal tiempo, etc.):",
+        "category": "Toma de decisiones",
+        "optionA": { "text": "Buscas alternativas de inmediato y controlas la situación rápidamente", "type": "teto", "weight": 8 },
+        "optionB": { "text": "Te agobias y por el momento te apoyas en el guía o en quien te acompaña", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 20,
+        "question": "Cuando tu pareja te dice '¿Por qué expresas tan poco lo que sientes?', tú:",
+        "category": "Expresión emocional",
+        "optionA": { "text": "Expresarme me resulta incómodo, pero eso no significa que no me importe", "type": "teto", "weight": 6 },
+        "optionB": { "text": "¿En serio? Voy a intentar demostrarlo más. Lo siento", "type": "egen", "weight": 6 },
+        "tiebreaker": true
+      }
+    ]
+  },
+  "female": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "Cuando la conversación con tus amigos se vuelve incómoda, tú:",
+        "category": "Sociabilidad",
+        "optionA": { "text": "Cambias de tema tú mismo/a o animas el ambiente primero", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Observas y esperas a que alguien más lo resuelva", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 2,
+        "question": "Cuando empiezas a gustarle un chico, tú:",
+        "category": "Visión del amor",
+        "optionA": { "text": "Le pides el contacto tú misma o propones quedar para comer", "type": "teto", "weight": 14 },
+        "optionB": { "text": "Te muestras atenta de forma notable y esperas a que él dé el primer paso", "type": "egen", "weight": 14 }
+      },
+      {
+        "id": 3,
+        "question": "Cuando tienes una discusión con tu pareja, tú:",
+        "category": "Resolución de conflictos",
+        "optionA": { "text": "Quieres sacarlo y resolverlo en ese momento, aunque sea incómodo", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Si te duele, tomas distancia y ordenas tus emociones a solas", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 4,
+        "question": "Cuando una amiga te cuenta una preocupación seria, tú:",
+        "category": "Expresión emocional",
+        "optionA": { "text": "Piensas junto a ella de forma realista qué se puede hacer", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Empatizas plenamente con sus emociones y primero la consuelas", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 5,
+        "question": "Si tuvieras que nombrar lo más importante en tu vida:",
+        "category": "Valores",
+        "optionA": { "text": "La carrera, el crecimiento personal, lograr lo que quiero", "type": "teto", "weight": 15 },
+        "optionB": { "text": "Las personas queridas, relaciones cálidas, estabilidad emocional", "type": "egen", "weight": 15 }
+      },
+      {
+        "id": 6,
+        "question": "Cuando tu pareja reduce sus mensajes sin razón aparente:",
+        "category": "Visión del amor",
+        "optionA": { "text": "Le escribes enseguida preguntando '¿Pasa algo?'", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Te preocupa haber hecho algo mal y esperas a que te escriba", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 7,
+        "question": "Cuando has decidido romper una relación, tú:",
+        "category": "Visión del amor",
+        "optionA": { "text": "Una vez decidido, se lo dices directamente sin arrepentirte y lo zanjas", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Lo dudas mucho tiempo, esperando que lo note o expresándolo de forma indirecta", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 8,
+        "question": "Cuando tu opinión es ignorada en el trabajo o la escuela:",
+        "category": "Resolución de conflictos",
+        "optionA": { "text": "Lo explicas de nuevo con lógica o planteas el problema", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Te sientes agraviada por dentro, pero dado el ambiente lo dejas pasar", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 9,
+        "question": "Tu forma preferida de desestresarte:",
+        "category": "Estilo de vida",
+        "optionA": { "text": "Liberar energía fuera de casa con deporte, compras o salidas", "type": "teto", "weight": 8 },
+        "optionB": { "text": "Reconfortarte en casa con series, música o buena comida", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 10,
+        "question": "Tu papel en las conversaciones con tus amigas:",
+        "category": "Sociabilidad",
+        "optionA": { "text": "La que da consejos honestos y dice las verdades, aunque duelan", "type": "teto", "weight": 10 },
+        "optionB": { "text": "La que empatiza, consuela y escucha las emociones", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 11,
+        "question": "Cuando tu pareja toma una decisión diferente a lo que tú pensabas:",
+        "category": "Resolución de conflictos",
+        "optionA": { "text": "Expones tu opinión con claridad e intentas convencerle o pedirle que se adapte", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Te duele, pero respetas su decisión e intentas adaptarte", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 12,
+        "question": "Tu actitud en una cita a ciegas o en un encuentro de grupo:",
+        "category": "Sociabilidad",
+        "optionA": { "text": "Lanzas preguntas primero y llevas la conversación", "type": "teto", "weight": 9 },
+        "optionB": { "text": "Respondes bien a lo que cuenta la otra persona y sigues la conversación con comodidad", "type": "egen", "weight": 9 }
+      },
+      {
+        "id": 13,
+        "question": "La relación ideal que buscas en el amor:",
+        "category": "Visión del amor",
+        "optionA": { "text": "Una relación de pareja donde seamos independientes y crezcamos juntos", "type": "teto", "weight": 14 },
+        "optionB": { "text": "Un vínculo emocional profundo en el que nos apoyemos el uno en el otro", "type": "egen", "weight": 14 }
+      },
+      {
+        "id": 14,
+        "question": "Cuando estás enfadada, tú:",
+        "category": "Expresión emocional",
+        "optionA": { "text": "Dices directamente por qué estás enfadada e intentas resolverlo", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Te quedas callada, te tragas las emociones a solas y al final explotas", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 15,
+        "question": "Ante una decisión importante, tú:",
+        "category": "Toma de decisiones",
+        "optionA": { "text": "Confías en tu intuición y tu lógica, y decides rápido", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Escuchas suficientes opiniones de tu entorno y decides con cautela", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 16,
+        "question": "Cuando tienes tiempo para ti, tú:",
+        "category": "Estilo de vida",
+        "optionA": { "text": "Haces algo productivo como autodesarrollo, deporte o planificación", "type": "teto", "weight": 7 },
+        "optionB": { "text": "Recargas tu lado emocional — música, películas o un paseo para recuperarte", "type": "egen", "weight": 7 }
+      },
+      {
+        "id": 17,
+        "question": "Cuando tu pareja ha preparado una sorpresa para ti:",
+        "category": "Expresión emocional",
+        "optionA": { "text": "Lo agradeces, pero te da un poco de vergüenza y no sabes muy bien cómo reaccionar", "type": "teto", "weight": 9 },
+        "optionB": { "text": "Te emociona profundamente, casi hasta las lágrimas, y expresas tu alegría abiertamente", "type": "egen", "weight": 9 }
+      },
+      {
+        "id": 18,
+        "question": "Cuando una amiga cercana critica tu comportamiento:",
+        "category": "Sociabilidad",
+        "optionA": { "text": "Explicas tu postura honestamente o rebates lo que dice", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Lo aceptas por el momento y luego lo reflexionas a solas", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 19,
+        "question": "Cómo eres después de una ruptura:",
+        "category": "Expresión emocional",
+        "optionA": { "text": "Vuelves rápidamente a tu rutina y te centras en cosas nuevas", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Los sentimientos perduran mucho tiempo mientras revisitas los recuerdos a solas", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 20,
+        "question": "Cuando tu pareja te dice 'A veces me pareces demasiado seca', tú:",
+        "category": "Resolución de conflictos",
+        "optionA": { "text": "No soy seca, simplemente soy así", "type": "teto", "weight": 6 },
+        "optionB": { "text": "¿Lo has sentido así? Me esforzaré por expresarme más. Lo siento", "type": "egen", "weight": 6 },
+        "tiebreaker": true
+      }
+    ]
+  },
+  "results": {
+    "tetoMale": {
+      "title": "Chico Teto",
+      "subtitle": "Masculino Testosterona",
+      "emoji": "🦁",
+      "color": "from-blue-500 to-indigo-600",
+      "description": "¡El dueño de un liderazgo fuerte y una gran capacidad de empuje! Cuando te fijas una meta, vas directo a por ella y lideras a quienes te rodean de forma natural. Tu capacidad de decisión es sobresaliente: actúas antes de pensarlo demasiado, y tienes un núcleo sólido que no se tambalea en ninguna situación. La gente a tu alrededor suele describirte como 'fiable' y 'de confianza'.",
+      "traits": [
+        "Primero la acción — actúas antes de pensar demasiado, te lanzas de cabeza",
+        "Comunicación directa — honesto y orientado a los hechos, sin rodeos",
+        "Liderazgo fuerte — el tipo que naturalmente toma el centro y guía al grupo",
+        "Pensamiento práctico — busca soluciones y eficiencia antes que emociones",
+        "Independiente — capaz de salir adelante solo, autosuficiente",
+        "Competitivo — odia perder y persigue sus metas con tenacidad",
+        "Decisión rápida — capta las situaciones velozmente y decide sin demora",
+        "Instinto protector — fuerte sentido de responsabilidad para cuidar a quienes le rodean"
+      ],
+      "loveStyle": "¡El libro de texto del amor directo! Te acercas a quien te gusta sin dudarlo y no juegas al tira y afloja. En la relación también prefieres llevar las riendas, y te encargas de planificar citas y aniversarios sin que nadie te lo pida. Valoras por encima de todo la confianza y la responsabilidad, y cuando surge un conflicto prefieres resolverlo en ese momento antes que aplazar las emociones. Sin embargo, tu tendencia a centrarte más en solucionar que en entender los sentimientos del otro puede hacerle sentir incomprendido — esforzarte en escuchar sus emociones es la clave.",
+      "bestMatch": "Chica Egen",
+      "bestMatchDesc": "¡Cuando conoces a una Chica Egen suave y emotiva, se complementan perfectamente y forman un dúo de ensueño! El liderazgo firme del Chico Teto junto con la calidez emocional de la Chica Egen crean la relación más cómoda y estable para ambos.",
+      "worstMatch": "Chica Teto",
+      "worstMatchDesc": "Ambos son asertivos y de carácter fuerte, así que puede haber disputas por el control. Pero si se respetan y dividen sus ámbitos, ¡tienen todo el potencial para convertirse en la pareja de poder definitiva!",
+      "strengths": [
+        "La capacidad de tomar decisiones con calma en situaciones de crisis",
+        "La honestidad de comunicarse directamente sin crear conflictos innecesarios",
+        "Una fuerza de empuje firme que te mantiene avanzando hacia tus metas",
+        "El carisma que hace que la gente confíe en ti y te siga de forma natural"
+      ],
+      "weaknesses": [
+        "Tendencia a centrarse en conclusiones y soluciones por encima de los sentimientos del otro",
+        "Puede ser malinterpretado porque la expresión emocional no le sale con facilidad",
+        "La fuerte convicción de que su forma es la correcta puede hacerle inflexible",
+        "Tiende a centrarse en el panorama general y descuidar los pequeños intercambios emocionales"
+      ],
+      "detailedAnalysis": {
+        "strongTeto": "¡La esencia perfecta del Chico Teto! Liderazgo, decisión y comunicación directa al nivel más alto. Tienes un centro inamovible en cualquier situación y la gente te sigue de forma natural. Sin embargo, aprender a adaptarte al ritmo emocional de tu pareja será la clave para profundizar la relación. Aunque expresar afecto te resulte incómodo, el esfuerzo en sí mismo es una forma profunda de amor.",
+        "moderateTeto": "Tienes una clara tendencia Teto, pero también puedes mostrar un lado sensible y emocional según la situación. Prefieres liderar, pero no ignoras del todo a la otra persona: tienes sentido del equilibrio. Eres el tipo que avanza directo pero también puede empatizar — alguien con quien estar es a la vez reconfortante y agradable.",
+        "balanced": "¡Un tipo flexible en la frontera entre Teto y Egen! Según la situación, puedes mostrar liderazgo o adaptarte emocionalmente a la otra persona. La capacidad de llevarte bien con cualquier tipo de pareja es tu fortaleza. Sin embargo, a veces puede ser difícil identificar cuál es tu verdadera inclinación.",
+        "moderateEgen": "Fundamentalmente emocional y sensible, pero muestras capacidad de decisión cuando es necesario. Tienes un atractivo mucho más tridimensional que un simple Chico Egen. Tienes un lado equilibrado que comprende bien los sentimientos sin evitar los problemas.",
+        "strongEgen": "El dueño de una tendencia Egen aplastante en empatía y emoción. Tu capacidad para leer las emociones de los demás es excepcional y tienes un talento natural para crear un ambiente cálido en las relaciones. Practicar expresar tus propios sentimientos de forma más directa hará tus relaciones aún más sanas."
+      },
+      "percentageAnalysis": {
+        "extreme": { "min": 90, "label": "Teto extremo", "text": "¡El Chico Teto perfecto! Liderazgo y empuje al nivel más alto. La gente a tu alrededor suele llamarte carismático, pero a veces intenta escuchar con más atención los sentimientos de tu pareja." },
+        "strong": { "min": 75, "label": "Teto fuerte", "text": "¡Clara tendencia Teto! Actúas de forma asertiva y decidida en la mayoría de las situaciones. ¡El lado suave que muestras de vez en cuando es tu punto de encanto!" },
+        "moderate": { "min": 60, "label": "Predominantemente Teto", "text": "La tendencia Teto es dominante pero también llevas la sensibilidad Egen. ¡Un tipo equilibrado que cambia fluidamente entre liderazgo y empatía según la situación!" },
+        "slight": { "min": 50, "label": "Levemente Teto", "text": "¡Casi mitad Teto, mitad Egen! Te inclinas levemente más hacia Teto, pero también aflora de forma natural un lado sensible y emocional según la situación." }
+      }
+    },
+    "egenMale": {
+      "title": "Chico Egen",
+      "subtitle": "Masculino Estrógeno",
+      "emoji": "🐱",
+      "color": "from-purple-500 to-pink-500",
+      "description": "¡El dueño de un encanto sensible y emocional! Tu capacidad para leer rápidamente las emociones de los demás y empatizar profundamente con ellas es excepcional. Le das prioridad al flujo del ambiente y las emociones, y la gente te recuerda como una presencia cálida y reconfortante. Con la atención para captar incluso los pequeños cambios, eres alguien cuya compañía pone a la gente a gusto.",
+      "traits": [
+        "Alta empatía — detecta instintivamente las emociones y los sutiles cambios del otro",
+        "Expresión emocional — transmite sentimientos de forma natural a través de las palabras y el ambiente",
+        "Observación aguda — nunca pasa por alto expresiones, tono o pequeños cambios",
+        "Sentido artístico — sensibilidad estética y cultural sobresaliente",
+        "Pacifista — prefiere la armonía al conflicto y valora el equilibrio en las relaciones",
+        "Emociones profundas — cuando se entrega, siente las emociones de forma intensa y duradera",
+        "Considerado — piensa primero en los sentimientos del otro y los cuida con esmero",
+        "Buen oyente — actitud de escuchar y comprender antes de juzgar"
+      ],
+      "loveStyle": "¡Un romántico rebosante de emoción! Le das prioridad al flujo del ambiente y los sentimientos, y atesoras los pequeños aniversarios y los momentos especiales. No escatimas en atención cuidadosa y expresión emocional hacia tu pareja, y siempre piensas en cómo hacerla más feliz. Te encantan los momentos emocionantes y románticos, y tiendes a guardar recuerdos y sentimientos durante mucho tiempo después de una ruptura. Sin embargo, no poder expresar activamente tus propias emociones en situaciones de conflicto puede generar malentendidos — practicar hablar con honestidad en los momentos importantes es de gran ayuda.",
+      "bestMatch": "Chica Teto",
+      "bestMatchDesc": "¡Cuando una Chica Teto proactiva y vivaz lleva la iniciativa, puedes expresar tus emociones con comodidad! La personalidad directa de la Chica Teto y la atención cuidadosa del Chico Egen crean una relación ideal donde se complementan mutuamente.",
+      "worstMatch": "Chico Egen",
+      "worstMatchDesc": "Ambos son pasivos y tienden a esperar las señales del otro, así que la relación puede avanzar muy lentamente. Alguien tiene que ser valiente primero, pero esperando el uno al otro pueden perder el momento.",
+      "strengths": [
+        "Empatía sobresaliente que capta intuitivamente el estado emocional del otro",
+        "La capacidad de mantener las relaciones sin explotar emocionalmente en situaciones de conflicto",
+        "Una sensibilidad rica que le permite emocionarse y sentir gratitud por las cosas pequeñas",
+        "Una presencia cálida que cuida y atiende a la otra persona con esmero"
+      ],
+      "weaknesses": [
+        "Tendencia a no expresar directamente su propia opinión o sus emociones",
+        "La tendencia a evitar el conflicto puede dejar que los problemas se acumulen",
+        "Puede perderse a sí mismo al verse demasiado afectado por las emociones de los demás",
+        "Una actitud pasiva puede hacerle perder oportunidades o relaciones importantes"
+      ],
+      "detailedAnalysis": {
+        "strongEgen": "¡La cima de la empatía y la emoción! Tu capacidad para leer a los demás es excepcional y la gente se siente a gusto a tu lado. Sin embargo, necesitas practicar expresar tus propios sentimientos y necesidades de forma más directa. Una buena relación incluye tanto dar como recibir de forma adecuada.",
+        "moderateEgen": "Emocional y profundamente considerado, pero también sabes defender tu opinión cuando hace falta. Lejos de ser un simple Chico Egen pasivo, eres un tipo tridimensional con alta inteligencia emocional. Eres una persona atractiva capaz tanto de empatizar como de comunicar.",
+        "balanced": "¡Un tipo flexible que se mueve libremente entre Teto y Egen! Según la situación, muestras consideración y también tomas la iniciativa. Tienes la adaptabilidad para construir buenas relaciones con cualquier pareja. Explorar tu verdadero interior traerá una comprensión de ti mismo más rica.",
+        "moderateTeto": "Fundamentalmente proactivo, pero también un tipo equilibrado que sabe atender bien los sentimientos del otro. Se acerca al tipo de pareja ideal que tiene liderazgo y a la vez posee empatía. Expresar tus emociones de forma más rica profundizará aún más tus relaciones.",
+        "strongTeto": "Una clara tendencia Teto con decisión y empuje. Prefieres la comunicación directa y tienes la fortaleza de no evitar los problemas. Considerar de vez en cuando el ritmo al que tu pareja procesa sus emociones te ayudará a crear una relación más armoniosa."
+      },
+      "percentageAnalysis": {
+        "extreme": { "min": 90, "label": "Egen extremo", "text": "¡La cima de la sensibilidad! Empatía y delicadeza al nivel más alto. La gente a tu alrededor suele decirte 'Eres una persona muy cálida'. A veces intenta expresar también tus propios sentimientos con honestidad." },
+        "strong": { "min": 75, "label": "Egen fuerte", "text": "¡Clara tendencia Egen! Eres honesto con tus sentimientos y tienes una sobresaliente capacidad para comprender profundamente a los demás. ¡El lado decidido que muestras de vez en cuando es en realidad un punto de encanto!" },
+        "moderate": { "min": 60, "label": "Predominantemente Egen", "text": "La tendencia Egen es dominante pero también llevas la decisión de Teto. ¡Un tipo atractivo que equilibra bien emoción y razón!" },
+        "slight": { "min": 50, "label": "Levemente Egen", "text": "¡Casi mitad Teto, mitad Egen! Te inclinas levemente más hacia Egen, así que fundamentalmente eres cálido y puedes actuar con decisión cuando es necesario." }
+      }
+    },
+    "tetoFemale": {
+      "title": "Chica Teto",
+      "subtitle": "Femenino Testosterona",
+      "emoji": "🐯",
+      "color": "from-orange-500 to-red-500",
+      "description": "¡La dueña de una energía independiente y progresista! Forjas tu propio camino y tienes una seguridad en ti misma que no depende de nadie. Valoras la carrera y el crecimiento personal, y tienes muy claro lo que te gusta y lo que no — la gente a tu alrededor suele describirte como 'genial' e 'impresionante'. En lugar de forzarte a aparentar o adaptarte, prefieres mostrarte tal como eres con total confianza.",
+      "traits": [
+        "Fuerte independencia — capaz de salir adelante sola, autosuficiente",
+        "Expresión emocional honesta — tiene claro lo que le gusta y no le gusta, sin rodeos",
+        "Orientada a la carrera — demuestra su valor a través del logro y el crecimiento",
+        "Estilo de vida activo — vida llena de energía: deporte, viajes, autodesarrollo",
+        "Rápida recuperación — tiende a sobreponerse rápido ante las dificultades",
+        "Convicciones propias sólidas — no se deja llevar fácilmente por modas u opiniones mayoritarias",
+        "Decisión — no se demora en dudar; una vez convencida, actúa de inmediato",
+        "Enfrentamiento directo — afronta los problemas de cara en lugar de evitarlos"
+      ],
+      "loveStyle": "¡Un amor genial y seguro de sí mismo! También en las relaciones tomas la iniciativa y expresas tus sentimientos con honestidad a quien te gusta. Te incomoda la dependencia o el apego emocional excesivo, y tu ideal es una relación donde ambos sean independientes y crezcan juntos. Una vez que acaba, lo cierras de forma limpia sin mirar atrás. Sin embargo, ser demasiado cool puede dar a tu pareja la impresión de que no tienes interés — mostrar de vez en cuando un lado más dulce mejorará la relación.",
+      "bestMatch": "Chico Egen",
+      "bestMatchDesc": "¡Cuando conoces a un Chico Egen sensible y emocional, se complementan perfectamente! El liderazgo refrescante de la Chica Teto y la calidez emocional del Chico Egen en armonía crean la pareja más cómoda el uno para el otro.",
+      "worstMatch": "Chico Teto",
+      "worstMatchDesc": "Ambos son fuertes y asertivos, así que puede haber choques, pero si respetan los ámbitos del otro y saben ceder, ¡pueden convertirse en una pareja de poder más fuerte que nadie!",
+      "strengths": [
+        "Una identidad propia fuerte que no se pierde en ninguna situación",
+        "La capacidad de ejecución y el empuje para avanzar constantemente hacia las metas",
+        "La eficiencia para resolver problemas sin un desgaste emocional innecesario",
+        "El atractivo de una actitud segura y honesta que genera confianza"
+      ],
+      "weaknesses": [
+        "Priorizar la practicidad sobre el intercambio emocional puede hacer que la pareja se sienta sola",
+        "Ser demasiado independiente puede crear distancia con la pareja",
+        "La actitud cool puede ser malinterpretada como falta de interés",
+        "Le incomoda mostrar su lado vulnerable"
+      ],
+      "detailedAnalysis": {
+        "strongTeto": "¡La Chica Teto girl crush perfecta! Independencia, decisión y comunicación directa al nivel más alto. Eres la admiración de quienes te rodean, pero mostrar de vez en cuando un lado más vulnerable a tu pareja también es una forma de profundizar la relación. Cuanto más perfecta pareces, más difícil puede ser conectar de verdad.",
+        "moderateTeto": "Proactiva e independiente, pero según la situación también tienes un lado cálido y lleno de consideración. Aparentas ser cool pero por dentro hay calidez — ¡la dueña del encanto del contraste! Este sentido del equilibrio es tu mayor baza.",
+        "balanced": "¡Un tipo que se mueve con flexibilidad en la frontera entre Teto y Egen! Valoras tanto la carrera como las relaciones — el equilibrio ideal de la mujer moderna. La adaptabilidad para responder a cualquier situación a tu manera es tu fortaleza.",
+        "moderateEgen": "Emocional y profundamente considerada, pero cuando hace falta también puedes decir tu opinión con confianza. Un tipo atractivo que es suave pero tiene un núcleo inquebrantable. La imagen ideal que combina tanto emoción como independencia.",
+        "strongEgen": "Una clara tendencia Chica Egen, cálida y emocional. La empatía y la consideración son excepcionales, y eres una presencia que aporta bienestar a quienes te rodean. A veces practica expresar tus necesidades y emociones de forma más activa."
+      },
+      "percentageAnalysis": {
+        "extreme": { "min": 90, "label": "Teto extrema", "text": "¡La girl crush perfecta! Tendencias independientes y asertivas al nivel más alto. Tú, que rebosas 'energía de líder', eres la admiración de quienes te rodean. A veces también está bien mostrar un lado más vulnerable." },
+        "strong": { "min": 75, "label": "Teto fuerte", "text": "¡Clara tendencia Teto! Actúas con confianza y decisión en la mayoría de las situaciones. ¡El lado cariñoso que muestras de vez en cuando es un punto de encanto devastador!" },
+        "moderate": { "min": 60, "label": "Predominantemente Teto", "text": "La tendencia Teto es dominante pero también llevas la sensibilidad Egen. ¡Cool por fuera, cálida por dentro — la dueña del encanto del contraste!" },
+        "slight": { "min": 50, "label": "Levemente Teto", "text": "¡Casi mitad Teto, mitad Egen! Te inclinas levemente más hacia Teto, así que fundamentalmente eres cool, pero en los momentos emocionales también muestras un lado más suave." }
+      }
+    },
+    "egenFemale": {
+      "title": "Chica Egen",
+      "subtitle": "Femenino Estrógeno",
+      "emoji": "🐰",
+      "color": "from-pink-400 to-rose-500",
+      "description": "¡La dueña de un ambiente cálido y emocional! Tienes una profunda consideración hacia los demás y le das la máxima importancia al vínculo emocional y la estabilidad en las relaciones. Eres emocionalmente rica y sensible — te emocionas con las pequeñas cosas, y eres la más rápida en captar cómo se sienten las personas a tu alrededor. Estar contigo calienta el corazón; eres una fuente natural de bienestar.",
+      "traits": [
+        "Empatía profunda — comprende intuitivamente las emociones y situaciones del otro",
+        "Cálida consideración — cuida atentamente a quienes la rodean y se adelanta para ayudar",
+        "Mundo interior emocional — siente una emoción profunda en la música, las películas, los paisajes y más",
+        "Busca estabilidad — se siente más a gusto dentro de relaciones tranquilas y cálidas",
+        "Emociones de larga duración — tiende a guardar tanto los buenos como los dolorosos recuerdos por mucho tiempo",
+        "Creadora de ambiente — la capacidad de poner a gusto a quienes la rodean con su energía suave",
+        "Sensibilidad fina — nunca pasa por alto los pequeños cambios o matices",
+        "Valora los vínculos emocionales — prefiere relaciones profundas y significativas a las amplias y superficiales"
+      ],
+      "loveStyle": "¡Un romance lleno de emoción! Prefieres que las cosas empiecen con el acercamiento de la otra persona, y lo que más valoras en una relación es el vínculo emocional y la estabilidad. Te emocionas profundamente con los aniversarios, las sorpresas y las palabras cálidas, y das a tu pareja toda tu atención y amor sin reservas. El rastro de una ruptura dura mucho tiempo y te cuesta empezar algo nuevo con facilidad. Expresar tus emociones y deseos de forma más activa de vez en cuando te traerá una mayor satisfacción en las relaciones.",
+      "bestMatch": "Chico Teto",
+      "bestMatchDesc": "¡Cuando conoces a un Chico Teto firme y que lleva la iniciativa, sientes plenamente la seguridad de ser amada! La calidez emocional de la Chica Egen combinada con el fuerte liderazgo del Chico Teto crea la relación más natural y cómoda.",
+      "worstMatch": "Chica Egen",
+      "worstMatchDesc": "Ambas son pasivas y emocionales, así que incluso empezar la relación puede ser difícil. Esperar la una a la otra puede hacer que pierdan una buena conexión, ¡así que atrévete a dar un paso!",
+      "strengths": [
+        "Empatía profunda que comprende y acepta a la otra persona tal como es",
+        "La capacidad de crear un ambiente cálido y estable en las relaciones",
+        "Emociones ricas que no pasan por alto las pequeñas bellezas de la vida",
+        "La fuerza de hacer las relaciones más profundas y significativas a través del cuidado y la entrega"
+      ],
+      "weaknesses": [
+        "Tendencia a no expresar sus propias necesidades y sentimientos, guardándoselos",
+        "Puede perder sus propias emociones al verse demasiado afectada por los sentimientos del otro",
+        "Intentar evitar el conflicto puede hacer que los malentendidos se acumulen",
+        "El rastro prolongado de las rupturas dificulta los nuevos comienzos"
+      ],
+      "detailedAnalysis": {
+        "strongEgen": "¡La reina de la emoción! Empatía y cálida consideración al nivel más alto. Eres tan amada que las personas a tu alrededor te describen como un ángel. Sin embargo, necesitas practicar valorar también tus propios sentimientos y necesidades. Saber recibir es tan importante como saber dar.",
+        "moderateEgen": "Cálida y emocional, pero tienes un equilibrio saludable que te permite expresar tus sentimientos y decir tu opinión cuando hace falta. Lejos de ser una simple Chica Egen pasiva, eres un tipo atractivo con alta inteligencia emocional.",
+        "balanced": "¡Una equilibradora flexible entre Teto y Egen! Tienes una cálida empatía y a la vez la flexibilidad para moverte de forma proactiva según la situación. La adaptabilidad para construir relaciones armoniosas con cualquier pareja es tu fortaleza.",
+        "moderateTeto": "Fundamentalmente segura y proactiva, pero en las relaciones también muestras una consideración emocional. ¡La dueña de un atractivo tridimensional que combina independencia y calidez! Eres del tipo que puede dar a tu pareja tanto seguridad como emoción al mismo tiempo.",
+        "strongTeto": "Una clara tendencia Teto, independiente y segura. Valoras la carrera y el crecimiento personal, y la expresión emocional tiende a ser directa. Mostrar a tu pareja un lado más emocional de vez en cuando enriquecerá mucho vuestra relación."
+      },
+      "percentageAnalysis": {
+        "extreme": { "min": 90, "label": "Egen extrema", "text": "¡La reina de la emoción! Empatía y sensibilidad al nivel más alto. La gente a tu alrededor suele decirte 'Eres como un ángel'. No olvides también cuidar tus propios sentimientos de vez en cuando." },
+        "strong": { "min": 75, "label": "Egen fuerte", "text": "¡Clara tendencia Egen! Emocionalmente rica y profundamente considerada — una persona de buen corazón. ¡El lado decidido que muestras de vez en cuando es un encanto inesperado!" },
+        "moderate": { "min": 60, "label": "Predominantemente Egen", "text": "La tendencia Egen es dominante pero también llevas la independencia de Teto. ¡Un tipo equilibrado que es suave y sabe mostrarse segura cuando hace falta!" },
+        "slight": { "min": 50, "label": "Levemente Egen", "text": "¡Casi mitad Teto, mitad Egen! Te inclinas levemente más hacia Egen, así que fundamentalmente eres cálida y según la situación también tienes un lado cool e independiente." }
+      }
+    }
+  },
+  "loveChain": {
+    "description": "Cadena de atracción romántica",
+    "chain": "Chica Egen → Chico Egen → Chica Teto → Chico Teto → Chica Egen",
+    "explanation": "La dirección de la flecha indica 'hacia quién se siente atraído'. Las Chicas Egen tienden a sentirse atraídas por los Chicos Egen, los Chicos Egen por las Chicas Teto, las Chicas Teto por los Chicos Teto, y los Chicos Teto por las Chicas Egen. Cada tipo se siente atraído de forma natural hacia quien puede complementar sus propias carencias."
+  }
+}

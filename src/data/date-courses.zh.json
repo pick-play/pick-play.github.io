@@ -1,0 +1,5968 @@
+[
+  {
+    "id": 1,
+    "city": "首尔",
+    "region": "江南",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 30,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "江南咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "狎鸥亭餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "汉江盘浦散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "city": "首尔",
+    "region": "弘大",
+    "time": "night",
+    "preference": "室内",
+    "x": 70,
+    "y": 22,
+    "course": [
+      {
+        "step": 1,
+        "place": "弘大居酒屋",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "密室逃脱咖啡馆",
+        "type": "活动",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "屋顶酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "city": "首尔",
+    "region": "汝矣岛",
+    "time": "day",
+    "preference": "户外",
+    "x": 38,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "汝矣岛汉江公园",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "IFC商场餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "63大厦观景台",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "city": "首尔",
+    "region": "圣水",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 42,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "圣水洞画廊咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "首尔林散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "圣水Ttukseom餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 4,
+        "place": "大林仓库画廊",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "city": "首尔",
+    "region": "梨泰院",
+    "time": "night",
+    "preference": "室内",
+    "x": 28,
+    "y": 32,
+    "course": [
+      {
+        "step": 1,
+        "place": "经理团路红酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "梨泰院牛排馆",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "解放村夜景点",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "city": "首尔",
+    "region": "蚕室",
+    "time": "day",
+    "preference": "活动",
+    "x": 85,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "乐天世界冒险乐园",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "蚕室美食街",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "石村湖散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "city": "首尔",
+    "region": "北村",
+    "time": "day",
+    "preference": "户外",
+    "x": 25,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "北村韩屋村散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "三清洞韩餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "三清洞传统茶馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "city": "首尔",
+    "region": "江南",
+    "time": "night",
+    "preference": "室内",
+    "x": 45,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "江南厨师发办",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "COEX电影院",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "江南鸡尾酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "city": "首尔",
+    "region": "弘大",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 32,
+    "y": 58,
+    "course": [
+      {
+        "step": 1,
+        "place": "延南洞咖啡巷",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "延南洞早午餐",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "京义线林荫路",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "city": "首尔",
+    "region": "汝矣岛",
+    "time": "night",
+    "preference": "户外",
+    "x": 35,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "汝矣岛三光岛",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "汝矣岛餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "汉江夜景散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "city": "首尔",
+    "region": "圣水",
+    "time": "night",
+    "preference": "室内",
+    "x": 50,
+    "y": 28,
+    "course": [
+      {
+        "step": 1,
+        "place": "圣水手工汉堡店",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "圣水快闪店",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "圣水屋顶酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "city": "首尔",
+    "region": "蚕室",
+    "time": "night",
+    "preference": "活动",
+    "x": 48,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "乐天塔观景台",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "蚕室居酒屋",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "石村湖夜景",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "city": "首尔",
+    "region": "江南",
+    "time": "day",
+    "preference": "户外",
+    "x": 30,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "良才市民森林",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "良才洞咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "江南意面餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "city": "首尔",
+    "region": "江南",
+    "time": "night",
+    "preference": "咖啡",
+    "x": 22,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "道山公园甜品咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "清潭意大利餐厅",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "林荫路夜景散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "city": "首尔",
+    "region": "江南",
+    "time": "day",
+    "preference": "活动",
+    "x": 65,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "COEX水族馆",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "COEX商场餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "星光图书馆",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "city": "首尔",
+    "region": "弘大",
+    "time": "night",
+    "preference": "咖啡",
+    "x": 55,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "上水洞氛围咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "合井隐藏餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "弘大街头表演",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "望远洞屋顶",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "city": "首尔",
+    "region": "弘大",
+    "time": "day",
+    "preference": "活动",
+    "x": 72,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "弘大工坊体验",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "延南洞塔可餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "京义线森林散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "city": "首尔",
+    "region": "弘大",
+    "time": "night",
+    "preference": "户外",
+    "x": 35,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "望远汉江公园",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "合井夜景餐厅",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "望远洞甜品咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "city": "首尔",
+    "region": "圣水",
+    "time": "day",
+    "preference": "户外",
+    "x": 35,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "首尔林郊游",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "圣水烘焙咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "Ttukseom汉江公园",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "圣水意面餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "city": "首尔",
+    "region": "圣水",
+    "time": "day",
+    "preference": "活动",
+    "x": 58,
+    "y": 35,
+    "course": [
+      {
+        "step": 1,
+        "place": "圣水快闪店游览",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "圣水早午餐",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "Understand大道",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "city": "首尔",
+    "region": "汝矣岛",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 35,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "The Hyundai首尔",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "汝矣岛咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "汉江公园野餐",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "city": "首尔",
+    "region": "汝矣岛",
+    "time": "night",
+    "preference": "室内",
+    "x": 22,
+    "y": 28,
+    "course": [
+      {
+        "step": 1,
+        "place": "63大厦餐厅",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "汝矣岛红酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "汉江夜景兜风",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "city": "首尔",
+    "region": "梨泰院",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 28,
+    "y": 25,
+    "course": [
+      {
+        "step": 1,
+        "place": "汉南洞甜品咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "汉南洞精致餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "三星美术馆",
+        "type": "观光",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "city": "首尔",
+    "region": "梨泰院",
+    "time": "night",
+    "preference": "咖啡",
+    "x": 30,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "汉南洞精品咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "梨泰院多国籍餐厅",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "解放村夜景咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "city": "首尔",
+    "region": "梨泰院",
+    "time": "day",
+    "preference": "户外",
+    "x": 45,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "南山步道",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "经理团路早午餐",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "龙山家族公园",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "city": "首尔",
+    "region": "蚕室",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 30,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "石村湖咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "松里丹吉餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "石村湖散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "city": "首尔",
+    "region": "蚕室",
+    "time": "night",
+    "preference": "室内",
+    "x": 40,
+    "y": 10,
+    "course": [
+      {
+        "step": 1,
+        "place": "乐天塔餐厅",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "乐天影院豪华厅",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "松里丹吉甜品",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "city": "首尔",
+    "region": "北村",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 22,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "益善洞韩屋咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "益善洞韩餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "昌德宫秘苑散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "city": "首尔",
+    "region": "北村",
+    "time": "night",
+    "preference": "室内",
+    "x": 22,
+    "y": 32,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁寺洞传统酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "钟路韩式套餐",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "清溪川夜景散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "city": "首尔",
+    "region": "北村",
+    "time": "day",
+    "preference": "活动",
+    "x": 55,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "韩屋体验馆",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "三清洞融合韩餐",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "国立现代美术馆",
+        "type": "观光",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "city": "釜山",
+    "region": "海云台",
+    "time": "day",
+    "preference": "户外",
+    "x": 40,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "海云台海水浴场",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "海云台生鱼片街",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "冬柏岛海岸步道",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "city": "釜山",
+    "region": "海云台",
+    "time": "night",
+    "preference": "咖啡",
+    "x": 35,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "海云台海滨咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "海洋城市餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "海云台夜景散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "city": "釜山",
+    "region": "海云台",
+    "time": "day",
+    "preference": "活动",
+    "x": 78,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "海云台水上运动",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "The Bay 101餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "LCT观景台",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "city": "釜山",
+    "region": "西面",
+    "time": "night",
+    "preference": "室内",
+    "x": 62,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "西面美食巷",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "西面夜店街",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "西面咖啡巷",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "city": "釜山",
+    "region": "西面",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 30,
+    "y": 32,
+    "course": [
+      {
+        "step": 1,
+        "place": "田浦咖啡街",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "西面早午餐餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "釜山市民公园",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "city": "釜山",
+    "region": "广安里",
+    "time": "night",
+    "preference": "户外",
+    "x": 42,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "广安里海水浴场夜景",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "广安大桥夜景点",
+        "type": "观光",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "广安里海鲜餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 4,
+        "place": "广安里屋顶酒吧",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "city": "釜山",
+    "region": "广安里",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 28,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "广安里海景咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "民乐洞生鱼片中心",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "广安里海滨散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "city": "釜山",
+    "region": "南浦洞",
+    "time": "day",
+    "preference": "户外",
+    "x": 35,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "扎嘎其市场",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "南浦洞生鱼片面巷",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "龙头山公园釜山塔",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "保守洞书店巷咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "city": "釜山",
+    "region": "南浦洞",
+    "time": "night",
+    "preference": "室内",
+    "x": 25,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "BIFF广场电影院",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "南浦洞烤肥肠巷",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "光复洞夜景咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "city": "釜山",
+    "region": "机张",
+    "time": "day",
+    "preference": "户外",
+    "x": 50,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "机张海岸兜风",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "机张大邊港海鲜",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "九山森林徒步",
+        "type": "活动",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "city": "釜山",
+    "region": "机张",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 38,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "日光海水浴场",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "机张咖啡街",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "机张水产市场",
+        "type": "用餐",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "city": "釜山",
+    "region": "海云台",
+    "time": "day",
+    "preference": "室内",
+    "x": 45,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "釜山水族馆",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "海云台排骨餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "电影殿堂",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "city": "大邱",
+    "region": "东城路",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 32,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "东城路咖啡巷",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "东城路意面餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "中央路地下商场购物",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "city": "大邱",
+    "region": "东城路",
+    "time": "night",
+    "preference": "室内",
+    "x": 55,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "东城路居酒屋",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "东城路保龄球场",
+        "type": "活动",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "东城路鸡尾酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "city": "大邱",
+    "region": "寿城池",
+    "time": "day",
+    "preference": "户外",
+    "x": 30,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "寿城池步道散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "寿城池脚踏船",
+        "type": "活动",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "寿城池咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "寿城池韩餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "city": "大邱",
+    "region": "寿城池",
+    "time": "night",
+    "preference": "户外",
+    "x": 35,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "寿城池夜景散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "寿城池餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "寿城池景观咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "city": "大邱",
+    "region": "前山",
+    "time": "day",
+    "preference": "活动",
+    "x": 72,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "前山缆车",
+        "type": "活动",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "前山山顶徒步",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "前山山脚咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "大明洞五花肉巷",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "city": "大邱",
+    "region": "前山",
+    "time": "day",
+    "preference": "户外",
+    "x": 45,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "前山公园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "安地郎烤肥肠巷",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "前山景观咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "city": "大邱",
+    "region": "金光石街道",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 25,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "金光石街道壁画",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "坊川市场小吃",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "大鳳洞感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "city": "大邱",
+    "region": "金光石街道",
+    "time": "night",
+    "preference": "咖啡",
+    "x": 28,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "金光石街夜景",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "大鳳洞红酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "凤里丹吉餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "city": "仁川",
+    "region": "松岛",
+    "time": "day",
+    "preference": "户外",
+    "x": 42,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "中央公园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "Triple Street餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "松岛会展中心周边咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "city": "仁川",
+    "region": "松岛",
+    "time": "night",
+    "preference": "咖啡",
+    "x": 30,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "中央公园夜景散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "松岛屋顶餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "G塔观景咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "city": "仁川",
+    "region": "松岛",
+    "time": "day",
+    "preference": "活动",
+    "x": 80,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "松岛水上乐园",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "现代高端奥莱餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "中央公园咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "city": "仁川",
+    "region": "唐人街",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 28,
+    "y": 48,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川唐人街探访",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "共和春炸酱面",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "新浦市场小吃",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "开港路咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "city": "仁川",
+    "region": "唐人街",
+    "time": "day",
+    "preference": "户外",
+    "x": 38,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "自由公园散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "唐人街探访",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "开港场近代建筑游览",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "新浦洞炸鸡",
+        "type": "用餐",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "city": "仁川",
+    "region": "月尾岛",
+    "time": "day",
+    "preference": "活动",
+    "x": 75,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "月尾岛游乐场",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "月尾岛海鲜餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "月尾岛海岸散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "city": "仁川",
+    "region": "月尾岛",
+    "time": "night",
+    "preference": "户外",
+    "x": 40,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "月尾岛码头夜景",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "月尾岛港口餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "月尾公园散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "city": "仁川",
+    "region": "江华岛",
+    "time": "day",
+    "preference": "户外",
+    "x": 35,
+    "y": 92,
+    "course": [
+      {
+        "step": 1,
+        "place": "摩尼山登山",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "江华岛小鱼餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "江华泥滩散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 28,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "忠壮路韩餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "光州文化殿堂",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "night",
+    "preference": "室内",
+    "x": 50,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路居酒屋",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "光州CGV忠壮路",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "忠壮路甜品咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "city": "光州",
+    "region": "尚武地区",
+    "time": "day",
+    "preference": "户外",
+    "x": 38,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "尚武市民公园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区早午餐咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "尚武地区餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "city": "光州",
+    "region": "尚武地区",
+    "time": "night",
+    "preference": "咖啡",
+    "x": 32,
+    "y": 35,
+    "course": [
+      {
+        "step": 1,
+        "place": "尚武地区空中酒廊",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区牛排餐厅",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "尚武市民公园夜景",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "city": "光州",
+    "region": "杨林洞",
+    "time": "day",
+    "preference": "户外",
+    "x": 25,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "杨林洞历史文化村探访",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "杨林洞感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "社稷公园散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "杨林洞韩式套餐",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "city": "光州",
+    "region": "杨林洞",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 22,
+    "y": 50,
+    "course": [
+      {
+        "step": 1,
+        "place": "杨林洞企鹅村",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "杨林洞韩屋咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "杨林洞餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 30,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "屯山洞咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "屯山洞意面餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "世博科学公园",
+        "type": "观光",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "night",
+    "preference": "室内",
+    "x": 48,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "屯山洞厨师发办",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "大田CGV屯山",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "屯山洞屋顶酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "city": "大田",
+    "region": "儒城",
+    "time": "day",
+    "preference": "户外",
+    "x": 40,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉泡脚咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "甲川自行车道",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "儒城忠南大餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "city": "大田",
+    "region": "儒城",
+    "time": "night",
+    "preference": "咖啡",
+    "x": 35,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉水疗",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "儒城排骨餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "儒城夜景咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "city": "大田",
+    "region": "大清湖",
+    "time": "day",
+    "preference": "户外",
+    "x": 45,
+    "y": 92,
+    "course": [
+      {
+        "step": 1,
+        "place": "大清湖五百里徒步",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "大清湖畔咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "大清湖附近淡水鱼餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "city": "大田",
+    "region": "大清湖",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 28,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "大清湖兜风",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "大清湖景观咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "大清水坝观景台",
+        "type": "观光",
+        "duration": "30分钟"
+      },
+      {
+        "step": 4,
+        "place": "清原黑猪肉餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "day",
+    "preference": "户外",
+    "x": 38,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "太和江国家花园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "十里竹林步道",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "太和洞咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "蔚山中央市场餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "night",
+    "preference": "户外",
+    "x": 32,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "太和江夜景散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "太和洞夜景咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "蔚山五花肉巷",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "city": "蔚山",
+    "region": "艮绝串",
+    "time": "day",
+    "preference": "户外",
+    "x": 50,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮绝串灯塔散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "艮绝串海岸兜风",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "西生海鲜餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 4,
+        "place": "艮绝串景观咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "city": "蔚山",
+    "region": "艮绝串",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 35,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮绝串海景咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "温阳排骨餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "艮绝串海岸散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "city": "蔚山",
+    "region": "长生浦",
+    "time": "day",
+    "preference": "活动",
+    "x": 65,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "长生浦鲸鱼博物馆",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "长生浦鲸鱼文化村",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "蔚山南区餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "city": "蔚山",
+    "region": "长生浦",
+    "time": "day",
+    "preference": "户外",
+    "x": 42,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "长生浦港口散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "鲸鱼海洋观光船",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "长生浦海鲜餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "city": "世宗",
+    "region": "世宗湖水公园",
+    "time": "day",
+    "preference": "户外",
+    "x": 35,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗湖水公园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "湖水公园咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "世宗新城餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "city": "世宗",
+    "region": "世宗湖水公园",
+    "time": "night",
+    "preference": "户外",
+    "x": 30,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗湖水公园夜景",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "湖水公园夜景餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "湖水公园屋顶咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "city": "世宗",
+    "region": "世宗市内",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 28,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗传统市场",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "世宗精品咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "世宗早午餐餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "city": "世宗",
+    "region": "世宗市内",
+    "time": "day",
+    "preference": "活动",
+    "x": 60,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "国立世宗图书馆",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "世宗自行车游览",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "世宗新城餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "city": "京畿北部",
+    "region": "一山",
+    "time": "day",
+    "preference": "户外",
+    "x": 40,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "一山湖水公园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "La Festa餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "一山咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "city": "京畿北部",
+    "region": "一山",
+    "time": "night",
+    "preference": "咖啡",
+    "x": 32,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "一山湖水公园夜景",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "Western Dom餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "一山屋顶咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "city": "京畿北部",
+    "region": "一山",
+    "time": "day",
+    "preference": "活动",
+    "x": 72,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "KINTEX展览参观",
+        "type": "观光",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "One Mount水上乐园",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "一山排骨餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "city": "京畿北部",
+    "region": "坡州",
+    "time": "day",
+    "preference": "户外",
+    "x": 38,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "黑里艺术村",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "普罗旺斯村咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "坡州出版城探访",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "坡州鳗鱼餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "city": "京畿北部",
+    "region": "坡州",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 25,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "坡州高端奥莱",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "坡州咖啡街",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "坡州炖排骨餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "city": "京畿北部",
+    "region": "议政府",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 30,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "议政府部队锅街",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "议政府邻里公园散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "议政府咖啡巷",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "city": "京畿北部",
+    "region": "议政府",
+    "time": "night",
+    "preference": "室内",
+    "x": 45,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "议政府居酒屋",
+        "type": "用餐",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "议政府保龄球场",
+        "type": "活动",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "议政府屋顶咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "city": "京畿北部",
+    "region": "坡州",
+    "time": "day",
+    "preference": "活动",
+    "x": 65,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "临津阁和平公园",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "坡州DMZ游览",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "坡州韩式套餐",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "city": "京畿南部",
+    "region": "水原",
+    "time": "day",
+    "preference": "户外",
+    "x": 30,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "水原华城城墙散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "行宫洞排骨餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "行宫洞咖啡巷",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "city": "京畿南部",
+    "region": "水原",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 25,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "华城行宫参观",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "行宫洞早午餐咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "光教湖水公园散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "光教餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "city": "京畿南部",
+    "region": "水原",
+    "time": "night",
+    "preference": "室内",
+    "x": 42,
+    "y": 22,
+    "course": [
+      {
+        "step": 1,
+        "place": "水原王排骨餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "水原CGV电影院",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "光教屋顶咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "city": "京畿南部",
+    "region": "板桥",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 35,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "板桥Kakao Friends商店",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "板桥科技谷咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "板桥餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "city": "京畿南部",
+    "region": "板桥",
+    "time": "night",
+    "preference": "室内",
+    "x": 52,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "现代百货板桥餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "板桥水疗",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 3,
+        "place": "板桥屋顶酒吧",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "city": "京畿南部",
+    "region": "板桥",
+    "time": "day",
+    "preference": "活动",
+    "x": 70,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "板桥Nexon电脑博物馆",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "板桥VR体验馆",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "板桥IT街餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "city": "京畿南部",
+    "region": "龙仁",
+    "time": "day",
+    "preference": "活动",
+    "x": 88,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "爱宝乐园主题公园",
+        "type": "活动",
+        "duration": "4小时"
+      },
+      {
+        "step": 2,
+        "place": "爱宝乐园美食广场",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "龙仁咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "city": "京畿南部",
+    "region": "龙仁",
+    "time": "day",
+    "preference": "户外",
+    "x": 42,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "韩国民俗村参观",
+        "type": "观光",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "龙仁韩式套餐餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "龙仁自然农园散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "city": "京畿南部",
+    "region": "龙仁",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 28,
+    "y": 58,
+    "course": [
+      {
+        "step": 1,
+        "place": "处仁区田园咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "龙仁排骨餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "龙仁水枝公园散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "city": "京畿南部",
+    "region": "水原",
+    "time": "day",
+    "preference": "活动",
+    "x": 68,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "光教湖水公园自行车",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "光教咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "光教美食街",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "city": "釜山",
+    "region": "西面",
+    "time": "day",
+    "preference": "户外",
+    "x": 38,
+    "y": 62,
+    "course": [
+      {
+        "step": 1,
+        "place": "釜山市民公园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "西面早午餐咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "田浦咖啡街探访",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "西面猪肉汤饭餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "city": "大邱",
+    "region": "东城路",
+    "time": "day",
+    "preference": "户外",
+    "x": 45,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "达城公园散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "大邱近代巷弄游览",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "东仁洞炖排骨巷",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 4,
+        "place": "东城路感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "city": "仁川",
+    "region": "江华岛",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 30,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "江华岛传灯寺",
+        "type": "观光",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "江华岛芜菁餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "江华黄油咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "day",
+    "preference": "户外",
+    "x": 35,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "无等山登山口",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "光州淳昌餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "光州5.18自由公园",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "day",
+    "preference": "户外",
+    "x": 42,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "老鹰公园散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "甲川水边公园自行车",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "屯山洞早午餐咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 4,
+        "place": "屯山洞韩餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "day",
+    "preference": "活动",
+    "x": 65,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "太和江独木舟体验",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "太和楼景观欣赏",
+        "type": "观光",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "蔚山彦阳烤肉餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "city": "世宗",
+    "region": "世宗湖水公园",
+    "time": "day",
+    "preference": "活动",
+    "x": 62,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗湖水公园自行车",
+        "type": "活动",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "湖水公园野餐咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "世宗现代餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "city": "釜山",
+    "region": "海云台",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 20,
+    "y": 53,
+    "course": [
+      {
+        "step": 1,
+        "place": "影岛白流咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "西面猪肉汤饭",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "松亭海滨散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "city": "釜山",
+    "region": "广安里",
+    "time": "night",
+    "preference": "户外",
+    "x": 10,
+    "y": 23,
+    "course": [
+      {
+        "step": 1,
+        "place": "广安大桥夜景",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "扎嘎其市场生鱼片",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "扎嘎其市场",
+        "type": "观光",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "city": "釜山",
+    "region": "西面",
+    "time": "day",
+    "preference": "室内",
+    "x": 96,
+    "y": 47,
+    "course": [
+      {
+        "step": 1,
+        "place": "机张雪蟹餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "田浦咖啡街感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "天际线滑道",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "city": "釜山",
+    "region": "南浦洞",
+    "time": "night",
+    "preference": "活动",
+    "x": 52,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "海云台冲浪",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "田浦洞红酒吧",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "二妓台海岸路",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "city": "釜山",
+    "region": "机张",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 50,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "广安里屋顶咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "西面猪肉汤饭",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "海云台月见路",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "city": "釜山",
+    "region": "影岛",
+    "time": "night",
+    "preference": "户外",
+    "x": 69,
+    "y": 41,
+    "course": [
+      {
+        "step": 1,
+        "place": "海云台海滨散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "南浦洞芝麻煎饼",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "甘川文化村",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "city": "釜山",
+    "region": "松亭",
+    "time": "day",
+    "preference": "室内",
+    "x": 26,
+    "y": 57,
+    "course": [
+      {
+        "step": 1,
+        "place": "广安里意大利餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "世纪城市甜品咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "广安里游艇游览",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "city": "大邱",
+    "region": "东城路",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 29,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "寿城区早午餐咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "西门市场扁饺子",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "东城路街道",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "city": "大邱",
+    "region": "寿城池",
+    "time": "night",
+    "preference": "户外",
+    "x": 93,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "前山观景台徒步",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "安地郎烤肥肠街",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "大邱近代巷弄",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "city": "大邱",
+    "region": "前山",
+    "time": "day",
+    "preference": "室内",
+    "x": 49,
+    "y": 63,
+    "course": [
+      {
+        "step": 1,
+        "place": "八公山山野菜拌饭",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "前山景观咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "八公山缆车",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "city": "大邱",
+    "region": "金光石街道",
+    "time": "night",
+    "preference": "活动",
+    "x": 52,
+    "y": 48,
+    "course": [
+      {
+        "step": 1,
+        "place": "大邱体育场游览",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "八公山山野菜拌饭",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "八公山登山道",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "city": "大邱",
+    "region": "三德洞",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 63,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "前山景观咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "东城路烤肠",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "前山观景台徒步",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "city": "大邱",
+    "region": "八公山",
+    "time": "night",
+    "preference": "户外",
+    "x": 36,
+    "y": 26,
+    "course": [
+      {
+        "step": 1,
+        "place": "东城路街道",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "三德洞意面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "达城公园",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "city": "大邱",
+    "region": "西门市场",
+    "time": "day",
+    "preference": "室内",
+    "x": 28,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "东城路烤肠",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "前山景观咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "八公山缆车",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "city": "大邱",
+    "region": "寿城区",
+    "time": "night",
+    "preference": "活动",
+    "x": 58,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "E-World游乐场",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "八公山山野菜拌饭",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "前山观景台徒步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "city": "大邱",
+    "region": "东城路",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 38,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "金光石街感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "三德洞意面",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "寿城池步道",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "city": "大邱",
+    "region": "寿城池",
+    "time": "night",
+    "preference": "户外",
+    "x": 53,
+    "y": 13,
+    "course": [
+      {
+        "step": 1,
+        "place": "八公山登山道",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "东城路烤肠",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "西门市场夜市",
+        "type": "观光",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "city": "大邱",
+    "region": "前山",
+    "time": "day",
+    "preference": "室内",
+    "x": 32,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "西门市场扁饺子",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "金光石街感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "八公山缆车",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "city": "仁川",
+    "region": "松岛",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 93,
+    "y": 56,
+    "course": [
+      {
+        "step": 1,
+        "place": "乙旺里海滨咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "永宗岛刀削面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "松岛中央公园散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "city": "仁川",
+    "region": "月尾岛",
+    "time": "night",
+    "preference": "户外",
+    "x": 41,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川大公园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "新浦市场炸鸡",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "唐人街观光",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "city": "仁川",
+    "region": "唐人街",
+    "time": "day",
+    "preference": "室内",
+    "x": 13,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "月尾岛海鲜",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "富平甜品咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "天堂城水上乐园",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "city": "仁川",
+    "region": "永宗岛",
+    "time": "night",
+    "preference": "活动",
+    "x": 48,
+    "y": 39,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川大公园自行车",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "松岛餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "月尾岛海岸路",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "city": "仁川",
+    "region": "富平",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 26,
+    "y": 66,
+    "course": [
+      {
+        "step": 1,
+        "place": "永宗岛感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "富平罐头市场",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "松岛中央公园散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "city": "仁川",
+    "region": "桂阳",
+    "time": "night",
+    "preference": "户外",
+    "x": 75,
+    "y": 23,
+    "course": [
+      {
+        "step": 1,
+        "place": "月尾岛海岸路",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "永宗岛刀削面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "月尾岛灯塔",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "city": "仁川",
+    "region": "仁川大公园",
+    "time": "day",
+    "preference": "室内",
+    "x": 34,
+    "y": 83,
+    "course": [
+      {
+        "step": 1,
+        "place": "唐人街炸酱面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "富平甜品咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "月尾岛迪斯科碰碰",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "city": "仁川",
+    "region": "乙旺里",
+    "time": "night",
+    "preference": "活动",
+    "x": 23,
+    "y": 36,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川大公园自行车",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "新浦市场炸鸡",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "松岛中央公园散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "city": "仁川",
+    "region": "松岛",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 70,
+    "y": 74,
+    "course": [
+      {
+        "step": 1,
+        "place": "永宗岛感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "松岛餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "月尾岛海岸路",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "city": "仁川",
+    "region": "月尾岛",
+    "time": "night",
+    "preference": "户外",
+    "x": 53,
+    "y": 19,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川大公园散步",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "富平罐头市场",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "唐人街观光",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "city": "仁川",
+    "region": "唐人街",
+    "time": "day",
+    "preference": "室内",
+    "x": 88,
+    "y": 92,
+    "course": [
+      {
+        "step": 1,
+        "place": "唐人街炸酱面",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "月尾岛海洋咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "月尾岛迪斯科碰碰",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "city": "光州",
+    "region": "东明洞",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 71,
+    "y": 49,
+    "course": [
+      {
+        "step": 1,
+        "place": "东明洞咖啡街",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "忠壮路米糕排骨",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "青色路公园",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "city": "光州",
+    "region": "杨林洞",
+    "time": "night",
+    "preference": "户外",
+    "x": 95,
+    "y": 53,
+    "course": [
+      {
+        "step": 1,
+        "place": "社稷公园散步",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "1913松亭站市场",
+        "type": "观光",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "day",
+    "preference": "室内",
+    "x": 57,
+    "y": 61,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路米糕排骨",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "东明洞咖啡街",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "无等山登山体验",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "city": "光州",
+    "region": "尚武地区",
+    "time": "night",
+    "preference": "活动",
+    "x": 94,
+    "y": 35,
+    "course": [
+      {
+        "step": 1,
+        "place": "亚洲文化殿堂",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "杨林洞小巷",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "city": "光州",
+    "region": "1913松亭站市场",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 94,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路时尚咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "忠壮路米糕排骨",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "社稷公园散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "city": "光州",
+    "region": "无等山",
+    "time": "night",
+    "preference": "户外",
+    "x": 28,
+    "y": 34,
+    "course": [
+      {
+        "step": 1,
+        "place": "社稷公园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "杨洞市场汤饭",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "1913松亭站市场",
+        "type": "观光",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "city": "光州",
+    "region": "光州双年展",
+    "time": "day",
+    "preference": "室内",
+    "x": 58,
+    "y": 84,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路米糕排骨",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区早午餐咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "亚洲文化殿堂",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "city": "光州",
+    "region": "东明洞",
+    "time": "night",
+    "preference": "活动",
+    "x": 62,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "无等山登山体验",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "东明洞意面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "青色路公园",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "city": "光州",
+    "region": "杨林洞",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 21,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "东明洞咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "东明洞意面",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "光州湖水公园",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "night",
+    "preference": "户外",
+    "x": 14,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "社稷公园散步",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "杨洞市场汤饭",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "国立光州博物馆",
+        "type": "观光",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "city": "光州",
+    "region": "尚武地区",
+    "time": "day",
+    "preference": "室内",
+    "x": 79,
+    "y": 33,
+    "course": [
+      {
+        "step": 1,
+        "place": "杨洞市场汤饭",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区早午餐咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "亚洲文化殿堂",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "city": "光州",
+    "region": "1913松亭站市场",
+    "time": "night",
+    "preference": "活动",
+    "x": 73,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "无等山登山体验",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "1913松亭站市场小吃",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "光州湖水公园",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "city": "光州",
+    "region": "无等山",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 47,
+    "y": 64,
+    "course": [
+      {
+        "step": 1,
+        "place": "杨林洞企鹅村咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "忠壮路米糕排骨",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "光州湖水公园",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 51,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "汉田树木园附近咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "大田豆腐炒菜",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "汉田树木园散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "city": "大田",
+    "region": "儒城温泉",
+    "time": "night",
+    "preference": "户外",
+    "x": 52,
+    "y": 50,
+    "course": [
+      {
+        "step": 1,
+        "place": "汉田树木园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "儒城韩式套餐",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "儒城温泉泡脚体验",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "city": "大田",
+    "region": "圣心堂街",
+    "time": "day",
+    "preference": "室内",
+    "x": 91,
+    "y": 79,
+    "course": [
+      {
+        "step": 1,
+        "place": "宫洞刀削面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "圣心堂咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "鸡足山红土路徒步",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 151,
+    "city": "大田",
+    "region": "大田世博",
+    "time": "night",
+    "preference": "活动",
+    "x": 98,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "鸡足山红土路徒步",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "屯山洞餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "汉田树木园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 152,
+    "city": "大田",
+    "region": "汉田树木园",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 58,
+    "y": 56,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "屯山洞餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "大清湖步道",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "city": "大田",
+    "region": "宝文山",
+    "time": "night",
+    "preference": "户外",
+    "x": 72,
+    "y": 56,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉街",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "屯山洞餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "国立中央科学馆",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "city": "大田",
+    "region": "宫洞",
+    "time": "day",
+    "preference": "室内",
+    "x": 67,
+    "y": 87,
+    "course": [
+      {
+        "step": 1,
+        "place": "宫洞刀削面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "宫洞咖啡街",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "大田世博科学公园",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 155,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "night",
+    "preference": "活动",
+    "x": 99,
+    "y": 61,
+    "course": [
+      {
+        "step": 1,
+        "place": "国立中央科学馆",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "宫洞刀削面",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "大清湖步道",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "city": "大田",
+    "region": "儒城温泉",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 13,
+    "y": 89,
+    "course": [
+      {
+        "step": 1,
+        "place": "圣心堂咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "儒城韩式套餐",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "甲川自行车道",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 157,
+    "city": "大田",
+    "region": "圣心堂街",
+    "time": "night",
+    "preference": "户外",
+    "x": 73,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "汉田树木园散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "宫洞刀削面",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "世博桥",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 158,
+    "city": "大田",
+    "region": "大田世博",
+    "time": "day",
+    "preference": "室内",
+    "x": 93,
+    "y": 27,
+    "course": [
+      {
+        "step": 1,
+        "place": "宫洞刀削面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "汉田树木园附近咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "O-World",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 159,
+    "city": "大田",
+    "region": "汉田树木园",
+    "time": "night",
+    "preference": "活动",
+    "x": 96,
+    "y": 97,
+    "course": [
+      {
+        "step": 1,
+        "place": "国立中央科学馆",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "儒城韩式套餐",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "大清湖步道",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "city": "大田",
+    "region": "宝文山",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 58,
+    "y": 83,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "圣心堂面包",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "大清湖步道",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 65,
+    "y": 91,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮绝串海滨咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "长生浦鲸鱼肉专门店",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "大王岩公园海岸路",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "city": "蔚山",
+    "region": "艮绝串",
+    "time": "night",
+    "preference": "户外",
+    "x": 41,
+    "y": 76,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮绝串海滨",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "蔚山彦阳烤肉",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "艮绝串日出名所",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "city": "蔚山",
+    "region": "大王岩",
+    "time": "day",
+    "preference": "室内",
+    "x": 76,
+    "y": 19,
+    "course": [
+      {
+        "step": 1,
+        "place": "蔚山彦阳烤肉",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "太和江景观咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "蔚山大公园玫瑰园",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 164,
+    "city": "蔚山",
+    "region": "三山洞",
+    "time": "night",
+    "preference": "活动",
+    "x": 78,
+    "y": 99,
+    "course": [
+      {
+        "step": 1,
+        "place": "长生浦鲸鱼博物馆",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "长生浦鲸鱼肉专门店",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "蔚山大公园步道",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 165,
+    "city": "蔚山",
+    "region": "岭南阿尔卑斯",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 16,
+    "y": 66,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮绝串海滨咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "长生浦鲸鱼肉专门店",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "蔚山大公园步道",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 166,
+    "city": "蔚山",
+    "region": "长生浦",
+    "time": "night",
+    "preference": "户外",
+    "x": 11,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "蔚山大公园步道",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "三山洞餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "太和江国家花园",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 167,
+    "city": "蔚山",
+    "region": "蔚山大公园",
+    "time": "day",
+    "preference": "室内",
+    "x": 47,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "蔚山彦阳烤肉",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "长生浦鲸鱼咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "长生浦鲸鱼博物馆",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 168,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "night",
+    "preference": "活动",
+    "x": 18,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "长生浦鲸鱼博物馆",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "三山洞餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "大王岩公园海岸路",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 169,
+    "city": "蔚山",
+    "region": "艮绝串",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 19,
+    "y": 33,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮绝串海滨咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "三山洞餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "蔚山大公园步道",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "city": "蔚山",
+    "region": "大王岩",
+    "time": "night",
+    "preference": "户外",
+    "x": 55,
+    "y": 39,
+    "course": [
+      {
+        "step": 1,
+        "place": "岭南阿尔卑斯徒步",
+        "type": "散步",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "三山洞餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "盘龟台岩刻画",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 171,
+    "city": "蔚山",
+    "region": "三山洞",
+    "time": "day",
+    "preference": "室内",
+    "x": 14,
+    "y": 76,
+    "course": [
+      {
+        "step": 1,
+        "place": "长生浦鲸鱼肉专门店",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "艮绝串海滨咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "岭南阿尔卑斯登山",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 172,
+    "city": "世宗",
+    "region": "世宗湖水公园",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 29,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "高福水库咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "密马鲁附近韩餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "密马鲁观景台徒步",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 173,
+    "city": "世宗",
+    "region": "密马鲁展望台",
+    "time": "night",
+    "preference": "户外",
+    "x": 60,
+    "y": 77,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗湖水公园散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "密马鲁附近韩餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "毗岩寺",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 174,
+    "city": "世宗",
+    "region": "鸟致院",
+    "time": "day",
+    "preference": "室内",
+    "x": 38,
+    "y": 59,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗早午餐咖啡馆",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "密马鲁景观咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "总统记录馆参观",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 175,
+    "city": "世宗",
+    "region": "世宗市咖啡街",
+    "time": "night",
+    "preference": "活动",
+    "x": 63,
+    "y": 24,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗文化艺术会馆",
+        "type": "活动",
+        "duration": "2小时"
+      },
+      {
+        "step": 2,
+        "place": "鸟致院刀削面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "锦江自行车道",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 176,
+    "city": "世宗",
+    "region": "高福水库",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 85,
+    "y": 37,
+    "course": [
+      {
+        "step": 1,
+        "place": "鸟致院咖啡街",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "密马鲁附近韩餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "锦江自行车道",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 177,
+    "city": "世宗",
+    "region": "毗岩寺",
+    "time": "night",
+    "preference": "户外",
+    "x": 58,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "高福水库步道",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "世宗市餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "熊树公园",
+        "type": "观光",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 178,
+    "city": "世宗",
+    "region": "世宗湖水公园",
+    "time": "day",
+    "preference": "室内",
+    "x": 47,
+    "y": 87,
+    "course": [
+      {
+        "step": 1,
+        "place": "鸟致院血肠汤饭",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "世宗市感性咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "世宗文化艺术会馆",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 179,
+    "city": "世宗",
+    "region": "密马鲁展望台",
+    "time": "night",
+    "preference": "活动",
+    "x": 59,
+    "y": 67,
+    "course": [
+      {
+        "step": 1,
+        "place": "总统记录馆参观",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "鸟致院刀削面",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "锦江自行车道",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 180,
+    "city": "世宗",
+    "region": "鸟致院",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 84,
+    "y": 54,
+    "course": [
+      {
+        "step": 1,
+        "place": "鸟致院咖啡街",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "世宗市餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "世宗湖水公园散步",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 181,
+    "city": "世宗",
+    "region": "世宗市咖啡街",
+    "time": "night",
+    "preference": "户外",
+    "x": 92,
+    "y": 43,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗中央公园",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "世宗早午餐咖啡馆",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "密马鲁观景台",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 182,
+    "city": "世宗",
+    "region": "高福水库",
+    "time": "day",
+    "preference": "室内",
+    "x": 53,
+    "y": 62,
+    "course": [
+      {
+        "step": 1,
+        "place": "密马鲁附近韩餐厅",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "高福水库咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "世宗文化艺术会馆",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 183,
+    "city": "京畿北部",
+    "region": "坡州黑里",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 18,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "南杨州水花园咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "加平辣炒鸡",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "加平子龙岛散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 184,
+    "city": "京畿北部",
+    "region": "杨平",
+    "time": "night",
+    "preference": "户外",
+    "x": 85,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "坡州临津阁",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "加平辣炒鸡",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "临津阁",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 185,
+    "city": "京畿北部",
+    "region": "加平",
+    "time": "day",
+    "preference": "室内",
+    "x": 29,
+    "y": 12,
+    "course": [
+      {
+        "step": 1,
+        "place": "杨平韩牛烤肉",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "黑里艺术咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 3,
+        "place": "加平蹦极跳",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 186,
+    "city": "京畿北部",
+    "region": "抱川",
+    "time": "night",
+    "preference": "活动",
+    "x": 48,
+    "y": 77,
+    "course": [
+      {
+        "step": 1,
+        "place": "杨平漂流",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "南杨州餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "坡州临津阁",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 187,
+    "city": "京畿北部",
+    "region": "南杨州",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 19,
+    "y": 23,
+    "course": [
+      {
+        "step": 1,
+        "place": "杨平两水头咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "加平辣炒鸡",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "南杨州水花园",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 188,
+    "city": "京畿北部",
+    "region": "议政府",
+    "time": "night",
+    "preference": "户外",
+    "x": 91,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "加平子龙岛散步",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "南杨州餐厅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "小法国村",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 189,
+    "city": "京畿北部",
+    "region": "东豆川",
+    "time": "day",
+    "preference": "室内",
+    "x": 44,
+    "y": 57,
+    "course": [
+      {
+        "step": 1,
+        "place": "加平辣炒鸡",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "加平子龙岛咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "坡州普罗旺斯",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 190,
+    "city": "京畿北部",
+    "region": "涟川",
+    "time": "night",
+    "preference": "活动",
+    "x": 71,
+    "y": 93,
+    "course": [
+      {
+        "step": 1,
+        "place": "抱川艺术谷",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "杨平韩牛烤肉",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "杨平两水头散步",
+        "type": "散步",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 191,
+    "city": "京畿北部",
+    "region": "坡州黑里",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 59,
+    "y": 57,
+    "course": [
+      {
+        "step": 1,
+        "place": "黑里艺术咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "议政府部队锅",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "坡州临津阁",
+        "type": "散步",
+        "duration": "1.5小时"
+      }
+    ]
+  },
+  {
+    "id": 192,
+    "city": "京畿北部",
+    "region": "杨平",
+    "time": "night",
+    "preference": "户外",
+    "x": 97,
+    "y": 81,
+    "course": [
+      {
+        "step": 1,
+        "place": "抱川鸽子窝瀑布",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "抱川移动排骨",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "草药岛",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 193,
+    "city": "京畿南部",
+    "region": "水原华城",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 11,
+    "y": 49,
+    "course": [
+      {
+        "step": 1,
+        "place": "华城海洋咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "板桥美食街",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "光教湖水公园散步",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 194,
+    "city": "京畿南部",
+    "region": "龙仁",
+    "time": "night",
+    "preference": "户外",
+    "x": 97,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "华城宫坪里海滨",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "安养冷面店",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "华城济扶岛",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 195,
+    "city": "京畿南部",
+    "region": "板桥",
+    "time": "day",
+    "preference": "室内",
+    "x": 75,
+    "y": 61,
+    "course": [
+      {
+        "step": 1,
+        "place": "龙仁白岩血肠",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 2,
+        "place": "龙仁感性咖啡馆",
+        "type": "咖啡",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "光教湖皮划艇",
+        "type": "活动",
+        "duration": "3小时"
+      }
+    ]
+  },
+  {
+    "id": 196,
+    "city": "京畿南部",
+    "region": "安养",
+    "time": "night",
+    "preference": "活动",
+    "x": 78,
+    "y": 17,
+    "course": [
+      {
+        "step": 1,
+        "place": "爱宝乐园",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "板桥美食街",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "水原华城城墙路",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 197,
+    "city": "京畿南部",
+    "region": "城南",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 90,
+    "y": 97,
+    "course": [
+      {
+        "step": 1,
+        "place": "龙仁感性咖啡馆",
+        "type": "咖啡",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "龙仁白岩血肠",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "华城宫坪里海滨",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 198,
+    "city": "京畿南部",
+    "region": "华城",
+    "time": "night",
+    "preference": "户外",
+    "x": 80,
+    "y": 44,
+    "course": [
+      {
+        "step": 1,
+        "place": "华城宫坪里海滨",
+        "type": "散步",
+        "duration": "30分钟"
+      },
+      {
+        "step": 2,
+        "place": "板桥美食街",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "华城济扶岛",
+        "type": "观光",
+        "duration": "30分钟"
+      }
+    ]
+  },
+  {
+    "id": 199,
+    "city": "京畿南部",
+    "region": "平泽",
+    "time": "day",
+    "preference": "室内",
+    "x": 19,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "板桥美食街",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "华城海洋咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "爱宝乐园",
+        "type": "活动",
+        "duration": "2小时"
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "city": "京畿南部",
+    "region": "光教",
+    "time": "night",
+    "preference": "活动",
+    "x": 27,
+    "y": 22,
+    "course": [
+      {
+        "step": 1,
+        "place": "光教湖皮划艇",
+        "type": "活动",
+        "duration": "3小时"
+      },
+      {
+        "step": 2,
+        "place": "平泽海鲜蒸",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "安养艺术公园",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "city": "京畿南部",
+    "region": "水原华城",
+    "time": "day",
+    "preference": "咖啡",
+    "x": 83,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "水原行宫洞咖啡馆",
+        "type": "咖啡",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "龙仁白岩血肠",
+        "type": "用餐",
+        "duration": "1小时"
+      },
+      {
+        "step": 3,
+        "place": "水原华城城墙路",
+        "type": "散步",
+        "duration": "1小时"
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "city": "京畿南部",
+    "region": "龙仁",
+    "time": "night",
+    "preference": "户外",
+    "x": 75,
+    "y": 94,
+    "course": [
+      {
+        "step": 1,
+        "place": "水原华城城墙路",
+        "type": "散步",
+        "duration": "1小时"
+      },
+      {
+        "step": 2,
+        "place": "板桥美食街",
+        "type": "用餐",
+        "duration": "1.5小时"
+      },
+      {
+        "step": 3,
+        "place": "韩国民俗村",
+        "type": "观光",
+        "duration": "1小时"
+      }
+    ]
+  }
+]

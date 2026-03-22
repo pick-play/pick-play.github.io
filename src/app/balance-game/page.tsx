@@ -4,7 +4,11 @@ import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
-import allQuestions from "@/data/balance-questions.json";
+import allQuestionsKo from "@/data/balance-questions.json";
+import allQuestionsEn from "@/data/balance-questions.en.json";
+import allQuestionsJa from "@/data/balance-questions.ja.json";
+import allQuestionsZh from "@/data/balance-questions.zh.json";
+import allQuestionsEs from "@/data/balance-questions.es.json";
 import { useLocale } from "@/hooks/useLocale";
 
 type Question = {
@@ -16,18 +20,32 @@ type Question = {
 
 type Phase = "play" | "result";
 
-const CATEGORIES = ["전체", "상황", "음식", "연애", "취향", "극한", "학교/직장", "여행", "슈퍼파워"] as const;
+const questionsByLocale: Record<string, Question[]> = {
+  ko: allQuestionsKo as Question[],
+  en: allQuestionsEn as Question[],
+  ja: allQuestionsJa as Question[],
+  zh: allQuestionsZh as Question[],
+  es: allQuestionsEs as Question[],
+};
 
-const categoryIcons: Record<string, string> = {
-  전체: "🎮",
-  상황: "💡",
-  음식: "🍜",
-  연애: "💕",
-  취향: "🎨",
-  극한: "🔥",
-  "학교/직장": "🏫",
-  여행: "✈️",
-  슈퍼파워: "⚡",
+const CATEGORIES_BY_LOCALE: Record<string, string[]> = {
+  ko: ["전체", "상황", "음식", "연애", "취향", "극한", "학교/직장", "여행", "슈퍼파워"],
+  en: ["All", "Scenario", "Food", "Romance", "Preference", "Extreme", "School/Work", "Travel", "Superpower"],
+  ja: ["すべて", "シナリオ", "グルメ", "恋愛", "好み", "エクストリーム", "学校/職場", "旅行", "超能力"],
+  zh: ["全部", "情景", "美食", "恋爱", "偏好", "极端", "学校/职场", "旅游", "超能力"],
+  es: ["Todo", "Escenario", "Comida", "Romance", "Preferencias", "Extremo", "Escuela/Trabajo", "Viajes", "Superpoder"],
+};
+
+const CATEGORY_ALL_BY_LOCALE: Record<string, string> = {
+  ko: "전체", en: "All", ja: "すべて", zh: "全部", es: "Todo",
+};
+
+const CATEGORY_ICONS_BY_LOCALE: Record<string, Record<string, string>> = {
+  ko: { "전체": "🎮", "상황": "💡", "음식": "🍜", "연애": "💕", "취향": "🎨", "극한": "🔥", "학교/직장": "🏫", "여행": "✈️", "슈퍼파워": "⚡" },
+  en: { "All": "🎮", "Scenario": "💡", "Food": "🍜", "Romance": "💕", "Preference": "🎨", "Extreme": "🔥", "School/Work": "🏫", "Travel": "✈️", "Superpower": "⚡" },
+  ja: { "すべて": "🎮", "シナリオ": "💡", "グルメ": "🍜", "恋愛": "💕", "好み": "🎨", "エクストリーム": "🔥", "学校/職場": "🏫", "旅行": "✈️", "超能力": "⚡" },
+  zh: { "全部": "🎮", "情景": "💡", "美食": "🍜", "恋爱": "💕", "偏好": "🎨", "极端": "🔥", "学校/职场": "🏫", "旅游": "✈️", "超能力": "⚡" },
+  es: { "Todo": "🎮", "Escenario": "💡", "Comida": "🍜", "Romance": "💕", "Preferencias": "🎨", "Extremo": "🔥", "Escuela/Trabajo": "🏫", "Viajes": "✈️", "Superpoder": "⚡" },
 };
 
 const translations = {
@@ -95,10 +113,14 @@ function shuffle<T>(arr: T[]): T[] {
 export default function BalanceGamePage() {
   const locale = useLocale();
   const t = translations[locale];
+  const allQuestions = questionsByLocale[locale] ?? questionsByLocale.ko;
+  const CATEGORIES = CATEGORIES_BY_LOCALE[locale] ?? CATEGORIES_BY_LOCALE.ko;
+  const categoryAll = CATEGORY_ALL_BY_LOCALE[locale] ?? "전체";
+  const categoryIcons = CATEGORY_ICONS_BY_LOCALE[locale] ?? CATEGORY_ICONS_BY_LOCALE.ko;
 
-  const [selectedCategory, setSelectedCategory] = useState<string>("전체");
+  const [selectedCategory, setSelectedCategory] = useState<string>(categoryAll);
   const [questions, setQuestions] = useState<Question[]>(() =>
-    shuffle(allQuestions as Question[])
+    shuffle(allQuestions)
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>("play");
@@ -107,7 +129,7 @@ export default function BalanceGamePage() {
   const [choicesB, setChoicesB] = useState(0);
   const [answered, setAnswered] = useState(0);
 
-  const filteredQuestions = selectedCategory === "전체"
+  const filteredQuestions = selectedCategory === categoryAll
     ? questions
     : questions.filter((q) => q.category === selectedCategory);
 
@@ -122,8 +144,8 @@ export default function BalanceGamePage() {
     setChoicesA(0);
     setChoicesB(0);
     setAnswered(0);
-    setQuestions(shuffle(allQuestions as Question[]));
-  }, []);
+    setQuestions(shuffle(allQuestions));
+  }, [allQuestions]);
 
   const handleSelect = useCallback(
     (choice: "A" | "B") => {
@@ -154,8 +176,8 @@ export default function BalanceGamePage() {
     setChoicesA(0);
     setChoicesB(0);
     setAnswered(0);
-    setQuestions(shuffle(allQuestions as Question[]));
-  }, []);
+    setQuestions(shuffle(allQuestions));
+  }, [allQuestions]);
 
   const progress = total > 0 ? ((currentIndex) / total) * 100 : 0;
 

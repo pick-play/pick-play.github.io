@@ -1,0 +1,5968 @@
+[
+  {
+    "id": 1,
+    "city": "Seoul",
+    "region": "Gangnam",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 30,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gangnam Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Apgujeong Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Hangang Banpo Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "city": "Seoul",
+    "region": "Hongdae",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 70,
+    "y": 22,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hongdae Izakaya",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Escape Room Cafe",
+        "type": "Activity",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Rooftop Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "city": "Seoul",
+    "region": "Yeouido",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 38,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yeouido Hangang Park",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "IFC Mall Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "63 Building Observatory",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "city": "Seoul",
+    "region": "Seongsu",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 42,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "Seongsu Gallery Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Seoul Forest Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Seongsu Ttukseom Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 4,
+        "place": "Daerim Warehouse Gallery",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "city": "Seoul",
+    "region": "Itaewon",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 28,
+    "y": 32,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gyeongnidan-gil Wine Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Itaewon Steakhouse",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Haebangchon Night View",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "city": "Seoul",
+    "region": "Jamsil",
+    "time": "day",
+    "preference": "Activity",
+    "x": 85,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "Lotte World Adventure",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Jamsil Restaurant Street",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Seokchon Lake Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "city": "Seoul",
+    "region": "Bukchon",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 25,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "Bukchon Hanok Village Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Samcheong-dong Korean Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Samcheong-dong Traditional Tea House",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "city": "Seoul",
+    "region": "Gangnam",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 45,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gangnam Omakase",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "COEX Cinema",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gangnam Cocktail Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "city": "Seoul",
+    "region": "Hongdae",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 32,
+    "y": 58,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yeonnam-dong Cafe Alley",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Yeonnam-dong Brunch",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gyeongui Line Forest Road",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "city": "Seoul",
+    "region": "Yeouido",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 35,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yeouido Sevit Island",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Yeouido Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Hangang Night View Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "city": "Seoul",
+    "region": "Seongsu",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 50,
+    "y": 28,
+    "course": [
+      {
+        "step": 1,
+        "place": "Seongsu Craft Burger",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Seongsu Pop-up Store",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Seongsu Rooftop Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "city": "Seoul",
+    "region": "Jamsil",
+    "time": "night",
+    "preference": "Activity",
+    "x": 48,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "Lotte Tower Observatory",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Jamsil Izakaya",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Seokchon Lake Night View",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "city": "Seoul",
+    "region": "Gangnam",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 30,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yangjae Citizens Forest",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Yangjae-dong Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gangnam Pasta Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "city": "Seoul",
+    "region": "Gangnam",
+    "time": "night",
+    "preference": "Cafe",
+    "x": 22,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dosan Park Dessert Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Cheongdam Italian",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Garosu-gil Night Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "city": "Seoul",
+    "region": "Gangnam",
+    "time": "day",
+    "preference": "Activity",
+    "x": 65,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "COEX Aquarium",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "COEX Mall Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Starfield Library",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "city": "Seoul",
+    "region": "Hongdae",
+    "time": "night",
+    "preference": "Cafe",
+    "x": 55,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sangsu-dong Ambiance Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Hapjeong Hidden Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Hongdae Street Performance",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Mangwon-dong Rooftop",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "city": "Seoul",
+    "region": "Hongdae",
+    "time": "day",
+    "preference": "Activity",
+    "x": 72,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hongdae Craft Workshop",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yeonnam-dong Taco Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gyeongui Line Forest Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "city": "Seoul",
+    "region": "Hongdae",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 35,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "Mangwon Hangang Park",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Hapjeong Night View Restaurant",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Mangwon-dong Dessert Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "city": "Seoul",
+    "region": "Seongsu",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 35,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "Seoul Forest Outing",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Seongsu Bakery Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Ttukseom Hangang Park",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Seongsu Pasta Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "city": "Seoul",
+    "region": "Seongsu",
+    "time": "day",
+    "preference": "Activity",
+    "x": 58,
+    "y": 35,
+    "course": [
+      {
+        "step": 1,
+        "place": "Seongsu Pop-up Store Tour",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Seongsu Brunch",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Understand Avenue",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "city": "Seoul",
+    "region": "Yeouido",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 35,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "The Hyundai Seoul",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yeouido Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Hangang Park Picnic",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "city": "Seoul",
+    "region": "Yeouido",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 22,
+    "y": 28,
+    "course": [
+      {
+        "step": 1,
+        "place": "63 Building Restaurant",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yeouido Wine Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Hangang Night Drive",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "city": "Seoul",
+    "region": "Itaewon",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 28,
+    "y": 25,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hannam-dong Dessert Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Hannam-dong Fine Dining",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Leeum Museum of Art",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "city": "Seoul",
+    "region": "Itaewon",
+    "time": "night",
+    "preference": "Cafe",
+    "x": 30,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hannam-dong Specialty Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Itaewon International Restaurant",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Haebangchon Night View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "city": "Seoul",
+    "region": "Itaewon",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 45,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "Namsan Trail",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Gyeongnidan-gil Brunch",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Yongsan Family Park",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "city": "Seoul",
+    "region": "Jamsil",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 30,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "Seokchon Lake Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Songni-dan-gil Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Seokchon Lake Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "city": "Seoul",
+    "region": "Jamsil",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 40,
+    "y": 10,
+    "course": [
+      {
+        "step": 1,
+        "place": "Lotte Tower Restaurant",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Lotte Cinema Premium",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Songni-dan-gil Dessert",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "city": "Seoul",
+    "region": "Bukchon",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 22,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ikseondong Hanok Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Ikseondong Korean Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Changdeokgung Secret Garden Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "city": "Seoul",
+    "region": "Bukchon",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 22,
+    "y": 32,
+    "course": [
+      {
+        "step": 1,
+        "place": "Insadong Traditional Liquor Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Jongno Korean Set Meal",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Cheonggyecheon Night Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "city": "Seoul",
+    "region": "Bukchon",
+    "time": "day",
+    "preference": "Activity",
+    "x": 55,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hanok Experience Center",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Samcheong-dong Fusion Korean",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "National Museum of Modern and Contemporary Art",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "city": "Busan",
+    "region": "Haeundae",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 40,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "Haeundae Beach",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Haeundae Sashimi Street",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Dongbaek Island Coastal Trail",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "city": "Busan",
+    "region": "Haeundae",
+    "time": "night",
+    "preference": "Cafe",
+    "x": 35,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Haeundae Beach Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Marine City Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Haeundae Night Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "city": "Busan",
+    "region": "Haeundae",
+    "time": "day",
+    "preference": "Activity",
+    "x": 78,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "Haeundae Water Sports",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "The Bay 101 Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "LCT Observatory",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "city": "Busan",
+    "region": "Seomyeon",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 62,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "Seomyeon Food Alley",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Seomyeon Club Street",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Seomyeon Cafe Alley",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "city": "Busan",
+    "region": "Seomyeon",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 30,
+    "y": 32,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jeonpo Cafe Street",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Seomyeon Brunch Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Busan Citizens Park",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "city": "Busan",
+    "region": "Gwangalli",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 42,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gwangalli Beach Night View",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gwangan Bridge Night View",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Gwangalli Seafood Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 4,
+        "place": "Gwangalli Rooftop Bar",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "city": "Busan",
+    "region": "Gwangalli",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 28,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gwangalli Ocean View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Millak-dong Sashimi Center",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gwangalli Beach Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "city": "Busan",
+    "region": "Nampodong",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 35,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jagalchi Market",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Nampodong Sashimi Noodle Alley",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Yongdusan Park Busan Tower",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Bosu-dong Book Alley Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "city": "Busan",
+    "region": "Nampodong",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 25,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "BIFF Square Cinema",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Nampodong Gopchang Alley",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gwangbok-dong Night Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "city": "Busan",
+    "region": "Gijang",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 50,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gijang Coastal Drive",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gijang Daebyeon Port Seafood",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Ahopsan Forest Trekking",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "city": "Busan",
+    "region": "Gijang",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 38,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ilgwang Beach",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gijang Cafe Street",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gijang Fish Market",
+        "type": "Dining",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "city": "Busan",
+    "region": "Haeundae",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 45,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "Busan Aquarium",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Haeundae Galbi Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Busan Cinema Center",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "city": "Daegu",
+    "region": "Dongseongno",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 32,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dongseongno Cafe Alley",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Dongseongno Pasta Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Jungangno Underground Shopping",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "city": "Daegu",
+    "region": "Dongseongno",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 55,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dongseongno Izakaya",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Dongseongno Bowling",
+        "type": "Activity",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Dongseongno Cocktail Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "city": "Daegu",
+    "region": "Suseongmot",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 30,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "Suseongmot Trail Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Suseongmot Pedal Boat",
+        "type": "Activity",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Suseongmot Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Suseongmot Korean Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "city": "Daegu",
+    "region": "Suseongmot",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 35,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "Suseongmot Night Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Suseongmot Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Suseongmot View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "city": "Daegu",
+    "region": "Apsan",
+    "time": "day",
+    "preference": "Activity",
+    "x": 72,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "Apsan Cable Car",
+        "type": "Activity",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Apsan Summit Trekking",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Apsan Hillside Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Daemyeong-dong Samgyeopsal Alley",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "city": "Daegu",
+    "region": "Apsan",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 45,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "Apsan Park Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Anjilang Gopchang Alley",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Apsan View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "city": "Daegu",
+    "region": "Kim Gwangseok Street",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 25,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "Kim Gwangseok Street Art Road",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Bangcheon Market Street Food",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Daebong-dong Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "city": "Daegu",
+    "region": "Kim Gwangseok Street",
+    "time": "night",
+    "preference": "Cafe",
+    "x": 28,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "Kim Gwangseok Street Night View",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Daebong-dong Wine Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Bongni-dan-gil Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "city": "Incheon",
+    "region": "Songdo",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 42,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "Central Park Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Triple Street Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Songdo Convensia Area Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "city": "Incheon",
+    "region": "Songdo",
+    "time": "night",
+    "preference": "Cafe",
+    "x": 30,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Central Park Night Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Songdo Rooftop Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "G-Tower View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "city": "Incheon",
+    "region": "Songdo",
+    "time": "day",
+    "preference": "Activity",
+    "x": 80,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "Songdo Water Park",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Hyundai Premium Outlet Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Central Park Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "city": "Incheon",
+    "region": "Chinatown",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 28,
+    "y": 48,
+    "course": [
+      {
+        "step": 1,
+        "place": "Incheon Chinatown Exploration",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gonghwachun Jjajangmyeon",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Sinpo Market Street Food",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Gaehangno Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "city": "Incheon",
+    "region": "Chinatown",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 38,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "Freedom Park Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Chinatown Street Exploration",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gaehang Modern Architecture Tour",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Sinpo-dong Chicken",
+        "type": "Dining",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "city": "Incheon",
+    "region": "Wolmido",
+    "time": "day",
+    "preference": "Activity",
+    "x": 75,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "Wolmido Amusement Park",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Wolmido Seafood Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Wolmido Coastal Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "city": "Incheon",
+    "region": "Wolmido",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 40,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "Wolmido Pier Night View",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Wolmido Harbor Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Wolmi Park Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "city": "Incheon",
+    "region": "Ganghwado",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 35,
+    "y": 92,
+    "course": [
+      {
+        "step": 1,
+        "place": "Manisan Hiking",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Ganghwa Island Bandaengi Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Ganghwa Mudflat Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "city": "Gwangju",
+    "region": "Chungjangno",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 28,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "Chungjangno Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Chungjangno Korean Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gwangju Culture Center",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "city": "Gwangju",
+    "region": "Chungjangno",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 50,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "Chungjangno Izakaya",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Gwangju CGV Chungjangno",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Chungjangno Dessert Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "city": "Gwangju",
+    "region": "Sangmu District",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 38,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sangmu Citizens Park Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Sangmu District Brunch Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Sangmu District Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "city": "Gwangju",
+    "region": "Sangmu District",
+    "time": "night",
+    "preference": "Cafe",
+    "x": 32,
+    "y": 35,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sangmu District Sky Lounge",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Sangmu District Steak Restaurant",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Sangmu Citizens Park Night View",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "city": "Gwangju",
+    "region": "Yangnim-dong",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 25,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yangnim-dong Historic Village Tour",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yangnim-dong Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Sajik Park Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Yangnim-dong Korean Set Meal",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "city": "Gwangju",
+    "region": "Yangnim-dong",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 22,
+    "y": 50,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yangnim-dong Penguin Village",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Yangnim-dong Hanok Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Yangnim-dong Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "city": "Daejeon",
+    "region": "Dunsan-dong",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 30,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dunsan-dong Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Dunsan-dong Pasta Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Expo Science Park",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "city": "Daejeon",
+    "region": "Dunsan-dong",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 48,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dunsan-dong Omakase",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Daejeon CGV Dunsan",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Dunsan-dong Rooftop Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "city": "Daejeon",
+    "region": "Yuseong",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 40,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yuseong Hot Spring Foot Bath Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Gapcheong Bicycle Path",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Yuseong Chungnam University Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "city": "Daejeon",
+    "region": "Yuseong",
+    "time": "night",
+    "preference": "Cafe",
+    "x": 35,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yuseong Hot Spring Spa",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yuseong Galbi Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Yuseong Night View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "city": "Daejeon",
+    "region": "Daecheongho",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 45,
+    "y": 92,
+    "course": [
+      {
+        "step": 1,
+        "place": "Daecheongho 500-ri Trail Trekking",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Daecheongho Lakeside Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Daecheongho Freshwater Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "city": "Daejeon",
+    "region": "Daecheongho",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 28,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "Daecheongho Drive",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Daecheongho View Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Daecheong Dam Observatory",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      },
+      {
+        "step": 4,
+        "place": "Cheongwon Black Pork Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "city": "Ulsan",
+    "region": "Taehwa River",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 38,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "Taehwa River National Garden Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Simnidaeseup Bamboo Forest Trail",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Taehwa-dong Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Ulsan Central Market Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "city": "Ulsan",
+    "region": "Taehwa River",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 32,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "Taehwa River Night Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Taehwa-dong Night View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Ulsan Samgyeopsal Alley",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "city": "Ulsan",
+    "region": "Ganjeolgot",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 50,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ganjeolgot Lighthouse Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Ganjeolgot Coastal Drive",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Seonaeng Seafood Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 4,
+        "place": "Ganjeolgot View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "city": "Ulsan",
+    "region": "Ganjeolgot",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 35,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ganjeolgot Ocean View Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Onyang Galbi Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Ganjeolgot Coastal Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "city": "Ulsan",
+    "region": "Jangseongpo",
+    "time": "day",
+    "preference": "Activity",
+    "x": 65,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jangsaengpo Whale Museum",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Jangsaengpo Whale Culture Village",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Ulsan Nam-gu Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "city": "Ulsan",
+    "region": "Jangseongpo",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 42,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jangsaengpo Harbor Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Whale Sea Tour Boat",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Jangsaengpo Seafood Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "city": "Sejong",
+    "region": "Sejong Lake Park",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 35,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sejong Lake Park Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Lake Park Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Sejong New City Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "city": "Sejong",
+    "region": "Sejong Lake Park",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 30,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sejong Lake Park Night View",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Lake Park Night View Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Lake Park Rooftop Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "city": "Sejong",
+    "region": "Sejong Downtown",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 28,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sejong Traditional Market",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Sejong Specialty Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Sejong Brunch Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "city": "Sejong",
+    "region": "Sejong Downtown",
+    "time": "day",
+    "preference": "Activity",
+    "x": 60,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "National Sejong Library",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Sejong Bicycle Tour",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Sejong New City Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "city": "Northern Gyeonggi",
+    "region": "Ilsan",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 40,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ilsan Lake Park Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "La Festa Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Ilsan Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "city": "Northern Gyeonggi",
+    "region": "Ilsan",
+    "time": "night",
+    "preference": "Cafe",
+    "x": 32,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ilsan Lake Park Night View",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Western Dom Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Ilsan Rooftop Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "city": "Northern Gyeonggi",
+    "region": "Ilsan",
+    "time": "day",
+    "preference": "Activity",
+    "x": 72,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "KINTEX Exhibition",
+        "type": "Sightseeing",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "One Mount Water Park",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Ilsan Galbi Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "city": "Northern Gyeonggi",
+    "region": "Paju",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 38,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "Heyri Art Village",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Provence Village Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Paju Book City Tour",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Paju Eel Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "city": "Northern Gyeonggi",
+    "region": "Paju",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 25,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "Paju Premium Outlet",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Paju Cafe Street",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Paju Braised Ribs Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "city": "Northern Gyeonggi",
+    "region": "Uijeongbu",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 30,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "Uijeongbu Budae Jjigae Street",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Uijeongbu Neighborhood Park Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Uijeongbu Cafe Alley",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "city": "Northern Gyeonggi",
+    "region": "Uijeongbu",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 45,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "Uijeongbu Izakaya",
+        "type": "Dining",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Uijeongbu Bowling",
+        "type": "Activity",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Uijeongbu Rooftop Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "city": "Northern Gyeonggi",
+    "region": "Paju",
+    "time": "day",
+    "preference": "Activity",
+    "x": 65,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "Imjingak Pyeonghwa-nuri Park",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Paju DMZ Tour",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Paju Korean Set Meal",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "city": "Southern Gyeonggi",
+    "region": "Suwon",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 30,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "Suwon Hwaseong Fortress Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Haenggung-dong Galbi Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Haenggung-dong Cafe Alley",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "city": "Southern Gyeonggi",
+    "region": "Suwon",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 25,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hwaseong Haenggung Palace Tour",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Haenggung-dong Brunch Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gwanggyo Lake Park Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Gwanggyo Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "city": "Southern Gyeonggi",
+    "region": "Suwon",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 42,
+    "y": 22,
+    "course": [
+      {
+        "step": 1,
+        "place": "Suwon King Galbi Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Suwon CGV Cinema",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gwanggyo Rooftop Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "city": "Southern Gyeonggi",
+    "region": "Pangyo",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 35,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "Pangyo Kakao Friends Store",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Pangyo Techno Valley Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Pangyo Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "city": "Southern Gyeonggi",
+    "region": "Pangyo",
+    "time": "night",
+    "preference": "Indoor",
+    "x": 52,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hyundai Department Store Pangyo Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Pangyo Spa",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 3,
+        "place": "Pangyo Rooftop Bar",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "city": "Southern Gyeonggi",
+    "region": "Pangyo",
+    "time": "day",
+    "preference": "Activity",
+    "x": 70,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "Pangyo Nexon Computer Museum",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Pangyo VR Experience Center",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Pangyo IT Street Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "city": "Southern Gyeonggi",
+    "region": "Yongin",
+    "time": "day",
+    "preference": "Activity",
+    "x": 88,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Everland Theme Park",
+        "type": "Activity",
+        "duration": "4 hours"
+      },
+      {
+        "step": 2,
+        "place": "Everland Food Court",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Yongin Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "city": "Southern Gyeonggi",
+    "region": "Yongin",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 42,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "Korean Folk Village Tour",
+        "type": "Sightseeing",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yongin Korean Set Meal Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Yongin Natural Garden Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "city": "Southern Gyeonggi",
+    "region": "Yongin",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 28,
+    "y": 58,
+    "course": [
+      {
+        "step": 1,
+        "place": "Cheoin-gu Rural Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yongin Galbi Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Yongin Suji Park Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "city": "Southern Gyeonggi",
+    "region": "Suwon",
+    "time": "day",
+    "preference": "Activity",
+    "x": 68,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gwanggyo Lake Park Cycling",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Gwanggyo Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gwanggyo Restaurant Street",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "city": "Busan",
+    "region": "Seomyeon",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 38,
+    "y": 62,
+    "course": [
+      {
+        "step": 1,
+        "place": "Busan Citizens Park Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Seomyeon Brunch Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Jeonpo Cafe Street Tour",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Seomyeon Pork Soup Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "city": "Daegu",
+    "region": "Dongseongno",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 45,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dalseong Park Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Daegu Modern Alley Tour",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Dongin-dong Braised Ribs Alley",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 4,
+        "place": "Dongseongno Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "city": "Incheon",
+    "region": "Ganghwado",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 30,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ganghwa Jeondeungsa Temple",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Ganghwa Island Turnip Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Ganghwa Butter Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "city": "Gwangju",
+    "region": "Chungjangno",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 35,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "Mudeungsan Trailhead",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Gwangju Sunchang Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gwangju May 18 Freedom Park",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "city": "Daejeon",
+    "region": "Dunsan-dong",
+    "time": "day",
+    "preference": "Outdoor",
+    "x": 42,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "Boramae Park Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gapcheong Waterfront Park Cycling",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Dunsan-dong Brunch Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "place": "Dunsan-dong Korean Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "city": "Ulsan",
+    "region": "Taehwa River",
+    "time": "day",
+    "preference": "Activity",
+    "x": 65,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "Taehwa River Canoe Experience",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Taehwaru Pavilion View",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Ulsan Eonyang Bulgogi Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "city": "Sejong",
+    "region": "Sejong Lake Park",
+    "time": "day",
+    "preference": "Activity",
+    "x": 62,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sejong Lake Park Cycling",
+        "type": "Activity",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Lake Park Picnic Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Sejong Modern Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "city": "Busan",
+    "region": "Haeundae",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 20,
+    "y": 53,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yeongdo Heunyeoul Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Seomyeon Pork Soup",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Songjung Beach Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "city": "Busan",
+    "region": "Gwangalli",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 10,
+    "y": 23,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gwangan Bridge Night View",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Jagalchi Market Sashimi",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Jagalchi Market",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "city": "Busan",
+    "region": "Seomyeon",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 96,
+    "y": 47,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gijang Snow Crab Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Jeonpo Cafe Street Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Skyline Luge",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "city": "Busan",
+    "region": "Nampodong",
+    "time": "night",
+    "preference": "Activity",
+    "x": 52,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "Haeundae Surfing",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Jeonpo-dong Wine Bar",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Igidae Coastal Road",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "city": "Busan",
+    "region": "Gijang",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 50,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gwangalli Rooftop Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Seomyeon Pork Soup",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Haeundae Dalmaji Road",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "city": "Busan",
+    "region": "Yeongdo",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 69,
+    "y": 41,
+    "course": [
+      {
+        "step": 1,
+        "place": "Haeundae Beach Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Nampodong Seed Hotteok",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gamcheon Culture Village",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "city": "Busan",
+    "region": "Songjung",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 26,
+    "y": 57,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gwangalli Italian",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Centum City Dessert Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gwangalli Yacht Tour",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "city": "Daegu",
+    "region": "Dongseongno",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 29,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "Suseong-gu Brunch Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Seomun Market Flat Dumplings",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Dongseongno Street",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "city": "Daegu",
+    "region": "Suseongmot",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 93,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Apsan Observatory Trekking",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Anjilang Gopchang Street",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Daegu Modern Alley",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "city": "Daegu",
+    "region": "Apsan",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 49,
+    "y": 63,
+    "course": [
+      {
+        "step": 1,
+        "place": "Palgongsan Wild Vegetable Bibimbap",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Apsan View Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Palgongsan Cable Car",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "city": "Daegu",
+    "region": "Kim Gwangseok Street",
+    "time": "night",
+    "preference": "Activity",
+    "x": 52,
+    "y": 48,
+    "course": [
+      {
+        "step": 1,
+        "place": "Daegu Stadium Tour",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Palgongsan Wild Vegetable Bibimbap",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Palgongsan Hiking Trail",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "city": "Daegu",
+    "region": "Samdeok-dong",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 63,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "Apsan View Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Dongseongno Makchang",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Apsan Observatory Trekking",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "city": "Daegu",
+    "region": "Palgongsan",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 36,
+    "y": 26,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dongseongno Street",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Samdeok-dong Pasta",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Dalseong Park",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "city": "Daegu",
+    "region": "Seomun Market",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 28,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dongseongno Makchang",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Apsan View Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Palgongsan Cable Car",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "city": "Daegu",
+    "region": "Suseong-gu",
+    "time": "night",
+    "preference": "Activity",
+    "x": 58,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "E-World Amusement Park",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Palgongsan Wild Vegetable Bibimbap",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Apsan Observatory Trekking",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "city": "Daegu",
+    "region": "Dongseongno",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 38,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "Kim Gwangseok Street Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Samdeok-dong Pasta",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Suseongmot Trail",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "city": "Daegu",
+    "region": "Suseongmot",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 53,
+    "y": 13,
+    "course": [
+      {
+        "step": 1,
+        "place": "Palgongsan Hiking Trail",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Dongseongno Makchang",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Seomun Market Night Market",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "city": "Daegu",
+    "region": "Apsan",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 32,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "Seomun Market Flat Dumplings",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Kim Gwangseok Street Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Palgongsan Cable Car",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "city": "Incheon",
+    "region": "Songdo",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 93,
+    "y": 56,
+    "course": [
+      {
+        "step": 1,
+        "place": "Eulwangni Beach Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Yeongjongdo Knife Noodles",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Songdo Central Park Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "city": "Incheon",
+    "region": "Wolmido",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 41,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Incheon Grand Park Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Sinpo Market Spicy Chicken",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Chinatown Sightseeing",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "city": "Incheon",
+    "region": "Chinatown",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 13,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "Wolmido Seafood",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Bupyeong Dessert Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Paradise City Water Park",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "city": "Incheon",
+    "region": "Yeongjongdo",
+    "time": "night",
+    "preference": "Activity",
+    "x": 48,
+    "y": 39,
+    "course": [
+      {
+        "step": 1,
+        "place": "Incheon Grand Park Cycling",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Songdo Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Wolmido Coastal Road",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "city": "Incheon",
+    "region": "Bupyeong",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 26,
+    "y": 66,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yeongjongdo Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Bupyeong Canned Goods Market",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Songdo Central Park Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "city": "Incheon",
+    "region": "Gyeyang",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 75,
+    "y": 23,
+    "course": [
+      {
+        "step": 1,
+        "place": "Wolmido Coastal Road",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Yeongjongdo Knife Noodles",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Wolmido Lighthouse",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "city": "Incheon",
+    "region": "Incheon Grand Park",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 34,
+    "y": 83,
+    "course": [
+      {
+        "step": 1,
+        "place": "Chinatown Jjajangmyeon",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Bupyeong Dessert Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Wolmido Disco Pang Pang",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "city": "Incheon",
+    "region": "Eulwangni",
+    "time": "night",
+    "preference": "Activity",
+    "x": 23,
+    "y": 36,
+    "course": [
+      {
+        "step": 1,
+        "place": "Incheon Grand Park Cycling",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Sinpo Market Spicy Chicken",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Songdo Central Park Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "city": "Incheon",
+    "region": "Songdo",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 70,
+    "y": 74,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yeongjongdo Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Songdo Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Wolmido Coastal Road",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "city": "Incheon",
+    "region": "Wolmido",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 53,
+    "y": 19,
+    "course": [
+      {
+        "step": 1,
+        "place": "Incheon Grand Park Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Bupyeong Canned Goods Market",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Chinatown Sightseeing",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "city": "Incheon",
+    "region": "Chinatown",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 88,
+    "y": 92,
+    "course": [
+      {
+        "step": 1,
+        "place": "Chinatown Jjajangmyeon",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Wolmido Ocean Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Wolmido Disco Pang Pang",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "city": "Gwangju",
+    "region": "Dongmyeong-dong",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 71,
+    "y": 49,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dongmyeong-dong Cafe Street",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Chungjangno Tteokgalbi",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Pureunkil Park",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "city": "Gwangju",
+    "region": "Yangnim-dong",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 95,
+    "y": 53,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sajik Park Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Sangmu District Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "1913 Songjung Station Market",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "city": "Gwangju",
+    "region": "Chungjangno",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 57,
+    "y": 61,
+    "course": [
+      {
+        "step": 1,
+        "place": "Chungjangno Tteokgalbi",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Dongmyeong-dong Cafe Street",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Mudeungsan Hiking Experience",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "city": "Gwangju",
+    "region": "Sangmu District",
+    "time": "night",
+    "preference": "Activity",
+    "x": 94,
+    "y": 35,
+    "course": [
+      {
+        "step": 1,
+        "place": "Asia Culture Center",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Sangmu District Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Yangnim-dong Alley",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "city": "Gwangju",
+    "region": "1913 Songjung Station Market",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 94,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "Chungjangno Trendy Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Chungjangno Tteokgalbi",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Sajik Park Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "city": "Gwangju",
+    "region": "Mudeungsan",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 28,
+    "y": 34,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sajik Park Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yangdong Market Soup",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "1913 Songjung Station Market",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "city": "Gwangju",
+    "region": "Gwangju Biennale",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 58,
+    "y": 84,
+    "course": [
+      {
+        "step": 1,
+        "place": "Chungjangno Tteokgalbi",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Sangmu District Brunch Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Asia Culture Center",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "city": "Gwangju",
+    "region": "Dongmyeong-dong",
+    "time": "night",
+    "preference": "Activity",
+    "x": 62,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "Mudeungsan Hiking Experience",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Dongmyeong-dong Pasta",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Pureunkil Park",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "city": "Gwangju",
+    "region": "Yangnim-dong",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 21,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "Dongmyeong-dong Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Dongmyeong-dong Pasta",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gwangju Lake Park",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "city": "Gwangju",
+    "region": "Chungjangno",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 14,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sajik Park Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Yangdong Market Soup",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "National Gwangju Museum",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "city": "Gwangju",
+    "region": "Sangmu District",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 79,
+    "y": 33,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yangdong Market Soup",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Sangmu District Brunch Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Asia Culture Center",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "city": "Gwangju",
+    "region": "1913 Songjung Station Market",
+    "time": "night",
+    "preference": "Activity",
+    "x": 73,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "Mudeungsan Hiking Experience",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "1913 Songjung Station Market Food",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gwangju Lake Park",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "city": "Gwangju",
+    "region": "Mudeungsan",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 47,
+    "y": 64,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yangnim-dong Penguin Village Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Chungjangno Tteokgalbi",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gwangju Lake Park",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "city": "Daejeon",
+    "region": "Dunsan-dong",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 51,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "Near Hanbat Arboretum Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Daejeon Tofu Stir-fry",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Hanbat Arboretum Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "city": "Daejeon",
+    "region": "Yuseong Hot Spring",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 52,
+    "y": 50,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hanbat Arboretum Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yuseong Korean Set Meal",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Yuseong Hot Spring Foot Bath",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "city": "Daejeon",
+    "region": "Sungsimdang Street",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 91,
+    "y": 79,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gungdong Knife Noodles",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Sungsimdang Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gyejoksan Red Clay Trail",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 151,
+    "city": "Daejeon",
+    "region": "Daejeon Expo",
+    "time": "night",
+    "preference": "Activity",
+    "x": 98,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gyejoksan Red Clay Trail",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Dunsan-dong Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Hanbat Arboretum Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 152,
+    "city": "Daejeon",
+    "region": "Hanbat Arboretum",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 58,
+    "y": 56,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yuseong Hot Spring Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Dunsan-dong Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Daecheongho Trail",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "city": "Daejeon",
+    "region": "Bomunsan",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 72,
+    "y": 56,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yuseong Hot Spring Street",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Dunsan-dong Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "National Science Museum",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "city": "Daejeon",
+    "region": "Gungdong",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 67,
+    "y": 87,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gungdong Knife Noodles",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Gungdong Cafe Street",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Daejeon Expo Science Park",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 155,
+    "city": "Daejeon",
+    "region": "Dunsan-dong",
+    "time": "night",
+    "preference": "Activity",
+    "x": 99,
+    "y": 61,
+    "course": [
+      {
+        "step": 1,
+        "place": "National Science Museum",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Gungdong Knife Noodles",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Daecheongho Trail",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "city": "Daejeon",
+    "region": "Yuseong Hot Spring",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 13,
+    "y": 89,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sungsimdang Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Yuseong Korean Set Meal",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gapcheong Bicycle Path",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 157,
+    "city": "Daejeon",
+    "region": "Sungsimdang Street",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 73,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hanbat Arboretum Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gungdong Knife Noodles",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Expo Bridge",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 158,
+    "city": "Daejeon",
+    "region": "Daejeon Expo",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 93,
+    "y": 27,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gungdong Knife Noodles",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Near Hanbat Arboretum Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "O-World",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 159,
+    "city": "Daejeon",
+    "region": "Hanbat Arboretum",
+    "time": "night",
+    "preference": "Activity",
+    "x": 96,
+    "y": 97,
+    "course": [
+      {
+        "step": 1,
+        "place": "National Science Museum",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yuseong Korean Set Meal",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Daecheongho Trail",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "city": "Daejeon",
+    "region": "Bomunsan",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 58,
+    "y": 83,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yuseong Hot Spring Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Sungsimdang Bread",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Daecheongho Trail",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "city": "Ulsan",
+    "region": "Taehwa River",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 65,
+    "y": 91,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ganjeolgot Beach Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Jangsaengpo Whale Meat Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Daewangam Park Coastal Road",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "city": "Ulsan",
+    "region": "Ganjeolgot",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 41,
+    "y": 76,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ganjeolgot Beach",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Ulsan Eonyang Bulgogi",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Ganjeolgot Sunrise Spot",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "city": "Ulsan",
+    "region": "Daewangam",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 76,
+    "y": 19,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ulsan Eonyang Bulgogi",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Taehwa River View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Ulsan Grand Park Rose Garden",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 164,
+    "city": "Ulsan",
+    "region": "Samsan-dong",
+    "time": "night",
+    "preference": "Activity",
+    "x": 78,
+    "y": 99,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jangsaengpo Whale Museum",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Jangsaengpo Whale Meat Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Ulsan Grand Park Trail",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 165,
+    "city": "Ulsan",
+    "region": "Yeongnam Alps",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 16,
+    "y": 66,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ganjeolgot Beach Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Jangsaengpo Whale Meat Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Ulsan Grand Park Trail",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 166,
+    "city": "Ulsan",
+    "region": "Jangseongpo",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 11,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ulsan Grand Park Trail",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Samsan-dong Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Taehwa River National Garden",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 167,
+    "city": "Ulsan",
+    "region": "Ulsan Grand Park",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 47,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ulsan Eonyang Bulgogi",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Jangsaengpo Whale Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Jangsaengpo Whale Museum",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 168,
+    "city": "Ulsan",
+    "region": "Taehwa River",
+    "time": "night",
+    "preference": "Activity",
+    "x": 18,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jangsaengpo Whale Museum",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Samsan-dong Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Daewangam Park Coastal Road",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 169,
+    "city": "Ulsan",
+    "region": "Ganjeolgot",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 19,
+    "y": 33,
+    "course": [
+      {
+        "step": 1,
+        "place": "Ganjeolgot Beach Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Samsan-dong Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Ulsan Grand Park Trail",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "city": "Ulsan",
+    "region": "Daewangam",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 55,
+    "y": 39,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yeongnam Alps Trekking",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Samsan-dong Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Bangudae Petroglyphs",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 171,
+    "city": "Ulsan",
+    "region": "Samsan-dong",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 14,
+    "y": 76,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jangsaengpo Whale Meat Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Ganjeolgot Beach Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Yeongnam Alps Hiking",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 172,
+    "city": "Sejong",
+    "region": "Sejong Lake Park",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 29,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gobok Reservoir Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Near Milmaru Korean Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Milmaru Observatory Trekking",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 173,
+    "city": "Sejong",
+    "region": "Milmaru Observatory",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 60,
+    "y": 77,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sejong Lake Park Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Near Milmaru Korean Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Biamsa Temple",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 174,
+    "city": "Sejong",
+    "region": "Jochiwon",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 38,
+    "y": 59,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sejong Brunch Cafe",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Milmaru View Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Presidential Archives Tour",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 175,
+    "city": "Sejong",
+    "region": "Sejong Cafe Street",
+    "time": "night",
+    "preference": "Activity",
+    "x": 63,
+    "y": 24,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sejong Arts Center",
+        "type": "Activity",
+        "duration": "2 hours"
+      },
+      {
+        "step": 2,
+        "place": "Jochiwon Knife Noodles",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Geumgang Bicycle Path",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 176,
+    "city": "Sejong",
+    "region": "Gobok Reservoir",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 85,
+    "y": 37,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jochiwon Cafe Street",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Near Milmaru Korean Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Geumgang Bicycle Path",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 177,
+    "city": "Sejong",
+    "region": "Biamsa",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 58,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gobok Reservoir Trail",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Sejong City Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Bear Tree Park",
+        "type": "Sightseeing",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 178,
+    "city": "Sejong",
+    "region": "Sejong Lake Park",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 47,
+    "y": 87,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jochiwon Sundae Soup",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Sejong City Cozy Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Sejong Arts Center",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 179,
+    "city": "Sejong",
+    "region": "Milmaru Observatory",
+    "time": "night",
+    "preference": "Activity",
+    "x": 59,
+    "y": 67,
+    "course": [
+      {
+        "step": 1,
+        "place": "Presidential Archives Tour",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Jochiwon Knife Noodles",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Geumgang Bicycle Path",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 180,
+    "city": "Sejong",
+    "region": "Jochiwon",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 84,
+    "y": 54,
+    "course": [
+      {
+        "step": 1,
+        "place": "Jochiwon Cafe Street",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Sejong City Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Sejong Lake Park Walk",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 181,
+    "city": "Sejong",
+    "region": "Sejong Cafe Street",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 92,
+    "y": 43,
+    "course": [
+      {
+        "step": 1,
+        "place": "Sejong Central Park",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Sejong Brunch Cafe",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Milmaru Observatory",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 182,
+    "city": "Sejong",
+    "region": "Gobok Reservoir",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 53,
+    "y": 62,
+    "course": [
+      {
+        "step": 1,
+        "place": "Near Milmaru Korean Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gobok Reservoir Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Sejong Arts Center",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 183,
+    "city": "Northern Gyeonggi",
+    "region": "Paju Heyri",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 18,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "Namyangju Water Garden Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Gapyeong Dak Galbi",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gapyeong Jara Island Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 184,
+    "city": "Northern Gyeonggi",
+    "region": "Yangpyeong",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 85,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "Paju Imjingak",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gapyeong Dak Galbi",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Imjingak",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 185,
+    "city": "Northern Gyeonggi",
+    "region": "Gapyeong",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 29,
+    "y": 12,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yangpyeong Korean Beef Grill",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Heyri Art Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 3,
+        "place": "Gapyeong Bungee Jump",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 186,
+    "city": "Northern Gyeonggi",
+    "region": "Pocheon",
+    "time": "night",
+    "preference": "Activity",
+    "x": 48,
+    "y": 77,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yangpyeong Rafting",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Namyangju Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Paju Imjingak",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 187,
+    "city": "Northern Gyeonggi",
+    "region": "Namyangju",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 19,
+    "y": 23,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yangpyeong Dumulmeori Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gapyeong Dak Galbi",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Namyangju Water Garden",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 188,
+    "city": "Northern Gyeonggi",
+    "region": "Uijeongbu",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 91,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gapyeong Jara Island Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Namyangju Restaurant",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Petite France",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 189,
+    "city": "Northern Gyeonggi",
+    "region": "Dongducheon",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 44,
+    "y": 57,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gapyeong Dak Galbi",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Gapyeong Jara Island Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Paju Provence",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 190,
+    "city": "Northern Gyeonggi",
+    "region": "Yeoncheon",
+    "time": "night",
+    "preference": "Activity",
+    "x": 71,
+    "y": 93,
+    "course": [
+      {
+        "step": 1,
+        "place": "Pocheon Art Valley",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yangpyeong Korean Beef Grill",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Yangpyeong Dumulmeori Walk",
+        "type": "Walk",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 191,
+    "city": "Northern Gyeonggi",
+    "region": "Paju Heyri",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 59,
+    "y": 57,
+    "course": [
+      {
+        "step": 1,
+        "place": "Heyri Art Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Uijeongbu Budae Jjigae",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Paju Imjingak",
+        "type": "Walk",
+        "duration": "1.5 hours"
+      }
+    ]
+  },
+  {
+    "id": 192,
+    "city": "Northern Gyeonggi",
+    "region": "Yangpyeong",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 97,
+    "y": 81,
+    "course": [
+      {
+        "step": 1,
+        "place": "Pocheon Bidulginang Falls",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Pocheon Idong Galbi",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Herb Island",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 193,
+    "city": "Southern Gyeonggi",
+    "region": "Suwon Hwaseong",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 11,
+    "y": 49,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hwaseong Ocean Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Pangyo Restaurant Street",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Gwanggyo Lake Park Walk",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 194,
+    "city": "Southern Gyeonggi",
+    "region": "Yongin",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 97,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hwaseong Gungpyeong Beach",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Anyang Cold Noodle Restaurant",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Hwaseong Jebudo Island",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 195,
+    "city": "Southern Gyeonggi",
+    "region": "Pangyo",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 75,
+    "y": 61,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yongin Baekam Sundae",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 2,
+        "place": "Yongin Cozy Cafe",
+        "type": "Cafe",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Gwanggyo Lake Kayaking",
+        "type": "Activity",
+        "duration": "3 hours"
+      }
+    ]
+  },
+  {
+    "id": 196,
+    "city": "Southern Gyeonggi",
+    "region": "Anyang",
+    "time": "night",
+    "preference": "Activity",
+    "x": 78,
+    "y": 17,
+    "course": [
+      {
+        "step": 1,
+        "place": "Everland",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Pangyo Restaurant Street",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Suwon Hwaseong Fortress Wall",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 197,
+    "city": "Southern Gyeonggi",
+    "region": "Seongnam",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 90,
+    "y": 97,
+    "course": [
+      {
+        "step": 1,
+        "place": "Yongin Cozy Cafe",
+        "type": "Cafe",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Yongin Baekam Sundae",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Hwaseong Gungpyeong Beach",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 198,
+    "city": "Southern Gyeonggi",
+    "region": "Hwaseong",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 80,
+    "y": 44,
+    "course": [
+      {
+        "step": 1,
+        "place": "Hwaseong Gungpyeong Beach",
+        "type": "Walk",
+        "duration": "30 min"
+      },
+      {
+        "step": 2,
+        "place": "Pangyo Restaurant Street",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Hwaseong Jebudo Island",
+        "type": "Sightseeing",
+        "duration": "30 min"
+      }
+    ]
+  },
+  {
+    "id": 199,
+    "city": "Southern Gyeonggi",
+    "region": "Pyeongtaek",
+    "time": "day",
+    "preference": "Indoor",
+    "x": 19,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "Pangyo Restaurant Street",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Hwaseong Ocean Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Everland",
+        "type": "Activity",
+        "duration": "2 hours"
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "city": "Southern Gyeonggi",
+    "region": "Gwanggyo",
+    "time": "night",
+    "preference": "Activity",
+    "x": 27,
+    "y": 22,
+    "course": [
+      {
+        "step": 1,
+        "place": "Gwanggyo Lake Kayaking",
+        "type": "Activity",
+        "duration": "3 hours"
+      },
+      {
+        "step": 2,
+        "place": "Pyeongtaek Seafood Steamed",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Anyang Art Park",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "city": "Southern Gyeonggi",
+    "region": "Suwon Hwaseong",
+    "time": "day",
+    "preference": "Cafe",
+    "x": 83,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "Suwon Haenggung-dong Cafe",
+        "type": "Cafe",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Yongin Baekam Sundae",
+        "type": "Dining",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "place": "Suwon Hwaseong Fortress Wall",
+        "type": "Walk",
+        "duration": "1 hour"
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "city": "Southern Gyeonggi",
+    "region": "Yongin",
+    "time": "night",
+    "preference": "Outdoor",
+    "x": 75,
+    "y": 94,
+    "course": [
+      {
+        "step": 1,
+        "place": "Suwon Hwaseong Fortress Wall",
+        "type": "Walk",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "place": "Pangyo Restaurant Street",
+        "type": "Dining",
+        "duration": "1.5 hours"
+      },
+      {
+        "step": 3,
+        "place": "Korean Folk Village",
+        "type": "Sightseeing",
+        "duration": "1 hour"
+      }
+    ]
+  }
+]

@@ -1,0 +1,5968 @@
+[
+  {
+    "id": 1,
+    "city": "ソウル",
+    "region": "江南",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 30,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "江南カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "狎鷗亭グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "漢江盤浦散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "city": "ソウル",
+    "region": "弘大",
+    "time": "night",
+    "preference": "インドア",
+    "x": 70,
+    "y": 22,
+    "course": [
+      {
+        "step": 1,
+        "place": "弘大居酒屋",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "脱出ゲームカフェ",
+        "type": "アクティビティ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "ルーフトップバー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "city": "ソウル",
+    "region": "汝矣島",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 38,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "汝矣島漢江公園",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "IFCモールレストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "63ビル展望台",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "city": "ソウル",
+    "region": "聖水",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 42,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "聖水洞ギャラリーカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "ソウルの森散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "聖水トゥッソムグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 4,
+        "place": "テリム倉庫ギャラリー",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "city": "ソウル",
+    "region": "梨泰院",
+    "time": "night",
+    "preference": "インドア",
+    "x": 28,
+    "y": 32,
+    "course": [
+      {
+        "step": 1,
+        "place": "京理団ワインバー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "梨泰院ステーキハウス",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "解放村夜景スポット",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "city": "ソウル",
+    "region": "蚕室",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 85,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "ロッテワールドアドベンチャー",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "蚕室グルメ通り",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "石村湖散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "city": "ソウル",
+    "region": "北村",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 25,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "北村韓屋村散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "三清洞韓食堂",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "三清洞伝統茶屋",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "city": "ソウル",
+    "region": "江南",
+    "time": "night",
+    "preference": "インドア",
+    "x": 45,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "江南おまかせ",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "COEXシネマ",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "江南カクテルバー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "city": "ソウル",
+    "region": "弘大",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 32,
+    "y": 58,
+    "course": [
+      {
+        "step": 1,
+        "place": "延南洞カフェ路地",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "延南洞ブランチ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "京義線森の道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "city": "ソウル",
+    "region": "汝矣島",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 35,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "汝矣島セビッ島",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "汝矣島レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "漢江夜景散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "city": "ソウル",
+    "region": "聖水",
+    "time": "night",
+    "preference": "インドア",
+    "x": 50,
+    "y": 28,
+    "course": [
+      {
+        "step": 1,
+        "place": "聖水クラフトバーガー",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "聖水ポップアップストア",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "聖水ルーフトップバー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "city": "ソウル",
+    "region": "蚕室",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 48,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "ロッテタワー展望台",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "蚕室居酒屋",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "石村湖夜景",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "city": "ソウル",
+    "region": "江南",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 30,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "良才市民の森",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "良才洞カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "江南パスタグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "city": "ソウル",
+    "region": "江南",
+    "time": "night",
+    "preference": "カフェ",
+    "x": 22,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "島山公園デザートカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "清潭イタリアン",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "カロスキル夜景散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "city": "ソウル",
+    "region": "江南",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 65,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "COEX水族館",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "COEXモールグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "ソウル別の本棚図書館",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "city": "ソウル",
+    "region": "弘大",
+    "time": "night",
+    "preference": "カフェ",
+    "x": 55,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "上水洞雰囲気カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "合井隠れグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "弘大路上ライブ",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "望遠洞ルーフトップ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "city": "ソウル",
+    "region": "弘大",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 72,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "弘大工房体験",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "延南洞タコスグルメ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "京義線森の道散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "city": "ソウル",
+    "region": "弘大",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 35,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "望遠漢江公園",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "合井夜景レストラン",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "望遠洞デザートカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "city": "ソウル",
+    "region": "聖水",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 35,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "ソウルの森お出かけ",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "聖水ベーカリーカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "トゥッソム漢江公園",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "聖水パスタグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "city": "ソウル",
+    "region": "聖水",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 58,
+    "y": 35,
+    "course": [
+      {
+        "step": 1,
+        "place": "聖水ポップアップストアツアー",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "聖水ブランチ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "アンダースタンドアベニュー",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "city": "ソウル",
+    "region": "汝矣島",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 35,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "ザ・ヒョンデ ソウル",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "汝矣島カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "漢江公園ピクニック",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "city": "ソウル",
+    "region": "汝矣島",
+    "time": "night",
+    "preference": "インドア",
+    "x": 22,
+    "y": 28,
+    "course": [
+      {
+        "step": 1,
+        "place": "63ビルレストラン",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "汝矣島ワインバー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "漢江夜景ドライブ",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "city": "ソウル",
+    "region": "梨泰院",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 28,
+    "y": 25,
+    "course": [
+      {
+        "step": 1,
+        "place": "漢南洞デザートカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "漢南洞ファインダイニング",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "リウム美術館",
+        "type": "観光",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "city": "ソウル",
+    "region": "梨泰院",
+    "time": "night",
+    "preference": "カフェ",
+    "x": 30,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "漢南洞スペシャルティカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "梨泰院多国籍レストラン",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "解放村夜景カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "city": "ソウル",
+    "region": "梨泰院",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 45,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "南山トレイル",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "京理団ブランチ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "龍山家族公園",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "city": "ソウル",
+    "region": "蚕室",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 30,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "石村湖カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "ソンリダンキルグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "石村湖散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "city": "ソウル",
+    "region": "蚕室",
+    "time": "night",
+    "preference": "インドア",
+    "x": 40,
+    "y": 10,
+    "course": [
+      {
+        "step": 1,
+        "place": "ロッテタワーレストラン",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "ロッテシネマプレミアム",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "ソンリダンキルデザート",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "city": "ソウル",
+    "region": "北村",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 22,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "益善洞韓屋カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "益善洞韓食レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "昌德宮後苑散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "city": "ソウル",
+    "region": "北村",
+    "time": "night",
+    "preference": "インドア",
+    "x": 22,
+    "y": 32,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁寺洞伝統酒バー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "鍾路韓定食",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "清溪川夜景散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "city": "ソウル",
+    "region": "北村",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 55,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "韓屋体験館",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "三清洞フュージョン韓食",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "国立現代美術館",
+        "type": "観光",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "city": "釜山",
+    "region": "海雲台",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 40,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "海雲台海水浴場",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "海雲台刺身通り",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "冬柏島海岸散歩道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "city": "釜山",
+    "region": "海雲台",
+    "time": "night",
+    "preference": "カフェ",
+    "x": 35,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "海雲台海辺カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "マリンシティレストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "海雲台夜景散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "city": "釜山",
+    "region": "海雲台",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 78,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "海雲台マリンスポーツ",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "ザ・ベイ101レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "LCT展望台",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "city": "釜山",
+    "region": "西面",
+    "time": "night",
+    "preference": "インドア",
+    "x": 62,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "西面フードアレー",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "西面クラブ通り",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "西面カフェ路地",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "city": "釜山",
+    "region": "西面",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 30,
+    "y": 32,
+    "course": [
+      {
+        "step": 1,
+        "place": "チョンポカフェ通り",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "西面ブランチグルメ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "釜山市民公園",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "city": "釜山",
+    "region": "広安里",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 42,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "広安里海水浴場夜景",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "広安大橋夜景スポット",
+        "type": "観光",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "広安里海鮮グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 4,
+        "place": "広安里ルーフトップバー",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "city": "釜山",
+    "region": "広安里",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 28,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "広安里オーシャンビューカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "民楽洞刺身センター",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "広安里海辺散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "city": "釜山",
+    "region": "南浦洞",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 35,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "チャガルチ市場",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "南浦洞刺身麺路地",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "龍頭山公園釜山タワー",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "保守洞本屋路地カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "city": "釜山",
+    "region": "南浦洞",
+    "time": "night",
+    "preference": "インドア",
+    "x": 25,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "BIFF広場映画館",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "南浦洞コプチャン路地",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "光復洞夜景カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "city": "釜山",
+    "region": "機張",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 50,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "機張海岸ドライブ",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "機張大邊港海鮮",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "アホプサンの森トレッキング",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "city": "釜山",
+    "region": "機張",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 38,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "日光海水浴場",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "機張カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "機張水産物市場",
+        "type": "食事",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "city": "釜山",
+    "region": "海雲台",
+    "time": "day",
+    "preference": "インドア",
+    "x": 45,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "釜山水族館",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "海雲台カルビ店",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "映画の殿堂",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "city": "大邱",
+    "region": "東城路",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 32,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "東城路カフェ路地",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "東城路パスタグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "中央路地下商店街ショッピング",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "city": "大邱",
+    "region": "東城路",
+    "time": "night",
+    "preference": "インドア",
+    "x": 55,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "東城路居酒屋",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "東城路ボウリング場",
+        "type": "アクティビティ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "東城路カクテルバー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "city": "大邱",
+    "region": "寿城池",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 30,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "寿城池トレイル散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "寿城池ペダルボート",
+        "type": "アクティビティ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "寿城池カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "寿城池韓食グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "city": "大邱",
+    "region": "寿城池",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 35,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "寿城池夜景散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "寿城池レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "寿城池ビューカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "city": "大邱",
+    "region": "前山",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 72,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "前山ケーブルカー",
+        "type": "アクティビティ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "前山山頂トレッキング",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "前山山麓カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "大明洞サムギョプサル路地",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "city": "大邱",
+    "region": "前山",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 45,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "前山公園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "安地郎コプチャン路地",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "前山展望カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "city": "大邱",
+    "region": "金光石通り",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 25,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "金光石通り壁画アート",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "坊川市場ストリートフード",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "大鳳洞感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "city": "大邱",
+    "region": "金光石通り",
+    "time": "night",
+    "preference": "カフェ",
+    "x": 28,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "金光石通り夜景",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "大鳳洞ワインバー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "ポンリダンキルグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "city": "仁川",
+    "region": "松島",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 42,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "セントラルパーク散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "トリプルストリートグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "松島コンベンシア周辺カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "city": "仁川",
+    "region": "松島",
+    "time": "night",
+    "preference": "カフェ",
+    "x": 30,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "セントラルパーク夜景散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "松島ルーフトップレストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "Gタワー展望カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "city": "仁川",
+    "region": "松島",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 80,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "松島ウォーターパーク",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "現代プレミアムアウトレットグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "セントラルパークカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "city": "仁川",
+    "region": "チャイナタウン",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 28,
+    "y": 48,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川チャイナタウン探訪",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "共和春ジャージャー麺",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "新浦市場ストリートフード",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "開港路カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "city": "仁川",
+    "region": "チャイナタウン",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 38,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "自由公園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "チャイナタウン通り探訪",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "開港場近代建築ツアー",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "新浦洞チキン",
+        "type": "食事",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "city": "仁川",
+    "region": "月尾島",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 75,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "月尾島遊園地",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "月尾島海鮮グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "月尾島海岸散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "city": "仁川",
+    "region": "月尾島",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 40,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "月尾島桟橋夜景",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "月尾島港レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "月尾公園散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "city": "仁川",
+    "region": "江華島",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 35,
+    "y": 92,
+    "course": [
+      {
+        "step": 1,
+        "place": "摩尼山登山",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "江華島ベンダンイグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "江華干潟散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 28,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "忠壮路韓食グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "光州文化殿堂",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "night",
+    "preference": "インドア",
+    "x": 50,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路居酒屋",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "光州CGV忠壮路",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "忠壮路デザートカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "city": "光州",
+    "region": "尚武地区",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 38,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "尚武市民公園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区ブランチカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "尚武地区レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "city": "光州",
+    "region": "尚武地区",
+    "time": "night",
+    "preference": "カフェ",
+    "x": 32,
+    "y": 35,
+    "course": [
+      {
+        "step": 1,
+        "place": "尚武地区スカイラウンジ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区ステーキグルメ",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "尚武市民公園夜景",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "city": "光州",
+    "region": "楊林洞",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 25,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "楊林洞歴史文化村探訪",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "楊林洞感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "社稷公園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "楊林洞韓定食",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "city": "光州",
+    "region": "楊林洞",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 22,
+    "y": 50,
+    "course": [
+      {
+        "step": 1,
+        "place": "楊林洞ペンギン村",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "楊林洞韓屋カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "楊林洞グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 30,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "屯山洞カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "屯山洞パスタグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "エキスポ科学公園",
+        "type": "観光",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "night",
+    "preference": "インドア",
+    "x": 48,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "屯山洞おまかせ",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "大田CGV屯山",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "屯山洞ルーフトップバー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "city": "大田",
+    "region": "儒城",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 40,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉足湯カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "甲川自転車道",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "儒城忠南大グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "city": "大田",
+    "region": "儒城",
+    "time": "night",
+    "preference": "カフェ",
+    "x": 35,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉スパ",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "儒城カルビグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "儒城夜景カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "city": "大田",
+    "region": "大清湖",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 45,
+    "y": 92,
+    "course": [
+      {
+        "step": 1,
+        "place": "大清湖500里道トレッキング",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "大清湖畔カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "大清湖近く淡水魚グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "city": "大田",
+    "region": "大清湖",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 28,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "大清湖ドライブ",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "大清湖ビューカフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "大清ダム展望台",
+        "type": "観光",
+        "duration": "30分"
+      },
+      {
+        "step": 4,
+        "place": "清原黒豚グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 38,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "太和江国家庭園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "十里竹林散歩道",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "太和洞カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "蔚山中央市場グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 32,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "太和江夜景散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "太和洞夜景カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "蔚山サムギョプサル路地",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "city": "蔚山",
+    "region": "艮絶串",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 50,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮絶串灯台散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "艮絶串海岸ドライブ",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "西生海鮮グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 4,
+        "place": "艮絶串ビューカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "city": "蔚山",
+    "region": "艮絶串",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 35,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮絶串オーシャンビューカフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "温陽カルビグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "艮絶串海岸散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "city": "蔚山",
+    "region": "長生浦",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 65,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "長生浦クジラ博物館",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "長生浦クジラ文化村",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "蔚山南区グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "city": "蔚山",
+    "region": "長生浦",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 42,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "長生浦港散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "クジラ海旅行船乗船",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "長生浦海鮮グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "city": "世宗",
+    "region": "世宗湖水公園",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 35,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗湖水公園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "湖水公園カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "世宗新都市グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "city": "世宗",
+    "region": "世宗湖水公園",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 30,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗湖水公園夜景",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "湖水公園夜景レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "湖水公園ルーフトップカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "city": "世宗",
+    "region": "世宗市内",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 28,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗伝統市場",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "世宗スペシャルティカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "世宗ブランチグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "city": "世宗",
+    "region": "世宗市内",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 60,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "国立世宗図書館",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "世宗自転車ツアー",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "世宗新都市レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "city": "京畿北部",
+    "region": "一山",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 40,
+    "y": 78,
+    "course": [
+      {
+        "step": 1,
+        "place": "一山湖水公園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "ラフェスタグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "一山カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "city": "京畿北部",
+    "region": "一山",
+    "time": "night",
+    "preference": "カフェ",
+    "x": 32,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "一山湖水公園夜景",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "ウェスタンドームレストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "一山ルーフトップカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "city": "京畿北部",
+    "region": "一山",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 72,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "KINTEX展示観覧",
+        "type": "観光",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "ワンマウントウォーターパーク",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "一山カルビグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "city": "京畿北部",
+    "region": "坡州",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 38,
+    "y": 82,
+    "course": [
+      {
+        "step": 1,
+        "place": "ヘイリ芸術村",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "プロバンス村カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "坡州出版都市探訪",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "坡州ウナギグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "city": "京畿北部",
+    "region": "坡州",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 25,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "坡州プレミアムアウトレット",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "坡州カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "坡州カルビ煮グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "city": "京畿北部",
+    "region": "議政府",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 30,
+    "y": 40,
+    "course": [
+      {
+        "step": 1,
+        "place": "議政府部隊チゲ通り",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "議政府近隣公園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "議政府カフェ路地",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "city": "京畿北部",
+    "region": "議政府",
+    "time": "night",
+    "preference": "インドア",
+    "x": 45,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "議政府居酒屋",
+        "type": "食事",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "議政府ボウリング場",
+        "type": "アクティビティ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "議政府ルーフトップカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "city": "京畿北部",
+    "region": "坡州",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 65,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "臨津閣平和ヌリ公園",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "坡州DMZツアー",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "坡州韓定食",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "city": "京畿南部",
+    "region": "水原",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 30,
+    "y": 80,
+    "course": [
+      {
+        "step": 1,
+        "place": "水原華城城郭散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "行宮洞カルビグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "行宮洞カフェ路地",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "city": "京畿南部",
+    "region": "水原",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 25,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "華城行宮観覧",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "行宮洞ブランチカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "光教湖水公園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "光教グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "city": "京畿南部",
+    "region": "水原",
+    "time": "night",
+    "preference": "インドア",
+    "x": 42,
+    "y": 22,
+    "course": [
+      {
+        "step": 1,
+        "place": "水原王カルビグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "水原CGV映画館",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "光教ルーフトップカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "city": "京畿南部",
+    "region": "板橋",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 35,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "板橋カカオフレンズストア",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "板橋テクノバレーカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "板橋レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "city": "京畿南部",
+    "region": "板橋",
+    "time": "night",
+    "preference": "インドア",
+    "x": 52,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "現代百貨店板橋グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "板橋スパ",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 3,
+        "place": "板橋ルーフトップバー",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "city": "京畿南部",
+    "region": "板橋",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 70,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "板橋Nexonコンピュータ博物館",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "板橋VR体験館",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "板橋IT通りグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "city": "京畿南部",
+    "region": "龍仁",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 88,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "エバーランドテーマパーク",
+        "type": "アクティビティ",
+        "duration": "4時間"
+      },
+      {
+        "step": 2,
+        "place": "エバーランドフードコート",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "龍仁カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "city": "京畿南部",
+    "region": "龍仁",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 42,
+    "y": 85,
+    "course": [
+      {
+        "step": 1,
+        "place": "韓国民俗村観覧",
+        "type": "観光",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "龍仁韓定食グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "龍仁自然農園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "city": "京畿南部",
+    "region": "龍仁",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 28,
+    "y": 58,
+    "course": [
+      {
+        "step": 1,
+        "place": "処仁区田園カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "龍仁カルビグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "龍仁水枝公園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "city": "京畿南部",
+    "region": "水原",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 68,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "光教湖水公園自転車",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "光教カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "光教グルメ通り",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "city": "釜山",
+    "region": "西面",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 38,
+    "y": 62,
+    "course": [
+      {
+        "step": 1,
+        "place": "釜山市民公園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "西面ブランチカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "チョンポカフェ通り探訪",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "西面豚クッパグルメ",
+        "type": "食事",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "city": "大邱",
+    "region": "東城路",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 45,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "達城公園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "大邱近代路地ツアー",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "東仁洞蒸しカルビ路地",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 4,
+        "place": "東城路感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "city": "仁川",
+    "region": "江華島",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 30,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "江華島傳燈寺",
+        "type": "観光",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "江華島カブグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "江華バターカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 35,
+    "y": 68,
+    "course": [
+      {
+        "step": 1,
+        "place": "無等山登山口",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "光州順昌グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "光州5.18自由公園",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "day",
+    "preference": "アウトドア",
+    "x": 42,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "ポラメ公園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "甲川水辺公園自転車",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "屯山洞ブランチカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 4,
+        "place": "屯山洞韓食グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 65,
+    "y": 70,
+    "course": [
+      {
+        "step": 1,
+        "place": "太和江カヌー体験",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "太和楼展望鑑賞",
+        "type": "観光",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "蔚山彦陽プルコギグルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "city": "世宗",
+    "region": "世宗湖水公園",
+    "time": "day",
+    "preference": "アクティビティ",
+    "x": 62,
+    "y": 75,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗湖水公園自転車",
+        "type": "アクティビティ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "湖水公園ピクニックカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "世宗現代式グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "city": "釜山",
+    "region": "海雲台",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 20,
+    "y": 53,
+    "course": [
+      {
+        "step": 1,
+        "place": "影島フィニョウルカフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "西面豚クッパ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "松亭海辺散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "city": "釜山",
+    "region": "広安里",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 10,
+    "y": 23,
+    "course": [
+      {
+        "step": 1,
+        "place": "広安大橋夜景",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "チャガルチ市場刺身",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "チャガルチ市場",
+        "type": "観光",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "city": "釜山",
+    "region": "西面",
+    "time": "day",
+    "preference": "インドア",
+    "x": 96,
+    "y": 47,
+    "course": [
+      {
+        "step": 1,
+        "place": "機張ズワイガニグルメ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "チョンポカフェ通り感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "スカイラインリュージュ",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "city": "釜山",
+    "region": "南浦洞",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 52,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "海雲台サーフィン",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "チョンポ洞ワインバー",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "二妓台海岸道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "city": "釜山",
+    "region": "機張",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 50,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "広安里ルーフトップカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "西面豚クッパ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "海雲台月見の道",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "city": "釜山",
+    "region": "影島",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 69,
+    "y": 41,
+    "course": [
+      {
+        "step": 1,
+        "place": "海雲台海辺散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "南浦洞シアッホトック",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "甘川文化村",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "city": "釜山",
+    "region": "松亭",
+    "time": "day",
+    "preference": "インドア",
+    "x": 26,
+    "y": 57,
+    "course": [
+      {
+        "step": 1,
+        "place": "広安里イタリアン",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "センタムシティデザートカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "広安里ヨットツアー",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "city": "大邱",
+    "region": "東城路",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 29,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "寿城区ブランチカフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "西門市場平餃子",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "東城路通り",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "city": "大邱",
+    "region": "寿城池",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 93,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "前山展望台トレッキング",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "安地郎コプチャン通り",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "大邱近代路地",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "city": "大邱",
+    "region": "前山",
+    "time": "day",
+    "preference": "インドア",
+    "x": 49,
+    "y": 63,
+    "course": [
+      {
+        "step": 1,
+        "place": "八公山山菜ビビンバ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "前山展望カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "八公山ケーブルカー",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "city": "大邱",
+    "region": "金光石通り",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 52,
+    "y": 48,
+    "course": [
+      {
+        "step": 1,
+        "place": "大邱スタジアムツアー",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "八公山山菜ビビンバ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "八公山登山道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "city": "大邱",
+    "region": "三徳洞",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 63,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "前山展望カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "東城路マクチャン",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "前山展望台トレッキング",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "city": "大邱",
+    "region": "八公山",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 36,
+    "y": 26,
+    "course": [
+      {
+        "step": 1,
+        "place": "東城路通り",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "三徳洞パスタ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "達城公園",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "city": "大邱",
+    "region": "西門市場",
+    "time": "day",
+    "preference": "インドア",
+    "x": 28,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "東城路マクチャン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "前山展望カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "八公山ケーブルカー",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "city": "大邱",
+    "region": "寿城区",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 58,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "Eワールド遊園地",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "八公山山菜ビビンバ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "前山展望台トレッキング",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "city": "大邱",
+    "region": "東城路",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 38,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "金光石通り感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "三徳洞パスタ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "寿城池散歩道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "city": "大邱",
+    "region": "寿城池",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 53,
+    "y": 13,
+    "course": [
+      {
+        "step": 1,
+        "place": "八公山登山道",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "東城路マクチャン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "西門市場夜市",
+        "type": "観光",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "city": "大邱",
+    "region": "前山",
+    "time": "day",
+    "preference": "インドア",
+    "x": 32,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "西門市場平餃子",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "金光石通り感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "八公山ケーブルカー",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "city": "仁川",
+    "region": "松島",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 93,
+    "y": 56,
+    "course": [
+      {
+        "step": 1,
+        "place": "乙旺里海辺カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "永宗島カルグクス",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "松島セントラルパーク散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "city": "仁川",
+    "region": "月尾島",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 41,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川大公園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "新浦市場チキン",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "チャイナタウン観光",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "city": "仁川",
+    "region": "チャイナタウン",
+    "time": "day",
+    "preference": "インドア",
+    "x": 13,
+    "y": 20,
+    "course": [
+      {
+        "step": 1,
+        "place": "月尾島海鮮",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "富平デザートカフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "パラダイスシティウォーターパーク",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "city": "仁川",
+    "region": "永宗島",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 48,
+    "y": 39,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川大公園自転車",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "松島レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "月尾島海岸道",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "city": "仁川",
+    "region": "富平",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 26,
+    "y": 66,
+    "course": [
+      {
+        "step": 1,
+        "place": "永宗島感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "富平缶詰市場",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "松島セントラルパーク散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "city": "仁川",
+    "region": "桂陽",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 75,
+    "y": 23,
+    "course": [
+      {
+        "step": 1,
+        "place": "月尾島海岸道",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "永宗島カルグクス",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "月尾島灯台",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "city": "仁川",
+    "region": "仁川大公園",
+    "time": "day",
+    "preference": "インドア",
+    "x": 34,
+    "y": 83,
+    "course": [
+      {
+        "step": 1,
+        "place": "チャイナタウンジャージャー麺",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "富平デザートカフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "月尾島ディスコパンパン",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "city": "仁川",
+    "region": "乙旺里",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 23,
+    "y": 36,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川大公園自転車",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "新浦市場チキン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "松島セントラルパーク散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "city": "仁川",
+    "region": "松島",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 70,
+    "y": 74,
+    "course": [
+      {
+        "step": 1,
+        "place": "永宗島感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "松島レストラン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "月尾島海岸道",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "city": "仁川",
+    "region": "月尾島",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 53,
+    "y": 19,
+    "course": [
+      {
+        "step": 1,
+        "place": "仁川大公園散歩",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "富平缶詰市場",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "チャイナタウン観光",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "city": "仁川",
+    "region": "チャイナタウン",
+    "time": "day",
+    "preference": "インドア",
+    "x": 88,
+    "y": 92,
+    "course": [
+      {
+        "step": 1,
+        "place": "チャイナタウンジャージャー麺",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "月尾島海カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "月尾島ディスコパンパン",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "city": "光州",
+    "region": "東明洞",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 71,
+    "y": 49,
+    "course": [
+      {
+        "step": 1,
+        "place": "東明洞カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "忠壮路トッカルビ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "プルンギル公園",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "city": "光州",
+    "region": "楊林洞",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 95,
+    "y": 53,
+    "course": [
+      {
+        "step": 1,
+        "place": "社稷公園散歩",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "1913松亭駅市場",
+        "type": "観光",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "day",
+    "preference": "インドア",
+    "x": 57,
+    "y": 61,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路トッカルビ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "東明洞カフェ通り",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "無等山登山体験",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "city": "光州",
+    "region": "尚武地区",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 94,
+    "y": 35,
+    "course": [
+      {
+        "step": 1,
+        "place": "アジア文化殿堂",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "楊林洞路地道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "city": "光州",
+    "region": "1913松亭駅市場",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 94,
+    "y": 90,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路トレンディカフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "忠壮路トッカルビ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "社稷公園散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "city": "光州",
+    "region": "無等山",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 28,
+    "y": 34,
+    "course": [
+      {
+        "step": 1,
+        "place": "社稷公園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "楊洞市場クッパ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "1913松亭駅市場",
+        "type": "観光",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "city": "光州",
+    "region": "光州ビエンナーレ",
+    "time": "day",
+    "preference": "インドア",
+    "x": 58,
+    "y": 84,
+    "course": [
+      {
+        "step": 1,
+        "place": "忠壮路トッカルビ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区ブランチカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "アジア文化殿堂",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "city": "光州",
+    "region": "東明洞",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 62,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "無等山登山体験",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "東明洞パスタ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "プルンギル公園",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "city": "光州",
+    "region": "楊林洞",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 21,
+    "y": 38,
+    "course": [
+      {
+        "step": 1,
+        "place": "東明洞カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "東明洞パスタ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "光州湖水公園",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "city": "光州",
+    "region": "忠壮路",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 14,
+    "y": 60,
+    "course": [
+      {
+        "step": 1,
+        "place": "社稷公園散歩",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "楊洞市場クッパ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "国立光州博物館",
+        "type": "観光",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "city": "光州",
+    "region": "尚武地区",
+    "time": "day",
+    "preference": "インドア",
+    "x": 79,
+    "y": 33,
+    "course": [
+      {
+        "step": 1,
+        "place": "楊洞市場クッパ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "尚武地区ブランチカフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "アジア文化殿堂",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "city": "光州",
+    "region": "1913松亭駅市場",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 73,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "無等山登山体験",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "1913松亭駅市場ストリートフード",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "光州湖水公園",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "city": "光州",
+    "region": "無等山",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 47,
+    "y": 64,
+    "course": [
+      {
+        "step": 1,
+        "place": "楊林洞ペンギン村カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "忠壮路トッカルビ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "光州湖水公園",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 51,
+    "y": 55,
+    "course": [
+      {
+        "step": 1,
+        "place": "ハンバット樹木園近くカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "大田豆腐炒め",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "ハンバット樹木園散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "city": "大田",
+    "region": "儒城温泉",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 52,
+    "y": 50,
+    "course": [
+      {
+        "step": 1,
+        "place": "ハンバット樹木園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "儒城韓定食",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "儒城温泉足湯体験",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "city": "大田",
+    "region": "聖心堂通り",
+    "time": "day",
+    "preference": "インドア",
+    "x": 91,
+    "y": 79,
+    "course": [
+      {
+        "step": 1,
+        "place": "宮洞カルグクス",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "聖心堂カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "鶏足山赤土道トレッキング",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 151,
+    "city": "大田",
+    "region": "大田エキスポ",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 98,
+    "y": 45,
+    "course": [
+      {
+        "step": 1,
+        "place": "鶏足山赤土道トレッキング",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "屯山洞グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "ハンバット樹木園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 152,
+    "city": "大田",
+    "region": "ハンバット樹木園",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 58,
+    "y": 56,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "屯山洞グルメ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "大清湖散歩道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "city": "大田",
+    "region": "宝文山",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 72,
+    "y": 56,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉通り",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "屯山洞グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "国立中央科学館",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "city": "大田",
+    "region": "宮洞",
+    "time": "day",
+    "preference": "インドア",
+    "x": 67,
+    "y": 87,
+    "course": [
+      {
+        "step": 1,
+        "place": "宮洞カルグクス",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "宮洞カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "大田エキスポ科学公園",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 155,
+    "city": "大田",
+    "region": "屯山洞",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 99,
+    "y": 61,
+    "course": [
+      {
+        "step": 1,
+        "place": "国立中央科学館",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "宮洞カルグクス",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "大清湖散歩道",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "city": "大田",
+    "region": "儒城温泉",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 13,
+    "y": 89,
+    "course": [
+      {
+        "step": 1,
+        "place": "聖心堂カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "儒城韓定食",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "甲川自転車道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 157,
+    "city": "大田",
+    "region": "聖心堂通り",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 73,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "ハンバット樹木園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "宮洞カルグクス",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "エキスポ橋",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 158,
+    "city": "大田",
+    "region": "大田エキスポ",
+    "time": "day",
+    "preference": "インドア",
+    "x": 93,
+    "y": 27,
+    "course": [
+      {
+        "step": 1,
+        "place": "宮洞カルグクス",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "ハンバット樹木園近くカフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "Oワールド",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 159,
+    "city": "大田",
+    "region": "ハンバット樹木園",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 96,
+    "y": 97,
+    "course": [
+      {
+        "step": 1,
+        "place": "国立中央科学館",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "儒城韓定食",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "大清湖散歩道",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "city": "大田",
+    "region": "宝文山",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 58,
+    "y": 83,
+    "course": [
+      {
+        "step": 1,
+        "place": "儒城温泉感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "聖心堂パン",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "大清湖散歩道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 65,
+    "y": 91,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮絶串海辺カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "長生浦クジラ肉専門店",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "大王岩公園海岸道",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "city": "蔚山",
+    "region": "艮絶串",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 41,
+    "y": 76,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮絶串海辺",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "蔚山彦陽プルコギ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "艮絶串日の出名所",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "city": "蔚山",
+    "region": "大王岩",
+    "time": "day",
+    "preference": "インドア",
+    "x": 76,
+    "y": 19,
+    "course": [
+      {
+        "step": 1,
+        "place": "蔚山彦陽プルコギ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "太和江ビューカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "蔚山大公園バラ園",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 164,
+    "city": "蔚山",
+    "region": "三山洞",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 78,
+    "y": 99,
+    "course": [
+      {
+        "step": 1,
+        "place": "長生浦クジラ博物館",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "長生浦クジラ肉専門店",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "蔚山大公園散歩道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 165,
+    "city": "蔚山",
+    "region": "嶺南アルプス",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 16,
+    "y": 66,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮絶串海辺カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "長生浦クジラ肉専門店",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "蔚山大公園散歩道",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 166,
+    "city": "蔚山",
+    "region": "長生浦",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 11,
+    "y": 72,
+    "course": [
+      {
+        "step": 1,
+        "place": "蔚山大公園散歩道",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "三山洞グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "太和江国家庭園",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 167,
+    "city": "蔚山",
+    "region": "蔚山大公園",
+    "time": "day",
+    "preference": "インドア",
+    "x": 47,
+    "y": 65,
+    "course": [
+      {
+        "step": 1,
+        "place": "蔚山彦陽プルコギ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "長生浦クジラカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "長生浦クジラ博物館",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 168,
+    "city": "蔚山",
+    "region": "太和江",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 18,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "長生浦クジラ博物館",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "三山洞グルメ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "大王岩公園海岸道",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 169,
+    "city": "蔚山",
+    "region": "艮絶串",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 19,
+    "y": 33,
+    "course": [
+      {
+        "step": 1,
+        "place": "艮絶串海辺カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "三山洞グルメ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "蔚山大公園散歩道",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "city": "蔚山",
+    "region": "大王岩",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 55,
+    "y": 39,
+    "course": [
+      {
+        "step": 1,
+        "place": "嶺南アルプストレッキング",
+        "type": "散歩",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "三山洞グルメ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "盤龜台岩刻画",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 171,
+    "city": "蔚山",
+    "region": "三山洞",
+    "time": "day",
+    "preference": "インドア",
+    "x": 14,
+    "y": 76,
+    "course": [
+      {
+        "step": 1,
+        "place": "長生浦クジラ肉専門店",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "艮絶串海辺カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "嶺南アルプス登山",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 172,
+    "city": "世宗",
+    "region": "世宗湖水公園",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 29,
+    "y": 15,
+    "course": [
+      {
+        "step": 1,
+        "place": "高福貯水池カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "ミルマル近く韓食堂",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "ミルマル展望台トレッキング",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 173,
+    "city": "世宗",
+    "region": "ミルマル展望台",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 60,
+    "y": 77,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗湖水公園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "ミルマル近く韓食堂",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "毘巌寺",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 174,
+    "city": "世宗",
+    "region": "鳥致院",
+    "time": "day",
+    "preference": "インドア",
+    "x": 38,
+    "y": 59,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗ブランチカフェ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "ミルマルビューカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "大統領記録館観覧",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 175,
+    "city": "世宗",
+    "region": "世宗市カフェ通り",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 63,
+    "y": 24,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗文化芸術会館",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      },
+      {
+        "step": 2,
+        "place": "鳥致院カルグクス",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "錦江自転車道",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 176,
+    "city": "世宗",
+    "region": "高福貯水池",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 85,
+    "y": 37,
+    "course": [
+      {
+        "step": 1,
+        "place": "鳥致院カフェ通り",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "ミルマル近く韓食堂",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "錦江自転車道",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 177,
+    "city": "世宗",
+    "region": "毘巌寺",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 58,
+    "y": 18,
+    "course": [
+      {
+        "step": 1,
+        "place": "高福貯水池散歩道",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "世宗市グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "ベアトゥリーパーク",
+        "type": "観光",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 178,
+    "city": "世宗",
+    "region": "世宗湖水公園",
+    "time": "day",
+    "preference": "インドア",
+    "x": 47,
+    "y": 87,
+    "course": [
+      {
+        "step": 1,
+        "place": "鳥致院スンデクッパ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "世宗市感性カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "世宗文化芸術会館",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 179,
+    "city": "世宗",
+    "region": "ミルマル展望台",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 59,
+    "y": 67,
+    "course": [
+      {
+        "step": 1,
+        "place": "大統領記録館観覧",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "鳥致院カルグクス",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "錦江自転車道",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 180,
+    "city": "世宗",
+    "region": "鳥致院",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 84,
+    "y": 54,
+    "course": [
+      {
+        "step": 1,
+        "place": "鳥致院カフェ通り",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "世宗市グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "世宗湖水公園散歩",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 181,
+    "city": "世宗",
+    "region": "世宗市カフェ通り",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 92,
+    "y": 43,
+    "course": [
+      {
+        "step": 1,
+        "place": "世宗中央公園",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "世宗ブランチカフェ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "ミルマル展望台",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 182,
+    "city": "世宗",
+    "region": "高福貯水池",
+    "time": "day",
+    "preference": "インドア",
+    "x": 53,
+    "y": 62,
+    "course": [
+      {
+        "step": 1,
+        "place": "ミルマル近く韓食堂",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "高福貯水池カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "世宗文化芸術会館",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 183,
+    "city": "京畿北部",
+    "region": "坡州ヘイリ",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 18,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "南楊州水の庭園カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "加平ダクカルビ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "加平ジャラ島散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 184,
+    "city": "京畿北部",
+    "region": "楊平",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 85,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "坡州臨津閣",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "加平ダクカルビ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "臨津閣",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 185,
+    "city": "京畿北部",
+    "region": "加平",
+    "time": "day",
+    "preference": "インドア",
+    "x": 29,
+    "y": 12,
+    "course": [
+      {
+        "step": 1,
+        "place": "楊平韓牛焼き",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "ヘイリ芸術カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 3,
+        "place": "加平バンジージャンプ",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 186,
+    "city": "京畿北部",
+    "region": "抱川",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 48,
+    "y": 77,
+    "course": [
+      {
+        "step": 1,
+        "place": "楊平ラフティング",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "南楊州グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "坡州臨津閣",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 187,
+    "city": "京畿北部",
+    "region": "南楊州",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 19,
+    "y": 23,
+    "course": [
+      {
+        "step": 1,
+        "place": "楊平ドゥムルモリカフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "加平ダクカルビ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "南楊州水の庭園",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 188,
+    "city": "京畿北部",
+    "region": "議政府",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 91,
+    "y": 30,
+    "course": [
+      {
+        "step": 1,
+        "place": "加平ジャラ島散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "南楊州グルメ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "プティフランス",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 189,
+    "city": "京畿北部",
+    "region": "東豆川",
+    "time": "day",
+    "preference": "インドア",
+    "x": 44,
+    "y": 57,
+    "course": [
+      {
+        "step": 1,
+        "place": "加平ダクカルビ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "加平ジャラ島カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "坡州プロバンス",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 190,
+    "city": "京畿北部",
+    "region": "漣川",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 71,
+    "y": 93,
+    "course": [
+      {
+        "step": 1,
+        "place": "抱川アートバレー",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "楊平韓牛焼き",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "楊平ドゥムルモリ散歩",
+        "type": "散歩",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 191,
+    "city": "京畿北部",
+    "region": "坡州ヘイリ",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 59,
+    "y": 57,
+    "course": [
+      {
+        "step": 1,
+        "place": "ヘイリ芸術カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "議政府部隊チゲ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "坡州臨津閣",
+        "type": "散歩",
+        "duration": "1時間30分"
+      }
+    ]
+  },
+  {
+    "id": 192,
+    "city": "京畿北部",
+    "region": "楊平",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 97,
+    "y": 81,
+    "course": [
+      {
+        "step": 1,
+        "place": "抱川ビドゥルギナン滝",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "抱川移動カルビ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "ハーブアイランド",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 193,
+    "city": "京畿南部",
+    "region": "水原華城",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 11,
+    "y": 49,
+    "course": [
+      {
+        "step": 1,
+        "place": "華城海カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "板橋グルメ通り",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "光教湖水公園散歩",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 194,
+    "city": "京畿南部",
+    "region": "龍仁",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 97,
+    "y": 52,
+    "course": [
+      {
+        "step": 1,
+        "place": "華城宮坪里海辺",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "安養冷麺店",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "華城チェブド島",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 195,
+    "city": "京畿南部",
+    "region": "板橋",
+    "time": "day",
+    "preference": "インドア",
+    "x": 75,
+    "y": 61,
+    "course": [
+      {
+        "step": 1,
+        "place": "龍仁白岩スンデ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 2,
+        "place": "龍仁感性カフェ",
+        "type": "カフェ",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "光教湖カヤック",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      }
+    ]
+  },
+  {
+    "id": 196,
+    "city": "京畿南部",
+    "region": "安養",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 78,
+    "y": 17,
+    "course": [
+      {
+        "step": 1,
+        "place": "エバーランド",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "板橋グルメ通り",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "水原華城城郭道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 197,
+    "city": "京畿南部",
+    "region": "城南",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 90,
+    "y": 97,
+    "course": [
+      {
+        "step": 1,
+        "place": "龍仁感性カフェ",
+        "type": "カフェ",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "龍仁白岩スンデ",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "華城宮坪里海辺",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 198,
+    "city": "京畿南部",
+    "region": "華城",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 80,
+    "y": 44,
+    "course": [
+      {
+        "step": 1,
+        "place": "華城宮坪里海辺",
+        "type": "散歩",
+        "duration": "30分"
+      },
+      {
+        "step": 2,
+        "place": "板橋グルメ通り",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "華城チェブド島",
+        "type": "観光",
+        "duration": "30分"
+      }
+    ]
+  },
+  {
+    "id": 199,
+    "city": "京畿南部",
+    "region": "平澤",
+    "time": "day",
+    "preference": "インドア",
+    "x": 19,
+    "y": 42,
+    "course": [
+      {
+        "step": 1,
+        "place": "板橋グルメ通り",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "華城海カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "エバーランド",
+        "type": "アクティビティ",
+        "duration": "2時間"
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "city": "京畿南部",
+    "region": "光教",
+    "time": "night",
+    "preference": "アクティビティ",
+    "x": 27,
+    "y": 22,
+    "course": [
+      {
+        "step": 1,
+        "place": "光教湖カヤック",
+        "type": "アクティビティ",
+        "duration": "3時間"
+      },
+      {
+        "step": 2,
+        "place": "平澤海物蒸し",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "安養芸術公園",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "city": "京畿南部",
+    "region": "水原華城",
+    "time": "day",
+    "preference": "カフェ",
+    "x": 83,
+    "y": 88,
+    "course": [
+      {
+        "step": 1,
+        "place": "水原行宮洞カフェ",
+        "type": "カフェ",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "龍仁白岩スンデ",
+        "type": "食事",
+        "duration": "1時間"
+      },
+      {
+        "step": 3,
+        "place": "水原華城城郭道",
+        "type": "散歩",
+        "duration": "1時間"
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "city": "京畿南部",
+    "region": "龍仁",
+    "time": "night",
+    "preference": "アウトドア",
+    "x": 75,
+    "y": 94,
+    "course": [
+      {
+        "step": 1,
+        "place": "水原華城城郭道",
+        "type": "散歩",
+        "duration": "1時間"
+      },
+      {
+        "step": 2,
+        "place": "板橋グルメ通り",
+        "type": "食事",
+        "duration": "1時間30分"
+      },
+      {
+        "step": 3,
+        "place": "韓国民俗村",
+        "type": "観光",
+        "duration": "1時間"
+      }
+    ]
+  }
+]

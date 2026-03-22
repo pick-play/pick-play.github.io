@@ -1,0 +1,228 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "When you're stressed, what do you most want to do?",
+      "options": [
+        { "text": "Work up a sweat with intense exercise", "color": "red", "weight": 2 },
+        { "text": "Hang out and chat with friends", "color": "orange", "weight": 2 },
+        { "text": "Take a walk in nature", "color": "green", "weight": 2 },
+        { "text": "Listen to music quietly alone", "color": "blue", "weight": 2 }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What's your ideal weekend?",
+      "options": [
+        { "text": "A new challenge or sports experience", "color": "red", "weight": 2 },
+        { "text": "Exciting outdoor activities and travel", "color": "orange", "weight": 2 },
+        { "text": "Reading and drawing at a café", "color": "yellow", "weight": 2 },
+        { "text": "Watching movies at home, cozy and relaxed", "color": "indigo", "weight": 2 }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What's your role among friends?",
+      "options": [
+        { "text": "The leader who drives the atmosphere", "color": "red", "weight": 2 },
+        { "text": "The energizer who leads gatherings", "color": "orange", "weight": 2 },
+        { "text": "The peacemaker who mediates conflicts", "color": "green", "weight": 2 },
+        { "text": "The comforter who warmly empathizes", "color": "pink", "weight": 2 }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "When you need to make a decision, you:",
+      "options": [
+        { "text": "Judge quickly and act immediately", "color": "red", "weight": 2 },
+        { "text": "Follow your intuition and choose the exciting option", "color": "orange", "weight": 2 },
+        { "text": "Carefully analyze pros and cons before deciding", "color": "blue", "weight": 2 },
+        { "text": "Listen sufficiently to the opinions of those around you", "color": "green", "weight": 2 }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Which travel style appeals to you most?",
+      "options": [
+        { "text": "Extreme adventures like bungee jumping or surfing", "color": "red", "weight": 2 },
+        { "text": "Backpacking to experience new cultures", "color": "orange", "weight": 2 },
+        { "text": "Visiting famous museums and cultural heritage sites", "color": "purple", "weight": 2 },
+        { "text": "Relaxing at a healing resort", "color": "blue", "weight": 2 }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Which word describes you best?",
+      "options": [
+        { "text": "Passionate and driven", "color": "red", "weight": 2 },
+        { "text": "Bright and positive", "color": "yellow", "weight": 2 },
+        { "text": "Thoughtful and analytical", "color": "blue", "weight": 2 },
+        { "text": "Creative and unique", "color": "purple", "weight": 2 }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "When you're angry, how do you react?",
+      "options": [
+        { "text": "Speak up directly and resolve it immediately", "color": "red", "weight": 2 },
+        { "text": "Take a short break and cool down quickly", "color": "orange", "weight": 2 },
+        { "text": "Quietly organize your thoughts alone", "color": "indigo", "weight": 2 },
+        { "text": "Suppress emotions inside and endure", "color": "green", "weight": 2 }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What's your ideal dating style?",
+      "options": [
+        { "text": "Passionate and proactive expression", "color": "red", "weight": 2 },
+        { "text": "Building diverse experiences together", "color": "orange", "weight": 2 },
+        { "text": "Deep intellectual connection and mutual understanding", "color": "indigo", "weight": 2 },
+        { "text": "Warm and thoughtful care and empathy", "color": "pink", "weight": 2 }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "When meeting someone new, you:",
+      "options": [
+        { "text": "Actively approach first and start a conversation", "color": "orange", "weight": 2 },
+        { "text": "Become friends quickly with bright energy", "color": "yellow", "weight": 2 },
+        { "text": "Slowly observe and get to know the other person", "color": "blue", "weight": 2 },
+        { "text": "Listen to the other person's story first", "color": "pink", "weight": 2 }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When it comes to your dreams and goals:",
+      "options": [
+        { "text": "Set a goal and push forward strongly", "color": "red", "weight": 2 },
+        { "text": "Explore and enjoy various possibilities", "color": "orange", "weight": 2 },
+        { "text": "Deeply explore and find philosophical meaning", "color": "indigo", "weight": 2 },
+        { "text": "Express uniquely using artistic sensibility", "color": "purple", "weight": 2 }
+      ]
+    }
+  ],
+  "results": {
+    "red": {
+      "name": "Red",
+      "title": "Passionate Leader",
+      "emoji": "🔴",
+      "color": "from-red-500 to-rose-600",
+      "bgColor": "#EF4444",
+      "swatchClass": "bg-red-500",
+      "description": "You are a person overflowing with passion and energy. With strong will and drive you charge toward your goals without hesitation, inspiring and energizing those around you. Leadership comes naturally, and you are the type who confidently points the way in any situation.",
+      "traits": ["Strong leadership", "Burning passion", "Quick decisiveness", "Competitive spirit", "Powerful drive", "Confidence"],
+      "strengths": ["Powerful drive and execution toward goals", "Indomitable will that doesn't waver in any situation", "Natural leadership that guides the team", "Decisive judgment that shines in a crisis"],
+      "weaknesses": ["Impatience can lead to mistakes", "Tendency to overlook others' opinions", "Excessive competitiveness can harm relationships"],
+      "compatible": ["orange", "yellow"],
+      "advice": "Sometimes take a step back and listen to those around you. Your passion is your greatest weapon, but paired with warm consideration you become a true leader."
+    },
+    "orange": {
+      "name": "Orange",
+      "title": "Energetic Adventurer",
+      "emoji": "🟠",
+      "color": "from-orange-500 to-amber-500",
+      "bgColor": "#F97316",
+      "swatchClass": "bg-orange-500",
+      "description": "You are an adventurer overflowing with energy who loves new things. You easily mingle with people and have the ability to brighten the atmosphere wherever you go. You're the type who energizes those around you with an open mind toward new experiences and positive energy.",
+      "traits": ["Vibrant sociability", "Adventurous spirit", "Cheerfulness", "Openness", "Spontaneity", "Optimism"],
+      "strengths": ["Flexibility that adapts quickly in any environment", "Outstanding sociability that makes friends easily", "Positive attitude that enjoys new challenges", "Energy that brightens even a dark atmosphere"],
+      "weaknesses": ["Deep focus can be difficult", "Tendency to make impulsive decisions", "Difficulty staying in one place for long"],
+      "compatible": ["red", "yellow"],
+      "advice": "Your bright energy lights up the world. Occasionally stop and savor deep relationships and goals. A tree with deep roots grows taller."
+    },
+    "yellow": {
+      "name": "Yellow",
+      "title": "Bright Optimist",
+      "emoji": "🟡",
+      "color": "from-yellow-400 to-amber-400",
+      "bgColor": "#EAB308",
+      "swatchClass": "bg-yellow-400",
+      "description": "You are like the sun that brightens the world. You find the positive side in any situation and bring vitality to those around you with creative ideas. You have a wonderful sense of humor and a natural talent for making people smile.",
+      "traits": ["Bright optimism", "Creative thinking", "Sense of humor", "Warm friendliness", "Free spirit", "Spontaneous ideas"],
+      "strengths": ["Ability to find positivity in any situation", "Creative and unique ideas", "A presence that brings laughter and vitality to people", "Free thinking that breaks the mold"],
+      "weaknesses": ["Concentration can be difficult in serious situations", "Mood swings can occur", "Tendency to lack detailed planning"],
+      "compatible": ["orange", "pink"],
+      "advice": "Your brightness is the most precious gift in the world. Sometimes sit down seriously and make a calm plan. When your creativity is paired with execution, infinite possibilities open up."
+    },
+    "green": {
+      "name": "Green",
+      "title": "Peaceful Harmonizer",
+      "emoji": "🟢",
+      "color": "from-green-500 to-emerald-600",
+      "bgColor": "#22C55E",
+      "swatchClass": "bg-green-500",
+      "description": "You are a peaceful person who values balance and harmony. You are connected to nature and form deep bonds with the people around you. You have a natural ability to mediate conflicts and create an environment where everyone feels comfortable.",
+      "traits": ["Excellent empathy", "Nature-loving", "Sense of balance", "Patience", "Inclusivity", "Pursuit of harmony"],
+      "strengths": ["Deep empathy that understands everyone's perspective", "Mediation ability that softly resolves conflict", "Consistent and stable trustworthiness", "Deep understanding of nature and life"],
+      "weaknesses": ["Difficulty asserting your own opinion strongly", "Can appear indecisive", "Can get exhausted from absorbing too many emotions from others"],
+      "compatible": ["blue", "pink"],
+      "advice": "Your warm inclusivity makes the world more beautiful. Occasionally listen to your own emotions and desires too. You need to love yourself first to love others even better."
+    },
+    "blue": {
+      "name": "Blue",
+      "title": "Calm Thinker",
+      "emoji": "🔵",
+      "color": "from-blue-500 to-cyan-600",
+      "bgColor": "#3B82F6",
+      "swatchClass": "bg-blue-500",
+      "description": "You are a thinker with deep thought and analytical ability. You value reason over emotion and are trusted for your careful judgment. You have an outstanding ability to solve even complex problems logically with a calm attitude.",
+      "traits": ["Cool analytical ability", "Reliability", "Calmness", "Logical thinking", "Deep reflection", "Honesty"],
+      "strengths": ["Cool-headed judgment not swayed by emotions", "Ability to systematically solve complex problems", "Loyalty that never betrays once trust is given", "Inquisitiveness that builds deep knowledge and expertise"],
+      "weaknesses": ["Poor emotional expression can make you appear cold", "Stress from pursuing excessive perfection", "Slower to adapt to new changes"],
+      "compatible": ["green", "indigo"],
+      "advice": "Your logical thinking is an ability the world truly needs. Occasionally listen to your heart and practice expressing emotions. The harmony of reason and emotion will complete you even more."
+    },
+    "indigo": {
+      "name": "Indigo",
+      "title": "Intuitive Explorer",
+      "emoji": "🌑",
+      "color": "from-indigo-600 to-blue-800",
+      "bgColor": "#4F46E5",
+      "swatchClass": "bg-indigo-600",
+      "description": "You are an intuitive explorer who explores deep inner worlds. You seek meaning beyond the surface, enjoy philosophical questions, and see through to the essence with sharp intuition. You possess a special insight that sees what others cannot.",
+      "traits": ["Sharp intuition", "Deep contemplation", "Philosophical thinking", "Insight", "Inner exploration", "Mystique"],
+      "strengths": ["Excellent intuition that sees the invisible", "Philosophical thinking that explores the deep meaning of life", "Ability to read complex patterns and connections", "Sensitivity that detects even hidden emotions of others"],
+      "weaknesses": ["Can fall into thoughts disconnected from reality", "Can be lonely by forming deep relationships with only a few", "Communication can be difficult when trapped in your own world"],
+      "compatible": ["blue", "purple"],
+      "advice": "Your deep insight is the light the world needs. Occasionally step out of deep contemplation and enjoy everyday pleasures. The beauty of the earthly world is also well worth exploring."
+    },
+    "purple": {
+      "name": "Purple",
+      "title": "Mysterious Artist",
+      "emoji": "🟣",
+      "color": "from-purple-500 to-violet-700",
+      "bgColor": "#A855F7",
+      "swatchClass": "bg-purple-500",
+      "description": "You are a mysterious artist in whom creativity and spirituality are combined. You view the world with a unique perspective and create beauty with artistic sensibility and imagination. You are a strongly individual and original being, a free spirit who refuses the ordinary.",
+      "traits": ["Creative artistry", "Originality", "Mystique", "Spiritual sensitivity", "Individuality", "Rich imagination"],
+      "strengths": ["Original and beautiful artistic expression", "Free thinking unbounded by convention", "Ability to create beauty with deep sensitivity", "Inclusive perspective that respects individuality and diversity"],
+      "weaknesses": ["Tendency to neglect practical matters", "Easily feels isolated when not understood", "Consistency can waver depending on mood"],
+      "compatible": ["indigo", "pink"],
+      "advice": "Your creativity is the power that makes the world more beautiful. Occasionally maintain a connection with reality and share your art with the world. Your unique color can inspire many people."
+    },
+    "pink": {
+      "name": "Pink",
+      "title": "Warm Empath",
+      "emoji": "🩷",
+      "color": "from-pink-400 to-rose-500",
+      "bgColor": "#EC4899",
+      "swatchClass": "bg-pink-400",
+      "description": "You are a master of empathy who wraps those around you with a warm heart. You respond sensitively to others' emotions and create a safe space where people can comfortably open their hearts. You are the type who builds precious relationships with delicate care and sincere love.",
+      "traits": ["Deep empathy", "Warm consideration", "Romantic", "Delicacy", "Kindness", "Emotional"],
+      "strengths": ["Delicate empathy that accurately reads others' emotions", "Warm heart that treasures relationships", "Friendliness that makes the atmosphere cozy", "Ability to give strength through sincere comfort and encouragement"],
+      "weaknesses": ["Sensitive emotions make you easily hurt", "Tendency to sacrifice yourself too much for others", "Can struggle with not being able to refuse"],
+      "compatible": ["yellow", "green"],
+      "advice": "Your warmth is the most precious gift in the world. Don't forget to cherish and love yourself first. When you are happy, those around you can shine even brighter."
+    }
+  },
+  "colorMeta": {
+    "red":    { "hex": "#EF4444", "label": "Red" },
+    "orange": { "hex": "#F97316", "label": "Orange" },
+    "yellow": { "hex": "#EAB308", "label": "Yellow" },
+    "green":  { "hex": "#22C55E", "label": "Green" },
+    "blue":   { "hex": "#3B82F6", "label": "Blue" },
+    "indigo": { "hex": "#4F46E5", "label": "Indigo" },
+    "purple": { "hex": "#A855F7", "label": "Purple" },
+    "pink":   { "hex": "#EC4899", "label": "Pink" }
+  }
+}

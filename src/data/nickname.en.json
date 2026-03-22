@@ -1,0 +1,26 @@
+{
+  "귀여운": {
+    "prefix": ["Fluffy", "Tiny", "Sparkly", "Snowy", "Cozy", "Sunny", "Cotton", "Dreamy", "Rosy", "Pudding", "Bubbly", "Starry", "Honey", "Mochi", "Pastel", "Silky", "Dewy", "Sprout", "Petal", "Breezy"],
+    "suffix": ["Cloud", "Star", "Moon", "Bunny", "Kitty", "Hammy", "Sky", "Rainbow", "Candy", "Fluff", "Blossom", "Butterfly", "Fairy", "Pudding", "Marshmallow", "Jelly", "Mochi", "Tofu", "Berry", "Cherry"]
+  },
+  "웃긴": {
+    "prefix": ["Goofy", "Lazy", "Hungry", "Wobbly", "Clumsy", "Sleepy", "Grumpy", "Dizzy", "Silly", "Potato", "Sneezy", "Wonky", "Droopy", "Bumbling", "Waddling", "Snoozy", "Chunky", "Noodle", "Wiggly", "Dozy"],
+    "suffix": ["Lord", "King", "Hero", "Master", "Doctor", "Wizard", "Baron", "Duke", "Chief", "Captain", "Emperor", "General", "Professor", "Commander", "Boss", "Champion", "Legend", "Overlord", "Knight", "Guru"]
+  },
+  "멋있는": {
+    "prefix": ["Dark", "Shadow", "Night", "Steel", "Black", "Silver", "Gold", "Crimson", "Iron", "Storm", "Quantum", "Neon", "Cyber", "Cobalt", "Titan", "Phantom", "Laser", "Raven", "Inferno", "Zero"],
+    "suffix": ["Knight", "Hunter", "Warrior", "Slayer", "King", "Blade", "Edge", "Soul", "Force", "Strike", "Rider", "Master", "Guardian", "Legend", "Impact", "Spirit", "Assassin", "Ranger", "Sniper", "Commander"]
+  },
+  "게임용": {
+    "prefix": ["Shadow", "Nova", "Dark", "Storm", "Blaze", "Iron", "Cyber", "Ghost", "Venom", "Hyper", "Ultra", "Omega", "Alpha", "Neon", "Void", "Chaos", "Phoenix", "Savage", "Stealth", "Apex"],
+    "suffix": ["X", "99", "King", "Pro", "GG", "OP", "God", "ACE", "Max", "Zero", "One", "Elite", "Prime", "Force", "Strike", "Blade", "Hunter", "Sniper", "Wolf", "Dragon"]
+  },
+  "판타지": {
+    "prefix": ["Ar", "El", "Dragon", "Silver", "Golden", "Dark", "Mage", "Hero", "Paladin", "Demon", "Fairy", "Angel", "Devil", "Sage", "Prophet", "Overlord", "Champion", "Ancient", "Legendary", "Divine"],
+    "suffix": ["Themis", "Rian", "Slayer", "Wing", "Sword", "Spear", "Craft", "Heart", "Soul", "Blade", "Fire", "Water", "Earth", "Light", "Dark", "Dragon", "Knight", "Mage", "Sage", "Guardian"]
+  },
+  "감성적": {
+    "prefix": ["Starlight", "Dawn", "Moonlit", "Dusk", "Misty", "Dewy", "Spring Rain", "Summer Night", "Autumn Wind", "Winter Star", "Dreamlike", "Above the Sky", "Under the Cloud", "Wind-Borne", "Like a Wave", "In the Sunlight", "In the Dark", "Glowing", "Drifting", "Flowing"],
+    "suffix": ["Wanderer", "Wind", "Song", "Poem", "Story", "Memory", "Flutter", "Longing", "Light", "Sound", "Scent", "Breath", "Wave", "Star", "Moon", "Dream", "Sky", "Dawn", "Dusk", "Mist"]
+  }
+}

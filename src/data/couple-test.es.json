@@ -1,0 +1,197 @@
+{
+  "titles": {
+    "90": {
+      "title": "Almas Gemelas",
+      "emoji": "💕",
+      "desc": "¡Esta compatibilidad es verdaderamente extraordinaria! Nacieron el uno para el otro — una conexión del destino. Juntos pueden superar cualquier cosa."
+    },
+    "80": {
+      "title": "Pareja Perfecta",
+      "emoji": "✨",
+      "desc": "¡Compatibilidad de primer nivel! Se potencian mutuamente y compensan las carencias del otro — son verdaderamente la pareja perfecta."
+    },
+    "70": {
+      "title": "Perfectamente Compatibles",
+      "emoji": "🥰",
+      "desc": "¡Se llevan de maravilla! Se dan comodidad mutuamente y se complementan de forma natural."
+    },
+    "60": {
+      "title": "Creciendo Juntos",
+      "emoji": "🌱",
+      "desc": "¡Crecen juntos como pareja! Aprendiendo de las diferencias del otro, pueden convertirse en mejores versiones de sí mismos."
+    },
+    "50": {
+      "title": "Pareja con Esfuerzo",
+      "emoji": "💪",
+      "desc": "Esta relación necesita un poco más de esfuerzo. Si ambos genuinamente quieren entenderse, pueden construir algo grandioso."
+    },
+    "40": {
+      "title": "Los Opuestos se Atraen",
+      "emoji": "🔥",
+      "desc": "¡Sus encantos opuestos se atraen! Las diferencias lo hacen emocionante, y pueden mostrarse mundos nuevos el uno al otro."
+    },
+    "0": {
+      "title": "Pareja Desafiante",
+      "emoji": "🎯",
+      "desc": "No es una relación fácil, ¡pero el amor se construye con esfuerzo! La voluntad de entenderse de verdad es lo más importante."
+    }
+  },
+  "categories": {
+    "성격": {
+      "icon": "🧠",
+      "descriptions": {
+        "high": [
+          "Sus personalidades encajan de manera asombrosa. Estar juntos se siente natural y cómodo.",
+          "Son una pareja con una gran compatibilidad de personalidad. Sus valores y estilos de vida son muy similares.",
+          "Se entienden y se respetan profundamente. Los conflictos se resuelven con facilidad.",
+          "¡La compatibilidad de personalidad es sobresaliente! Sus fortalezas y debilidades se complementan a la perfección.",
+          "Sus personalidades encajan como piezas de un rompecabezas. Cuanto más tiempo pasan juntos, mejor se compenetran."
+        ],
+        "medium": [
+          "Hay similitudes y diferencias en sus personalidades. Es una relación equilibrada.",
+          "Sus diferentes personalidades a veces crean sinergia y a veces generan fricción.",
+          "Reconocer y cuidar las diferencias de personalidad hará que la relación sea aún mejor.",
+          "Ambos tienen sus propias cualidades únicas. Respetar las diferencias del otro es clave.",
+          "Hay áreas donde sus personalidades necesitan ajuste, pero con esfuerzo pueden ser un gran equipo."
+        ],
+        "low": [
+          "Hay diferencias de personalidad, pero eso puede ser precisamente su encanto.",
+          "Entender las diferentes personalidades del otro puede llevar tiempo. Practiquen la paciencia.",
+          "Incluso con personalidades distintas, si se aman pueden adaptarse el uno al otro.",
+          "Las diferencias de personalidad pueden causar malentendidos — comuníquense con más frecuencia.",
+          "Necesitan ver las diferentes personalidades del otro como fortalezas."
+        ]
+      }
+    },
+    "연애": {
+      "icon": "💝",
+      "descriptions": {
+        "high": [
+          "¡Sus estilos de pareja encajan perfectamente! Naturalmente saben lo que el otro quiere y lo expresan.",
+          "¡Su química romántica es asombrosa! Cada momento juntos se siente especial.",
+          "Sus formas de expresar el amor se alinean perfectamente. Es una relación llena de afecto.",
+          "¡La compatibilidad romántica es la mejor! Ambos saben cómo hacer latir el corazón del otro.",
+          "Siempre que están juntos se crea una atmósfera especial. La mejor química de pareja."
+        ],
+        "medium": [
+          "Sus estilos de pareja difieren un poco, pero el proceso de adaptarse puede ser agradable.",
+          "Aprender y comprender los enfoques románticos del otro puede profundizar la relación.",
+          "Puede que quieran cosas ligeramente distintas en el amor. La conversación honesta ayuda.",
+          "Algunos aspectos de sus patrones románticos coinciden, otros no. El equilibrio es clave.",
+          "Para mejorar la compatibilidad romántica, intenten comprender mejor las formas de expresión del otro."
+        ],
+        "low": [
+          "Sus estilos de pareja son bastante diferentes. Respetar el enfoque del otro es importante.",
+          "Querer cosas distintas del romance puede sentirse frustrante a veces. Resuélvanlo con conversación.",
+          "Para mejorar la compatibilidad romántica, aprendan el lenguaje del amor del otro.",
+          "Los diferentes estilos de pareja pueden causar conflicto — se necesitan comprensión y consideración.",
+          "Reconocer las diferencias en sus enfoques románticos y hacer un esfuerzo por adaptarse es necesario."
+        ]
+      }
+    },
+    "소통": {
+      "icon": "💬",
+      "descriptions": {
+        "high": [
+          "¡Su comunicación es verdaderamente excelente! Se entienden incluso sin palabras.",
+          "Sus estilos de comunicación encajan perfectamente. Con cada conversación se sienten más cercanos.",
+          "Son los mejores compañeros de comunicación — expresan libremente emociones y pensamientos.",
+          "La conversación es natural y cómoda. Pueden hablar honestamente sobre cualquier tema.",
+          "Se entienden perfectamente tanto en palabras como en acciones."
+        ],
+        "medium": [
+          "La comunicación generalmente es buena, pero pueden surgir malentendidos ocasionalmente.",
+          "Entender mejor los estilos de comunicación del otro permitirá conversaciones más fluidas.",
+          "Practicar la expresión directa en temas importantes puede ser de ayuda.",
+          "Un poco más de esfuerzo en la comunicación puede hacer la relación mucho más profunda.",
+          "Las conversaciones pueden sentirse incómodas a veces, pero con esfuerzo pueden mejorar mucho."
+        ],
+        "low": [
+          "Puede haber dificultades de comunicación. Hablen con más frecuencia y más honestamente.",
+          "Las diferentes formas de expresarse hacen que los malentendidos sean fáciles. Se necesita empatía.",
+          "Para acercar los estilos de comunicación, aprendan el lenguaje del otro.",
+          "Las diferentes formas de expresar sentimientos pueden sentirse frustrantes. Practiquen la paciencia.",
+          "Para mejorar la compatibilidad de comunicación, practiquen escuchar sin juzgar."
+        ]
+      }
+    },
+    "미래": {
+      "icon": "🔮",
+      "descriptions": {
+        "high": [
+          "¡Sus visiones del futuro se alinean perfectamente! El futuro que sueñan juntos será hermoso.",
+          "Sus metas de vida y valores encajan bien. El futuro juntos es algo que esperar con ansias.",
+          "¡La compatibilidad futura es la mejor! Son la clase de pareja que puede tomar decisiones de vida importantes juntos.",
+          "Sus planes de futuro naturalmente se complementan. Es una relación donde pueden crecer juntos.",
+          "Los futuros que quieren son similares. Pueden caminar hacia adelante mirando en la misma dirección."
+        ],
+        "medium": [
+          "Sus pensamientos sobre el futuro son algo similares pero también hay diferencias.",
+          "Sería bueno tener suficiente conversación sobre los objetivos de futuro del otro.",
+          "Sus planes para el futuro pueden diferir algo. Respetar los sueños del otro es importante.",
+          "Para mejorar la compatibilidad futura, necesitan tiempo para establecer metas de vida juntos.",
+          "Sus direcciones para el futuro pueden diferir ligeramente — comiencen a hablar pronto."
+        ],
+        "low": [
+          "Sus visiones del futuro son bastante diferentes. Se necesita una conversación seria.",
+          "Las diferencias en metas de vida y valores pueden convertirse en conflicto más adelante.",
+          "Absolutamente necesitan tiempo para compartir y alinear sus planes de futuro.",
+          "Se necesita esfuerzo para comprender los sueños y metas del otro en cuanto a la compatibilidad futura.",
+          "Aunque ahora sean diferentes, el proceso de construir un futuro juntos es lo que importa. Hablen a menudo."
+        ]
+      }
+    },
+    "운명": {
+      "icon": "⭐",
+      "descriptions": {
+        "high": [
+          "¡Están conectados como el destino! Su encuentro en sí mismo se siente como un milagro.",
+          "Todo — signos del zodiaco, nombres — apunta a este encuentro. Es una relación destinada.",
+          "Parece que el universo los conectó. ¡Este encuentro estaba destinado a ser!",
+          "Se siente una fuerte sensación de destino en sus nombres. Una conexión verdaderamente especial.",
+          "¡Están conectados por el hilo del destino! Juntos pueden superar cualquier dificultad."
+        ],
+        "medium": [
+          "Tienen cierta conexión. Cuiden y nutran este encuentro.",
+          "Una conexión hecha de muchas coincidencias. Construyan su destino juntos.",
+          "Más que el destino, es una relación construida por elección — lo que puede hacerla aún más valiosa.",
+          "El hilo de conexión está ahí, pero fortalecerlo depende del esfuerzo de ambos.",
+          "Hay un sentido del destino entre ustedes. Apreciarse mutuamente puede hacerlo aún más especial."
+        ],
+        "low": [
+          "Esta relación está construida más por el esfuerzo que por el destino — lo que puede hacerla más significativa.",
+          "El hilo de conexión es delgado, pero a través del esfuerzo mutuo pueden construir un vínculo fuerte.",
+          "¡No tiene que ser el destino! El amor creado por elección puede ser más hermoso.",
+          "Para que este encuentro se convierta en destino, se necesita el esfuerzo sincero de ambos.",
+          "Aunque la puntuación del destino sea baja, la voluntad de ambos puede cambiar todo."
+        ]
+      }
+    }
+  },
+  "advice": {
+    "high": [
+      "Conocerse aún más profundamente hará la relación incluso mejor. Ya es la mejor, y puede ser aún mejor — ¡increíble!",
+      "Cuiden esta hermosa conexión. Cada momento juntos se convertirá en un recuerdo especial.",
+      "Expresen gratitud el uno al otro con frecuencia. No pierdan el corazón cariñoso que tienen ahora.",
+      "Su relación es verdaderamente especial. Las personas a su alrededor se sentirán conmovidas por su química.",
+      "¡Este nivel de compatibilidad es verdaderamente raro! Apréciense el uno al otro de por vida.",
+      "Juntos pueden lograr cualquier cosa. Apoyen los sueños del otro."
+    ],
+    "medium": [
+      "Practiquen ver las diferencias del otro como fortalezas. Las diferencias son lo que los hace atractivos.",
+      "Comuníquense con más frecuencia y compartan sus pensamientos. Cuanto más profunda la comprensión, mejor la compatibilidad.",
+      "Sean agradecidos y elogiense incluso por cosas pequeñas. La energía positiva mejora las relaciones.",
+      "Creen nuevas experiencias juntos. Los recuerdos compartidos los acercarán más.",
+      "Hagan un hábito de pensar primero en las fortalezas del otro. La relación mejorará notablemente.",
+      "Sean el apoyo del otro incluso en los momentos difíciles. Eso es la verdadera asociación."
+    ],
+    "low": [
+      "Los sentimientos que tienen el uno por el otro importan más que la puntuación ahora mismo. ¡No se rindan!",
+      "Incluso con diferencias, el amor es suficiente. No dejen de hacer el esfuerzo de entenderse.",
+      "Está bien tener muchas diferencias. Significa que hay mucho que aprender el uno del otro.",
+      "No es una relación fácil, pero puede volverse aún más especial. Trabajen juntos en ella.",
+      "El amor verdadero supera las puntuaciones de compatibilidad. El amor que se tienen es lo más importante.",
+      "El vínculo más fuerte se forja cuando superan juntos una relación difícil. ¡Acepten el desafío!"
+    ]
+  }
+}

@@ -1,0 +1,487 @@
+{
+  "male": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "When you feel the team project is going in the wrong direction, you:",
+        "category": "Decision Making",
+        "optionA": { "text": "Immediately speak up and steer things in the direction you think is right", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Mull it over alone and cautiously bring it up when the timing feels right", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 2,
+        "question": "At a gathering full of people you're meeting for the first time, you tend to:",
+        "category": "Sociability",
+        "optionA": { "text": "Initiate conversations and lead the mood", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Sit next to someone comfortable and gradually blend in", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 3,
+        "question": "When a friend vents about a long-running worry, you:",
+        "category": "Emotional Expression",
+        "optionA": { "text": "Listen for a bit and then say 'So what are you going to do?' trying to find a solution", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Listen all the way through and empathize: 'That sounds really tough'", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 4,
+        "question": "When a serious conflict arises with your partner, you:",
+        "category": "Conflict Resolution",
+        "optionA": { "text": "Want to talk it out and resolve it right then and there, even when emotions run high", "type": "teto", "weight": 14 },
+        "optionB": { "text": "Want to calm down alone first and then have a composed conversation", "type": "egen", "weight": 14 }
+      },
+      {
+        "id": 5,
+        "question": "When you start liking someone, your first move is:",
+        "category": "Dating Style",
+        "optionA": { "text": "Text them without hesitation or suggest grabbing a meal together", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Show subtle hints while waiting for them to make the first move", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 6,
+        "question": "When you feel you've been treated unfairly at work or school:",
+        "category": "Conflict Resolution",
+        "optionA": { "text": "Raise the issue directly on the spot or the very next day", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Feel uncomfortable inside but wait for the situation to improve rather than saying anything", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 7,
+        "question": "Your attitude toward anniversaries and special events in a relationship:",
+        "category": "Dating Style",
+        "optionA": { "text": "You know you should acknowledge them, but it's not really your style — it feels awkward", "type": "teto", "weight": 9 },
+        "optionB": { "text": "You thoughtfully commemorate even small milestones and have planned surprises before", "type": "egen", "weight": 9 }
+      },
+      {
+        "id": 8,
+        "question": "When facing an important life decision (changing jobs, moving, etc.), you:",
+        "category": "Decision Making",
+        "optionA": { "text": "Trust your own judgment over others' opinions once you've weighed things sufficiently", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Gather advice from people around you and try to decide as carefully as possible", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 9,
+        "question": "When you're really angry, you usually:",
+        "category": "Emotional Expression",
+        "optionA": { "text": "Express the reason right away and release the anger quickly", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Go quiet and need some time alone", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 10,
+        "question": "If you later found out your partner had met your close friend one-on-one:",
+        "category": "Dating Style",
+        "optionA": { "text": "Confront them directly asking why they didn't mention it beforehand", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Feel uncomfortable but find it hard to bring up and just stew over it alone", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 11,
+        "question": "When stress has piled up to the extreme, you:",
+        "category": "Lifestyle",
+        "optionA": { "text": "Release energy through exercise, gaming, or activities", "type": "teto", "weight": 8 },
+        "optionB": { "text": "Work through your feelings through music or movies", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 12,
+        "question": "When a close friend tells you 'You've been feeling a bit cold lately,' you:",
+        "category": "Sociability",
+        "optionA": { "text": "Explain that it's not coldness — this is just how you are", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Reflect and say 'Oh, I came across that way? I'll be more mindful'", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 13,
+        "question": "Early in dating, when the other person starts messaging less:",
+        "category": "Dating Style",
+        "optionA": { "text": "Ask them directly or maintain your own pace and wait", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Wonder if you did something wrong and become anxious and watchful", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 14,
+        "question": "What you prioritize most in life:",
+        "category": "Values",
+        "optionA": { "text": "Self-fulfillment through achievement, career, and reaching goals", "type": "teto", "weight": 14 },
+        "optionB": { "text": "Relationships with cherished people, emotional connection, and stability", "type": "egen", "weight": 14 }
+      },
+      {
+        "id": 15,
+        "question": "When weekend plans are suddenly cancelled:",
+        "category": "Lifestyle",
+        "optionA": { "text": "Immediately make other plans or head out to do something productive", "type": "teto", "weight": 7 },
+        "optionB": { "text": "See it as a good chance and relax comfortably at home", "type": "egen", "weight": 7 }
+      },
+      {
+        "id": 16,
+        "question": "In long-standing friendships, what you care about more:",
+        "category": "Sociability",
+        "optionA": { "text": "Keeping promises, loyalty, and being there when needed", "type": "teto", "weight": 9 },
+        "optionB": { "text": "Deep conversations, emotional exchange, and sharing each other's concerns", "type": "egen", "weight": 9 }
+      },
+      {
+        "id": 17,
+        "question": "Right after being told a breakup is happening, your reaction is:",
+        "category": "Emotional Expression",
+        "optionA": { "text": "Want to know the clear reason and push for an explanation", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Go silent in shock and swallow your tears alone", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 18,
+        "question": "If you were to describe your own personality:",
+        "category": "Values",
+        "optionA": { "text": "Direct and honest. Beating around the bush is more uncomfortable", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Sensitive and emotional. I place great importance on atmosphere and feelings", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 19,
+        "question": "When unexpected problems arise during a trip (wrong accommodation, bad weather, etc.):",
+        "category": "Decision Making",
+        "optionA": { "text": "Immediately look for alternatives and quickly get the situation under control", "type": "teto", "weight": 8 },
+        "optionB": { "text": "Panic and rely on a guide or travel companion for the moment", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 20,
+        "question": "When your partner says 'Why do you express so little emotion?', you:",
+        "category": "Emotional Expression",
+        "optionA": { "text": "Expressing affection feels awkward for me, but that doesn't mean I don't care", "type": "teto", "weight": 6 },
+        "optionB": { "text": "Really? I'll try to show it more. Sorry about that", "type": "egen", "weight": 6 },
+        "tiebreaker": true
+      }
+    ]
+  },
+  "female": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "When conversation with friends becomes awkward, you:",
+        "category": "Sociability",
+        "optionA": { "text": "Change the subject yourself or lighten the mood first", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Watch and wait for someone else to fix it", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 2,
+        "question": "When you start liking a guy, you:",
+        "category": "Dating Style",
+        "optionA": { "text": "Ask for his contact info yourself or suggest grabbing food", "type": "teto", "weight": 14 },
+        "optionB": { "text": "Show you care noticeably and wait for him to make the first move", "type": "egen", "weight": 14 }
+      },
+      {
+        "id": 3,
+        "question": "When an argument breaks out with your partner, you:",
+        "category": "Conflict Resolution",
+        "optionA": { "text": "Want to bring it up and resolve it on the spot even if it's uncomfortable", "type": "teto", "weight": 13 },
+        "optionB": { "text": "When you're hurt, you put distance between you and sort out your feelings alone", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 4,
+        "question": "When a friend shares a serious worry with you:",
+        "category": "Emotional Expression",
+        "optionA": { "text": "Think through realistically what can be done together", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Empathize fully with their feelings and offer comfort first", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 5,
+        "question": "If you had to name what matters most in your life:",
+        "category": "Values",
+        "optionA": { "text": "Career, personal growth, achieving what I want", "type": "teto", "weight": 15 },
+        "optionB": { "text": "Cherished people, warm relationships, emotional stability", "type": "egen", "weight": 15 }
+      },
+      {
+        "id": 6,
+        "question": "When your partner's messages become sparse for no apparent reason:",
+        "category": "Dating Style",
+        "optionA": { "text": "Reach out right away asking 'Hey, everything okay?'", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Worry that you might have done something wrong and wait for them to message", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 7,
+        "question": "When you've made up your mind to break up:",
+        "category": "Dating Style",
+        "optionA": { "text": "Once decided, tell them directly with no lingering regrets and end things cleanly", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Hesitate for a long time, hoping they'll sense it or expressing it indirectly", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 8,
+        "question": "When your opinion is ignored at work or school:",
+        "category": "Conflict Resolution",
+        "optionA": { "text": "Explain it logically again or raise the issue", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Feel aggrieved inside but let it go given the atmosphere", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 9,
+        "question": "Your preferred way to relieve stress:",
+        "category": "Lifestyle",
+        "optionA": { "text": "Release energy outside through exercise, shopping, or outings", "type": "teto", "weight": 8 },
+        "optionB": { "text": "Soothe your feelings at home with dramas, music, or good food", "type": "egen", "weight": 8 }
+      },
+      {
+        "id": 10,
+        "question": "Your role in conversations with girlfriends:",
+        "category": "Sociability",
+        "optionA": { "text": "The one who gives honest advice and delivers hard truths", "type": "teto", "weight": 10 },
+        "optionB": { "text": "The one who empathizes, comforts, and listens to feelings", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 11,
+        "question": "When your partner makes a decision that differs from your thinking:",
+        "category": "Conflict Resolution",
+        "optionA": { "text": "State your opinion clearly and try to persuade them or ask them to accommodate you", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Feel hurt but respect their decision and try to go along with it", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 12,
+        "question": "Your attitude on a blind date or group date:",
+        "category": "Sociability",
+        "optionA": { "text": "Throw out questions first and lead the conversation", "type": "teto", "weight": 9 },
+        "optionB": { "text": "Respond well to the other person's story and follow along comfortably", "type": "egen", "weight": 9 }
+      },
+      {
+        "id": 13,
+        "question": "The ideal relationship you want in romance:",
+        "category": "Dating Style",
+        "optionA": { "text": "A partnership where we're independent yet grow together", "type": "teto", "weight": 14 },
+        "optionB": { "text": "A deep emotional bond where we lean on and depend on each other", "type": "egen", "weight": 14 }
+      },
+      {
+        "id": 14,
+        "question": "When you're angry:",
+        "category": "Emotional Expression",
+        "optionA": { "text": "Say directly why you're angry and try to resolve it", "type": "teto", "weight": 12 },
+        "optionB": { "text": "Go quiet and bottle up your feelings alone until you explode", "type": "egen", "weight": 12 }
+      },
+      {
+        "id": 15,
+        "question": "When facing an important decision:",
+        "category": "Decision Making",
+        "optionA": { "text": "Trust your instincts and logic and decide quickly", "type": "teto", "weight": 13 },
+        "optionB": { "text": "Listen to enough input from people around you and decide carefully", "type": "egen", "weight": 13 }
+      },
+      {
+        "id": 16,
+        "question": "When you get time to yourself:",
+        "category": "Lifestyle",
+        "optionA": { "text": "Do something productive like self-improvement, exercise, or planning", "type": "teto", "weight": 7 },
+        "optionB": { "text": "Recharge emotionally — music, movies, a walk to restore your feelings", "type": "egen", "weight": 7 }
+      },
+      {
+        "id": 17,
+        "question": "When your partner has prepared a surprise event for you:",
+        "category": "Emotional Expression",
+        "optionA": { "text": "You're grateful but feel a bit embarrassed and unsure how to react", "type": "teto", "weight": 9 },
+        "optionB": { "text": "Feel deeply touched, almost on the verge of tears, and express joy openly", "type": "egen", "weight": 9 }
+      },
+      {
+        "id": 18,
+        "question": "When a close friend criticizes your behavior:",
+        "category": "Sociability",
+        "optionA": { "text": "Honestly explain your position or push back", "type": "teto", "weight": 10 },
+        "optionB": { "text": "Accept it for now and reflect on it alone later", "type": "egen", "weight": 10 }
+      },
+      {
+        "id": 19,
+        "question": "What you're like after a breakup:",
+        "category": "Emotional Expression",
+        "optionA": { "text": "Return to daily life quickly and focus on new things", "type": "teto", "weight": 11 },
+        "optionB": { "text": "Feelings linger for a long time as you dwell on memories alone", "type": "egen", "weight": 11 }
+      },
+      {
+        "id": 20,
+        "question": "When your partner says 'You sometimes feel too blunt to me,' you:",
+        "category": "Conflict Resolution",
+        "optionA": { "text": "I'm not blunt — this is just my style", "type": "teto", "weight": 6 },
+        "optionB": { "text": "Did you feel that way? I'll express myself more. Sorry", "type": "egen", "weight": 6 },
+        "tiebreaker": true
+      }
+    ]
+  },
+  "results": {
+    "tetoMale": {
+      "title": "Teto Male",
+      "subtitle": "Testosterone Male",
+      "emoji": "🦁",
+      "color": "from-blue-500 to-indigo-600",
+      "description": "A strong leader with driven energy! When you set a goal, you charge straight toward it and naturally lead the people around you. Your decisiveness means you act before you overthink, and you have an unshakeable core in any situation. People around you often describe you as 'dependable' and 'trustworthy.'",
+      "traits": [
+        "Action-first — you act before you overthink, diving straight in",
+        "Direct communicator — honest and fact-driven rather than roundabout",
+        "Strong leader — naturally takes the center and guides the group",
+        "Practical thinker — seeks solutions and efficiency over emotion",
+        "Independent — fully self-sufficient and capable on your own",
+        "Competitive — hates losing and persistently chases goals",
+        "Quick decision-maker — rapidly reads situations and decides",
+        "Protective instinct — strong sense of responsibility to look after those around you"
+      ],
+      "loveStyle": "The textbook straight-shooter in love! You approach someone you like without hesitation and don't play push-and-pull games. You prefer to take the lead in relationships too, and you handle everything from date planning to anniversary prep without being asked. You value trust and responsibility most, and when conflict arises you'd rather resolve it on the spot than push emotions aside. However, your focus on resolving things over understanding feelings can sometimes leave your partner feeling dismissed — so making the effort to listen to their emotions too is key.",
+      "bestMatch": "Egen Female",
+      "bestMatchDesc": "When you meet a soft, emotionally expressive Egen Female, you perfectly fill each other's gaps — a dream team! The Teto Male's dependable lead combined with the Egen Female's warm emotional depth creates the most comfortable and stable relationship for both.",
+      "worstMatch": "Teto Female",
+      "worstMatchDesc": "Both of you are assertive and strong-willed, so clashes over dominance can happen. But if you respect each other and can divide your domains, there's real potential to become the ultimate power couple!",
+      "strengths": [
+        "The ability to make calm, decisive calls in crisis situations",
+        "The honesty to communicate directly without unnecessary conflict",
+        "Strong drive that keeps you moving steadily toward your goals",
+        "The charisma that makes people naturally trust and follow you"
+      ],
+      "weaknesses": [
+        "Tendency to focus on conclusions and solutions over the other person's feelings",
+        "Can be misunderstood because emotional expression doesn't come easily",
+        "Strong conviction that your way is right can make you inflexible",
+        "Tend to focus on the big picture and miss small emotional exchanges"
+      ],
+      "detailedAnalysis": {
+        "strongTeto": "The perfect essence of a Teto Male! Leadership, decisiveness, and direct communication are all at the highest level. You have an unshakeable center in any situation and people naturally follow you. However, learning to match your partner's emotional pace is the key to deepening your relationship. Even if expressing affection feels awkward, the effort itself is a profound form of love.",
+        "moderateTeto": "You have a clear Teto tendency, but you can also show a sensitive, emotional side depending on the situation. You prefer to lead, but you don't completely ignore the other person — you have a real sense of balance. You're the type who pushes forward yet can empathize too, making you both dependable and comfortable to be with.",
+        "balanced": "A flexible type on the boundary between Teto and Egen! Depending on the situation, you can show leadership or emotionally adapt to the other person. The ability to get along with any type of partner is your strength. However, it can sometimes be hard to pin down your own true inclinations.",
+        "moderateEgen": "Fundamentally emotional and sensitive, but you show decisiveness when needed. You have a far more multidimensional appeal than a simple Egen Male. You have a balanced side that understands feelings well while not avoiding problems.",
+        "strongEgen": "The owner of an overwhelming Egen tendency in empathy and emotion. Your ability to read others' emotions is exceptional, and you have a natural talent for creating a warm atmosphere in relationships. Practicing expressing your own feelings more directly will make your relationships even healthier."
+      },
+      "percentageAnalysis": {
+        "extreme": { "min": 90, "label": "Extreme Teto", "text": "The perfect Teto Male! Leadership and drive are at the highest level. People around you often call you charismatic, but sometimes try listening a little more carefully to your partner's feelings." },
+        "strong": { "min": 75, "label": "Strong Teto", "text": "Clear Teto tendency! You act assertively and decisively in most situations. The occasional soft side you show is your charm point!" },
+        "moderate": { "min": 60, "label": "Teto-leaning", "text": "Teto tendency is dominant but you also carry Egen sensitivity. A balanced type who can smoothly switch between leadership and empathy depending on the situation!" },
+        "slight": { "min": 50, "label": "Mild Teto", "text": "Almost half-and-half Teto and Egen! You lean slightly more Teto, but a sensitive and emotional side also comes out naturally depending on the situation." }
+      }
+    },
+    "egenMale": {
+      "title": "Egen Male",
+      "subtitle": "Estrogen Male",
+      "emoji": "🐱",
+      "color": "from-purple-500 to-pink-500",
+      "description": "The owner of sensitive and emotional charm! Your ability to quickly read and deeply empathize with others' feelings is exceptional. You prioritize the flow of atmosphere and emotions, and people remember you as a warm, comfortable presence. With the attentiveness to catch even small changes, you're someone whose company puts people at ease.",
+      "traits": [
+        "High empathy — instinctively senses others' emotions and subtle shifts",
+        "Emotional expression — naturally conveys feelings through words and atmosphere",
+        "Keen observation — never misses expressions, tone, or small changes",
+        "Artistic sense — outstanding aesthetic sensibility and cultural sensitivity",
+        "Peacemaker — pursues harmony over conflict and values balance in relationships",
+        "Deep emotional range — once you give your heart, you feel things deeply and intensely",
+        "Considerate — thinks of the other person's feelings first and tends to them carefully",
+        "Good listener — the attitude to listen and understand before judging"
+      ],
+      "loveStyle": "An emotion-filled romantic! You prioritize the flow of atmosphere and feelings, and you cherish small anniversaries and special moments. You spare no thoughtful care and emotional expression for your partner, and you constantly think about how to make them happier. You love the thrill of romance and tend to keep memories and feelings for a long time after a breakup. However, not being able to actively express your own emotions in conflict situations can actually lead to misunderstandings — practicing speaking honestly in important moments helps.",
+      "bestMatch": "Teto Female",
+      "bestMatchDesc": "When a proactive and lively Teto Female leads, you can comfortably express your own emotions! The Teto Female's refreshing personality and the Egen Male's attentive care meeting each other creates an ideal relationship where you fill what the other lacks.",
+      "worstMatch": "Egen Male",
+      "worstMatchDesc": "Both of you are passive and tend to watch the other's cues, so the relationship can progress slowly. Someone needs to take courage first, but waiting for each other might cause you to miss your timing.",
+      "strengths": [
+        "Outstanding empathy that intuitively grasps others' emotional states",
+        "The ability to maintain relationships without exploding emotionally in conflict",
+        "Rich sensitivity that lets you feel moved and grateful over small things",
+        "A warm presence that attentively tends to and cares for the other person"
+      ],
+      "weaknesses": [
+        "Tendency not to express your own opinions or feelings directly",
+        "Conflict-avoidance tendency can let problems accumulate",
+        "Can lose yourself by being too affected by others' emotions",
+        "A passive attitude can mean missing important opportunities or relationships"
+      ],
+      "detailedAnalysis": {
+        "strongEgen": "The pinnacle of empathy and emotion! Your ability to read others is exceptional and people feel at ease around you. However, you need to practice expressing your own feelings and needs more directly. A good relationship includes appropriately receiving as well as giving.",
+        "moderateEgen": "Emotional and deeply considerate, but you also know how to put your own opinion forward when needed. Far from simply passive Egen Male, you're a multidimensional type with high emotional intelligence. You're an attractive person who is capable of both empathy and communication.",
+        "balanced": "A flexible type who moves freely between Teto and Egen! Depending on the situation, you show consideration and lead in turn. You have the adaptability to build good relationships with any partner. Exploring your true inner self will bring richer self-understanding.",
+        "moderateTeto": "Fundamentally proactive, but a balance type who also tends to the other person's feelings well. Close to the ideal partner type who has leadership while also possessing empathy. Expressing your emotions more richly will deepen your relationships even more.",
+        "strongTeto": "A clear Teto tendency with decisiveness and drive. You prefer direct communication and have the strength of not avoiding problems. Occasionally considering the other person's emotional processing speed will help you create an even more harmonious relationship."
+      },
+      "percentageAnalysis": {
+        "extreme": { "min": 90, "label": "Extreme Egen", "text": "The apex of sensitivity! Empathy and thoughtfulness are at the highest level. People around you often say 'You're such a warm person.' Sometimes try expressing your own feelings honestly too." },
+        "strong": { "min": 75, "label": "Strong Egen", "text": "Clear Egen tendency! You're honest about your feelings and have an outstanding ability to deeply understand others. The occasional decisive side you show is actually a charm point!" },
+        "moderate": { "min": 60, "label": "Egen-leaning", "text": "Egen tendency is dominant but you also carry Teto's decisiveness. An attractive type that balances emotion and reason well!" },
+        "slight": { "min": 50, "label": "Mild Egen", "text": "Almost half-and-half Teto and Egen! You lean slightly more Egen, so you're fundamentally warm while being able to act decisively when needed." }
+      }
+    },
+    "tetoFemale": {
+      "title": "Teto Female",
+      "subtitle": "Testosterone Female",
+      "emoji": "🐯",
+      "color": "from-orange-500 to-red-500",
+      "description": "The owner of independent, progressive energy! You carve your own path and have a confidence that doesn't rely on anyone. You prioritize career and personal growth, and have clear likes and dislikes — people around you often describe you as 'cool' and 'impressive.' Rather than forcing yourself to look a certain way, you confidently show yourself as you truly are.",
+      "traits": [
+        "Strong independence — fully self-sufficient, a self-complete woman",
+        "Honest emotional expression — clear about likes and dislikes, no beating around the bush",
+        "Career-oriented — proves self-worth through achievement and growth",
+        "Active lifestyle — energetic life of exercise, travel, and self-improvement",
+        "Quick to recover — tends to bounce back fast from difficult times",
+        "Strong personal convictions — not easily swayed by trends or majority opinion",
+        "Decisive — doesn't deliberate long; once decided, acts immediately",
+        "Head-on approach — faces problems directly rather than avoiding them"
+      ],
+      "loveStyle": "Cool and confident in love! You're proactive in relationships too and honestly express your feelings to someone you like. You find clinginess or excessive emotional dependency uncomfortable, and your ideal is an independent partnership where you both grow together. Once it's over, you wrap things up cleanly with no lingering regrets. However, being too cool can give your partner the impression you're not interested — occasionally showing sweet affection will make the relationship even better.",
+      "bestMatch": "Egen Male",
+      "bestMatchDesc": "When you meet a sensitive and emotional Egen Male, you perfectly complement each other's gaps! The Teto Female's refreshing lead and the Egen Male's warm emotional depth creating harmony makes you the most comfortable partners for each other.",
+      "worstMatch": "Teto Male",
+      "worstMatchDesc": "Both of you are strong and assertive so you can clash, but if you respect each other's domains and know when to yield, you can become a stronger power couple than anyone!",
+      "strengths": [
+        "A strong sense of self that doesn't get lost in any situation",
+        "The execution and drive to consistently move forward toward goals",
+        "The efficiency to solve problems without unnecessary emotional expenditure",
+        "The charm of confidence and honesty that inspires trust"
+      ],
+      "weaknesses": [
+        "Prioritizing practicality over emotional exchange can leave your partner feeling lonely",
+        "Being too independent can create distance with your partner",
+        "Cool attitude can be misread as lack of interest",
+        "Uncomfortable with showing your own vulnerabilities"
+      ],
+      "detailedAnalysis": {
+        "strongTeto": "The perfect girl-crush Teto Female! Independence, decisiveness, and direct communication are all at the highest level. You're the envy of those around you, but occasionally showing a softer side to your partner is also a way to deepen the relationship. The more perfect you seem, the harder it can be to connect with.",
+        "moderateTeto": "Proactive and independent, but depending on the situation, you also have warm consideration and an emotional side. You appear cool on the surface but have warmth within — the owner of gap charm! This sense of balance is your greatest weapon.",
+        "balanced": "A type that moves flexibly on the boundary of Teto and Egen! You value both career and relationships — the ideal modern woman's balance. The adaptability to respond in your own way in any situation is your strength.",
+        "moderateEgen": "Emotional and deeply considerate, yet you can confidently speak your mind when needed. An attractive type with a soft but unshakeable center. The ideal embodiment of having both emotion and independence.",
+        "strongEgen": "A clear Egen Female tendency that is warm and emotional. Empathy and consideration are exceptional, and you're a healing presence for those around you. Try practicing expressing your own needs and feelings more actively sometimes."
+      },
+      "percentageAnalysis": {
+        "extreme": { "min": 90, "label": "Extreme Teto", "text": "The perfect girl-crush! Independent and assertive tendencies at the highest level. You, overflowing with 'big sister energy', are the object of admiration around you. It's okay to show a vulnerable side sometimes too." },
+        "strong": { "min": 75, "label": "Strong Teto", "text": "Clear Teto tendency! You act with confidence and decisiveness in most situations. The occasional warm side you show is a devastatingly attractive charm point!" },
+        "moderate": { "min": 60, "label": "Teto-leaning", "text": "Teto tendency is dominant but you also carry Egen sensitivity. Cool on the outside but warm within — the owner of gap charm!" },
+        "slight": { "min": 50, "label": "Mild Teto", "text": "Almost half-and-half Teto and Egen! You lean slightly more Teto, so you're fundamentally cool while also showing a softer, more emotional side in certain moments." }
+      }
+    },
+    "egenFemale": {
+      "title": "Egen Female",
+      "subtitle": "Estrogen Female",
+      "emoji": "🐰",
+      "color": "from-pink-400 to-rose-500",
+      "description": "The owner of a warm, emotional atmosphere! You have a deep consideration for others and prioritize emotional bonds and stability in relationships above all. You're emotionally rich and sensitive — moved by small things, and quickest to sense how the people around you are feeling. Being around you warms the heart; you're a natural source of healing.",
+      "traits": [
+        "Deep empathy — intuitively understands others' emotions and situations",
+        "Warm consideration — attentively looks after those around you and steps in to help first",
+        "Emotional inner world — feels deep emotion in music, movies, scenery, and more",
+        "Seeks stability — feels most at ease within peaceful and warm relationships",
+        "Long emotional echo — tends to hold onto both good and painful memories for a long time",
+        "Mood-maker — the ability to put people around you at ease with gentle energy",
+        "Fine sensitivity — never misses small changes or nuances",
+        "Values emotional bonds — prefers deep, meaningful relationships over broad, shallow ones"
+      ],
+      "loveStyle": "A full-emotion romance! You prefer things to start with someone else's approach, and emotional bonds and stability are what you value most in a relationship. You're deeply moved by anniversaries, surprise events, and warm words, and you give thoughtful care and love to your partner without reservation. The lingering feeling after a breakup lasts long and you find it hard to start fresh easily. Occasionally expressing your emotions and desires more actively will bring you even greater satisfaction in relationships.",
+      "bestMatch": "Teto Male",
+      "bestMatchDesc": "Meeting a dependable, leading Teto Male means you'll feel fully loved and secure! The Egen Female's warm emotional depth combined with the Teto Male's strong leadership creates the most natural and comfortable relationship.",
+      "worstMatch": "Egen Female",
+      "worstMatchDesc": "Both of you are passive and emotional, so even starting the relationship can be difficult. Waiting for each other might mean missing a good connection, so take a little courage!",
+      "strengths": [
+        "Deep empathy that understands and accepts the other person as they are",
+        "The ability to create a warm and stable atmosphere in relationships",
+        "Rich emotions that never miss the small beauties of life",
+        "The power to make relationships deeper and more meaningful through care and dedication"
+      ],
+      "weaknesses": [
+        "Tendency to suppress your own needs and feelings without expressing them",
+        "Can lose your own emotions by being overly affected by the other person's feelings",
+        "Avoiding conflict can actually cause misunderstandings to pile up",
+        "The lingering feeling after a breakup makes new beginnings difficult"
+      ],
+      "detailedAnalysis": {
+        "strongEgen": "The queen of emotion! Empathy and warm consideration are at the highest level. You're loved enough to be called angel-like by those around you. However, you need to practice treasuring your own feelings and needs too. Knowing how to receive is just as important as knowing how to give.",
+        "moderateEgen": "Warm and emotional, but you have a healthy balance that allows you to express your feelings and speak your mind when needed. Far from simply passive Egen Female, you're an attractive type with high emotional intelligence.",
+        "balanced": "A flexible balancer between Teto and Egen! You have warm empathy yet the flexibility to move proactively depending on the situation. The adaptability to build harmonious relationships with any partner is your strength.",
+        "moderateTeto": "Fundamentally confident and proactive, but you also show emotional consideration in relationships. The owner of multidimensional charm that has both independence and warmth! A type who can give your partner both security and excitement at once.",
+        "strongTeto": "A clear Teto tendency that is independent and confident. You prioritize career and personal growth, and emotional expression tends to be direct. Showing your partner a more emotional side sometimes will make your relationship much richer."
+      },
+      "percentageAnalysis": {
+        "extreme": { "min": 90, "label": "Extreme Egen", "text": "The queen of emotion! Empathy and sensitivity are at the highest level. People around you often say 'You're like an angel.' Don't forget to also take care of your own feelings sometimes." },
+        "strong": { "min": 75, "label": "Strong Egen", "text": "Clear Egen tendency! Emotionally rich and warmly considerate — a warm-hearted person. The occasional decisive side you show is an unexpected charm!" },
+        "moderate": { "min": 60, "label": "Egen-leaning", "text": "Egen tendency is dominant but you also carry Teto's independence. A balanced type that is soft yet shows confidence when needed!" },
+        "slight": { "min": 50, "label": "Mild Egen", "text": "Almost half-and-half Teto and Egen! You lean slightly more Egen, so you're fundamentally warm while also having a cool, independent side depending on the situation." }
+      }
+    }
+  },
+  "loveChain": {
+    "description": "Romantic Attraction Chain",
+    "chain": "Egen F → Egen M → Teto F → Teto M → Egen F",
+    "explanation": "The arrow direction shows 'who is attracted to whom.' Egen Females tend to be attracted to Egen Males, Egen Males to Teto Females, Teto Females to Teto Males, and Teto Males to Egen Females. Each type is naturally drawn to someone whose tendencies complement their own shortcomings."
+  }
+}

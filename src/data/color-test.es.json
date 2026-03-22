@@ -1,0 +1,228 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Cuando estás estresado/a, ¿qué es lo que más quieres hacer?",
+      "options": [
+        { "text": "Sudar con ejercicio intenso", "color": "red", "weight": 2 },
+        { "text": "Salir y charlar con amigos", "color": "orange", "weight": 2 },
+        { "text": "Dar un paseo en la naturaleza", "color": "green", "weight": 2 },
+        { "text": "Escuchar música tranquilamente a solas", "color": "blue", "weight": 2 }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "¿Cuál es tu fin de semana ideal?",
+      "options": [
+        { "text": "Un nuevo reto o experiencia deportiva", "color": "red", "weight": 2 },
+        { "text": "Actividades al aire libre emocionantes y viajes", "color": "orange", "weight": 2 },
+        { "text": "Leer y dibujar en una cafetería", "color": "yellow", "weight": 2 },
+        { "text": "Ver películas en casa, cómodo/a y relajado/a", "color": "indigo", "weight": 2 }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "¿Cuál es tu papel entre tus amigos?",
+      "options": [
+        { "text": "El/la líder que marca el ambiente", "color": "red", "weight": 2 },
+        { "text": "El/la animador/a que lidera las reuniones", "color": "orange", "weight": 2 },
+        { "text": "El/la pacificador/a que media en los conflictos", "color": "green", "weight": 2 },
+        { "text": "El/la consolador/a que empatiza calurosamente", "color": "pink", "weight": 2 }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Cuando necesitas tomar una decisión, tú:",
+      "options": [
+        { "text": "Juzgas rápidamente y actúas de inmediato", "color": "red", "weight": 2 },
+        { "text": "Sigues tu intuición y eliges la opción emocionante", "color": "orange", "weight": 2 },
+        { "text": "Analizas cuidadosamente los pros y contras antes de decidir", "color": "blue", "weight": 2 },
+        { "text": "Escuchas suficientemente las opiniones de quienes te rodean", "color": "green", "weight": 2 }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "¿Qué estilo de viaje te atrae más?",
+      "options": [
+        { "text": "Aventuras extremas como puenting o surf", "color": "red", "weight": 2 },
+        { "text": "Mochilero para experimentar nuevas culturas", "color": "orange", "weight": 2 },
+        { "text": "Visitar museos famosos y patrimonio cultural", "color": "purple", "weight": 2 },
+        { "text": "Relajarse en un resort de bienestar", "color": "blue", "weight": 2 }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "¿Qué palabra te describe mejor?",
+      "options": [
+        { "text": "Apasionado/a y con iniciativa", "color": "red", "weight": 2 },
+        { "text": "Alegre y positivo/a", "color": "yellow", "weight": 2 },
+        { "text": "Reflexivo/a y analítico/a", "color": "blue", "weight": 2 },
+        { "text": "Creativo/a y único/a", "color": "purple", "weight": 2 }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Cuando estás enfadado/a, ¿cómo reaccionas?",
+      "options": [
+        { "text": "Hablas directamente y lo resuelves de inmediato", "color": "red", "weight": 2 },
+        { "text": "Te tomas un descanso breve y te calmas rápido", "color": "orange", "weight": 2 },
+        { "text": "Organizas tus pensamientos tranquilamente a solas", "color": "indigo", "weight": 2 },
+        { "text": "Reprimes las emociones por dentro y aguantas", "color": "green", "weight": 2 }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "¿Cuál es tu estilo de pareja ideal?",
+      "options": [
+        { "text": "Expresión apasionada y proactiva", "color": "red", "weight": 2 },
+        { "text": "Construir diversas experiencias juntos", "color": "orange", "weight": 2 },
+        { "text": "Conexión intelectual profunda y comprensión mutua", "color": "indigo", "weight": 2 },
+        { "text": "Cuidado y empatía cálidos y atentos", "color": "pink", "weight": 2 }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Cuando conoces a alguien nuevo, tú:",
+      "options": [
+        { "text": "Te acercas activamente primero e inicias la conversación", "color": "orange", "weight": 2 },
+        { "text": "Haces amigos rápidamente con energía positiva", "color": "yellow", "weight": 2 },
+        { "text": "Observas lentamente a la otra persona para conocerla", "color": "blue", "weight": 2 },
+        { "text": "Escuchas primero la historia de la otra persona", "color": "pink", "weight": 2 }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "En cuanto a tus sueños y metas:",
+      "options": [
+        { "text": "Estableces una meta y la persigues con fuerza", "color": "red", "weight": 2 },
+        { "text": "Exploras y disfrutas diversas posibilidades", "color": "orange", "weight": 2 },
+        { "text": "Explorar en profundidad y encontrar significado filosófico", "color": "indigo", "weight": 2 },
+        { "text": "Expresar de forma original usando la sensibilidad artística", "color": "purple", "weight": 2 }
+      ]
+    }
+  ],
+  "results": {
+    "red": {
+      "name": "Rojo",
+      "title": "Líder Apasionado",
+      "emoji": "🔴",
+      "color": "from-red-500 to-rose-600",
+      "bgColor": "#EF4444",
+      "swatchClass": "bg-red-500",
+      "description": "Eres una persona desbordante de pasión y energía. Con fuerte voluntad e impulso avanzas sin vacilar hacia tus metas, inspirando y energizando a quienes te rodean. El liderazgo te sale natural, y eres el tipo que señala el camino con confianza en cualquier situación.",
+      "traits": ["Fuerte liderazgo", "Ardiente pasión", "Decisión rápida", "Espíritu competitivo", "Gran impulso", "Confianza"],
+      "strengths": ["Poderoso impulso y ejecución hacia los objetivos", "Voluntad inquebrantable en cualquier situación", "Liderazgo natural que guía al equipo", "Juicio decisivo que brilla en una crisis"],
+      "weaknesses": ["La impaciencia puede llevar a errores", "Tendencia a pasar por alto las opiniones de los demás", "El exceso de competitividad puede dañar las relaciones"],
+      "compatible": ["orange", "yellow"],
+      "advice": "A veces da un paso atrás y escucha a quienes te rodean. Tu pasión es tu mayor arma, pero combinada con una consideración cálida te conviertes en un verdadero líder."
+    },
+    "orange": {
+      "name": "Naranja",
+      "title": "Aventurero Enérgico",
+      "emoji": "🟠",
+      "color": "from-orange-500 to-amber-500",
+      "bgColor": "#F97316",
+      "swatchClass": "bg-orange-500",
+      "description": "Eres un aventurero desbordante de energía que ama las cosas nuevas. Te relacionas fácilmente con la gente y tienes la capacidad de animar el ambiente donde vayas. Eres el tipo que energiza a quienes te rodean con una mente abierta hacia nuevas experiencias y energía positiva.",
+      "traits": ["Sociabilidad vibrante", "Espíritu aventurero", "Alegría", "Apertura", "Espontaneidad", "Optimismo"],
+      "strengths": ["Flexibilidad que se adapta rápidamente en cualquier entorno", "Sociabilidad sobresaliente que hace amigos con facilidad", "Actitud positiva que disfruta de nuevos retos", "Energía que ilumina incluso un ambiente oscuro"],
+      "weaknesses": ["La concentración profunda puede ser difícil", "Tendencia a tomar decisiones impulsivas", "Dificultad para permanecer en un lugar mucho tiempo"],
+      "compatible": ["red", "yellow"],
+      "advice": "Tu energía brillante ilumina el mundo. Ocasionalmente detente y saborea relaciones profundas y metas. Un árbol con raíces profundas crece más alto."
+    },
+    "yellow": {
+      "name": "Amarillo",
+      "title": "Optimista Brillante",
+      "emoji": "🟡",
+      "color": "from-yellow-400 to-amber-400",
+      "bgColor": "#EAB308",
+      "swatchClass": "bg-yellow-400",
+      "description": "Eres como el sol que ilumina el mundo. Encuentras el lado positivo en cualquier situación y aportas vitalidad a quienes te rodean con ideas creativas. Tienes un maravilloso sentido del humor y un talento natural para hacer sonreír a la gente.",
+      "traits": ["Optimismo brillante", "Pensamiento creativo", "Sentido del humor", "Calidez amistosa", "Espíritu libre", "Ideas espontáneas"],
+      "strengths": ["Capacidad para encontrar positividad en cualquier situación", "Ideas creativas y únicas", "Una presencia que aporta risas y vitalidad a la gente", "Pensamiento libre que rompe el molde"],
+      "weaknesses": ["La concentración puede ser difícil en situaciones serias", "Pueden ocurrir cambios de humor", "Tendencia a carecer de planificación detallada"],
+      "compatible": ["orange", "pink"],
+      "advice": "Tu brillo es el regalo más precioso del mundo. A veces siéntate en serio y haz un plan tranquilo. Cuando tu creatividad se combina con la ejecución, se abren posibilidades infinitas."
+    },
+    "green": {
+      "name": "Verde",
+      "title": "Armonizador Pacífico",
+      "emoji": "🟢",
+      "color": "from-green-500 to-emerald-600",
+      "bgColor": "#22C55E",
+      "swatchClass": "bg-green-500",
+      "description": "Eres una persona pacífica que valora el equilibrio y la armonía. Estás conectado/a con la naturaleza y formas vínculos profundos con las personas que te rodean. Tienes una habilidad natural para mediar conflictos y crear un entorno donde todos se sientan cómodos.",
+      "traits": ["Excelente empatía", "Amor por la naturaleza", "Sentido del equilibrio", "Paciencia", "Inclusividad", "Búsqueda de armonía"],
+      "strengths": ["Empatía profunda que entiende la perspectiva de todos", "Habilidad de mediación que resuelve conflictos suavemente", "Fiabilidad consistente y estable", "Profunda comprensión de la naturaleza y la vida"],
+      "weaknesses": ["Dificultad para afirmar tu propia opinión con fuerza", "Puede parecer indeciso/a", "Puede agotarse por absorber demasiadas emociones de otros"],
+      "compatible": ["blue", "pink"],
+      "advice": "Tu cálida inclusividad hace el mundo más hermoso. Ocasionalmente escucha también tus propias emociones y deseos. Necesitas amarte a ti mismo/a primero para amar aún mejor a los demás."
+    },
+    "blue": {
+      "name": "Azul",
+      "title": "Pensador Tranquilo",
+      "emoji": "🔵",
+      "color": "from-blue-500 to-cyan-600",
+      "bgColor": "#3B82F6",
+      "swatchClass": "bg-blue-500",
+      "description": "Eres un/a pensador/a con profundo pensamiento y capacidad analítica. Valoras la razón sobre la emoción y eres confiable por tu juicio cuidadoso. Tienes una habilidad sobresaliente para resolver incluso problemas complejos de forma lógica con una actitud tranquila.",
+      "traits": ["Capacidad analítica fría", "Fiabilidad", "Calma", "Pensamiento lógico", "Reflexión profunda", "Honestidad"],
+      "strengths": ["Juicio frío no influenciado por las emociones", "Capacidad para resolver sistemáticamente problemas complejos", "Lealtad que nunca traiciona una vez dada la confianza", "Curiosidad que construye conocimiento profundo y experiencia"],
+      "weaknesses": ["La pobre expresión emocional puede hacer que parezcas frío/a", "Estrés por perseguir la perfección excesiva", "Más lento/a para adaptarse a nuevos cambios"],
+      "compatible": ["green", "indigo"],
+      "advice": "Tu pensamiento lógico es una habilidad que el mundo verdaderamente necesita. Ocasionalmente escucha tu corazón y practica expresar emociones. La armonía de razón y emoción te completará aún más."
+    },
+    "indigo": {
+      "name": "Índigo",
+      "title": "Explorador Intuitivo",
+      "emoji": "🌑",
+      "color": "from-indigo-600 to-blue-800",
+      "bgColor": "#4F46E5",
+      "swatchClass": "bg-indigo-600",
+      "description": "Eres un/a explorador/a intuitivo/a que explora mundos interiores profundos. Buscas significado más allá de la superficie, disfrutas de preguntas filosóficas y ves a través de la esencia con intuición aguda. Posees una perspicacia especial que ve lo que otros no pueden.",
+      "traits": ["Intuición aguda", "Contemplación profunda", "Pensamiento filosófico", "Perspicacia", "Exploración interior", "Misterio"],
+      "strengths": ["Excelente intuición que ve lo invisible", "Pensamiento filosófico que explora el profundo significado de la vida", "Capacidad para leer patrones y conexiones complejas", "Sensibilidad que detecta incluso las emociones ocultas de otros"],
+      "weaknesses": ["Puede caer en pensamientos desconectados de la realidad", "Puede sentirse solitario/a al formar relaciones profundas solo con unos pocos", "La comunicación puede ser difícil cuando está atrapado/a en su propio mundo"],
+      "compatible": ["blue", "purple"],
+      "advice": "Tu profunda perspicacia es la luz que el mundo necesita. Ocasionalmente sal de la contemplación profunda y disfruta de los placeres cotidianos. La belleza del mundo terrenal también merece ser explorada."
+    },
+    "purple": {
+      "name": "Morado",
+      "title": "Artista Misterioso",
+      "emoji": "🟣",
+      "color": "from-purple-500 to-violet-700",
+      "bgColor": "#A855F7",
+      "swatchClass": "bg-purple-500",
+      "description": "Eres un/a artista misterioso/a en quien se combinan creatividad y espiritualidad. Ves el mundo con una perspectiva única y creas belleza con sensibilidad artística e imaginación. Eres un ser fuertemente individual y original, un espíritu libre que rechaza lo ordinario.",
+      "traits": ["Artisticidad creativa", "Originalidad", "Misterio", "Sensibilidad espiritual", "Individualidad", "Rica imaginación"],
+      "strengths": ["Expresión artística original y hermosa", "Pensamiento libre sin ataduras convencionales", "Capacidad para crear belleza con profunda sensibilidad", "Perspectiva inclusiva que respeta la individualidad y la diversidad"],
+      "weaknesses": ["Tendencia a descuidar los aspectos prácticos", "Se siente fácilmente aislado/a cuando no es comprendido/a", "La consistencia puede fluctuar según el estado de ánimo"],
+      "compatible": ["indigo", "pink"],
+      "advice": "Tu creatividad es el poder que hace el mundo más hermoso. Ocasionalmente mantén una conexión con la realidad y comparte tu arte con el mundo. Tu color único puede inspirar a muchas personas."
+    },
+    "pink": {
+      "name": "Rosa",
+      "title": "Empático Cálido",
+      "emoji": "🩷",
+      "color": "from-pink-400 to-rose-500",
+      "bgColor": "#EC4899",
+      "swatchClass": "bg-pink-400",
+      "description": "Eres un/a maestro/a de la empatía que envuelve a quienes te rodean con un corazón cálido. Respondes sensiblemente a las emociones de los demás y creas un espacio seguro donde la gente puede abrir su corazón cómodamente. Eres el tipo que construye relaciones preciosas con cuidado delicado y amor sincero.",
+      "traits": ["Empatía profunda", "Consideración cálida", "Romántico/a", "Delicadeza", "Amabilidad", "Emocional"],
+      "strengths": ["Empatía delicada que lee con precisión las emociones de los demás", "Corazón cálido que aprecia las relaciones", "Simpatía que hace el ambiente acogedor", "Capacidad para dar fuerza a través del consuelo y el estímulo sinceros"],
+      "weaknesses": ["Las emociones sensibles te hacen fácilmente herir", "Tendencia a sacrificarte demasiado por los demás", "Puede ser difícil rechazar y sufrir por ello"],
+      "compatible": ["yellow", "green"],
+      "advice": "Tu calidez es el regalo más precioso del mundo. No olvides apreciarte y amarte a ti mismo/a primero. Cuando tú eres feliz, quienes te rodean pueden brillar aún más."
+    }
+  },
+  "colorMeta": {
+    "red":    { "hex": "#EF4444", "label": "Rojo" },
+    "orange": { "hex": "#F97316", "label": "Naranja" },
+    "yellow": { "hex": "#EAB308", "label": "Amarillo" },
+    "green":  { "hex": "#22C55E", "label": "Verde" },
+    "blue":   { "hex": "#3B82F6", "label": "Azul" },
+    "indigo": { "hex": "#4F46E5", "label": "Índigo" },
+    "purple": { "hex": "#A855F7", "label": "Morado" },
+    "pink":   { "hex": "#EC4899", "label": "Rosa" }
+  }
+}

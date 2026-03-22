@@ -5,7 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import TasteMap from "@/components/TasteMap";
 import AdBanner from "@/components/AdBanner";
-import foodsData from "@/data/foods.json";
+import foodsKo from "@/data/foods.json";
+import foodsEn from "@/data/foods.en.json";
+import foodsJa from "@/data/foods.ja.json";
+import foodsZh from "@/data/foods.zh.json";
+import foodsEs from "@/data/foods.es.json";
 import { useLocale } from "@/hooks/useLocale";
 
 type Food = {
@@ -19,6 +23,14 @@ type Food = {
   servings: string;
   x: number;
   y: number;
+};
+
+const foodsDataMap: Record<string, Food[]> = {
+  ko: foodsKo as Food[],
+  en: foodsEn as Food[],
+  ja: foodsJa as Food[],
+  zh: foodsZh as Food[],
+  es: foodsEs as Food[],
 };
 
 const translations = {
@@ -299,9 +311,7 @@ const translations = {
   },
 };
 
-const koreanCategories = ["전체", "한식", "일식", "중식", "양식", "아시안", "분식", "디저트", "패스트푸드"];
-
-const categoryColors: Record<string, string> = {
+const categoryColorsKo: Record<string, string> = {
   한식: "#ef4444",
   일식: "#3b82f6",
   중식: "#eab308",
@@ -312,19 +322,25 @@ const categoryColors: Record<string, string> = {
   패스트푸드: "#6366f1",
 };
 
-const foodLegend = Object.entries(categoryColors).map(([label, color]) => ({
-  label,
-  color,
-}));
-
 export default function FoodPage() {
   const locale = useLocale();
   const t = translations[locale];
 
+  const foodsData = foodsDataMap[locale] ?? foodsDataMap["ko"];
+  const categories = t.categories;
+  const categoryAll = t.categoryAll;
+  const categoryColors: Record<string, string> = Object.fromEntries(
+    Object.entries(categoryColorsKo).map(([kor, color]) => [
+      t.categoryLabels[kor as keyof typeof t.categoryLabels] ?? kor,
+      color,
+    ])
+  );
+  const foodLegend = Object.entries(categoryColors).map(([label, color]) => ({ label, color }));
+
   const [mode, setMode] = useState<"map" | "filter">("map");
-  const [category, setCategory] = useState("전체");
+  const [category, setCategory] = useState(categoryAll);
   const [priceRange, setPriceRange] = useState("");
-  const [mapCategories, setMapCategories] = useState<Set<string>>(new Set(["전체"]));
+  const [mapCategories, setMapCategories] = useState<Set<string>>(new Set([categoryAll]));
 
   const [spinning, setSpinning] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -346,7 +362,7 @@ export default function FoodPage() {
 
   const getFiltered = () => {
     let filtered = [...foodsData] as Food[];
-    if (category !== "전체") filtered = filtered.filter((f) => f.category === category);
+    if (category !== categoryAll) filtered = filtered.filter((f) => f.category === category);
     if (priceRange) filtered = filtered.filter((f) => f.priceRange === priceRange);
     return filtered;
   };
@@ -388,17 +404,7 @@ export default function FoodPage() {
 
   const displayFood = candidates.length > 0 ? candidates[currentIndex % candidates.length] : null;
 
-  // Map Korean category key to translated label
-  const getCatLabel = (korCat: string) => {
-    if (korCat === "전체") return t.categoryAll;
-    return t.categoryLabels[korCat as keyof typeof t.categoryLabels] ?? korCat;
-  };
-
-  // Map legend labels to translated names
-  const translatedLegend = foodLegend.map((item) => ({
-    label: t.categoryLabels[item.label as keyof typeof t.categoryLabels] ?? item.label,
-    color: item.color,
-  }));
+  const translatedLegend = foodLegend;
 
   return (
     <PageTransition>
@@ -429,26 +435,26 @@ export default function FoodPage() {
           {mode === "map" && (
             <motion.div key="map" initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: 0.2 }} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
               <div className="flex gap-2 overflow-x-auto pb-2 mb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-                {koreanCategories.map((cat) => {
+                {categories.map((cat) => {
                   const isSelected = mapCategories.has(cat);
-                  const accentColor = cat === "전체" ? "#f97316" : categoryColors[cat] || "#f97316";
+                  const accentColor = cat === categoryAll ? "#f97316" : categoryColors[cat] || "#f97316";
                   return (
                     <button
                       key={cat}
                       onClick={() => {
                         setMapSelected([]);
-                        if (cat === "전체") {
-                          setMapCategories(new Set(["전체"]));
+                        if (cat === categoryAll) {
+                          setMapCategories(new Set([categoryAll]));
                         } else {
                           const next = new Set(mapCategories);
-                          next.delete("전체");
+                          next.delete(categoryAll);
                           if (next.has(cat)) {
                             next.delete(cat);
-                            if (next.size === 0) next.add("전체");
+                            if (next.size === 0) next.add(categoryAll);
                           } else {
                             next.add(cat);
-                            if (next.size === koreanCategories.length - 1) {
-                              setMapCategories(new Set(["전체"]));
+                            if (next.size === categories.length - 1) {
+                              setMapCategories(new Set([categoryAll]));
                               return;
                             }
                           }
@@ -458,21 +464,21 @@ export default function FoodPage() {
                       className={`flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${isSelected ? "text-white" : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"}`}
                       style={isSelected ? { backgroundColor: accentColor } : undefined}
                     >
-                      {getCatLabel(cat)}
+                      {cat}
                     </button>
                   );
                 })}
               </div>
               <div className="max-w-md mx-auto">
                 <TasteMap
-                  items={(mapCategories.has("전체") ? foodsData : foodsData.filter((f) => mapCategories.has(f.category))) as Food[]}
+                  items={(mapCategories.has(categoryAll) ? foodsData : foodsData.filter((f) => mapCategories.has(f.category))) as Food[]}
                   getCoords={(item) => ({ x: item.x, y: item.y })}
                   getLabel={(item) => item.name}
                   getColor={(item) => categoryColors[item.category] || "#94a3b8"}
                   xLabels={t.xLabels}
                   yLabels={t.yLabels}
                   quadrantHints={t.quadrantHints}
-                  accent={mapCategories.has("전체") || mapCategories.size > 1 ? "#f97316" : categoryColors[Array.from(mapCategories)[0]] || "#f97316"}
+                  accent={mapCategories.has(categoryAll) || mapCategories.size > 1 ? "#f97316" : categoryColors[Array.from(mapCategories)[0]] || "#f97316"}
                   legend={translatedLegend}
                   onSelect={setMapSelected}
                 />
@@ -490,7 +496,7 @@ export default function FoodPage() {
                   <div>
                     <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">{t.filterFoodType}</label>
                     <select value={category} onChange={(e) => setCategory(e.target.value)} className="w-full px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                      {koreanCategories.map((c) => (<option key={c} value={c}>{getCatLabel(c)}</option>))}
+                      {categories.map((c) => (<option key={c} value={c}>{c}</option>))}
                     </select>
                   </div>
                   <div>
@@ -568,8 +574,8 @@ export default function FoodPage() {
             <h3 className="text-lg font-bold mb-2">{t.emptyTitle}</h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">{t.emptyDesc}</p>
             <div className="flex gap-3 justify-center flex-wrap">
-              <button onClick={() => { setCategory("전체"); setPriceRange(""); }} className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">{t.btnReset}</button>
-              <button onClick={() => { setCategory("전체"); setPriceRange(""); setTimeout(() => { const form = document.querySelector("form"); if (form) form.requestSubmit(); }, 50); }} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold hover:shadow-lg transition-all">{t.btnRandomAll}</button>
+              <button onClick={() => { setCategory(categoryAll); setPriceRange(""); }} className="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">{t.btnReset}</button>
+              <button onClick={() => { setCategory(categoryAll); setPriceRange(""); setTimeout(() => { const form = document.querySelector("form"); if (form) form.requestSubmit(); }, 50); }} className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-400 to-red-500 text-white font-semibold hover:shadow-lg transition-all">{t.btnRandomAll}</button>
             </div>
           </motion.div>
         )}

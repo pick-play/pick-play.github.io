@@ -4,21 +4,40 @@ import { useState, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
-import data from "@/data/truth-dare.json";
+import dataKo from "@/data/truth-dare.json";
+import dataEn from "@/data/truth-dare.en.json";
+import dataJa from "@/data/truth-dare.ja.json";
+import dataZh from "@/data/truth-dare.zh.json";
+import dataEs from "@/data/truth-dare.es.json";
 import { useLocale } from "@/hooks/useLocale";
 
 type Phase = "setup" | "game";
 type CardType = "truth" | "dare";
 type Intensity = "mild" | "medium" | "hot";
+type Category = string;
 
-const CATEGORIES = ["연애", "우정", "학교/직장", "일상"] as const;
-type Category = (typeof CATEGORIES)[number];
+const CATEGORIES_BY_LOCALE: Record<string, readonly string[]> = {
+  ko: ["연애", "우정", "학교/직장", "일상"],
+  en: ["Romance", "Friendship", "School/Work", "Daily Life"],
+  ja: ["恋愛", "友情", "学校/職場", "日常"],
+  zh: ["恋爱", "友情", "学校/职场", "日常"],
+  es: ["Romance", "Amistad", "Escuela/Trabajo", "Vida cotidiana"],
+};
 
-const CATEGORY_ICONS: Record<Category, string> = {
-  연애: "💕",
-  우정: "🤝",
-  "학교/직장": "🏫",
-  일상: "☀️",
+const CATEGORY_ICONS_BY_LOCALE: Record<string, Record<string, string>> = {
+  ko: { "연애": "💕", "우정": "🤝", "학교/직장": "🏫", "일상": "☀️" },
+  en: { "Romance": "💕", "Friendship": "🤝", "School/Work": "🏫", "Daily Life": "☀️" },
+  ja: { "恋愛": "💕", "友情": "🤝", "学校/職場": "🏫", "日常": "☀️" },
+  zh: { "恋爱": "💕", "友情": "🤝", "学校/职场": "🏫", "日常": "☀️" },
+  es: { "Romance": "💕", "Amistad": "🤝", "Escuela/Trabajo": "🏫", "Vida cotidiana": "☀️" },
+};
+
+const dataByLocale: Record<string, Record<string, Record<string, Record<string, string[]>>>> = {
+  ko: dataKo as Record<string, Record<string, Record<string, string[]>>>,
+  en: dataEn as Record<string, Record<string, Record<string, string[]>>>,
+  ja: dataJa as Record<string, Record<string, Record<string, string[]>>>,
+  zh: dataZh as Record<string, Record<string, Record<string, string[]>>>,
+  es: dataEs as Record<string, Record<string, Record<string, string[]>>>,
 };
 
 const INTENSITY_COLORS: Record<Intensity, string> = {
@@ -263,10 +282,12 @@ const translations = {
 function getPool(
   categories: Category[],
   intensity: Intensity,
-  type: CardType
+  type: CardType,
+  data: Record<string, Record<string, Record<string, string[]>>>
 ): string[] {
   const pool: string[] = [];
-  const typeData = data[type] as Record<string, Record<string, string[]>>;
+  const typeData = data[type];
+  if (!typeData) return pool;
   for (const cat of categories) {
     const catData = typeData[cat];
     if (catData && catData[intensity]) {
@@ -283,12 +304,13 @@ function pickRandom(arr: string[]): string {
 export default function TruthDarePage() {
   const locale = useLocale();
   const t = translations[locale];
+  const CATEGORIES = CATEGORIES_BY_LOCALE[locale] ?? CATEGORIES_BY_LOCALE.ko;
+  const CATEGORY_ICONS = CATEGORY_ICONS_BY_LOCALE[locale] ?? CATEGORY_ICONS_BY_LOCALE.ko;
+  const data = dataByLocale[locale] ?? dataByLocale.ko;
 
-  // Setup state
-  const [selectedCategories, setSelectedCategories] = useState<Category[]>([
-    "연애",
-    "우정",
-    "일상",
+  // Setup state — default to categories 0, 1, 3 of current locale
+  const [selectedCategories, setSelectedCategories] = useState<Category[]>(() => [
+    CATEGORIES[0], CATEGORIES[1], CATEGORIES[3],
   ]);
   const [intensity, setIntensity] = useState<Intensity>("mild");
 
@@ -314,12 +336,12 @@ export default function TruthDarePage() {
   }, []);
 
   const truthPool = useMemo(
-    () => getPool(selectedCategories, intensity, "truth"),
-    [selectedCategories, intensity]
+    () => getPool(selectedCategories, intensity, "truth", data),
+    [selectedCategories, intensity, data]
   );
   const darePool = useMemo(
-    () => getPool(selectedCategories, intensity, "dare"),
-    [selectedCategories, intensity]
+    () => getPool(selectedCategories, intensity, "dare", data),
+    [selectedCategories, intensity, data]
   );
 
   const drawCard = useCallback(

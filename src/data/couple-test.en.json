@@ -1,0 +1,197 @@
+{
+  "titles": {
+    "90": {
+      "title": "Soulmates",
+      "emoji": "💕",
+      "desc": "This compatibility is truly remarkable! You were born for each other — a fated connection. Together, you can overcome anything."
+    },
+    "80": {
+      "title": "Perfect Partners",
+      "emoji": "✨",
+      "desc": "Top-tier compatibility! You bring out each other's strengths and fill in each other's gaps — truly the perfect pair."
+    },
+    "70": {
+      "title": "Perfectly Matched",
+      "emoji": "🥰",
+      "desc": "You get along wonderfully! You give each other comfort and naturally complement one another."
+    },
+    "60": {
+      "title": "Growing Together",
+      "emoji": "🌱",
+      "desc": "You grow together as a couple! By learning from each other's differences, you can become better versions of yourselves."
+    },
+    "50": {
+      "title": "Effort Couple",
+      "emoji": "💪",
+      "desc": "This relationship needs a little more effort. If you both genuinely want to understand each other, you can build something great."
+    },
+    "40": {
+      "title": "Opposites Attract",
+      "emoji": "🔥",
+      "desc": "Your opposite charms draw you together! The differences make it exciting, and you can show each other new worlds."
+    },
+    "0": {
+      "title": "Challenging Pair",
+      "emoji": "🎯",
+      "desc": "It's not an easy relationship, but love is built through effort! The will to truly understand each other is what matters most."
+    }
+  },
+  "categories": {
+    "성격": {
+      "icon": "🧠",
+      "descriptions": {
+        "high": [
+          "Your personalities match amazingly well. Being together feels natural and comfortable.",
+          "You two are a great personality match. Your values and lifestyles are very similar.",
+          "You deeply understand and respect each other's personalities. Conflicts are easily resolved.",
+          "Your personality compatibility is outstanding! Your strengths and weaknesses perfectly complement each other.",
+          "Your personalities fit together like puzzle pieces. The more time you spend together, the better you mesh."
+        ],
+        "medium": [
+          "There are similarities and differences in your personalities. It's a balanced relationship.",
+          "Your different personalities sometimes create synergy and sometimes cause friction.",
+          "Acknowledging and caring about your personality differences will make the relationship even better.",
+          "You both have your own unique qualities. Respecting each other's differences is key.",
+          "There are areas where your personalities need adjustment, but with effort you can be a great team."
+        ],
+        "low": [
+          "There are personality differences, but that can actually be your charm.",
+          "Understanding each other's different personalities may take time. Practice patience.",
+          "Even with different personalities, if you love each other, you can find a way to adapt.",
+          "Personality differences can cause misunderstandings — communicate more frequently.",
+          "You need to view each other's different personalities as strengths."
+        ]
+      }
+    },
+    "연애": {
+      "icon": "💝",
+      "descriptions": {
+        "high": [
+          "Your dating styles match perfectly! You naturally know what the other wants and express it.",
+          "Your romantic chemistry is amazing! Every moment together feels special.",
+          "Your ways of expressing love align perfectly. It's a relationship full of affection.",
+          "Your romantic compatibility is the best! You both know how to make each other's heart flutter.",
+          "Whenever you're together, a special atmosphere is created. The best romantic chemistry."
+        ],
+        "medium": [
+          "Your dating styles differ slightly, but the process of adapting to each other can be enjoyable.",
+          "Learning and understanding each other's approaches to romance can deepen the relationship.",
+          "You may want slightly different things in love. Honest conversation helps.",
+          "Some parts of your dating patterns match, some don't. Balance is key.",
+          "To improve your romantic compatibility, try understanding each other's ways of expressing feelings."
+        ],
+        "low": [
+          "Your dating styles are quite different. Respecting each other's approach is important.",
+          "Wanting different things from romance can sometimes feel frustrating. Work it out through conversation.",
+          "To improve romantic compatibility, learn each other's love languages.",
+          "Different dating styles can cause conflict — understanding and consideration are needed.",
+          "Acknowledging the differences in your approaches to romance and making an effort to adapt is necessary."
+        ]
+      }
+    },
+    "소통": {
+      "icon": "💬",
+      "descriptions": {
+        "high": [
+          "Your communication is truly excellent! You understand each other even without words.",
+          "Your communication styles match perfectly. With every conversation you grow closer.",
+          "You're each other's best communication partners — freely expressing emotions and thoughts.",
+          "Conversation is natural and comfortable. You can talk honestly about any topic.",
+          "In both words and actions, you perfectly understand each other."
+        ],
+        "medium": [
+          "Communication is generally good, but misunderstandings can arise occasionally.",
+          "Understanding each other's communication styles better will allow for smoother conversation.",
+          "Practicing direct expression for important topics can be helpful.",
+          "A little more effort in communication can make the relationship much deeper.",
+          "Conversations can feel awkward at times, but with effort things can improve greatly."
+        ],
+        "low": [
+          "There can be communication difficulties. Talk more often and more honestly.",
+          "Different ways of expressing yourselves make misunderstandings easy. Empathy is needed.",
+          "To bridge communication style differences, learn each other's language.",
+          "Different ways of expressing feelings can feel frustrating. Practice patience.",
+          "To improve communication compatibility, practice listening without judgment."
+        ]
+      }
+    },
+    "미래": {
+      "icon": "🔮",
+      "descriptions": {
+        "high": [
+          "Your visions for the future perfectly align! The future you dream of together will be beautiful.",
+          "Your life goals and values match well. The future together is something to look forward to.",
+          "Your future compatibility is the best! You're the kind of couple who can make important life decisions together.",
+          "Your future plans naturally come together. It's a relationship where you can grow together.",
+          "The futures you want are similar. You can walk forward looking in the same direction."
+        ],
+        "medium": [
+          "Your thoughts on the future are somewhat similar but there are differences too.",
+          "It would be good to have enough conversation about each other's future goals.",
+          "Your plans for the future may differ somewhat. Respecting each other's dreams is important.",
+          "To improve future compatibility, you need time to set life goals together.",
+          "Your directions for the future may differ slightly — start talking early."
+        ],
+        "low": [
+          "Your views on the future are quite different. A serious conversation is needed.",
+          "Differences in life goals and values can lead to conflict later on.",
+          "You absolutely need time to share and align your future plans.",
+          "An effort to understand the other person's dreams and goals is needed for future compatibility.",
+          "Even if you differ now, the process of building a future together is what matters. Talk often."
+        ]
+      }
+    },
+    "운명": {
+      "icon": "⭐",
+      "descriptions": {
+        "high": [
+          "You two are connected like fate! Your meeting itself feels like a miracle.",
+          "Everything — star signs, names — points to this meeting. It's a destined relationship.",
+          "It feels like the universe connected you two! This meeting was meant to be.",
+          "A strong sense of destiny is felt from your names. A truly special connection.",
+          "You're connected by the thread of fate! Together you can overcome any hardship."
+        ],
+        "medium": [
+          "You have a certain connection. Cherish and nurture this meeting.",
+          "A connection made from many coincidences. Build your destiny together.",
+          "Rather than fate, this is a relationship built by choice — which can make it even more valuable.",
+          "The thread of connection is there, but strengthening it depends on both your efforts.",
+          "There's a sense of destiny between you. Cherishing each other can make it even more special."
+        ],
+        "low": [
+          "This is a relationship built more by effort than fate — which can make it more meaningful.",
+          "The thread of connection is thin, but through mutual effort you can build a strong bond.",
+          "It doesn't have to be fate! Love created by choice can be more beautiful.",
+          "For this meeting to become destiny, sincere effort from both of you is needed.",
+          "Even if the fate score is low, both of your wills can change everything."
+        ]
+      }
+    }
+  },
+  "advice": {
+    "high": [
+      "Getting to know each other even more deeply will make the relationship even better. It's already the best, and it can get even better — amazing!",
+      "Nurture this beautiful connection. Every moment together will become a special memory.",
+      "Express gratitude to each other often. Don't lose the caring heart you have now for one another.",
+      "Your relationship is truly special. People around you will be moved by your chemistry.",
+      "This level of compatibility is truly rare! Cherish each other for life.",
+      "Together, you can achieve anything. Support each other's dreams."
+    ],
+    "medium": [
+      "Practice seeing each other's differences as strengths. Differences are what make you attractive.",
+      "Communicate more often and share your thoughts. The deeper the understanding, the better the compatibility.",
+      "Be thankful and complimentary even over small things. Positive energy makes relationships better.",
+      "Create new experiences together. Shared memories will bring you closer.",
+      "Make a habit of thinking of each other's strengths first. The relationship will improve noticeably.",
+      "Be on each other's side even in difficult moments. That's what true partnership is."
+    ],
+    "low": [
+      "The feelings you have for each other matter more than the score right now. Don't give up!",
+      "Even with differences, love is enough. Don't stop the effort to understand each other.",
+      "It's okay to have many differences. It means there's a lot to learn from each other.",
+      "It's not an easy relationship, but it can become all the more special. Work on it together.",
+      "True love overcomes compatibility scores. The love you have for each other is what matters most.",
+      "The strongest bond is forged when you overcome a difficult relationship together. Take on the challenge!"
+    ]
+  }
+}

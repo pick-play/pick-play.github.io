@@ -1,0 +1,228 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "压力大的时候，你最想做什么？",
+      "options": [
+        { "text": "通过激烈运动大汗淋漓", "color": "red", "weight": 2 },
+        { "text": "和朋友们聊天玩耍", "color": "orange", "weight": 2 },
+        { "text": "在大自然中散步", "color": "green", "weight": 2 },
+        { "text": "一个人安静地听音乐", "color": "blue", "weight": 2 }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "我理想中的周末是？",
+      "options": [
+        { "text": "尝试新挑战或运动体验", "color": "red", "weight": 2 },
+        { "text": "刺激的户外活动和旅行", "color": "orange", "weight": 2 },
+        { "text": "在咖啡馆读书或画画", "color": "yellow", "weight": 2 },
+        { "text": "在温馨的家中看电影", "color": "indigo", "weight": 2 }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "我在朋友中的角色是？",
+      "options": [
+        { "text": "主导气氛的领袖", "color": "red", "weight": 2 },
+        { "text": "带动聚会的活力者", "color": "orange", "weight": 2 },
+        { "text": "调解矛盾的和平主义者", "color": "green", "weight": 2 },
+        { "text": "温暖共情的安慰者", "color": "pink", "weight": 2 }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "需要做决定时，我会？",
+      "options": [
+        { "text": "快速判断，立即执行", "color": "red", "weight": 2 },
+        { "text": "跟随直觉，选择令人兴奋的一方", "color": "orange", "weight": 2 },
+        { "text": "仔细分析利弊后再做决定", "color": "blue", "weight": 2 },
+        { "text": "充分听取周围人的意见", "color": "green", "weight": 2 }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "最吸引我的旅行风格是？",
+      "options": [
+        { "text": "蹦极、冲浪等极限旅行", "color": "red", "weight": 2 },
+        { "text": "体验新文化的背包旅行", "color": "orange", "weight": 2 },
+        { "text": "参观著名美术馆和文化遗址", "color": "purple", "weight": 2 },
+        { "text": "在疗愈度假村悠闲休养", "color": "blue", "weight": 2 }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "最能描述我的词语是？",
+      "options": [
+        { "text": "热情而有行动力", "color": "red", "weight": 2 },
+        { "text": "开朗积极", "color": "yellow", "weight": 2 },
+        { "text": "谨慎而有分析力", "color": "blue", "weight": 2 },
+        { "text": "有创意且独特", "color": "purple", "weight": 2 }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "生气时我的反应是？",
+      "options": [
+        { "text": "直接说出来，立即解决", "color": "red", "weight": 2 },
+        { "text": "短暂转换心情，很快平复", "color": "orange", "weight": 2 },
+        { "text": "一个人安静地整理思绪", "color": "indigo", "weight": 2 },
+        { "text": "把情绪压在心里，忍耐", "color": "green", "weight": 2 }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "我理想的恋爱风格是？",
+      "options": [
+        { "text": "热情积极的表达", "color": "red", "weight": 2 },
+        { "text": "一起积累各种经历", "color": "orange", "weight": 2 },
+        { "text": "深刻理解彼此的精神交流", "color": "indigo", "weight": 2 },
+        { "text": "温暖细腻的关怀与共情", "color": "pink", "weight": 2 }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "遇到新朋友时，我会？",
+      "options": [
+        { "text": "主动上前开始对话", "color": "orange", "weight": 2 },
+        { "text": "用明亮的能量迅速熟络", "color": "yellow", "weight": 2 },
+        { "text": "慢慢观察并了解对方", "color": "blue", "weight": 2 },
+        { "text": "先倾听对方说话", "color": "pink", "weight": 2 }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "关于我的梦想和目标？",
+      "options": [
+        { "text": "设定目标并强力推进", "color": "red", "weight": 2 },
+        { "text": "探索各种可能性并享受过程", "color": "orange", "weight": 2 },
+        { "text": "深入探究并寻找哲学意义", "color": "indigo", "weight": 2 },
+        { "text": "发挥艺术感觉独创性地表达", "color": "purple", "weight": 2 }
+      ]
+    }
+  ],
+  "results": {
+    "red": {
+      "name": "红色",
+      "title": "热情领袖",
+      "emoji": "🔴",
+      "color": "from-red-500 to-rose-600",
+      "bgColor": "#EF4444",
+      "swatchClass": "bg-red-500",
+      "description": "你是一个充满热情和能量的人。凭借强大的意志和行动力，无所畏惧地向目标前进，并为周围的人注入灵感和活力。与生俱来的领导力让你能够在任何情况下都自信地指引方向。",
+      "traits": ["强大的领导力", "炽热的热情", "快速决断力", "竞争心", "强大的行动力", "自信"],
+      "strengths": ["向目标迈进的强大执行力", "在任何情况下都不动摇的坚强意志", "率领团队的天生领导力", "在危机中闪耀的决断力"],
+      "weaknesses": ["急躁可能导致失误", "倾向于忽视他人意见", "过度的竞争心可能伤害关系"],
+      "compatible": ["orange", "yellow"],
+      "advice": "有时退一步，倾听周围人的声音。你的热情是最强大的武器，但与温暖的体贴相结合时，才能成为真正的领袖。"
+    },
+    "orange": {
+      "name": "橙色",
+      "title": "活力冒险家",
+      "emoji": "🟠",
+      "color": "from-orange-500 to-amber-500",
+      "bgColor": "#F97316",
+      "swatchClass": "bg-orange-500",
+      "description": "你是一个充满能量、热爱新事物的冒险家。很容易与人相处，能在任何地方让气氛变得活跃。你用对新体验开放的心态和积极的能量，让周围的人充满活力。",
+      "traits": ["活泼的社交性", "挑战精神", "开朗", "开放性", "即兴性", "乐观主义"],
+      "strengths": ["在任何环境中都能快速适应的灵活性", "容易与人亲近的出色社交能力", "享受新挑战的积极态度", "能将阴暗气氛变明朗的能量"],
+      "weaknesses": ["难以深度专注", "倾向于做出冲动的决定", "难以在一处长时间停留"],
+      "compatible": ["red", "yellow"],
+      "advice": "你明亮的能量照亮世界。偶尔停下脚步，细细品味深厚的关系和目标。根扎得深的树长得更高。"
+    },
+    "yellow": {
+      "name": "黄色",
+      "title": "阳光乐观者",
+      "emoji": "🟡",
+      "color": "from-yellow-400 to-amber-400",
+      "bgColor": "#EAB308",
+      "swatchClass": "bg-yellow-400",
+      "description": "你是照亮世界的太阳般的存在。在任何情况下都能找到积极的一面，用创意的想法为周围人带来活力。幽默感出众，有让人微笑的天赋。",
+      "traits": ["开朗的乐观主义", "创意思维", "幽默感", "温暖的亲切感", "自由灵魂", "即兴发想"],
+      "strengths": ["在任何情况下都能发现积极面的能力", "创意独特的想法", "给人带来笑声和活力的存在感", "用自由的思维打破框架的想象力"],
+      "weaknesses": ["在严肃情况下难以集中", "可能有情绪波动", "倾向于缺乏细节规划"],
+      "compatible": ["orange", "pink"],
+      "advice": "你的明朗是世界上最珍贵的礼物。有时请认真地坐下来冷静地制定计划。当你的创造力加上执行力，无限的可能性就会展开。"
+    },
+    "green": {
+      "name": "绿色",
+      "title": "平和调和者",
+      "emoji": "🟢",
+      "color": "from-green-500 to-emerald-600",
+      "bgColor": "#22C55E",
+      "swatchClass": "bg-green-500",
+      "description": "你是一个重视平衡与和谐的平和之人。与自然相连，与周围的人形成深厚的共鸣。你有调解冲突、创造让所有人都感到舒适的环境的天赋。",
+      "traits": ["出色的共情能力", "亲近自然", "均衡感", "耐心", "包容力", "追求和谐"],
+      "strengths": ["能理解所有人立场的深度共情力", "温和化解冲突的调解能力", "稳定可靠的信任感", "对自然和生命的深刻理解"],
+      "weaknesses": ["难以强烈主张自己的意见", "可能看起来优柔寡断", "过度吸收他人情绪而感到疲惫"],
+      "compatible": ["blue", "pink"],
+      "advice": "你温暖的包容力让世界更美好。偶尔也倾听自己的情感和需求。先爱自己，才能更好地爱别人。"
+    },
+    "blue": {
+      "name": "蓝色",
+      "title": "冷静思考者",
+      "emoji": "🔵",
+      "color": "from-blue-500 to-cyan-600",
+      "bgColor": "#3B82F6",
+      "swatchClass": "bg-blue-500",
+      "description": "你是拥有深刻思考和分析力的思考者。重视理性胜于感性，以谨慎的判断赢得信任。能以冷静的态度逻辑地解决复杂问题。",
+      "traits": ["冷静的分析力", "可靠性", "沉稳", "逻辑思维", "深刻的内省", "诚实"],
+      "strengths": ["不被情绪左右的冷静判断力", "系统解决复杂问题的能力", "一旦给予信任绝不背叛的忠诚", "积累深厚知识和专业性的探究心"],
+      "weaknesses": ["情感表达不擅长，可能显得冷漠", "过度追求完美而承受压力", "适应新变化较慢"],
+      "compatible": ["green", "indigo"],
+      "advice": "你的逻辑思维是世界真正需要的能力。偶尔倾听内心的声音，练习表达情感。理性与感性的和谐将让你更加完整。"
+    },
+    "indigo": {
+      "name": "靛色",
+      "title": "直觉探索者",
+      "emoji": "🌑",
+      "color": "from-indigo-600 to-blue-800",
+      "bgColor": "#4F46E5",
+      "swatchClass": "bg-indigo-600",
+      "description": "你是探索深层内心世界的直觉性探索者。寻找表面之外的意义，享受哲学性的问题，用敏锐的直觉洞察本质。你拥有看见他人看不到的事物的特殊洞察力。",
+      "traits": ["敏锐的直觉", "深刻的沉思", "哲学性思维", "洞察力", "内在探索", "神秘感"],
+      "strengths": ["看见不可见之物的卓越直觉力", "探索人生深层意义的哲学性思维", "解读复杂模式和关联的能力", "感知他人隐藏情感的细腻"],
+      "weaknesses": ["可能陷入脱离现实的想法", "只与少数人建立深厚关系，可能感到孤独", "困在自己的世界里可能导致沟通困难"],
+      "compatible": ["blue", "purple"],
+      "advice": "你深刻的洞察是世界所需要的光。偶尔走出深沉的思考，也享受日常的乐趣。地上的美也值得充分探索。"
+    },
+    "purple": {
+      "name": "紫色",
+      "title": "神秘艺术家",
+      "emoji": "🟣",
+      "color": "from-purple-500 to-violet-700",
+      "bgColor": "#A855F7",
+      "swatchClass": "bg-purple-500",
+      "description": "你是创造力与灵性相结合的神秘艺术家。以独特的视角审视世界，用艺术感和想象力创造美。你是个性强烈、独创性强的存在，是拒绝平凡的自由灵魂。",
+      "traits": ["创意艺术性", "独创性", "神秘感", "灵性感受力", "个性", "丰富的想象力"],
+      "strengths": ["独创而美丽的艺术表现力", "不拘一格的自由思维", "用深厚感受力创造美的能力", "尊重个性和多样性的包容视角"],
+      "weaknesses": ["倾向于忽视现实部分", "不被理解时容易感到孤立", "心情变化可能影响一致性"],
+      "compatible": ["indigo", "pink"],
+      "advice": "你的创造力是让世界更美好的力量。偶尔保持与现实的联系，与世界分享你的艺术。你独特的色彩能给很多人带来灵感。"
+    },
+    "pink": {
+      "name": "粉色",
+      "title": "温暖共情者",
+      "emoji": "🩷",
+      "color": "from-pink-400 to-rose-500",
+      "bgColor": "#EC4899",
+      "swatchClass": "bg-pink-400",
+      "description": "你是用温暖的心包容周围人的共情达人。对他人的情感敏感，为人们创造能够舒适开心的安全空间。你用细腻的关怀和真心的爱构建珍贵的关系。",
+      "traits": ["深度共情力", "温暖关怀", "浪漫", "细腻", "善良", "感性"],
+      "strengths": ["精准读取他人情感的细腻共情力", "珍视关系的温暖心意", "让氛围温馨的亲和力", "用真诚的安慰和鼓励给予力量的能力"],
+      "weaknesses": ["情感敏感，容易受伤", "倾向于为他人过度牺牲自己", "难以拒绝，有时会感到痛苦"],
+      "compatible": ["yellow", "green"],
+      "advice": "你的温暖是世界上最珍贵的礼物。不要忘记先珍视和爱自己。你快乐了，周围的人也能更加明亮地闪耀。"
+    }
+  },
+  "colorMeta": {
+    "red":    { "hex": "#EF4444", "label": "红色" },
+    "orange": { "hex": "#F97316", "label": "橙色" },
+    "yellow": { "hex": "#EAB308", "label": "黄色" },
+    "green":  { "hex": "#22C55E", "label": "绿色" },
+    "blue":   { "hex": "#3B82F6", "label": "蓝色" },
+    "indigo": { "hex": "#4F46E5", "label": "靛色" },
+    "purple": { "hex": "#A855F7", "label": "紫色" },
+    "pink":   { "hex": "#EC4899", "label": "粉色" }
+  }
+}

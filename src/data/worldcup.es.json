@@ -1,0 +1,148 @@
+{
+  "topics": [
+    {
+      "id": "food",
+      "name": "Worldcup de Comidas",
+      "emoji": "🍜",
+      "description": "¡Elige la mejor comida!",
+      "candidates": [
+        { "id": 1, "name": "Pollo Frito", "emoji": "🍗", "desc": "Crujiente frito y glaseado picante" },
+        { "id": 2, "name": "Pizza", "emoji": "🍕", "desc": "Cargada de queso" },
+        { "id": 3, "name": "Tteokbokki", "emoji": "🌶️", "desc": "Pastel de arroz dulce y picante" },
+        { "id": 4, "name": "Panceta BBQ", "emoji": "🥓", "desc": "Carne dorada en la parrilla" },
+        { "id": 5, "name": "Sushi", "emoji": "🍣", "desc": "Lo mejor del marisco fresco" },
+        { "id": 6, "name": "Ramen", "emoji": "🍜", "desc": "Sabe aún mejor de noche" },
+        { "id": 7, "name": "Hamburguesa", "emoji": "🍔", "desc": "Carne gruesa con verduras frescas" },
+        { "id": 8, "name": "Pasta", "emoji": "🍝", "desc": "Cremoso Alfredo" },
+        { "id": 9, "name": "Kimchi Jjigae", "emoji": "🍲", "desc": "Estofado de kimchi caliente y picante" },
+        { "id": 10, "name": "Bibimbap", "emoji": "🥗", "desc": "Colorido y lleno de nutrientes" },
+        { "id": 11, "name": "Jajangmyeon", "emoji": "🍜", "desc": "La magia de la salsa negra" },
+        { "id": 12, "name": "Naengmyeon", "emoji": "🍥", "desc": "Fideos fríos de verano" },
+        { "id": 13, "name": "Bulgogi", "emoji": "🥩", "desc": "Marinado de salsa de soja dulce" },
+        { "id": 14, "name": "Tonkatsu", "emoji": "🍱", "desc": "Empanado crujiente de cerdo" },
+        { "id": 15, "name": "Malatang", "emoji": "🌶️", "desc": "Especias de Sichuan entumecedoras" },
+        { "id": 16, "name": "Cerdo Agridulce", "emoji": "🍖", "desc": "Salsa agridulce — ¿verter o mojar?" }
+      ]
+    },
+    {
+      "id": "travel",
+      "name": "Worldcup de Viajes",
+      "emoji": "✈️",
+      "description": "¿A dónde quieres ir más?",
+      "candidates": [
+        { "id": 1, "name": "Isla de Jeju", "emoji": "🌊", "desc": "Hallasan y mares de esmeralda" },
+        { "id": 2, "name": "París", "emoji": "🗼", "desc": "La ciudad del romance y la Torre Eiffel" },
+        { "id": 3, "name": "Tokio", "emoji": "🗾", "desc": "Donde lo moderno convive con la tradición" },
+        { "id": 4, "name": "Nueva York", "emoji": "🗽", "desc": "La ciudad que nunca duerme" },
+        { "id": 5, "name": "Bangkok", "emoji": "🛺", "desc": "Tierra de sabores y templos" },
+        { "id": 6, "name": "Bali", "emoji": "🌺", "desc": "El resort de la Isla de los Dioses" },
+        { "id": 7, "name": "Hawái", "emoji": "🌈", "desc": "El paraíso del Pacífico" },
+        { "id": 8, "name": "Londres", "emoji": "🎡", "desc": "Big Ben y el Palacio de Buckingham" },
+        { "id": 9, "name": "Barcelona", "emoji": "🏟️", "desc": "La ciudad de la arquitectura de Gaudí" },
+        { "id": 10, "name": "Roma", "emoji": "🏛️", "desc": "La ciudad eterna de la historia" },
+        { "id": 11, "name": "Suiza", "emoji": "🏔️", "desc": "Praderas y nieves alpinas" },
+        { "id": 12, "name": "Busan", "emoji": "🌉", "desc": "Gwangalli y la playa Haeundae" },
+        { "id": 13, "name": "Maldivas", "emoji": "🏝️", "desc": "El paraíso de las villas sobre el agua" },
+        { "id": 14, "name": "Sídney", "emoji": "🦘", "desc": "La Ópera y el puerto" },
+        { "id": 15, "name": "Praga", "emoji": "🏰", "desc": "Un casco antiguo de cuento de hadas" },
+        { "id": 16, "name": "Dubái", "emoji": "🌆", "desc": "La ciudad del futuro en el desierto" }
+      ]
+    },
+    {
+      "id": "animal",
+      "name": "Worldcup de Animales",
+      "emoji": "🐾",
+      "description": "¡Elige el animal más adorable!",
+      "candidates": [
+        { "id": 1, "name": "Perro", "emoji": "🐶", "desc": "El leal mejor amigo del humano" },
+        { "id": 2, "name": "Gato", "emoji": "🐱", "desc": "Distante pero adorable" },
+        { "id": 3, "name": "Conejo", "emoji": "🐰", "desc": "Esponjosa bola de algodón" },
+        { "id": 4, "name": "Panda", "emoji": "🐼", "desc": "Hada de bambú en blanco y negro" },
+        { "id": 5, "name": "Nutria", "emoji": "🦦", "desc": "Juguetona preciosidad del agua" },
+        { "id": 6, "name": "Pingüino", "emoji": "🐧", "desc": "Caballero que camina bamboleándose" },
+        { "id": 7, "name": "Hámster", "emoji": "🐹", "desc": "¡Esas bolsitas de los carrillos!" },
+        { "id": 8, "name": "Alpaca", "emoji": "🦙", "desc": "Peluda bola de lana" },
+        { "id": 9, "name": "Zorro", "emoji": "🦊", "desc": "Listo y misterioso" },
+        { "id": 10, "name": "Delfín", "emoji": "🐬", "desc": "El genio del mar" },
+        { "id": 11, "name": "Koala", "emoji": "🐨", "desc": "Hada del árbol de eucalipto" },
+        { "id": 12, "name": "Capibara", "emoji": "🦫", "desc": "El roedor gigante más tranquilo del mundo" },
+        { "id": 13, "name": "Erizo", "emoji": "🦔", "desc": "Preciosidad oculta entre las púas" },
+        { "id": 14, "name": "Guepardo", "emoji": "🐆", "desc": "El animal terrestre más rápido" },
+        { "id": 15, "name": "Panda Rojo", "emoji": "🦝", "desc": "La ternura del panda rojo" },
+        { "id": 16, "name": "Foca", "emoji": "🦭", "desc": "El comediante marino que aplaude" }
+      ]
+    },
+    {
+      "id": "hobby",
+      "name": "Worldcup de Hobbies",
+      "emoji": "🎨",
+      "description": "¿Cuál es la mejor actividad de ocio?",
+      "candidates": [
+        { "id": 1, "name": "Netflix", "emoji": "📺", "desc": "El placer de ver series de un tirón" },
+        { "id": 2, "name": "Videojuegos", "emoji": "🎮", "desc": "Aventuras en el mundo virtual" },
+        { "id": 3, "name": "Ejercicio", "emoji": "💪", "desc": "Tiempo saludable sudando" },
+        { "id": 4, "name": "Lectura", "emoji": "📚", "desc": "Perderse en un buen libro" },
+        { "id": 5, "name": "Cocinar", "emoji": "👨‍🍳", "desc": "Desarrollar tus propias recetas" },
+        { "id": 6, "name": "Viajes", "emoji": "✈️", "desc": "Recargar energías en nuevos lugares" },
+        { "id": 7, "name": "Cafeterías", "emoji": "☕", "desc": "Descubrir cafés escondidos" },
+        { "id": 8, "name": "Escuchar Música", "emoji": "🎵", "desc": "Tiempo sumergido en la música" },
+        { "id": 9, "name": "Dibujar", "emoji": "🎨", "desc": "Expresar emociones en el lienzo" },
+        { "id": 10, "name": "Fotografía", "emoji": "📸", "desc": "Hacer eternos los momentos" },
+        { "id": 11, "name": "Camping", "emoji": "⛺", "desc": "Sanar en la naturaleza" },
+        { "id": 12, "name": "Senderismo", "emoji": "🏔️", "desc": "La satisfacción de llegar a la cima" },
+        { "id": 13, "name": "Compras", "emoji": "🛍️", "desc": "La emoción de encontrar gangas" },
+        { "id": 14, "name": "Cine", "emoji": "🎬", "desc": "Gran pantalla y sonido envolvente" },
+        { "id": 15, "name": "Juegos de Mesa", "emoji": "🎲", "desc": "Batalla de cerebros con amigos" },
+        { "id": 16, "name": "Tocar Instrumentos", "emoji": "🎸", "desc": "Expresar emociones con melodía" }
+      ]
+    },
+    {
+      "id": "season",
+      "name": "Worldcup de Estaciones",
+      "emoji": "🌸",
+      "description": "¿Cuál es tu momento estacional favorito?",
+      "candidates": [
+        { "id": 1, "name": "Temporada de Cerezos", "emoji": "🌸", "desc": "Lluvia de pétalos rosados" },
+        { "id": 2, "name": "Playa", "emoji": "🏖️", "desc": "Sonido de olas y arena" },
+        { "id": 3, "name": "Hojas de Otoño", "emoji": "🍂", "desc": "Montañas teñidas de rojo" },
+        { "id": 4, "name": "Primera Nieve", "emoji": "❄️", "desc": "Los primeros copos de invierno" },
+        { "id": 5, "name": "Navidad", "emoji": "🎄", "desc": "Festival invernal brillante" },
+        { "id": 6, "name": "Camping de Otoño", "emoji": "🏕️", "desc": "Fogata pisando hojas caídas" },
+        { "id": 7, "name": "Noche de Verano", "emoji": "🌙", "desc": "El romanticismo de la noche tropical" },
+        { "id": 8, "name": "Picnic de Primavera", "emoji": "🧺", "desc": "En un campo de brotes nuevos" },
+        { "id": 9, "name": "Aguas Termales Invernales", "emoji": "♨️", "desc": "Baño al aire libre con nieve cayendo" },
+        { "id": 10, "name": "Festival de Verano", "emoji": "🎆", "desc": "Fuegos artificiales y mercados nocturnos" },
+        { "id": 11, "name": "Lectura Otoñal", "emoji": "📖", "desc": "Un libro al son de las hojas que caen" },
+        { "id": 12, "name": "Paseo de Primavera", "emoji": "🌼", "desc": "Un paseo siguiendo el aroma floral" },
+        { "id": 13, "name": "Guerra de Nieve", "emoji": "⛄", "desc": "Volverse niño en la nieve" },
+        { "id": 14, "name": "Sandía", "emoji": "🍉", "desc": "Un mordisco refrescante de verano" },
+        { "id": 15, "name": "Boniato Asado", "emoji": "🍠", "desc": "Aperitivo callejero de invierno" },
+        { "id": 16, "name": "Temporada de Lluvias", "emoji": "🌧️", "desc": "Siesta al sonido de la lluvia" }
+      ]
+    },
+    {
+      "id": "dessert",
+      "name": "Worldcup de Postres",
+      "emoji": "🍰",
+      "description": "¡Encuentra el postre más delicioso!",
+      "candidates": [
+        { "id": 1, "name": "Helado", "emoji": "🍦", "desc": "El dulce esencial del verano" },
+        { "id": 2, "name": "Tarta", "emoji": "🎂", "desc": "Capas húmedas y dulces" },
+        { "id": 3, "name": "Macaron", "emoji": "🫐", "desc": "Galleta estilo parisino" },
+        { "id": 4, "name": "Chocolate", "emoji": "🍫", "desc": "Explosión de hormonas de la felicidad" },
+        { "id": 5, "name": "Taiyaki", "emoji": "🐟", "desc": "¿Relleno de frijoles o crema?" },
+        { "id": 6, "name": "Hotteok", "emoji": "🥞", "desc": "Dulce aperitivo callejero invernal" },
+        { "id": 7, "name": "Crepe", "emoji": "🫔", "desc": "Dulzura en masa fina" },
+        { "id": 8, "name": "Gofre", "emoji": "🧇", "desc": "Cuadrícula crujiente y dulce" },
+        { "id": 9, "name": "Donut", "emoji": "🍩", "desc": "La tentación del glaseado" },
+        { "id": 10, "name": "Tartaleta", "emoji": "🥧", "desc": "Fruta sobre masa crujiente" },
+        { "id": 11, "name": "Galleta", "emoji": "🍪", "desc": "Aroma a mantequilla recién horneada" },
+        { "id": 12, "name": "Pudding", "emoji": "🍮", "desc": "Suave salsa de caramelo temblorosa" },
+        { "id": 13, "name": "Tiramisú", "emoji": "☕", "desc": "Café y mascarpone" },
+        { "id": 14, "name": "Brownie", "emoji": "🍫", "desc": "Denso trozo de chocolate intenso" },
+        { "id": 15, "name": "Croffle", "emoji": "🥐", "desc": "Combinación de croissant y gofre" },
+        { "id": 16, "name": "Chips de Miel y Mantequilla", "emoji": "🍯", "desc": "Snack adictivo dulce y salado" }
+      ]
+    }
+  ]
+}
