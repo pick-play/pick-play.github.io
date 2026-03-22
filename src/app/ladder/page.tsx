@@ -275,7 +275,7 @@ function LadderVisualization({
   );
 }
 
-// ─── Animated path overlay ─────────────────────────────────────────────────────
+// ─── SVG-based animated path overlay ──────────────────────────────────────────
 
 interface AnimatedPathProps {
   path: PathStep[];
@@ -286,134 +286,201 @@ interface AnimatedPathProps {
 }
 
 function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPathProps) {
-  const [visibleSteps, setVisibleSteps] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [svgSize, setSvgSize] = useState({ w: 0, h: 0 });
+  const [dashOffset, setDashOffset] = useState(0);
+  const [totalLength, setTotalLength] = useState(0);
+  const pathRef = useRef<SVGPolylineElement>(null);
+  const animRef = useRef<number | null>(null);
 
+  // Observe container size
   useEffect(() => {
-    if (isAnimating) {
-      setVisibleSteps(0);
-      let step = 0;
-      const advance = () => {
-        step += 1;
-        setVisibleSteps(step);
-        if (step < path.length) {
-          timerRef.current = setTimeout(advance, 80);
-        }
-      };
-      timerRef.current = setTimeout(advance, 60);
-    } else {
-      setVisibleSteps(path.length);
-    }
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
+    const svg = svgRef.current;
+    if (!svg) return;
+    const parent = svg.parentElement;
+    if (!parent) return;
+    const measure = () => {
+      const rect = parent.getBoundingClientRect();
+      setSvgSize({ w: rect.width, h: rect.height });
     };
-  }, [isAnimating, path.length]);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(parent);
+    return () => ro.disconnect();
+  }, []);
 
-  const colFrac = (col: number) =>
-    playerCount <= 1 ? 0 : col / (playerCount - 1);
-  const rowPercent = (row: number) => (row / RUNG_ROWS) * 100;
+  // Convert path steps to SVG coordinates
+  const points = useMemo(() => {
+    if (svgSize.w === 0 || svgSize.h === 0) return [];
+    const usableW = svgSize.w - pad * 2;
+    const colX = (col: number) =>
+      pad + (playerCount <= 1 ? 0 : (col / (playerCount - 1)) * usableW);
+    const rowY = (row: number) => (row / RUNG_ROWS) * svgSize.h;
 
-  const colCalc = (col: number) =>
-    `calc(${pad}px + (100% - ${pad * 2}px) * ${colFrac(col)})`;
+    const pts: { x: number; y: number }[] = [];
+    let curCol = path[0]?.col ?? 0;
+
+    for (let i = 0; i < path.length; i++) {
+      const step = path[i];
+      if (step.direction === "down") {
+        // If previous was horizontal, we're already at row+0.5 position
+        if (i > 0) {
+          const prev = path[i - 1];
+          if (prev.direction === "right" || prev.direction === "left") {
+            // Already added the horizontal end point
+          }
+        }
+        // Add the vertical endpoint
+        pts.push({ x: colX(step.col), y: rowY(step.row) });
+        curCol = step.col;
+      } else if (step.direction === "right") {
+        // Start of horizontal: current col at rung Y
+        pts.push({ x: colX(curCol), y: rowY(step.row + 0.5) });
+        // End of horizontal: next col at rung Y
+        pts.push({ x: colX(curCol + 1), y: rowY(step.row + 0.5) });
+        curCol = curCol + 1;
+      } else if (step.direction === "left") {
+        pts.push({ x: colX(curCol), y: rowY(step.row + 0.5) });
+        pts.push({ x: colX(curCol - 1), y: rowY(step.row + 0.5) });
+        curCol = curCol - 1;
+      }
+    }
+    return pts;
+  }, [path, svgSize.w, svgSize.h, playerCount, pad]);
+
+  const pointsStr = points.map((p) => `${p.x},${p.y}`).join(" ");
+
+  // Get total path length after render
+  useEffect(() => {
+    if (pathRef.current) {
+      const len = pathRef.current.getTotalLength();
+      setTotalLength(len);
+      if (isAnimating) {
+        setDashOffset(len);
+      }
+    }
+  }, [pointsStr, isAnimating]);
+
+  // Animate the path drawing
+  useEffect(() => {
+    if (!isAnimating || totalLength === 0) {
+      if (!isAnimating) setDashOffset(0);
+      return;
+    }
+    setDashOffset(totalLength);
+    const duration = path.length * 80; // ms per step
+    const startTime = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic for smooth deceleration
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDashOffset(totalLength * (1 - eased));
+      if (progress < 1) {
+        animRef.current = requestAnimationFrame(tick);
+      }
+    };
+    animRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (animRef.current) cancelAnimationFrame(animRef.current);
+    };
+  }, [isAnimating, totalLength, path.length]);
+
+  // Compute needle position based on current dash offset
+  const needlePos = useMemo(() => {
+    if (!pathRef.current || totalLength === 0) return null;
+    const drawnLength = totalLength - dashOffset;
+    if (drawnLength <= 0) return null;
+    const pt = pathRef.current.getPointAtLength(Math.min(drawnLength, totalLength));
+    return { x: pt.x, y: pt.y };
+  }, [dashOffset, totalLength]);
+
+  if (points.length < 2) return null;
 
   return (
-    <>
-      {path.slice(0, visibleSteps).map((step, idx) => {
-        if (idx === 0) return null;
-        const prev = path[idx - 1];
-        const cur = step;
-
-        let col1: number, row1: number, col2: number, row2: number;
-
-        if (cur.direction === "down") {
-          col1 = prev.col;
-          col2 = cur.col;
-          // If previous step was horizontal (right/left), start from the rung Y (row + 0.5)
-          row1 = prev.direction === "right" || prev.direction === "left"
-            ? prev.row + 0.5
-            : prev.row;
-          row2 = cur.row;
-        } else if (cur.direction === "right") {
-          col1 = prev.col; row1 = cur.row + 0.5;
-          col2 = prev.col + 1; row2 = cur.row + 0.5;
-        } else {
-          col1 = prev.col; row1 = cur.row + 0.5;
-          col2 = prev.col - 1; row2 = cur.row + 0.5;
-        }
-
-        const isVertical = col1 === col2;
-        const minCol = Math.min(col1, col2);
-        const maxCol = Math.max(col1, col2);
-        const minRow = Math.min(row1, row2);
-        const maxRow = Math.max(row1, row2);
-
-        return (
-          <motion.div
-            key={`seg-${idx}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.05 }}
-            className="absolute pointer-events-none"
-            style={{
-              left: colCalc(minCol),
-              top: `${rowPercent(minRow)}%`,
-              width: isVertical
-                ? "6px"
-                : `calc((100% - ${pad * 2}px) * ${colFrac(maxCol) - colFrac(minCol)} + 6px)`,
-              height: isVertical ? `${rowPercent(maxRow) - rowPercent(minRow)}%` : "6px",
-              backgroundColor: color,
-              borderRadius: "3px",
-              transform: isVertical ? "translateX(-50%)" : "translateY(-50%)",
-              boxShadow: `0 0 6px 2px ${color}, 0 0 18px 6px ${color}CC, 0 0 36px 10px ${color}55`,
-              zIndex: 10,
-            }}
-          />
-        );
-      })}
-      {isAnimating && visibleSteps > 0 && (() => {
-        const lastStep = path[visibleSteps - 1];
-        const prevStep = visibleSteps >= 2 ? path[visibleSteps - 2] : null;
-
-        let dotCol = lastStep.col;
-        let dotRow = lastStep.row;
-
-        if (lastStep.direction === "right" && prevStep) {
-          dotCol = prevStep.col + 1;
-          dotRow = lastStep.row + 0.5;
-        } else if (lastStep.direction === "left" && prevStep) {
-          dotCol = prevStep.col - 1;
-          dotRow = lastStep.row + 0.5;
-        } else if (lastStep.direction === "down") {
-          dotCol = lastStep.col;
-          dotRow = lastStep.row;
-        }
-
-        return (
-          <motion.div
-            key="needle-dot"
-            className="absolute pointer-events-none rounded-full"
-            animate={{
-              scale: [1, 1.6, 1],
-              boxShadow: [
-                `0 0 10px 4px ${color}, 0 0 30px 12px ${color}CC, 0 0 60px 20px ${color}66`,
-                `0 0 20px 8px ${color}, 0 0 50px 20px ${color}EE, 0 0 90px 32px ${color}99`,
-                `0 0 10px 4px ${color}, 0 0 30px 12px ${color}CC, 0 0 60px 20px ${color}66`,
-              ],
-            }}
-            transition={{ duration: 0.6, repeat: Infinity, ease: "easeInOut" }}
-            style={{
-              left: colCalc(dotCol),
-              top: `${rowPercent(dotRow)}%`,
-              width: "18px",
-              height: "18px",
-              backgroundColor: color,
-              transform: "translate(-50%, -50%)",
-              zIndex: 20,
-            }}
-          />
-        );
-      })()}
-    </>
+    <svg
+      ref={svgRef}
+      className="absolute inset-0 pointer-events-none"
+      style={{ zIndex: 10, overflow: "visible" }}
+      width="100%"
+      height="100%"
+    >
+      <defs>
+        <filter id={`glow-${color.replace("#", "")}`} x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      {/* Glow layer (thicker, blurred) */}
+      <polyline
+        points={pointsStr}
+        fill="none"
+        stroke={color}
+        strokeWidth={10}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity={0.3}
+        strokeDasharray={totalLength || undefined}
+        strokeDashoffset={dashOffset}
+      />
+      {/* Main path line */}
+      <polyline
+        ref={pathRef}
+        points={pointsStr}
+        fill="none"
+        stroke={color}
+        strokeWidth={5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeDasharray={totalLength || undefined}
+        strokeDashoffset={dashOffset}
+        filter={`url(#glow-${color.replace("#", "")})`}
+      />
+      {/* Needle dot at the leading edge */}
+      {isAnimating && needlePos && (
+        <>
+          <circle
+            cx={needlePos.x}
+            cy={needlePos.y}
+            r={12}
+            fill={color}
+            opacity={0.25}
+          >
+            <animate
+              attributeName="r"
+              values="10;16;10"
+              dur="0.7s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              values="0.3;0.15;0.3"
+              dur="0.7s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle
+            cx={needlePos.x}
+            cy={needlePos.y}
+            r={6}
+            fill="white"
+            stroke={color}
+            strokeWidth={3}
+          >
+            <animate
+              attributeName="r"
+              values="5;7;5"
+              dur="0.7s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        </>
+      )}
+    </svg>
   );
 }
 
