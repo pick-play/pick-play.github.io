@@ -2,53 +2,12 @@
 
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
-
-// ─── Data ────────────────────────────────────────────────────────────────────
-
-const navCategories = [
-  {
-    label: "생활도구",
-    color: "sky",
-    links: [
-      { href: "/food", label: "뭐 먹지", emoji: "🍽️" },
-      { href: "/settlement", label: "정산", emoji: "💰" },
-      { href: "/date-course", label: "데이트", emoji: "💌" },
-      { href: "/roulette", label: "룰렛", emoji: "🎯" },
-      { href: "/d-day", label: "D-Day", emoji: "📅" },
-      { href: "/draw", label: "제비뽑기", emoji: "🎫" },
-      { href: "/seat", label: "자리배치", emoji: "💺" },
-      { href: "/nickname", label: "닉네임", emoji: "✏️" },
-      { href: "/pdf", label: "PDF", emoji: "📄" },
-      { href: "/image", label: "이미지", emoji: "🖼️" },
-      { href: "/ladder", label: "사다리", emoji: "🪜" },
-    ],
-  },
-  {
-    label: "파티게임",
-    color: "violet",
-    links: [
-      { href: "/liar-game", label: "라이어", emoji: "🎭" },
-      { href: "/random-team", label: "조뽑기", emoji: "🎲" },
-      { href: "/balance-game", label: "밸런스", emoji: "⚖️" },
-      { href: "/chosung-quiz", label: "초성", emoji: "🔤" },
-      { href: "/truth-dare", label: "진실도전", emoji: "🔥" },
-      { href: "/worldcup", label: "월드컵", emoji: "🏆" },
-    ],
-  },
-  {
-    label: "테스트",
-    color: "amber",
-    links: [
-      { href: "/teto-egen", label: "테토에겐", emoji: "🧠" },
-      { href: "/mbti", label: "MBTI", emoji: "✨" },
-      { href: "/couple-test", label: "궁합", emoji: "💕" },
-      { href: "/color-test", label: "색깔", emoji: "🎨" },
-      { href: "/tarot", label: "타로", emoji: "🔮" },
-    ],
-  },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
+import { getLocaleFromPath, localePaths } from "@/i18n/config";
+import { getNavData } from "@/i18n/nav";
 
 // Per-category color tokens (Tailwind-safe, static strings)
 const categoryStyles: Record<
@@ -67,12 +26,10 @@ const categoryStyles: Record<
   }
 > = {
   sky: {
-    group:
-      "bg-sky-50/60 dark:bg-sky-950/30 border border-sky-100 dark:border-sky-900/40",
+    group: "bg-sky-50/60 dark:bg-sky-950/30 border border-sky-100 dark:border-sky-900/40",
     label: "text-sky-500 dark:text-sky-400",
     pill: "text-slate-600 dark:text-slate-300",
-    pillHover:
-      "hover:bg-sky-100 dark:hover:bg-sky-900/40 hover:text-sky-600 dark:hover:text-sky-300",
+    pillHover: "hover:bg-sky-100 dark:hover:bg-sky-900/40 hover:text-sky-600 dark:hover:text-sky-300",
     dot: "bg-sky-400",
     btn: "text-sky-600 dark:text-sky-400",
     btnHover: "hover:bg-sky-50 dark:hover:bg-sky-950/40",
@@ -81,12 +38,10 @@ const categoryStyles: Record<
     linkHover: "hover:bg-sky-50 dark:hover:bg-sky-950/40 hover:text-sky-600 dark:hover:text-sky-300",
   },
   violet: {
-    group:
-      "bg-violet-50/60 dark:bg-violet-950/30 border border-violet-100 dark:border-violet-900/40",
+    group: "bg-violet-50/60 dark:bg-violet-950/30 border border-violet-100 dark:border-violet-900/40",
     label: "text-violet-500 dark:text-violet-400",
     pill: "text-slate-600 dark:text-slate-300",
-    pillHover:
-      "hover:bg-violet-100 dark:hover:bg-violet-900/40 hover:text-violet-600 dark:hover:text-violet-300",
+    pillHover: "hover:bg-violet-100 dark:hover:bg-violet-900/40 hover:text-violet-600 dark:hover:text-violet-300",
     dot: "bg-violet-400",
     btn: "text-violet-600 dark:text-violet-400",
     btnHover: "hover:bg-violet-50 dark:hover:bg-violet-950/40",
@@ -95,12 +50,10 @@ const categoryStyles: Record<
     linkHover: "hover:bg-violet-50 dark:hover:bg-violet-950/40 hover:text-violet-600 dark:hover:text-violet-300",
   },
   amber: {
-    group:
-      "bg-amber-50/60 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/40",
+    group: "bg-amber-50/60 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/40",
     label: "text-amber-500 dark:text-amber-400",
     pill: "text-slate-600 dark:text-slate-300",
-    pillHover:
-      "hover:bg-amber-100 dark:hover:bg-amber-900/40 hover:text-amber-600 dark:hover:text-amber-300",
+    pillHover: "hover:bg-amber-100 dark:hover:bg-amber-900/40 hover:text-amber-600 dark:hover:text-amber-300",
     dot: "bg-amber-400",
     btn: "text-amber-600 dark:text-amber-400",
     btnHover: "hover:bg-amber-50 dark:hover:bg-amber-950/40",
@@ -171,13 +124,15 @@ function DropdownItem({
   onMouseEnter,
   onMouseLeave,
   onClose,
+  prefix,
 }: {
-  category: (typeof navCategories)[number];
+  category: { label: string; color: string; links: { href: string; label: string; emoji: string }[] };
   index: number;
   isOpen: boolean;
   onMouseEnter: (index: number) => void;
   onMouseLeave: () => void;
   onClose: () => void;
+  prefix: string;
 }) {
   const s = categoryStyles[category.color];
   const cols = category.links.length <= 4 ? 2 : category.links.length <= 6 ? 3 : 4;
@@ -199,13 +154,11 @@ function DropdownItem({
     const overflowLeft = -rect.left;
 
     if (overflowRight > 0) {
-      // Shift left by the overflow amount (plus a small margin)
       const shift = overflowRight + 8;
       setPositionStyle({
         left: "50%",
         transform: `translateX(calc(-50% - ${shift}px))`,
       });
-      // Move arrow right to stay above the button
       setArrowStyle({
         left: `calc(50% + ${shift}px)`,
         transform: "translateX(-50%)",
@@ -232,7 +185,6 @@ function DropdownItem({
       onMouseEnter={() => onMouseEnter(index)}
       onMouseLeave={onMouseLeave}
     >
-      {/* Category button */}
       <button
         className={`
           flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold
@@ -251,7 +203,6 @@ function DropdownItem({
         </svg>
       </button>
 
-      {/* Dropdown panel */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -268,7 +219,6 @@ function DropdownItem({
             `}
             style={{ width: `${cols * 116}px`, ...positionStyle }}
           >
-            {/* Arrow pointer */}
             <div
               className={`
                 absolute -top-[7px]
@@ -279,7 +229,6 @@ function DropdownItem({
               `}
               style={arrowStyle}
             />
-            {/* Border arrow (slightly larger, sits behind) */}
             <div
               className={`
                 absolute -top-2
@@ -291,7 +240,6 @@ function DropdownItem({
               style={arrowStyle}
             />
 
-            {/* Links grid */}
             <div
               className="grid gap-0.5"
               style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
@@ -299,7 +247,7 @@ function DropdownItem({
               {category.links.map((link) => (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={`${prefix}${link.href}`}
                   onClick={onClose}
                   className={`
                     flex items-center gap-2 px-2.5 py-2 rounded-lg
@@ -320,7 +268,7 @@ function DropdownItem({
   );
 }
 
-function DropdownNav() {
+function DropdownNav({ prefix, categories }: { prefix: string; categories: { label: string; color: string; links: { href: string; label: string; emoji: string }[] }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -335,7 +283,7 @@ function DropdownNav() {
 
   return (
     <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
-      {navCategories.map((category, index) => (
+      {categories.map((category, index) => (
         <DropdownItem
           key={category.label}
           category={category}
@@ -344,6 +292,7 @@ function DropdownNav() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           onClose={() => setOpenIndex(null)}
+          prefix={prefix}
         />
       ))}
     </div>
@@ -353,6 +302,10 @@ function DropdownNav() {
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
+  const locale = getLocaleFromPath(pathname);
+  const prefix = localePaths[locale];
+  const nav = getNavData(locale);
 
   useEffect(() => {
     if (menuOpen) {
@@ -371,39 +324,41 @@ export default function Header() {
         <nav className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
           {/* Logo */}
           <Link
-            href="/"
+            href={prefix || "/"}
             className="text-lg font-bold bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent shrink-0 tracking-tight"
           >
             PickPlay
           </Link>
 
-          {/* Desktop nav — hover dropdown menus */}
-          <DropdownNav />
+          {/* Desktop nav */}
+          <DropdownNav prefix={prefix} categories={nav.categories} />
 
-          {/* Desktop: theme toggle */}
-          <div className="hidden md:flex items-center shrink-0">
+          {/* Desktop: language + theme */}
+          <div className="hidden md:flex items-center gap-1 shrink-0">
+            <LanguageSwitcher />
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
-              aria-label="다크모드 토글"
+              aria-label={nav.darkToggle}
             >
               {theme === "light" ? <MoonIcon /> : <SunIcon />}
             </button>
           </div>
 
-          {/* Mobile: theme + hamburger */}
+          {/* Mobile: language + theme + hamburger */}
           <div className="flex md:hidden items-center gap-1 shrink-0">
+            <LanguageSwitcher />
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label="다크모드 토글"
+              aria-label={nav.darkToggle}
             >
               {theme === "light" ? <MoonIcon /> : <SunIcon />}
             </button>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+              aria-label={menuOpen ? nav.menuClose : nav.menuOpen}
               aria-expanded={menuOpen}
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -423,11 +378,10 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* Mobile slide-down menu — rendered outside header to allow full overlay */}
+      {/* Mobile slide-down menu */}
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -438,7 +392,6 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
             />
 
-            {/* Panel */}
             <motion.div
               key="panel"
               initial={{ opacity: 0, y: -8 }}
@@ -448,7 +401,7 @@ export default function Header() {
               className="fixed top-14 left-0 right-0 z-50 md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-lg max-h-[calc(100dvh-3.5rem)] overflow-y-auto"
             >
               <div className="max-w-6xl mx-auto px-4 py-5 space-y-5">
-                {navCategories.map((category, ci) => {
+                {nav.categories.map((category, ci) => {
                   const s = mobileCategoryStyles[category.color];
                   return (
                     <motion.div
@@ -457,7 +410,6 @@ export default function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: ci * 0.06, duration: 0.2 }}
                     >
-                      {/* Section header */}
                       <div className={`flex items-center gap-2 mb-2`}>
                         <span className={`inline-block w-2 h-2 rounded-full ${s.dot}`} />
                         <span className={`text-[11px] font-bold uppercase tracking-widest ${s.header}`}>
@@ -465,7 +417,6 @@ export default function Header() {
                         </span>
                       </div>
 
-                      {/* Links grid */}
                       <div className="grid grid-cols-2 gap-1.5">
                         {category.links.map((link, li) => (
                           <motion.div
@@ -475,7 +426,7 @@ export default function Header() {
                             transition={{ delay: ci * 0.06 + li * 0.04, duration: 0.18 }}
                           >
                             <Link
-                              href={link.href}
+                              href={`${prefix}${link.href}`}
                               onClick={() => setMenuOpen(false)}
                               className={`
                                 flex items-center gap-2.5 px-3 py-3 rounded-xl
@@ -492,7 +443,7 @@ export default function Header() {
                         ))}
                       </div>
 
-                      {ci < navCategories.length - 1 && (
+                      {ci < nav.categories.length - 1 && (
                         <div className="mt-4 h-px bg-slate-100 dark:bg-slate-800" />
                       )}
                     </motion.div>

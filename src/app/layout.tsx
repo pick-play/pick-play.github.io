@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SidebarAds from "@/components/SidebarAds";
 import AnchorAd from "@/components/AnchorAd";
+import LanguageDetector from "@/components/LanguageDetector";
+import HtmlLangSetter from "@/components/HtmlLangSetter";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pick-play.github.io"),
@@ -50,7 +52,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://pick-play.github.io",
     languages: {
-      "ko-KR": "https://pick-play.github.io",
+      "x-default": "https://pick-play.github.io",
+      "ko": "https://pick-play.github.io",
+      "en": "https://pick-play.github.io/en",
+      "ja": "https://pick-play.github.io/jp",
+      "zh-CN": "https://pick-play.github.io/cn",
+      "es": "https://pick-play.github.io/es",
     },
   },
   manifest: "/site.webmanifest",
@@ -134,6 +141,8 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
         <ThemeProvider>
           <Header />
+          <LanguageDetector />
+          <HtmlLangSetter />
           <div className="flex-1 flex">
             <SidebarAds side="left" />
             <main className="flex-1 min-w-0 pb-16 md:pb-0">{children}</main>

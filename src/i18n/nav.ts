@@ -1,0 +1,344 @@
+import type { Locale } from "./config";
+
+type NavCategory = {
+  label: string;
+  color: string;
+  links: { href: string; label: string; emoji: string }[];
+};
+
+type FooterCategory = {
+  label: string;
+  links: { href: string; label: string }[];
+};
+
+const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategory[]; tagline: string; darkToggle: string; menuOpen: string; menuClose: string }> = {
+  ko: {
+    tagline: "고민은 줄이고, 선택은 빠르게.",
+    darkToggle: "다크모드 토글",
+    menuOpen: "메뉴 열기",
+    menuClose: "메뉴 닫기",
+    categories: [
+      {
+        label: "생활도구", color: "sky",
+        links: [
+          { href: "/food", label: "뭐 먹지", emoji: "🍽️" },
+          { href: "/settlement", label: "정산", emoji: "💰" },
+          { href: "/date-course", label: "데이트", emoji: "💌" },
+          { href: "/roulette", label: "룰렛", emoji: "🎯" },
+          { href: "/d-day", label: "D-Day", emoji: "📅" },
+          { href: "/draw", label: "제비뽑기", emoji: "🎫" },
+          { href: "/seat", label: "자리배치", emoji: "💺" },
+          { href: "/nickname", label: "닉네임", emoji: "✏️" },
+          { href: "/pdf", label: "PDF", emoji: "📄" },
+          { href: "/image", label: "이미지", emoji: "🖼️" },
+          { href: "/ladder", label: "사다리", emoji: "🪜" },
+        ],
+      },
+      {
+        label: "파티게임", color: "violet",
+        links: [
+          { href: "/liar-game", label: "라이어", emoji: "🎭" },
+          { href: "/random-team", label: "조뽑기", emoji: "🎲" },
+          { href: "/balance-game", label: "밸런스", emoji: "⚖️" },
+          { href: "/chosung-quiz", label: "초성", emoji: "🔤" },
+          { href: "/truth-dare", label: "진실도전", emoji: "🔥" },
+          { href: "/worldcup", label: "월드컵", emoji: "🏆" },
+        ],
+      },
+      {
+        label: "테스트", color: "amber",
+        links: [
+          { href: "/teto-egen", label: "테토에겐", emoji: "🧠" },
+          { href: "/mbti", label: "MBTI", emoji: "✨" },
+          { href: "/couple-test", label: "궁합", emoji: "💕" },
+          { href: "/color-test", label: "색깔", emoji: "🎨" },
+          { href: "/tarot", label: "타로", emoji: "🔮" },
+        ],
+      },
+    ],
+    footer: [
+      { label: "생활 도구", links: [
+        { href: "/food", label: "뭐 먹지?" }, { href: "/settlement", label: "회식비 정산" },
+        { href: "/date-course", label: "데이트 코스" }, { href: "/roulette", label: "랜덤 룰렛" },
+        { href: "/d-day", label: "D-Day 계산기" }, { href: "/draw", label: "제비뽑기" },
+        { href: "/seat", label: "자리 배치" }, { href: "/nickname", label: "닉네임 생성기" },
+        { href: "/pdf", label: "PDF 도구" }, { href: "/image", label: "이미지 도구" },
+        { href: "/ladder", label: "사다리 타기" },
+      ]},
+      { label: "파티 게임", links: [
+        { href: "/liar-game", label: "라이어 게임" }, { href: "/random-team", label: "조 뽑기" },
+        { href: "/balance-game", label: "밸런스 게임" }, { href: "/chosung-quiz", label: "초성 퀴즈" },
+        { href: "/truth-dare", label: "진실 or 도전" }, { href: "/worldcup", label: "이상형 월드컵" },
+      ]},
+      { label: "테스트", links: [
+        { href: "/teto-egen", label: "테토 vs 에겐" }, { href: "/mbti", label: "MBTI 검사" },
+        { href: "/couple-test", label: "커플 궁합" }, { href: "/color-test", label: "색깔 테스트" },
+        { href: "/tarot", label: "Yes or No 타로" },
+      ]},
+    ],
+  },
+  en: {
+    tagline: "Less hesitation, faster choices.",
+    darkToggle: "Toggle dark mode",
+    menuOpen: "Open menu",
+    menuClose: "Close menu",
+    categories: [
+      {
+        label: "Life Tools", color: "sky",
+        links: [
+          { href: "/food", label: "What to Eat", emoji: "🍽️" },
+          { href: "/settlement", label: "Bill Split", emoji: "💰" },
+          { href: "/date-course", label: "Date Course", emoji: "💌" },
+          { href: "/roulette", label: "Roulette", emoji: "🎯" },
+          { href: "/d-day", label: "D-Day", emoji: "📅" },
+          { href: "/draw", label: "Lucky Draw", emoji: "🎫" },
+          { href: "/seat", label: "Seating", emoji: "💺" },
+          { href: "/nickname", label: "Nickname", emoji: "✏️" },
+          { href: "/pdf", label: "PDF", emoji: "📄" },
+          { href: "/image", label: "Image", emoji: "🖼️" },
+          { href: "/ladder", label: "Ladder", emoji: "🪜" },
+        ],
+      },
+      {
+        label: "Party Games", color: "violet",
+        links: [
+          { href: "/liar-game", label: "Liar Game", emoji: "🎭" },
+          { href: "/random-team", label: "Team Picker", emoji: "🎲" },
+          { href: "/balance-game", label: "This or That", emoji: "⚖️" },
+          { href: "/chosung-quiz", label: "Word Quiz", emoji: "🔤" },
+          { href: "/truth-dare", label: "Truth/Dare", emoji: "🔥" },
+          { href: "/worldcup", label: "World Cup", emoji: "🏆" },
+        ],
+      },
+      {
+        label: "Tests", color: "amber",
+        links: [
+          { href: "/teto-egen", label: "Teto vs Egen", emoji: "🧠" },
+          { href: "/mbti", label: "MBTI", emoji: "✨" },
+          { href: "/couple-test", label: "Couple Match", emoji: "💕" },
+          { href: "/color-test", label: "Color Test", emoji: "🎨" },
+          { href: "/tarot", label: "Tarot", emoji: "🔮" },
+        ],
+      },
+    ],
+    footer: [
+      { label: "Life Tools", links: [
+        { href: "/food", label: "What to Eat?" }, { href: "/settlement", label: "Bill Splitter" },
+        { href: "/date-course", label: "Date Course" }, { href: "/roulette", label: "Random Roulette" },
+        { href: "/d-day", label: "D-Day Calculator" }, { href: "/draw", label: "Lucky Draw" },
+        { href: "/seat", label: "Seat Arranger" }, { href: "/nickname", label: "Nickname Generator" },
+        { href: "/pdf", label: "PDF Tools" }, { href: "/image", label: "Image Tools" },
+        { href: "/ladder", label: "Ladder Game" },
+      ]},
+      { label: "Party Games", links: [
+        { href: "/liar-game", label: "Liar Game" }, { href: "/random-team", label: "Team Picker" },
+        { href: "/balance-game", label: "This or That" }, { href: "/chosung-quiz", label: "Word Quiz" },
+        { href: "/truth-dare", label: "Truth or Dare" }, { href: "/worldcup", label: "Ideal Type World Cup" },
+      ]},
+      { label: "Tests", links: [
+        { href: "/teto-egen", label: "Teto vs Egen" }, { href: "/mbti", label: "MBTI Test" },
+        { href: "/couple-test", label: "Couple Match" }, { href: "/color-test", label: "Color Test" },
+        { href: "/tarot", label: "Yes or No Tarot" },
+      ]},
+    ],
+  },
+  ja: {
+    tagline: "悩みを減らし、選択をスピーディーに。",
+    darkToggle: "ダークモード切替",
+    menuOpen: "メニューを開く",
+    menuClose: "メニューを閉じる",
+    categories: [
+      {
+        label: "便利ツール", color: "sky",
+        links: [
+          { href: "/food", label: "何食べる？", emoji: "🍽️" },
+          { href: "/settlement", label: "割り勘", emoji: "💰" },
+          { href: "/date-course", label: "デート", emoji: "💌" },
+          { href: "/roulette", label: "ルーレット", emoji: "🎯" },
+          { href: "/d-day", label: "D-Day", emoji: "📅" },
+          { href: "/draw", label: "くじ引き", emoji: "🎫" },
+          { href: "/seat", label: "座席配置", emoji: "💺" },
+          { href: "/nickname", label: "ニックネーム", emoji: "✏️" },
+          { href: "/pdf", label: "PDF", emoji: "📄" },
+          { href: "/image", label: "画像", emoji: "🖼️" },
+          { href: "/ladder", label: "あみだくじ", emoji: "🪜" },
+        ],
+      },
+      {
+        label: "パーティーゲーム", color: "violet",
+        links: [
+          { href: "/liar-game", label: "ライアーゲーム", emoji: "🎭" },
+          { href: "/random-team", label: "チーム分け", emoji: "🎲" },
+          { href: "/balance-game", label: "バランスゲーム", emoji: "⚖️" },
+          { href: "/chosung-quiz", label: "ワードクイズ", emoji: "🔤" },
+          { href: "/truth-dare", label: "本音と挑戦", emoji: "🔥" },
+          { href: "/worldcup", label: "理想型", emoji: "🏆" },
+        ],
+      },
+      {
+        label: "テスト", color: "amber",
+        links: [
+          { href: "/teto-egen", label: "テトvsエゲン", emoji: "🧠" },
+          { href: "/mbti", label: "MBTI", emoji: "✨" },
+          { href: "/couple-test", label: "相性診断", emoji: "💕" },
+          { href: "/color-test", label: "カラー診断", emoji: "🎨" },
+          { href: "/tarot", label: "タロット", emoji: "🔮" },
+        ],
+      },
+    ],
+    footer: [
+      { label: "便利ツール", links: [
+        { href: "/food", label: "何食べる？" }, { href: "/settlement", label: "割り勘計算" },
+        { href: "/date-course", label: "デートコース" }, { href: "/roulette", label: "ランダムルーレット" },
+        { href: "/d-day", label: "D-Day計算機" }, { href: "/draw", label: "くじ引き" },
+        { href: "/seat", label: "座席配置" }, { href: "/nickname", label: "ニックネーム生成" },
+        { href: "/pdf", label: "PDFツール" }, { href: "/image", label: "画像ツール" },
+        { href: "/ladder", label: "あみだくじ" },
+      ]},
+      { label: "パーティーゲーム", links: [
+        { href: "/liar-game", label: "ライアーゲーム" }, { href: "/random-team", label: "チーム分け" },
+        { href: "/balance-game", label: "バランスゲーム" }, { href: "/chosung-quiz", label: "ワードクイズ" },
+        { href: "/truth-dare", label: "本音と挑戦" }, { href: "/worldcup", label: "理想型ワールドカップ" },
+      ]},
+      { label: "テスト", links: [
+        { href: "/teto-egen", label: "テトvsエゲン" }, { href: "/mbti", label: "MBTI診断" },
+        { href: "/couple-test", label: "カップル相性" }, { href: "/color-test", label: "カラー診断" },
+        { href: "/tarot", label: "Yes or No タロット" },
+      ]},
+    ],
+  },
+  zh: {
+    tagline: "减少纠结，快速选择。",
+    darkToggle: "切换深色模式",
+    menuOpen: "打开菜单",
+    menuClose: "关闭菜单",
+    categories: [
+      {
+        label: "生活工具", color: "sky",
+        links: [
+          { href: "/food", label: "吃什么", emoji: "🍽️" },
+          { href: "/settlement", label: "AA算账", emoji: "💰" },
+          { href: "/date-course", label: "约会路线", emoji: "💌" },
+          { href: "/roulette", label: "轮盘", emoji: "🎯" },
+          { href: "/d-day", label: "倒计时", emoji: "📅" },
+          { href: "/draw", label: "抽签", emoji: "🎫" },
+          { href: "/seat", label: "座位安排", emoji: "💺" },
+          { href: "/nickname", label: "昵称", emoji: "✏️" },
+          { href: "/pdf", label: "PDF", emoji: "📄" },
+          { href: "/image", label: "图片", emoji: "🖼️" },
+          { href: "/ladder", label: "梯子游戏", emoji: "🪜" },
+        ],
+      },
+      {
+        label: "派对游戏", color: "violet",
+        links: [
+          { href: "/liar-game", label: "谁是卧底", emoji: "🎭" },
+          { href: "/random-team", label: "随机分组", emoji: "🎲" },
+          { href: "/balance-game", label: "二选一", emoji: "⚖️" },
+          { href: "/chosung-quiz", label: "猜词游戏", emoji: "🔤" },
+          { href: "/truth-dare", label: "真心话大冒险", emoji: "🔥" },
+          { href: "/worldcup", label: "理想型", emoji: "🏆" },
+        ],
+      },
+      {
+        label: "测试", color: "amber",
+        links: [
+          { href: "/teto-egen", label: "人格测试", emoji: "🧠" },
+          { href: "/mbti", label: "MBTI", emoji: "✨" },
+          { href: "/couple-test", label: "情侣匹配", emoji: "💕" },
+          { href: "/color-test", label: "颜色测试", emoji: "🎨" },
+          { href: "/tarot", label: "塔罗牌", emoji: "🔮" },
+        ],
+      },
+    ],
+    footer: [
+      { label: "生活工具", links: [
+        { href: "/food", label: "吃什么？" }, { href: "/settlement", label: "AA算账" },
+        { href: "/date-course", label: "约会路线" }, { href: "/roulette", label: "随机轮盘" },
+        { href: "/d-day", label: "倒计时计算器" }, { href: "/draw", label: "抽签" },
+        { href: "/seat", label: "座位安排" }, { href: "/nickname", label: "昵称生成器" },
+        { href: "/pdf", label: "PDF工具" }, { href: "/image", label: "图片工具" },
+        { href: "/ladder", label: "梯子游戏" },
+      ]},
+      { label: "派对游戏", links: [
+        { href: "/liar-game", label: "谁是卧底" }, { href: "/random-team", label: "随机分组" },
+        { href: "/balance-game", label: "二选一" }, { href: "/chosung-quiz", label: "猜词游戏" },
+        { href: "/truth-dare", label: "真心话大冒险" }, { href: "/worldcup", label: "理想型世界杯" },
+      ]},
+      { label: "测试", links: [
+        { href: "/teto-egen", label: "人格测试" }, { href: "/mbti", label: "MBTI测试" },
+        { href: "/couple-test", label: "情侣匹配" }, { href: "/color-test", label: "颜色测试" },
+        { href: "/tarot", label: "Yes or No 塔罗" },
+      ]},
+    ],
+  },
+  es: {
+    tagline: "Menos dudas, decisiones más rápidas.",
+    darkToggle: "Cambiar modo oscuro",
+    menuOpen: "Abrir menú",
+    menuClose: "Cerrar menú",
+    categories: [
+      {
+        label: "Herramientas", color: "sky",
+        links: [
+          { href: "/food", label: "Qué comer", emoji: "🍽️" },
+          { href: "/settlement", label: "Dividir", emoji: "💰" },
+          { href: "/date-course", label: "Citas", emoji: "💌" },
+          { href: "/roulette", label: "Ruleta", emoji: "🎯" },
+          { href: "/d-day", label: "D-Day", emoji: "📅" },
+          { href: "/draw", label: "Sorteo", emoji: "🎫" },
+          { href: "/seat", label: "Asientos", emoji: "💺" },
+          { href: "/nickname", label: "Apodo", emoji: "✏️" },
+          { href: "/pdf", label: "PDF", emoji: "📄" },
+          { href: "/image", label: "Imagen", emoji: "🖼️" },
+          { href: "/ladder", label: "Escalera", emoji: "🪜" },
+        ],
+      },
+      {
+        label: "Juegos", color: "violet",
+        links: [
+          { href: "/liar-game", label: "Mentiroso", emoji: "🎭" },
+          { href: "/random-team", label: "Equipos", emoji: "🎲" },
+          { href: "/balance-game", label: "Esto o Eso", emoji: "⚖️" },
+          { href: "/chosung-quiz", label: "Quiz", emoji: "🔤" },
+          { href: "/truth-dare", label: "Verdad/Reto", emoji: "🔥" },
+          { href: "/worldcup", label: "Mundial", emoji: "🏆" },
+        ],
+      },
+      {
+        label: "Tests", color: "amber",
+        links: [
+          { href: "/teto-egen", label: "Personalidad", emoji: "🧠" },
+          { href: "/mbti", label: "MBTI", emoji: "✨" },
+          { href: "/couple-test", label: "Pareja", emoji: "💕" },
+          { href: "/color-test", label: "Color", emoji: "🎨" },
+          { href: "/tarot", label: "Tarot", emoji: "🔮" },
+        ],
+      },
+    ],
+    footer: [
+      { label: "Herramientas", links: [
+        { href: "/food", label: "Qué comer?" }, { href: "/settlement", label: "Dividir cuenta" },
+        { href: "/date-course", label: "Ruta de cita" }, { href: "/roulette", label: "Ruleta aleatoria" },
+        { href: "/d-day", label: "Calculadora D-Day" }, { href: "/draw", label: "Sorteo" },
+        { href: "/seat", label: "Asientos" }, { href: "/nickname", label: "Generador de apodos" },
+        { href: "/pdf", label: "Herramientas PDF" }, { href: "/image", label: "Herramientas de imagen" },
+        { href: "/ladder", label: "Juego de escalera" },
+      ]},
+      { label: "Juegos de Fiesta", links: [
+        { href: "/liar-game", label: "Juego del mentiroso" }, { href: "/random-team", label: "Formar equipos" },
+        { href: "/balance-game", label: "Esto o aquello" }, { href: "/chosung-quiz", label: "Quiz de palabras" },
+        { href: "/truth-dare", label: "Verdad o reto" }, { href: "/worldcup", label: "Copa del tipo ideal" },
+      ]},
+      { label: "Tests", links: [
+        { href: "/teto-egen", label: "Test de personalidad" }, { href: "/mbti", label: "Test MBTI" },
+        { href: "/couple-test", label: "Compatibilidad" }, { href: "/color-test", label: "Test de color" },
+        { href: "/tarot", label: "Tarot Sí o No" },
+      ]},
+    ],
+  },
+};
+
+export function getNavData(locale: Locale) {
+  return navData[locale] || navData.ko;
+}
