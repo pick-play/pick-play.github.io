@@ -43,7 +43,8 @@ export default function LanguageDetector() {
     const target = langMap[browserLang] || langMap[primary];
     if (target) {
       localStorage.setItem("pickplay-locale", primary);
-      window.location.replace(target + pathname);
+      const dest = pathname === "/" ? target : target + pathname;
+      window.location.replace(dest);
     }
   }, [pathname]);
 

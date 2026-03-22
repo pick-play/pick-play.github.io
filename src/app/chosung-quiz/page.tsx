@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import wordsData from "@/data/chosung-words.json";
+import { useLocale } from "@/hooks/useLocale";
 
 type Phase = "setup" | "game" | "result";
 type TimerMode = 30 | 60 | 0; // 0 = unlimited
@@ -36,11 +37,208 @@ const CATEGORY_ICONS: Record<string, string> = {
   학교: "🏫",
 };
 
-const TIMER_OPTIONS: { label: string; value: TimerMode }[] = [
-  { label: "30초", value: 30 },
-  { label: "60초", value: 60 },
-  { label: "무제한", value: 0 },
-];
+const translations = {
+  ko: {
+    title: "초성 퀴즈",
+    subtitle: "초성만 보고 단어를 맞춰보세요!",
+    koreanGameNote: null as string | null,
+    categoryLabel: "카테고리",
+    timerLabel: "타이머",
+    timerOptions: [
+      { label: "30초", value: 30 as TimerMode },
+      { label: "60초", value: 60 as TimerMode },
+      { label: "무제한", value: 0 as TimerMode },
+    ],
+    wordCountAll: (n: number) => `전체 ${n}개 단어`,
+    wordCountCategory: (cat: string, n: number) => `${cat} 카테고리 ${n}개 단어`,
+    startButton: "시작하기",
+    scoreLabel: (score: number, attempted: number) => `${score}정답 / ${attempted}문제`,
+    streakLabel: (n: number) => `연속 ${n}개!`,
+    categoryBadge: (icon: string, cat: string) => `${icon} ${cat}`,
+    hintCategoryPrefix: "카테고리:",
+    hintPrefix: "힌트:",
+    answerRevealLabel: "정답은",
+    correctFeedback: "정답!",
+    streakFeedback: (n: number) => `연속 ${n}개 정답!`,
+    wrongFeedback: "오답!",
+    inputPlaceholder: "정답을 입력하세요",
+    submitButton: "확인",
+    hintNone: "힌트 보기",
+    hintMore: "힌트 더 보기",
+    hintUsed: "힌트 다 봄",
+    giveUpButton: "포기",
+    nextButton: "다음 문제",
+    finishButton: "종료",
+    quizFinished: "퀴즈 종료!",
+    finalScore: "최종 점수",
+    accuracy: "정답률",
+    bestStreak: "최고 연속 정답",
+    bestStreakUnit: (n: number) => `${n}개`,
+    categoryResultLabel: "카테고리",
+    playAgain: "다시 하기",
+    changeSettings: "설정 변경",
+  },
+  en: {
+    title: "Chosung Quiz",
+    subtitle: "Guess the Korean word from its initial consonants!",
+    koreanGameNote: "This is a Korean language game. The words and consonants are in Korean, but you can use the hints to learn!",
+    categoryLabel: "Category",
+    timerLabel: "Timer",
+    timerOptions: [
+      { label: "30 sec", value: 30 as TimerMode },
+      { label: "60 sec", value: 60 as TimerMode },
+      { label: "Unlimited", value: 0 as TimerMode },
+    ],
+    wordCountAll: (n: number) => `${n} words total`,
+    wordCountCategory: (cat: string, n: number) => `${n} words in ${cat}`,
+    startButton: "Start",
+    scoreLabel: (score: number, attempted: number) => `${score} correct / ${attempted} tried`,
+    streakLabel: (n: number) => `${n} streak!`,
+    categoryBadge: (icon: string, cat: string) => `${icon} ${cat}`,
+    hintCategoryPrefix: "Category:",
+    hintPrefix: "Hint:",
+    answerRevealLabel: "The answer is",
+    correctFeedback: "Correct!",
+    streakFeedback: (n: number) => `${n} in a row!`,
+    wrongFeedback: "Wrong!",
+    inputPlaceholder: "Type your answer in Korean",
+    submitButton: "Check",
+    hintNone: "Show Hint",
+    hintMore: "More Hint",
+    hintUsed: "All Hints Used",
+    giveUpButton: "Give Up",
+    nextButton: "Next",
+    finishButton: "Finish",
+    quizFinished: "Quiz Over!",
+    finalScore: "Final Score",
+    accuracy: "Accuracy",
+    bestStreak: "Best Streak",
+    bestStreakUnit: (n: number) => `${n}`,
+    categoryResultLabel: "Category",
+    playAgain: "Play Again",
+    changeSettings: "Change Settings",
+  },
+  ja: {
+    title: "チョソンクイズ",
+    subtitle: "韓国語の初声を見て単語を当てよう！",
+    koreanGameNote: "これは韓国語のゲームです。単語と子音は韓国語ですが、ヒントを使って挑戦してみてください！",
+    categoryLabel: "カテゴリー",
+    timerLabel: "タイマー",
+    timerOptions: [
+      { label: "30秒", value: 30 as TimerMode },
+      { label: "60秒", value: 60 as TimerMode },
+      { label: "無制限", value: 0 as TimerMode },
+    ],
+    wordCountAll: (n: number) => `全${n}単語`,
+    wordCountCategory: (cat: string, n: number) => `${cat} カテゴリー ${n}単語`,
+    startButton: "スタート",
+    scoreLabel: (score: number, attempted: number) => `${score}正解 / ${attempted}問`,
+    streakLabel: (n: number) => `${n}連続！`,
+    categoryBadge: (icon: string, cat: string) => `${icon} ${cat}`,
+    hintCategoryPrefix: "カテゴリー:",
+    hintPrefix: "ヒント:",
+    answerRevealLabel: "正解は",
+    correctFeedback: "正解！",
+    streakFeedback: (n: number) => `${n}連続正解！`,
+    wrongFeedback: "不正解！",
+    inputPlaceholder: "韓国語で入力してください",
+    submitButton: "確認",
+    hintNone: "ヒントを見る",
+    hintMore: "もっとヒント",
+    hintUsed: "ヒント全表示",
+    giveUpButton: "ギブアップ",
+    nextButton: "次の問題",
+    finishButton: "終了",
+    quizFinished: "クイズ終了！",
+    finalScore: "最終スコア",
+    accuracy: "正答率",
+    bestStreak: "最高連続正解",
+    bestStreakUnit: (n: number) => `${n}`,
+    categoryResultLabel: "カテゴリー",
+    playAgain: "もう一度",
+    changeSettings: "設定変更",
+  },
+  zh: {
+    title: "初声猜词",
+    subtitle: "根据韩语初声猜出单词！",
+    koreanGameNote: "这是一个韩语游戏。单词和辅音均为韩语，可以使用提示来帮助猜测！",
+    categoryLabel: "分类",
+    timerLabel: "计时器",
+    timerOptions: [
+      { label: "30秒", value: 30 as TimerMode },
+      { label: "60秒", value: 60 as TimerMode },
+      { label: "无限制", value: 0 as TimerMode },
+    ],
+    wordCountAll: (n: number) => `共 ${n} 个单词`,
+    wordCountCategory: (cat: string, n: number) => `${cat} 分类 ${n} 个单词`,
+    startButton: "开始",
+    scoreLabel: (score: number, attempted: number) => `${score}正确 / ${attempted}题`,
+    streakLabel: (n: number) => `连续${n}个！`,
+    categoryBadge: (icon: string, cat: string) => `${icon} ${cat}`,
+    hintCategoryPrefix: "分类:",
+    hintPrefix: "提示:",
+    answerRevealLabel: "答案是",
+    correctFeedback: "正确！",
+    streakFeedback: (n: number) => `连续${n}个正确！`,
+    wrongFeedback: "错误！",
+    inputPlaceholder: "请用韩语输入答案",
+    submitButton: "确认",
+    hintNone: "查看提示",
+    hintMore: "更多提示",
+    hintUsed: "已用全部提示",
+    giveUpButton: "放弃",
+    nextButton: "下一题",
+    finishButton: "结束",
+    quizFinished: "测验结束！",
+    finalScore: "最终得分",
+    accuracy: "正确率",
+    bestStreak: "最佳连续",
+    bestStreakUnit: (n: number) => `${n}`,
+    categoryResultLabel: "分类",
+    playAgain: "再玩一次",
+    changeSettings: "更改设置",
+  },
+  es: {
+    title: "Quiz de Chosung",
+    subtitle: "¡Adivina la palabra coreana por sus consonantes iniciales!",
+    koreanGameNote: "Este es un juego en coreano. Las palabras y consonantes están en coreano, ¡pero puedes usar las pistas para aprender!",
+    categoryLabel: "Categoría",
+    timerLabel: "Temporizador",
+    timerOptions: [
+      { label: "30 seg", value: 30 as TimerMode },
+      { label: "60 seg", value: 60 as TimerMode },
+      { label: "Sin límite", value: 0 as TimerMode },
+    ],
+    wordCountAll: (n: number) => `${n} palabras en total`,
+    wordCountCategory: (cat: string, n: number) => `${n} palabras en ${cat}`,
+    startButton: "Empezar",
+    scoreLabel: (score: number, attempted: number) => `${score} correctas / ${attempted} intentadas`,
+    streakLabel: (n: number) => `¡${n} seguidas!`,
+    categoryBadge: (icon: string, cat: string) => `${icon} ${cat}`,
+    hintCategoryPrefix: "Categoría:",
+    hintPrefix: "Pista:",
+    answerRevealLabel: "La respuesta es",
+    correctFeedback: "¡Correcto!",
+    streakFeedback: (n: number) => `¡${n} seguidas!`,
+    wrongFeedback: "¡Incorrecto!",
+    inputPlaceholder: "Escribe la respuesta en coreano",
+    submitButton: "Verificar",
+    hintNone: "Ver pista",
+    hintMore: "Más pistas",
+    hintUsed: "Pistas agotadas",
+    giveUpButton: "Rendirse",
+    nextButton: "Siguiente",
+    finishButton: "Terminar",
+    quizFinished: "¡Quiz Terminado!",
+    finalScore: "Puntuación Final",
+    accuracy: "Precisión",
+    bestStreak: "Mejor Racha",
+    bestStreakUnit: (n: number) => `${n}`,
+    categoryResultLabel: "Categoría",
+    playAgain: "Jugar de Nuevo",
+    changeSettings: "Cambiar Ajustes",
+  },
+};
 
 function shuffleArray<T>(arr: T[]): T[] {
   const out = [...arr];
@@ -139,6 +337,9 @@ function CircularTimer({
 }
 
 export default function ChosungQuizPage() {
+  const locale = useLocale();
+  const t = translations[locale];
+
   // Setup state
   const [selectedCategory, setSelectedCategory] = useState<Category>("전체");
   const [timerMode, setTimerMode] = useState<TimerMode>(60);
@@ -316,10 +517,10 @@ export default function ChosungQuizPage() {
             className="text-center mb-8"
           >
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent mb-2">
-              초성 퀴즈
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              초성만 보고 단어를 맞춰보세요!
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -334,10 +535,17 @@ export default function ChosungQuizPage() {
                 transition={{ duration: 0.3 }}
                 className="space-y-5"
               >
+                {/* Korean game note for non-Korean locales */}
+                {t.koreanGameNote && (
+                  <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 rounded-2xl p-4 text-sm text-amber-700 dark:text-amber-300">
+                    {t.koreanGameNote}
+                  </div>
+                )}
+
                 {/* Category selection */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    카테고리
+                    {t.categoryLabel}
                   </h2>
                   <div className="flex flex-wrap gap-2">
                     {CATEGORIES.map((cat) => (
@@ -359,10 +567,10 @@ export default function ChosungQuizPage() {
                 {/* Timer selection */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    타이머
+                    {t.timerLabel}
                   </h2>
                   <div className="flex gap-3">
-                    {TIMER_OPTIONS.map((opt) => (
+                    {t.timerOptions.map((opt) => (
                       <button
                         key={opt.label}
                         onClick={() => setTimerMode(opt.value)}
@@ -384,8 +592,8 @@ export default function ChosungQuizPage() {
                 {/* Word count info */}
                 <p className="text-center text-xs text-slate-400">
                   {selectedCategory === "전체"
-                    ? `전체 ${ALL_WORDS.length}개 단어`
-                    : `${selectedCategory} 카테고리 ${ALL_WORDS.filter((w) => w.category === selectedCategory).length}개 단어`}
+                    ? t.wordCountAll(ALL_WORDS.length)
+                    : t.wordCountCategory(selectedCategory, ALL_WORDS.filter((w) => w.category === selectedCategory).length)}
                 </p>
 
                 {/* Start button */}
@@ -394,7 +602,7 @@ export default function ChosungQuizPage() {
                   onClick={startGame}
                   className="w-full py-5 rounded-2xl bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-xl font-bold shadow-lg hover:shadow-sky-500/30 transition-shadow"
                 >
-                  시작하기
+                  {t.startButton}
                 </motion.button>
               </motion.div>
             )}
@@ -415,7 +623,7 @@ export default function ChosungQuizPage() {
                     {currentIndex + 1} / {queue.length}
                   </span>
                   <span className="font-semibold text-sky-600 dark:text-sky-400">
-                    {score}정답 / {attempted}문제
+                    {t.scoreLabel(score, attempted)}
                   </span>
                   {streak >= 2 && (
                     <motion.span
@@ -423,7 +631,7 @@ export default function ChosungQuizPage() {
                       animate={{ scale: 1, opacity: 1 }}
                       className="font-bold text-amber-500"
                     >
-                      연속 {streak}개!
+                      {t.streakLabel(streak)}
                     </motion.span>
                   )}
                 </div>
@@ -443,7 +651,7 @@ export default function ChosungQuizPage() {
                   {/* Category badge */}
                   <div className="flex items-center justify-between mb-5">
                     <span className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">
-                      {CATEGORY_ICONS[currentWord.category]} {currentWord.category}
+                      {t.categoryBadge(CATEGORY_ICONS[currentWord.category], currentWord.category)}
                     </span>
                     {timerMode > 0 && (
                       <CircularTimer timeLeft={timeLeft} total={timerMode} />
@@ -466,12 +674,12 @@ export default function ChosungQuizPage() {
                       >
                         {hintLevel === 1 && (
                           <span>
-                            카테고리: <strong>{currentWord.category}</strong>
+                            {t.hintCategoryPrefix} <strong>{currentWord.category}</strong>
                           </span>
                         )}
                         {hintLevel === 2 && (
                           <span>
-                            힌트: <strong>{currentWord.hint}</strong>
+                            {t.hintPrefix} <strong>{currentWord.hint}</strong>
                           </span>
                         )}
                       </motion.div>
@@ -487,7 +695,7 @@ export default function ChosungQuizPage() {
                         className="mt-4 p-4 rounded-xl bg-slate-100 dark:bg-slate-700 text-center"
                       >
                         <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
-                          정답은
+                          {t.answerRevealLabel}
                         </p>
                         <p className="text-2xl font-extrabold bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">
                           {currentWord.word}
@@ -509,11 +717,11 @@ export default function ChosungQuizPage() {
                       className="text-center py-2"
                     >
                       <p className="text-3xl font-extrabold text-emerald-500">
-                        정답!
+                        {t.correctFeedback}
                       </p>
                       {streak >= 2 && (
                         <p className="text-sm text-amber-500 font-semibold mt-1">
-                          연속 {streak}개 정답!
+                          {t.streakFeedback(streak)}
                         </p>
                       )}
                     </motion.div>
@@ -527,7 +735,7 @@ export default function ChosungQuizPage() {
                       className="text-center py-2"
                     >
                       <p className="text-3xl font-extrabold text-red-500">
-                        오답!
+                        {t.wrongFeedback}
                       </p>
                     </motion.div>
                   )}
@@ -546,7 +754,7 @@ export default function ChosungQuizPage() {
                       value={answer}
                       onChange={(e) => setAnswer(e.target.value)}
                       onKeyDown={handleKeyDown}
-                      placeholder="정답을 입력하세요"
+                      placeholder={t.inputPlaceholder}
                       disabled={feedback !== "idle"}
                       className={`flex-1 px-4 py-3 rounded-xl border-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 placeholder-slate-400 outline-none transition-all ${
                         feedback === "wrong"
@@ -560,7 +768,7 @@ export default function ChosungQuizPage() {
                       disabled={feedback !== "idle" || !answer.trim()}
                       className="px-5 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-500 text-white font-bold shadow-md disabled:opacity-40 transition-opacity"
                     >
-                      확인
+                      {t.submitButton}
                     </motion.button>
                   </motion.div>
                 )}
@@ -582,10 +790,10 @@ export default function ChosungQuizPage() {
                       }`}
                     >
                       {hintLevel === 0
-                        ? "힌트 보기"
+                        ? t.hintNone
                         : hintLevel === 1
-                        ? "힌트 더 보기"
-                        : "힌트 다 봄"}
+                        ? t.hintMore
+                        : t.hintUsed}
                     </motion.button>
                   )}
 
@@ -596,7 +804,7 @@ export default function ChosungQuizPage() {
                       onClick={handleGiveUp}
                       className="flex-1 py-3 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 transition-all border-2 border-transparent"
                     >
-                      포기
+                      {t.giveUpButton}
                     </motion.button>
                   ) : feedback === "correct" ? null : (
                     <motion.button
@@ -604,7 +812,7 @@ export default function ChosungQuizPage() {
                       onClick={advanceQuestion}
                       className="flex-1 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-md"
                     >
-                      다음 문제
+                      {t.nextButton}
                     </motion.button>
                   )}
 
@@ -614,7 +822,7 @@ export default function ChosungQuizPage() {
                     onClick={handleFinish}
                     className="px-4 py-3 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
                   >
-                    종료
+                    {t.finishButton}
                   </motion.button>
                 </div>
               </motion.div>
@@ -641,7 +849,7 @@ export default function ChosungQuizPage() {
                   </motion.div>
 
                   <h2 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 mb-2">
-                    퀴즈 종료!
+                    {t.quizFinished}
                   </h2>
 
                   <motion.div
@@ -652,7 +860,7 @@ export default function ChosungQuizPage() {
                   >
                     <div className="flex justify-between items-center">
                       <span className="text-slate-500 dark:text-slate-400 text-sm">
-                        최종 점수
+                        {t.finalScore}
                       </span>
                       <span className="text-2xl font-extrabold bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">
                         {score} / {attempted}
@@ -660,7 +868,7 @@ export default function ChosungQuizPage() {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-slate-500 dark:text-slate-400 text-sm">
-                        정답률
+                        {t.accuracy}
                       </span>
                       <span className="text-lg font-bold text-slate-700 dark:text-slate-200">
                         {attempted > 0
@@ -671,15 +879,15 @@ export default function ChosungQuizPage() {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-slate-500 dark:text-slate-400 text-sm">
-                        최고 연속 정답
+                        {t.bestStreak}
                       </span>
                       <span className="text-lg font-bold text-amber-500">
-                        {bestStreak}개
+                        {t.bestStreakUnit(bestStreak)}
                       </span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-slate-500 dark:text-slate-400 text-sm">
-                        카테고리
+                        {t.categoryResultLabel}
                       </span>
                       <span className="text-sm font-semibold text-slate-600 dark:text-slate-300">
                         {CATEGORY_ICONS[selectedCategory]} {selectedCategory}
@@ -693,14 +901,14 @@ export default function ChosungQuizPage() {
                       onClick={startGame}
                       className="flex-1 py-4 rounded-2xl bg-gradient-to-r from-sky-500 to-indigo-500 text-white font-bold text-lg shadow-md hover:shadow-sky-500/30 transition-shadow"
                     >
-                      다시 하기
+                      {t.playAgain}
                     </motion.button>
                     <motion.button
                       whileTap={{ scale: 0.97 }}
                       onClick={() => setPhase("setup")}
                       className="flex-1 py-4 rounded-2xl bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-lg transition-colors hover:bg-slate-200 dark:hover:bg-slate-600"
                     >
-                      설정 변경
+                      {t.changeSettings}
                     </motion.button>
                   </div>
                   <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />

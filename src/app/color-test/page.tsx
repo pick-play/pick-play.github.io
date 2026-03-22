@@ -5,6 +5,195 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import testData from "@/data/color-test.json";
+import { useLocale } from "@/hooks/useLocale";
+
+const translations = {
+  ko: {
+    title: "색깔 심리 테스트",
+    subtitle: (n: number) => `${n}가지 질문으로 알아보는 나의 색깔 성격`,
+    introHeading: "나를 나타내는 색깔은?",
+    introDesc: (n: number) => `총 ${n}문항 · 8가지 색깔 유형\n일상 속 상황에서 나의 선택이 색깔 성격을 알려줘요`,
+    start: "시작하기",
+    progress: (p: number) => `${p}% 완료`,
+    hintText: "가장 끌리는 답을 선택하세요",
+    myColorType: "나의 색깔 유형",
+    strengths: "💪 강점",
+    weaknesses: "⚡ 약점",
+    compatible: "💕 나와 잘 맞는 색깔",
+    secondaryInfluence: "🌈 부 색깔 영향",
+    secondaryDesc: (traits: string) => `${traits}의 성향이 당신을 더욱 풍부하게 만들어줍니다.`,
+    message: "💡 나에게 보내는 메시지",
+    allTypes: "8가지 색깔 유형",
+    share: "결과 공유하기",
+    copied: "✓ 복사 완료!",
+    restart: "다시 하기",
+    faqTitle: "자주 묻는 질문",
+    faqs: [
+      {
+        q: "색깔 심리 테스트는 어떻게 진행되나요?",
+        a: "총 10개의 일상 상황 질문에 답하면, 8가지 색깔 성격 유형 중 나와 가장 잘 맞는 색깔과 그에 따른 성격 분석을 확인할 수 있어요.",
+      },
+      {
+        q: "결과에서 주 색깔과 부 색깔이 무엇인가요?",
+        a: "주 색깔은 나의 핵심 성격을, 부 색깔은 그것을 보완하는 성향을 나타냅니다. 두 색깔이 합쳐져 나만의 고유한 성격이 만들어져요.",
+      },
+      {
+        q: "8가지 색깔 유형은 무엇인가요?",
+        a: "빨강(열정적인 리더), 주황(활발한 모험가), 노랑(밝은 낙천가), 초록(평화로운 조화가), 파랑(차분한 사색가), 남색(직관적인 탐구자), 보라(신비로운 예술가), 분홍(따뜻한 공감러)가 있어요.",
+      },
+    ],
+    shareText: (name: string, title: string, traits: string[]) =>
+      `나의 색깔 성격 유형은 ${name}(${title})!\n${traits.slice(0, 3).join(", ")}\nPickPlay에서 색깔 심리 테스트 해보기: https://pick-play.github.io/color-test`,
+  },
+  en: {
+    title: "Color Personality Test",
+    subtitle: (n: number) => `Discover your color personality with ${n} questions`,
+    introHeading: "What color represents you?",
+    introDesc: (n: number) => `${n} questions · 8 color personality types\nYour daily choices reveal your color personality`,
+    start: "Start",
+    progress: (p: number) => `${p}% complete`,
+    hintText: "Choose the answer that appeals to you most",
+    myColorType: "My Color Type",
+    strengths: "💪 Strengths",
+    weaknesses: "⚡ Weaknesses",
+    compatible: "💕 Compatible Colors",
+    secondaryInfluence: "🌈 Secondary Color Influence",
+    secondaryDesc: (traits: string) => `The ${traits} tendencies enrich your personality even further.`,
+    message: "💡 A Message for You",
+    allTypes: "8 Color Personality Types",
+    share: "Share Result",
+    copied: "✓ Copied!",
+    restart: "Try Again",
+    faqTitle: "Frequently Asked Questions",
+    faqs: [
+      {
+        q: "How does the color personality test work?",
+        a: "Answer 10 everyday situation questions to discover which of 8 color personality types matches you best, along with a personality analysis.",
+      },
+      {
+        q: "What are the primary and secondary colors in the result?",
+        a: "The primary color represents your core personality, and the secondary color complements it. Together they form your unique character.",
+      },
+      {
+        q: "What are the 8 color types?",
+        a: "Red (Passionate Leader), Orange (Energetic Adventurer), Yellow (Bright Optimist), Green (Peaceful Harmonizer), Blue (Calm Thinker), Indigo (Intuitive Explorer), Purple (Mysterious Artist), Pink (Warm Empath).",
+      },
+    ],
+    shareText: (name: string, title: string, traits: string[]) =>
+      `My color personality type is ${name} (${title})!\n${traits.slice(0, 3).join(", ")}\nTake the color personality test on PickPlay: https://pick-play.github.io/color-test`,
+  },
+  ja: {
+    title: "カラー心理テスト",
+    subtitle: (n: number) => `${n}の質問で分かる私のカラー性格`,
+    introHeading: "私を表す色は？",
+    introDesc: (n: number) => `全${n}問 · 8種類のカラータイプ\n日常の選択があなたのカラー性格を教えてくれます`,
+    start: "スタート",
+    progress: (p: number) => `${p}% 完了`,
+    hintText: "最も惹かれる答えを選んでください",
+    myColorType: "私のカラータイプ",
+    strengths: "💪 強み",
+    weaknesses: "⚡ 弱み",
+    compatible: "💕 相性の良い色",
+    secondaryInfluence: "🌈 サブカラーの影響",
+    secondaryDesc: (traits: string) => `${traits}の傾向があなたをより豊かにします。`,
+    message: "💡 あなたへのメッセージ",
+    allTypes: "8種類のカラータイプ",
+    share: "結果をシェア",
+    copied: "✓ コピー完了！",
+    restart: "もう一度",
+    faqTitle: "よくある質問",
+    faqs: [
+      {
+        q: "カラー心理テストはどのように進みますか？",
+        a: "10の日常状況の質問に答えると、8種類のカラー性格タイプの中で最も合うものと性格分析が確認できます。",
+      },
+      {
+        q: "結果のメインカラーとサブカラーとは何ですか？",
+        a: "メインカラーはあなたの核となる性格を、サブカラーはそれを補う傾向を表します。二つが合わさって独自の性格が生まれます。",
+      },
+      {
+        q: "8種類のカラータイプとは何ですか？",
+        a: "赤（情熱的なリーダー）、オレンジ（活発な冒険家）、黄（明るい楽観家）、緑（平和な調和者）、青（穏やかな思考者）、藍（直感的な探求者）、紫（神秘的なアーティスト）、ピンク（温かい共感者）。",
+      },
+    ],
+    shareText: (name: string, title: string, traits: string[]) =>
+      `私のカラー性格タイプは${name}（${title}）！\n${traits.slice(0, 3).join("、")}\nPickPlayでカラー心理テスト: https://pick-play.github.io/color-test`,
+  },
+  zh: {
+    title: "色彩性格测试",
+    subtitle: (n: number) => `通过${n}个问题了解你的色彩性格`,
+    introHeading: "代表我的颜色是什么？",
+    introDesc: (n: number) => `共${n}题 · 8种色彩类型\n日常选择揭示你的色彩性格`,
+    start: "开始",
+    progress: (p: number) => `${p}% 完成`,
+    hintText: "选择最吸引你的答案",
+    myColorType: "我的色彩类型",
+    strengths: "💪 优点",
+    weaknesses: "⚡ 缺点",
+    compatible: "💕 与我相配的颜色",
+    secondaryInfluence: "🌈 次要色彩影响",
+    secondaryDesc: (traits: string) => `${traits}的倾向让你的个性更加丰富。`,
+    message: "💡 给自己的话",
+    allTypes: "8种色彩类型",
+    share: "分享结果",
+    copied: "✓ 已复制！",
+    restart: "再试一次",
+    faqTitle: "常见问题",
+    faqs: [
+      {
+        q: "色彩性格测试如何进行？",
+        a: "回答10个日常情境问题，找出8种色彩性格类型中最适合你的，并获得性格分析。",
+      },
+      {
+        q: "结果中的主色和副色是什么？",
+        a: "主色代表你的核心性格，副色补充主色。两者结合形成你独特的个性。",
+      },
+      {
+        q: "8种色彩类型是什么？",
+        a: "红色（热情领袖）、橙色（活力冒险家）、黄色（阳光乐观者）、绿色（平和调和者）、蓝色（冷静思考者）、靛色（直觉探索者）、紫色（神秘艺术家）、粉色（温暖共情者）。",
+      },
+    ],
+    shareText: (name: string, title: string, traits: string[]) =>
+      `我的色彩性格类型是${name}（${title}）！\n${traits.slice(0, 3).join("、")}\n在PickPlay做色彩性格测试: https://pick-play.github.io/color-test`,
+  },
+  es: {
+    title: "Test de Personalidad por Colores",
+    subtitle: (n: number) => `Descubre tu personalidad de color con ${n} preguntas`,
+    introHeading: "¿Qué color te representa?",
+    introDesc: (n: number) => `${n} preguntas · 8 tipos de personalidad por color\nTus elecciones cotidianas revelan tu personalidad de color`,
+    start: "Comenzar",
+    progress: (p: number) => `${p}% completado`,
+    hintText: "Elige la respuesta que más te atraiga",
+    myColorType: "Mi Tipo de Color",
+    strengths: "💪 Fortalezas",
+    weaknesses: "⚡ Debilidades",
+    compatible: "💕 Colores Compatibles",
+    secondaryInfluence: "🌈 Influencia del Color Secundario",
+    secondaryDesc: (traits: string) => `Las tendencias de ${traits} enriquecen aún más tu personalidad.`,
+    message: "💡 Un Mensaje para Ti",
+    allTypes: "8 Tipos de Personalidad por Color",
+    share: "Compartir Resultado",
+    copied: "✓ ¡Copiado!",
+    restart: "Intentar de Nuevo",
+    faqTitle: "Preguntas Frecuentes",
+    faqs: [
+      {
+        q: "¿Cómo funciona el test de personalidad por colores?",
+        a: "Responde 10 preguntas de situaciones cotidianas para descubrir cuál de los 8 tipos de personalidad por color te corresponde mejor.",
+      },
+      {
+        q: "¿Qué son el color primario y secundario en el resultado?",
+        a: "El color primario representa tu personalidad central y el secundario la complementa. Juntos forman tu carácter único.",
+      },
+      {
+        q: "¿Cuáles son los 8 tipos de color?",
+        a: "Rojo (Líder Apasionado), Naranja (Aventurero Enérgico), Amarillo (Optimista Brillante), Verde (Armonizador Pacífico), Azul (Pensador Tranquilo), Índigo (Explorador Intuitivo), Morado (Artista Misterioso), Rosa (Empático Cálido).",
+      },
+    ],
+    shareText: (name: string, title: string, traits: string[]) =>
+      `¡Mi tipo de personalidad por color es ${name} (${title})!\n${traits.slice(0, 3).join(", ")}\nHaz el test de colores en PickPlay: https://pick-play.github.io/color-test`,
+  },
+};
 
 type Phase = "intro" | "quiz" | "result";
 type ColorKey = "red" | "orange" | "yellow" | "green" | "blue" | "indigo" | "purple" | "pink";
@@ -93,7 +282,13 @@ function getTopColors(scores: ColorScores): { primary: ColorKey; secondary: Colo
   return { primary, secondary };
 }
 
+// suppress unused warning for colorMeta
+void colorMeta;
+
 export default function ColorTestPage() {
+  const locale = useLocale();
+  const t = translations[locale];
+
   const [phase, setPhase] = useState<Phase>("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -154,12 +349,12 @@ export default function ColorTestPage() {
   const handleShare = useCallback(() => {
     if (!primaryColor) return;
     const r = results[primaryColor];
-    const text = `나의 색깔 성격 유형은 ${r.name}(${r.title})!\n${r.traits.slice(0, 3).join(", ")}\nPickPlay에서 색깔 심리 테스트 해보기: https://pick-play.github.io/color-test`;
+    const text = t.shareText(r.name, r.title, r.traits);
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }).catch(() => {});
-  }, [primaryColor]);
+  }, [primaryColor, t]);
 
   const resultData = primaryColor ? results[primaryColor] : null;
   const secondaryData = secondaryColor ? results[secondaryColor] : null;
@@ -176,10 +371,10 @@ export default function ColorTestPage() {
             className="text-center mb-8"
           >
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 bg-clip-text text-transparent mb-2">
-              색깔 심리 테스트
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              {questions.length}가지 질문으로 알아보는 나의 색깔 성격
+              {t.subtitle(questions.length)}
             </p>
           </motion.div>
 
@@ -205,11 +400,10 @@ export default function ColorTestPage() {
                     🎨
                   </motion.div>
                   <h2 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 mb-2">
-                    나를 나타내는 색깔은?
+                    {t.introHeading}
                   </h2>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
-                    총 {questions.length}문항 · 8가지 색깔 유형<br />
-                    일상 속 상황에서 나의 선택이 색깔 성격을 알려줘요
+                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed whitespace-pre-line">
+                    {t.introDesc(questions.length)}
                   </p>
 
                   {/* Color type preview grid */}
@@ -244,7 +438,7 @@ export default function ColorTestPage() {
                     transition={{ delay: 0.5 }}
                     className="w-full py-4 rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-bold text-lg shadow-md hover:shadow-pink-500/30 transition-shadow"
                   >
-                    시작하기
+                    {t.start}
                   </motion.button>
                 </div>
 
@@ -255,21 +449,8 @@ export default function ColorTestPage() {
                   transition={{ delay: 0.55 }}
                   className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 space-y-4"
                 >
-                  <h2 className="font-bold text-slate-800 dark:text-slate-100 text-base">자주 묻는 질문</h2>
-                  {[
-                    {
-                      q: "색깔 심리 테스트는 어떻게 진행되나요?",
-                      a: "총 10개의 일상 상황 질문에 답하면, 8가지 색깔 성격 유형 중 나와 가장 잘 맞는 색깔과 그에 따른 성격 분석을 확인할 수 있어요.",
-                    },
-                    {
-                      q: "결과에서 주 색깔과 부 색깔이 무엇인가요?",
-                      a: "주 색깔은 나의 핵심 성격을, 부 색깔은 그것을 보완하는 성향을 나타냅니다. 두 색깔이 합쳐져 나만의 고유한 성격이 만들어져요.",
-                    },
-                    {
-                      q: "8가지 색깔 유형은 무엇인가요?",
-                      a: "빨강(열정적인 리더), 주황(활발한 모험가), 노랑(밝은 낙천가), 초록(평화로운 조화가), 파랑(차분한 사색가), 남색(직관적인 탐구자), 보라(신비로운 예술가), 분홍(따뜻한 공감러)가 있어요.",
-                    },
-                  ].map(({ q, a }, i) => (
+                  <h2 className="font-bold text-slate-800 dark:text-slate-100 text-base">{t.faqTitle}</h2>
+                  {t.faqs.map(({ q, a }, i) => (
                     <div key={i} className="space-y-1">
                       <p className="text-sm font-semibold text-slate-700 dark:text-slate-200">Q. {q}</p>
                       <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">A. {a}</p>
@@ -296,7 +477,7 @@ export default function ColorTestPage() {
                       {currentIndex + 1} / {questions.length}
                     </span>
                     <span className="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 text-xs font-semibold">
-                      {Math.round(progress)}% 완료
+                      {t.progress(Math.round(progress))}
                     </span>
                   </div>
                   <div className="h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
@@ -320,7 +501,6 @@ export default function ColorTestPage() {
                 <div className="flex flex-col gap-3">
                   {currentQuestion.options.map((option, idx) => {
                     const isSelected = selectedIndex === idx;
-                    const isOther = selectedIndex !== null && selectedIndex !== idx;
                     const colorKey = option.color;
 
                     return (
@@ -372,7 +552,7 @@ export default function ColorTestPage() {
                     animate={{ opacity: 1 }}
                     className="text-center text-xs text-slate-400 dark:text-slate-500"
                   >
-                    가장 끌리는 답을 선택하세요
+                    {t.hintText}
                   </motion.p>
                 )}
               </motion.div>
@@ -409,7 +589,7 @@ export default function ColorTestPage() {
                   </motion.div>
 
                   <p className="text-white/70 text-sm font-semibold uppercase tracking-widest mb-1">
-                    나의 색깔 유형
+                    {t.myColorType}
                   </p>
                   <h2 className="text-4xl font-extrabold mb-1 drop-shadow">
                     {resultData.emoji} {resultData.name}
@@ -440,7 +620,7 @@ export default function ColorTestPage() {
                   className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
                 >
                   <div className="mb-4">
-                    <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-3">💪 강점</h3>
+                    <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-3">{t.strengths}</h3>
                     <div className="flex flex-col gap-2">
                       {resultData.strengths.map((s) => (
                         <div key={s} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
@@ -451,7 +631,7 @@ export default function ColorTestPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-3">⚡ 약점</h3>
+                    <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-3">{t.weaknesses}</h3>
                     <div className="flex flex-col gap-2">
                       {resultData.weaknesses.map((w) => (
                         <div key={w} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
@@ -475,7 +655,7 @@ export default function ColorTestPage() {
                   transition={{ delay: 0.3 }}
                   className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
                 >
-                  <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-4">💕 나와 잘 맞는 색깔</h3>
+                  <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-4">{t.compatible}</h3>
                   <div className="flex gap-3">
                     {resultData.compatible.map((colorKey) => {
                       const info = results[colorKey];
@@ -505,7 +685,7 @@ export default function ColorTestPage() {
                     className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
                   >
                     <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-3">
-                      🌈 부 색깔 영향
+                      {t.secondaryInfluence}
                     </h3>
                     <div className="flex items-center gap-4">
                       <div
@@ -517,7 +697,7 @@ export default function ColorTestPage() {
                           {secondaryData.emoji} {secondaryData.name} · {secondaryData.title}
                         </p>
                         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-                          {secondaryData.traits.slice(0, 3).join(", ")}의 성향이 당신을 더욱 풍부하게 만들어줍니다.
+                          {t.secondaryDesc(secondaryData.traits.slice(0, 3).join(", "))}
                         </p>
                       </div>
                     </div>
@@ -531,7 +711,7 @@ export default function ColorTestPage() {
                   transition={{ delay: 0.38 }}
                   className={`rounded-2xl p-6 bg-gradient-to-br ${resultData.color} text-white shadow-lg`}
                 >
-                  <h3 className="font-bold text-base mb-2 text-white/90">💡 나에게 보내는 메시지</h3>
+                  <h3 className="font-bold text-base mb-2 text-white/90">{t.message}</h3>
                   <p className="text-sm leading-relaxed text-white/85">{resultData.advice}</p>
                 </motion.div>
 
@@ -542,7 +722,7 @@ export default function ColorTestPage() {
                   transition={{ delay: 0.42 }}
                   className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
                 >
-                  <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-4">8가지 색깔 유형</h3>
+                  <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base mb-4">{t.allTypes}</h3>
                   <div className="grid grid-cols-4 gap-2">
                     {ALL_COLOR_TYPES.map((colorKey, i) => {
                       const info = results[colorKey];
@@ -593,14 +773,14 @@ export default function ColorTestPage() {
                         : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:border-purple-300 dark:hover:border-purple-600"
                     }`}
                   >
-                    {copied ? "✓ 복사 완료!" : "결과 공유하기"}
+                    {copied ? t.copied : t.share}
                   </button>
                   <motion.button
                     whileTap={{ scale: 0.97 }}
                     onClick={handleRestart}
                     className="flex-1 py-4 rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white font-bold text-base shadow-md hover:shadow-pink-500/30 transition-shadow"
                   >
-                    다시 하기
+                    {t.restart}
                   </motion.button>
                 </motion.div>
               </motion.div>

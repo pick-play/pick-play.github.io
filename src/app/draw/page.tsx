@@ -4,6 +4,300 @@ import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
+import { useLocale } from "@/hooks/useLocale";
+
+const translations = {
+  ko: {
+    title: "제비뽑기",
+    subtitle: "공정하고 긴장감 넘치는 온라인 추첨",
+    quickStartPresets: "빠른 시작 프리셋",
+    itemsLabel: "항목 추가",
+    itemsMax: "(최대 20개)",
+    itemPlaceholder: "이름 입력 (쉼표로 여러 개)",
+    addBtn: "추가",
+    itemCount: (n: number) => `${n}개 항목`,
+    removeItem: (name: string) => `${name} 제거`,
+    winnersLabel: "당첨자 수",
+    people: "명",
+    winnerRatio: (total: number, win: number, lose: number) =>
+      `전체 ${total}개 중 ${win}명 당첨 / ${lose}명 꽝`,
+    tooManyWinners: "당첨자 수는 전체 항목보다 적어야 합니다",
+    startBtnNeedMore: "항목을 2개 이상 추가하세요",
+    startBtnTooMany: "당첨자 수를 줄여주세요",
+    startBtn: "🎴 추첨 시작!",
+    shuffling: "🔀 카드를 섞는 중...",
+    tapToFlip: "카드를 탭해서 뒤집으세요!",
+    revealed: (flipped: number, total: number) => `${flipped} / ${total} 공개됨`,
+    revealAll: "전체 공개",
+    tapToReveal: "탭하여 공개",
+    drawComplete: "추첨 완료!",
+    drawSummary: (total: number, win: number) => `전체 ${total}개 중 당첨 ${win}명`,
+    winners: (n: number) => `당첨 (${n}명)`,
+    losers: (n: number) => `꽝 (${n}명)`,
+    copyResult: "결과 복사",
+    copied: "복사됨!",
+    redraw: "다시 뽑기",
+    reset: "처음부터",
+    faqTitle: "자주 묻는 질문",
+    faq: [
+      {
+        q: "제비뽑기는 어떻게 사용하나요?",
+        a: "추첨할 항목(이름, 팀명 등)을 입력하거나 프리셋을 선택한 후 당첨자 수를 정하세요. 추첨 시작 버튼을 누르면 카드가 섞이고, 각 카드를 탭해 당첨 여부를 공개할 수 있습니다.",
+      },
+      {
+        q: "추첨 결과가 정말 공정한가요?",
+        a: "네! Fisher-Yates 셔플 알고리즘을 사용해 완전히 무작위로 당첨자를 결정합니다. 사전에 결과가 정해지지 않으며, 누구도 예측하거나 조작할 수 없어 공정한 추첨이 보장됩니다.",
+      },
+      {
+        q: "어떤 상황에서 활용할 수 있나요?",
+        a: "당첨자 선발, 벌칙 뽑기, 순서 정하기, 경품 추첨, 파티 게임 등 다양한 상황에서 활용할 수 있습니다. 프리셋으로 당첨/꽝, 1·2·3등 추첨도 바로 시작할 수 있어요.",
+      },
+    ],
+    presets: [
+      { label: "당첨/꽝", items: ["당첨", "꽝"] },
+      { label: "1·2·3등/꽝", items: ["1등", "2등", "3등", "꽝"] },
+      { label: "벌칙 있음/없음", items: ["벌칙", "면제", "면제", "면제"] },
+    ],
+    copyLines: {
+      header: "[제비뽑기 결과]",
+      winners: (n: number, names: string) => `당첨 (${n}명): ${names}`,
+      losers: (n: number, names: string) => `꽝 (${n}명): ${names}`,
+      footer: "PickPlay에서 생성",
+    },
+  },
+  en: {
+    title: "Lucky Draw",
+    subtitle: "Fair and exciting online lottery",
+    quickStartPresets: "Quick Start Presets",
+    itemsLabel: "Add Items",
+    itemsMax: "(max 20)",
+    itemPlaceholder: "Enter names (comma-separated)",
+    addBtn: "Add",
+    itemCount: (n: number) => `${n} item${n !== 1 ? "s" : ""}`,
+    removeItem: (name: string) => `Remove ${name}`,
+    winnersLabel: "Number of Winners",
+    people: "",
+    winnerRatio: (total: number, win: number, lose: number) =>
+      `${win} winner${win !== 1 ? "s" : ""} / ${lose} loser${lose !== 1 ? "s" : ""} out of ${total}`,
+    tooManyWinners: "Winners must be fewer than total items",
+    startBtnNeedMore: "Add at least 2 items",
+    startBtnTooMany: "Reduce the number of winners",
+    startBtn: "🎴 Start Draw!",
+    shuffling: "🔀 Shuffling cards...",
+    tapToFlip: "Tap a card to flip it!",
+    revealed: (flipped: number, total: number) => `${flipped} / ${total} revealed`,
+    revealAll: "Reveal All",
+    tapToReveal: "Tap to reveal",
+    drawComplete: "Draw Complete!",
+    drawSummary: (total: number, win: number) => `${win} winner${win !== 1 ? "s" : ""} out of ${total}`,
+    winners: (n: number) => `Winner${n !== 1 ? "s" : ""} (${n})`,
+    losers: (n: number) => `Loser${n !== 1 ? "s" : ""} (${n})`,
+    copyResult: "Copy Result",
+    copied: "Copied!",
+    redraw: "Redraw",
+    reset: "Start Over",
+    faqTitle: "FAQ",
+    faq: [
+      {
+        q: "How do I use Lucky Draw?",
+        a: "Enter the items (names, team names, etc.) or choose a preset, then set the number of winners. Press Start Draw and cards will be shuffled — tap each card to reveal whether it's a winner.",
+      },
+      {
+        q: "Is the draw truly fair?",
+        a: "Yes! We use the Fisher-Yates shuffle algorithm so every outcome is equally likely. Results are not predetermined and cannot be predicted or manipulated.",
+      },
+      {
+        q: "What situations can I use this for?",
+        a: "Winner selection, penalty draws, turn order, raffle prizes, party games, and more. Use presets for Win/Lose or 1st/2nd/3rd place draws.",
+      },
+    ],
+    presets: [
+      { label: "Win / Lose", items: ["Win", "Lose"] },
+      { label: "1st / 2nd / 3rd / Lose", items: ["1st", "2nd", "3rd", "Lose"] },
+      { label: "Penalty / Safe", items: ["Penalty", "Safe", "Safe", "Safe"] },
+    ],
+    copyLines: {
+      header: "[Lucky Draw Result]",
+      winners: (n: number, names: string) => `Winner${n !== 1 ? "s" : ""} (${n}): ${names}`,
+      losers: (n: number, names: string) => `Loser${n !== 1 ? "s" : ""} (${n}): ${names}`,
+      footer: "Generated by PickPlay",
+    },
+  },
+  ja: {
+    title: "くじ引き",
+    subtitle: "公平でドキドキのオンライン抽選",
+    quickStartPresets: "クイックスタート",
+    itemsLabel: "項目を追加",
+    itemsMax: "（最大20個）",
+    itemPlaceholder: "名前を入力（カンマ区切りで複数可）",
+    addBtn: "追加",
+    itemCount: (n: number) => `${n}個`,
+    removeItem: (name: string) => `${name}を削除`,
+    winnersLabel: "当選者数",
+    people: "人",
+    winnerRatio: (total: number, win: number, lose: number) =>
+      `全${total}個中 当選${win}人 / ハズレ${lose}人`,
+    tooManyWinners: "当選者数は全項目数より少なくしてください",
+    startBtnNeedMore: "2つ以上の項目を追加してください",
+    startBtnTooMany: "当選者数を減らしてください",
+    startBtn: "🎴 抽選スタート！",
+    shuffling: "🔀 カードをシャッフル中...",
+    tapToFlip: "カードをタップして裏返してください！",
+    revealed: (flipped: number, total: number) => `${flipped} / ${total} 公開済み`,
+    revealAll: "全て公開",
+    tapToReveal: "タップして公開",
+    drawComplete: "抽選完了！",
+    drawSummary: (total: number, win: number) => `全${total}個中 当選${win}人`,
+    winners: (n: number) => `当選（${n}人）`,
+    losers: (n: number) => `ハズレ（${n}人）`,
+    copyResult: "結果をコピー",
+    copied: "コピー済み！",
+    redraw: "もう一度",
+    reset: "最初から",
+    faqTitle: "よくある質問",
+    faq: [
+      {
+        q: "くじ引きの使い方は？",
+        a: "項目（名前やチーム名など）を入力するかプリセットを選び、当選者数を決めてください。抽選スタートを押すとカードがシャッフルされ、タップして結果を公開できます。",
+      },
+      {
+        q: "抽選結果は本当に公平ですか？",
+        a: "はい！Fisher-Yates シャッフルアルゴリズムで完全にランダムに決定します。事前に結果は決まっておらず、誰も予測・操作できません。",
+      },
+      {
+        q: "どんな場面で使えますか？",
+        a: "当選者の選定、罰ゲーム決め、順番決め、景品抽選、パーティゲームなど様々な場面で活用できます。",
+      },
+    ],
+    presets: [
+      { label: "当選/ハズレ", items: ["当選", "ハズレ"] },
+      { label: "1〜3位/ハズレ", items: ["1位", "2位", "3位", "ハズレ"] },
+      { label: "罰ゲーム/セーフ", items: ["罰ゲーム", "セーフ", "セーフ", "セーフ"] },
+    ],
+    copyLines: {
+      header: "[くじ引き結果]",
+      winners: (n: number, names: string) => `当選（${n}人）: ${names}`,
+      losers: (n: number, names: string) => `ハズレ（${n}人）: ${names}`,
+      footer: "PickPlayで生成",
+    },
+  },
+  zh: {
+    title: "抽签",
+    subtitle: "公平刺激的在线抽签",
+    quickStartPresets: "快速开始",
+    itemsLabel: "添加选项",
+    itemsMax: "（最多20个）",
+    itemPlaceholder: "输入名称（逗号分隔多个）",
+    addBtn: "添加",
+    itemCount: (n: number) => `${n}个选项`,
+    removeItem: (name: string) => `移除${name}`,
+    winnersLabel: "中签人数",
+    people: "人",
+    winnerRatio: (total: number, win: number, lose: number) =>
+      `共${total}个，中签${win}人 / 未中${lose}人`,
+    tooManyWinners: "中签人数必须少于总选项数",
+    startBtnNeedMore: "请添加至少2个选项",
+    startBtnTooMany: "请减少中签人数",
+    startBtn: "🎴 开始抽签！",
+    shuffling: "🔀 正在洗牌...",
+    tapToFlip: "点击卡片翻转！",
+    revealed: (flipped: number, total: number) => `已翻开 ${flipped} / ${total}`,
+    revealAll: "全部翻开",
+    tapToReveal: "点击翻开",
+    drawComplete: "抽签完成！",
+    drawSummary: (total: number, win: number) => `共${total}个，中签${win}人`,
+    winners: (n: number) => `中签（${n}人）`,
+    losers: (n: number) => `未中（${n}人）`,
+    copyResult: "复制结果",
+    copied: "已复制！",
+    redraw: "重新抽签",
+    reset: "重新开始",
+    faqTitle: "常见问题",
+    faq: [
+      {
+        q: "如何使用抽签功能？",
+        a: "输入选项（姓名、队名等）或选择预设，然后设定中签人数。点击开始抽签，牌会被洗混，点击每张牌来揭晓结果。",
+      },
+      {
+        q: "抽签结果真的公平吗？",
+        a: "是的！我们使用Fisher-Yates洗牌算法，每种结果的概率完全相等，结果不可预测也无法操控。",
+      },
+      {
+        q: "适合哪些场合使用？",
+        a: "适合决定获奖者、惩罚游戏、顺序决定、抽奖、派对游戏等各种场合。",
+      },
+    ],
+    presets: [
+      { label: "中签/未中", items: ["中签", "未中"] },
+      { label: "一二三等/未中", items: ["一等奖", "二等奖", "三等奖", "未中"] },
+      { label: "惩罚/免罚", items: ["惩罚", "免罚", "免罚", "免罚"] },
+    ],
+    copyLines: {
+      header: "[抽签结果]",
+      winners: (n: number, names: string) => `中签（${n}人）: ${names}`,
+      losers: (n: number, names: string) => `未中（${n}人）: ${names}`,
+      footer: "由PickPlay生成",
+    },
+  },
+  es: {
+    title: "Sorteo",
+    subtitle: "Sorteo online justo y emocionante",
+    quickStartPresets: "Presets rápidos",
+    itemsLabel: "Agregar elementos",
+    itemsMax: "(máx. 20)",
+    itemPlaceholder: "Ingresa nombres (separados por coma)",
+    addBtn: "Agregar",
+    itemCount: (n: number) => `${n} elemento${n !== 1 ? "s" : ""}`,
+    removeItem: (name: string) => `Quitar ${name}`,
+    winnersLabel: "Número de ganadores",
+    people: "",
+    winnerRatio: (total: number, win: number, lose: number) =>
+      `${win} ganador${win !== 1 ? "es" : ""} / ${lose} perdedor${lose !== 1 ? "es" : ""} de ${total}`,
+    tooManyWinners: "Los ganadores deben ser menos que el total de elementos",
+    startBtnNeedMore: "Agrega al menos 2 elementos",
+    startBtnTooMany: "Reduce el número de ganadores",
+    startBtn: "🎴 ¡Iniciar sorteo!",
+    shuffling: "🔀 Mezclando cartas...",
+    tapToFlip: "¡Toca una carta para voltearla!",
+    revealed: (flipped: number, total: number) => `${flipped} / ${total} reveladas`,
+    revealAll: "Revelar todo",
+    tapToReveal: "Toca para revelar",
+    drawComplete: "¡Sorteo completo!",
+    drawSummary: (total: number, win: number) => `${win} ganador${win !== 1 ? "es" : ""} de ${total}`,
+    winners: (n: number) => `Ganador${n !== 1 ? "es" : ""} (${n})`,
+    losers: (n: number) => `Perdedor${n !== 1 ? "es" : ""} (${n})`,
+    copyResult: "Copiar resultado",
+    copied: "¡Copiado!",
+    redraw: "Repetir sorteo",
+    reset: "Empezar de nuevo",
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      {
+        q: "¿Cómo se usa el sorteo?",
+        a: "Ingresa los elementos (nombres, equipos, etc.) o elige un preset, luego establece el número de ganadores. Pulsa Iniciar sorteo, las cartas se mezclarán y podrás tocarlas para revelar el resultado.",
+      },
+      {
+        q: "¿El sorteo es realmente justo?",
+        a: "¡Sí! Usamos el algoritmo de barajado Fisher-Yates, por lo que todos los resultados son igualmente probables. No hay resultados predeterminados.",
+      },
+      {
+        q: "¿Para qué situaciones sirve?",
+        a: "Selección de ganadores, penalizaciones, orden de turnos, rifas, juegos de fiesta y más. Usa los presets para sorteos de ganador/perdedor o 1°/2°/3° lugar.",
+      },
+    ],
+    presets: [
+      { label: "Gana / Pierde", items: ["Gana", "Pierde"] },
+      { label: "1° / 2° / 3° / Pierde", items: ["1°", "2°", "3°", "Pierde"] },
+      { label: "Penalti / Libre", items: ["Penalti", "Libre", "Libre", "Libre"] },
+    ],
+    copyLines: {
+      header: "[Resultado del sorteo]",
+      winners: (n: number, names: string) => `Ganador${n !== 1 ? "es" : ""} (${n}): ${names}`,
+      losers: (n: number, names: string) => `Perdedor${n !== 1 ? "es" : ""} (${n}): ${names}`,
+      footer: "Generado por PickPlay",
+    },
+  },
+};
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
@@ -11,7 +305,7 @@ type Phase = "setup" | "draw" | "result";
 
 interface DrawCard {
   id: number;
-  label: string; // item name shown on back face
+  label: string;
   isWinner: boolean;
   flipped: boolean;
 }
@@ -29,12 +323,6 @@ const CHIP_COLORS = [
   "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300",
 ];
 
-const PRESETS: Array<{ label: string; items: string[] }> = [
-  { label: "당첨/꽝", items: ["당첨", "꽝"] },
-  { label: "1·2·3등/꽝", items: ["1등", "2등", "3등", "꽝"] },
-  { label: "벌칙 있음/없음", items: ["벌칙", "면제", "면제", "면제"] },
-];
-
 // ── Utilities ──────────────────────────────────────────────────────────────
 
 function fisherYatesShuffle<T>(arr: T[]): T[] {
@@ -47,7 +335,6 @@ function fisherYatesShuffle<T>(arr: T[]): T[] {
 }
 
 function buildCards(items: string[], winnerCount: number): DrawCard[] {
-  // Build result pool: winnerCount winners + rest losers
   const results: boolean[] = [
     ...Array(winnerCount).fill(true),
     ...Array(items.length - winnerCount).fill(false),
@@ -127,9 +414,10 @@ interface FlipCardProps {
   onFlip: (id: number) => void;
   isShuffling: boolean;
   shuffleDelay: number;
+  tapLabel: string;
 }
 
-function FlipCard({ card, index, onFlip, isShuffling, shuffleDelay }: FlipCardProps) {
+function FlipCard({ card, index, onFlip, isShuffling, shuffleDelay, tapLabel }: FlipCardProps) {
   const handleClick = () => {
     if (!isShuffling && !card.flipped) onFlip(card.id);
   };
@@ -165,22 +453,21 @@ function FlipCard({ card, index, onFlip, isShuffling, shuffleDelay }: FlipCardPr
       whileHover={!card.flipped && !isShuffling ? { scale: 1.06, y: -4 } : {}}
       whileTap={!card.flipped && !isShuffling ? { scale: 0.96 } : {}}
     >
-      {/* Card flip container */}
       <motion.div
         style={{ transformStyle: "preserve-3d", position: "relative", height: "120px" }}
         animate={{ rotateY: card.flipped ? 180 : 0 }}
         transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }}
       >
-        {/* Front face (face-down, question mark) */}
+        {/* Front face */}
         <div
           style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
           className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex flex-col items-center justify-center shadow-md border-2 border-amber-300/50"
         >
           <span className="text-3xl select-none">🎴</span>
-          <span className="text-white/80 text-xs font-semibold mt-1 select-none">탭하여 공개</span>
+          <span className="text-white/80 text-xs font-semibold mt-1 select-none">{tapLabel}</span>
         </div>
 
-        {/* Back face (revealed result) */}
+        {/* Back face */}
         <div
           style={{
             backfaceVisibility: "hidden",
@@ -210,6 +497,9 @@ function FlipCard({ card, index, onFlip, isShuffling, shuffleDelay }: FlipCardPr
 // ── Main Page ──────────────────────────────────────────────────────────────
 
 export default function DrawPage() {
+  const locale = useLocale();
+  const t = translations[locale];
+
   const [items, setItems] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [winnerCount, setWinnerCount] = useState(1);
@@ -259,7 +549,6 @@ export default function DrawPage() {
     setCards(built);
     setPhase("draw");
     setIsShuffling(true);
-    // Shuffle animation: ~3s (0.6s * 3 repeats + stagger), then allow flipping
     setTimeout(() => setIsShuffling(false), 3000);
   }, [items, winnerCount]);
 
@@ -271,11 +560,9 @@ export default function DrawPage() {
     setCards((prev) => prev.map((c) => ({ ...c, flipped: true })));
   }, []);
 
-  // Watch for all cards flipped → confetti + phase change
   const allFlipped = cards.length > 0 && cards.every((c) => c.flipped);
   const hasWinnerFlipped = cards.some((c) => c.flipped && c.isWinner);
 
-  // Trigger confetti when a winner is first revealed
   const confettiTriggeredRef = useRef(false);
   useEffect(() => {
     if (hasWinnerFlipped && !confettiTriggeredRef.current) {
@@ -289,13 +576,12 @@ export default function DrawPage() {
     }
   }, [hasWinnerFlipped]);
 
-  // Go to result when all flipped
   const resultTriggeredRef = useRef(false);
   useEffect(() => {
     if (allFlipped && phase === "draw" && !resultTriggeredRef.current) {
       resultTriggeredRef.current = true;
-      const t = setTimeout(() => setPhase("result"), 800);
-      return () => clearTimeout(t);
+      const timer = setTimeout(() => setPhase("result"), 800);
+      return () => clearTimeout(timer);
     }
   }, [allFlipped, phase]);
 
@@ -324,12 +610,12 @@ export default function DrawPage() {
     const winners = cards.filter((c) => c.isWinner).map((c) => c.label);
     const losers = cards.filter((c) => !c.isWinner).map((c) => c.label);
     const lines = [
-      "[제비뽑기 결과]",
+      t.copyLines.header,
       "",
-      `당첨 (${winners.length}명): ${winners.join(", ")}`,
-      `꽝 (${losers.length}명): ${losers.join(", ")}`,
+      t.copyLines.winners(winners.length, winners.join(", ")),
+      t.copyLines.losers(losers.length, losers.join(", ")),
       "",
-      "PickPlay에서 생성",
+      t.copyLines.footer,
     ];
     try {
       await navigator.clipboard.writeText(lines.join("\n"));
@@ -338,7 +624,7 @@ export default function DrawPage() {
     } catch {
       // clipboard not available
     }
-  }, [cards]);
+  }, [cards, t]);
 
   const canStart = items.length >= 2 && winnerCount >= 1 && winnerCount < items.length;
   const winners = cards.filter((c) => c.isWinner);
@@ -360,10 +646,10 @@ export default function DrawPage() {
               <span className="text-3xl">🎴</span>
             </div>
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent mb-2">
-              제비뽑기
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              공정하고 긴장감 넘치는 온라인 추첨
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -382,10 +668,10 @@ export default function DrawPage() {
                 {/* Presets */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                    빠른 시작 프리셋
+                    {t.quickStartPresets}
                   </h2>
                   <div className="flex flex-wrap gap-2">
-                    {PRESETS.map((preset) => (
+                    {t.presets.map((preset) => (
                       <button
                         key={preset.label}
                         onClick={() => applyPreset(preset)}
@@ -404,7 +690,7 @@ export default function DrawPage() {
                 {/* Item input */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                    항목 추가 <span className="text-xs normal-case font-normal">(최대 20개)</span>
+                    {t.itemsLabel} <span className="text-xs normal-case font-normal">{t.itemsMax}</span>
                   </h2>
                   <div className="flex gap-2">
                     <input
@@ -413,14 +699,14 @@ export default function DrawPage() {
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
                       onKeyDown={handleKeyDown}
-                      placeholder="이름 입력 (쉼표로 여러 개)"
+                      placeholder={t.itemPlaceholder}
                       className="flex-1 min-h-[48px] px-4 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm"
                     />
                     <button
                       onClick={addItems}
                       className="min-h-[48px] px-5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold text-sm hover:from-amber-600 hover:to-orange-600 transition-all active:scale-95 shadow-sm"
                     >
-                      추가
+                      {t.addBtn}
                     </button>
                   </div>
 
@@ -445,7 +731,7 @@ export default function DrawPage() {
                             <button
                               onClick={() => removeItem(idx)}
                               className="ml-0.5 w-4 h-4 rounded-full flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity"
-                              aria-label={`${item} 제거`}
+                              aria-label={t.removeItem(item)}
                             >
                               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
@@ -458,14 +744,14 @@ export default function DrawPage() {
                   </AnimatePresence>
 
                   {items.length > 0 && (
-                    <p className="mt-3 text-xs text-slate-400">{items.length}개 항목</p>
+                    <p className="mt-3 text-xs text-slate-400">{t.itemCount(items.length)}</p>
                   )}
                 </div>
 
                 {/* Winner count */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    당첨자 수
+                    {t.winnersLabel}
                   </h2>
                   <div className="flex items-center justify-center gap-6">
                     <button
@@ -479,7 +765,9 @@ export default function DrawPage() {
                       <span className="text-5xl font-extrabold bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
                         {winnerCount}
                       </span>
-                      <span className="text-slate-500 dark:text-slate-400 ml-1 text-lg">명</span>
+                      {t.people && (
+                        <span className="text-slate-500 dark:text-slate-400 ml-1 text-lg">{t.people}</span>
+                      )}
                     </div>
                     <button
                       onClick={() => setWinnerCount((n) => Math.min(Math.max(1, items.length - 1), n + 1))}
@@ -491,12 +779,12 @@ export default function DrawPage() {
                   </div>
                   {items.length >= 2 && (
                     <p className="text-center text-xs text-slate-400 mt-3">
-                      전체 {items.length}개 중 {winnerCount}명 당첨 / {items.length - winnerCount}명 꽝
+                      {t.winnerRatio(items.length, winnerCount, items.length - winnerCount)}
                     </p>
                   )}
                   {winnerCount >= items.length && items.length > 0 && (
                     <p className="text-center text-xs text-rose-500 mt-1">
-                      당첨자 수는 전체 항목보다 적어야 합니다
+                      {t.tooManyWinners}
                     </p>
                   )}
                 </div>
@@ -513,10 +801,10 @@ export default function DrawPage() {
                   className="w-full min-h-[56px] rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold text-lg shadow-lg hover:from-amber-600 hover:to-orange-600 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   {items.length < 2
-                    ? "항목을 2개 이상 추가하세요"
+                    ? t.startBtnNeedMore
                     : winnerCount >= items.length
-                    ? "당첨자 수를 줄여주세요"
-                    : "🎴 추첨 시작!"}
+                    ? t.startBtnTooMany
+                    : t.startBtn}
                 </motion.button>
               </motion.div>
             )}
@@ -540,7 +828,7 @@ export default function DrawPage() {
                         transition={{ duration: 0.7, repeat: Infinity }}
                         className="text-lg font-bold text-amber-500"
                       >
-                        🔀 카드를 섞는 중...
+                        {t.shuffling}
                       </motion.p>
                     ) : (
                       <motion.div
@@ -549,10 +837,10 @@ export default function DrawPage() {
                         transition={{ type: "spring", stiffness: 200 }}
                       >
                         <p className="text-lg font-bold text-slate-700 dark:text-slate-200">
-                          카드를 탭해서 뒤집으세요!
+                          {t.tapToFlip}
                         </p>
                         <p className="text-sm text-slate-400 mt-1">
-                          {cards.filter((c) => c.flipped).length} / {cards.length} 공개됨
+                          {t.revealed(cards.filter((c) => c.flipped).length, cards.length)}
                         </p>
                       </motion.div>
                     )}
@@ -568,6 +856,7 @@ export default function DrawPage() {
                         onFlip={flipCard}
                         isShuffling={isShuffling}
                         shuffleDelay={idx * 0.04}
+                        tapLabel={t.tapToReveal}
                       />
                     ))}
                   </div>
@@ -581,7 +870,7 @@ export default function DrawPage() {
                       onClick={flipAll}
                       className="w-full mt-6 min-h-[48px] rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-sm hover:bg-slate-200 dark:hover:bg-slate-600 transition-all active:scale-95"
                     >
-                      전체 공개
+                      {t.revealAll}
                     </motion.button>
                   )}
                 </div>
@@ -613,10 +902,10 @@ export default function DrawPage() {
                     🎊
                   </motion.div>
                   <h2 className="text-2xl font-extrabold text-slate-800 dark:text-white">
-                    추첨 완료!
+                    {t.drawComplete}
                   </h2>
                   <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">
-                    전체 {cards.length}개 중 당첨 {winners.length}명
+                    {t.drawSummary(cards.length, winners.length)}
                   </p>
                 </motion.div>
 
@@ -630,7 +919,7 @@ export default function DrawPage() {
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xl">🎉</span>
                     <h3 className="text-base font-bold text-amber-700 dark:text-amber-300">
-                      당첨 ({winners.length}명)
+                      {t.winners(winners.length)}
                     </h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -659,7 +948,7 @@ export default function DrawPage() {
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-xl">😢</span>
                       <h3 className="text-base font-bold text-slate-600 dark:text-slate-300">
-                        꽝 ({losers.length}명)
+                        {t.losers(losers.length)}
                       </h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -696,19 +985,19 @@ export default function DrawPage() {
                         : "bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700"
                     }`}
                   >
-                    {copySuccess ? "복사됨!" : "결과 복사"}
+                    {copySuccess ? t.copied : t.copyResult}
                   </button>
                   <button
                     onClick={redraw}
                     className="min-h-[48px] rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold text-sm hover:from-amber-600 hover:to-orange-600 transition-all active:scale-95 shadow-sm"
                   >
-                    다시 뽑기
+                    {t.redraw}
                   </button>
                   <button
                     onClick={resetAll}
                     className="min-h-[48px] rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-sm hover:bg-slate-200 dark:hover:bg-slate-600 transition-all active:scale-95"
                   >
-                    처음부터
+                    {t.reset}
                   </button>
                 </motion.div>
               </motion.div>
@@ -721,44 +1010,25 @@ export default function DrawPage() {
           {/* FAQ Section */}
           <section className="mt-16 mb-8">
             <h2 className="text-2xl font-bold mb-6 text-center text-slate-800 dark:text-slate-100">
-              자주 묻는 질문
+              {t.faqTitle}
             </h2>
             <div className="space-y-4">
-              <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-amber-500 transition-colors">
-                  제비뽑기는 어떻게 사용하나요?
-                  <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="px-5 pb-5 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                  추첨할 항목(이름, 팀명 등)을 입력하거나 프리셋을 선택한 후 당첨자 수를 정하세요. 추첨 시작 버튼을 누르면 카드가 섞이고, 각 카드를 탭해 당첨 여부를 공개할 수 있습니다.
-                </div>
-              </details>
-
-              <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-amber-500 transition-colors">
-                  추첨 결과가 정말 공정한가요?
-                  <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="px-5 pb-5 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                  네! Fisher-Yates 셔플 알고리즘을 사용해 완전히 무작위로 당첨자를 결정합니다. 사전에 결과가 정해지지 않으며, 누구도 예측하거나 조작할 수 없어 공정한 추첨이 보장됩니다.
-                </div>
-              </details>
-
-              <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-amber-500 transition-colors">
-                  어떤 상황에서 활용할 수 있나요?
-                  <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <div className="px-5 pb-5 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                  당첨자 선발, 벌칙 뽑기, 순서 정하기, 경품 추첨, 파티 게임 등 다양한 상황에서 활용할 수 있습니다. 프리셋으로 당첨/꽝, 1·2·3등 추첨도 바로 시작할 수 있어요.
-                </div>
-              </details>
+              {t.faq.map((item, i) => (
+                <details
+                  key={i}
+                  className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden"
+                >
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-amber-500 transition-colors">
+                    {item.q}
+                    <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-5 pb-5 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                    {item.a}
+                  </div>
+                </details>
+              ))}
             </div>
           </section>
         </div>

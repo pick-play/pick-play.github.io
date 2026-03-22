@@ -5,6 +5,200 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import testData from "@/data/teto-egen-test.json";
+import { useLocale } from "@/hooks/useLocale";
+
+const translations = {
+  ko: {
+    title: "테토 vs 에겐 테스트",
+    subtitle: "나는 테토일까? 에겐일까? 내 성향을 알아보세요!",
+    selectGender: "성별을 선택해 주세요",
+    male: "남성",
+    maleDesc: "테토남 / 에겐남",
+    female: "여성",
+    femaleDesc: "테토녀 / 에겐녀",
+    infoText1: "테토",
+    infoText2: "는 테스토스테론,",
+    infoText3: "에겐",
+    infoText4: "은 에스트로겐의 줄임말로,",
+    infoText5: "성격과 연애 스타일을 분류하는 요즘 대세 성향 테스트입니다.",
+    question: "질문",
+    detailedAnalysis: "상세 분석",
+    traits: "성향 특징",
+    strengths: "강점",
+    weaknesses: "주의할 점",
+    loveStyle: "연애 스타일",
+    compatibility: "궁합",
+    bestMatch: "최고 궁합",
+    worstMatch: "주의 궁합",
+    share: "결과 공유하기",
+    copied: "클립보드에 복사됨!",
+    restart: "다시 하기",
+    shareText: "[테토 vs 에겐 성향 테스트 결과]\n",
+    shareMiddle: "\n테토 ",
+    shareEgen: "% / 에겐 ",
+    shareBest: "\n\n최고 궁합: ",
+    shareWorst: "\n최악 궁합: ",
+    shareLink: "\n\n테스트 해보기: https://pick-play.github.io/teto-egen",
+    egennyeo: "에겐녀",
+    egennam: "에겐남",
+    tetonyeo: "테토녀",
+    tetonam: "테토남",
+    teto: "테토",
+    egen: "에겐",
+  },
+  en: {
+    title: "Teto vs Egen Test",
+    subtitle: "Are you Teto or Egen? Discover your personality type!",
+    selectGender: "Please select your gender",
+    male: "Male",
+    maleDesc: "Teto Male / Egen Male",
+    female: "Female",
+    femaleDesc: "Teto Female / Egen Female",
+    infoText1: "Teto",
+    infoText2: "stands for testosterone,",
+    infoText3: "Egen",
+    infoText4: "stands for estrogen —",
+    infoText5: "a trending personality test that categorizes your character and love style.",
+    question: "Question",
+    detailedAnalysis: "Detailed Analysis",
+    traits: "Personality Traits",
+    strengths: "Strengths",
+    weaknesses: "Watch Out For",
+    loveStyle: "Love Style",
+    compatibility: "Compatibility",
+    bestMatch: "Best Match",
+    worstMatch: "Worst Match",
+    share: "Share Result",
+    copied: "Copied to clipboard!",
+    restart: "Try Again",
+    shareText: "[Teto vs Egen Personality Test Result]\n",
+    shareMiddle: "\nTeto ",
+    shareEgen: "% / Egen ",
+    shareBest: "\n\nBest Match: ",
+    shareWorst: "\nWorst Match: ",
+    shareLink: "\n\nTake the test: https://pick-play.github.io/teto-egen",
+    egennyeo: "Egen F",
+    egennam: "Egen M",
+    tetonyeo: "Teto F",
+    tetonam: "Teto M",
+    teto: "Teto",
+    egen: "Egen",
+  },
+  ja: {
+    title: "テト vs エゲン テスト",
+    subtitle: "あなたはテト？エゲン？自分の傾向を確認しよう！",
+    selectGender: "性別を選択してください",
+    male: "男性",
+    maleDesc: "テト男 / エゲン男",
+    female: "女性",
+    femaleDesc: "テト女 / エゲン女",
+    infoText1: "テト",
+    infoText2: "はテストステロン、",
+    infoText3: "エゲン",
+    infoText4: "はエストロゲンの略で、",
+    infoText5: "性格と恋愛スタイルを分類するトレンドの性格テストです。",
+    question: "質問",
+    detailedAnalysis: "詳細分析",
+    traits: "性格の特徴",
+    strengths: "強み",
+    weaknesses: "注意点",
+    loveStyle: "恋愛スタイル",
+    compatibility: "相性",
+    bestMatch: "最高の相性",
+    worstMatch: "注意の相性",
+    share: "結果をシェア",
+    copied: "クリップボードにコピーしました！",
+    restart: "もう一度",
+    shareText: "[テト vs エゲン 性格テスト結果]\n",
+    shareMiddle: "\nテト ",
+    shareEgen: "% / エゲン ",
+    shareBest: "\n\n最高の相性: ",
+    shareWorst: "\n注意の相性: ",
+    shareLink: "\n\nテストを受ける: https://pick-play.github.io/teto-egen",
+    egennyeo: "エゲン女",
+    egennam: "エゲン男",
+    tetonyeo: "テト女",
+    tetonam: "テト男",
+    teto: "テト",
+    egen: "エゲン",
+  },
+  zh: {
+    title: "Teto vs Egen 测试",
+    subtitle: "你是Teto还是Egen？探索你的性格倾向！",
+    selectGender: "请选择性别",
+    male: "男性",
+    maleDesc: "Teto男 / Egen男",
+    female: "女性",
+    femaleDesc: "Teto女 / Egen女",
+    infoText1: "Teto",
+    infoText2: "代表睾酮，",
+    infoText3: "Egen",
+    infoText4: "代表雌激素，",
+    infoText5: "这是一种流行的性格测试，用于划分你的个性与恋爱风格。",
+    question: "问题",
+    detailedAnalysis: "详细分析",
+    traits: "性格特征",
+    strengths: "优点",
+    weaknesses: "注意事项",
+    loveStyle: "恋爱风格",
+    compatibility: "相性",
+    bestMatch: "最佳配对",
+    worstMatch: "注意配对",
+    share: "分享结果",
+    copied: "已复制到剪贴板！",
+    restart: "再试一次",
+    shareText: "[Teto vs Egen 性格测试结果]\n",
+    shareMiddle: "\nTeto ",
+    shareEgen: "% / Egen ",
+    shareBest: "\n\n最佳配对: ",
+    shareWorst: "\n注意配对: ",
+    shareLink: "\n\n参加测试: https://pick-play.github.io/teto-egen",
+    egennyeo: "Egen女",
+    egennam: "Egen男",
+    tetonyeo: "Teto女",
+    tetonam: "Teto男",
+    teto: "Teto",
+    egen: "Egen",
+  },
+  es: {
+    title: "Test Teto vs Egen",
+    subtitle: "¿Eres Teto o Egen? ¡Descubre tu tipo de personalidad!",
+    selectGender: "Por favor selecciona tu género",
+    male: "Masculino",
+    maleDesc: "Teto M / Egen M",
+    female: "Femenino",
+    femaleDesc: "Teto F / Egen F",
+    infoText1: "Teto",
+    infoText2: "representa la testosterona,",
+    infoText3: "Egen",
+    infoText4: "representa el estrógeno —",
+    infoText5: "una prueba de personalidad de tendencia que clasifica tu carácter y estilo amoroso.",
+    question: "Pregunta",
+    detailedAnalysis: "Análisis Detallado",
+    traits: "Rasgos de Personalidad",
+    strengths: "Fortalezas",
+    weaknesses: "Ten Cuidado Con",
+    loveStyle: "Estilo Amoroso",
+    compatibility: "Compatibilidad",
+    bestMatch: "Mejor Compatibilidad",
+    worstMatch: "Compatibilidad a Evitar",
+    share: "Compartir Resultado",
+    copied: "¡Copiado al portapapeles!",
+    restart: "Intentar de Nuevo",
+    shareText: "[Resultado del Test Teto vs Egen]\n",
+    shareMiddle: "\nTeto ",
+    shareEgen: "% / Egen ",
+    shareBest: "\n\nMejor compatibilidad: ",
+    shareWorst: "\nCompatibilidad a evitar: ",
+    shareLink: "\n\nHaz el test: https://pick-play.github.io/teto-egen",
+    egennyeo: "Egen F",
+    egennam: "Egen M",
+    tetonyeo: "Teto F",
+    tetonam: "Teto M",
+    teto: "Teto",
+    egen: "Egen",
+  },
+};
 
 type Gender = "male" | "female";
 type Phase = "gender" | "quiz" | "result";
@@ -104,6 +298,8 @@ const egenBarColor: Record<ResultKey, string> = {
 };
 
 export default function TetoEgenPage() {
+  const locale = useLocale();
+  const t = translations[locale];
   const [phase, setPhase] = useState<Phase>("gender");
   const [gender, setGender] = useState<Gender | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -191,7 +387,7 @@ export default function TetoEgenPage() {
   const handleShare = useCallback(() => {
     if (!resultKey) return;
     const r = results[resultKey];
-    const text = `[테토 vs 에겐 성향 테스트 결과]\n${r.emoji} ${r.title} - ${r.subtitle}\n테토 ${tetoPercent}% / 에겐 ${egenPercent}%\n\n${r.description}\n\n최고 궁합: ${r.bestMatch}\n최악 궁합: ${r.worstMatch}\n\n테스트 해보기: https://pick-play.github.io/teto-egen`;
+    const text = `${t.shareText}${r.emoji} ${r.title} - ${r.subtitle}${t.shareMiddle}${tetoPercent}${t.shareEgen}${egenPercent}%\n\n${r.description}${t.shareBest}${r.bestMatch}${t.shareWorst}${r.worstMatch}${t.shareLink}`;
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -218,10 +414,10 @@ export default function TetoEgenPage() {
             className="text-center mb-8"
           >
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 bg-clip-text text-transparent mb-2">
-              테토 vs 에겐 테스트
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              나는 테토일까? 에겐일까? 내 성향을 알아보세요!
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -237,7 +433,7 @@ export default function TetoEgenPage() {
                 className="space-y-4"
               >
                 <p className="text-center text-slate-600 dark:text-slate-300 font-semibold text-lg mb-6">
-                  성별을 선택해 주세요
+                  {t.selectGender}
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {/* Male card */}
@@ -249,10 +445,10 @@ export default function TetoEgenPage() {
                   >
                     <span className="text-6xl">🙋‍♂️</span>
                     <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
-                      남성
+                      {t.male}
                     </span>
                     <span className="text-xs text-slate-400">
-                      테토남 / 에겐남
+                      {t.maleDesc}
                     </span>
                   </motion.button>
 
@@ -265,10 +461,10 @@ export default function TetoEgenPage() {
                   >
                     <span className="text-6xl">🙋‍♀️</span>
                     <span className="text-xl font-bold text-pink-500 dark:text-pink-400">
-                      여성
+                      {t.female}
                     </span>
                     <span className="text-xs text-slate-400">
-                      테토녀 / 에겐녀
+                      {t.femaleDesc}
                     </span>
                   </motion.button>
                 </div>
@@ -284,10 +480,10 @@ export default function TetoEgenPage() {
                   className="mt-6 bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                 >
                   <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed text-center">
-                    <span className="font-semibold text-violet-500">테토</span>는 테스토스테론,{" "}
-                    <span className="font-semibold text-pink-500">에겐</span>은 에스트로겐의 줄임말로,
+                    <span className="font-semibold text-violet-500">{t.infoText1}</span>{t.infoText2}{" "}
+                    <span className="font-semibold text-pink-500">{t.infoText3}</span>{t.infoText4}
                     <br />
-                    성격과 연애 스타일을 분류하는 요즘 대세 성향 테스트입니다.
+                    {t.infoText5}
                   </p>
                 </motion.div>
               </motion.div>
@@ -307,7 +503,7 @@ export default function TetoEgenPage() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-xs font-semibold text-slate-400 uppercase tracking-wide">
-                      질문
+                      {t.question}
                     </span>
                     <span className="text-sm font-bold text-slate-600 dark:text-slate-300">
                       {currentIndex + 1} / {totalQuestions}
@@ -422,11 +618,11 @@ export default function TetoEgenPage() {
                 >
                   <div className="flex justify-between items-center mb-3">
                     <span className="text-sm font-bold text-blue-500">
-                      테토 {tetoPercent}%
+                      {t.teto} {tetoPercent}%
                     </span>
                     <span className="text-xs text-slate-400 font-medium">vs</span>
                     <span className="text-sm font-bold text-pink-500">
-                      에겐 {egenPercent}%
+                      {t.egen} {egenPercent}%
                     </span>
                   </div>
                   <div className="h-4 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden flex">
@@ -476,7 +672,7 @@ export default function TetoEgenPage() {
                     className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                   >
                     <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                      상세 분석
+                      {t.detailedAnalysis}
                     </h3>
                     <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                       {detailed}
@@ -492,7 +688,7 @@ export default function TetoEgenPage() {
                   className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                 >
                   <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                    성향 특징
+                    {t.traits}
                   </h3>
                   <ul className="space-y-2">
                     {result.traits.map((trait, i) => (
@@ -521,7 +717,7 @@ export default function TetoEgenPage() {
                     <div>
                       <h3 className="text-sm font-semibold text-green-600 dark:text-green-400 mb-2 flex items-center gap-1.5">
                         <span className="w-4 h-4 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center text-[10px]">+</span>
-                        강점
+                        {t.strengths}
                       </h3>
                       <ul className="space-y-1.5">
                         {result.strengths.map((s, i) => (
@@ -541,7 +737,7 @@ export default function TetoEgenPage() {
                     <div className="border-t border-slate-100 dark:border-slate-700 pt-4">
                       <h3 className="text-sm font-semibold text-amber-600 dark:text-amber-400 mb-2 flex items-center gap-1.5">
                         <span className="w-4 h-4 rounded-full bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center text-[10px]">!</span>
-                        주의할 점
+                        {t.weaknesses}
                       </h3>
                       <ul className="space-y-1.5">
                         {result.weaknesses.map((w, i) => (
@@ -569,7 +765,7 @@ export default function TetoEgenPage() {
                   className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                 >
                   <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                    연애 스타일
+                    {t.loveStyle}
                   </h3>
                   <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                     {result.loveStyle}
@@ -584,14 +780,14 @@ export default function TetoEgenPage() {
                   className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                 >
                   <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    궁합
+                    {t.compatibility}
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3 p-3 rounded-xl bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800/50">
                       <span className="text-xl flex-shrink-0">💚</span>
                       <div>
                         <p className="text-sm font-bold text-green-700 dark:text-green-400 mb-0.5">
-                          최고 궁합: {result.bestMatch}
+                          {t.bestMatch}: {result.bestMatch}
                         </p>
                         <p className="text-xs text-green-600 dark:text-green-500 leading-relaxed">
                           {result.bestMatchDesc}
@@ -602,7 +798,7 @@ export default function TetoEgenPage() {
                       <span className="text-xl flex-shrink-0">💔</span>
                       <div>
                         <p className="text-sm font-bold text-red-700 dark:text-red-400 mb-0.5">
-                          주의 궁합: {result.worstMatch}
+                          {t.worstMatch}: {result.worstMatch}
                         </p>
                         <p className="text-xs text-red-600 dark:text-red-500 leading-relaxed">
                           {result.worstMatchDesc}
@@ -632,7 +828,7 @@ export default function TetoEgenPage() {
                   </h3>
                   {/* Chain diagram */}
                   <div className="flex items-center justify-center gap-1 flex-wrap mb-4">
-                    {["에겐녀", "에겐남", "테토녀", "테토남"].map((type, i) => (
+                    {[t.egennyeo, t.egennam, t.tetonyeo, t.tetonam].map((type, i) => (
                       <div key={type} className="flex items-center gap-1">
                         <div
                           className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 ${
@@ -656,12 +852,12 @@ export default function TetoEgenPage() {
                       </span>
                       <div
                         className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 ${
-                          result.title === "에겐녀"
+                          result.title === t.egennyeo
                             ? `bg-gradient-to-r ${result.color} text-white border-transparent shadow`
                             : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-600"
                         }`}
                       >
-                        에겐녀
+                        {t.egennyeo}
                       </div>
                     </div>
                   </div>
@@ -684,14 +880,14 @@ export default function TetoEgenPage() {
                     onClick={handleShare}
                     className="w-full py-4 rounded-2xl bg-white dark:bg-slate-800 border-2 border-violet-300 dark:border-violet-700 text-violet-600 dark:text-violet-400 font-bold text-base hover:bg-violet-50 dark:hover:bg-violet-900/20 transition-colors shadow-sm"
                   >
-                    {copied ? "클립보드에 복사됨!" : "결과 공유하기"}
+                    {copied ? t.copied : t.share}
                   </motion.button>
                   <motion.button
                     whileTap={{ scale: 0.97 }}
                     onClick={handleRestart}
                     className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-500 via-violet-500 to-pink-500 text-white font-bold text-base shadow-md hover:shadow-violet-500/30 transition-shadow"
                   >
-                    다시 하기
+                    {t.restart}
                   </motion.button>
                 </motion.div>
               </motion.div>

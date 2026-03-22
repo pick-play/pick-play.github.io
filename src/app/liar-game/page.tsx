@@ -4,6 +4,223 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
+import { useLocale } from "@/hooks/useLocale";
+
+type Locale = "ko" | "en" | "ja" | "zh" | "es";
+
+const translations: Record<Locale, {
+  title: string;
+  subtitle: string;
+  playerCount: string;
+  playerRange: string;
+  liarCount: string;
+  liarRange: (max: number) => string;
+  topicCategory: string;
+  discussionTime: string;
+  startGame: string;
+  coverScreen: string;
+  tapToSkip: string;
+  playerWord: (n: number) => string;
+  youAreLiar: string;
+  topicHint: string;
+  playerTurn: (n: number) => string;
+  dontLook: string;
+  confirm: string;
+  discussionTitle: string;
+  discussionDesc: string;
+  liarsHiding: (n: number) => string;
+  pause: string;
+  startTimer: string;
+  resume: string;
+  revealLiar: string;
+  liarIs: (n: number) => string;
+  player: string;
+  thisRoundWord: string;
+  category: string;
+  playAgain: string;
+  discussionTimes: { label: string; seconds: number }[];
+}> = {
+  ko: {
+    title: "라이어 게임",
+    subtitle: "라이어를 찾아라! 친구들과 함께하는 파티 게임",
+    playerCount: "플레이어 수",
+    playerRange: "3명 ~ 20명",
+    liarCount: "라이어 수",
+    liarRange: (max) => `1명 ~ ${max}명 (전체의 절반까지)`,
+    topicCategory: "주제 카테고리",
+    discussionTime: "토론 시간",
+    startGame: "게임 시작",
+    coverScreen: "화면을 가려주세요",
+    tapToSkip: "터치하면 바로 넘어갑니다",
+    playerWord: (n) => `플레이어 ${n}의 단어`,
+    youAreLiar: "당신은 라이어입니다!",
+    topicHint: "주제 힌트:",
+    playerTurn: (n) => `플레이어 ${n}의 차례`,
+    dontLook: "다른 사람은 화면을 보지 마세요!",
+    confirm: "확인하기",
+    discussionTitle: "토론 시간!",
+    discussionDesc: "단어를 직접 말하지 말고 설명하세요",
+    liarsHiding: (n) => `라이어 ${n}명이 숨어있습니다`,
+    pause: "일시정지",
+    startTimer: "타이머 시작",
+    resume: "계속",
+    revealLiar: "라이어 공개",
+    liarIs: (n) => n === 1 ? "라이어는..." : `라이어 ${n}명은...`,
+    player: "플레이어",
+    thisRoundWord: "이번 라운드의 단어",
+    category: "카테고리:",
+    playAgain: "다시 하기",
+    discussionTimes: [
+      { label: "1분", seconds: 60 },
+      { label: "2분", seconds: 120 },
+      { label: "3분", seconds: 180 },
+    ],
+  },
+  en: {
+    title: "Liar Game",
+    subtitle: "Find the liar! A party game to play with friends",
+    playerCount: "Players",
+    playerRange: "3 – 20 players",
+    liarCount: "Liars",
+    liarRange: (max) => `1 – ${max} (up to half the players)`,
+    topicCategory: "Topic Category",
+    discussionTime: "Discussion Time",
+    startGame: "Start Game",
+    coverScreen: "Cover the screen",
+    tapToSkip: "Tap to skip",
+    playerWord: (n) => `Player ${n}'s word`,
+    youAreLiar: "You are the Liar!",
+    topicHint: "Topic hint:",
+    playerTurn: (n) => `Player ${n}'s turn`,
+    dontLook: "Others, don't look at the screen!",
+    confirm: "Reveal",
+    discussionTitle: "Discussion Time!",
+    discussionDesc: "Describe without saying the word directly",
+    liarsHiding: (n) => `${n} liar${n > 1 ? "s are" : " is"} hiding`,
+    pause: "Pause",
+    startTimer: "Start Timer",
+    resume: "Resume",
+    revealLiar: "Reveal Liar",
+    liarIs: (n) => n === 1 ? "The liar is..." : `The ${n} liars are...`,
+    player: "Player",
+    thisRoundWord: "This round's word",
+    category: "Category:",
+    playAgain: "Play Again",
+    discussionTimes: [
+      { label: "1 min", seconds: 60 },
+      { label: "2 min", seconds: 120 },
+      { label: "3 min", seconds: 180 },
+    ],
+  },
+  ja: {
+    title: "ライアーゲーム",
+    subtitle: "ライアーを見つけろ！友達と楽しむパーティーゲーム",
+    playerCount: "プレイヤー数",
+    playerRange: "3人 〜 20人",
+    liarCount: "ライアー数",
+    liarRange: (max) => `1人 〜 ${max}人（半数まで）`,
+    topicCategory: "トピックカテゴリ",
+    discussionTime: "討論時間",
+    startGame: "ゲームスタート",
+    coverScreen: "画面を隠してください",
+    tapToSkip: "タップでスキップ",
+    playerWord: (n) => `プレイヤー${n}の単語`,
+    youAreLiar: "あなたはライアーです！",
+    topicHint: "トピックヒント:",
+    playerTurn: (n) => `プレイヤー${n}のターン`,
+    dontLook: "他の人は画面を見ないでください！",
+    confirm: "確認",
+    discussionTitle: "討論タイム！",
+    discussionDesc: "単語を直接言わずに説明してください",
+    liarsHiding: (n) => `ライアーが${n}人潜んでいます`,
+    pause: "一時停止",
+    startTimer: "タイマー開始",
+    resume: "再開",
+    revealLiar: "ライアー公開",
+    liarIs: (n) => n === 1 ? "ライアーは..." : `ライアー${n}人は...`,
+    player: "プレイヤー",
+    thisRoundWord: "今回のラウンドの単語",
+    category: "カテゴリ:",
+    playAgain: "もう一度",
+    discussionTimes: [
+      { label: "1分", seconds: 60 },
+      { label: "2分", seconds: 120 },
+      { label: "3分", seconds: 180 },
+    ],
+  },
+  zh: {
+    title: "说谎者游戏",
+    subtitle: "找出说谎者！与朋友一起玩的派对游戏",
+    playerCount: "玩家人数",
+    playerRange: "3 ~ 20 人",
+    liarCount: "说谎者数量",
+    liarRange: (max) => `1 ~ ${max} 人（最多一半玩家）`,
+    topicCategory: "主题类别",
+    discussionTime: "讨论时间",
+    startGame: "开始游戏",
+    coverScreen: "请遮住屏幕",
+    tapToSkip: "点击跳过",
+    playerWord: (n) => `玩家 ${n} 的词语`,
+    youAreLiar: "你是说谎者！",
+    topicHint: "主题提示：",
+    playerTurn: (n) => `玩家 ${n} 的回合`,
+    dontLook: "其他人请不要看屏幕！",
+    confirm: "查看",
+    discussionTitle: "讨论时间！",
+    discussionDesc: "请描述但不要直接说出词语",
+    liarsHiding: (n) => `${n} 名说谎者正在隐藏`,
+    pause: "暂停",
+    startTimer: "开始计时",
+    resume: "继续",
+    revealLiar: "揭露说谎者",
+    liarIs: (n) => n === 1 ? "说谎者是..." : `${n} 名说谎者是...`,
+    player: "玩家",
+    thisRoundWord: "本轮词语",
+    category: "类别：",
+    playAgain: "再来一局",
+    discussionTimes: [
+      { label: "1分钟", seconds: 60 },
+      { label: "2分钟", seconds: 120 },
+      { label: "3分钟", seconds: 180 },
+    ],
+  },
+  es: {
+    title: "El Juego del Mentiroso",
+    subtitle: "¡Encuentra al mentiroso! Un juego de fiesta con amigos",
+    playerCount: "Jugadores",
+    playerRange: "3 – 20 jugadores",
+    liarCount: "Mentirosos",
+    liarRange: (max) => `1 – ${max} (hasta la mitad)`,
+    topicCategory: "Categoría de tema",
+    discussionTime: "Tiempo de discusión",
+    startGame: "Iniciar juego",
+    coverScreen: "Cubre la pantalla",
+    tapToSkip: "Toca para saltar",
+    playerWord: (n) => `Palabra del jugador ${n}`,
+    youAreLiar: "¡Eres el mentiroso!",
+    topicHint: "Pista del tema:",
+    playerTurn: (n) => `Turno del jugador ${n}`,
+    dontLook: "¡Los demás no miren la pantalla!",
+    confirm: "Ver",
+    discussionTitle: "¡Tiempo de discusión!",
+    discussionDesc: "Describe sin decir la palabra directamente",
+    liarsHiding: (n) => `${n} mentiroso${n > 1 ? "s están" : " está"} escondido${n > 1 ? "s" : ""}`,
+    pause: "Pausar",
+    startTimer: "Iniciar temporizador",
+    resume: "Reanudar",
+    revealLiar: "Revelar mentiroso",
+    liarIs: (n) => n === 1 ? "El mentiroso es..." : `Los ${n} mentirosos son...`,
+    player: "Jugador",
+    thisRoundWord: "La palabra de esta ronda",
+    category: "Categoría:",
+    playAgain: "Jugar de nuevo",
+    discussionTimes: [
+      { label: "1 min", seconds: 60 },
+      { label: "2 min", seconds: 120 },
+      { label: "3 min", seconds: 180 },
+    ],
+  },
+};
 
 type Phase = "setup" | "assign" | "discuss" | "result";
 
@@ -120,11 +337,6 @@ const topicIcons: Record<string, string> = {
   "SNS/앱": "📱",
 };
 
-const discussionTimes = [
-  { label: "1분", seconds: 60 },
-  { label: "2분", seconds: 120 },
-  { label: "3분", seconds: 180 },
-];
 
 function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -140,6 +352,9 @@ function pickMultipleIndices(total: number, count: number): number[] {
 }
 
 export default function LiarGamePage() {
+  const locale = useLocale() as Locale;
+  const t = translations[locale] ?? translations.ko;
+
   // Setup state
   const [playerCount, setPlayerCount] = useState(5);
   const [liarCount, setLiarCount] = useState(1);
@@ -288,10 +503,10 @@ export default function LiarGamePage() {
             className="text-center mb-8"
           >
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent mb-2">
-              라이어 게임
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              라이어를 찾아라! 친구들과 함께하는 파티 게임
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -309,7 +524,7 @@ export default function LiarGamePage() {
                 {/* Player count */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    플레이어 수
+                    {t.playerCount}
                   </h2>
                   <div className="flex items-center justify-center gap-6">
                     <button
@@ -328,13 +543,13 @@ export default function LiarGamePage() {
                       +
                     </button>
                   </div>
-                  <p className="text-center text-xs text-slate-400 mt-3">3명 ~ 20명</p>
+                  <p className="text-center text-xs text-slate-400 mt-3">{t.playerRange}</p>
                 </div>
 
                 {/* Liar count */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    라이어 수
+                    {t.liarCount}
                   </h2>
                   <div className="flex items-center justify-center gap-6">
                     <button
@@ -354,14 +569,14 @@ export default function LiarGamePage() {
                     </button>
                   </div>
                   <p className="text-center text-xs text-slate-400 mt-3">
-                    1명 ~ {maxLiars}명 (전체의 절반까지)
+                    {t.liarRange(maxLiars)}
                   </p>
                 </div>
 
                 {/* Topic selection */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    주제 카테고리
+                    {t.topicCategory}
                   </h2>
                   <div className="flex flex-wrap gap-2">
                     {Object.keys(topics).map((topic) => (
@@ -383,10 +598,10 @@ export default function LiarGamePage() {
                 {/* Discussion time */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    토론 시간
+                    {t.discussionTime}
                   </h2>
                   <div className="flex gap-3">
-                    {discussionTimes.map((dt) => (
+                    {t.discussionTimes.map((dt) => (
                       <button
                         key={dt.label}
                         onClick={() => setDiscussionTime(dt.seconds)}
@@ -411,7 +626,7 @@ export default function LiarGamePage() {
                   onClick={startGame}
                   className="w-full py-5 rounded-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white text-xl font-bold shadow-lg hover:shadow-violet-500/30 transition-shadow"
                 >
-                  게임 시작
+                  {t.startGame}
                 </motion.button>
               </motion.div>
             )}
@@ -433,7 +648,7 @@ export default function LiarGamePage() {
                       className="w-full flex flex-col items-center gap-6 focus:outline-none"
                     >
                       <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">
-                        화면을 가려주세요
+                        {t.coverScreen}
                       </p>
                       <motion.div
                         key={coverCountdown}
@@ -445,7 +660,7 @@ export default function LiarGamePage() {
                         {coverCountdown}
                       </motion.div>
                       <p className="text-slate-400 text-sm">
-                        터치하면 바로 넘어갑니다
+                        {t.tapToSkip}
                       </p>
                     </button>
                   ) : showingWord ? (
@@ -455,7 +670,7 @@ export default function LiarGamePage() {
                       className="w-full flex flex-col items-center gap-4 focus:outline-none"
                     >
                       <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
-                        플레이어 {currentPlayerIndex + 1}의 단어
+                        {t.playerWord(currentPlayerIndex + 1)}
                       </p>
                       {isLiar(currentPlayerIndex) ? (
                         <motion.div
@@ -466,10 +681,10 @@ export default function LiarGamePage() {
                         >
                           <div className="text-6xl">🕵️</div>
                           <p className="text-2xl font-extrabold text-rose-500">
-                            당신은 라이어입니다!
+                            {t.youAreLiar}
                           </p>
                           <p className="text-slate-400 text-sm mt-2">
-                            주제 힌트:{" "}
+                            {t.topicHint}{" "}
                             <span className="font-semibold text-violet-500">
                               {topicIcons[selectedTopic]} {selectedTopic}
                             </span>
@@ -489,7 +704,7 @@ export default function LiarGamePage() {
                         </motion.div>
                       )}
                       <p className="text-slate-400 text-xs animate-pulse">
-                        터치하면 바로 넘어갑니다
+                        {t.tapToSkip}
                       </p>
                     </button>
                   ) : (
@@ -500,10 +715,10 @@ export default function LiarGamePage() {
                       </div>
                       <div className="space-y-1">
                         <p className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                          플레이어 {currentPlayerIndex + 1}의 차례
+                          {t.playerTurn(currentPlayerIndex + 1)}
                         </p>
                         <p className="text-slate-400 text-sm">
-                          다른 사람은 화면을 보지 마세요!
+                          {t.dontLook}
                         </p>
                       </div>
                       <motion.button
@@ -511,7 +726,7 @@ export default function LiarGamePage() {
                         onClick={handleReveal}
                         className="w-full py-4 rounded-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white text-lg font-bold shadow-md hover:shadow-violet-500/30 transition-shadow"
                       >
-                        확인하기
+                        {t.confirm}
                       </motion.button>
                     </>
                   )}
@@ -548,13 +763,13 @@ export default function LiarGamePage() {
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-700 text-center">
                   <p className="text-4xl mb-3">🗣️</p>
                   <h2 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 mb-1">
-                    토론 시간!
+                    {t.discussionTitle}
                   </h2>
                   <p className="text-slate-500 dark:text-slate-400 text-sm mb-2">
-                    단어를 직접 말하지 말고 설명하세요
+                    {t.discussionDesc}
                   </p>
                   <p className="text-violet-500 dark:text-violet-400 text-xs font-medium mb-8">
-                    라이어 {liarCount}명이 숨어있습니다
+                    {t.liarsHiding(liarCount)}
                   </p>
 
                   {/* Timer ring */}
@@ -601,7 +816,7 @@ export default function LiarGamePage() {
                           : "bg-gradient-to-r from-violet-500 to-fuchsia-500 shadow-md"
                       }`}
                     >
-                      {timerRunning ? "일시정지" : timeLeft === discussionTime ? "타이머 시작" : "계속"}
+                      {timerRunning ? t.pause : timeLeft === discussionTime ? t.startTimer : t.resume}
                     </button>
                     <button
                       onClick={() => {
@@ -610,7 +825,7 @@ export default function LiarGamePage() {
                       }}
                       className="flex-1 py-4 rounded-xl font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-violet-50 dark:hover:bg-violet-900/30 transition-colors"
                     >
-                      라이어 공개
+                      {t.revealLiar}
                     </button>
                   </div>
                 </div>
@@ -637,7 +852,7 @@ export default function LiarGamePage() {
                   >
                     <div className="text-7xl mb-4">🕵️</div>
                     <p className="text-slate-500 dark:text-slate-400 text-sm mb-3">
-                      {liarCount === 1 ? "라이어는..." : `라이어 ${liarCount}명은...`}
+                      {t.liarIs(liarCount)}
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 mb-2">
                       {liarIndices.map((idx, i) => (
@@ -648,11 +863,11 @@ export default function LiarGamePage() {
                           transition={{ type: "spring", stiffness: 200, delay: 0.2 + i * 0.15 }}
                           className="text-3xl font-extrabold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent"
                         >
-                          {idx + 1}번
+                          #{idx + 1}
                         </motion.span>
                       ))}
                     </div>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">플레이어</p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">{t.player}</p>
                   </motion.div>
 
                   {/* Word reveal */}
@@ -663,12 +878,12 @@ export default function LiarGamePage() {
                     className="bg-gradient-to-r from-violet-50 to-fuchsia-50 dark:from-violet-950/40 dark:to-fuchsia-950/40 rounded-2xl p-5 mb-6 border border-violet-200/50 dark:border-violet-700/50"
                   >
                     <p className="text-slate-500 dark:text-slate-400 text-sm mb-2">
-                      이번 라운드의 단어
+                      {t.thisRoundWord}
                     </p>
                     <p className="text-4xl font-extrabold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
                       {topicIcons[selectedTopic]} {word}
                     </p>
-                    <p className="text-slate-400 text-xs mt-1">카테고리: {selectedTopic}</p>
+                    <p className="text-slate-400 text-xs mt-1">{t.category} {selectedTopic}</p>
                   </motion.div>
 
                   <motion.button
@@ -676,7 +891,7 @@ export default function LiarGamePage() {
                     onClick={resetGame}
                     className="w-full py-4 rounded-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold text-lg shadow-md hover:shadow-violet-500/30 transition-shadow"
                   >
-                    다시 하기
+                    {t.playAgain}
                   </motion.button>
                   <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </div>

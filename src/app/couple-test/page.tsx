@@ -5,6 +5,205 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import testData from "@/data/couple-test.json";
+import { useLocale } from "@/hooks/useLocale";
+
+const translations = {
+  ko: {
+    title: "커플 궁합 테스트",
+    subtitle: "이름으로 알아보는 우리의 궁합 💕",
+    name1Label: "첫 번째 이름",
+    name2Label: "두 번째 이름",
+    namePlaceholder: "이름을 입력하세요",
+    analyzeBtn: "💕 궁합 분석하기",
+    analysisItems: "✨ 분석 항목",
+    sameNameNote: "같은 이름을 입력하면 항상 같은 결과가 나와요 😊",
+    analyzingStep1: "이름을 분석하는 중...",
+    analyzingStep2: "궁합을 계산하는 중...",
+    analyzingStep3: "결과를 준비하는 중...",
+    analyzingLabel: (p: number) => `궁합 분석 중... ${p}%`,
+    compatGauge: "궁합 게이지",
+    categoryCompat: "카테고리별 궁합",
+    coupleAdvice: "커플 조언",
+    faqTitle: "자주 묻는 질문",
+    share: "결과 공유하기 📋",
+    copied: "클립보드에 복사됨! ✓",
+    restart: "다시 하기 🔄",
+    scoreUnit: "점",
+    faqs: [
+      {
+        q: "궁합 점수는 어떻게 계산되나요?",
+        a: "입력한 두 이름의 글자 코드를 기반으로 독자적인 알고리즘으로 계산해요. 재미로 즐기는 테스트예요 😊",
+      },
+      {
+        q: "같은 이름을 입력하면 항상 같은 결과인가요?",
+        a: "네! 이름 기반의 결정론적 알고리즘이라 같은 이름 쌍은 언제나 동일한 결과가 나와요.",
+      },
+      {
+        q: "친구 이름으로도 테스트할 수 있나요?",
+        a: "물론이죠! 커플뿐 아니라 친구, 가족, 동료 등 어떤 두 사람의 이름으로도 테스트해볼 수 있어요.",
+      },
+    ],
+    shareText: (n1: string, n2: string, emoji: string, title: string, overall: number, desc: string) =>
+      `[커플 궁합 테스트 결과]\n${n1} ❤ ${n2}\n\n${emoji} ${title} - ${overall}%\n\n${desc}\n\n궁합 테스트 해보기: https://pick-play.github.io/couple-test`,
+    categoryName: (key: string) => `${key} 궁합`,
+  },
+  en: {
+    title: "Couple Compatibility Test",
+    subtitle: "Discover your compatibility by name 💕",
+    name1Label: "First Name",
+    name2Label: "Second Name",
+    namePlaceholder: "Enter a name",
+    analyzeBtn: "💕 Analyze Compatibility",
+    analysisItems: "✨ Analysis Categories",
+    sameNameNote: "The same names always produce the same result 😊",
+    analyzingStep1: "Analyzing names...",
+    analyzingStep2: "Calculating compatibility...",
+    analyzingStep3: "Preparing your result...",
+    analyzingLabel: (p: number) => `Analyzing... ${p}%`,
+    compatGauge: "Compatibility Gauge",
+    categoryCompat: "Category Compatibility",
+    coupleAdvice: "Couple Advice",
+    faqTitle: "Frequently Asked Questions",
+    share: "Share Result 📋",
+    copied: "Copied to clipboard! ✓",
+    restart: "Try Again 🔄",
+    scoreUnit: "pts",
+    faqs: [
+      {
+        q: "How is the compatibility score calculated?",
+        a: "It uses a unique algorithm based on the character codes of the two names you enter. It's meant to be fun! 😊",
+      },
+      {
+        q: "Will the same names always give the same result?",
+        a: "Yes! It's a deterministic algorithm, so the same pair of names will always produce identical results.",
+      },
+      {
+        q: "Can I test with friend names too?",
+        a: "Absolutely! You can test any two people — couples, friends, family, coworkers, and more.",
+      },
+    ],
+    shareText: (n1: string, n2: string, emoji: string, title: string, overall: number, desc: string) =>
+      `[Couple Compatibility Test Result]\n${n1} ❤ ${n2}\n\n${emoji} ${title} - ${overall}%\n\n${desc}\n\nTake the test: https://pick-play.github.io/couple-test`,
+    categoryName: (key: string) => `${key} Compatibility`,
+  },
+  ja: {
+    title: "カップル相性テスト",
+    subtitle: "名前でわかる二人の相性 💕",
+    name1Label: "1人目の名前",
+    name2Label: "2人目の名前",
+    namePlaceholder: "名前を入力してください",
+    analyzeBtn: "💕 相性を診断する",
+    analysisItems: "✨ 分析項目",
+    sameNameNote: "同じ名前を入力すると常に同じ結果になります 😊",
+    analyzingStep1: "名前を分析中...",
+    analyzingStep2: "相性を計算中...",
+    analyzingStep3: "結果を準備中...",
+    analyzingLabel: (p: number) => `相性診断中... ${p}%`,
+    compatGauge: "相性ゲージ",
+    categoryCompat: "カテゴリ別相性",
+    coupleAdvice: "カップルへのアドバイス",
+    faqTitle: "よくある質問",
+    share: "結果をシェア 📋",
+    copied: "クリップボードにコピーしました！ ✓",
+    restart: "もう一度 🔄",
+    scoreUnit: "点",
+    faqs: [
+      {
+        q: "相性スコアはどのように計算されますか？",
+        a: "入力した2つの名前の文字コードをもとに独自アルゴリズムで計算します。楽しむためのテストです 😊",
+      },
+      {
+        q: "同じ名前を入力すると常に同じ結果になりますか？",
+        a: "はい！決定論的アルゴリズムなので、同じ名前の組み合わせは常に同じ結果になります。",
+      },
+      {
+        q: "友達の名前でもテストできますか？",
+        a: "もちろんです！カップルだけでなく、友人・家族・同僚など、どんな2人の名前でもテストできます。",
+      },
+    ],
+    shareText: (n1: string, n2: string, emoji: string, title: string, overall: number, desc: string) =>
+      `[カップル相性テスト結果]\n${n1} ❤ ${n2}\n\n${emoji} ${title} - ${overall}%\n\n${desc}\n\n相性テストはこちら: https://pick-play.github.io/couple-test`,
+    categoryName: (key: string) => `${key}の相性`,
+  },
+  zh: {
+    title: "情侣配对测试",
+    subtitle: "用名字探索你们的缘分 💕",
+    name1Label: "第一个名字",
+    name2Label: "第二个名字",
+    namePlaceholder: "请输入名字",
+    analyzeBtn: "💕 分析配对",
+    analysisItems: "✨ 分析项目",
+    sameNameNote: "输入相同名字总是得到相同结果 😊",
+    analyzingStep1: "正在分析名字...",
+    analyzingStep2: "正在计算配对度...",
+    analyzingStep3: "正在准备结果...",
+    analyzingLabel: (p: number) => `配对分析中... ${p}%`,
+    compatGauge: "配对量表",
+    categoryCompat: "各类别配对度",
+    coupleAdvice: "情侣建议",
+    faqTitle: "常见问题",
+    share: "分享结果 📋",
+    copied: "已复制到剪贴板！ ✓",
+    restart: "再试一次 🔄",
+    scoreUnit: "分",
+    faqs: [
+      {
+        q: "配对分数是如何计算的？",
+        a: "基于两个名字的字符编码，通过独特算法计算得出。这是一个有趣的测试 😊",
+      },
+      {
+        q: "相同的名字会得到相同的结果吗？",
+        a: "是的！这是确定性算法，相同名字对始终产生相同结果。",
+      },
+      {
+        q: "可以用朋友的名字测试吗？",
+        a: "当然！不只是情侣，朋友、家人、同事等任何两人都可以测试。",
+      },
+    ],
+    shareText: (n1: string, n2: string, emoji: string, title: string, overall: number, desc: string) =>
+      `[情侣配对测试结果]\n${n1} ❤ ${n2}\n\n${emoji} ${title} - ${overall}%\n\n${desc}\n\n参加测试: https://pick-play.github.io/couple-test`,
+    categoryName: (key: string) => `${key}配对`,
+  },
+  es: {
+    title: "Test de Compatibilidad de Pareja",
+    subtitle: "Descubre vuestra compatibilidad por nombre 💕",
+    name1Label: "Primer Nombre",
+    name2Label: "Segundo Nombre",
+    namePlaceholder: "Introduce un nombre",
+    analyzeBtn: "💕 Analizar Compatibilidad",
+    analysisItems: "✨ Categorías de Análisis",
+    sameNameNote: "Los mismos nombres siempre dan el mismo resultado 😊",
+    analyzingStep1: "Analizando nombres...",
+    analyzingStep2: "Calculando compatibilidad...",
+    analyzingStep3: "Preparando tu resultado...",
+    analyzingLabel: (p: number) => `Analizando... ${p}%`,
+    compatGauge: "Medidor de Compatibilidad",
+    categoryCompat: "Compatibilidad por Categoría",
+    coupleAdvice: "Consejo de Pareja",
+    faqTitle: "Preguntas Frecuentes",
+    share: "Compartir Resultado 📋",
+    copied: "¡Copiado al portapapeles! ✓",
+    restart: "Intentar de Nuevo 🔄",
+    scoreUnit: "pts",
+    faqs: [
+      {
+        q: "¿Cómo se calcula la puntuación de compatibilidad?",
+        a: "Usa un algoritmo único basado en los códigos de caracteres de los nombres. ¡Es para divertirse! 😊",
+      },
+      {
+        q: "¿Los mismos nombres siempre dan el mismo resultado?",
+        a: "¡Sí! Es un algoritmo determinista, así que la misma pareja de nombres siempre produce el mismo resultado.",
+      },
+      {
+        q: "¿Puedo probarlo con nombres de amigos?",
+        a: "¡Por supuesto! Puedes probar con cualquier dos personas: parejas, amigos, familia, compañeros de trabajo, etc.",
+      },
+    ],
+    shareText: (n1: string, n2: string, emoji: string, title: string, overall: number, desc: string) =>
+      `[Resultado del Test de Compatibilidad]\n${n1} ❤ ${n2}\n\n${emoji} ${title} - ${overall}%\n\n${desc}\n\nHaz el test: https://pick-play.github.io/couple-test`,
+    categoryName: (key: string) => `Compatibilidad ${key}`,
+  },
+};
 
 type Phase = "input" | "analyzing" | "result";
 
@@ -71,7 +270,7 @@ function getAdvice(overall: number, seed: number): string {
   return advices[seed % advices.length];
 }
 
-function computeResult(name1: string, name2: string): Result {
+function computeResult(name1: string, name2: string, categoryName: (key: string) => string): Result {
   const seed = hashNames(name1.trim(), name2.trim());
   const categoryKeys = Object.keys(
     testData.categories
@@ -81,7 +280,7 @@ function computeResult(name1: string, name2: string): Result {
     const score = calcScore(seed, i + 1);
     const cat = testData.categories[key];
     const desc = getCategoryDesc(key, score, seed, (seed >> (i * 3)) % 5);
-    return { name: key + " 궁합", icon: cat.icon, score, description: desc };
+    return { name: categoryName(key), icon: cat.icon, score, description: desc };
   });
 
   const weights = [0.25, 0.25, 0.2, 0.15, 0.15];
@@ -166,6 +365,9 @@ function FloatingHeart({
 }
 
 export default function CoupleTestPage() {
+  const locale = useLocale();
+  const t = translations[locale];
+
   const [phase, setPhase] = useState<Phase>("input");
   const [name1, setName1] = useState("");
   const [name2, setName2] = useState("");
@@ -178,12 +380,12 @@ export default function CoupleTestPage() {
 
   const handleAnalyze = useCallback(() => {
     if (!name1.trim() || !name2.trim()) return;
-    const computed = computeResult(name1, name2);
+    const computed = computeResult(name1, name2, t.categoryName);
     setResult(computed);
     setAnalyzeProgress(0);
     setShowResult(false);
     setPhase("analyzing");
-  }, [name1, name2]);
+  }, [name1, name2, t]);
 
   // Drive the progress bar and then flip to result
   useEffect(() => {
@@ -222,12 +424,12 @@ export default function CoupleTestPage() {
 
   const handleShare = useCallback(() => {
     if (!result) return;
-    const text = `[커플 궁합 테스트 결과]\n${result.name1} ❤ ${result.name2}\n\n${result.emoji} ${result.title} - ${result.overall}%\n\n${result.desc}\n\n궁합 테스트 해보기: https://pick-play.github.io/couple-test`;
+    const text = t.shareText(result.name1, result.name2, result.emoji, result.title, result.overall, result.desc);
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }).catch(() => {});
-  }, [result]);
+  }, [result, t]);
 
   const canSubmit = name1.trim().length > 0 && name2.trim().length > 0;
 
@@ -242,10 +444,10 @@ export default function CoupleTestPage() {
             className="text-center mb-8"
           >
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent mb-2">
-              커플 궁합 테스트
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              이름으로 알아보는 우리의 궁합 💕
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -266,7 +468,7 @@ export default function CoupleTestPage() {
                     {/* Name 1 */}
                     <div>
                       <label className="block text-sm font-semibold text-slate-600 dark:text-slate-300 mb-1.5">
-                        첫 번째 이름
+                        {t.name1Label}
                       </label>
                       <input
                         type="text"
@@ -275,7 +477,7 @@ export default function CoupleTestPage() {
                         onKeyDown={(e) => {
                           if (e.key === "Enter" && canSubmit) handleAnalyze();
                         }}
-                        placeholder="이름을 입력하세요"
+                        placeholder={t.namePlaceholder}
                         maxLength={20}
                         className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-pink-400 dark:focus:border-pink-500 transition-colors text-base font-medium"
                       />
@@ -304,7 +506,7 @@ export default function CoupleTestPage() {
                     {/* Name 2 */}
                     <div>
                       <label className="block text-sm font-semibold text-slate-600 dark:text-slate-300 mb-1.5">
-                        두 번째 이름
+                        {t.name2Label}
                       </label>
                       <input
                         type="text"
@@ -313,7 +515,7 @@ export default function CoupleTestPage() {
                         onKeyDown={(e) => {
                           if (e.key === "Enter" && canSubmit) handleAnalyze();
                         }}
-                        placeholder="이름을 입력하세요"
+                        placeholder={t.namePlaceholder}
                         maxLength={20}
                         className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-rose-400 dark:focus:border-rose-500 transition-colors text-base font-medium"
                       />
@@ -333,7 +535,7 @@ export default function CoupleTestPage() {
                       : "bg-slate-200 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed"
                   }`}
                 >
-                  💕 궁합 분석하기
+                  {t.analyzeBtn}
                 </motion.button>
 
                 {/* Ad below input */}
@@ -350,7 +552,7 @@ export default function CoupleTestPage() {
                   className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                 >
                   <h2 className="text-sm font-semibold text-slate-600 dark:text-slate-300 mb-3 flex items-center gap-2">
-                    <span>✨</span> 분석 항목
+                    <span>✨</span> {t.analysisItems}
                   </h2>
                   <div className="grid grid-cols-5 gap-2">
                     {Object.entries(testData.categories).map(([key, cat]) => (
@@ -366,7 +568,7 @@ export default function CoupleTestPage() {
                     ))}
                   </div>
                   <p className="text-xs text-slate-400 dark:text-slate-500 mt-3 text-center leading-relaxed">
-                    같은 이름을 입력하면 항상 같은 결과가 나와요 😊
+                    {t.sameNameNote}
                   </p>
                 </motion.div>
               </motion.div>
@@ -437,13 +639,13 @@ export default function CoupleTestPage() {
                       className="text-base font-semibold text-slate-700 dark:text-slate-200"
                     >
                       {analyzeProgress < 34
-                        ? "이름을 분석하는 중..."
+                        ? t.analyzingStep1
                         : analyzeProgress < 67
-                        ? "궁합을 계산하는 중..."
-                        : "결과를 준비하는 중..."}
+                        ? t.analyzingStep2
+                        : t.analyzingStep3}
                     </motion.p>
                     <p className="text-sm text-pink-500 dark:text-pink-400 font-medium">
-                      궁합 분석 중... {analyzeProgress}%
+                      {t.analyzingLabel(analyzeProgress)}
                     </p>
                   </div>
 
@@ -563,7 +765,7 @@ export default function CoupleTestPage() {
                   className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                 >
                   <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                    궁합 게이지
+                    {t.compatGauge}
                   </h3>
 
                   {/* Heart row gauge */}
@@ -618,7 +820,7 @@ export default function CoupleTestPage() {
                   className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                 >
                   <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    카테고리별 궁합
+                    {t.categoryCompat}
                   </h3>
                   <div className="space-y-4">
                     {result.categories.map((cat, i) => (
@@ -642,7 +844,7 @@ export default function CoupleTestPage() {
                                 : "text-slate-500"
                             }`}
                           >
-                            {cat.score}점
+                            {cat.score}{t.scoreUnit}
                           </span>
                         </div>
                         <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
@@ -693,7 +895,7 @@ export default function CoupleTestPage() {
                   className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                 >
                   <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-                    커플 조언
+                    {t.coupleAdvice}
                   </h3>
                   <div className="flex items-start gap-3 p-3 rounded-xl bg-pink-50 dark:bg-pink-950/30 border border-pink-200 dark:border-pink-800/50">
                     <span className="text-2xl flex-shrink-0">💌</span>
@@ -715,14 +917,14 @@ export default function CoupleTestPage() {
                     onClick={handleShare}
                     className="w-full py-4 rounded-2xl bg-white dark:bg-slate-800 border-2 border-pink-300 dark:border-pink-700 text-pink-600 dark:text-pink-400 font-bold text-base hover:bg-pink-50 dark:hover:bg-pink-900/20 transition-colors shadow-sm"
                   >
-                    {copied ? "클립보드에 복사됨! ✓" : "결과 공유하기 📋"}
+                    {copied ? t.copied : t.share}
                   </motion.button>
                   <motion.button
                     whileTap={{ scale: 0.97 }}
                     onClick={handleRestart}
                     className="w-full py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold text-base shadow-md hover:shadow-pink-500/30 hover:shadow-lg transition-shadow"
                   >
-                    다시 하기 🔄
+                    {t.restart}
                   </motion.button>
                 </motion.div>
 
@@ -746,23 +948,10 @@ export default function CoupleTestPage() {
                   className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                 >
                   <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    자주 묻는 질문
+                    {t.faqTitle}
                   </h3>
                   <div className="space-y-4">
-                    {[
-                      {
-                        q: "궁합 점수는 어떻게 계산되나요?",
-                        a: "입력한 두 이름의 글자 코드를 기반으로 독자적인 알고리즘으로 계산해요. 재미로 즐기는 테스트예요 😊",
-                      },
-                      {
-                        q: "같은 이름을 입력하면 항상 같은 결과인가요?",
-                        a: "네! 이름 기반의 결정론적 알고리즘이라 같은 이름 쌍은 언제나 동일한 결과가 나와요.",
-                      },
-                      {
-                        q: "친구 이름으로도 테스트할 수 있나요?",
-                        a: "물론이죠! 커플뿐 아니라 친구, 가족, 동료 등 어떤 두 사람의 이름으로도 테스트해볼 수 있어요.",
-                      },
-                    ].map((faq, i) => (
+                    {t.faqs.map((faq, i) => (
                       <div
                         key={i}
                         className="border-b border-slate-100 dark:border-slate-700 last:border-0 pb-4 last:pb-0"

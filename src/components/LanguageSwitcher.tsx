@@ -20,7 +20,8 @@ export default function LanguageSwitcher() {
   const currentLocale = getLocaleFromPath(pathname);
 
   // Strip locale prefix to get the base path
-  const basePath = pathname.replace(/^\/(en|jp|cn|es)/, "") || "/";
+  const stripped = pathname.replace(/^\/(en|jp|cn|es)/, "");
+  const basePath = stripped || "/";
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -32,7 +33,9 @@ export default function LanguageSwitcher() {
 
   function switchLocale(locale: Locale) {
     localStorage.setItem("pickplay-locale", locale);
-    const newPath = (localePaths[locale] || "") + basePath;
+    const prefix = localePaths[locale] || "";
+    // Avoid double slash: "/en" + "/" → "/en", "" + "/" → "/"
+    const newPath = basePath === "/" ? (prefix || "/") : prefix + basePath;
     window.location.href = newPath;
   }
 

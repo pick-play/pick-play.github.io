@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import allQuestions from "@/data/balance-questions.json";
+import { useLocale } from "@/hooks/useLocale";
 
 type Question = {
   id: number;
@@ -29,6 +30,59 @@ const categoryIcons: Record<string, string> = {
   슈퍼파워: "⚡",
 };
 
+const translations = {
+  ko: {
+    title: "밸런스 게임",
+    subtitle: "둘 중 하나만 골라야 한다면?",
+    hint: "카드를 눌러 선택하세요",
+    gameComplete: "게임 완료!",
+    answeredCount: (n: number) => `총 ${n}개의 질문에 답했어요`,
+    choiceA: "A 선택",
+    choiceB: "B 선택",
+    playAgain: "다시 하기",
+  },
+  en: {
+    title: "Balance Game",
+    subtitle: "If you had to pick just one...",
+    hint: "Tap a card to choose",
+    gameComplete: "Game Complete!",
+    answeredCount: (n: number) => `You answered ${n} questions`,
+    choiceA: "Chose A",
+    choiceB: "Chose B",
+    playAgain: "Play Again",
+  },
+  ja: {
+    title: "バランスゲーム",
+    subtitle: "どちらか一つを選ぶなら？",
+    hint: "カードをタップして選んでください",
+    gameComplete: "ゲーム完了！",
+    answeredCount: (n: number) => `${n}問に答えました`,
+    choiceA: "Aを選択",
+    choiceB: "Bを選択",
+    playAgain: "もう一度",
+  },
+  zh: {
+    title: "平衡游戏",
+    subtitle: "如果只能选一个...",
+    hint: "点击卡片进行选择",
+    gameComplete: "游戏结束！",
+    answeredCount: (n: number) => `共回答了 ${n} 个问题`,
+    choiceA: "选A",
+    choiceB: "选B",
+    playAgain: "再玩一次",
+  },
+  es: {
+    title: "Juego de Balance",
+    subtitle: "Si tuvieras que elegir solo uno...",
+    hint: "Toca una carta para elegir",
+    gameComplete: "¡Juego Completo!",
+    answeredCount: (n: number) => `Respondiste ${n} preguntas`,
+    choiceA: "Eligió A",
+    choiceB: "Eligió B",
+    playAgain: "Jugar de Nuevo",
+  },
+};
+
 function shuffle<T>(arr: T[]): T[] {
   const copy = [...arr];
   for (let i = copy.length - 1; i > 0; i--) {
@@ -39,6 +93,9 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 export default function BalanceGamePage() {
+  const locale = useLocale();
+  const t = translations[locale];
+
   const [selectedCategory, setSelectedCategory] = useState<string>("전체");
   const [questions, setQuestions] = useState<Question[]>(() =>
     shuffle(allQuestions as Question[])
@@ -113,10 +170,10 @@ export default function BalanceGamePage() {
             className="text-center mb-8"
           >
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent mb-2">
-              밸런스 게임
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              둘 중 하나만 골라야 한다면?
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -265,7 +322,7 @@ export default function BalanceGamePage() {
                     animate={{ opacity: 1 }}
                     className="text-center text-xs text-slate-400 dark:text-slate-500"
                   >
-                    카드를 눌러 선택하세요
+                    {t.hint}
                   </motion.p>
                 )}
               </motion.div>
@@ -291,10 +348,10 @@ export default function BalanceGamePage() {
                     🎉
                   </motion.div>
                   <h2 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 mb-1">
-                    게임 완료!
+                    {t.gameComplete}
                   </h2>
                   <p className="text-slate-500 dark:text-slate-400 text-sm mb-8">
-                    총 {answered}개의 질문에 답했어요
+                    {t.answeredCount(answered)}
                   </p>
 
                   {/* Stats */}
@@ -306,7 +363,7 @@ export default function BalanceGamePage() {
                       className="rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/40 dark:to-blue-900/30 border border-blue-200/60 dark:border-blue-700/40 p-5"
                     >
                       <p className="text-xs font-semibold text-blue-500 dark:text-blue-400 uppercase tracking-wide mb-2">
-                        A 선택
+                        {t.choiceA}
                       </p>
                       <p className="text-5xl font-extrabold text-blue-600 dark:text-blue-400">
                         {choicesA}
@@ -323,7 +380,7 @@ export default function BalanceGamePage() {
                       className="rounded-2xl bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/40 dark:to-red-900/30 border border-red-200/60 dark:border-red-700/40 p-5"
                     >
                       <p className="text-xs font-semibold text-red-500 dark:text-red-400 uppercase tracking-wide mb-2">
-                        B 선택
+                        {t.choiceB}
                       </p>
                       <p className="text-5xl font-extrabold text-red-600 dark:text-red-400">
                         {choicesB}
@@ -371,7 +428,7 @@ export default function BalanceGamePage() {
                     transition={{ delay: 0.5 }}
                     className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-500 to-red-500 text-white font-bold text-lg shadow-md hover:shadow-blue-500/20 transition-shadow"
                   >
-                    다시 하기
+                    {t.playAgain}
                   </motion.button>
                   <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                 </div>

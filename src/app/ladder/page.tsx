@@ -4,21 +4,238 @@ import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
+import { useLocale } from "@/hooks/useLocale";
+
+const translations = {
+  ko: {
+    title: "사다리 타기",
+    subtitle: "공정한 사다리로 순서, 당번, 벌칙을 정해보세요",
+    playerCount: "참가자 수",
+    playerRange: (min: number, max: number) => `${min}명 ~ ${max}명`,
+    playerNames: "참가자 이름 (선택)",
+    playerPlaceholder: (i: number) => `참가자 ${i + 1}`,
+    results: "결과 입력 (선택)",
+    resultPlaceholder: (i: number) => `결과 ${i + 1}`,
+    presetWinner: "당첨 1명",
+    presetPenalty: "벌칙 1명",
+    startBtn: "사다리 시작",
+    faqTitle: "자주 묻는 질문",
+    faq: [
+      {
+        q: "사다리 타기는 어떻게 사용하나요?",
+        a: "참가자 수와 이름, 결과를 입력하고 사다리 시작 버튼을 누르세요. 이름 카드를 클릭하면 해당 사람의 경로가 애니메이션으로 표시됩니다.",
+      },
+      {
+        q: "사다리 결과는 공정한가요?",
+        a: "네! 가로 막대는 매번 무작위로 생성되어 결과를 예측하거나 조작할 수 없습니다. 완전히 공정합니다.",
+      },
+      {
+        q: "전체 공개는 어떻게 하나요?",
+        a: "사다리 화면 하단의 '전체 공개' 버튼을 누르면 모든 참가자의 경로가 순서대로 애니메이션과 함께 공개됩니다.",
+      },
+    ],
+    clickToReveal: "이름을 클릭해 경로를 확인하세요",
+    tracing: "경로 추적 중...",
+    revealed: (done: number, total: number) => `${done}/${total}명 확인됨`,
+    resetSetup: "다시 설정",
+    revealAll: "전체 공개",
+    viewResult: "결과 보기",
+    backToStart: "처음으로",
+    hintText: "위의 색깔 이름 버튼을 눌러 사다리를 타세요",
+    finalResult: "최종 결과",
+    copyResult: "결과 복사",
+    playAgain: "다시 하기",
+    defaultResult: (i: number) => `결과 ${i + 1}`,
+    defaultPlayer: (i: number) => `참가자 ${i + 1}`,
+    presetWinnerItems: (count: number) => ["당첨", ...Array(count - 1).fill("꽝")],
+    presetPenaltyItems: (count: number) => ["벌칙", ...Array(count - 1).fill("면제")],
+  },
+  en: {
+    title: "Ladder Game",
+    subtitle: "Use a fair ladder to decide order, duty, or penalties",
+    playerCount: "Number of Players",
+    playerRange: (min: number, max: number) => `${min} – ${max} players`,
+    playerNames: "Player Names (optional)",
+    playerPlaceholder: (i: number) => `Player ${i + 1}`,
+    results: "Results (optional)",
+    resultPlaceholder: (i: number) => `Result ${i + 1}`,
+    presetWinner: "1 Winner",
+    presetPenalty: "1 Penalty",
+    startBtn: "Start Ladder",
+    faqTitle: "FAQ",
+    faq: [
+      {
+        q: "How do I use the ladder game?",
+        a: "Enter the number of players, their names, and the results, then press Start Ladder. Click a player's name card to animate their path down the ladder.",
+      },
+      {
+        q: "Are the ladder results fair?",
+        a: "Yes! The horizontal rungs are generated randomly each time, so results cannot be predicted or manipulated — completely fair.",
+      },
+      {
+        q: "How do I reveal all paths at once?",
+        a: "Press the 'Reveal All' button at the bottom of the ladder screen to animate every player's path in sequence.",
+      },
+    ],
+    clickToReveal: "Click a name to reveal their path",
+    tracing: "Tracing path...",
+    revealed: (done: number, total: number) => `${done}/${total} revealed`,
+    resetSetup: "Reset",
+    revealAll: "Reveal All",
+    viewResult: "View Results",
+    backToStart: "Back to Start",
+    hintText: "Click a colored name button above to start",
+    finalResult: "Final Results",
+    copyResult: "Copy Results",
+    playAgain: "Play Again",
+    defaultResult: (i: number) => `Result ${i + 1}`,
+    defaultPlayer: (i: number) => `Player ${i + 1}`,
+    presetWinnerItems: (count: number) => ["Winner", ...Array(count - 1).fill("Lose")],
+    presetPenaltyItems: (count: number) => ["Penalty", ...Array(count - 1).fill("Safe")],
+  },
+  ja: {
+    title: "はしごゲーム",
+    subtitle: "公平なはしごで順番・当番・罰ゲームを決めよう",
+    playerCount: "参加者数",
+    playerRange: (min: number, max: number) => `${min}人 〜 ${max}人`,
+    playerNames: "参加者名（任意）",
+    playerPlaceholder: (i: number) => `参加者 ${i + 1}`,
+    results: "結果入力（任意）",
+    resultPlaceholder: (i: number) => `結果 ${i + 1}`,
+    presetWinner: "当選1人",
+    presetPenalty: "罰ゲーム1人",
+    startBtn: "はしごスタート",
+    faqTitle: "よくある質問",
+    faq: [
+      {
+        q: "はしごゲームの使い方は？",
+        a: "参加者数・名前・結果を入力してスタートボタンを押してください。名前カードをクリックするとその人の経路がアニメーションで表示されます。",
+      },
+      {
+        q: "はしごの結果は公平ですか？",
+        a: "はい！横棒は毎回ランダムに生成されるため、結果を予測・操作することはできません。完全に公平です。",
+      },
+      {
+        q: "全員まとめて公開するには？",
+        a: "はしが画面下の「全て公開」ボタンを押すと、全参加者の経路が順番にアニメーションで公開されます。",
+      },
+    ],
+    clickToReveal: "名前をクリックして経路を確認",
+    tracing: "経路追跡中...",
+    revealed: (done: number, total: number) => `${done}/${total}人 確認済み`,
+    resetSetup: "やり直し",
+    revealAll: "全て公開",
+    viewResult: "結果を見る",
+    backToStart: "最初から",
+    hintText: "上の色付き名前ボタンを押してはしごを進めてください",
+    finalResult: "最終結果",
+    copyResult: "結果をコピー",
+    playAgain: "もう一度",
+    defaultResult: (i: number) => `結果 ${i + 1}`,
+    defaultPlayer: (i: number) => `参加者 ${i + 1}`,
+    presetWinnerItems: (count: number) => ["当選", ...Array(count - 1).fill("ハズレ")],
+    presetPenaltyItems: (count: number) => ["罰ゲーム", ...Array(count - 1).fill("セーフ")],
+  },
+  zh: {
+    title: "梯子游戏",
+    subtitle: "用公平的梯子决定顺序、值班和惩罚",
+    playerCount: "参与者人数",
+    playerRange: (min: number, max: number) => `${min} ~ ${max} 人`,
+    playerNames: "参与者姓名（可选）",
+    playerPlaceholder: (i: number) => `参与者 ${i + 1}`,
+    results: "结果输入（可选）",
+    resultPlaceholder: (i: number) => `结果 ${i + 1}`,
+    presetWinner: "1人中签",
+    presetPenalty: "1人受罚",
+    startBtn: "开始梯子",
+    faqTitle: "常见问题",
+    faq: [
+      {
+        q: "梯子游戏怎么用？",
+        a: "输入参与者人数、姓名和结果，然后点击开始。点击姓名卡片，该玩家的路径将以动画显示。",
+      },
+      {
+        q: "梯子结果公平吗？",
+        a: "是的！横杠每次随机生成，结果无法预测或操控，完全公平。",
+      },
+      {
+        q: "如何一次公开所有路径？",
+        a: '点击梯子画面底部的"全部公开"按钮，所有参与者的路径将依次以动画展示。',
+      },
+    ],
+    clickToReveal: "点击姓名查看路径",
+    tracing: "追踪路径中...",
+    revealed: (done: number, total: number) => `已查看 ${done}/${total} 人`,
+    resetSetup: "重新设置",
+    revealAll: "全部公开",
+    viewResult: "查看结果",
+    backToStart: "回到开始",
+    hintText: "点击上方彩色姓名按钮开始",
+    finalResult: "最终结果",
+    copyResult: "复制结果",
+    playAgain: "再玩一次",
+    defaultResult: (i: number) => `结果 ${i + 1}`,
+    defaultPlayer: (i: number) => `参与者 ${i + 1}`,
+    presetWinnerItems: (count: number) => ["中签", ...Array(count - 1).fill("未中")],
+    presetPenaltyItems: (count: number) => ["受罚", ...Array(count - 1).fill("免罚")],
+  },
+  es: {
+    title: "Juego de escalera",
+    subtitle: "Usa una escalera justa para decidir orden, turno o penalizaciones",
+    playerCount: "Número de jugadores",
+    playerRange: (min: number, max: number) => `${min} – ${max} jugadores`,
+    playerNames: "Nombres de jugadores (opcional)",
+    playerPlaceholder: (i: number) => `Jugador ${i + 1}`,
+    results: "Resultados (opcional)",
+    resultPlaceholder: (i: number) => `Resultado ${i + 1}`,
+    presetWinner: "1 Ganador",
+    presetPenalty: "1 Penalti",
+    startBtn: "Iniciar escalera",
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      {
+        q: "¿Cómo se usa el juego de escalera?",
+        a: "Ingresa el número de jugadores, sus nombres y los resultados, luego pulsa Iniciar escalera. Haz clic en el nombre de un jugador para animar su camino por la escalera.",
+      },
+      {
+        q: "¿Son justos los resultados de la escalera?",
+        a: "¡Sí! Los peldaños horizontales se generan aleatoriamente cada vez, por lo que los resultados no pueden predecirse ni manipularse — completamente justo.",
+      },
+      {
+        q: "¿Cómo revelo todos los caminos a la vez?",
+        a: "Pulsa el botón 'Revelar todo' en la parte inferior de la pantalla para animar el camino de todos los jugadores en secuencia.",
+      },
+    ],
+    clickToReveal: "Haz clic en un nombre para revelar su camino",
+    tracing: "Trazando camino...",
+    revealed: (done: number, total: number) => `${done}/${total} revelados`,
+    resetSetup: "Reiniciar",
+    revealAll: "Revelar todo",
+    viewResult: "Ver resultados",
+    backToStart: "Volver al inicio",
+    hintText: "Haz clic en un botón de nombre de color arriba para empezar",
+    finalResult: "Resultados finales",
+    copyResult: "Copiar resultados",
+    playAgain: "Jugar de nuevo",
+    defaultResult: (i: number) => `Resultado ${i + 1}`,
+    defaultPlayer: (i: number) => `Jugador ${i + 1}`,
+    presetWinnerItems: (count: number) => ["Gana", ...Array(count - 1).fill("Pierde")],
+    presetPenaltyItems: (count: number) => ["Penalti", ...Array(count - 1).fill("Libre")],
+  },
+};
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type Phase = "setup" | "play" | "result";
 
 interface Rung {
-  /** which column (0-indexed) the rung starts from; connects col → col+1 */
   col: number;
-  /** which row band (0-indexed out of RUNG_ROWS) */
   row: number;
 }
 
 interface PathStep {
   col: number;
-  row: number; // row index within the traversal grid (0 = top, RUNG_ROWS = bottom)
+  row: number;
   direction: "down" | "right" | "left";
 }
 
@@ -26,7 +243,7 @@ interface PathStep {
 
 const MIN_PLAYERS = 2;
 const MAX_PLAYERS = 10;
-const RUNG_ROWS = 8; // how many possible rung positions vertically
+const RUNG_ROWS = 8;
 
 const PLAYER_COLORS = [
   "#FF6B6B",
@@ -41,26 +258,16 @@ const PLAYER_COLORS = [
   "#F8C471",
 ];
 
-const PRESET_WINNER_ONE = (count: number): string[] => [
-  "당첨",
-  ...Array(count - 1).fill("꽝"),
-];
-const PRESET_PENALTY_ONE = (count: number): string[] => [
-  "벌칙",
-  ...Array(count - 1).fill("면제"),
-];
-
 // ─── Utility ──────────────────────────────────────────────────────────────────
 
 function generateRungs(playerCount: number): Rung[] {
   const rungs: Rung[] = [];
-  // For each row, randomly add rungs, ensuring no two adjacent rungs in the same row
   for (let row = 0; row < RUNG_ROWS; row++) {
     let col = 0;
     while (col < playerCount - 1) {
       if (Math.random() < 0.45) {
         rungs.push({ col, row });
-        col += 2; // skip next col to avoid adjacent rungs
+        col += 2;
       } else {
         col += 1;
       }
@@ -69,35 +276,25 @@ function generateRungs(playerCount: number): Rung[] {
   return rungs;
 }
 
-/**
- * Trace path for a given starting column.
- * Returns array of steps for animation.
- */
 function tracePath(startCol: number, rungs: Rung[], playerCount: number): PathStep[] {
   const steps: PathStep[] = [];
   let col = startCol;
 
-  // Build a lookup: row → set of starting cols that have rungs
   const rungSet = new Set(rungs.map((r) => `${r.row}:${r.col}`));
   const hasRung = (row: number, c: number) => rungSet.has(`${row}:${c}`);
 
   for (let row = 0; row < RUNG_ROWS; row++) {
-    // Step down into this row band
     steps.push({ col, row, direction: "down" });
 
-    // Check if there's a rung going right (col → col+1)
     if (col < playerCount - 1 && hasRung(row, col)) {
       steps.push({ col, row, direction: "right" });
       col += 1;
-    }
-    // Check if there's a rung going left (col-1 → col, i.e., rung at col-1)
-    else if (col > 0 && hasRung(row, col - 1)) {
+    } else if (col > 0 && hasRung(row, col - 1)) {
       steps.push({ col, row, direction: "left" });
       col -= 1;
     }
   }
 
-  // Final step: arrive at bottom
   steps.push({ col, row: RUNG_ROWS, direction: "down" });
 
   return steps;
@@ -115,9 +312,7 @@ interface LadderVisualizationProps {
   rungs: Rung[];
   playerNames: string[];
   results: string[];
-  /** null = nothing animating, number = that player's path is being traced */
   animatingPlayer: number | null;
-  /** set of player indices whose paths are fully revealed */
   revealedPlayers: Set<number>;
   destinations: number[];
   onPlayerClick: (idx: number) => void;
@@ -135,14 +330,12 @@ function LadderVisualization({
   onPlayerClick,
   animating,
 }: LadderVisualizationProps) {
-  const PAD = 24; // px padding inside ladder body
-  // Returns a CSS calc expression for the X position of a column
+  const PAD = 24;
   const colLeft = (col: number) => {
     const frac = playerCount <= 1 ? 0 : col / (playerCount - 1);
     return `calc(${PAD}px + (100% - ${PAD * 2}px) * ${frac})`;
   };
   const rowPercent = (row: number) => (row / RUNG_ROWS) * 100;
-  // Fraction for one column gap
   const oneColFrac = playerCount <= 1 ? 0 : 1 / (playerCount - 1);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -199,22 +392,20 @@ function LadderVisualization({
         ))}
 
         {/* Horizontal rungs */}
-        {rungs.map((rung, idx) => {
-          return (
-            <div
-              key={`rung-${idx}`}
-              className="absolute"
-              style={{
-                left: colLeft(rung.col),
-                top: `${rowPercent(rung.row + 0.5)}%`,
-                width: `calc((100% - ${PAD * 2}px) * ${oneColFrac})`,
-                height: "3px",
-                transform: "translateY(-50%)",
-                backgroundColor: "#94a3b8",
-              }}
-            />
-          );
-        })}
+        {rungs.map((rung, idx) => (
+          <div
+            key={`rung-${idx}`}
+            className="absolute"
+            style={{
+              left: colLeft(rung.col),
+              top: `${rowPercent(rung.row + 0.5)}%`,
+              width: `calc((100% - ${PAD * 2}px) * ${oneColFrac})`,
+              height: "3px",
+              transform: "translateY(-50%)",
+              backgroundColor: "#94a3b8",
+            }}
+          />
+        ))}
 
         {/* Animated paths for revealed players */}
         {Array.from(revealedPlayers).map((playerIdx) => {
@@ -259,11 +450,11 @@ function LadderVisualization({
                       textOverflow: "ellipsis",
                     }}
                   >
-                    {results[i] || `결과 ${i + 1}`}
+                    {results[i]}
                   </motion.div>
                 ) : (
                   <div className="px-2 py-1 rounded-lg text-xs font-medium text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-700 whitespace-nowrap">
-                    {results[i] || `결과 ${i + 1}`}
+                    {results[i]}
                   </div>
                 )}
               </AnimatePresence>
@@ -293,7 +484,6 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
   const pathRef = useRef<SVGPolylineElement>(null);
   const animRef = useRef<number | null>(null);
 
-  // Observe container size
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg) return;
@@ -309,7 +499,6 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
     return () => ro.disconnect();
   }, []);
 
-  // Convert path steps to SVG coordinates
   const points = useMemo(() => {
     if (svgSize.w === 0 || svgSize.h === 0) return [];
     const usableW = svgSize.w - pad * 2;
@@ -323,20 +512,10 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
     for (let i = 0; i < path.length; i++) {
       const step = path[i];
       if (step.direction === "down") {
-        // If previous was horizontal, we're already at row+0.5 position
-        if (i > 0) {
-          const prev = path[i - 1];
-          if (prev.direction === "right" || prev.direction === "left") {
-            // Already added the horizontal end point
-          }
-        }
-        // Add the vertical endpoint
         pts.push({ x: colX(step.col), y: rowY(step.row) });
         curCol = step.col;
       } else if (step.direction === "right") {
-        // Start of horizontal: current col at rung Y
         pts.push({ x: colX(curCol), y: rowY(step.row + 0.5) });
-        // End of horizontal: next col at rung Y
         pts.push({ x: colX(curCol + 1), y: rowY(step.row + 0.5) });
         curCol = curCol + 1;
       } else if (step.direction === "left") {
@@ -350,7 +529,6 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
 
   const pointsStr = points.map((p) => `${p.x},${p.y}`).join(" ");
 
-  // Get total path length after render
   useEffect(() => {
     if (pathRef.current) {
       const len = pathRef.current.getTotalLength();
@@ -361,20 +539,18 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
     }
   }, [pointsStr, isAnimating]);
 
-  // Animate the path drawing
   useEffect(() => {
     if (!isAnimating || totalLength === 0) {
       if (!isAnimating) setDashOffset(0);
       return;
     }
     setDashOffset(totalLength);
-    const duration = path.length * 80; // ms per step
+    const duration = path.length * 80;
     const startTime = performance.now();
 
     const tick = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic for smooth deceleration
       const eased = 1 - Math.pow(1 - progress, 3);
       setDashOffset(totalLength * (1 - eased));
       if (progress < 1) {
@@ -387,7 +563,6 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
     };
   }, [isAnimating, totalLength, path.length]);
 
-  // Compute needle position based on current dash offset
   const needlePos = useMemo(() => {
     if (!pathRef.current || totalLength === 0) return null;
     const drawnLength = totalLength - dashOffset;
@@ -414,7 +589,6 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
           </feMerge>
         </filter>
       </defs>
-      {/* Glow layer (thicker, blurred) */}
       <polyline
         points={pointsStr}
         fill="none"
@@ -426,7 +600,6 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
         strokeDasharray={totalLength || undefined}
         strokeDashoffset={dashOffset}
       />
-      {/* Main path line */}
       <polyline
         ref={pathRef}
         points={pointsStr}
@@ -439,43 +612,14 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
         strokeDashoffset={dashOffset}
         filter={`url(#glow-${color.replace("#", "")})`}
       />
-      {/* Needle dot at the leading edge */}
       {isAnimating && needlePos && (
         <>
-          <circle
-            cx={needlePos.x}
-            cy={needlePos.y}
-            r={12}
-            fill={color}
-            opacity={0.25}
-          >
-            <animate
-              attributeName="r"
-              values="10;16;10"
-              dur="0.7s"
-              repeatCount="indefinite"
-            />
-            <animate
-              attributeName="opacity"
-              values="0.3;0.15;0.3"
-              dur="0.7s"
-              repeatCount="indefinite"
-            />
+          <circle cx={needlePos.x} cy={needlePos.y} r={12} fill={color} opacity={0.25}>
+            <animate attributeName="r" values="10;16;10" dur="0.7s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.3;0.15;0.3" dur="0.7s" repeatCount="indefinite" />
           </circle>
-          <circle
-            cx={needlePos.x}
-            cy={needlePos.y}
-            r={6}
-            fill="white"
-            stroke={color}
-            strokeWidth={3}
-          >
-            <animate
-              attributeName="r"
-              values="5;7;5"
-              dur="0.7s"
-              repeatCount="indefinite"
-            />
+          <circle cx={needlePos.x} cy={needlePos.y} r={6} fill="white" stroke={color} strokeWidth={3}>
+            <animate attributeName="r" values="5;7;5" dur="0.7s" repeatCount="indefinite" />
           </circle>
         </>
       )}
@@ -487,13 +631,16 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
 // ─── Main Page ─────────────────────────────────────────────────────────────────
 
 export default function LadderPage() {
+  const locale = useLocale();
+  const t = translations[locale];
+
   const [phase, setPhase] = useState<Phase>("setup");
   const [playerCount, setPlayerCount] = useState(4);
   const [playerNames, setPlayerNames] = useState<string[]>(
-    Array.from({ length: 4 }, (_, i) => "")
+    Array.from({ length: 4 }, () => "")
   );
   const [results, setResults] = useState<string[]>(
-    Array.from({ length: 4 }, (_, i) => "")
+    Array.from({ length: 4 }, () => "")
   );
   const [rungs, setRungs] = useState<Rung[]>([]);
   const [revealedPlayers, setRevealedPlayers] = useState<Set<number>>(new Set());
@@ -503,28 +650,24 @@ export default function LadderPage() {
   const animationTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const revealAllTimersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
-  // Sync arrays when playerCount changes
   useEffect(() => {
     setPlayerNames((prev) => {
-      const next = Array.from({ length: playerCount }, (_, i) => prev[i] ?? "");
-      return next;
+      return Array.from({ length: playerCount }, (_, i) => prev[i] ?? "");
     });
     setResults((prev) => {
-      const next = Array.from({ length: playerCount }, (_, i) => prev[i] ?? "");
-      return next;
+      return Array.from({ length: playerCount }, (_, i) => prev[i] ?? "");
     });
   }, [playerCount]);
 
   const effectiveNames = useMemo(
-    () => playerNames.map((n, i) => n.trim() || `참가자 ${i + 1}`),
-    [playerNames]
+    () => playerNames.map((n, i) => n.trim() || t.defaultPlayer(i)),
+    [playerNames, t]
   );
   const effectiveResults = useMemo(
-    () => results.map((r, i) => r.trim() || `결과 ${i + 1}`),
-    [results]
+    () => results.map((r, i) => r.trim() || t.defaultResult(i)),
+    [results, t]
   );
 
-  // Pre-compute destinations once rungs are set
   const destinations = useMemo(() => {
     if (rungs.length === 0) return [];
     return Array.from({ length: playerCount }, (_, i) =>
@@ -536,17 +679,16 @@ export default function LadderPage() {
     (type: "winner" | "penalty") => {
       const arr =
         type === "winner"
-          ? PRESET_WINNER_ONE(playerCount)
-          : PRESET_PENALTY_ONE(playerCount);
-      // Shuffle before setting
+          ? t.presetWinnerItems(playerCount)
+          : t.presetPenaltyItems(playerCount);
       const shuffled = [...arr].sort(() => Math.random() - 0.5);
       setResults(shuffled);
     },
-    [playerCount]
+    [playerCount, t]
   );
 
   const startGame = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     const generated = generateRungs(playerCount);
     setRungs(generated);
     setRevealedPlayers(new Set());
@@ -556,7 +698,7 @@ export default function LadderPage() {
     setPhase("play");
   }, [playerCount]);
 
-  const ANIM_DURATION = RUNG_ROWS * 80 + 200; // ms
+  const ANIM_DURATION = RUNG_ROWS * 80 + 200;
 
   const handlePlayerClick = useCallback(
     (idx: number) => {
@@ -577,7 +719,6 @@ export default function LadderPage() {
   const handleRevealAll = useCallback(() => {
     if (animating) return;
     setAnimating(true);
-    // Reveal players one by one with staggered delays
     const unrevealed = Array.from({ length: playerCount }, (_, i) => i).filter(
       (i) => !revealedPlayers.has(i)
     );
@@ -605,7 +746,6 @@ export default function LadderPage() {
     revealAllTimersRef.current.push(tFinal);
   }, [animating, playerCount, revealedPlayers, ANIM_DURATION]);
 
-  // Check if all revealed
   useEffect(() => {
     if (revealedPlayers.size === playerCount && playerCount > 0) {
       setAllRevealed(true);
@@ -648,10 +788,10 @@ export default function LadderPage() {
             className="text-center mb-8"
           >
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent mb-2">
-              사다리 타기
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              공정한 사다리로 순서, 당번, 벌칙을 정해보세요
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -670,13 +810,11 @@ export default function LadderPage() {
                 {/* Player count */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    참가자 수
+                    {t.playerCount}
                   </h2>
                   <div className="flex items-center justify-center gap-6">
                     <button
-                      onClick={() =>
-                        setPlayerCount((n) => Math.max(MIN_PLAYERS, n - 1))
-                      }
+                      onClick={() => setPlayerCount((n) => Math.max(MIN_PLAYERS, n - 1))}
                       className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 text-slate-700 dark:text-slate-200 text-2xl font-bold transition-colors flex items-center justify-center"
                     >
                       −
@@ -685,32 +823,28 @@ export default function LadderPage() {
                       {playerCount}
                     </span>
                     <button
-                      onClick={() =>
-                        setPlayerCount((n) => Math.min(MAX_PLAYERS, n + 1))
-                      }
+                      onClick={() => setPlayerCount((n) => Math.min(MAX_PLAYERS, n + 1))}
                       className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 text-slate-700 dark:text-slate-200 text-2xl font-bold transition-colors flex items-center justify-center"
                     >
                       +
                     </button>
                   </div>
                   <p className="text-center text-xs text-slate-400 mt-3">
-                    {MIN_PLAYERS}명 ~ {MAX_PLAYERS}명
+                    {t.playerRange(MIN_PLAYERS, MAX_PLAYERS)}
                   </p>
                 </div>
 
                 {/* Player names */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-4">
-                    참가자 이름 (선택)
+                    {t.playerNames}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {Array.from({ length: playerCount }).map((_, i) => (
                       <div key={i} className="flex items-center gap-2">
                         <div
                           className="w-6 h-6 rounded-full flex-shrink-0"
-                          style={{
-                            backgroundColor: PLAYER_COLORS[i % PLAYER_COLORS.length],
-                          }}
+                          style={{ backgroundColor: PLAYER_COLORS[i % PLAYER_COLORS.length] }}
                         />
                         <input
                           type="text"
@@ -723,7 +857,7 @@ export default function LadderPage() {
                               return next;
                             });
                           }}
-                          placeholder={`참가자 ${i + 1}`}
+                          placeholder={t.playerPlaceholder(i)}
                           maxLength={8}
                           className="flex-1 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm"
                         />
@@ -736,20 +870,20 @@ export default function LadderPage() {
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                      결과 입력 (선택)
+                      {t.results}
                     </h2>
                     <div className="flex gap-2">
                       <button
                         onClick={() => applyPreset("winner")}
                         className="px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/60 transition-colors"
                       >
-                        당첨 1명
+                        {t.presetWinner}
                       </button>
                       <button
                         onClick={() => applyPreset("penalty")}
                         className="px-3 py-1.5 rounded-full text-xs font-medium bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 hover:bg-rose-200 dark:hover:bg-rose-900/60 transition-colors"
                       >
-                        벌칙 1명
+                        {t.presetPenalty}
                       </button>
                     </div>
                   </div>
@@ -767,7 +901,7 @@ export default function LadderPage() {
                             return next;
                           });
                         }}
-                        placeholder={`결과 ${i + 1}`}
+                        placeholder={t.resultPlaceholder(i)}
                         maxLength={10}
                         className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 text-sm"
                       />
@@ -786,28 +920,15 @@ export default function LadderPage() {
                   onClick={startGame}
                   className="w-full py-5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xl font-bold shadow-lg hover:shadow-emerald-500/30 transition-shadow"
                 >
-                  사다리 시작
+                  {t.startBtn}
                 </motion.button>
 
                 {/* FAQ */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 space-y-4">
                   <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                    자주 묻는 질문
+                    {t.faqTitle}
                   </h2>
-                  {[
-                    {
-                      q: "사다리 타기는 어떻게 사용하나요?",
-                      a: "참가자 수와 이름, 결과를 입력하고 사다리 시작 버튼을 누르세요. 이름 카드를 클릭하면 해당 사람의 경로가 애니메이션으로 표시됩니다.",
-                    },
-                    {
-                      q: "사다리 결과는 공정한가요?",
-                      a: "네! 가로 막대는 매번 무작위로 생성되어 결과를 예측하거나 조작할 수 없습니다. 완전히 공정합니다.",
-                    },
-                    {
-                      q: "전체 공개는 어떻게 하나요?",
-                      a: "사다리 화면 하단의 '전체 공개' 버튼을 누르면 모든 참가자의 경로가 순서대로 애니메이션과 함께 공개됩니다.",
-                    },
-                  ].map((faq, i) => (
+                  {t.faq.map((faq, i) => (
                     <div key={i}>
                       <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1">
                         Q. {faq.q}
@@ -835,16 +956,16 @@ export default function LadderPage() {
                   <div className="flex items-center justify-between mb-4">
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                       {revealedPlayers.size === 0
-                        ? "이름을 클릭해 경로를 확인하세요"
+                        ? t.clickToReveal
                         : animating
-                        ? "경로 추적 중..."
-                        : `${revealedPlayers.size}/${playerCount}명 확인됨`}
+                        ? t.tracing
+                        : t.revealed(revealedPlayers.size, playerCount)}
                     </p>
                     <button
                       onClick={resetGame}
                       className="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
                     >
-                      다시 설정
+                      {t.resetSetup}
                     </button>
                   </div>
 
@@ -870,7 +991,7 @@ export default function LadderPage() {
                       disabled={animating}
                       className="flex-1 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-sm shadow-md hover:shadow-emerald-500/30 transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      전체 공개
+                      {t.revealAll}
                     </motion.button>
                   )}
                   {allRevealed && (
@@ -881,21 +1002,21 @@ export default function LadderPage() {
                       onClick={goToResult}
                       className="flex-1 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-sm shadow-md hover:shadow-emerald-500/30 transition-shadow"
                     >
-                      결과 보기
+                      {t.viewResult}
                     </motion.button>
                   )}
                   <button
                     onClick={resetGame}
                     className="px-5 py-4 rounded-2xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-sm hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
                   >
-                    처음으로
+                    {t.backToStart}
                   </button>
                 </div>
 
                 {/* Hint */}
                 {revealedPlayers.size === 0 && (
                   <p className="text-center text-xs text-slate-400 dark:text-slate-500 animate-pulse">
-                    위의 색깔 이름 버튼을 눌러 사다리를 타세요
+                    {t.hintText}
                   </p>
                 )}
               </motion.div>
@@ -913,7 +1034,7 @@ export default function LadderPage() {
               >
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
                   <h2 className="text-xl font-extrabold text-slate-800 dark:text-slate-100 mb-6 text-center">
-                    최종 결과
+                    {t.finalResult}
                   </h2>
                   <div className="space-y-3">
                     {Array.from({ length: playerCount }).map((_, playerIdx) => {
@@ -964,14 +1085,14 @@ export default function LadderPage() {
                     onClick={copyResult}
                     className="flex-1 py-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm"
                   >
-                    결과 복사
+                    {t.copyResult}
                   </motion.button>
                   <motion.button
                     whileTap={{ scale: 0.97 }}
                     onClick={startGame}
                     className="flex-1 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-sm shadow-md hover:shadow-emerald-500/30 transition-shadow"
                   >
-                    다시 하기
+                    {t.playAgain}
                   </motion.button>
                 </div>
 

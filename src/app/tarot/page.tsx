@@ -5,6 +5,195 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import tarotData from "@/data/tarot.json";
+import { useLocale } from "@/hooks/useLocale";
+
+const translations = {
+  ko: {
+    title: "Yes or No 타로",
+    subtitle: "22장의 메이저 아르카나가 답을 알려드립니다",
+    inputPrompt: "✦ 마음속의 질문을 적어보세요 ✦",
+    inputPlaceholder: "이 사람과 잘 될까?",
+    inputHint: "예) 이직을 해야 할까? / 이 결정이 맞을까?",
+    drawBtn: "카드 뽑기 ✨",
+    mystical: [
+      { suit: "♠", label: "신중함" },
+      { suit: "♥", label: "사랑" },
+      { suit: "♦", label: "운" },
+      { suit: "♣", label: "지혜" },
+    ],
+    yourQuestion: "당신의 질문",
+    chooseCard: "✦ 카드 한 장을 선택하세요 ✦",
+    intuitionHint: "직감이 이끄는 카드를 선택하세요",
+    todayAdvice: "✦ 오늘의 조언",
+    luckyColor: "행운의 색",
+    luckyNumber: "행운의 숫자",
+    drawAgain: "다시 뽑기 🃏",
+    newQuestion: "다른 질문 ✨",
+    faqTitle: "✦ 자주 묻는 질문",
+    faqs: [
+      {
+        q: "타로 카드 결과를 맹신해도 되나요?",
+        a: "타로 카드는 재미와 영감을 위한 도구입니다. 결과를 맹신하기보다는 자신의 직관과 상황을 함께 고려해 참고용으로 활용하세요.",
+      },
+      {
+        q: "메이저 아르카나가 무엇인가요?",
+        a: "타로 78장 중 22장의 주요 카드로, 바보(0번)부터 세계(21번)까지 삶의 중요한 여정을 상징합니다. 강력한 메시지를 전달해 Yes or No 타로에 최적화되어 있습니다.",
+      },
+      {
+        q: "같은 질문으로 여러 번 뽑아도 되나요?",
+        a: "물론입니다! 매번 랜덤으로 카드가 선택됩니다. 다만 타로는 그 순간의 에너지를 반영하므로, 다른 결과가 나올 수 있어요.",
+      },
+    ],
+  },
+  en: {
+    title: "Yes or No Tarot",
+    subtitle: "The 22 Major Arcana will answer your question",
+    inputPrompt: "✦ Write the question on your mind ✦",
+    inputPlaceholder: "Will things work out with this person?",
+    inputHint: "e.g. Should I change jobs? / Is this the right decision?",
+    drawBtn: "Draw a Card ✨",
+    mystical: [
+      { suit: "♠", label: "Wisdom" },
+      { suit: "♥", label: "Love" },
+      { suit: "♦", label: "Luck" },
+      { suit: "♣", label: "Fortune" },
+    ],
+    yourQuestion: "Your Question",
+    chooseCard: "✦ Choose one card ✦",
+    intuitionHint: "Select the card your intuition leads you to",
+    todayAdvice: "✦ Today's Advice",
+    luckyColor: "Lucky Color",
+    luckyNumber: "Lucky Number",
+    drawAgain: "Draw Again 🃏",
+    newQuestion: "New Question ✨",
+    faqTitle: "✦ Frequently Asked Questions",
+    faqs: [
+      {
+        q: "Should I take the tarot result as absolute truth?",
+        a: "Tarot cards are a tool for fun and inspiration. Rather than taking results literally, use them as a reference alongside your own intuition and circumstances.",
+      },
+      {
+        q: "What are the Major Arcana?",
+        a: "They are 22 of the 78 tarot cards, from The Fool (0) to The World (21), symbolizing major life journeys. Their powerful messages make them ideal for Yes or No tarot.",
+      },
+      {
+        q: "Can I draw multiple times for the same question?",
+        a: "Of course! Cards are selected randomly each time. Keep in mind that tarot reflects the energy of the moment, so results may differ.",
+      },
+    ],
+  },
+  ja: {
+    title: "Yes or No タロット",
+    subtitle: "22枚のメジャーアルカナがあなたの答えを教えます",
+    inputPrompt: "✦ 心の中の質問を書いてください ✦",
+    inputPlaceholder: "この人とうまくいくかな？",
+    inputHint: "例）転職すべきか？/ この決断は正しいか？",
+    drawBtn: "カードを引く ✨",
+    mystical: [
+      { suit: "♠", label: "慎重さ" },
+      { suit: "♥", label: "愛" },
+      { suit: "♦", label: "運" },
+      { suit: "♣", label: "知恵" },
+    ],
+    yourQuestion: "あなたの質問",
+    chooseCard: "✦ カードを1枚選んでください ✦",
+    intuitionHint: "直感が導くカードを選んでください",
+    todayAdvice: "✦ 今日のアドバイス",
+    luckyColor: "ラッキーカラー",
+    luckyNumber: "ラッキーナンバー",
+    drawAgain: "もう一度引く 🃏",
+    newQuestion: "別の質問 ✨",
+    faqTitle: "✦ よくある質問",
+    faqs: [
+      {
+        q: "タロットの結果を信じすぎても大丈夫ですか？",
+        a: "タロットカードは楽しみとインスピレーションのためのツールです。結果を鵜呑みにせず、自分の直感や状況と合わせて参考程度に活用してください。",
+      },
+      {
+        q: "メジャーアルカナとは何ですか？",
+        a: "タロット78枚のうちの22枚の主要カードで、愚者（0番）から世界（21番）まで人生の重要な旅を象徴します。強力なメッセージを持ちYes or Noタロットに最適です。",
+      },
+      {
+        q: "同じ質問で何度も引いていいですか？",
+        a: "もちろんです！毎回ランダムにカードが選ばれます。タロットはその瞬間のエネルギーを反映するため、異なる結果が出ることもあります。",
+      },
+    ],
+  },
+  zh: {
+    title: "Yes or No 塔罗",
+    subtitle: "22张大阿尔卡纳将为您揭示答案",
+    inputPrompt: "✦ 写下您心中的问题 ✦",
+    inputPlaceholder: "我和这个人会成功吗？",
+    inputHint: "例：我应该换工作吗？/ 这个决定正确吗？",
+    drawBtn: "抽牌 ✨",
+    mystical: [
+      { suit: "♠", label: "谨慎" },
+      { suit: "♥", label: "爱情" },
+      { suit: "♦", label: "运气" },
+      { suit: "♣", label: "智慧" },
+    ],
+    yourQuestion: "您的问题",
+    chooseCard: "✦ 请选择一张牌 ✦",
+    intuitionHint: "选择直觉引导您的那张牌",
+    todayAdvice: "✦ 今日建议",
+    luckyColor: "幸运色",
+    luckyNumber: "幸运数字",
+    drawAgain: "再次抽牌 🃏",
+    newQuestion: "新问题 ✨",
+    faqTitle: "✦ 常见问题",
+    faqs: [
+      {
+        q: "塔罗结果可以完全相信吗？",
+        a: "塔罗牌是娱乐和启发的工具。请勿盲目相信结果，结合自己的直觉和实际情况作为参考。",
+      },
+      {
+        q: "什么是大阿尔卡纳？",
+        a: "大阿尔卡纳是塔罗78张牌中的22张主要牌，从愚者（0号）到世界（21号），象征生命中重要的旅程。其强力信息非常适合Yes or No塔罗。",
+      },
+      {
+        q: "可以对同一个问题多次抽牌吗？",
+        a: "当然可以！每次随机选择牌。请注意塔罗反映当时的能量，因此结果可能不同。",
+      },
+    ],
+  },
+  es: {
+    title: "Tarot Sí o No",
+    subtitle: "Los 22 Arcanos Mayores responderán tu pregunta",
+    inputPrompt: "✦ Escribe la pregunta que tienes en mente ✦",
+    inputPlaceholder: "¿Funcionará esto con esta persona?",
+    inputHint: "Ej: ¿Debería cambiar de trabajo? / ¿Es esta la decisión correcta?",
+    drawBtn: "Sacar una Carta ✨",
+    mystical: [
+      { suit: "♠", label: "Prudencia" },
+      { suit: "♥", label: "Amor" },
+      { suit: "♦", label: "Suerte" },
+      { suit: "♣", label: "Sabiduría" },
+    ],
+    yourQuestion: "Tu Pregunta",
+    chooseCard: "✦ Elige una carta ✦",
+    intuitionHint: "Selecciona la carta hacia la que tu intuición te guía",
+    todayAdvice: "✦ Consejo de Hoy",
+    luckyColor: "Color de la Suerte",
+    luckyNumber: "Número de la Suerte",
+    drawAgain: "Sacar de Nuevo 🃏",
+    newQuestion: "Nueva Pregunta ✨",
+    faqTitle: "✦ Preguntas Frecuentes",
+    faqs: [
+      {
+        q: "¿Debo creer el resultado del tarot ciegamente?",
+        a: "Las cartas del tarot son una herramienta de diversión e inspiración. En lugar de creerlas al pie de la letra, úsalas como referencia junto con tu intuición y situación.",
+      },
+      {
+        q: "¿Qué son los Arcanos Mayores?",
+        a: "Son 22 de las 78 cartas del tarot, desde El Loco (0) hasta El Mundo (21), que simbolizan los grandes viajes de la vida. Su poderoso mensaje los hace ideales para el tarot de Sí o No.",
+      },
+      {
+        q: "¿Puedo sacar cartas varias veces para la misma pregunta?",
+        a: "¡Por supuesto! Las cartas se seleccionan aleatoriamente cada vez. Ten en cuenta que el tarot refleja la energía del momento, por lo que los resultados pueden variar.",
+      },
+    ],
+  },
+};
 
 type TarotCard = (typeof tarotData.cards)[0];
 type Phase = "input" | "select" | "reveal";
@@ -183,6 +372,9 @@ function CardFront({ card, isFlipped }: { card: TarotCard; isFlipped: boolean })
 }
 
 export default function TarotPage() {
+  const locale = useLocale();
+  const t = translations[locale];
+
   const [phase, setPhase] = useState<Phase>("input");
   const [question, setQuestion] = useState("");
   const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null);
@@ -261,10 +453,10 @@ export default function TarotPage() {
           >
             <div className="text-4xl mb-3">🔮</div>
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent mb-2">
-              Yes or No 타로
+              {t.title}
             </h1>
             <p className="text-purple-300/70 text-sm">
-              22장의 메이저 아르카나가 답을 알려드립니다
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -280,19 +472,19 @@ export default function TarotPage() {
               >
                 <div className="bg-white/5 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6 mb-4 shadow-xl">
                   <h2 className="text-amber-300 font-semibold text-sm uppercase tracking-wider mb-4 text-center">
-                    ✦ 마음속의 질문을 적어보세요 ✦
+                    {t.inputPrompt}
                   </h2>
                   <input
                     type="text"
                     value={question}
                     onChange={(e) => setQuestion(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="이 사람과 잘 될까?"
+                    placeholder={t.inputPlaceholder}
                     maxLength={60}
                     className="w-full px-4 py-3 rounded-xl bg-white/10 border border-purple-400/30 text-white placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-purple-400/60 text-sm mb-2"
                   />
                   <p className="text-purple-400/50 text-xs text-center mb-4">
-                    예) 이직을 해야 할까? / 이 결정이 맞을까?
+                    {t.inputHint}
                   </p>
                   <motion.button
                     whileHover={{ scale: 1.02 }}
@@ -305,7 +497,7 @@ export default function TarotPage() {
                       boxShadow: question.trim() ? "0 0 20px rgba(245,158,11,0.4)" : "none",
                     }}
                   >
-                    카드 뽑기 ✨
+                    {t.drawBtn}
                   </motion.button>
                 </div>
 
@@ -317,10 +509,9 @@ export default function TarotPage() {
                 {/* Mystical decoration */}
                 <div className="text-center mt-6 space-y-2">
                   <div className="flex justify-center gap-6 text-purple-400/40 text-xs">
-                    <span>♠ 신중함</span>
-                    <span>♥ 사랑</span>
-                    <span>♦ 운</span>
-                    <span>♣ 지혜</span>
+                    {t.mystical.map(({ suit, label }) => (
+                      <span key={suit}>{suit} {label}</span>
+                    ))}
                   </div>
                 </div>
               </motion.div>
@@ -338,12 +529,12 @@ export default function TarotPage() {
                 <div className="bg-white/5 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6 mb-4 shadow-xl">
                   {/* Question display */}
                   <div className="text-center mb-6">
-                    <p className="text-purple-300/60 text-xs uppercase tracking-wider mb-1">당신의 질문</p>
+                    <p className="text-purple-300/60 text-xs uppercase tracking-wider mb-1">{t.yourQuestion}</p>
                     <p className="text-amber-300 font-medium text-sm">&ldquo;{question}&rdquo;</p>
                   </div>
 
                   <h2 className="text-white/80 font-semibold text-sm text-center mb-6">
-                    ✦ 카드 한 장을 선택하세요 ✦
+                    {t.chooseCard}
                   </h2>
 
                   {/* Arc of cards */}
@@ -360,7 +551,7 @@ export default function TarotPage() {
                   </div>
 
                   <p className="text-purple-400/50 text-xs text-center">
-                    직감이 이끄는 카드를 선택하세요
+                    {t.intuitionHint}
                   </p>
                 </div>
               </motion.div>
@@ -377,7 +568,7 @@ export default function TarotPage() {
               >
                 {/* Question display */}
                 <div className="text-center mb-4">
-                  <p className="text-purple-300/60 text-xs uppercase tracking-wider mb-1">당신의 질문</p>
+                  <p className="text-purple-300/60 text-xs uppercase tracking-wider mb-1">{t.yourQuestion}</p>
                   <p className="text-amber-300 font-medium text-sm">&ldquo;{question}&rdquo;</p>
                 </div>
 
@@ -437,7 +628,7 @@ export default function TarotPage() {
                         {/* Advice */}
                         <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 mb-3">
                           <p className="text-amber-300/80 text-xs font-semibold uppercase tracking-wider mb-1 text-center">
-                            ✦ 오늘의 조언
+                            {t.todayAdvice}
                           </p>
                           <p className="text-amber-200/70 text-sm leading-relaxed text-center">
                             {drawnCard.advice}
@@ -447,11 +638,11 @@ export default function TarotPage() {
                         {/* Lucky info */}
                         <div className="grid grid-cols-2 gap-3">
                           <div className="bg-white/5 rounded-xl p-3 text-center">
-                            <p className="text-purple-400/60 text-xs mb-1">행운의 색</p>
+                            <p className="text-purple-400/60 text-xs mb-1">{t.luckyColor}</p>
                             <p className="text-white font-semibold text-sm">{drawnCard.luckyColor}</p>
                           </div>
                           <div className="bg-white/5 rounded-xl p-3 text-center">
-                            <p className="text-purple-400/60 text-xs mb-1">행운의 숫자</p>
+                            <p className="text-purple-400/60 text-xs mb-1">{t.luckyNumber}</p>
                             <p className="text-white font-semibold text-sm">{drawnCard.luckyNumber}</p>
                           </div>
                         </div>
@@ -470,7 +661,7 @@ export default function TarotPage() {
                           onClick={drawAgain}
                           className="flex-1 py-3 rounded-xl font-bold text-sm text-white border border-purple-400/40 bg-white/5 hover:bg-white/10 transition-all"
                         >
-                          다시 뽑기 🃏
+                          {t.drawAgain}
                         </motion.button>
                         <motion.button
                           whileHover={{ scale: 1.02 }}
@@ -481,7 +672,7 @@ export default function TarotPage() {
                             background: "linear-gradient(135deg, #f59e0b, #fbbf24, #f59e0b)",
                           }}
                         >
-                          다른 질문 ✨
+                          {t.newQuestion}
                         </motion.button>
                       </div>
                     </motion.div>
@@ -504,33 +695,19 @@ export default function TarotPage() {
             className="mt-8 bg-white/5 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6"
           >
             <h2 className="text-amber-300 font-bold text-sm uppercase tracking-wider mb-4 text-center">
-              ✦ 자주 묻는 질문
+              {t.faqTitle}
             </h2>
             <div className="space-y-4">
-              <div>
-                <h3 className="text-white/80 font-semibold text-sm mb-1">
-                  타로 카드 결과를 맹신해도 되나요?
-                </h3>
-                <p className="text-purple-300/60 text-xs leading-relaxed">
-                  타로 카드는 재미와 영감을 위한 도구입니다. 결과를 맹신하기보다는 자신의 직관과 상황을 함께 고려해 참고용으로 활용하세요.
-                </p>
-              </div>
-              <div className="border-t border-purple-500/10 pt-4">
-                <h3 className="text-white/80 font-semibold text-sm mb-1">
-                  메이저 아르카나가 무엇인가요?
-                </h3>
-                <p className="text-purple-300/60 text-xs leading-relaxed">
-                  타로 78장 중 22장의 주요 카드로, 바보(0번)부터 세계(21번)까지 삶의 중요한 여정을 상징합니다. 강력한 메시지를 전달해 Yes or No 타로에 최적화되어 있습니다.
-                </p>
-              </div>
-              <div className="border-t border-purple-500/10 pt-4">
-                <h3 className="text-white/80 font-semibold text-sm mb-1">
-                  같은 질문으로 여러 번 뽑아도 되나요?
-                </h3>
-                <p className="text-purple-300/60 text-xs leading-relaxed">
-                  물론입니다! 매번 랜덤으로 카드가 선택됩니다. 다만 타로는 그 순간의 에너지를 반영하므로, 다른 결과가 나올 수 있어요.
-                </p>
-              </div>
+              {t.faqs.map((faq, i) => (
+                <div key={i} className={i > 0 ? "border-t border-purple-500/10 pt-4" : ""}>
+                  <h3 className="text-white/80 font-semibold text-sm mb-1">
+                    {faq.q}
+                  </h3>
+                  <p className="text-purple-300/60 text-xs leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
             </div>
           </motion.section>
         </div>

@@ -4,6 +4,110 @@ import { useState, useRef, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
+import { useLocale } from "@/hooks/useLocale";
+
+const translations = {
+  ko: {
+    title: "랜덤 룰렛",
+    subtitle: "고민될 때는 룰렛에 맡겨! 돌리면 결정됩니다",
+    presetsLabel: "프리셋",
+    presets: {
+      "점심 메뉴": ["한식", "중식", "일식", "양식", "분식", "패스트푸드"],
+      "벌칙 게임": ["노래 부르기", "춤추기", "개인기", "사랑해 말하기", "윗몸일으키기"],
+      "순서 정하기": ["1번", "2번", "3번", "4번", "5번"],
+    } as Record<string, string[]>,
+    itemsLabel: (count: number) => `항목 관리 (${count}/20)`,
+    inputPlaceholder: "항목 입력...",
+    btnAdd: "추가",
+    btnSpin: "돌리기!",
+    btnSpinning: "...",
+    resultLabel: "결과",
+    btnRetry: "다시 돌리기",
+    minItemsWarning: "최소 2개 이상의 항목이 필요합니다",
+    ariaRemove: (item: string) => `${item} 삭제`,
+    defaultItems: ["한식", "중식", "일식", "양식", "분식", "패스트푸드"],
+  },
+  en: {
+    title: "Random Roulette",
+    subtitle: "Can't decide? Spin the wheel and let fate choose!",
+    presetsLabel: "Presets",
+    presets: {
+      "Lunch": ["Korean", "Chinese", "Japanese", "Western", "Snacks", "Fast Food"],
+      "Penalty Game": ["Sing a song", "Dance", "Do a trick", "Say I love you", "Do sit-ups"],
+      "Pick Order": ["1st", "2nd", "3rd", "4th", "5th"],
+    } as Record<string, string[]>,
+    itemsLabel: (count: number) => `Items (${count}/20)`,
+    inputPlaceholder: "Add an item...",
+    btnAdd: "Add",
+    btnSpin: "Spin!",
+    btnSpinning: "...",
+    resultLabel: "Result",
+    btnRetry: "Spin Again",
+    minItemsWarning: "At least 2 items are required",
+    ariaRemove: (item: string) => `Remove ${item}`,
+    defaultItems: ["Korean", "Chinese", "Japanese", "Western", "Snacks", "Fast Food"],
+  },
+  ja: {
+    title: "ランダムルーレット",
+    subtitle: "迷ったらルーレットにお任せ！回せば決まります",
+    presetsLabel: "プリセット",
+    presets: {
+      "ランチメニュー": ["韓国料理", "中華", "和食", "洋食", "軽食", "ファストフード"],
+      "罰ゲーム": ["歌を歌う", "踊る", "一芸", "愛してると言う", "腹筋"],
+      "順番決め": ["1番", "2番", "3番", "4番", "5番"],
+    } as Record<string, string[]>,
+    itemsLabel: (count: number) => `項目管理 (${count}/20)`,
+    inputPlaceholder: "項目を入力...",
+    btnAdd: "追加",
+    btnSpin: "回す！",
+    btnSpinning: "...",
+    resultLabel: "結果",
+    btnRetry: "もう一度",
+    minItemsWarning: "最低2つ以上の項目が必要です",
+    ariaRemove: (item: string) => `${item}を削除`,
+    defaultItems: ["韓国料理", "中華", "和食", "洋食", "軽食", "ファストフード"],
+  },
+  zh: {
+    title: "随机转盘",
+    subtitle: "犹豫不决？转动轮盘让命运决定！",
+    presetsLabel: "预设",
+    presets: {
+      "午餐菜单": ["韩餐", "中餐", "日料", "西餐", "小吃", "快餐"],
+      "惩罚游戏": ["唱歌", "跳舞", "表演才艺", "说我爱你", "做仰卧起坐"],
+      "决定顺序": ["第1", "第2", "第3", "第4", "第5"],
+    } as Record<string, string[]>,
+    itemsLabel: (count: number) => `项目管理 (${count}/20)`,
+    inputPlaceholder: "输入项目...",
+    btnAdd: "添加",
+    btnSpin: "旋转！",
+    btnSpinning: "...",
+    resultLabel: "结果",
+    btnRetry: "再转一次",
+    minItemsWarning: "至少需要2个项目",
+    ariaRemove: (item: string) => `删除${item}`,
+    defaultItems: ["韩餐", "中餐", "日料", "西餐", "小吃", "快餐"],
+  },
+  es: {
+    title: "Ruleta aleatoria",
+    subtitle: "¿No puedes decidir? ¡Gira la ruleta y deja que el destino elija!",
+    presetsLabel: "Preajustes",
+    presets: {
+      "Almuerzo": ["Coreano", "Chino", "Japonés", "Occidental", "Snacks", "Comida rápida"],
+      "Juego de penalti": ["Cantar", "Bailar", "Hacer un truco", "Decir te quiero", "Hacer abdominales"],
+      "Elegir orden": ["1°", "2°", "3°", "4°", "5°"],
+    } as Record<string, string[]>,
+    itemsLabel: (count: number) => `Elementos (${count}/20)`,
+    inputPlaceholder: "Agregar elemento...",
+    btnAdd: "Agregar",
+    btnSpin: "¡Girar!",
+    btnSpinning: "...",
+    resultLabel: "Resultado",
+    btnRetry: "Girar de nuevo",
+    minItemsWarning: "Se necesitan al menos 2 elementos",
+    ariaRemove: (item: string) => `Eliminar ${item}`,
+    defaultItems: ["Coreano", "Chino", "Japonés", "Occidental", "Snacks", "Comida rápida"],
+  },
+};
 
 const COLORS = [
   "#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7",
@@ -11,12 +115,6 @@ const COLORS = [
   "#F1948A", "#82E0AA", "#F8C471", "#AED6F1", "#D2B4DE",
   "#A3E4D7", "#FAD7A0", "#A9CCE3", "#D5DBDB", "#EDBB99",
 ];
-
-const PRESETS: Record<string, string[]> = {
-  "점심 메뉴": ["한식", "중식", "일식", "양식", "분식", "패스트푸드"],
-  "벌칙 게임": ["노래 부르기", "춤추기", "개인기", "사랑해 말하기", "윗몸일으키기"],
-  "순서 정하기": ["1번", "2번", "3번", "4번", "5번"],
-};
 
 // Build a conic-gradient CSS string from items and colors
 function buildConicGradient(items: string[]): string {
@@ -35,13 +133,7 @@ function buildConicGradient(items: string[]): string {
 // Given final rotation (cumulative degrees), determine winning index
 function getWinnerIndex(totalRotation: number, count: number): number {
   const segmentDeg = 360 / count;
-  // The pointer is at the top (12 o'clock = 0 deg in CSS = 270 deg mathematically)
-  // Wheel rotates clockwise. Segment 0 starts at top going clockwise.
-  // After rotation R, segment that lands at pointer = floor((R % 360) / segmentDeg)
   const normalized = ((totalRotation % 360) + 360) % 360;
-  // Segment index is calculated from how far we rotated into the wheel
-  // Since segment 0 was originally at top, after rotating `normalized` deg,
-  // the segment at top is the one that was `normalized` degrees behind the start.
   const idx = (count - Math.floor(normalized / segmentDeg)) % count;
   return idx;
 }
@@ -92,7 +184,10 @@ function Confetti({ active }: { active: boolean }) {
 }
 
 export default function RoulettePage() {
-  const [items, setItems] = useState<string[]>(["한식", "중식", "일식", "양식", "분식", "패스트푸드"]);
+  const locale = useLocale();
+  const t = translations[locale];
+
+  const [items, setItems] = useState<string[]>(t.defaultItems);
   const [inputValue, setInputValue] = useState("");
   const [isSpinning, setIsSpinning] = useState(false);
   const [rotation, setRotation] = useState(0);
@@ -119,12 +214,12 @@ export default function RoulettePage() {
   }, [items.length]);
 
   const applyPreset = useCallback((presetName: string) => {
-    setItems(PRESETS[presetName]);
+    setItems(t.presets[presetName]);
     setWinner(null);
     setShowResult(false);
     setRotation(0);
     totalRotationRef.current = 0;
-  }, []);
+  }, [t.presets]);
 
   const spin = useCallback(() => {
     if (isSpinning || items.length < 2) return;
@@ -133,7 +228,6 @@ export default function RoulettePage() {
     setWinner(null);
     setConfetti(false);
 
-    // Random: 3-5 full rotations + random offset
     const extraRotations = (3 + Math.floor(Math.random() * 3)) * 360;
     const randomOffset = Math.random() * 360;
     const delta = extraRotations + randomOffset;
@@ -142,7 +236,6 @@ export default function RoulettePage() {
     totalRotationRef.current = newTotal;
     setRotation(newTotal);
 
-    // Duration: 4s, matches CSS transition
     setTimeout(() => {
       const winnerIdx = getWinnerIndex(newTotal, items.length);
       setWinner(items[winnerIdx]);
@@ -172,10 +265,10 @@ export default function RoulettePage() {
             className="text-center mb-8"
           >
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent mb-2">
-              랜덤 룰렛
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              고민될 때는 룰렛에 맡겨! 돌리면 결정됩니다
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -218,7 +311,7 @@ export default function RoulettePage() {
                 {items.map((item, i) => {
                   const angleDeg = i * segmentDeg + segmentDeg / 2;
                   const angleRad = (angleDeg - 90) * (Math.PI / 180);
-                  const radius = 34; // % from center
+                  const radius = 34;
                   const x = 50 + radius * Math.cos(angleRad);
                   const y = 50 + radius * Math.sin(angleRad);
                   return (
@@ -258,7 +351,7 @@ export default function RoulettePage() {
                 className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-white dark:bg-slate-900 shadow-lg border-4 border-violet-400 dark:border-violet-500 flex items-center justify-center font-extrabold text-violet-600 dark:text-violet-400 text-sm transition-all hover:scale-105 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{ zIndex: 10 }}
               >
-                {isSpinning ? "..." : "돌리기!"}
+                {isSpinning ? t.btnSpinning : t.btnSpin}
               </button>
             </div>
           </motion.div>
@@ -275,7 +368,7 @@ export default function RoulettePage() {
                 className="relative mb-6 bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-violet-200 dark:border-violet-700 text-center overflow-hidden"
               >
                 <Confetti active={confetti} />
-                <p className="text-slate-500 dark:text-slate-400 text-sm mb-2">결과</p>
+                <p className="text-slate-500 dark:text-slate-400 text-sm mb-2">{t.resultLabel}</p>
                 <motion.p
                   initial={{ scale: 0.5 }}
                   animate={{ scale: 1 }}
@@ -289,7 +382,7 @@ export default function RoulettePage() {
                   disabled={isSpinning}
                   className="px-6 py-2 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-60"
                 >
-                  다시 돌리기
+                  {t.btnRetry}
                 </button>
               </motion.div>
             )}
@@ -303,10 +396,10 @@ export default function RoulettePage() {
             className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mb-4"
           >
             <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-              프리셋
+              {t.presetsLabel}
             </h2>
             <div className="flex flex-wrap gap-2">
-              {Object.keys(PRESETS).map((name) => (
+              {Object.keys(t.presets).map((name) => (
                 <button
                   key={name}
                   onClick={() => applyPreset(name)}
@@ -328,7 +421,7 @@ export default function RoulettePage() {
             className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700"
           >
             <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
-              항목 관리 ({items.length}/20)
+              {t.itemsLabel(items.length)}
             </h2>
 
             {/* Input row */}
@@ -338,7 +431,7 @@ export default function RoulettePage() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="항목 입력..."
+                placeholder={t.inputPlaceholder}
                 maxLength={20}
                 className="flex-1 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400 text-sm"
               />
@@ -347,7 +440,7 @@ export default function RoulettePage() {
                 disabled={!inputValue.trim() || items.length >= 20}
                 className="px-4 py-2 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
               >
-                추가
+                {t.btnAdd}
               </button>
             </div>
 
@@ -371,7 +464,7 @@ export default function RoulettePage() {
                       onClick={() => removeItem(i)}
                       disabled={items.length <= 2}
                       className="w-5 h-5 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-black/20 transition-colors disabled:opacity-40 disabled:cursor-not-allowed text-xs font-bold ml-0.5"
-                      aria-label={`${item} 삭제`}
+                      aria-label={t.ariaRemove(item)}
                     >
                       ×
                     </button>
@@ -381,7 +474,7 @@ export default function RoulettePage() {
             </div>
 
             {items.length < 2 && (
-              <p className="text-xs text-rose-500 mt-2">최소 2개 이상의 항목이 필요합니다</p>
+              <p className="text-xs text-rose-500 mt-2">{t.minItemsWarning}</p>
             )}
           </motion.div>
 

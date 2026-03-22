@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import worldcupData from "@/data/worldcup.json";
+import { useLocale } from "@/hooks/useLocale";
 
 type Candidate = {
   id: number;
@@ -24,6 +25,250 @@ type Topic = {
 type Phase = "select" | "tournament" | "result";
 type RoundSize = 4 | 8 | 16;
 
+const translations = {
+  ko: {
+    title: "이상형 월드컵",
+    subtitle: "토너먼트로 나의 진짜 최애를 찾아보세요!",
+    topicSelectTitle: "주제 선택",
+    topicSelectSub: "월드컵 주제를 골라주세요",
+    roundSelectLabel: "라운드 선택",
+    startButton: (emoji: string, name: string) => `${emoji} ${name} 시작!`,
+    faqTitle: "자주 묻는 질문",
+    faqs: [
+      {
+        q: "이상형 월드컵이란?",
+        a: "두 후보 중 하나를 반복 선택해 최종 우승자를 가리는 토너먼트 게임입니다.",
+      },
+      {
+        q: "몇 강부터 시작할 수 있나요?",
+        a: "16강, 8강, 4강 중 원하는 라운드를 선택해 시작할 수 있습니다.",
+      },
+      {
+        q: "어떤 주제가 있나요?",
+        a: "음식, 여행지, 동물, 취미, 계절, 디저트 총 6가지 주제가 준비되어 있습니다.",
+      },
+    ],
+    matchLabel: (progress: string) => `${progress} 경기`,
+    choosePrompt: "둘 중 더 좋아하는 것을 선택하세요!",
+    hintText: "카드를 눌러 선택하세요",
+    progressTitle: "진행 현황",
+    roundWinnersPlaceholder: "이번 라운드 승자가 여기 표시됩니다",
+    championLabel: "최종 우승",
+    yourFavoriteIs: "당신의 최애는",
+    favoriteNameSuffix: "입니다!",
+    tournamentComplete: (topicName: string, roundSize: number) =>
+      `${topicName} ${roundSize}강 토너먼트 완료`,
+    restartButton: "🔄 다시 하기",
+    changeTopicButton: "📋 다른 주제",
+    shareButton: "🔗 결과 공유",
+    copiedButton: "✓ 복사됨!",
+    bracketTitle: "토너먼트 브라켓",
+    roundName: (total: number) => {
+      if (total === 16) return "16강";
+      if (total === 8) return "8강";
+      if (total === 4) return "4강";
+      if (total === 2) return "결승";
+      return `${total}강`;
+    },
+    shareText: (topicName: string, championEmoji: string, championName: string) =>
+      `이상형 월드컵 결과: ${topicName}에서 "${championEmoji} ${championName}"이(가) 최종 우승했습니다! | PickPlay`,
+    shareTitle: "이상형 월드컵 결과",
+    roundSizeLabel: (size: number) => `${size}강`,
+  },
+  en: {
+    title: "Ideal Type Worldcup",
+    subtitle: "Find your ultimate favorite through a tournament!",
+    topicSelectTitle: "Choose a Topic",
+    topicSelectSub: "Pick a worldcup topic to get started",
+    roundSelectLabel: "Select Round",
+    startButton: (emoji: string, name: string) => `${emoji} Start ${name}!`,
+    faqTitle: "FAQ",
+    faqs: [
+      {
+        q: "What is Ideal Type Worldcup?",
+        a: "A tournament game where you repeatedly choose between two options until one champion remains.",
+      },
+      {
+        q: "What round sizes are available?",
+        a: "You can start from Top 16, Top 8, or Top 4.",
+      },
+      {
+        q: "What topics are available?",
+        a: "Food, Travel destinations, Animals, Hobbies, Seasons, and Desserts — 6 topics in total.",
+      },
+    ],
+    matchLabel: (progress: string) => `Match ${progress}`,
+    choosePrompt: "Pick the one you like more!",
+    hintText: "Tap a card to choose",
+    progressTitle: "Round Progress",
+    roundWinnersPlaceholder: "Round winners will appear here",
+    championLabel: "Champion",
+    yourFavoriteIs: "Your ultimate favorite is",
+    favoriteNameSuffix: "!",
+    tournamentComplete: (topicName: string, roundSize: number) =>
+      `${topicName} Top ${roundSize} tournament complete`,
+    restartButton: "🔄 Play Again",
+    changeTopicButton: "📋 Change Topic",
+    shareButton: "🔗 Share Result",
+    copiedButton: "✓ Copied!",
+    bracketTitle: "Tournament Bracket",
+    roundName: (total: number) => {
+      if (total === 2) return "Final";
+      if (total === 4) return "Semi-final";
+      if (total === 8) return "Quarter-final";
+      return `Top ${total}`;
+    },
+    shareText: (topicName: string, championEmoji: string, championName: string) =>
+      `Ideal Type Worldcup result: "${championEmoji} ${championName}" won the ${topicName} tournament! | PickPlay`,
+    shareTitle: "Ideal Type Worldcup Result",
+    roundSizeLabel: (size: number) => `Top ${size}`,
+  },
+  ja: {
+    title: "理想型ワールドカップ",
+    subtitle: "トーナメントで本当のお気に入りを見つけよう！",
+    topicSelectTitle: "テーマ選択",
+    topicSelectSub: "ワールドカップのテーマを選んでください",
+    roundSelectLabel: "ラウンド選択",
+    startButton: (emoji: string, name: string) => `${emoji} ${name} スタート！`,
+    faqTitle: "よくある質問",
+    faqs: [
+      {
+        q: "理想型ワールドカップとは？",
+        a: "2つの候補から1つを繰り返し選んで最終優勝者を決めるトーナメントゲームです。",
+      },
+      {
+        q: "何強から始められますか？",
+        a: "16強、8強、4強の中から好きなラウンドを選択できます。",
+      },
+      {
+        q: "どんなテーマがありますか？",
+        a: "料理、旅行先、動物、趣味、季節、デザートの6テーマが用意されています。",
+      },
+    ],
+    matchLabel: (progress: string) => `${progress} 試合`,
+    choosePrompt: "どちらがより好きですか？",
+    hintText: "カードをタップして選んでください",
+    progressTitle: "進行状況",
+    roundWinnersPlaceholder: "このラウンドの勝者がここに表示されます",
+    championLabel: "最終優勝",
+    yourFavoriteIs: "あなたの推しは",
+    favoriteNameSuffix: "です！",
+    tournamentComplete: (topicName: string, roundSize: number) =>
+      `${topicName} ${roundSize}強トーナメント完了`,
+    restartButton: "🔄 もう一度",
+    changeTopicButton: "📋 テーマ変更",
+    shareButton: "🔗 結果をシェア",
+    copiedButton: "✓ コピー済み！",
+    bracketTitle: "トーナメントブラケット",
+    roundName: (total: number) => {
+      if (total === 2) return "決勝";
+      if (total === 4) return "準決勝";
+      if (total === 8) return "準々決勝";
+      return `${total}強`;
+    },
+    shareText: (topicName: string, championEmoji: string, championName: string) =>
+      `理想型ワールドカップ結果：${topicName}で「${championEmoji} ${championName}」が最終優勝！ | PickPlay`,
+    shareTitle: "理想型ワールドカップ結果",
+    roundSizeLabel: (size: number) => `${size}強`,
+  },
+  zh: {
+    title: "理想型世界杯",
+    subtitle: "通过淘汰赛找出你真正的最爱！",
+    topicSelectTitle: "选择主题",
+    topicSelectSub: "选择世界杯主题",
+    roundSelectLabel: "选择轮次",
+    startButton: (emoji: string, name: string) => `${emoji} 开始${name}！`,
+    faqTitle: "常见问题",
+    faqs: [
+      {
+        q: "什么是理想型世界杯？",
+        a: "通过反复在两个选项中选一个，最终决出冠军的淘汰赛游戏。",
+      },
+      {
+        q: "可以从哪个轮次开始？",
+        a: "可以选择16强、8强或4强开始。",
+      },
+      {
+        q: "有哪些主题？",
+        a: "食物、旅游目的地、动物、爱好、季节、甜点，共6个主题。",
+      },
+    ],
+    matchLabel: (progress: string) => `第${progress}场`,
+    choosePrompt: "选择你更喜欢的一个！",
+    hintText: "点击卡片进行选择",
+    progressTitle: "进行状况",
+    roundWinnersPlaceholder: "本轮胜者将显示在此处",
+    championLabel: "最终冠军",
+    yourFavoriteIs: "你的最爱是",
+    favoriteNameSuffix: "！",
+    tournamentComplete: (topicName: string, roundSize: number) =>
+      `${topicName} ${roundSize}强淘汰赛完成`,
+    restartButton: "🔄 再玩一次",
+    changeTopicButton: "📋 换主题",
+    shareButton: "🔗 分享结果",
+    copiedButton: "✓ 已复制！",
+    bracketTitle: "淘汰赛对阵图",
+    roundName: (total: number) => {
+      if (total === 2) return "决赛";
+      if (total === 4) return "半决赛";
+      if (total === 8) return "八强赛";
+      return `${total}强`;
+    },
+    shareText: (topicName: string, championEmoji: string, championName: string) =>
+      `理想型世界杯结果：${topicName}中「${championEmoji} ${championName}」最终夺冠！ | PickPlay`,
+    shareTitle: "理想型世界杯结果",
+    roundSizeLabel: (size: number) => `${size}强`,
+  },
+  es: {
+    title: "Worldcup del Tipo Ideal",
+    subtitle: "¡Encuentra tu favorito definitivo en un torneo!",
+    topicSelectTitle: "Elige un Tema",
+    topicSelectSub: "Selecciona el tema del worldcup",
+    roundSelectLabel: "Seleccionar Ronda",
+    startButton: (emoji: string, name: string) => `${emoji} ¡Empezar ${name}!`,
+    faqTitle: "Preguntas frecuentes",
+    faqs: [
+      {
+        q: "¿Qué es el Worldcup del Tipo Ideal?",
+        a: "Un juego de torneo en el que eliges repetidamente entre dos opciones hasta que queda un campeón.",
+      },
+      {
+        q: "¿Desde qué ronda puedo empezar?",
+        a: "Puedes empezar desde los 16, 8 o 4 mejores.",
+      },
+      {
+        q: "¿Qué temas hay disponibles?",
+        a: "Comida, Destinos de viaje, Animales, Hobbies, Estaciones y Postres — 6 temas en total.",
+      },
+    ],
+    matchLabel: (progress: string) => `Partido ${progress}`,
+    choosePrompt: "¡Elige el que más te gusta!",
+    hintText: "Toca una carta para elegir",
+    progressTitle: "Progreso",
+    roundWinnersPlaceholder: "Los ganadores de la ronda aparecerán aquí",
+    championLabel: "Campeón Final",
+    yourFavoriteIs: "Tu favorito definitivo es",
+    favoriteNameSuffix: "!",
+    tournamentComplete: (topicName: string, roundSize: number) =>
+      `Torneo Top ${roundSize} de ${topicName} completado`,
+    restartButton: "🔄 Jugar de Nuevo",
+    changeTopicButton: "📋 Cambiar Tema",
+    shareButton: "🔗 Compartir Resultado",
+    copiedButton: "✓ ¡Copiado!",
+    bracketTitle: "Cuadro del Torneo",
+    roundName: (total: number) => {
+      if (total === 2) return "Final";
+      if (total === 4) return "Semifinal";
+      if (total === 8) return "Cuartos de final";
+      return `Top ${total}`;
+    },
+    shareText: (topicName: string, championEmoji: string, championName: string) =>
+      `Resultado del Worldcup: "${championEmoji} ${championName}" ganó el torneo de ${topicName}! | PickPlay`,
+    shareTitle: "Resultado del Worldcup del Tipo Ideal",
+    roundSizeLabel: (size: number) => `Top ${size}`,
+  },
+};
+
 function shuffle<T>(arr: T[]): T[] {
   const copy = [...arr];
   for (let i = copy.length - 1; i > 0; i--) {
@@ -33,19 +278,14 @@ function shuffle<T>(arr: T[]): T[] {
   return copy;
 }
 
-function getRoundName(total: number): string {
-  if (total === 16) return "16강";
-  if (total === 8) return "8강";
-  if (total === 4) return "4강";
-  if (total === 2) return "결승";
-  return `${total}강`;
-}
-
 const ROUND_SIZES: RoundSize[] = [16, 8, 4];
 
 const topics = worldcupData.topics as Topic[];
 
 export default function WorldcupPage() {
+  const locale = useLocale();
+  const t = translations[locale];
+
   const [phase, setPhase] = useState<Phase>("select");
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
   const [roundSize, setRoundSize] = useState<RoundSize>(16);
@@ -61,7 +301,7 @@ export default function WorldcupPage() {
 
   // Current round total matches
   const totalMatches = useMemo(() => Math.floor(bracket.length / 2), [bracket]);
-  const currentRoundName = useMemo(() => getRoundName(bracket.length), [bracket]);
+  const currentRoundName = useMemo(() => t.roundName(bracket.length), [bracket, t]);
   const matchProgress = `${matchIndex + 1}/${totalMatches}`;
 
   const leftCandidate = bracket[matchIndex * 2] ?? null;
@@ -132,16 +372,16 @@ export default function WorldcupPage() {
 
   const handleShare = useCallback(() => {
     if (!champion || !selectedTopic) return;
-    const text = `이상형 월드컵 결과: ${selectedTopic.name}에서 "${champion.emoji} ${champion.name}"이(가) 최종 우승했습니다! | PickPlay`;
+    const text = t.shareText(selectedTopic.name, champion.emoji, champion.name);
     if (navigator.share) {
-      navigator.share({ title: "이상형 월드컵 결과", text }).catch(() => {});
+      navigator.share({ title: t.shareTitle, text }).catch(() => {});
     } else {
       navigator.clipboard.writeText(text).then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }).catch(() => {});
     }
-  }, [champion, selectedTopic]);
+  }, [champion, selectedTopic, t]);
 
   // Progress bar for tournament
   const totalRounds = useMemo(() => {
@@ -173,10 +413,10 @@ export default function WorldcupPage() {
             className="text-center mb-8"
           >
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-transparent mb-2">
-              이상형 월드컵
+              {t.title}
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm">
-              토너먼트로 나의 진짜 최애를 찾아보세요!
+              {t.subtitle}
             </p>
           </motion.div>
 
@@ -194,10 +434,10 @@ export default function WorldcupPage() {
               >
                 <div className="text-center">
                   <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-1">
-                    주제 선택
+                    {t.topicSelectTitle}
                   </h2>
                   <p className="text-sm text-slate-400 dark:text-slate-500">
-                    월드컵 주제를 골라주세요
+                    {t.topicSelectSub}
                   </p>
                 </div>
 
@@ -249,7 +489,7 @@ export default function WorldcupPage() {
                     className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm"
                   >
                     <p className="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3">
-                      라운드 선택
+                      {t.roundSelectLabel}
                     </p>
                     <div className="flex gap-3 mb-5">
                       {ROUND_SIZES.map((size) => (
@@ -262,7 +502,7 @@ export default function WorldcupPage() {
                               : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
                           }`}
                         >
-                          {size}강
+                          {t.roundSizeLabel(size)}
                         </button>
                       ))}
                     </div>
@@ -272,28 +512,15 @@ export default function WorldcupPage() {
                       onClick={() => startTournament(selectedTopic, roundSize)}
                       className="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-500 to-purple-500 text-white font-bold text-lg shadow-md hover:shadow-rose-500/25 transition-shadow"
                     >
-                      {selectedTopic.emoji} {selectedTopic.name} 시작!
+                      {t.startButton(selectedTopic.emoji, selectedTopic.name)}
                     </motion.button>
                   </motion.div>
                 )}
 
                 {/* FAQ Section */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 space-y-4">
-                  <h2 className="text-base font-bold text-slate-700 dark:text-slate-200">자주 묻는 질문</h2>
-                  {[
-                    {
-                      q: "이상형 월드컵이란?",
-                      a: "두 후보 중 하나를 반복 선택해 최종 우승자를 가리는 토너먼트 게임입니다.",
-                    },
-                    {
-                      q: "몇 강부터 시작할 수 있나요?",
-                      a: "16강, 8강, 4강 중 원하는 라운드를 선택해 시작할 수 있습니다.",
-                    },
-                    {
-                      q: "어떤 주제가 있나요?",
-                      a: "음식, 여행지, 동물, 취미, 계절, 디저트 총 6가지 주제가 준비되어 있습니다.",
-                    },
-                  ].map((faq, i) => (
+                  <h2 className="text-base font-bold text-slate-700 dark:text-slate-200">{t.faqTitle}</h2>
+                  {t.faqs.map((faq, i) => (
                     <div key={i}>
                       <p className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">
                         Q. {faq.q}
@@ -322,7 +549,7 @@ export default function WorldcupPage() {
                       {currentRoundName}
                     </span>
                     <span className="text-xs text-slate-400 dark:text-slate-500 font-medium">
-                      {matchProgress} 경기
+                      {t.matchLabel(matchProgress)}
                     </span>
                   </div>
                   <div className="h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
@@ -346,7 +573,7 @@ export default function WorldcupPage() {
                 {/* Prompt */}
                 <div className="text-center">
                   <p className="text-sm font-bold text-slate-600 dark:text-slate-300">
-                    둘 중 더 좋아하는 것을 선택하세요!
+                    {t.choosePrompt}
                   </p>
                 </div>
 
@@ -451,7 +678,7 @@ export default function WorldcupPage() {
                     animate={{ opacity: 1 }}
                     className="text-center text-xs text-slate-400 dark:text-slate-500"
                   >
-                    카드를 눌러 선택하세요
+                    {t.hintText}
                   </motion.p>
                 )}
 
@@ -459,7 +686,7 @@ export default function WorldcupPage() {
                 {roundHistory.length > 0 && (
                   <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200 dark:border-slate-700">
                     <p className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-3 uppercase tracking-wide">
-                      진행 현황
+                      {t.progressTitle}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {winners.map((w) => (
@@ -475,7 +702,7 @@ export default function WorldcupPage() {
                     </div>
                     {winners.length === 0 && (
                       <p className="text-xs text-slate-400 dark:text-slate-500">
-                        이번 라운드 승자가 여기 표시됩니다
+                        {t.roundWinnersPlaceholder}
                       </p>
                     )}
                   </div>
@@ -510,7 +737,7 @@ export default function WorldcupPage() {
                     transition={{ delay: 0.2 }}
                     className="text-sm font-bold text-rose-500 dark:text-rose-400 uppercase tracking-widest mb-4"
                   >
-                    최종 우승
+                    {t.championLabel}
                   </motion.p>
 
                   {/* Champion card */}
@@ -539,12 +766,12 @@ export default function WorldcupPage() {
                     transition={{ delay: 0.5 }}
                     className="text-xl font-extrabold text-slate-800 dark:text-slate-100 mb-1"
                   >
-                    당신의 최애는
+                    {t.yourFavoriteIs}
                     <br />
                     <span className="bg-gradient-to-r from-rose-500 to-purple-500 bg-clip-text text-transparent">
                       {champion.name}
                     </span>
-                    입니다!
+                    {t.favoriteNameSuffix}
                   </motion.h2>
                   <motion.p
                     initial={{ opacity: 0 }}
@@ -552,7 +779,7 @@ export default function WorldcupPage() {
                     transition={{ delay: 0.6 }}
                     className="text-slate-400 dark:text-slate-500 text-sm mb-6"
                   >
-                    {selectedTopic?.name} {roundSize}강 토너먼트 완료
+                    {t.tournamentComplete(selectedTopic?.name ?? "", roundSize)}
                   </motion.p>
 
                   {/* Ad: rectangle */}
@@ -571,7 +798,7 @@ export default function WorldcupPage() {
                       transition={{ delay: 0.65 }}
                       className="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-500 to-purple-500 text-white font-bold text-base shadow-md hover:shadow-rose-500/25 transition-shadow"
                     >
-                      🔄 다시 하기
+                      {t.restartButton}
                     </motion.button>
                     <div className="flex gap-3">
                       <motion.button
@@ -582,7 +809,7 @@ export default function WorldcupPage() {
                         transition={{ delay: 0.7 }}
                         className="flex-1 py-3 rounded-2xl bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
                       >
-                        📋 다른 주제
+                        {t.changeTopicButton}
                       </motion.button>
                       <motion.button
                         whileTap={{ scale: 0.97 }}
@@ -592,7 +819,7 @@ export default function WorldcupPage() {
                         transition={{ delay: 0.75 }}
                         className="flex-1 py-3 rounded-2xl bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-sm hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
                       >
-                        {copied ? "✓ 복사됨!" : "🔗 결과 공유"}
+                        {copied ? t.copiedButton : t.shareButton}
                       </motion.button>
                     </div>
                   </div>
@@ -607,13 +834,13 @@ export default function WorldcupPage() {
                     className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700"
                   >
                     <p className="text-sm font-bold text-slate-600 dark:text-slate-300 mb-4">
-                      토너먼트 브라켓
+                      {t.bracketTitle}
                     </p>
                     <div className="space-y-3">
                       {roundHistory.map((roundCandidates, roundIdx) => (
                         <div key={roundIdx}>
                           <p className="text-xs text-slate-400 dark:text-slate-500 font-semibold mb-2">
-                            {getRoundName(roundCandidates.length)}
+                            {t.roundName(roundCandidates.length)}
                           </p>
                           <div className="flex flex-wrap gap-1.5">
                             {roundCandidates.map((c) => {
