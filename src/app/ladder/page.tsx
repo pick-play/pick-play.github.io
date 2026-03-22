@@ -396,8 +396,6 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
     return { x: pt.x, y: pt.y };
   }, [dashOffset, totalLength]);
 
-  if (points.length < 2) return null;
-
   return (
     <svg
       ref={svgRef}
@@ -406,6 +404,7 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
       width="100%"
       height="100%"
     >
+      {points.length < 2 ? null : <>
       <defs>
         <filter id={`glow-${color.replace("#", "")}`} x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="3" result="blur" />
@@ -480,6 +479,7 @@ function AnimatedPath({ path, color, playerCount, isAnimating, pad }: AnimatedPa
           </circle>
         </>
       )}
+      </>}
     </svg>
   );
 }
