@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "This or That - Balance Game with 50+ Topics",
     description:
       "This vs That! 50+ balance game dilemmas to play with friends and spark great conversations.",
-    url: "https://pick-play.github.io/en/balance-game",
+    url: "https://pick-play.github.io/en/balance-game/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/balance-game",
+    canonical: "https://pick-play.github.io/en/balance-game/",
     languages: {
-      "x-default": "https://pick-play.github.io/balance-game",
-      "ko": "https://pick-play.github.io/balance-game",
-      en: "https://pick-play.github.io/en/balance-game",
-      ja: "https://pick-play.github.io/jp/balance-game",
-      "zh-CN": "https://pick-play.github.io/cn/balance-game",
-      es: "https://pick-play.github.io/es/balance-game",
+      "x-default": "https://pick-play.github.io/balance-game/",
+      "ko": "https://pick-play.github.io/balance-game/",
+      en: "https://pick-play.github.io/en/balance-game/",
+      ja: "https://pick-play.github.io/jp/balance-game/",
+      "zh-CN": "https://pick-play.github.io/cn/balance-game/",
+      es: "https://pick-play.github.io/es/balance-game/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "This or That - Balance Game",
-      url: "https://pick-play.github.io/en/balance-game",
+      url: "https://pick-play.github.io/en/balance-game/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "This or That",
-          item: "https://pick-play.github.io/en/balance-game",
+          item: "https://pick-play.github.io/en/balance-game/",
         },
       ],
     },

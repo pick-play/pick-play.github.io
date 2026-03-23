@@ -19,18 +19,18 @@ export const metadata: Metadata = {
     title: "Herramientas PDF - Unir, Dividir, Convertir y Comprimir",
     description:
       "Une, divide, convierte a JPG y comprime PDFs directamente en tu navegador. Gratis y seguro.",
-    url: "https://pick-play.github.io/es/pdf",
+    url: "https://pick-play.github.io/es/pdf/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - Herramientas PDF" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/es/pdf",
+    canonical: "https://pick-play.github.io/es/pdf/",
     languages: {
-      "x-default": "https://pick-play.github.io/pdf",
-      "ko": "https://pick-play.github.io/pdf",
-      en: "https://pick-play.github.io/en/pdf",
-      ja: "https://pick-play.github.io/jp/pdf",
-      "zh-CN": "https://pick-play.github.io/cn/pdf",
-      es: "https://pick-play.github.io/es/pdf",
+      "x-default": "https://pick-play.github.io/pdf/",
+      "ko": "https://pick-play.github.io/pdf/",
+      en: "https://pick-play.github.io/en/pdf/",
+      ja: "https://pick-play.github.io/jp/pdf/",
+      "zh-CN": "https://pick-play.github.io/cn/pdf/",
+      es: "https://pick-play.github.io/es/pdf/",
     },
   },
 };
@@ -41,7 +41,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Herramientas PDF - Unir, Dividir, Convertir",
-      url: "https://pick-play.github.io/es/pdf",
+      url: "https://pick-play.github.io/es/pdf/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -51,8 +51,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es" },
-        { "@type": "ListItem", position: 2, name: "Herramientas PDF", item: "https://pick-play.github.io/es/pdf" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es/" },
+        { "@type": "ListItem", position: 2, name: "Herramientas PDF", item: "https://pick-play.github.io/es/pdf/" },
       ],
     },
   ],

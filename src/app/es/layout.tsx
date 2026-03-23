@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "¿Qué comer? Juego del mentiroso, formar equipos, rutas de cita - todo en un solo lugar.",
     type: "website",
     locale: "es_ES",
-    url: "https://pick-play.github.io/es",
+    url: "https://pick-play.github.io/es/",
     siteName: "PickPlay",
     images: [
       {
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/es",
+    canonical: "https://pick-play.github.io/es/",
     languages: {
-      "x-default": "https://pick-play.github.io",
-      "ko": "https://pick-play.github.io",
-      en: "https://pick-play.github.io/en",
-      ja: "https://pick-play.github.io/jp",
-      "zh-CN": "https://pick-play.github.io/cn",
-      es: "https://pick-play.github.io/es",
+      "x-default": "https://pick-play.github.io/",
+      "ko": "https://pick-play.github.io/",
+      en: "https://pick-play.github.io/en/",
+      ja: "https://pick-play.github.io/jp/",
+      "zh-CN": "https://pick-play.github.io/cn/",
+      es: "https://pick-play.github.io/es/",
     },
   },
 };
@@ -51,7 +51,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      url: "https://pick-play.github.io/es",
+      url: "https://pick-play.github.io/es/",
       name: "PickPlay",
       publisher: { "@id": "https://pick-play.github.io/#organization" },
       inLanguage: "es",

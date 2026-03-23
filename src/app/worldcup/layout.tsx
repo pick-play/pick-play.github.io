@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "이상형 월드컵 - 나만의 최애를 찾아라!",
     description: "음식, 여행지, 동물, 취미 등 다양한 주제의 이상형 월드컵!",
-    url: "https://pick-play.github.io/worldcup",
+    url: "https://pick-play.github.io/worldcup/",
     images: [
       {
         url: "/og-image.png",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/worldcup" },
+  alternates: { canonical: "https://pick-play.github.io/worldcup/" },
 };
 
 const jsonLd = {
@@ -34,7 +34,7 @@ const jsonLd = {
     {
       "@type": ["WebApplication", "GameApplication"],
       name: "이상형 월드컵 - 나만의 최애를 찾아라!",
-      url: "https://pick-play.github.io/worldcup",
+      url: "https://pick-play.github.io/worldcup/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -48,13 +48,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-play.github.io",
+          item: "https://pick-play.github.io/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "이상형 월드컵",
-          item: "https://pick-play.github.io/worldcup",
+          item: "https://pick-play.github.io/worldcup/",
         },
       ],
     },

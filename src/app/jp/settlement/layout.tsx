@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "割り勘計算 - 公平な精算ツール | PickPlay",
     description:
       "複雑な割り勘もスッキリ。項目別除外、差額分割、最小送金まで対応。",
-    url: "https://pick-play.github.io/jp/settlement",
+    url: "https://pick-play.github.io/jp/settlement/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/settlement",
+    canonical: "https://pick-play.github.io/jp/settlement/",
     languages: {
-      "x-default": "https://pick-play.github.io/settlement",
-      "ko": "https://pick-play.github.io/settlement",
-      en: "https://pick-play.github.io/en/settlement",
-      ja: "https://pick-play.github.io/jp/settlement",
-      "zh-CN": "https://pick-play.github.io/cn/settlement",
-      es: "https://pick-play.github.io/es/settlement",
+      "x-default": "https://pick-play.github.io/settlement/",
+      "ko": "https://pick-play.github.io/settlement/",
+      en: "https://pick-play.github.io/en/settlement/",
+      ja: "https://pick-play.github.io/jp/settlement/",
+      "zh-CN": "https://pick-play.github.io/cn/settlement/",
+      es: "https://pick-play.github.io/es/settlement/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "割り勘計算 - 公平な精算ツール",
-      url: "https://pick-play.github.io/jp/settlement",
+      url: "https://pick-play.github.io/jp/settlement/",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "割り勘計算",
-          item: "https://pick-play.github.io/jp/settlement",
+          item: "https://pick-play.github.io/jp/settlement/",
         },
       ],
     },

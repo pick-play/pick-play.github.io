@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "真心话大冒险 - 派对游戏 | PickPlay",
     description: "392个问题和任务！按难度等级享受派对必备游戏。",
-    url: "https://pick-play.github.io/cn/truth-dare",
+    url: "https://pick-play.github.io/cn/truth-dare/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 真心话大冒险" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/truth-dare",
+    canonical: "https://pick-play.github.io/cn/truth-dare/",
     languages: {
-      "x-default": "https://pick-play.github.io/truth-dare",
-      "ko": "https://pick-play.github.io/truth-dare",
-      "en": "https://pick-play.github.io/en/truth-dare",
-      "ja": "https://pick-play.github.io/jp/truth-dare",
-      "zh-CN": "https://pick-play.github.io/cn/truth-dare",
-      "es": "https://pick-play.github.io/es/truth-dare",
+      "x-default": "https://pick-play.github.io/truth-dare/",
+      "ko": "https://pick-play.github.io/truth-dare/",
+      "en": "https://pick-play.github.io/en/truth-dare/",
+      "ja": "https://pick-play.github.io/jp/truth-dare/",
+      "zh-CN": "https://pick-play.github.io/cn/truth-dare/",
+      "es": "https://pick-play.github.io/es/truth-dare/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "真心话大冒险 - 派对游戏",
-      url: "https://pick-play.github.io/cn/truth-dare",
+      url: "https://pick-play.github.io/cn/truth-dare/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "真心话大冒险", item: "https://pick-play.github.io/cn/truth-dare" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "真心话大冒险", item: "https://pick-play.github.io/cn/truth-dare/" },
       ],
     },
   ],

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "랜덤 자리 배치 - 공정한 좌석 배정 프로그램",
     description:
       "교실, 회의실, 모임 자리를 랜덤으로 배치하세요! 칠판 기준 자리 배치도를 즉시 만들어 드립니다.",
-    url: "https://pick-play.github.io/seat",
+    url: "https://pick-play.github.io/seat/",
     images: [
       {
         url: "/og-image.png",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/seat" },
+  alternates: { canonical: "https://pick-play.github.io/seat/" },
 };
 
 const jsonLd = {
@@ -37,7 +37,7 @@ const jsonLd = {
     {
       "@type": ["WebApplication", "UtilityApplication"],
       name: "랜덤 자리 배치 - 좌석 배정 프로그램",
-      url: "https://pick-play.github.io/seat",
+      url: "https://pick-play.github.io/seat/",
       applicationCategory: "UtilityApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -51,13 +51,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-play.github.io",
+          item: "https://pick-play.github.io/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "랜덤 자리 배치",
-          item: "https://pick-play.github.io/seat",
+          item: "https://pick-play.github.io/seat/",
         },
       ],
     },

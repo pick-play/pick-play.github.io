@@ -12,19 +12,19 @@ export const metadata: Metadata = {
     description: "吃什么？谁是卧底、随机分组、约会路线推荐，一站搞定。",
     type: "website",
     locale: "zh_CN",
-    url: "https://pick-play.github.io/cn",
+    url: "https://pick-play.github.io/cn/",
     siteName: "PickPlay",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 生活方式工具" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn",
+    canonical: "https://pick-play.github.io/cn/",
     languages: {
-      "x-default": "https://pick-play.github.io",
-      "ko": "https://pick-play.github.io",
-      "en": "https://pick-play.github.io/en",
-      "ja": "https://pick-play.github.io/jp",
-      "zh-CN": "https://pick-play.github.io/cn",
-      "es": "https://pick-play.github.io/es",
+      "x-default": "https://pick-play.github.io/",
+      "ko": "https://pick-play.github.io/",
+      "en": "https://pick-play.github.io/en/",
+      "ja": "https://pick-play.github.io/jp/",
+      "zh-CN": "https://pick-play.github.io/cn/",
+      "es": "https://pick-play.github.io/es/",
     },
   },
 };
@@ -34,7 +34,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      url: "https://pick-play.github.io/cn",
+      url: "https://pick-play.github.io/cn/",
       name: "PickPlay",
       publisher: { "@id": "https://pick-play.github.io/#organization" },
       inLanguage: "zh-CN",

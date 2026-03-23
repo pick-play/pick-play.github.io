@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Personality Type Test - Teto or Egen?",
     description:
       "Am I a Teto or an Egen? Discover your personality type with this fun test!",
-    url: "https://pick-play.github.io/en/teto-egen",
+    url: "https://pick-play.github.io/en/teto-egen/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/teto-egen",
+    canonical: "https://pick-play.github.io/en/teto-egen/",
     languages: {
-      "x-default": "https://pick-play.github.io/teto-egen",
-      "ko": "https://pick-play.github.io/teto-egen",
-      en: "https://pick-play.github.io/en/teto-egen",
-      ja: "https://pick-play.github.io/jp/teto-egen",
-      "zh-CN": "https://pick-play.github.io/cn/teto-egen",
-      es: "https://pick-play.github.io/es/teto-egen",
+      "x-default": "https://pick-play.github.io/teto-egen/",
+      "ko": "https://pick-play.github.io/teto-egen/",
+      en: "https://pick-play.github.io/en/teto-egen/",
+      ja: "https://pick-play.github.io/jp/teto-egen/",
+      "zh-CN": "https://pick-play.github.io/cn/teto-egen/",
+      es: "https://pick-play.github.io/es/teto-egen/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Personality Type Test - Teto or Egen?",
-      url: "https://pick-play.github.io/en/teto-egen",
+      url: "https://pick-play.github.io/en/teto-egen/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Teto or Egen Test",
-          item: "https://pick-play.github.io/en/teto-egen",
+          item: "https://pick-play.github.io/en/teto-egen/",
         },
       ],
     },

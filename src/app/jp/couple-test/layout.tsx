@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "カップル相性 - 名前占い | PickPlay",
     description:
       "名前で分かるふたりの相性！5カテゴリーで多角的に分析。",
-    url: "https://pick-play.github.io/jp/couple-test",
+    url: "https://pick-play.github.io/jp/couple-test/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/couple-test",
+    canonical: "https://pick-play.github.io/jp/couple-test/",
     languages: {
-      "x-default": "https://pick-play.github.io/couple-test",
-      "ko": "https://pick-play.github.io/couple-test",
-      en: "https://pick-play.github.io/en/couple-test",
-      ja: "https://pick-play.github.io/jp/couple-test",
-      "zh-CN": "https://pick-play.github.io/cn/couple-test",
-      es: "https://pick-play.github.io/es/couple-test",
+      "x-default": "https://pick-play.github.io/couple-test/",
+      "ko": "https://pick-play.github.io/couple-test/",
+      en: "https://pick-play.github.io/en/couple-test/",
+      ja: "https://pick-play.github.io/jp/couple-test/",
+      "zh-CN": "https://pick-play.github.io/cn/couple-test/",
+      es: "https://pick-play.github.io/es/couple-test/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "カップル相性 - 名前占い",
-      url: "https://pick-play.github.io/jp/couple-test",
+      url: "https://pick-play.github.io/jp/couple-test/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "カップル相性",
-          item: "https://pick-play.github.io/jp/couple-test",
+          item: "https://pick-play.github.io/jp/couple-test/",
         },
       ],
     },

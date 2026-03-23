@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "랜덤 룰렛 - 결정 못할 때 돌려봐",
     description:
       "고민될 때는 룰렛에 맡겨! 커스텀 항목으로 나만의 룰렛을 만들어보세요.",
-    url: "https://pick-play.github.io/roulette",
+    url: "https://pick-play.github.io/roulette/",
     images: [
       {
         url: "/og-image.png",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/roulette" },
+  alternates: { canonical: "https://pick-play.github.io/roulette/" },
 };
 
 const jsonLd = {
@@ -28,7 +28,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "랜덤 룰렛 - 결정 못할 때 돌려봐",
-      url: "https://pick-play.github.io/roulette",
+      url: "https://pick-play.github.io/roulette/",
       applicationCategory: "UtilityApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -42,13 +42,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-play.github.io",
+          item: "https://pick-play.github.io/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "랜덤 룰렛",
-          item: "https://pick-play.github.io/roulette",
+          item: "https://pick-play.github.io/roulette/",
         },
       ],
     },

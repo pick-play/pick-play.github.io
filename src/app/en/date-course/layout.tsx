@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Date Course - Route Recommendations",
     description:
       "200 curated date routes across 10 cities. Find your perfect vibe on our atmosphere map.",
-    url: "https://pick-play.github.io/en/date-course",
+    url: "https://pick-play.github.io/en/date-course/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/date-course",
+    canonical: "https://pick-play.github.io/en/date-course/",
     languages: {
-      "x-default": "https://pick-play.github.io/date-course",
-      "ko": "https://pick-play.github.io/date-course",
-      en: "https://pick-play.github.io/en/date-course",
-      ja: "https://pick-play.github.io/jp/date-course",
-      "zh-CN": "https://pick-play.github.io/cn/date-course",
-      es: "https://pick-play.github.io/es/date-course",
+      "x-default": "https://pick-play.github.io/date-course/",
+      "ko": "https://pick-play.github.io/date-course/",
+      en: "https://pick-play.github.io/en/date-course/",
+      ja: "https://pick-play.github.io/jp/date-course/",
+      "zh-CN": "https://pick-play.github.io/cn/date-course/",
+      es: "https://pick-play.github.io/es/date-course/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Date Course - Route Recommendations",
-      url: "https://pick-play.github.io/en/date-course",
+      url: "https://pick-play.github.io/en/date-course/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Date Course",
-          item: "https://pick-play.github.io/en/date-course",
+          item: "https://pick-play.github.io/en/date-course/",
         },
       ],
     },

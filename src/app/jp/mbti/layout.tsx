@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "MBTI診断 - 20問で分かる性格タイプ | PickPlay",
     description:
       "20問であなたのMBTI性格タイプと相性を診断。16タイプの詳細分析。",
-    url: "https://pick-play.github.io/jp/mbti",
+    url: "https://pick-play.github.io/jp/mbti/",
     images: [
       {
         url: "/og-image.png",
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/mbti",
+    canonical: "https://pick-play.github.io/jp/mbti/",
     languages: {
-      "x-default": "https://pick-play.github.io/mbti",
-      "ko": "https://pick-play.github.io/mbti",
-      en: "https://pick-play.github.io/en/mbti",
-      ja: "https://pick-play.github.io/jp/mbti",
-      "zh-CN": "https://pick-play.github.io/cn/mbti",
-      es: "https://pick-play.github.io/es/mbti",
+      "x-default": "https://pick-play.github.io/mbti/",
+      "ko": "https://pick-play.github.io/mbti/",
+      en: "https://pick-play.github.io/en/mbti/",
+      ja: "https://pick-play.github.io/jp/mbti/",
+      "zh-CN": "https://pick-play.github.io/cn/mbti/",
+      es: "https://pick-play.github.io/es/mbti/",
     },
   },
 };
@@ -51,7 +51,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "MBTI診断 - 20問で分かる性格タイプ",
-      url: "https://pick-play.github.io/jp/mbti",
+      url: "https://pick-play.github.io/jp/mbti/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -65,13 +65,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "MBTI診断",
-          item: "https://pick-play.github.io/jp/mbti",
+          item: "https://pick-play.github.io/jp/mbti/",
         },
       ],
     },

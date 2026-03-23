@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Lucky Draw - Random Picker",
     description:
       "Fair random drawing with dramatic card-flip reveals! Who will be chosen?",
-    url: "https://pick-play.github.io/en/draw",
+    url: "https://pick-play.github.io/en/draw/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/draw",
+    canonical: "https://pick-play.github.io/en/draw/",
     languages: {
-      "x-default": "https://pick-play.github.io/draw",
-      "ko": "https://pick-play.github.io/draw",
-      en: "https://pick-play.github.io/en/draw",
-      ja: "https://pick-play.github.io/jp/draw",
-      "zh-CN": "https://pick-play.github.io/cn/draw",
-      es: "https://pick-play.github.io/es/draw",
+      "x-default": "https://pick-play.github.io/draw/",
+      "ko": "https://pick-play.github.io/draw/",
+      en: "https://pick-play.github.io/en/draw/",
+      ja: "https://pick-play.github.io/jp/draw/",
+      "zh-CN": "https://pick-play.github.io/cn/draw/",
+      es: "https://pick-play.github.io/es/draw/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Lucky Draw - Random Picker",
-      url: "https://pick-play.github.io/en/draw",
+      url: "https://pick-play.github.io/en/draw/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Lucky Draw",
-          item: "https://pick-play.github.io/en/draw",
+          item: "https://pick-play.github.io/en/draw/",
         },
       ],
     },

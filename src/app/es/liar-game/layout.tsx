@@ -18,18 +18,18 @@ export const metadata: Metadata = {
     title: "Juego del Mentiroso - ¡Encuentra al Impostol!",
     description:
       "¡Encuentra al mentiroso entre tus amigos! El juego de fiesta definitivo con 8 temas diferentes.",
-    url: "https://pick-play.github.io/es/liar-game",
+    url: "https://pick-play.github.io/es/liar-game/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - Juego del Mentiroso" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/es/liar-game",
+    canonical: "https://pick-play.github.io/es/liar-game/",
     languages: {
-      "x-default": "https://pick-play.github.io/liar-game",
-      "ko": "https://pick-play.github.io/liar-game",
-      en: "https://pick-play.github.io/en/liar-game",
-      ja: "https://pick-play.github.io/jp/liar-game",
-      "zh-CN": "https://pick-play.github.io/cn/liar-game",
-      es: "https://pick-play.github.io/es/liar-game",
+      "x-default": "https://pick-play.github.io/liar-game/",
+      "ko": "https://pick-play.github.io/liar-game/",
+      en: "https://pick-play.github.io/en/liar-game/",
+      ja: "https://pick-play.github.io/jp/liar-game/",
+      "zh-CN": "https://pick-play.github.io/cn/liar-game/",
+      es: "https://pick-play.github.io/es/liar-game/",
     },
   },
 };
@@ -40,7 +40,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Juego del Mentiroso - Juego de Fiesta",
-      url: "https://pick-play.github.io/es/liar-game",
+      url: "https://pick-play.github.io/es/liar-game/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -50,8 +50,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es" },
-        { "@type": "ListItem", position: 2, name: "Juego del Mentiroso", item: "https://pick-play.github.io/es/liar-game" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es/" },
+        { "@type": "ListItem", position: 2, name: "Juego del Mentiroso", item: "https://pick-play.github.io/es/liar-game/" },
       ],
     },
   ],

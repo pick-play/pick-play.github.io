@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "ワードクイズ - 文字当てゲーム | PickPlay",
     description:
       "頭文字だけで単語を当てよう！ヒントとタイマー付きワードクイズ。",
-    url: "https://pick-play.github.io/jp/chosung-quiz",
+    url: "https://pick-play.github.io/jp/chosung-quiz/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/chosung-quiz",
+    canonical: "https://pick-play.github.io/jp/chosung-quiz/",
     languages: {
-      "x-default": "https://pick-play.github.io/chosung-quiz",
-      "ko": "https://pick-play.github.io/chosung-quiz",
-      en: "https://pick-play.github.io/en/chosung-quiz",
-      ja: "https://pick-play.github.io/jp/chosung-quiz",
-      "zh-CN": "https://pick-play.github.io/cn/chosung-quiz",
-      es: "https://pick-play.github.io/es/chosung-quiz",
+      "x-default": "https://pick-play.github.io/chosung-quiz/",
+      "ko": "https://pick-play.github.io/chosung-quiz/",
+      en: "https://pick-play.github.io/en/chosung-quiz/",
+      ja: "https://pick-play.github.io/jp/chosung-quiz/",
+      "zh-CN": "https://pick-play.github.io/cn/chosung-quiz/",
+      es: "https://pick-play.github.io/es/chosung-quiz/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "ワードクイズ - 文字当てゲーム",
-      url: "https://pick-play.github.io/jp/chosung-quiz",
+      url: "https://pick-play.github.io/jp/chosung-quiz/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "ワードクイズ",
-          item: "https://pick-play.github.io/jp/chosung-quiz",
+          item: "https://pick-play.github.io/jp/chosung-quiz/",
         },
       ],
     },

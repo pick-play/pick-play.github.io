@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "PDF 도구 - 합치기, 분할, 변환, 압축 | PickPlay",
     description:
       "PDF 합치기, 분할, JPG 변환, 압축, 페이지 편집까지. 모든 작업이 브라우저에서 처리됩니다.",
-    url: "https://pick-play.github.io/pdf",
+    url: "https://pick-play.github.io/pdf/",
     images: [
       {
         url: "/og-image.png",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/pdf",
+    canonical: "https://pick-play.github.io/pdf/",
   },
 };
 
@@ -42,7 +42,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "PDF 도구",
       description: "PDF 합치기, 분할, 변환, 압축 등 다양한 PDF 작업 도구",
-      url: "https://pick-play.github.io/pdf",
+      url: "https://pick-play.github.io/pdf/",
       applicationCategory: "UtilityApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -54,13 +54,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-play.github.io",
+          item: "https://pick-play.github.io/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "PDF 도구",
-          item: "https://pick-play.github.io/pdf",
+          item: "https://pick-play.github.io/pdf/",
         },
       ],
     },

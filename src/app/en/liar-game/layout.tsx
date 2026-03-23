@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Liar Game - The Ultimate Party Game",
     description:
       "Find the liar among your friends! 8 topic categories. One person gets a different word — can you catch them?",
-    url: "https://pick-play.github.io/en/liar-game",
+    url: "https://pick-play.github.io/en/liar-game/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/liar-game",
+    canonical: "https://pick-play.github.io/en/liar-game/",
     languages: {
-      "x-default": "https://pick-play.github.io/liar-game",
-      "ko": "https://pick-play.github.io/liar-game",
-      en: "https://pick-play.github.io/en/liar-game",
-      ja: "https://pick-play.github.io/jp/liar-game",
-      "zh-CN": "https://pick-play.github.io/cn/liar-game",
-      es: "https://pick-play.github.io/es/liar-game",
+      "x-default": "https://pick-play.github.io/liar-game/",
+      "ko": "https://pick-play.github.io/liar-game/",
+      en: "https://pick-play.github.io/en/liar-game/",
+      ja: "https://pick-play.github.io/jp/liar-game/",
+      "zh-CN": "https://pick-play.github.io/cn/liar-game/",
+      es: "https://pick-play.github.io/es/liar-game/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Liar Game - Party Game",
-      url: "https://pick-play.github.io/en/liar-game",
+      url: "https://pick-play.github.io/en/liar-game/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Liar Game",
-          item: "https://pick-play.github.io/en/liar-game",
+          item: "https://pick-play.github.io/en/liar-game/",
         },
       ],
     },

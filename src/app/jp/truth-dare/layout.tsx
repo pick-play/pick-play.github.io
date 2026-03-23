@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "真実か挑戦か - パーティーゲーム | PickPlay",
     description:
       "392の質問とミッション！レベル別に楽しむパーティー必須ゲーム。",
-    url: "https://pick-play.github.io/jp/truth-dare",
+    url: "https://pick-play.github.io/jp/truth-dare/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/truth-dare",
+    canonical: "https://pick-play.github.io/jp/truth-dare/",
     languages: {
-      "x-default": "https://pick-play.github.io/truth-dare",
-      "ko": "https://pick-play.github.io/truth-dare",
-      en: "https://pick-play.github.io/en/truth-dare",
-      ja: "https://pick-play.github.io/jp/truth-dare",
-      "zh-CN": "https://pick-play.github.io/cn/truth-dare",
-      es: "https://pick-play.github.io/es/truth-dare",
+      "x-default": "https://pick-play.github.io/truth-dare/",
+      "ko": "https://pick-play.github.io/truth-dare/",
+      en: "https://pick-play.github.io/en/truth-dare/",
+      ja: "https://pick-play.github.io/jp/truth-dare/",
+      "zh-CN": "https://pick-play.github.io/cn/truth-dare/",
+      es: "https://pick-play.github.io/es/truth-dare/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "真実か挑戦か - パーティーゲーム",
-      url: "https://pick-play.github.io/jp/truth-dare",
+      url: "https://pick-play.github.io/jp/truth-dare/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "真実か挑戦か",
-          item: "https://pick-play.github.io/jp/truth-dare",
+          item: "https://pick-play.github.io/jp/truth-dare/",
         },
       ],
     },

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       "What should I eat? Liar game, random team picker, date course recommendations - all in one place.",
     type: "website",
     locale: "en_US",
-    url: "https://pick-play.github.io/en",
+    url: "https://pick-play.github.io/en/",
     siteName: "PickPlay",
     images: [
       {
@@ -35,14 +35,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en",
+    canonical: "https://pick-play.github.io/en/",
     languages: {
-      "x-default": "https://pick-play.github.io",
-      "ko": "https://pick-play.github.io",
-      en: "https://pick-play.github.io/en",
-      ja: "https://pick-play.github.io/jp",
-      "zh-CN": "https://pick-play.github.io/cn",
-      es: "https://pick-play.github.io/es",
+      "x-default": "https://pick-play.github.io/",
+      "ko": "https://pick-play.github.io/",
+      en: "https://pick-play.github.io/en/",
+      ja: "https://pick-play.github.io/jp/",
+      "zh-CN": "https://pick-play.github.io/cn/",
+      es: "https://pick-play.github.io/es/",
     },
   },
 };
@@ -52,7 +52,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      url: "https://pick-play.github.io/en",
+      url: "https://pick-play.github.io/en/",
       name: "PickPlay",
       publisher: { "@id": "https://pick-play.github.io/#organization" },
       inLanguage: "en",

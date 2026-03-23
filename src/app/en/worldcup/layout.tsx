@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Ideal Type World Cup - 96-Candidate Tournament",
     description:
       "6 categories, 96 candidates! Battle it out in a bracket tournament to find your ideal type.",
-    url: "https://pick-play.github.io/en/worldcup",
+    url: "https://pick-play.github.io/en/worldcup/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/worldcup",
+    canonical: "https://pick-play.github.io/en/worldcup/",
     languages: {
-      "x-default": "https://pick-play.github.io/worldcup",
-      "ko": "https://pick-play.github.io/worldcup",
-      en: "https://pick-play.github.io/en/worldcup",
-      ja: "https://pick-play.github.io/jp/worldcup",
-      "zh-CN": "https://pick-play.github.io/cn/worldcup",
-      es: "https://pick-play.github.io/es/worldcup",
+      "x-default": "https://pick-play.github.io/worldcup/",
+      "ko": "https://pick-play.github.io/worldcup/",
+      en: "https://pick-play.github.io/en/worldcup/",
+      ja: "https://pick-play.github.io/jp/worldcup/",
+      "zh-CN": "https://pick-play.github.io/cn/worldcup/",
+      es: "https://pick-play.github.io/es/worldcup/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Ideal Type World Cup - Tournament",
-      url: "https://pick-play.github.io/en/worldcup",
+      url: "https://pick-play.github.io/en/worldcup/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Ideal Type World Cup",
-          item: "https://pick-play.github.io/en/worldcup",
+          item: "https://pick-play.github.io/en/worldcup/",
         },
       ],
     },

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "カラー性格診断 | PickPlay",
     description:
       "あなたを表す色は？10問で分かるカラー性格。8種類のカラータイプを診断。",
-    url: "https://pick-play.github.io/jp/color-test",
+    url: "https://pick-play.github.io/jp/color-test/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/color-test",
+    canonical: "https://pick-play.github.io/jp/color-test/",
     languages: {
-      "x-default": "https://pick-play.github.io/color-test",
-      "ko": "https://pick-play.github.io/color-test",
-      en: "https://pick-play.github.io/en/color-test",
-      ja: "https://pick-play.github.io/jp/color-test",
-      "zh-CN": "https://pick-play.github.io/cn/color-test",
-      es: "https://pick-play.github.io/es/color-test",
+      "x-default": "https://pick-play.github.io/color-test/",
+      "ko": "https://pick-play.github.io/color-test/",
+      en: "https://pick-play.github.io/en/color-test/",
+      ja: "https://pick-play.github.io/jp/color-test/",
+      "zh-CN": "https://pick-play.github.io/cn/color-test/",
+      es: "https://pick-play.github.io/es/color-test/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "カラー性格診断",
-      url: "https://pick-play.github.io/jp/color-test",
+      url: "https://pick-play.github.io/jp/color-test/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "カラー性格診断",
-          item: "https://pick-play.github.io/jp/color-test",
+          item: "https://pick-play.github.io/jp/color-test/",
         },
       ],
     },

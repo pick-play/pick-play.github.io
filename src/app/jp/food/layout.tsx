@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "何食べる？ - 130種類メニュー提案ルーレット | PickPlay",
     description:
       "迷ったらPickPlay！お好みマップで選ぶだけで料理を提案します。",
-    url: "https://pick-play.github.io/jp/food",
+    url: "https://pick-play.github.io/jp/food/",
     images: [
       {
         url: "/og-image.png",
@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/food",
+    canonical: "https://pick-play.github.io/jp/food/",
     languages: {
-      "x-default": "https://pick-play.github.io/food",
-      "ko": "https://pick-play.github.io/food",
-      en: "https://pick-play.github.io/en/food",
-      ja: "https://pick-play.github.io/jp/food",
-      "zh-CN": "https://pick-play.github.io/cn/food",
-      es: "https://pick-play.github.io/es/food",
+      "x-default": "https://pick-play.github.io/food/",
+      "ko": "https://pick-play.github.io/food/",
+      en: "https://pick-play.github.io/en/food/",
+      ja: "https://pick-play.github.io/jp/food/",
+      "zh-CN": "https://pick-play.github.io/cn/food/",
+      es: "https://pick-play.github.io/es/food/",
     },
   },
 };
@@ -51,7 +51,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "何食べる？ - メニュー提案ルーレット",
-      url: "https://pick-play.github.io/jp/food",
+      url: "https://pick-play.github.io/jp/food/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -66,13 +66,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "何食べる？",
-          item: "https://pick-play.github.io/jp/food",
+          item: "https://pick-play.github.io/jp/food/",
         },
       ],
     },

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "あみだくじ - ランダムマッチング | PickPlay",
     description: "誰が当たり？ドキドキの経路追跡アニメーション付きあみだくじ！",
-    url: "https://pick-play.github.io/jp/ladder",
+    url: "https://pick-play.github.io/jp/ladder/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/ladder",
+    canonical: "https://pick-play.github.io/jp/ladder/",
     languages: {
-      "x-default": "https://pick-play.github.io/ladder",
-      "ko": "https://pick-play.github.io/ladder",
-      en: "https://pick-play.github.io/en/ladder",
-      ja: "https://pick-play.github.io/jp/ladder",
-      "zh-CN": "https://pick-play.github.io/cn/ladder",
-      es: "https://pick-play.github.io/es/ladder",
+      "x-default": "https://pick-play.github.io/ladder/",
+      "ko": "https://pick-play.github.io/ladder/",
+      en: "https://pick-play.github.io/en/ladder/",
+      ja: "https://pick-play.github.io/jp/ladder/",
+      "zh-CN": "https://pick-play.github.io/cn/ladder/",
+      es: "https://pick-play.github.io/es/ladder/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "あみだくじ - ランダムマッチング",
-      url: "https://pick-play.github.io/jp/ladder",
+      url: "https://pick-play.github.io/jp/ladder/",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -62,13 +62,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "あみだくじ",
-          item: "https://pick-play.github.io/jp/ladder",
+          item: "https://pick-play.github.io/jp/ladder/",
         },
       ],
     },

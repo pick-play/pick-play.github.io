@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "倒计时计算器 - D-Day | PickPlay",
     description: "重要日期一目了然。考试、生日、纪念日倒计时。",
-    url: "https://pick-play.github.io/cn/d-day",
+    url: "https://pick-play.github.io/cn/d-day/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 倒计时计算器" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/d-day",
+    canonical: "https://pick-play.github.io/cn/d-day/",
     languages: {
-      "x-default": "https://pick-play.github.io/d-day",
-      "ko": "https://pick-play.github.io/d-day",
-      "en": "https://pick-play.github.io/en/d-day",
-      "ja": "https://pick-play.github.io/jp/d-day",
-      "zh-CN": "https://pick-play.github.io/cn/d-day",
-      "es": "https://pick-play.github.io/es/d-day",
+      "x-default": "https://pick-play.github.io/d-day/",
+      "ko": "https://pick-play.github.io/d-day/",
+      "en": "https://pick-play.github.io/en/d-day/",
+      "ja": "https://pick-play.github.io/jp/d-day/",
+      "zh-CN": "https://pick-play.github.io/cn/d-day/",
+      "es": "https://pick-play.github.io/es/d-day/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "倒计时计算器 - D-Day",
-      url: "https://pick-play.github.io/cn/d-day",
+      url: "https://pick-play.github.io/cn/d-day/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "倒计时计算器", item: "https://pick-play.github.io/cn/d-day" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "倒计时计算器", item: "https://pick-play.github.io/cn/d-day/" },
       ],
     },
   ],

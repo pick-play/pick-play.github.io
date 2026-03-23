@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "ライアーゲーム - パーティーゲーム | PickPlay",
     description:
       "友達と一緒にライアーを探せ！8テーマのパーティーゲーム。",
-    url: "https://pick-play.github.io/jp/liar-game",
+    url: "https://pick-play.github.io/jp/liar-game/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/liar-game",
+    canonical: "https://pick-play.github.io/jp/liar-game/",
     languages: {
-      "x-default": "https://pick-play.github.io/liar-game",
-      "ko": "https://pick-play.github.io/liar-game",
-      en: "https://pick-play.github.io/en/liar-game",
-      ja: "https://pick-play.github.io/jp/liar-game",
-      "zh-CN": "https://pick-play.github.io/cn/liar-game",
-      es: "https://pick-play.github.io/es/liar-game",
+      "x-default": "https://pick-play.github.io/liar-game/",
+      "ko": "https://pick-play.github.io/liar-game/",
+      en: "https://pick-play.github.io/en/liar-game/",
+      ja: "https://pick-play.github.io/jp/liar-game/",
+      "zh-CN": "https://pick-play.github.io/cn/liar-game/",
+      es: "https://pick-play.github.io/es/liar-game/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "ライアーゲーム - パーティーゲーム",
-      url: "https://pick-play.github.io/jp/liar-game",
+      url: "https://pick-play.github.io/jp/liar-game/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "ライアーゲーム",
-          item: "https://pick-play.github.io/jp/liar-game",
+          item: "https://pick-play.github.io/jp/liar-game/",
         },
       ],
     },

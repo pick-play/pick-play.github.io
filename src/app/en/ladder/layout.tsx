@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Ladder Game - Random Matching with Path Animation",
     description:
       "Who will be chosen? Thrilling path-tracing animation makes the result dramatic and fun!",
-    url: "https://pick-play.github.io/en/ladder",
+    url: "https://pick-play.github.io/en/ladder/",
     images: [
       {
         url: "/og-image.png",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/ladder",
+    canonical: "https://pick-play.github.io/en/ladder/",
     languages: {
-      "x-default": "https://pick-play.github.io/ladder",
-      "ko": "https://pick-play.github.io/ladder",
-      en: "https://pick-play.github.io/en/ladder",
-      ja: "https://pick-play.github.io/jp/ladder",
-      "zh-CN": "https://pick-play.github.io/cn/ladder",
-      es: "https://pick-play.github.io/es/ladder",
+      "x-default": "https://pick-play.github.io/ladder/",
+      "ko": "https://pick-play.github.io/ladder/",
+      en: "https://pick-play.github.io/en/ladder/",
+      ja: "https://pick-play.github.io/jp/ladder/",
+      "zh-CN": "https://pick-play.github.io/cn/ladder/",
+      es: "https://pick-play.github.io/es/ladder/",
     },
   },
 };
@@ -47,7 +47,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Ladder Game - Random Matching",
-      url: "https://pick-play.github.io/en/ladder",
+      url: "https://pick-play.github.io/en/ladder/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -62,13 +62,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Ladder Game",
-          item: "https://pick-play.github.io/en/ladder",
+          item: "https://pick-play.github.io/en/ladder/",
         },
       ],
     },

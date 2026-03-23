@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "昵称生成器 - 随机名字 | PickPlay",
     description: "6种风格的随机昵称生成。可爱、酷炫、搞笑等多种风格。",
-    url: "https://pick-play.github.io/cn/nickname",
+    url: "https://pick-play.github.io/cn/nickname/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 昵称生成器" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/nickname",
+    canonical: "https://pick-play.github.io/cn/nickname/",
     languages: {
-      "x-default": "https://pick-play.github.io/nickname",
-      "ko": "https://pick-play.github.io/nickname",
-      "en": "https://pick-play.github.io/en/nickname",
-      "ja": "https://pick-play.github.io/jp/nickname",
-      "zh-CN": "https://pick-play.github.io/cn/nickname",
-      "es": "https://pick-play.github.io/es/nickname",
+      "x-default": "https://pick-play.github.io/nickname/",
+      "ko": "https://pick-play.github.io/nickname/",
+      "en": "https://pick-play.github.io/en/nickname/",
+      "ja": "https://pick-play.github.io/jp/nickname/",
+      "zh-CN": "https://pick-play.github.io/cn/nickname/",
+      "es": "https://pick-play.github.io/es/nickname/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "昵称生成器 - 随机名字",
-      url: "https://pick-play.github.io/cn/nickname",
+      url: "https://pick-play.github.io/cn/nickname/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "昵称生成器", item: "https://pick-play.github.io/cn/nickname" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "昵称生成器", item: "https://pick-play.github.io/cn/nickname/" },
       ],
     },
   ],

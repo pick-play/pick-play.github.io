@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "ニックネーム生成 - ランダム名前 | PickPlay",
     description:
       "6スタイルのランダムニックネーム生成。ゲーム、SNS、チームに最適。",
-    url: "https://pick-play.github.io/jp/nickname",
+    url: "https://pick-play.github.io/jp/nickname/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/nickname",
+    canonical: "https://pick-play.github.io/jp/nickname/",
     languages: {
-      "x-default": "https://pick-play.github.io/nickname",
-      "ko": "https://pick-play.github.io/nickname",
-      en: "https://pick-play.github.io/en/nickname",
-      ja: "https://pick-play.github.io/jp/nickname",
-      "zh-CN": "https://pick-play.github.io/cn/nickname",
-      es: "https://pick-play.github.io/es/nickname",
+      "x-default": "https://pick-play.github.io/nickname/",
+      "ko": "https://pick-play.github.io/nickname/",
+      en: "https://pick-play.github.io/en/nickname/",
+      ja: "https://pick-play.github.io/jp/nickname/",
+      "zh-CN": "https://pick-play.github.io/cn/nickname/",
+      es: "https://pick-play.github.io/es/nickname/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "ニックネーム生成 - ランダム名前",
-      url: "https://pick-play.github.io/jp/nickname",
+      url: "https://pick-play.github.io/jp/nickname/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "ニックネーム生成",
-          item: "https://pick-play.github.io/jp/nickname",
+          item: "https://pick-play.github.io/jp/nickname/",
         },
       ],
     },

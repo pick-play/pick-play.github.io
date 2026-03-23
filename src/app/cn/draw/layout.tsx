@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "抽签 - 随机抽奖 | PickPlay",
     description: "公平随机抽签！翻牌揭晓，戏剧性满分。",
-    url: "https://pick-play.github.io/cn/draw",
+    url: "https://pick-play.github.io/cn/draw/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 随机抽签" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/draw",
+    canonical: "https://pick-play.github.io/cn/draw/",
     languages: {
-      "x-default": "https://pick-play.github.io/draw",
-      "ko": "https://pick-play.github.io/draw",
-      "en": "https://pick-play.github.io/en/draw",
-      "ja": "https://pick-play.github.io/jp/draw",
-      "zh-CN": "https://pick-play.github.io/cn/draw",
-      "es": "https://pick-play.github.io/es/draw",
+      "x-default": "https://pick-play.github.io/draw/",
+      "ko": "https://pick-play.github.io/draw/",
+      "en": "https://pick-play.github.io/en/draw/",
+      "ja": "https://pick-play.github.io/jp/draw/",
+      "zh-CN": "https://pick-play.github.io/cn/draw/",
+      "es": "https://pick-play.github.io/es/draw/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "抽签 - 随机抽奖",
-      url: "https://pick-play.github.io/cn/draw",
+      url: "https://pick-play.github.io/cn/draw/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "抽签", item: "https://pick-play.github.io/cn/draw" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "抽签", item: "https://pick-play.github.io/cn/draw/" },
       ],
     },
   ],

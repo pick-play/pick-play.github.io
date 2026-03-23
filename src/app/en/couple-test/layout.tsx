@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Couple Compatibility Test - Name Match Analysis",
     description:
       "How compatible are you? Enter two names for a 5-category compatibility analysis!",
-    url: "https://pick-play.github.io/en/couple-test",
+    url: "https://pick-play.github.io/en/couple-test/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/couple-test",
+    canonical: "https://pick-play.github.io/en/couple-test/",
     languages: {
-      "x-default": "https://pick-play.github.io/couple-test",
-      "ko": "https://pick-play.github.io/couple-test",
-      en: "https://pick-play.github.io/en/couple-test",
-      ja: "https://pick-play.github.io/jp/couple-test",
-      "zh-CN": "https://pick-play.github.io/cn/couple-test",
-      es: "https://pick-play.github.io/es/couple-test",
+      "x-default": "https://pick-play.github.io/couple-test/",
+      "ko": "https://pick-play.github.io/couple-test/",
+      en: "https://pick-play.github.io/en/couple-test/",
+      ja: "https://pick-play.github.io/jp/couple-test/",
+      "zh-CN": "https://pick-play.github.io/cn/couple-test/",
+      es: "https://pick-play.github.io/es/couple-test/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Couple Compatibility - Name Match",
-      url: "https://pick-play.github.io/en/couple-test",
+      url: "https://pick-play.github.io/en/couple-test/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Couple Compatibility",
-          item: "https://pick-play.github.io/en/couple-test",
+          item: "https://pick-play.github.io/en/couple-test/",
         },
       ],
     },

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Team Picker - Random Group Divider",
     description:
       "Randomly divide into fair teams with suspenseful animations! Perfect for any group activity.",
-    url: "https://pick-play.github.io/en/random-team",
+    url: "https://pick-play.github.io/en/random-team/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/random-team",
+    canonical: "https://pick-play.github.io/en/random-team/",
     languages: {
-      "x-default": "https://pick-play.github.io/random-team",
-      "ko": "https://pick-play.github.io/random-team",
-      en: "https://pick-play.github.io/en/random-team",
-      ja: "https://pick-play.github.io/jp/random-team",
-      "zh-CN": "https://pick-play.github.io/cn/random-team",
-      es: "https://pick-play.github.io/es/random-team",
+      "x-default": "https://pick-play.github.io/random-team/",
+      "ko": "https://pick-play.github.io/random-team/",
+      en: "https://pick-play.github.io/en/random-team/",
+      ja: "https://pick-play.github.io/jp/random-team/",
+      "zh-CN": "https://pick-play.github.io/cn/random-team/",
+      es: "https://pick-play.github.io/es/random-team/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Team Picker - Random Groups",
-      url: "https://pick-play.github.io/en/random-team",
+      url: "https://pick-play.github.io/en/random-team/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Team Picker",
-          item: "https://pick-play.github.io/en/random-team",
+          item: "https://pick-play.github.io/en/random-team/",
         },
       ],
     },

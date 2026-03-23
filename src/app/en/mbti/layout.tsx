@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "MBTI Personality Test - Discover Your Type in 20 Questions",
     description:
       "Find your MBTI personality type and compatibility in 20 questions. Which of the 16 types are you?",
-    url: "https://pick-play.github.io/en/mbti",
+    url: "https://pick-play.github.io/en/mbti/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/mbti",
+    canonical: "https://pick-play.github.io/en/mbti/",
     languages: {
-      "x-default": "https://pick-play.github.io/mbti",
-      "ko": "https://pick-play.github.io/mbti",
-      en: "https://pick-play.github.io/en/mbti",
-      ja: "https://pick-play.github.io/jp/mbti",
-      "zh-CN": "https://pick-play.github.io/cn/mbti",
-      es: "https://pick-play.github.io/es/mbti",
+      "x-default": "https://pick-play.github.io/mbti/",
+      "ko": "https://pick-play.github.io/mbti/",
+      en: "https://pick-play.github.io/en/mbti/",
+      ja: "https://pick-play.github.io/jp/mbti/",
+      "zh-CN": "https://pick-play.github.io/cn/mbti/",
+      es: "https://pick-play.github.io/es/mbti/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "MBTI Personality Test - 20 Questions",
-      url: "https://pick-play.github.io/en/mbti",
+      url: "https://pick-play.github.io/en/mbti/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -64,13 +64,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "MBTI Test",
-          item: "https://pick-play.github.io/en/mbti",
+          item: "https://pick-play.github.io/en/mbti/",
         },
       ],
     },

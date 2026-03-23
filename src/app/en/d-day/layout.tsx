@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "D-Day Calculator - Countdown Timer",
     description:
       "Count down to your most important dates. Exams, birthdays, anniversaries — all at a glance.",
-    url: "https://pick-play.github.io/en/d-day",
+    url: "https://pick-play.github.io/en/d-day/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/d-day",
+    canonical: "https://pick-play.github.io/en/d-day/",
     languages: {
-      "x-default": "https://pick-play.github.io/d-day",
-      "ko": "https://pick-play.github.io/d-day",
-      en: "https://pick-play.github.io/en/d-day",
-      ja: "https://pick-play.github.io/jp/d-day",
-      "zh-CN": "https://pick-play.github.io/cn/d-day",
-      es: "https://pick-play.github.io/es/d-day",
+      "x-default": "https://pick-play.github.io/d-day/",
+      "ko": "https://pick-play.github.io/d-day/",
+      en: "https://pick-play.github.io/en/d-day/",
+      ja: "https://pick-play.github.io/jp/d-day/",
+      "zh-CN": "https://pick-play.github.io/cn/d-day/",
+      es: "https://pick-play.github.io/es/d-day/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "D-Day Calculator - Countdown Timer",
-      url: "https://pick-play.github.io/en/d-day",
+      url: "https://pick-play.github.io/en/d-day/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "D-Day Calculator",
-          item: "https://pick-play.github.io/en/d-day",
+          item: "https://pick-play.github.io/en/d-day/",
         },
       ],
     },

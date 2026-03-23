@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Bill Splitter - Fair Cost Calculator",
     description:
       "Split group expenses fairly with item exclusions, differential shares, and minimum transfer optimization.",
-    url: "https://pick-play.github.io/en/settlement",
+    url: "https://pick-play.github.io/en/settlement/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/settlement",
+    canonical: "https://pick-play.github.io/en/settlement/",
     languages: {
-      "x-default": "https://pick-play.github.io/settlement",
-      "ko": "https://pick-play.github.io/settlement",
-      en: "https://pick-play.github.io/en/settlement",
-      ja: "https://pick-play.github.io/jp/settlement",
-      "zh-CN": "https://pick-play.github.io/cn/settlement",
-      es: "https://pick-play.github.io/es/settlement",
+      "x-default": "https://pick-play.github.io/settlement/",
+      "ko": "https://pick-play.github.io/settlement/",
+      en: "https://pick-play.github.io/en/settlement/",
+      ja: "https://pick-play.github.io/jp/settlement/",
+      "zh-CN": "https://pick-play.github.io/cn/settlement/",
+      es: "https://pick-play.github.io/es/settlement/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Bill Splitter - Fair Cost Calculator",
-      url: "https://pick-play.github.io/en/settlement",
+      url: "https://pick-play.github.io/en/settlement/",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Bill Splitter",
-          item: "https://pick-play.github.io/en/settlement",
+          item: "https://pick-play.github.io/en/settlement/",
         },
       ],
     },

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "くじ引き - ランダム抽選 | PickPlay",
     description:
       "公平なランダム抽選！カードめくりでドラマチックに当選者を決定。",
-    url: "https://pick-play.github.io/jp/draw",
+    url: "https://pick-play.github.io/jp/draw/",
     images: [
       {
         url: "/og-image.png",
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/draw",
+    canonical: "https://pick-play.github.io/jp/draw/",
     languages: {
-      "x-default": "https://pick-play.github.io/draw",
-      "ko": "https://pick-play.github.io/draw",
-      en: "https://pick-play.github.io/en/draw",
-      ja: "https://pick-play.github.io/jp/draw",
-      "zh-CN": "https://pick-play.github.io/cn/draw",
-      es: "https://pick-play.github.io/es/draw",
+      "x-default": "https://pick-play.github.io/draw/",
+      "ko": "https://pick-play.github.io/draw/",
+      en: "https://pick-play.github.io/en/draw/",
+      ja: "https://pick-play.github.io/jp/draw/",
+      "zh-CN": "https://pick-play.github.io/cn/draw/",
+      es: "https://pick-play.github.io/es/draw/",
     },
   },
 };
@@ -50,7 +50,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "くじ引き - ランダム抽選",
-      url: "https://pick-play.github.io/jp/draw",
+      url: "https://pick-play.github.io/jp/draw/",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -64,13 +64,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "くじ引き",
-          item: "https://pick-play.github.io/jp/draw",
+          item: "https://pick-play.github.io/jp/draw/",
         },
       ],
     },

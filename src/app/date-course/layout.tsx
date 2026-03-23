@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "데이트 코스 추천 - 전국 10개 도시 200+ 코스",
     description:
       "분위기 지도에서 원하는 느낌을 찍으면, 완벽한 데이트 코스를 짜드립니다. 서울부터 경기까지!",
-    url: "https://pick-play.github.io/date-course",
+    url: "https://pick-play.github.io/date-course/",
     images: [
       {
         url: "/og-image.png",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/date-course",
+    canonical: "https://pick-play.github.io/date-course/",
   },
 };
 
@@ -47,7 +47,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "데이트 코스 추천 - 전국 10개 도시",
-      url: "https://pick-play.github.io/date-course",
+      url: "https://pick-play.github.io/date-course/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -56,8 +56,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-play.github.io" },
-        { "@type": "ListItem", position: 2, name: "데이트 코스 추천", item: "https://pick-play.github.io/date-course" },
+        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-play.github.io/" },
+        { "@type": "ListItem", position: 2, name: "데이트 코스 추천", item: "https://pick-play.github.io/date-course/" },
       ],
     },
     {

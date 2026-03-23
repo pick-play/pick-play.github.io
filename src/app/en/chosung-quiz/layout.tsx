@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Word Quiz - Guess the Word from Initial Letters",
     description:
       "Guess the word from initial letters! With hints and a timer for extra fun. 100+ words to challenge you.",
-    url: "https://pick-play.github.io/en/chosung-quiz",
+    url: "https://pick-play.github.io/en/chosung-quiz/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/chosung-quiz",
+    canonical: "https://pick-play.github.io/en/chosung-quiz/",
     languages: {
-      "x-default": "https://pick-play.github.io/chosung-quiz",
-      "ko": "https://pick-play.github.io/chosung-quiz",
-      en: "https://pick-play.github.io/en/chosung-quiz",
-      ja: "https://pick-play.github.io/jp/chosung-quiz",
-      "zh-CN": "https://pick-play.github.io/cn/chosung-quiz",
-      es: "https://pick-play.github.io/es/chosung-quiz",
+      "x-default": "https://pick-play.github.io/chosung-quiz/",
+      "ko": "https://pick-play.github.io/chosung-quiz/",
+      en: "https://pick-play.github.io/en/chosung-quiz/",
+      ja: "https://pick-play.github.io/jp/chosung-quiz/",
+      "zh-CN": "https://pick-play.github.io/cn/chosung-quiz/",
+      es: "https://pick-play.github.io/es/chosung-quiz/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Word Quiz - Initial Letter Game",
-      url: "https://pick-play.github.io/en/chosung-quiz",
+      url: "https://pick-play.github.io/en/chosung-quiz/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Word Quiz",
-          item: "https://pick-play.github.io/en/chosung-quiz",
+          item: "https://pick-play.github.io/en/chosung-quiz/",
         },
       ],
     },

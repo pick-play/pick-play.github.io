@@ -20,18 +20,18 @@ export const metadata: Metadata = {
     title: "¿Qué Comer? - Ruleta de Menú con 130+ Opciones",
     description:
       "Menos dudas, más sabor. Selecciona tu estado de ánimo en el mapa de sabores y deja que la ruleta elija por ti.",
-    url: "https://pick-play.github.io/es/food",
+    url: "https://pick-play.github.io/es/food/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - Qué Comer" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/es/food",
+    canonical: "https://pick-play.github.io/es/food/",
     languages: {
-      "x-default": "https://pick-play.github.io/food",
-      "ko": "https://pick-play.github.io/food",
-      en: "https://pick-play.github.io/en/food",
-      ja: "https://pick-play.github.io/jp/food",
-      "zh-CN": "https://pick-play.github.io/cn/food",
-      es: "https://pick-play.github.io/es/food",
+      "x-default": "https://pick-play.github.io/food/",
+      "ko": "https://pick-play.github.io/food/",
+      en: "https://pick-play.github.io/en/food/",
+      ja: "https://pick-play.github.io/jp/food/",
+      "zh-CN": "https://pick-play.github.io/cn/food/",
+      es: "https://pick-play.github.io/es/food/",
     },
   },
 };
@@ -42,7 +42,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "¿Qué Comer? - Ruleta de Menú",
-      url: "https://pick-play.github.io/es/food",
+      url: "https://pick-play.github.io/es/food/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -52,8 +52,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es" },
-        { "@type": "ListItem", position: 2, name: "¿Qué Comer?", item: "https://pick-play.github.io/es/food" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es/" },
+        { "@type": "ListItem", position: 2, name: "¿Qué Comer?", item: "https://pick-play.github.io/es/food/" },
       ],
     },
     {

@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "理想型世界杯 - 淘汰赛 | PickPlay",
     description: "6大类别，96位候选人！淘汰赛找到你的完美理想型。",
-    url: "https://pick-play.github.io/cn/worldcup",
+    url: "https://pick-play.github.io/cn/worldcup/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 理想型世界杯" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/worldcup",
+    canonical: "https://pick-play.github.io/cn/worldcup/",
     languages: {
-      "x-default": "https://pick-play.github.io/worldcup",
-      "ko": "https://pick-play.github.io/worldcup",
-      "en": "https://pick-play.github.io/en/worldcup",
-      "ja": "https://pick-play.github.io/jp/worldcup",
-      "zh-CN": "https://pick-play.github.io/cn/worldcup",
-      "es": "https://pick-play.github.io/es/worldcup",
+      "x-default": "https://pick-play.github.io/worldcup/",
+      "ko": "https://pick-play.github.io/worldcup/",
+      "en": "https://pick-play.github.io/en/worldcup/",
+      "ja": "https://pick-play.github.io/jp/worldcup/",
+      "zh-CN": "https://pick-play.github.io/cn/worldcup/",
+      "es": "https://pick-play.github.io/es/worldcup/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "理想型世界杯 - 淘汰赛",
-      url: "https://pick-play.github.io/cn/worldcup",
+      url: "https://pick-play.github.io/cn/worldcup/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "理想型世界杯", item: "https://pick-play.github.io/cn/worldcup" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "理想型世界杯", item: "https://pick-play.github.io/cn/worldcup/" },
       ],
     },
   ],

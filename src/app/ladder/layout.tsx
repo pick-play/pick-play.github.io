@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "사다리 타기 - 온라인 사다리 게임 | PickPlay",
     description: "친구들과 함께하는 온라인 사다리 타기",
-    url: "https://pick-play.github.io/ladder",
+    url: "https://pick-play.github.io/ladder/",
     images: [
       {
         url: "/og-image.png",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/ladder" },
+  alternates: { canonical: "https://pick-play.github.io/ladder/" },
 };
 
 const jsonLd = {
@@ -35,7 +35,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "사다리 타기",
       description: "온라인 사다리 타기 게임",
-      url: "https://pick-play.github.io/ladder",
+      url: "https://pick-play.github.io/ladder/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -47,13 +47,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-play.github.io",
+          item: "https://pick-play.github.io/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "사다리 타기",
-          item: "https://pick-play.github.io/ladder",
+          item: "https://pick-play.github.io/ladder/",
         },
       ],
     },

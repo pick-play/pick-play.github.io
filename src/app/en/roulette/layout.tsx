@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Random Roulette - Decision Spinner",
     description:
       "Spin the wheel and let fate decide! Customize with your own options.",
-    url: "https://pick-play.github.io/en/roulette",
+    url: "https://pick-play.github.io/en/roulette/",
     images: [
       {
         url: "/og-image.png",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/roulette",
+    canonical: "https://pick-play.github.io/en/roulette/",
     languages: {
-      "x-default": "https://pick-play.github.io/roulette",
-      "ko": "https://pick-play.github.io/roulette",
-      en: "https://pick-play.github.io/en/roulette",
-      ja: "https://pick-play.github.io/jp/roulette",
-      "zh-CN": "https://pick-play.github.io/cn/roulette",
-      es: "https://pick-play.github.io/es/roulette",
+      "x-default": "https://pick-play.github.io/roulette/",
+      "ko": "https://pick-play.github.io/roulette/",
+      en: "https://pick-play.github.io/en/roulette/",
+      ja: "https://pick-play.github.io/jp/roulette/",
+      "zh-CN": "https://pick-play.github.io/cn/roulette/",
+      es: "https://pick-play.github.io/es/roulette/",
     },
   },
 };
@@ -47,7 +47,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Random Roulette - Decision Spinner",
-      url: "https://pick-play.github.io/en/roulette",
+      url: "https://pick-play.github.io/en/roulette/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -62,13 +62,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Random Roulette",
-          item: "https://pick-play.github.io/en/roulette",
+          item: "https://pick-play.github.io/en/roulette/",
         },
       ],
     },

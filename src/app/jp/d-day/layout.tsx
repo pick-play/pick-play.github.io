@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "D-Day計算機 - カウントダウン | PickPlay",
     description:
       "大切な日までの残り日数を一目で。受験、誕生日、記念日まで管理。",
-    url: "https://pick-play.github.io/jp/d-day",
+    url: "https://pick-play.github.io/jp/d-day/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/d-day",
+    canonical: "https://pick-play.github.io/jp/d-day/",
     languages: {
-      "x-default": "https://pick-play.github.io/d-day",
-      "ko": "https://pick-play.github.io/d-day",
-      en: "https://pick-play.github.io/en/d-day",
-      ja: "https://pick-play.github.io/jp/d-day",
-      "zh-CN": "https://pick-play.github.io/cn/d-day",
-      es: "https://pick-play.github.io/es/d-day",
+      "x-default": "https://pick-play.github.io/d-day/",
+      "ko": "https://pick-play.github.io/d-day/",
+      en: "https://pick-play.github.io/en/d-day/",
+      ja: "https://pick-play.github.io/jp/d-day/",
+      "zh-CN": "https://pick-play.github.io/cn/d-day/",
+      es: "https://pick-play.github.io/es/d-day/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "D-Day計算機 - カウントダウン",
-      url: "https://pick-play.github.io/jp/d-day",
+      url: "https://pick-play.github.io/jp/d-day/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "D-Day計算機",
-          item: "https://pick-play.github.io/jp/d-day",
+          item: "https://pick-play.github.io/jp/d-day/",
         },
       ],
     },

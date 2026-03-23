@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Image Tools - Convert, Compress, Resize & Crop",
     description:
       "Convert, compress, resize, and crop images online. Batch processing supported. Free and in-browser.",
-    url: "https://pick-play.github.io/en/image",
+    url: "https://pick-play.github.io/en/image/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/image",
+    canonical: "https://pick-play.github.io/en/image/",
     languages: {
-      "x-default": "https://pick-play.github.io/image",
-      "ko": "https://pick-play.github.io/image",
-      en: "https://pick-play.github.io/en/image",
-      ja: "https://pick-play.github.io/jp/image",
-      "zh-CN": "https://pick-play.github.io/cn/image",
-      es: "https://pick-play.github.io/es/image",
+      "x-default": "https://pick-play.github.io/image/",
+      "ko": "https://pick-play.github.io/image/",
+      en: "https://pick-play.github.io/en/image/",
+      ja: "https://pick-play.github.io/jp/image/",
+      "zh-CN": "https://pick-play.github.io/cn/image/",
+      es: "https://pick-play.github.io/es/image/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Image Tools - Convert, Compress, Resize",
-      url: "https://pick-play.github.io/en/image",
+      url: "https://pick-play.github.io/en/image/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Image Tools",
-          item: "https://pick-play.github.io/en/image",
+          item: "https://pick-play.github.io/en/image/",
         },
       ],
     },

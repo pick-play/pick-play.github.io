@@ -18,18 +18,18 @@ export const metadata: Metadata = {
     title: "Test de Color - ¿Qué Color Representa tu Personalidad?",
     description:
       "Descubre qué color representa tu personalidad con solo 10 preguntas. 8 colores con análisis detallado.",
-    url: "https://pick-play.github.io/es/color-test",
+    url: "https://pick-play.github.io/es/color-test/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - Test de Color" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/es/color-test",
+    canonical: "https://pick-play.github.io/es/color-test/",
     languages: {
-      "x-default": "https://pick-play.github.io/color-test",
-      "ko": "https://pick-play.github.io/color-test",
-      en: "https://pick-play.github.io/en/color-test",
-      ja: "https://pick-play.github.io/jp/color-test",
-      "zh-CN": "https://pick-play.github.io/cn/color-test",
-      es: "https://pick-play.github.io/es/color-test",
+      "x-default": "https://pick-play.github.io/color-test/",
+      "ko": "https://pick-play.github.io/color-test/",
+      en: "https://pick-play.github.io/en/color-test/",
+      ja: "https://pick-play.github.io/jp/color-test/",
+      "zh-CN": "https://pick-play.github.io/cn/color-test/",
+      es: "https://pick-play.github.io/es/color-test/",
     },
   },
 };
@@ -40,7 +40,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Test de Color - Personalidad",
-      url: "https://pick-play.github.io/es/color-test",
+      url: "https://pick-play.github.io/es/color-test/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -50,8 +50,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es" },
-        { "@type": "ListItem", position: 2, name: "Test de Color", item: "https://pick-play.github.io/es/color-test" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es/" },
+        { "@type": "ListItem", position: 2, name: "Test de Color", item: "https://pick-play.github.io/es/color-test/" },
       ],
     },
   ],

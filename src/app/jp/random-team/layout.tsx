@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "チーム分け - ランダムグループ | PickPlay",
     description:
       "ランダムで公平にチームを分けます。臨場感あるアニメーション付き。",
-    url: "https://pick-play.github.io/jp/random-team",
+    url: "https://pick-play.github.io/jp/random-team/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/random-team",
+    canonical: "https://pick-play.github.io/jp/random-team/",
     languages: {
-      "x-default": "https://pick-play.github.io/random-team",
-      "ko": "https://pick-play.github.io/random-team",
-      en: "https://pick-play.github.io/en/random-team",
-      ja: "https://pick-play.github.io/jp/random-team",
-      "zh-CN": "https://pick-play.github.io/cn/random-team",
-      es: "https://pick-play.github.io/es/random-team",
+      "x-default": "https://pick-play.github.io/random-team/",
+      "ko": "https://pick-play.github.io/random-team/",
+      en: "https://pick-play.github.io/en/random-team/",
+      ja: "https://pick-play.github.io/jp/random-team/",
+      "zh-CN": "https://pick-play.github.io/cn/random-team/",
+      es: "https://pick-play.github.io/es/random-team/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "チーム分け - ランダムグループ",
-      url: "https://pick-play.github.io/jp/random-team",
+      url: "https://pick-play.github.io/jp/random-team/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "チーム分け",
-          item: "https://pick-play.github.io/jp/random-team",
+          item: "https://pick-play.github.io/jp/random-team/",
         },
       ],
     },

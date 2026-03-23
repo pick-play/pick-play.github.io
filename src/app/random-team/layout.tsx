@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "랜덤 조 뽑기 - 긴장감 넘치는 팀 배정",
     description:
       "참가자를 입력하고 조 수를 설정하면 랜덤으로 팀을 나눠드립니다!",
-    url: "https://pick-play.github.io/random-team",
+    url: "https://pick-play.github.io/random-team/",
     images: [
       {
         url: "/og-image.png",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/random-team" },
+  alternates: { canonical: "https://pick-play.github.io/random-team/" },
 };
 
 const jsonLd = {
@@ -36,7 +36,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "랜덤 조 뽑기 - 팀 나누기 생성기",
-      url: "https://pick-play.github.io/random-team",
+      url: "https://pick-play.github.io/random-team/",
       applicationCategory: "UtilityApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -50,13 +50,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-play.github.io",
+          item: "https://pick-play.github.io/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "랜덤 조 뽑기",
-          item: "https://pick-play.github.io/random-team",
+          item: "https://pick-play.github.io/random-team/",
         },
       ],
     },

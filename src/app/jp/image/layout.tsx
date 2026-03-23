@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "画像ツール - 変換・圧縮・リサイズ | PickPlay",
     description:
       "画像変換、圧縮、サイズ変更、切り抜き。一括処理も対応。ブラウザで安全に。",
-    url: "https://pick-play.github.io/jp/image",
+    url: "https://pick-play.github.io/jp/image/",
     images: [
       {
         url: "/og-image.png",
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/image",
+    canonical: "https://pick-play.github.io/jp/image/",
     languages: {
-      "x-default": "https://pick-play.github.io/image",
-      "ko": "https://pick-play.github.io/image",
-      en: "https://pick-play.github.io/en/image",
-      ja: "https://pick-play.github.io/jp/image",
-      "zh-CN": "https://pick-play.github.io/cn/image",
-      es: "https://pick-play.github.io/es/image",
+      "x-default": "https://pick-play.github.io/image/",
+      "ko": "https://pick-play.github.io/image/",
+      en: "https://pick-play.github.io/en/image/",
+      ja: "https://pick-play.github.io/jp/image/",
+      "zh-CN": "https://pick-play.github.io/cn/image/",
+      es: "https://pick-play.github.io/es/image/",
     },
   },
 };
@@ -50,7 +50,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "画像ツール - 変換・圧縮・リサイズ",
-      url: "https://pick-play.github.io/jp/image",
+      url: "https://pick-play.github.io/jp/image/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -64,13 +64,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "画像ツール",
-          item: "https://pick-play.github.io/jp/image",
+          item: "https://pick-play.github.io/jp/image/",
         },
       ],
     },

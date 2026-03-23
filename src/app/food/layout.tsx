@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "오늘 뭐 먹지? - 130가지 메뉴 추천 룰렛",
     description:
       "고민은 줄이고 선택은 빠르게! 맛 지도에서 취향을 찍으면 슬롯머신이 메뉴를 골라드립니다.",
-    url: "https://pick-play.github.io/food",
+    url: "https://pick-play.github.io/food/",
     images: [
       {
         url: "/og-image.png",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/food",
+    canonical: "https://pick-play.github.io/food/",
   },
 };
 
@@ -45,7 +45,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "오늘 뭐 먹지? - 메뉴 추천 룰렛",
-      url: "https://pick-play.github.io/food",
+      url: "https://pick-play.github.io/food/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -54,8 +54,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-play.github.io" },
-        { "@type": "ListItem", position: 2, name: "오늘 뭐 먹지?", item: "https://pick-play.github.io/food" },
+        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-play.github.io/" },
+        { "@type": "ListItem", position: 2, name: "오늘 뭐 먹지?", item: "https://pick-play.github.io/food/" },
       ],
     },
     {

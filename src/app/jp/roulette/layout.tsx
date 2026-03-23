@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ランダムルーレット - 決定スピナー | PickPlay",
     description: "迷ったときに！回して決めましょう。カスタムルーレット対応。",
-    url: "https://pick-play.github.io/jp/roulette",
+    url: "https://pick-play.github.io/jp/roulette/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/roulette",
+    canonical: "https://pick-play.github.io/jp/roulette/",
     languages: {
-      "x-default": "https://pick-play.github.io/roulette",
-      "ko": "https://pick-play.github.io/roulette",
-      en: "https://pick-play.github.io/en/roulette",
-      ja: "https://pick-play.github.io/jp/roulette",
-      "zh-CN": "https://pick-play.github.io/cn/roulette",
-      es: "https://pick-play.github.io/es/roulette",
+      "x-default": "https://pick-play.github.io/roulette/",
+      "ko": "https://pick-play.github.io/roulette/",
+      en: "https://pick-play.github.io/en/roulette/",
+      ja: "https://pick-play.github.io/jp/roulette/",
+      "zh-CN": "https://pick-play.github.io/cn/roulette/",
+      es: "https://pick-play.github.io/es/roulette/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "ランダムルーレット - 決定スピナー",
-      url: "https://pick-play.github.io/jp/roulette",
+      url: "https://pick-play.github.io/jp/roulette/",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -62,13 +62,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "ランダムルーレット",
-          item: "https://pick-play.github.io/jp/roulette",
+          item: "https://pick-play.github.io/jp/roulette/",
         },
       ],
     },

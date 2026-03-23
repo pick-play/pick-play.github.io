@@ -31,7 +31,7 @@ export default function AnchorAd() {
         <button
           onClick={() => setDismissed(true)}
           className="absolute -top-8 right-2 w-7 h-7 flex items-center justify-center rounded-t-lg bg-white/90 dark:bg-slate-800/90 border border-b-0 border-slate-200 dark:border-slate-700 text-slate-400 hover:text-slate-600 transition-colors"
-          aria-label="광고 닫기"
+          aria-label="Close ad"
         >
           <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />

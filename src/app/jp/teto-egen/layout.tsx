@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "テトvsエゲン - 性格診断 | PickPlay",
     description:
       "テトタイプ？エゲンタイプ？性格診断で確認しよう。",
-    url: "https://pick-play.github.io/jp/teto-egen",
+    url: "https://pick-play.github.io/jp/teto-egen/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/teto-egen",
+    canonical: "https://pick-play.github.io/jp/teto-egen/",
     languages: {
-      "x-default": "https://pick-play.github.io/teto-egen",
-      "ko": "https://pick-play.github.io/teto-egen",
-      en: "https://pick-play.github.io/en/teto-egen",
-      ja: "https://pick-play.github.io/jp/teto-egen",
-      "zh-CN": "https://pick-play.github.io/cn/teto-egen",
-      es: "https://pick-play.github.io/es/teto-egen",
+      "x-default": "https://pick-play.github.io/teto-egen/",
+      "ko": "https://pick-play.github.io/teto-egen/",
+      en: "https://pick-play.github.io/en/teto-egen/",
+      ja: "https://pick-play.github.io/jp/teto-egen/",
+      "zh-CN": "https://pick-play.github.io/cn/teto-egen/",
+      es: "https://pick-play.github.io/es/teto-egen/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "テトvsエゲン - 性格診断",
-      url: "https://pick-play.github.io/jp/teto-egen",
+      url: "https://pick-play.github.io/jp/teto-egen/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "テトvsエゲン",
-          item: "https://pick-play.github.io/jp/teto-egen",
+          item: "https://pick-play.github.io/jp/teto-egen/",
         },
       ],
     },

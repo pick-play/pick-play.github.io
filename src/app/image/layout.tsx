@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "이미지 도구 - 변환, 압축, 크기 변경, 자르기 | PickPlay",
     description: "PNG JPG WEBP 변환, 이미지 압축, 크기 변경, 자르기까지. 모든 작업이 브라우저에서 처리됩니다.",
-    url: "https://pick-play.github.io/image",
+    url: "https://pick-play.github.io/image/",
     images: [
       {
         url: "/og-image.png",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/image",
+    canonical: "https://pick-play.github.io/image/",
   },
 };
 
@@ -41,7 +41,7 @@ const jsonLd = {
       "@type": "WebApplication",
       name: "이미지 도구",
       description: "이미지 변환, 압축, 크기 변경, 자르기 도구",
-      url: "https://pick-play.github.io/image",
+      url: "https://pick-play.github.io/image/",
       applicationCategory: "UtilityApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -53,13 +53,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-play.github.io",
+          item: "https://pick-play.github.io/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "이미지 도구",
-          item: "https://pick-play.github.io/image",
+          item: "https://pick-play.github.io/image/",
         },
       ],
     },

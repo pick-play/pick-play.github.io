@@ -9,7 +9,7 @@ import LanguageDetector from "@/components/LanguageDetector";
 import HtmlLangSetter from "@/components/HtmlLangSetter";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pick-play.github.io"),
+  metadataBase: new URL("https://pick-play.github.io/"),
   verification: {
     google: "0c1Q1LUKx3fTxGQ9BHGViwcOtcz7ETY-vhjnSw11oMU",
     other: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       "오늘 뭐 먹지? 라이어 게임, 랜덤 조 뽑기, 데이트 코스 추천까지 한 곳에서.",
     type: "website",
     locale: "ko_KR",
-    url: "https://pick-play.github.io",
+    url: "https://pick-play.github.io/",
     siteName: "PickPlay",
     images: [
       {
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io",
+    canonical: "https://pick-play.github.io/",
     languages: {
-      "x-default": "https://pick-play.github.io",
-      "ko": "https://pick-play.github.io",
-      "en": "https://pick-play.github.io/en",
-      "ja": "https://pick-play.github.io/jp",
-      "zh-CN": "https://pick-play.github.io/cn",
-      "es": "https://pick-play.github.io/es",
+      "x-default": "https://pick-play.github.io/",
+      "ko": "https://pick-play.github.io/",
+      "en": "https://pick-play.github.io/en/",
+      "ja": "https://pick-play.github.io/jp/",
+      "zh-CN": "https://pick-play.github.io/cn/",
+      "es": "https://pick-play.github.io/es/",
     },
   },
   manifest: "/site.webmanifest",
@@ -82,14 +82,14 @@ const jsonLd = {
       "@type": "Organization",
       "@id": "https://pick-play.github.io/#organization",
       name: "PickPlay",
-      url: "https://pick-play.github.io",
+      url: "https://pick-play.github.io/",
       logo: "https://pick-play.github.io/apple-touch-icon.png",
       description: "오늘 뭐 먹지? 라이어 게임, 랜덤 조 뽑기, 데이트 코스 추천까지. 선택과 재미를 한 번에!",
     },
     {
       "@type": "WebSite",
       "@id": "https://pick-play.github.io/#website",
-      url: "https://pick-play.github.io",
+      url: "https://pick-play.github.io/",
       name: "PickPlay",
       publisher: { "@id": "https://pick-play.github.io/#organization" },
       inLanguage: "ko-KR",
@@ -98,19 +98,19 @@ const jsonLd = {
       "@type": "BreadcrumbList",
       "@id": "https://pick-play.github.io/#breadcrumb",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-play.github.io" },
-        { "@type": "ListItem", position: 2, name: "오늘 뭐 먹지?", item: "https://pick-play.github.io/food" },
-        { "@type": "ListItem", position: 3, name: "데이트 코스", item: "https://pick-play.github.io/date-course" },
-        { "@type": "ListItem", position: 4, name: "회식비 정산", item: "https://pick-play.github.io/settlement" },
-        { "@type": "ListItem", position: 5, name: "라이어 게임", item: "https://pick-play.github.io/liar-game" },
-        { "@type": "ListItem", position: 6, name: "조 뽑기", item: "https://pick-play.github.io/random-team" },
-        { "@type": "ListItem", position: 7, name: "밸런스 게임", item: "https://pick-play.github.io/balance-game" },
-        { "@type": "ListItem", position: 8, name: "랜덤 룰렛", item: "https://pick-play.github.io/roulette" },
-        { "@type": "ListItem", position: 9, name: "초성 퀴즈", item: "https://pick-play.github.io/chosung-quiz" },
-        { "@type": "ListItem", position: 10, name: "테토 vs 에겐", item: "https://pick-play.github.io/teto-egen" },
-        { "@type": "ListItem", position: 11, name: "MBTI 검사", item: "https://pick-play.github.io/mbti" },
-        { "@type": "ListItem", position: 12, name: "PDF 도구", item: "https://pick-play.github.io/pdf" },
-        { "@type": "ListItem", position: 13, name: "이미지 도구", item: "https://pick-play.github.io/image" },
+        { "@type": "ListItem", position: 1, name: "홈", item: "https://pick-play.github.io/" },
+        { "@type": "ListItem", position: 2, name: "오늘 뭐 먹지?", item: "https://pick-play.github.io/food/" },
+        { "@type": "ListItem", position: 3, name: "데이트 코스", item: "https://pick-play.github.io/date-course/" },
+        { "@type": "ListItem", position: 4, name: "회식비 정산", item: "https://pick-play.github.io/settlement/" },
+        { "@type": "ListItem", position: 5, name: "라이어 게임", item: "https://pick-play.github.io/liar-game/" },
+        { "@type": "ListItem", position: 6, name: "조 뽑기", item: "https://pick-play.github.io/random-team/" },
+        { "@type": "ListItem", position: 7, name: "밸런스 게임", item: "https://pick-play.github.io/balance-game/" },
+        { "@type": "ListItem", position: 8, name: "랜덤 룰렛", item: "https://pick-play.github.io/roulette/" },
+        { "@type": "ListItem", position: 9, name: "초성 퀴즈", item: "https://pick-play.github.io/chosung-quiz/" },
+        { "@type": "ListItem", position: 10, name: "테토 vs 에겐", item: "https://pick-play.github.io/teto-egen/" },
+        { "@type": "ListItem", position: 11, name: "MBTI 검사", item: "https://pick-play.github.io/mbti/" },
+        { "@type": "ListItem", position: 12, name: "PDF 도구", item: "https://pick-play.github.io/pdf/" },
+        { "@type": "ListItem", position: 13, name: "이미지 도구", item: "https://pick-play.github.io/image/" },
       ],
     },
   ],
@@ -124,8 +124,8 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
-        <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
-        <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
+        <link rel="dns-prefetch" href="/pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="/googleads.g.doubleclick.net" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <meta name="google-adsense-account" content="ca-pub-7766090864059500" />
         <script

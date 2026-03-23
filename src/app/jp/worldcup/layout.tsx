@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "理想型ワールドカップ - トーナメント | PickPlay",
     description:
       "6カテゴリー、96人の候補！トーナメントであなたの理想型を見つけよう。",
-    url: "https://pick-play.github.io/jp/worldcup",
+    url: "https://pick-play.github.io/jp/worldcup/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/worldcup",
+    canonical: "https://pick-play.github.io/jp/worldcup/",
     languages: {
-      "x-default": "https://pick-play.github.io/worldcup",
-      "ko": "https://pick-play.github.io/worldcup",
-      en: "https://pick-play.github.io/en/worldcup",
-      ja: "https://pick-play.github.io/jp/worldcup",
-      "zh-CN": "https://pick-play.github.io/cn/worldcup",
-      es: "https://pick-play.github.io/es/worldcup",
+      "x-default": "https://pick-play.github.io/worldcup/",
+      "ko": "https://pick-play.github.io/worldcup/",
+      en: "https://pick-play.github.io/en/worldcup/",
+      ja: "https://pick-play.github.io/jp/worldcup/",
+      "zh-CN": "https://pick-play.github.io/cn/worldcup/",
+      es: "https://pick-play.github.io/es/worldcup/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "理想型ワールドカップ - トーナメント",
-      url: "https://pick-play.github.io/jp/worldcup",
+      url: "https://pick-play.github.io/jp/worldcup/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "理想型ワールドカップ",
-          item: "https://pick-play.github.io/jp/worldcup",
+          item: "https://pick-play.github.io/jp/worldcup/",
         },
       ],
     },

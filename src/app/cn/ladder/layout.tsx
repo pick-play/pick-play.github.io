@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "梯子游戏 - 随机匹配 | PickPlay",
     description: "谁会中奖？精彩的路径追踪动画！",
-    url: "https://pick-play.github.io/cn/ladder",
+    url: "https://pick-play.github.io/cn/ladder/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 梯子游戏" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/ladder",
+    canonical: "https://pick-play.github.io/cn/ladder/",
     languages: {
-      "x-default": "https://pick-play.github.io/ladder",
-      "ko": "https://pick-play.github.io/ladder",
-      "en": "https://pick-play.github.io/en/ladder",
-      "ja": "https://pick-play.github.io/jp/ladder",
-      "zh-CN": "https://pick-play.github.io/cn/ladder",
-      "es": "https://pick-play.github.io/es/ladder",
+      "x-default": "https://pick-play.github.io/ladder/",
+      "ko": "https://pick-play.github.io/ladder/",
+      "en": "https://pick-play.github.io/en/ladder/",
+      "ja": "https://pick-play.github.io/jp/ladder/",
+      "zh-CN": "https://pick-play.github.io/cn/ladder/",
+      "es": "https://pick-play.github.io/es/ladder/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "梯子游戏 - 随机匹配",
-      url: "https://pick-play.github.io/cn/ladder",
+      url: "https://pick-play.github.io/cn/ladder/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "梯子游戏", item: "https://pick-play.github.io/cn/ladder" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "梯子游戏", item: "https://pick-play.github.io/cn/ladder/" },
       ],
     },
   ],

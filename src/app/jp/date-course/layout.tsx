@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "デートコース - ルート提案 | PickPlay",
     description:
       "韓国10都市、200種類のデートコース。雰囲気マップで完璧な動線を。",
-    url: "https://pick-play.github.io/jp/date-course",
+    url: "https://pick-play.github.io/jp/date-course/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/date-course",
+    canonical: "https://pick-play.github.io/jp/date-course/",
     languages: {
-      "x-default": "https://pick-play.github.io/date-course",
-      "ko": "https://pick-play.github.io/date-course",
-      en: "https://pick-play.github.io/en/date-course",
-      ja: "https://pick-play.github.io/jp/date-course",
-      "zh-CN": "https://pick-play.github.io/cn/date-course",
-      es: "https://pick-play.github.io/es/date-course",
+      "x-default": "https://pick-play.github.io/date-course/",
+      "ko": "https://pick-play.github.io/date-course/",
+      en: "https://pick-play.github.io/en/date-course/",
+      ja: "https://pick-play.github.io/jp/date-course/",
+      "zh-CN": "https://pick-play.github.io/cn/date-course/",
+      es: "https://pick-play.github.io/es/date-course/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "デートコース - ルート提案",
-      url: "https://pick-play.github.io/jp/date-course",
+      url: "https://pick-play.github.io/jp/date-course/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "デートコース",
-          item: "https://pick-play.github.io/jp/date-course",
+          item: "https://pick-play.github.io/jp/date-course/",
         },
       ],
     },

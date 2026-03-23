@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Color Personality Test - What Color Are You?",
     description:
       "Answer 10 questions to discover what color represents your personality. 8 possible color results!",
-    url: "https://pick-play.github.io/en/color-test",
+    url: "https://pick-play.github.io/en/color-test/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/color-test",
+    canonical: "https://pick-play.github.io/en/color-test/",
     languages: {
-      "x-default": "https://pick-play.github.io/color-test",
-      "ko": "https://pick-play.github.io/color-test",
-      en: "https://pick-play.github.io/en/color-test",
-      ja: "https://pick-play.github.io/jp/color-test",
-      "zh-CN": "https://pick-play.github.io/cn/color-test",
-      es: "https://pick-play.github.io/es/color-test",
+      "x-default": "https://pick-play.github.io/color-test/",
+      "ko": "https://pick-play.github.io/color-test/",
+      en: "https://pick-play.github.io/en/color-test/",
+      ja: "https://pick-play.github.io/jp/color-test/",
+      "zh-CN": "https://pick-play.github.io/cn/color-test/",
+      es: "https://pick-play.github.io/es/color-test/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Color Personality Test",
-      url: "https://pick-play.github.io/en/color-test",
+      url: "https://pick-play.github.io/en/color-test/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Color Personality Test",
-          item: "https://pick-play.github.io/en/color-test",
+          item: "https://pick-play.github.io/en/color-test/",
         },
       ],
     },

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Yes or No Tarot - Free Online Card Reading",
     description:
       "Ask the tarot cards your question! Draw from all 22 Major Arcana for guidance on your dilemmas.",
-    url: "https://pick-play.github.io/en/tarot",
+    url: "https://pick-play.github.io/en/tarot/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/tarot",
+    canonical: "https://pick-play.github.io/en/tarot/",
     languages: {
-      "x-default": "https://pick-play.github.io/tarot",
-      "ko": "https://pick-play.github.io/tarot",
-      en: "https://pick-play.github.io/en/tarot",
-      ja: "https://pick-play.github.io/jp/tarot",
-      "zh-CN": "https://pick-play.github.io/cn/tarot",
-      es: "https://pick-play.github.io/es/tarot",
+      "x-default": "https://pick-play.github.io/tarot/",
+      "ko": "https://pick-play.github.io/tarot/",
+      en: "https://pick-play.github.io/en/tarot/",
+      ja: "https://pick-play.github.io/jp/tarot/",
+      "zh-CN": "https://pick-play.github.io/cn/tarot/",
+      es: "https://pick-play.github.io/es/tarot/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Yes or No Tarot - Card Reading",
-      url: "https://pick-play.github.io/en/tarot",
+      url: "https://pick-play.github.io/en/tarot/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Yes or No Tarot",
-          item: "https://pick-play.github.io/en/tarot",
+          item: "https://pick-play.github.io/en/tarot/",
         },
       ],
     },

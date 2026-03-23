@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "吃什么？ - 130种菜品推荐轮盘 | PickPlay",
     description: "减少纠结，快速选择！在口味地图上选好偏好，轮盘帮你挑出最合适的美食。",
-    url: "https://pick-play.github.io/cn/food",
+    url: "https://pick-play.github.io/cn/food/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 吃什么推荐" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/food",
+    canonical: "https://pick-play.github.io/cn/food/",
     languages: {
-      "x-default": "https://pick-play.github.io/food",
-      "ko": "https://pick-play.github.io/food",
-      "en": "https://pick-play.github.io/en/food",
-      "ja": "https://pick-play.github.io/jp/food",
-      "zh-CN": "https://pick-play.github.io/cn/food",
-      "es": "https://pick-play.github.io/es/food",
+      "x-default": "https://pick-play.github.io/food/",
+      "ko": "https://pick-play.github.io/food/",
+      "en": "https://pick-play.github.io/en/food/",
+      "ja": "https://pick-play.github.io/jp/food/",
+      "zh-CN": "https://pick-play.github.io/cn/food/",
+      "es": "https://pick-play.github.io/es/food/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "吃什么？ - 菜单推荐轮盘",
-      url: "https://pick-play.github.io/cn/food",
+      url: "https://pick-play.github.io/cn/food/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "吃什么？", item: "https://pick-play.github.io/cn/food" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "吃什么？", item: "https://pick-play.github.io/cn/food/" },
       ],
     },
   ],

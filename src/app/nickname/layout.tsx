@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "닉네임 생성기 - 게임, SNS 닉네임 추천 | PickPlay",
     description:
       "귀여운, 웃긴, 멋있는, 게임용, 판타지, 감성적 스타일로 나만의 닉네임을 자동 생성! 게임과 SNS에 딱 맞는 닉네임을 찾아보세요.",
-    url: "https://pick-play.github.io/nickname",
+    url: "https://pick-play.github.io/nickname/",
     images: [
       {
         url: "/og-image.png",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/nickname",
+    canonical: "https://pick-play.github.io/nickname/",
   },
 };
 
@@ -41,7 +41,7 @@ const jsonLd = {
     {
       "@type": ["WebApplication", "SoftwareApplication"],
       name: "닉네임 생성기",
-      url: "https://pick-play.github.io/nickname",
+      url: "https://pick-play.github.io/nickname/",
       applicationCategory: "UtilityApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -55,13 +55,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-play.github.io",
+          item: "https://pick-play.github.io/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "닉네임 생성기",
-          item: "https://pick-play.github.io/nickname",
+          item: "https://pick-play.github.io/nickname/",
         },
       ],
     },

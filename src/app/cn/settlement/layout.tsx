@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AA算账 - 公平分摊计算器 | PickPlay",
     description: "复杂的AA也轻松搞定。支持项目排除、差额分摊、最小转账次数。",
-    url: "https://pick-play.github.io/cn/settlement",
+    url: "https://pick-play.github.io/cn/settlement/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - AA算账" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/settlement",
+    canonical: "https://pick-play.github.io/cn/settlement/",
     languages: {
-      "x-default": "https://pick-play.github.io/settlement",
-      "ko": "https://pick-play.github.io/settlement",
-      "en": "https://pick-play.github.io/en/settlement",
-      "ja": "https://pick-play.github.io/jp/settlement",
-      "zh-CN": "https://pick-play.github.io/cn/settlement",
-      "es": "https://pick-play.github.io/es/settlement",
+      "x-default": "https://pick-play.github.io/settlement/",
+      "ko": "https://pick-play.github.io/settlement/",
+      "en": "https://pick-play.github.io/en/settlement/",
+      "ja": "https://pick-play.github.io/jp/settlement/",
+      "zh-CN": "https://pick-play.github.io/cn/settlement/",
+      "es": "https://pick-play.github.io/es/settlement/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "AA算账 - 公平分摊计算器",
-      url: "https://pick-play.github.io/cn/settlement",
+      url: "https://pick-play.github.io/cn/settlement/",
       applicationCategory: "FinanceApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "AA算账", item: "https://pick-play.github.io/cn/settlement" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "AA算账", item: "https://pick-play.github.io/cn/settlement/" },
       ],
     },
   ],

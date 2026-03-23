@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Yes or No タロット - カード占い | PickPlay",
     description:
       "悩みがあるときタロットカードに聞いてみよう！22枚のメジャーアルカナ。",
-    url: "https://pick-play.github.io/jp/tarot",
+    url: "https://pick-play.github.io/jp/tarot/",
     images: [
       {
         url: "/og-image.png",
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/tarot",
+    canonical: "https://pick-play.github.io/jp/tarot/",
     languages: {
-      "x-default": "https://pick-play.github.io/tarot",
-      "ko": "https://pick-play.github.io/tarot",
-      en: "https://pick-play.github.io/en/tarot",
-      ja: "https://pick-play.github.io/jp/tarot",
-      "zh-CN": "https://pick-play.github.io/cn/tarot",
-      es: "https://pick-play.github.io/es/tarot",
+      "x-default": "https://pick-play.github.io/tarot/",
+      "ko": "https://pick-play.github.io/tarot/",
+      en: "https://pick-play.github.io/en/tarot/",
+      ja: "https://pick-play.github.io/jp/tarot/",
+      "zh-CN": "https://pick-play.github.io/cn/tarot/",
+      es: "https://pick-play.github.io/es/tarot/",
     },
   },
 };
@@ -50,7 +50,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Yes or No タロット - カード占い",
-      url: "https://pick-play.github.io/jp/tarot",
+      url: "https://pick-play.github.io/jp/tarot/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -64,13 +64,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Yes or No タロット",
-          item: "https://pick-play.github.io/jp/tarot",
+          item: "https://pick-play.github.io/jp/tarot/",
         },
       ],
     },

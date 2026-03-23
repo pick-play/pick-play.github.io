@@ -18,18 +18,18 @@ export const metadata: Metadata = {
     title: "Torneo del Tipo Ideal - Torneo con 96 Candidatos",
     description:
       "6 categorías, 96 candidatos. ¡Encuentra tu tipo ideal a través de un emocionante torneo de eliminación!",
-    url: "https://pick-play.github.io/es/worldcup",
+    url: "https://pick-play.github.io/es/worldcup/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - Torneo del Tipo Ideal" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/es/worldcup",
+    canonical: "https://pick-play.github.io/es/worldcup/",
     languages: {
-      "x-default": "https://pick-play.github.io/worldcup",
-      "ko": "https://pick-play.github.io/worldcup",
-      en: "https://pick-play.github.io/en/worldcup",
-      ja: "https://pick-play.github.io/jp/worldcup",
-      "zh-CN": "https://pick-play.github.io/cn/worldcup",
-      es: "https://pick-play.github.io/es/worldcup",
+      "x-default": "https://pick-play.github.io/worldcup/",
+      "ko": "https://pick-play.github.io/worldcup/",
+      en: "https://pick-play.github.io/en/worldcup/",
+      ja: "https://pick-play.github.io/jp/worldcup/",
+      "zh-CN": "https://pick-play.github.io/cn/worldcup/",
+      es: "https://pick-play.github.io/es/worldcup/",
     },
   },
 };
@@ -40,7 +40,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Torneo del Tipo Ideal - Torneo",
-      url: "https://pick-play.github.io/es/worldcup",
+      url: "https://pick-play.github.io/es/worldcup/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -50,8 +50,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es" },
-        { "@type": "ListItem", position: 2, name: "Torneo del Tipo Ideal", item: "https://pick-play.github.io/es/worldcup" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es/" },
+        { "@type": "ListItem", position: 2, name: "Torneo del Tipo Ideal", item: "https://pick-play.github.io/es/worldcup/" },
       ],
     },
   ],

@@ -19,18 +19,18 @@ export const metadata: Metadata = {
     title: "Test MBTI - Descubre tu Tipo de Personalidad en 20 Preguntas",
     description:
       "Descubre tu tipo MBTI y compatibilidad con solo 20 preguntas. Los 16 tipos de personalidad en español.",
-    url: "https://pick-play.github.io/es/mbti",
+    url: "https://pick-play.github.io/es/mbti/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - Test MBTI" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/es/mbti",
+    canonical: "https://pick-play.github.io/es/mbti/",
     languages: {
-      "x-default": "https://pick-play.github.io/mbti",
-      "ko": "https://pick-play.github.io/mbti",
-      en: "https://pick-play.github.io/en/mbti",
-      ja: "https://pick-play.github.io/jp/mbti",
-      "zh-CN": "https://pick-play.github.io/cn/mbti",
-      es: "https://pick-play.github.io/es/mbti",
+      "x-default": "https://pick-play.github.io/mbti/",
+      "ko": "https://pick-play.github.io/mbti/",
+      en: "https://pick-play.github.io/en/mbti/",
+      ja: "https://pick-play.github.io/jp/mbti/",
+      "zh-CN": "https://pick-play.github.io/cn/mbti/",
+      es: "https://pick-play.github.io/es/mbti/",
     },
   },
 };
@@ -41,7 +41,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Test MBTI - 20 Preguntas",
-      url: "https://pick-play.github.io/es/mbti",
+      url: "https://pick-play.github.io/es/mbti/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -51,8 +51,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es" },
-        { "@type": "ListItem", position: 2, name: "Test MBTI", item: "https://pick-play.github.io/es/mbti" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es/" },
+        { "@type": "ListItem", position: 2, name: "Test MBTI", item: "https://pick-play.github.io/es/mbti/" },
       ],
     },
     {

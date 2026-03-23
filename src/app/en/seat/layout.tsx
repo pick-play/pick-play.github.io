@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Seat Arranger - Random Seating",
     description:
       "Randomly assign seats for classrooms, offices, or study cafes with handy presets.",
-    url: "https://pick-play.github.io/en/seat",
+    url: "https://pick-play.github.io/en/seat/",
     images: [
       {
         url: "/og-image.png",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/seat",
+    canonical: "https://pick-play.github.io/en/seat/",
     languages: {
-      "x-default": "https://pick-play.github.io/seat",
-      "ko": "https://pick-play.github.io/seat",
-      en: "https://pick-play.github.io/en/seat",
-      ja: "https://pick-play.github.io/jp/seat",
-      "zh-CN": "https://pick-play.github.io/cn/seat",
-      es: "https://pick-play.github.io/es/seat",
+      "x-default": "https://pick-play.github.io/seat/",
+      "ko": "https://pick-play.github.io/seat/",
+      en: "https://pick-play.github.io/en/seat/",
+      ja: "https://pick-play.github.io/jp/seat/",
+      "zh-CN": "https://pick-play.github.io/cn/seat/",
+      es: "https://pick-play.github.io/es/seat/",
     },
   },
 };
@@ -47,7 +47,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Seat Arranger - Random Seating",
-      url: "https://pick-play.github.io/en/seat",
+      url: "https://pick-play.github.io/en/seat/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -62,13 +62,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Seat Arranger",
-          item: "https://pick-play.github.io/en/seat",
+          item: "https://pick-play.github.io/en/seat/",
         },
       ],
     },

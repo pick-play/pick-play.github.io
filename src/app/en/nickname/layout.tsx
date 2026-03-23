@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Nickname Generator - Random Names in 6 Styles",
     description:
       "Generate random nicknames in 6 different styles — cute, cool, funny, and more. Find your perfect username!",
-    url: "https://pick-play.github.io/en/nickname",
+    url: "https://pick-play.github.io/en/nickname/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/nickname",
+    canonical: "https://pick-play.github.io/en/nickname/",
     languages: {
-      "x-default": "https://pick-play.github.io/nickname",
-      "ko": "https://pick-play.github.io/nickname",
-      en: "https://pick-play.github.io/en/nickname",
-      ja: "https://pick-play.github.io/jp/nickname",
-      "zh-CN": "https://pick-play.github.io/cn/nickname",
-      es: "https://pick-play.github.io/es/nickname",
+      "x-default": "https://pick-play.github.io/nickname/",
+      "ko": "https://pick-play.github.io/nickname/",
+      en: "https://pick-play.github.io/en/nickname/",
+      ja: "https://pick-play.github.io/jp/nickname/",
+      "zh-CN": "https://pick-play.github.io/cn/nickname/",
+      es: "https://pick-play.github.io/es/nickname/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Nickname Generator - Random Names",
-      url: "https://pick-play.github.io/en/nickname",
+      url: "https://pick-play.github.io/en/nickname/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Nickname Generator",
-          item: "https://pick-play.github.io/en/nickname",
+          item: "https://pick-play.github.io/en/nickname/",
         },
       ],
     },

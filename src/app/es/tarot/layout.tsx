@@ -19,18 +19,18 @@ export const metadata: Metadata = {
     title: "Tarot Sí o No - 22 Arcanos Mayores Responden",
     description:
       "¿Tienes una duda? Las 22 cartas de los Arcanos Mayores del tarot responden con sí o no.",
-    url: "https://pick-play.github.io/es/tarot",
+    url: "https://pick-play.github.io/es/tarot/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - Tarot Sí o No" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/es/tarot",
+    canonical: "https://pick-play.github.io/es/tarot/",
     languages: {
-      "x-default": "https://pick-play.github.io/tarot",
-      "ko": "https://pick-play.github.io/tarot",
-      en: "https://pick-play.github.io/en/tarot",
-      ja: "https://pick-play.github.io/jp/tarot",
-      "zh-CN": "https://pick-play.github.io/cn/tarot",
-      es: "https://pick-play.github.io/es/tarot",
+      "x-default": "https://pick-play.github.io/tarot/",
+      "ko": "https://pick-play.github.io/tarot/",
+      en: "https://pick-play.github.io/en/tarot/",
+      ja: "https://pick-play.github.io/jp/tarot/",
+      "zh-CN": "https://pick-play.github.io/cn/tarot/",
+      es: "https://pick-play.github.io/es/tarot/",
     },
   },
 };
@@ -41,7 +41,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Tarot Sí o No - Lectura de Cartas",
-      url: "https://pick-play.github.io/es/tarot",
+      url: "https://pick-play.github.io/es/tarot/",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -51,8 +51,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es" },
-        { "@type": "ListItem", position: 2, name: "Tarot Sí o No", item: "https://pick-play.github.io/es/tarot" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es/" },
+        { "@type": "ListItem", position: 2, name: "Tarot Sí o No", item: "https://pick-play.github.io/es/tarot/" },
       ],
     },
   ],

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "What to Eat? - 130+ Menu Recommendation Roulette",
     description:
       "Less hesitation, faster choices! Pick your taste on the flavor map and let the slot machine choose your meal.",
-    url: "https://pick-play.github.io/en/food",
+    url: "https://pick-play.github.io/en/food/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/food",
+    canonical: "https://pick-play.github.io/en/food/",
     languages: {
-      "x-default": "https://pick-play.github.io/food",
-      "ko": "https://pick-play.github.io/food",
-      en: "https://pick-play.github.io/en/food",
-      ja: "https://pick-play.github.io/jp/food",
-      "zh-CN": "https://pick-play.github.io/cn/food",
-      es: "https://pick-play.github.io/es/food",
+      "x-default": "https://pick-play.github.io/food/",
+      "ko": "https://pick-play.github.io/food/",
+      en: "https://pick-play.github.io/en/food/",
+      ja: "https://pick-play.github.io/jp/food/",
+      "zh-CN": "https://pick-play.github.io/cn/food/",
+      es: "https://pick-play.github.io/es/food/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "What to Eat? - Menu Recommendation Roulette",
-      url: "https://pick-play.github.io/en/food",
+      url: "https://pick-play.github.io/en/food/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -64,13 +64,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "What to Eat?",
-          item: "https://pick-play.github.io/en/food",
+          item: "https://pick-play.github.io/en/food/",
         },
       ],
     },

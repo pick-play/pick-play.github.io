@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "PDF Tools - Merge, Split, Convert & Compress",
     description:
       "Merge, split, convert to JPG, compress PDFs — all securely in your browser. No upload required.",
-    url: "https://pick-play.github.io/en/pdf",
+    url: "https://pick-play.github.io/en/pdf/",
     images: [
       {
         url: "/og-image.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/en/pdf",
+    canonical: "https://pick-play.github.io/en/pdf/",
     languages: {
-      "x-default": "https://pick-play.github.io/pdf",
-      "ko": "https://pick-play.github.io/pdf",
-      en: "https://pick-play.github.io/en/pdf",
-      ja: "https://pick-play.github.io/jp/pdf",
-      "zh-CN": "https://pick-play.github.io/cn/pdf",
-      es: "https://pick-play.github.io/es/pdf",
+      "x-default": "https://pick-play.github.io/pdf/",
+      "ko": "https://pick-play.github.io/pdf/",
+      en: "https://pick-play.github.io/en/pdf/",
+      ja: "https://pick-play.github.io/jp/pdf/",
+      "zh-CN": "https://pick-play.github.io/cn/pdf/",
+      es: "https://pick-play.github.io/es/pdf/",
     },
   },
 };
@@ -48,7 +48,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "PDF Tools - Merge, Split, Convert",
-      url: "https://pick-play.github.io/en/pdf",
+      url: "https://pick-play.github.io/en/pdf/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://pick-play.github.io/en",
+          item: "https://pick-play.github.io/en/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "PDF Tools",
-          item: "https://pick-play.github.io/en/pdf",
+          item: "https://pick-play.github.io/en/pdf/",
         },
       ],
     },

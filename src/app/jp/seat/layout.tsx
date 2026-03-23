@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "座席配置 - ランダム配置 | PickPlay",
     description:
       "教室、会議室、スタディカフェの座席をランダムに公平配置。プリセット対応。",
-    url: "https://pick-play.github.io/jp/seat",
+    url: "https://pick-play.github.io/jp/seat/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/seat",
+    canonical: "https://pick-play.github.io/jp/seat/",
     languages: {
-      "x-default": "https://pick-play.github.io/seat",
-      "ko": "https://pick-play.github.io/seat",
-      en: "https://pick-play.github.io/en/seat",
-      ja: "https://pick-play.github.io/jp/seat",
-      "zh-CN": "https://pick-play.github.io/cn/seat",
-      es: "https://pick-play.github.io/es/seat",
+      "x-default": "https://pick-play.github.io/seat/",
+      "ko": "https://pick-play.github.io/seat/",
+      en: "https://pick-play.github.io/en/seat/",
+      ja: "https://pick-play.github.io/jp/seat/",
+      "zh-CN": "https://pick-play.github.io/cn/seat/",
+      es: "https://pick-play.github.io/es/seat/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "座席配置 - ランダム配置",
-      url: "https://pick-play.github.io/jp/seat",
+      url: "https://pick-play.github.io/jp/seat/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "座席配置",
-          item: "https://pick-play.github.io/jp/seat",
+          item: "https://pick-play.github.io/jp/seat/",
         },
       ],
     },

@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "猜词游戏 - 首字母猜词 | PickPlay",
     description: "根据首字母猜单词！带提示和计时器，越玩越上头。",
-    url: "https://pick-play.github.io/cn/chosung-quiz",
+    url: "https://pick-play.github.io/cn/chosung-quiz/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 猜词游戏" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/chosung-quiz",
+    canonical: "https://pick-play.github.io/cn/chosung-quiz/",
     languages: {
-      "x-default": "https://pick-play.github.io/chosung-quiz",
-      "ko": "https://pick-play.github.io/chosung-quiz",
-      "en": "https://pick-play.github.io/en/chosung-quiz",
-      "ja": "https://pick-play.github.io/jp/chosung-quiz",
-      "zh-CN": "https://pick-play.github.io/cn/chosung-quiz",
-      "es": "https://pick-play.github.io/es/chosung-quiz",
+      "x-default": "https://pick-play.github.io/chosung-quiz/",
+      "ko": "https://pick-play.github.io/chosung-quiz/",
+      "en": "https://pick-play.github.io/en/chosung-quiz/",
+      "ja": "https://pick-play.github.io/jp/chosung-quiz/",
+      "zh-CN": "https://pick-play.github.io/cn/chosung-quiz/",
+      "es": "https://pick-play.github.io/es/chosung-quiz/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "猜词游戏 - 首字母猜词",
-      url: "https://pick-play.github.io/cn/chosung-quiz",
+      url: "https://pick-play.github.io/cn/chosung-quiz/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "猜词游戏", item: "https://pick-play.github.io/cn/chosung-quiz" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "猜词游戏", item: "https://pick-play.github.io/cn/chosung-quiz/" },
       ],
     },
   ],

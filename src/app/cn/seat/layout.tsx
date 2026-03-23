@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "座位安排 - 随机分配 | PickPlay",
     description: "教室、会议室座位随机分配，整齐高效。",
-    url: "https://pick-play.github.io/cn/seat",
+    url: "https://pick-play.github.io/cn/seat/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 座位安排" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/seat",
+    canonical: "https://pick-play.github.io/cn/seat/",
     languages: {
-      "x-default": "https://pick-play.github.io/seat",
-      "ko": "https://pick-play.github.io/seat",
-      "en": "https://pick-play.github.io/en/seat",
-      "ja": "https://pick-play.github.io/jp/seat",
-      "zh-CN": "https://pick-play.github.io/cn/seat",
-      "es": "https://pick-play.github.io/es/seat",
+      "x-default": "https://pick-play.github.io/seat/",
+      "ko": "https://pick-play.github.io/seat/",
+      "en": "https://pick-play.github.io/en/seat/",
+      "ja": "https://pick-play.github.io/jp/seat/",
+      "zh-CN": "https://pick-play.github.io/cn/seat/",
+      "es": "https://pick-play.github.io/es/seat/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "座位安排 - 随机分配",
-      url: "https://pick-play.github.io/cn/seat",
+      url: "https://pick-play.github.io/cn/seat/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "座位安排", item: "https://pick-play.github.io/cn/seat" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "座位安排", item: "https://pick-play.github.io/cn/seat/" },
       ],
     },
   ],

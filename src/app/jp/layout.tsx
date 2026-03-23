@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "何食べる？ライアーゲーム、チーム分け、デートコースまで一か所で。",
     type: "website",
     locale: "ja_JP",
-    url: "https://pick-play.github.io/jp",
+    url: "https://pick-play.github.io/jp/",
     siteName: "PickPlay",
     images: [
       {
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp",
+    canonical: "https://pick-play.github.io/jp/",
     languages: {
-      "x-default": "https://pick-play.github.io",
-      "ko": "https://pick-play.github.io",
-      en: "https://pick-play.github.io/en",
-      ja: "https://pick-play.github.io/jp",
-      "zh-CN": "https://pick-play.github.io/cn",
-      es: "https://pick-play.github.io/es",
+      "x-default": "https://pick-play.github.io/",
+      "ko": "https://pick-play.github.io/",
+      en: "https://pick-play.github.io/en/",
+      ja: "https://pick-play.github.io/jp/",
+      "zh-CN": "https://pick-play.github.io/cn/",
+      es: "https://pick-play.github.io/es/",
     },
   },
 };
@@ -51,7 +51,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      url: "https://pick-play.github.io/jp",
+      url: "https://pick-play.github.io/jp/",
       name: "PickPlay",
       publisher: { "@id": "https://pick-play.github.io/#organization" },
       inLanguage: "ja",

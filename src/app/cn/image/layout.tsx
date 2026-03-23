@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "图片工具 - 转换、压缩、调整大小 | PickPlay",
     description: "图片转换、压缩、调整大小、裁剪。支持批量处理。",
-    url: "https://pick-play.github.io/cn/image",
+    url: "https://pick-play.github.io/cn/image/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - 图片工具" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/cn/image",
+    canonical: "https://pick-play.github.io/cn/image/",
     languages: {
-      "x-default": "https://pick-play.github.io/image",
-      "ko": "https://pick-play.github.io/image",
-      "en": "https://pick-play.github.io/en/image",
-      "ja": "https://pick-play.github.io/jp/image",
-      "zh-CN": "https://pick-play.github.io/cn/image",
-      "es": "https://pick-play.github.io/es/image",
+      "x-default": "https://pick-play.github.io/image/",
+      "ko": "https://pick-play.github.io/image/",
+      "en": "https://pick-play.github.io/en/image/",
+      "ja": "https://pick-play.github.io/jp/image/",
+      "zh-CN": "https://pick-play.github.io/cn/image/",
+      "es": "https://pick-play.github.io/es/image/",
     },
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "图片工具 - 转换、压缩、调整大小",
-      url: "https://pick-play.github.io/cn/image",
+      url: "https://pick-play.github.io/cn/image/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
@@ -39,8 +39,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn" },
-        { "@type": "ListItem", position: 2, name: "图片工具", item: "https://pick-play.github.io/cn/image" },
+        { "@type": "ListItem", position: 1, name: "首页", item: "https://pick-play.github.io/cn/" },
+        { "@type": "ListItem", position: 2, name: "图片工具", item: "https://pick-play.github.io/cn/image/" },
       ],
     },
   ],

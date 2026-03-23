@@ -18,18 +18,18 @@ export const metadata: Metadata = {
     title: "Ruleta Aleatoria - ¡Gira y Decide!",
     description:
       "¿No puedes decidir qué hacer o quién va primero? ¡Gira la ruleta y deja que el destino elija!",
-    url: "https://pick-play.github.io/es/roulette",
+    url: "https://pick-play.github.io/es/roulette/",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PickPlay - Ruleta Aleatoria" }],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/es/roulette",
+    canonical: "https://pick-play.github.io/es/roulette/",
     languages: {
-      "x-default": "https://pick-play.github.io/roulette",
-      "ko": "https://pick-play.github.io/roulette",
-      en: "https://pick-play.github.io/en/roulette",
-      ja: "https://pick-play.github.io/jp/roulette",
-      "zh-CN": "https://pick-play.github.io/cn/roulette",
-      es: "https://pick-play.github.io/es/roulette",
+      "x-default": "https://pick-play.github.io/roulette/",
+      "ko": "https://pick-play.github.io/roulette/",
+      en: "https://pick-play.github.io/en/roulette/",
+      ja: "https://pick-play.github.io/jp/roulette/",
+      "zh-CN": "https://pick-play.github.io/cn/roulette/",
+      es: "https://pick-play.github.io/es/roulette/",
     },
   },
 };
@@ -40,7 +40,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "Ruleta Aleatoria - Girar y Decidir",
-      url: "https://pick-play.github.io/es/roulette",
+      url: "https://pick-play.github.io/es/roulette/",
       applicationCategory: "EntertainmentApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -50,8 +50,8 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es" },
-        { "@type": "ListItem", position: 2, name: "Ruleta Aleatoria", item: "https://pick-play.github.io/es/roulette" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://pick-play.github.io/es/" },
+        { "@type": "ListItem", position: 2, name: "Ruleta Aleatoria", item: "https://pick-play.github.io/es/roulette/" },
       ],
     },
   ],

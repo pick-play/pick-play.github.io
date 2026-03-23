@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "테토 vs 에겐 성향 테스트",
     description: "나는 테토일까 에겐일까? 11가지 질문으로 알아보는 내 성향!",
-    url: "https://pick-play.github.io/teto-egen",
+    url: "https://pick-play.github.io/teto-egen/",
     images: [
       {
         url: "/og-image.png",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/teto-egen" },
+  alternates: { canonical: "https://pick-play.github.io/teto-egen/" },
 };
 
 const jsonLd = {
@@ -36,7 +36,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "테토 vs 에겐 성향 테스트",
-      url: "https://pick-play.github.io/teto-egen",
+      url: "https://pick-play.github.io/teto-egen/",
       applicationCategory: "LifestyleApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
@@ -50,13 +50,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "홈",
-          item: "https://pick-play.github.io",
+          item: "https://pick-play.github.io/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "테토 vs 에겐 성향 테스트",
-          item: "https://pick-play.github.io/teto-egen",
+          item: "https://pick-play.github.io/teto-egen/",
         },
       ],
     },

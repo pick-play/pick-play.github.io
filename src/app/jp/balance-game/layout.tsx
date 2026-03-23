@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "バランスゲーム - 二者択一 | PickPlay",
     description:
       "これvsあれ！50問以上の質問で楽しむバランスゲーム。",
-    url: "https://pick-play.github.io/jp/balance-game",
+    url: "https://pick-play.github.io/jp/balance-game/",
     images: [
       {
         url: "/og-image.png",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/balance-game",
+    canonical: "https://pick-play.github.io/jp/balance-game/",
     languages: {
-      "x-default": "https://pick-play.github.io/balance-game",
-      "ko": "https://pick-play.github.io/balance-game",
-      en: "https://pick-play.github.io/en/balance-game",
-      ja: "https://pick-play.github.io/jp/balance-game",
-      "zh-CN": "https://pick-play.github.io/cn/balance-game",
-      es: "https://pick-play.github.io/es/balance-game",
+      "x-default": "https://pick-play.github.io/balance-game/",
+      "ko": "https://pick-play.github.io/balance-game/",
+      en: "https://pick-play.github.io/en/balance-game/",
+      ja: "https://pick-play.github.io/jp/balance-game/",
+      "zh-CN": "https://pick-play.github.io/cn/balance-game/",
+      es: "https://pick-play.github.io/es/balance-game/",
     },
   },
 };
@@ -49,7 +49,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "バランスゲーム - 二者択一",
-      url: "https://pick-play.github.io/jp/balance-game",
+      url: "https://pick-play.github.io/jp/balance-game/",
       applicationCategory: "GameApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -63,13 +63,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "バランスゲーム",
-          item: "https://pick-play.github.io/jp/balance-game",
+          item: "https://pick-play.github.io/jp/balance-game/",
         },
       ],
     },

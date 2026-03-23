@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "PDFツール - 結合・分割・変換 | PickPlay",
     description:
       "PDF結合、分割、JPG変換、圧縮まで。ブラウザで安全に処理できます。",
-    url: "https://pick-play.github.io/jp/pdf",
+    url: "https://pick-play.github.io/jp/pdf/",
     images: [
       {
         url: "/og-image.png",
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pick-play.github.io/jp/pdf",
+    canonical: "https://pick-play.github.io/jp/pdf/",
     languages: {
-      "x-default": "https://pick-play.github.io/pdf",
-      "ko": "https://pick-play.github.io/pdf",
-      en: "https://pick-play.github.io/en/pdf",
-      ja: "https://pick-play.github.io/jp/pdf",
-      "zh-CN": "https://pick-play.github.io/cn/pdf",
-      es: "https://pick-play.github.io/es/pdf",
+      "x-default": "https://pick-play.github.io/pdf/",
+      "ko": "https://pick-play.github.io/pdf/",
+      en: "https://pick-play.github.io/en/pdf/",
+      ja: "https://pick-play.github.io/jp/pdf/",
+      "zh-CN": "https://pick-play.github.io/cn/pdf/",
+      es: "https://pick-play.github.io/es/pdf/",
     },
   },
 };
@@ -50,7 +50,7 @@ const jsonLd = {
     {
       "@type": "WebApplication",
       name: "PDFツール - 結合・分割・変換",
-      url: "https://pick-play.github.io/jp/pdf",
+      url: "https://pick-play.github.io/jp/pdf/",
       applicationCategory: "UtilitiesApplication",
       operatingSystem: "Web",
       inLanguage: "ja",
@@ -64,13 +64,13 @@ const jsonLd = {
           "@type": "ListItem",
           position: 1,
           name: "ホーム",
-          item: "https://pick-play.github.io/jp",
+          item: "https://pick-play.github.io/jp/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "PDFツール",
-          item: "https://pick-play.github.io/jp/pdf",
+          item: "https://pick-play.github.io/jp/pdf/",
         },
       ],
     },
