@@ -31,6 +31,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://pick-play.github.io/image/",
+    languages: {
+      "x-default": "https://pick-play.github.io/image/",
+      ko: "https://pick-play.github.io/image/",
+      en: "https://pick-play.github.io/en/image/",
+      ja: "https://pick-play.github.io/jp/image/",
+      "zh-CN": "https://pick-play.github.io/cn/image/",
+      es: "https://pick-play.github.io/es/image/",
+    },
   },
 };
 

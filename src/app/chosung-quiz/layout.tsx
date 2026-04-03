@@ -25,7 +25,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/chosung-quiz/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/chosung-quiz/",
+    languages: {
+      "x-default": "https://pick-play.github.io/chosung-quiz/",
+      ko: "https://pick-play.github.io/chosung-quiz/",
+      en: "https://pick-play.github.io/en/chosung-quiz/",
+      ja: "https://pick-play.github.io/jp/chosung-quiz/",
+      "zh-CN": "https://pick-play.github.io/cn/chosung-quiz/",
+      es: "https://pick-play.github.io/es/chosung-quiz/",
+    },
+  },
 };
 
 const jsonLd = {

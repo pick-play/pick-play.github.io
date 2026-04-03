@@ -25,7 +25,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/ladder/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/ladder/",
+    languages: {
+      "x-default": "https://pick-play.github.io/ladder/",
+      ko: "https://pick-play.github.io/ladder/",
+      en: "https://pick-play.github.io/en/ladder/",
+      ja: "https://pick-play.github.io/jp/ladder/",
+      "zh-CN": "https://pick-play.github.io/cn/ladder/",
+      es: "https://pick-play.github.io/es/ladder/",
+    },
+  },
 };
 
 const jsonLd = {

@@ -31,6 +31,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://pick-play.github.io/d-day/",
+    languages: {
+      "x-default": "https://pick-play.github.io/d-day/",
+      ko: "https://pick-play.github.io/d-day/",
+      en: "https://pick-play.github.io/en/d-day/",
+      ja: "https://pick-play.github.io/jp/d-day/",
+      "zh-CN": "https://pick-play.github.io/cn/d-day/",
+      es: "https://pick-play.github.io/es/d-day/",
+    },
   },
 };
 

@@ -19,7 +19,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/tarot/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/tarot/",
+    languages: {
+      "x-default": "https://pick-play.github.io/tarot/",
+      ko: "https://pick-play.github.io/tarot/",
+      en: "https://pick-play.github.io/en/tarot/",
+      ja: "https://pick-play.github.io/jp/tarot/",
+      "zh-CN": "https://pick-play.github.io/cn/tarot/",
+      es: "https://pick-play.github.io/es/tarot/",
+    },
+  },
 };
 
 const jsonLd = {

@@ -27,7 +27,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/liar-game/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/liar-game/",
+    languages: {
+      "x-default": "https://pick-play.github.io/liar-game/",
+      ko: "https://pick-play.github.io/liar-game/",
+      en: "https://pick-play.github.io/en/liar-game/",
+      ja: "https://pick-play.github.io/jp/liar-game/",
+      "zh-CN": "https://pick-play.github.io/cn/liar-game/",
+      es: "https://pick-play.github.io/es/liar-game/",
+    },
+  },
 };
 
 const jsonLd = {

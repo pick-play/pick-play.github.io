@@ -18,7 +18,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/draw/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/draw/",
+    languages: {
+      "x-default": "https://pick-play.github.io/draw/",
+      ko: "https://pick-play.github.io/draw/",
+      en: "https://pick-play.github.io/en/draw/",
+      ja: "https://pick-play.github.io/jp/draw/",
+      "zh-CN": "https://pick-play.github.io/cn/draw/",
+      es: "https://pick-play.github.io/es/draw/",
+    },
+  },
 };
 
 const jsonLd = {

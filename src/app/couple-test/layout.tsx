@@ -28,7 +28,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/couple-test/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/couple-test/",
+    languages: {
+      "x-default": "https://pick-play.github.io/couple-test/",
+      ko: "https://pick-play.github.io/couple-test/",
+      en: "https://pick-play.github.io/en/couple-test/",
+      ja: "https://pick-play.github.io/jp/couple-test/",
+      "zh-CN": "https://pick-play.github.io/cn/couple-test/",
+      es: "https://pick-play.github.io/es/couple-test/",
+    },
+  },
 };
 
 const jsonLd = {

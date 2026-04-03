@@ -25,7 +25,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/worldcup/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/worldcup/",
+    languages: {
+      "x-default": "https://pick-play.github.io/worldcup/",
+      ko: "https://pick-play.github.io/worldcup/",
+      en: "https://pick-play.github.io/en/worldcup/",
+      ja: "https://pick-play.github.io/jp/worldcup/",
+      "zh-CN": "https://pick-play.github.io/cn/worldcup/",
+      es: "https://pick-play.github.io/es/worldcup/",
+    },
+  },
 };
 
 const jsonLd = {

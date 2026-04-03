@@ -38,6 +38,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://pick-play.github.io/date-course/",
+    languages: {
+      "x-default": "https://pick-play.github.io/date-course/",
+      ko: "https://pick-play.github.io/date-course/",
+      en: "https://pick-play.github.io/en/date-course/",
+      ja: "https://pick-play.github.io/jp/date-course/",
+      "zh-CN": "https://pick-play.github.io/cn/date-course/",
+      es: "https://pick-play.github.io/es/date-course/",
+    },
   },
 };
 

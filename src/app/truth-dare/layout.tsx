@@ -26,7 +26,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/truth-dare/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/truth-dare/",
+    languages: {
+      "x-default": "https://pick-play.github.io/truth-dare/",
+      ko: "https://pick-play.github.io/truth-dare/",
+      en: "https://pick-play.github.io/en/truth-dare/",
+      ja: "https://pick-play.github.io/jp/truth-dare/",
+      "zh-CN": "https://pick-play.github.io/cn/truth-dare/",
+      es: "https://pick-play.github.io/es/truth-dare/",
+    },
+  },
 };
 
 const jsonLd = {

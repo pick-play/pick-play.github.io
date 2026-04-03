@@ -28,7 +28,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/seat/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/seat/",
+    languages: {
+      "x-default": "https://pick-play.github.io/seat/",
+      ko: "https://pick-play.github.io/seat/",
+      en: "https://pick-play.github.io/en/seat/",
+      ja: "https://pick-play.github.io/jp/seat/",
+      "zh-CN": "https://pick-play.github.io/cn/seat/",
+      es: "https://pick-play.github.io/es/seat/",
+    },
+  },
 };
 
 const jsonLd = {

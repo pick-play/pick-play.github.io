@@ -34,6 +34,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://pick-play.github.io/settlement/",
+    languages: {
+      "x-default": "https://pick-play.github.io/settlement/",
+      ko: "https://pick-play.github.io/settlement/",
+      en: "https://pick-play.github.io/en/settlement/",
+      ja: "https://pick-play.github.io/jp/settlement/",
+      "zh-CN": "https://pick-play.github.io/cn/settlement/",
+      es: "https://pick-play.github.io/es/settlement/",
+    },
   },
 };
 

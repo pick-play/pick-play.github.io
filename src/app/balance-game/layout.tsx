@@ -25,7 +25,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/balance-game/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/balance-game/",
+    languages: {
+      "x-default": "https://pick-play.github.io/balance-game/",
+      ko: "https://pick-play.github.io/balance-game/",
+      en: "https://pick-play.github.io/en/balance-game/",
+      ja: "https://pick-play.github.io/jp/balance-game/",
+      "zh-CN": "https://pick-play.github.io/cn/balance-game/",
+      es: "https://pick-play.github.io/es/balance-game/",
+    },
+  },
 };
 
 const jsonLd = {

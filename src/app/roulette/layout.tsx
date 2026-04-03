@@ -19,7 +19,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/roulette/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/roulette/",
+    languages: {
+      "x-default": "https://pick-play.github.io/roulette/",
+      ko: "https://pick-play.github.io/roulette/",
+      en: "https://pick-play.github.io/en/roulette/",
+      ja: "https://pick-play.github.io/jp/roulette/",
+      "zh-CN": "https://pick-play.github.io/cn/roulette/",
+      es: "https://pick-play.github.io/es/roulette/",
+    },
+  },
 };
 
 const jsonLd = {

@@ -25,7 +25,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/mbti/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/mbti/",
+    languages: {
+      "x-default": "https://pick-play.github.io/mbti/",
+      ko: "https://pick-play.github.io/mbti/",
+      en: "https://pick-play.github.io/en/mbti/",
+      ja: "https://pick-play.github.io/jp/mbti/",
+      "zh-CN": "https://pick-play.github.io/cn/mbti/",
+      es: "https://pick-play.github.io/es/mbti/",
+    },
+  },
 };
 
 const jsonLd = {

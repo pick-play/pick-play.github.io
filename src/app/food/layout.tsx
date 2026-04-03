@@ -36,6 +36,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://pick-play.github.io/food/",
+    languages: {
+      "x-default": "https://pick-play.github.io/food/",
+      ko: "https://pick-play.github.io/food/",
+      en: "https://pick-play.github.io/en/food/",
+      ja: "https://pick-play.github.io/jp/food/",
+      "zh-CN": "https://pick-play.github.io/cn/food/",
+      es: "https://pick-play.github.io/es/food/",
+    },
   },
 };
 

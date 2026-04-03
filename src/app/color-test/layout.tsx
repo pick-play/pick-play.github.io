@@ -25,7 +25,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/color-test/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/color-test/",
+    languages: {
+      "x-default": "https://pick-play.github.io/color-test/",
+      ko: "https://pick-play.github.io/color-test/",
+      en: "https://pick-play.github.io/en/color-test/",
+      ja: "https://pick-play.github.io/jp/color-test/",
+      "zh-CN": "https://pick-play.github.io/cn/color-test/",
+      es: "https://pick-play.github.io/es/color-test/",
+    },
+  },
 };
 
 const jsonLd = {

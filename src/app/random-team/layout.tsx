@@ -27,7 +27,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/random-team/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/random-team/",
+    languages: {
+      "x-default": "https://pick-play.github.io/random-team/",
+      ko: "https://pick-play.github.io/random-team/",
+      en: "https://pick-play.github.io/en/random-team/",
+      ja: "https://pick-play.github.io/jp/random-team/",
+      "zh-CN": "https://pick-play.github.io/cn/random-team/",
+      es: "https://pick-play.github.io/es/random-team/",
+    },
+  },
 };
 
 const jsonLd = {

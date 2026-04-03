@@ -27,7 +27,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: { canonical: "https://pick-play.github.io/teto-egen/" },
+  alternates: {
+    canonical: "https://pick-play.github.io/teto-egen/",
+    languages: {
+      "x-default": "https://pick-play.github.io/teto-egen/",
+      ko: "https://pick-play.github.io/teto-egen/",
+      en: "https://pick-play.github.io/en/teto-egen/",
+      ja: "https://pick-play.github.io/jp/teto-egen/",
+      "zh-CN": "https://pick-play.github.io/cn/teto-egen/",
+      es: "https://pick-play.github.io/es/teto-egen/",
+    },
+  },
 };
 
 const jsonLd = {
