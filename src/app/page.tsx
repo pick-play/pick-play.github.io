@@ -4,6 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
+import StatsCounter from "@/components/StatsCounter";
+import ToolSearchBar, { Tool } from "@/components/ToolSearchBar";
+import ShareButtons from "@/components/ShareButtons";
 
 const categories = [
   {
@@ -227,6 +230,17 @@ const categories = [
   },
 ];
 
+// Derive flat tool list from categories for the search bar
+const allTools: Tool[] = categories.flatMap((cat) =>
+  cat.services.map((s) => ({
+    title: s.title,
+    description: s.description,
+    href: s.href,
+    emoji: s.emoji,
+    category: cat.name,
+  }))
+);
+
 const floatingEmoji = [
   { emoji: "🍕", x: "10%", y: "20%", delay: 0, duration: 6 },
   { emoji: "🍜", x: "85%", y: "15%", delay: 1.5, duration: 7 },
@@ -349,7 +363,20 @@ export default function Home() {
             ✨ MBTI 검사
           </Link>
         </motion.div>
+
+        {/* Tool Search Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: 0.38 }}
+          className="mt-10"
+        >
+          <ToolSearchBar tools={allTools} placeholder="어떤 도구를 찾으시나요?" />
+        </motion.div>
       </section>
+
+      {/* Stats Counter - Social Proof */}
+      <StatsCounter />
 
       <div className="max-w-6xl mx-auto px-4"><AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" /></div>
 
@@ -443,6 +470,9 @@ export default function Home() {
       </section>
 
       <div className="max-w-4xl mx-auto px-4 mb-8"><AdBanner format="horizontal" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" /></div>
+
+      {/* Share Buttons - Floating */}
+      <ShareButtons />
 
       {/* SEO Content Section */}
       <section className="max-w-4xl mx-auto px-4 pb-20">

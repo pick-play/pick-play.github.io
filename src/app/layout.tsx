@@ -31,6 +31,21 @@ export const metadata: Metadata = {
     "파티 게임",
     "팀 나누기",
     "음식 추천",
+    "무료 온라인 도구",
+    "PDF 합치기",
+    "이미지 압축",
+    "닉네임 생성기",
+    "MBTI 검사",
+    "밸런스 게임",
+    "초성 퀴즈",
+    "사다리 타기",
+    "제비뽑기",
+    "룰렛 돌리기",
+    "커플 궁합",
+    "색깔 테스트",
+    "타로",
+    "자리 배치",
+    "D-Day 계산기",
   ],
   openGraph: {
     title: "PickPlay - 선택과 재미를 한 번에",
@@ -113,6 +128,61 @@ const jsonLd = {
         { "@type": "ListItem", position: 13, name: "이미지 도구", item: "https://pick-play.github.io/image/" },
       ],
     },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "PickPlay는 무료인가요?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "네, 모든 도구를 무료로 이용할 수 있습니다. 회원가입도 필요 없습니다.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "어떤 파티 게임이 있나요?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "라이어 게임, 밸런스 게임, 초성 퀴즈, 진실 or 도전, 이상형 월드컵, 조 뽑기, 사다리 타기 등 7가지 파티 게임을 즐길 수 있습니다.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "오늘 뭐 먹지 기능은 어떻게 사용하나요?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "뭐 먹지 페이지에서 맛 지도로 취향을 선택하면 130가지 메뉴 중 딱 맞는 음식을 추천받을 수 있습니다.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "몇 개 언어를 지원하나요?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "한국어, English, 日本語, 中文, Español 5개 언어를 지원합니다.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "PDF 도구로 무엇을 할 수 있나요?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "PDF 합치기, 분할, JPG 변환, 압축, 워터마크 추가 등 7가지 기능을 브라우저에서 안전하게 사용할 수 있습니다.",
+          },
+        },
+      ],
+    },
+    {
+      "@type": "WebApplication",
+      name: "PickPlay",
+      url: "https://pick-play.github.io/",
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "All",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
+      inLanguage: ["ko", "en", "ja", "zh-CN", "es"],
+      description: "22가지 무료 온라인 도구 - 음식 추천, 파티 게임, 심리 테스트, PDF 도구 등",
+    },
   ],
 };
 
@@ -124,8 +194,8 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
-        <link rel="dns-prefetch" href="/pagead2.googlesyndication.com" />
-        <link rel="dns-prefetch" href="/googleads.g.doubleclick.net" />
+        <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <meta name="google-adsense-account" content="ca-pub-7766090864059500" />
         <script
