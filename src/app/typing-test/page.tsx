@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
@@ -747,7 +747,6 @@ export default function TypingTestPage() {
                   type="text"
                   value={input}
                   onChange={handleInput}
-                  disabled={phase === "done"}
                   autoComplete="off"
                   autoCorrect="off"
                   autoCapitalize="off"
