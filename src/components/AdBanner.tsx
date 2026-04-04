@@ -6,15 +6,15 @@ type AdFormat = "horizontal" | "rectangle" | "in-article";
 
 const formatStyles: Record<AdFormat, { minHeight: string; className: string }> = {
   horizontal: {
-    minHeight: "90px",
+    minHeight: "250px",
     className: "w-full",
   },
   rectangle: {
-    minHeight: "250px",
+    minHeight: "280px",
     className: "w-full max-w-[336px] mx-auto",
   },
   "in-article": {
-    minHeight: "120px",
+    minHeight: "280px",
     className: "w-full",
   },
 };
@@ -37,6 +37,7 @@ export default function AdBanner({
 
   useEffect(() => {
     if (pushed.current) return;
+    if (adRef.current?.dataset.adsbygoogleStatus) return;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
       pushed.current = true;

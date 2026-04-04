@@ -217,7 +217,7 @@ export default function RootLayout({
           <VisitTracker />
           <div className="flex-1 flex">
             <SidebarAds side="left" />
-            <main className="flex-1 min-w-0 pb-16 md:pb-0">{children}</main>
+            <main className="flex-1 min-w-0 pb-20 md:pb-0">{children}</main>
             <SidebarAds side="right" />
           </div>
           <Footer />

@@ -375,12 +375,12 @@ const allTools: Tool[] = categories.flatMap((cat) =>
 );
 
 const floatingEmoji = [
-  { emoji: "🍕", x: "10%", y: "20%", delay: 0, duration: 6 },
-  { emoji: "🍜", x: "85%", y: "15%", delay: 1.5, duration: 7 },
-  { emoji: "☕", x: "75%", y: "65%", delay: 0.8, duration: 5.5 },
-  { emoji: "🎮", x: "15%", y: "70%", delay: 2.2, duration: 6.5 },
-  { emoji: "💸", x: "90%", y: "45%", delay: 0.5, duration: 7.5 },
-  { emoji: "🗺️", x: "5%", y: "45%", delay: 1.8, duration: 6.2 },
+  { emoji: "⚡", x: "10%", y: "20%", delay: 0, duration: 6 },
+  { emoji: "🎮", x: "85%", y: "15%", delay: 1.5, duration: 7 },
+  { emoji: "🧠", x: "75%", y: "65%", delay: 0.8, duration: 5.5 },
+  { emoji: "🎯", x: "15%", y: "70%", delay: 2.2, duration: 6.5 },
+  { emoji: "📊", x: "90%", y: "45%", delay: 0.5, duration: 7.5 },
+  { emoji: "🔮", x: "5%", y: "45%", delay: 1.8, duration: 6.2 },
 ];
 
 const containerVariants = {
@@ -466,9 +466,9 @@ export default function Home() {
           transition={{ duration: 0.35, delay: 0.18 }}
           className="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed"
         >
-          뭐 먹을지, 어디 갈지, 누가 라이어인지
+          생활 도구, 아케이드 게임, 파티, 심리 테스트
           <br className="hidden md:block" />
-          — 취향 지도 한 번이면 끝.
+          — 36가지 무료 도구를 지금 바로.
         </motion.p>
 
         <motion.div
@@ -478,22 +478,28 @@ export default function Home() {
           className="flex flex-wrap items-center justify-center gap-3"
         >
           <Link
-            href="/food"
+            href="#life"
             className="px-7 py-3 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all hover:-translate-y-0.5"
           >
-            🍽️ 뭐 먹지?
+            🛠️ 생활 도구
           </Link>
           <Link
-            href="/liar-game"
+            href="#arcade"
             className="px-7 py-3 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold hover:shadow-lg hover:shadow-violet-500/25 transition-all hover:-translate-y-0.5"
           >
-            🎭 라이어 게임
+            ⚡ 아케이드
           </Link>
           <Link
-            href="/mbti"
+            href="#party"
+            className="px-7 py-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all hover:-translate-y-0.5"
+          >
+            🎭 파티 게임
+          </Link>
+          <Link
+            href="#test"
             className="px-7 py-3 rounded-full border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:-translate-y-0.5"
           >
-            ✨ MBTI 검사
+            ✨ 심리 테스트
           </Link>
         </motion.div>
 
@@ -511,7 +517,7 @@ export default function Home() {
       {/* Stats Counter - Social Proof */}
       <StatsCounter />
 
-      <div className="max-w-6xl mx-auto px-4"><AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" /></div>
+      <div className="max-w-6xl mx-auto px-4"><AdBanner format="in-article" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" /></div>
 
       {/* Categorized Service Cards */}
       <section className="max-w-6xl mx-auto px-4 pb-24 space-y-16">
@@ -593,7 +599,7 @@ export default function Home() {
               ))}
             </motion.div>
 
-            {categoryIndex === 1 && (
+            {(categoryIndex === 1 || categoryIndex === 2) && (
               <div className="mt-10">
                 <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
               </div>
@@ -602,7 +608,7 @@ export default function Home() {
         ))}
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 mb-8"><AdBanner format="horizontal" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" /></div>
+      <div className="max-w-4xl mx-auto px-4 mb-8"><AdBanner format="rectangle" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" /></div>
 
       {/* Share Buttons - Floating */}
       <ShareButtons />
@@ -635,6 +641,10 @@ export default function Home() {
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">랜덤 결정 도구</h3>
               <p>룰렛, 제비뽑기, 사다리 타기, 조 뽑기 등 결정이 어려울 때 랜덤으로 공정하게! 드라마틱한 애니메이션으로 재미까지.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">아케이드 게임</h3>
+              <p>반응속도 테스트, 타이핑 연습, 기억력 카드 게임, 색깔 맞추기, 에임 트레이너까지! 기록을 세우고 실력을 향상시키세요.</p>
             </div>
           </div>
         </div>
