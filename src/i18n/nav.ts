@@ -32,6 +32,10 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/pdf", label: "PDF", emoji: "📄" },
           { href: "/image", label: "이미지", emoji: "🖼️" },
           { href: "/ladder", label: "사다리", emoji: "🪜" },
+          { href: "/password", label: "비밀번호", emoji: "🔐" },
+          { href: "/text-counter", label: "글자수", emoji: "📝" },
+          { href: "/random-number", label: "랜덤숫자", emoji: "🔢" },
+          { href: "/timer", label: "타이머", emoji: "⏱️" },
         ],
       },
       {
@@ -64,6 +68,8 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/seat", label: "자리 배치" }, { href: "/nickname", label: "닉네임 생성기" },
         { href: "/pdf", label: "PDF 도구" }, { href: "/image", label: "이미지 도구" },
         { href: "/ladder", label: "사다리 타기" },
+        { href: "/password", label: "비밀번호 생성기" }, { href: "/text-counter", label: "글자수 세기" },
+        { href: "/random-number", label: "랜덤 숫자" }, { href: "/timer", label: "타이머" },
       ]},
       { label: "파티 게임", links: [
         { href: "/liar-game", label: "라이어 게임" }, { href: "/random-team", label: "조 뽑기" },
@@ -97,6 +103,10 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/pdf", label: "PDF", emoji: "📄" },
           { href: "/image", label: "Image", emoji: "🖼️" },
           { href: "/ladder", label: "Ladder", emoji: "🪜" },
+          { href: "/password", label: "Password", emoji: "🔐" },
+          { href: "/text-counter", label: "Text Count", emoji: "📝" },
+          { href: "/random-number", label: "Random #", emoji: "🔢" },
+          { href: "/timer", label: "Timer", emoji: "⏱️" },
         ],
       },
       {
@@ -129,6 +139,8 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/seat", label: "Seat Arranger" }, { href: "/nickname", label: "Nickname Generator" },
         { href: "/pdf", label: "PDF Tools" }, { href: "/image", label: "Image Tools" },
         { href: "/ladder", label: "Ladder Game" },
+        { href: "/password", label: "Password Generator" }, { href: "/text-counter", label: "Text Counter" },
+        { href: "/random-number", label: "Random Number" }, { href: "/timer", label: "Timer" },
       ]},
       { label: "Party Games", links: [
         { href: "/liar-game", label: "Liar Game" }, { href: "/random-team", label: "Team Picker" },
@@ -162,6 +174,10 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/pdf", label: "PDF", emoji: "📄" },
           { href: "/image", label: "画像", emoji: "🖼️" },
           { href: "/ladder", label: "あみだくじ", emoji: "🪜" },
+          { href: "/password", label: "パスワード", emoji: "🔐" },
+          { href: "/text-counter", label: "文字数", emoji: "📝" },
+          { href: "/random-number", label: "乱数", emoji: "🔢" },
+          { href: "/timer", label: "タイマー", emoji: "⏱️" },
         ],
       },
       {
@@ -194,6 +210,8 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/seat", label: "座席配置" }, { href: "/nickname", label: "ニックネーム生成" },
         { href: "/pdf", label: "PDFツール" }, { href: "/image", label: "画像ツール" },
         { href: "/ladder", label: "あみだくじ" },
+        { href: "/password", label: "パスワード生成" }, { href: "/text-counter", label: "文字数カウント" },
+        { href: "/random-number", label: "ランダム数字" }, { href: "/timer", label: "タイマー" },
       ]},
       { label: "パーティーゲーム", links: [
         { href: "/liar-game", label: "ライアーゲーム" }, { href: "/random-team", label: "チーム分け" },
@@ -227,6 +245,10 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/pdf", label: "PDF", emoji: "📄" },
           { href: "/image", label: "图片", emoji: "🖼️" },
           { href: "/ladder", label: "梯子游戏", emoji: "🪜" },
+          { href: "/password", label: "密码", emoji: "🔐" },
+          { href: "/text-counter", label: "字数", emoji: "📝" },
+          { href: "/random-number", label: "随机数", emoji: "🔢" },
+          { href: "/timer", label: "计时器", emoji: "⏱️" },
         ],
       },
       {
@@ -259,6 +281,8 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/seat", label: "座位安排" }, { href: "/nickname", label: "昵称生成器" },
         { href: "/pdf", label: "PDF工具" }, { href: "/image", label: "图片工具" },
         { href: "/ladder", label: "梯子游戏" },
+        { href: "/password", label: "密码生成器" }, { href: "/text-counter", label: "字数统计" },
+        { href: "/random-number", label: "随机数字" }, { href: "/timer", label: "计时器" },
       ]},
       { label: "派对游戏", links: [
         { href: "/liar-game", label: "谁是卧底" }, { href: "/random-team", label: "随机分组" },
@@ -292,6 +316,10 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/pdf", label: "PDF", emoji: "📄" },
           { href: "/image", label: "Imagen", emoji: "🖼️" },
           { href: "/ladder", label: "Escalera", emoji: "🪜" },
+          { href: "/password", label: "Contraseña", emoji: "🔐" },
+          { href: "/text-counter", label: "Caracteres", emoji: "📝" },
+          { href: "/random-number", label: "Número", emoji: "🔢" },
+          { href: "/timer", label: "Temporizador", emoji: "⏱️" },
         ],
       },
       {
@@ -324,6 +352,8 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/seat", label: "Asientos" }, { href: "/nickname", label: "Generador de apodos" },
         { href: "/pdf", label: "Herramientas PDF" }, { href: "/image", label: "Herramientas de imagen" },
         { href: "/ladder", label: "Juego de escalera" },
+        { href: "/password", label: "Generador de contraseñas" }, { href: "/text-counter", label: "Contador de texto" },
+        { href: "/random-number", label: "Número aleatorio" }, { href: "/timer", label: "Temporizador" },
       ]},
       { label: "Juegos de Fiesta", links: [
         { href: "/liar-game", label: "Juego del mentiroso" }, { href: "/random-team", label: "Formar equipos" },

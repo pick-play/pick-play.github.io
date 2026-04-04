@@ -113,6 +113,42 @@ const categories = [
         bg: "bg-emerald-50 dark:bg-emerald-950/20",
         stat: "경로 추적",
       },
+      {
+        title: "비밀번호 생성기",
+        description: "강력하고 안전한 랜덤 비밀번호를 즉시 생성. 강도 표시까지.",
+        href: "/password",
+        emoji: "🔐",
+        gradient: "from-emerald-500 to-teal-500",
+        bg: "bg-emerald-50 dark:bg-emerald-950/20",
+        stat: "안전 생성",
+      },
+      {
+        title: "글자수 세기",
+        description: "글자수, 단어수, 바이트 수를 실시간으로 확인. 키워드 밀도까지.",
+        href: "/text-counter",
+        emoji: "📝",
+        gradient: "from-blue-500 to-indigo-500",
+        bg: "bg-blue-50 dark:bg-blue-950/20",
+        stat: "실시간 카운트",
+      },
+      {
+        title: "랜덤 숫자",
+        description: "범위 지정 랜덤 숫자 생성. 로또 번호, 주사위 등 프리셋 제공.",
+        href: "/random-number",
+        emoji: "🔢",
+        gradient: "from-amber-500 to-orange-500",
+        bg: "bg-amber-50 dark:bg-amber-950/20",
+        stat: "로또 프리셋",
+      },
+      {
+        title: "타이머",
+        description: "카운트다운 타이머와 스톱워치. 프리셋, 랩 타임, 알림까지.",
+        href: "/timer",
+        emoji: "⏱️",
+        gradient: "from-rose-500 to-pink-500",
+        bg: "bg-rose-50 dark:bg-rose-950/20",
+        stat: "타이머+스톱워치",
+      },
     ],
   },
   {
@@ -312,7 +348,7 @@ export default function Home() {
           transition={{ duration: 0.3 }}
           className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400 text-sm font-medium"
         >
-          22가지 도구 · 파티 게임 · 심리 테스트
+          26가지 도구 · 파티 게임 · 심리 테스트
         </motion.div>
 
         <motion.h1
