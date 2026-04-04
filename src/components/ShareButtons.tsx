@@ -141,7 +141,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
 
       {/* Main share button */}
       <motion.button
-        onClick={handleNativeShare}
+        onClick={() => void handleNativeShare()}
         whileTap={{ scale: 0.92 }}
         className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-xl flex items-center justify-center hover:from-primary-400 hover:to-primary-600 transition-all"
         aria-label="공유하기"
