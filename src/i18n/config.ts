@@ -53,11 +53,12 @@ export function getLocalePath(locale: Locale, path: string): string {
 
 export const BASE_URL = "https://pick-play.github.io";
 
-/** All 26 tool routes (Korean has no prefix; other locales add /en, /jp, /cn, /es) */
+/** All 31 tool routes (Korean has no prefix; other locales add /en, /jp, /cn, /es) */
 export const toolRoutes = [
   "food", "settlement", "date-course", "roulette", "d-day", "draw",
   "seat", "nickname", "pdf", "image", "ladder",
   "liar-game", "random-team", "balance-game", "chosung-quiz", "truth-dare", "worldcup",
   "teto-egen", "mbti", "couple-test", "color-test", "tarot",
   "password", "text-counter", "random-number", "timer",
+  "qr-code", "age-calculator", "percentage", "bmi", "unit-converter",
 ] as const;

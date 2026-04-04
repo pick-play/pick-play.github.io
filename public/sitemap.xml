@@ -1611,4 +1611,289 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- qr-code -->
+  <url>
+    <loc>https://pick-play.github.io/qr-code/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/qr-code/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/qr-code/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/qr-code/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/qr-code/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/qr-code/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/qr-code/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/qr-code/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/qr-code/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/qr-code/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/qr-code/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- age-calculator -->
+  <url>
+    <loc>https://pick-play.github.io/age-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/age-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/age-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/age-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/age-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/age-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/age-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/age-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/age-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/age-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- percentage -->
+  <url>
+    <loc>https://pick-play.github.io/percentage/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/percentage/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/percentage/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/percentage/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/percentage/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/percentage/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/percentage/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/percentage/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/percentage/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/percentage/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/percentage/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- bmi -->
+  <url>
+    <loc>https://pick-play.github.io/bmi/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/bmi/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/bmi/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/bmi/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/bmi/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/bmi/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/bmi/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/bmi/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/bmi/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/bmi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/bmi/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- unit-converter -->
+  <url>
+    <loc>https://pick-play.github.io/unit-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/unit-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/unit-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/unit-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/unit-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/unit-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/unit-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/unit-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/unit-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/unit-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

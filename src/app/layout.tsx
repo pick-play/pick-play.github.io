@@ -181,7 +181,7 @@ const jsonLd = {
       operatingSystem: "All",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
       inLanguage: ["ko", "en", "ja", "zh-CN", "es"],
-      description: "26가지 무료 온라인 도구 - 음식 추천, 파티 게임, 심리 테스트, PDF 도구, 비밀번호 생성기, 타이머 등",
+      description: "31가지 무료 온라인 도구 - 음식 추천, 파티 게임, 심리 테스트, PDF 도구, QR 코드, BMI 계산기 등",
     },
   ],
 };

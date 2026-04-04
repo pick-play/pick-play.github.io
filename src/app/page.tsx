@@ -149,6 +149,51 @@ const categories = [
         bg: "bg-rose-50 dark:bg-rose-950/20",
         stat: "타이머+스톱워치",
       },
+      {
+        title: "QR 코드 생성기",
+        description: "텍스트나 URL을 QR 코드로 변환. 색상 커스텀, 다운로드 지원.",
+        href: "/qr-code",
+        emoji: "📱",
+        gradient: "from-violet-500 to-purple-500",
+        bg: "bg-violet-50 dark:bg-violet-950/20",
+        stat: "즉시 생성",
+      },
+      {
+        title: "나이 계산기",
+        description: "만 나이, 띠, 별자리, 생일 카운트다운까지 한 번에.",
+        href: "/age-calculator",
+        emoji: "🎂",
+        gradient: "from-cyan-500 to-blue-500",
+        bg: "bg-cyan-50 dark:bg-cyan-950/20",
+        stat: "만 나이+띠",
+      },
+      {
+        title: "퍼센트 계산기",
+        description: "백분율 계산, 변화율, 팁 계산까지 간편하게.",
+        href: "/percentage",
+        emoji: "📊",
+        gradient: "from-green-500 to-emerald-500",
+        bg: "bg-green-50 dark:bg-green-950/20",
+        stat: "3가지 모드",
+      },
+      {
+        title: "BMI 계산기",
+        description: "키와 체중으로 체질량지수 측정. 정상 체중 범위 안내.",
+        href: "/bmi",
+        emoji: "⚕️",
+        gradient: "from-teal-500 to-cyan-500",
+        bg: "bg-teal-50 dark:bg-teal-950/20",
+        stat: "건강 체크",
+      },
+      {
+        title: "단위 변환기",
+        description: "길이, 무게, 온도, 넓이, 속도 등 7가지 단위 변환.",
+        href: "/unit-converter",
+        emoji: "📐",
+        gradient: "from-indigo-500 to-violet-500",
+        bg: "bg-indigo-50 dark:bg-indigo-950/20",
+        stat: "7가지 카테고리",
+      },
     ],
   },
   {
@@ -348,7 +393,7 @@ export default function Home() {
           transition={{ duration: 0.3 }}
           className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400 text-sm font-medium"
         >
-          26가지 도구 · 파티 게임 · 심리 테스트
+          31가지 도구 · 파티 게임 · 심리 테스트
         </motion.div>
 
         <motion.h1
