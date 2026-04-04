@@ -7,6 +7,7 @@ import SidebarAds from "@/components/SidebarAds";
 import AnchorAd from "@/components/AnchorAd";
 import LanguageDetector from "@/components/LanguageDetector";
 import HtmlLangSetter from "@/components/HtmlLangSetter";
+import VisitTracker from "@/components/VisitTracker";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pick-play.github.io/"),
@@ -181,7 +182,7 @@ const jsonLd = {
       operatingSystem: "All",
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
       inLanguage: ["ko", "en", "ja", "zh-CN", "es"],
-      description: "31가지 무료 온라인 도구 - 음식 추천, 파티 게임, 심리 테스트, PDF 도구, QR 코드, BMI 계산기 등",
+      description: "36가지 무료 온라인 도구 - 반응속도 테스트, 타이핑 연습, 파티 게임, 심리 테스트, QR 코드, BMI 계산기 등",
     },
   ],
 };
@@ -213,6 +214,7 @@ export default function RootLayout({
           <Header />
           <LanguageDetector />
           <HtmlLangSetter />
+          <VisitTracker />
           <div className="flex-1 flex">
             <SidebarAds side="left" />
             <main className="flex-1 min-w-0 pb-16 md:pb-0">{children}</main>

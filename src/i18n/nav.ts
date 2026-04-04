@@ -44,8 +44,13 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "파티게임", color: "violet",
+        label: "아케이드", color: "violet",
         links: [
+          { href: "/reaction-test", label: "반응속도", emoji: "⚡" },
+          { href: "/typing-test", label: "타이핑", emoji: "⌨️" },
+          { href: "/memory-game", label: "기억력", emoji: "🃏" },
+          { href: "/color-match", label: "색맞추기", emoji: "🌈" },
+          { href: "/aim-test", label: "에임", emoji: "🎯" },
           { href: "/liar-game", label: "라이어", emoji: "🎭" },
           { href: "/random-team", label: "조뽑기", emoji: "🎲" },
           { href: "/balance-game", label: "밸런스", emoji: "⚖️" },
@@ -78,6 +83,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/qr-code", label: "QR 코드 생성기" }, { href: "/age-calculator", label: "나이 계산기" },
         { href: "/percentage", label: "퍼센트 계산기" }, { href: "/bmi", label: "BMI 계산기" },
         { href: "/unit-converter", label: "단위 변환기" },
+      ]},
+      { label: "아케이드", links: [
+        { href: "/reaction-test", label: "반응속도 테스트" }, { href: "/typing-test", label: "타이핑 속도" },
+        { href: "/memory-game", label: "기억력 게임" }, { href: "/color-match", label: "색깔 맞추기" },
+        { href: "/aim-test", label: "에임 테스트" },
       ]},
       { label: "파티 게임", links: [
         { href: "/liar-game", label: "라이어 게임" }, { href: "/random-team", label: "조 뽑기" },
@@ -123,8 +133,13 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "Party Games", color: "violet",
+        label: "Arcade", color: "violet",
         links: [
+          { href: "/reaction-test", label: "Reaction", emoji: "⚡" },
+          { href: "/typing-test", label: "Typing", emoji: "⌨️" },
+          { href: "/memory-game", label: "Memory", emoji: "🃏" },
+          { href: "/color-match", label: "Colors", emoji: "🌈" },
+          { href: "/aim-test", label: "Aim", emoji: "🎯" },
           { href: "/liar-game", label: "Liar Game", emoji: "🎭" },
           { href: "/random-team", label: "Team Picker", emoji: "🎲" },
           { href: "/balance-game", label: "This or That", emoji: "⚖️" },
@@ -157,6 +172,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/qr-code", label: "QR Code Generator" }, { href: "/age-calculator", label: "Age Calculator" },
         { href: "/percentage", label: "Percentage Calculator" }, { href: "/bmi", label: "BMI Calculator" },
         { href: "/unit-converter", label: "Unit Converter" },
+      ]},
+      { label: "Arcade", links: [
+        { href: "/reaction-test", label: "Reaction Test" }, { href: "/typing-test", label: "Typing Test" },
+        { href: "/memory-game", label: "Memory Game" }, { href: "/color-match", label: "Color Match" },
+        { href: "/aim-test", label: "Aim Trainer" },
       ]},
       { label: "Party Games", links: [
         { href: "/liar-game", label: "Liar Game" }, { href: "/random-team", label: "Team Picker" },
@@ -202,8 +222,13 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "パーティーゲーム", color: "violet",
+        label: "アーケード", color: "violet",
         links: [
+          { href: "/reaction-test", label: "反応速度", emoji: "⚡" },
+          { href: "/typing-test", label: "タイピング", emoji: "⌨️" },
+          { href: "/memory-game", label: "記憶力", emoji: "🃏" },
+          { href: "/color-match", label: "色合わせ", emoji: "🌈" },
+          { href: "/aim-test", label: "エイム", emoji: "🎯" },
           { href: "/liar-game", label: "ライアーゲーム", emoji: "🎭" },
           { href: "/random-team", label: "チーム分け", emoji: "🎲" },
           { href: "/balance-game", label: "バランスゲーム", emoji: "⚖️" },
@@ -236,6 +261,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/qr-code", label: "QRコード生成" }, { href: "/age-calculator", label: "年齢計算機" },
         { href: "/percentage", label: "パーセント計算" }, { href: "/bmi", label: "BMI計算機" },
         { href: "/unit-converter", label: "単位変換器" },
+      ]},
+      { label: "アーケード", links: [
+        { href: "/reaction-test", label: "反応速度テスト" }, { href: "/typing-test", label: "タイピングテスト" },
+        { href: "/memory-game", label: "記憶力ゲーム" }, { href: "/color-match", label: "色合わせ" },
+        { href: "/aim-test", label: "エイムテスト" },
       ]},
       { label: "パーティーゲーム", links: [
         { href: "/liar-game", label: "ライアーゲーム" }, { href: "/random-team", label: "チーム分け" },
@@ -281,8 +311,13 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "派对游戏", color: "violet",
+        label: "街机", color: "violet",
         links: [
+          { href: "/reaction-test", label: "反应速度", emoji: "⚡" },
+          { href: "/typing-test", label: "打字", emoji: "⌨️" },
+          { href: "/memory-game", label: "记忆力", emoji: "🃏" },
+          { href: "/color-match", label: "配色", emoji: "🌈" },
+          { href: "/aim-test", label: "瞄准", emoji: "🎯" },
           { href: "/liar-game", label: "谁是卧底", emoji: "🎭" },
           { href: "/random-team", label: "随机分组", emoji: "🎲" },
           { href: "/balance-game", label: "二选一", emoji: "⚖️" },
@@ -315,6 +350,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/qr-code", label: "二维码生成器" }, { href: "/age-calculator", label: "年龄计算器" },
         { href: "/percentage", label: "百分比计算器" }, { href: "/bmi", label: "BMI计算器" },
         { href: "/unit-converter", label: "单位转换器" },
+      ]},
+      { label: "街机", links: [
+        { href: "/reaction-test", label: "反应速度测试" }, { href: "/typing-test", label: "打字速度" },
+        { href: "/memory-game", label: "记忆力游戏" }, { href: "/color-match", label: "颜色匹配" },
+        { href: "/aim-test", label: "瞄准测试" },
       ]},
       { label: "派对游戏", links: [
         { href: "/liar-game", label: "谁是卧底" }, { href: "/random-team", label: "随机分组" },
@@ -360,8 +400,13 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "Juegos", color: "violet",
+        label: "Arcade", color: "violet",
         links: [
+          { href: "/reaction-test", label: "Reacción", emoji: "⚡" },
+          { href: "/typing-test", label: "Escritura", emoji: "⌨️" },
+          { href: "/memory-game", label: "Memoria", emoji: "🃏" },
+          { href: "/color-match", label: "Colores", emoji: "🌈" },
+          { href: "/aim-test", label: "Puntería", emoji: "🎯" },
           { href: "/liar-game", label: "Mentiroso", emoji: "🎭" },
           { href: "/random-team", label: "Equipos", emoji: "🎲" },
           { href: "/balance-game", label: "Esto o Eso", emoji: "⚖️" },
@@ -394,6 +439,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/qr-code", label: "Generador QR" }, { href: "/age-calculator", label: "Calculadora de edad" },
         { href: "/percentage", label: "Calculadora %" }, { href: "/bmi", label: "Calculadora IMC" },
         { href: "/unit-converter", label: "Convertidor" },
+      ]},
+      { label: "Arcade", links: [
+        { href: "/reaction-test", label: "Test de reacción" }, { href: "/typing-test", label: "Test de escritura" },
+        { href: "/memory-game", label: "Juego de memoria" }, { href: "/color-match", label: "Colores" },
+        { href: "/aim-test", label: "Test de puntería" },
       ]},
       { label: "Juegos de Fiesta", links: [
         { href: "/liar-game", label: "Juego del mentiroso" }, { href: "/random-team", label: "Formar equipos" },

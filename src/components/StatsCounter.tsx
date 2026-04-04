@@ -12,7 +12,7 @@ interface Stat {
 
 const stats: Stat[] = [
   { icon: "👥", value: 50000, suffix: "+", label: "월간 사용자" },
-  { icon: "🛠️", value: 31, suffix: "", label: "무료 도구" },
+  { icon: "🛠️", value: 36, suffix: "", label: "무료 도구" },
   { icon: "🌐", value: 5, suffix: "", label: "지원 언어" },
   { icon: "🎉", value: 100, suffix: "%", label: "완전 무료" },
 ];

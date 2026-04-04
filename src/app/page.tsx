@@ -197,6 +197,58 @@ const categories = [
     ],
   },
   {
+    id: "arcade",
+    name: "아케이드",
+    tagline: "중독성 있는 도전 게임으로 실력 테스트",
+    services: [
+      {
+        title: "반응속도 테스트",
+        description: "초록색이 되면 클릭! 나의 반응속도는 몇 ms?",
+        href: "/reaction-test",
+        emoji: "⚡",
+        gradient: "from-red-500 to-orange-500",
+        bg: "bg-red-50 dark:bg-red-950/20",
+        stat: "ms 측정",
+      },
+      {
+        title: "타이핑 속도",
+        description: "60초 타이핑 테스트. WPM으로 실력을 확인하세요.",
+        href: "/typing-test",
+        emoji: "⌨️",
+        gradient: "from-sky-500 to-blue-500",
+        bg: "bg-sky-50 dark:bg-sky-950/20",
+        stat: "WPM 측정",
+      },
+      {
+        title: "기억력 게임",
+        description: "카드를 뒤집어 짝을 맞추세요. 3단계 난이도.",
+        href: "/memory-game",
+        emoji: "🃏",
+        gradient: "from-fuchsia-500 to-pink-500",
+        bg: "bg-fuchsia-50 dark:bg-fuchsia-950/20",
+        stat: "카드 매칭",
+      },
+      {
+        title: "색깔 맞추기",
+        description: "스트룹 테스트! 글자색과 단어를 구분하세요.",
+        href: "/color-match",
+        emoji: "🌈",
+        gradient: "from-yellow-500 to-red-500",
+        bg: "bg-yellow-50 dark:bg-yellow-950/20",
+        stat: "콤보 도전",
+      },
+      {
+        title: "에임 테스트",
+        description: "나타나는 타겟을 빠르게 클릭! 정확도 훈련.",
+        href: "/aim-test",
+        emoji: "🎯",
+        gradient: "from-orange-500 to-red-500",
+        bg: "bg-orange-50 dark:bg-orange-950/20",
+        stat: "정확도 %",
+      },
+    ],
+  },
+  {
     id: "party",
     name: "파티 게임",
     tagline: "친구들과 함께 즐기는 실시간 게임",
@@ -393,7 +445,7 @@ export default function Home() {
           transition={{ duration: 0.3 }}
           className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400 text-sm font-medium"
         >
-          31가지 도구 · 파티 게임 · 심리 테스트
+          36가지 도구 · 아케이드 · 파티 게임 · 심리 테스트
         </motion.div>
 
         <motion.h1
