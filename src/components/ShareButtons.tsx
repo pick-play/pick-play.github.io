@@ -128,7 +128,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
                 </a>
               ) : (
                 <button
-                  onClick={btn.onClick ?? undefined}
+                  onClick={btn.onClick ? () => void btn.onClick!() : undefined}
                   className={`w-10 h-10 rounded-full flex items-center justify-center text-white shadow-lg transition-colors ${btn.bg}`}
                   aria-label={btn.label}
                 >

@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import { useLocale } from "@/hooks/useLocale";
-
-type Locale = "ko" | "en" | "ja" | "zh" | "es";
+import type { Locale } from "@/i18n/config";
 
 const translations: Record<
   Locale,

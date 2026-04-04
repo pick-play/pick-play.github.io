@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import { useLocale } from "@/hooks/useLocale";
-
-type Locale = "ko" | "en" | "ja" | "zh" | "es";
+import type { Locale } from "@/i18n/config";
 
 const translations: Record<Locale, {
   title: string;
@@ -459,9 +458,7 @@ export default function PasswordPage() {
                   </span>
                 </div>
                 <div className="w-full h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: undefined }}
+                  <div
                     className={`h-full rounded-full transition-all duration-500 ${strengthColors[strength]} ${strengthWidths[strength]}`}
                   />
                 </div>
