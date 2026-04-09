@@ -422,7 +422,7 @@ export default function UnitConverterPage() {
 
           {/* Ad Banner */}
           <div className="mb-4">
-            <AdBanner format="horizontal" />
+            <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </div>
 
           {/* Quick Links */}
@@ -450,7 +450,7 @@ export default function UnitConverterPage() {
 
           {/* Bottom Ad */}
           <div className="mt-2">
-            <AdBanner format="rectangle" />
+            <AdBanner format="rectangle" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </div>
 
         </div>

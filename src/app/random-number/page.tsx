@@ -342,7 +342,7 @@ export default function RandomNumberPage() {
             <p className="text-slate-500 dark:text-slate-400 text-sm">{t.subtitle}</p>
           </div>
 
-          <AdBanner format="horizontal" />
+          <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
           {/* Presets */}
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mb-4">
@@ -509,7 +509,7 @@ export default function RandomNumberPage() {
             )}
           </AnimatePresence>
 
-          <AdBanner format="rectangle" />
+          <AdBanner format="rectangle" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
           {/* History */}
           {history.length > 0 && (

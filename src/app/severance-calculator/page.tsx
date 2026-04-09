@@ -470,7 +470,7 @@ export default function SeveranceCalculatorPage() {
 
           {/* Ad - horizontal */}
           <div className="mb-4">
-            <AdBanner format="horizontal" />
+            <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </div>
 
           {/* Input Card */}
@@ -648,7 +648,7 @@ export default function SeveranceCalculatorPage() {
 
                   {/* Ad - in-article */}
                   <div className="py-2">
-                    <AdBanner format="in-article" />
+                    <AdBanner format="in-article" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
                   </div>
 
                   {/* Severance Pay */}
@@ -704,7 +704,7 @@ export default function SeveranceCalculatorPage() {
 
           {/* Ad - rectangle */}
           <div className="mb-4">
-            <AdBanner format="rectangle" />
+            <AdBanner format="rectangle" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </div>
 
           {/* Info Section */}

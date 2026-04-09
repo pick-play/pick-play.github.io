@@ -410,7 +410,7 @@ export default function PasswordPage() {
             {t.generate}
           </motion.button>
 
-          <AdBanner format="horizontal" />
+          <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
           {/* Password output */}
           {password && (
@@ -522,7 +522,7 @@ export default function PasswordPage() {
             </div>
           </motion.div>
 
-          <AdBanner format="rectangle" />
+          <AdBanner format="rectangle" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
         </div>
       </div>
     </PageTransition>

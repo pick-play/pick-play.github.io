@@ -341,7 +341,7 @@ export default function QrCodePage() {
             {t.generate}
           </motion.button>
 
-          <AdBanner format="horizontal" />
+          <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
           {/* QR Code output */}
           {qrUrl && (
@@ -385,7 +385,7 @@ export default function QrCodePage() {
             </motion.div>
           )}
 
-          <AdBanner format="in-article" />
+          <AdBanner format="in-article" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
           {/* FAQ */}
           <motion.div
@@ -411,7 +411,7 @@ export default function QrCodePage() {
             </div>
           </motion.div>
 
-          <AdBanner format="rectangle" />
+          <AdBanner format="rectangle" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
         </div>
       </div>
     </PageTransition>

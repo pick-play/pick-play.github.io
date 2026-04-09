@@ -45,6 +45,7 @@ const jsonLd = {
 export default function CnLayout({ children }: { children: React.ReactNode }) {
   return (
     <div lang="zh-CN">
+      <meta httpEquiv="content-language" content="zh-CN" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {children}
     </div>

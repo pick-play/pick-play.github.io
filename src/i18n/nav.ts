@@ -68,6 +68,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/compound-calculator", label: "복리", emoji: "📈" },
           { href: "/property-tax", label: "취득세", emoji: "🏠" },
           { href: "/currency-converter", label: "환율", emoji: "💱" },
+        ],
+      },
+      {
+        label: "테스트", color: "sky",
+        links: [
           { href: "/teto-egen", label: "테토에겐", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "궁합", emoji: "💕" },
@@ -168,6 +173,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/compound-calculator", label: "Compound", emoji: "📈" },
           { href: "/property-tax", label: "Tax", emoji: "🏠" },
           { href: "/currency-converter", label: "Currency", emoji: "💱" },
+        ],
+      },
+      {
+        label: "Tests", color: "sky",
+        links: [
           { href: "/teto-egen", label: "Teto vs Egen", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "Couple Match", emoji: "💕" },
@@ -268,6 +278,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/compound-calculator", label: "複利", emoji: "📈" },
           { href: "/property-tax", label: "取得税", emoji: "🏠" },
           { href: "/currency-converter", label: "為替", emoji: "💱" },
+        ],
+      },
+      {
+        label: "テスト", color: "sky",
+        links: [
           { href: "/teto-egen", label: "テトvsエゲン", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "相性診断", emoji: "💕" },
@@ -368,6 +383,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/compound-calculator", label: "复利", emoji: "📈" },
           { href: "/property-tax", label: "契税", emoji: "🏠" },
           { href: "/currency-converter", label: "汇率", emoji: "💱" },
+        ],
+      },
+      {
+        label: "测试", color: "sky",
+        links: [
           { href: "/teto-egen", label: "人格测试", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "情侣匹配", emoji: "💕" },
@@ -468,6 +488,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
           { href: "/compound-calculator", label: "Interés", emoji: "📈" },
           { href: "/property-tax", label: "Impuesto", emoji: "🏠" },
           { href: "/currency-converter", label: "Divisas", emoji: "💱" },
+        ],
+      },
+      {
+        label: "Tests", color: "sky",
+        links: [
           { href: "/teto-egen", label: "Personalidad", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "Pareja", emoji: "💕" },

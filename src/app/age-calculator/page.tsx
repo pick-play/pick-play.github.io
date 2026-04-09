@@ -473,7 +473,7 @@ export default function AgeCalculatorPage() {
             <p className="text-slate-500 dark:text-slate-400 text-sm">{t.subtitle}</p>
           </div>
 
-          <AdBanner format="horizontal" />
+          <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
           {/* Input Card */}
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mb-4 mt-4">
@@ -648,7 +648,7 @@ export default function AgeCalculatorPage() {
                   </div>
                 </div>
 
-                <AdBanner format="in-article" />
+                <AdBanner format="in-article" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
                 {/* Fun Facts */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
@@ -674,7 +674,7 @@ export default function AgeCalculatorPage() {
             )}
           </AnimatePresence>
 
-          <AdBanner format="rectangle" />
+          <AdBanner format="rectangle" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
 
           {/* FAQ */}
           <div className="mt-8">

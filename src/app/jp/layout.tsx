@@ -62,6 +62,7 @@ const jsonLd = {
 export default function JpLayout({ children }: { children: React.ReactNode }) {
   return (
     <div lang="ja">
+      <meta httpEquiv="content-language" content="ja" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

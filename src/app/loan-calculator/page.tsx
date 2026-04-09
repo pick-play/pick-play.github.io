@@ -435,7 +435,7 @@ export default function LoanCalculatorPage() {
             transition={{ duration: 0.4, delay: 0.05 }}
             className="mb-6"
           >
-            <AdBanner format="horizontal" />
+            <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </motion.div>
 
           {/* Inputs Card */}
@@ -617,7 +617,7 @@ export default function LoanCalculatorPage() {
             transition={{ duration: 0.4, delay: 0.2 }}
             className="mb-4"
           >
-            <AdBanner format="in-article" />
+            <AdBanner format="in-article" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </motion.div>
 
           {/* Comparison Bar Chart */}
@@ -740,7 +740,7 @@ export default function LoanCalculatorPage() {
             transition={{ duration: 0.4, delay: 0.35 }}
             className="mb-4"
           >
-            <AdBanner format="rectangle" />
+            <AdBanner format="rectangle" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </motion.div>
 
         </div>

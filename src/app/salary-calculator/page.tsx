@@ -359,7 +359,7 @@ export default function SalaryCalculatorPage() {
 
           {/* Top Ad */}
           <div className="mb-4">
-            <AdBanner format="horizontal" />
+            <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </div>
 
           {/* Inputs */}
@@ -515,7 +515,7 @@ export default function SalaryCalculatorPage() {
 
           {/* In-article Ad */}
           <div className="mb-4">
-            <AdBanner format="in-article" />
+            <AdBanner format="in-article" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </div>
 
           {/* Deductions Breakdown */}
@@ -611,7 +611,7 @@ export default function SalaryCalculatorPage() {
 
           {/* Bottom Ad */}
           <div className="mt-2">
-            <AdBanner format="rectangle" />
+            <AdBanner format="rectangle" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
           </div>
         </div>
       </div>

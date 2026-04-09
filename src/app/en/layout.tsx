@@ -63,6 +63,7 @@ const jsonLd = {
 export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <div lang="en">
+      <meta httpEquiv="content-language" content="en" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
