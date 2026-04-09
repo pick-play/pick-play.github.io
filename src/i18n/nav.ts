@@ -60,8 +60,14 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "테스트", color: "amber",
+        label: "금융계산기", color: "amber",
         links: [
+          { href: "/loan-calculator", label: "대출이자", emoji: "🏦" },
+          { href: "/severance-calculator", label: "퇴직금", emoji: "💼" },
+          { href: "/salary-calculator", label: "실수령액", emoji: "💰" },
+          { href: "/compound-calculator", label: "복리", emoji: "📈" },
+          { href: "/property-tax", label: "취득세", emoji: "🏠" },
+          { href: "/currency-converter", label: "환율", emoji: "💱" },
           { href: "/teto-egen", label: "테토에겐", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "궁합", emoji: "💕" },
@@ -93,6 +99,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/liar-game", label: "라이어 게임" }, { href: "/random-team", label: "조 뽑기" },
         { href: "/balance-game", label: "밸런스 게임" }, { href: "/chosung-quiz", label: "초성 퀴즈" },
         { href: "/truth-dare", label: "진실 or 도전" }, { href: "/worldcup", label: "이상형 월드컵" },
+      ]},
+      { label: "금융 계산기", links: [
+        { href: "/loan-calculator", label: "대출이자 계산기" }, { href: "/severance-calculator", label: "퇴직금 계산기" },
+        { href: "/salary-calculator", label: "연봉 실수령액" }, { href: "/compound-calculator", label: "복리 계산기" },
+        { href: "/property-tax", label: "취득세 계산기" }, { href: "/currency-converter", label: "환율 계산기" },
       ]},
       { label: "테스트", links: [
         { href: "/teto-egen", label: "테토 vs 에겐" }, { href: "/mbti", label: "MBTI 검사" },
@@ -149,8 +160,14 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "Tests", color: "amber",
+        label: "Finance", color: "amber",
         links: [
+          { href: "/loan-calculator", label: "Loan", emoji: "🏦" },
+          { href: "/severance-calculator", label: "Severance", emoji: "💼" },
+          { href: "/salary-calculator", label: "Salary", emoji: "💰" },
+          { href: "/compound-calculator", label: "Compound", emoji: "📈" },
+          { href: "/property-tax", label: "Tax", emoji: "🏠" },
+          { href: "/currency-converter", label: "Currency", emoji: "💱" },
           { href: "/teto-egen", label: "Teto vs Egen", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "Couple Match", emoji: "💕" },
@@ -182,6 +199,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/liar-game", label: "Liar Game" }, { href: "/random-team", label: "Team Picker" },
         { href: "/balance-game", label: "This or That" }, { href: "/chosung-quiz", label: "Word Quiz" },
         { href: "/truth-dare", label: "Truth or Dare" }, { href: "/worldcup", label: "Ideal Type World Cup" },
+      ]},
+      { label: "Finance", links: [
+        { href: "/loan-calculator", label: "Loan Calculator" }, { href: "/severance-calculator", label: "Severance Calculator" },
+        { href: "/salary-calculator", label: "Salary Calculator" }, { href: "/compound-calculator", label: "Compound Interest" },
+        { href: "/property-tax", label: "Property Tax" }, { href: "/currency-converter", label: "Currency Converter" },
       ]},
       { label: "Tests", links: [
         { href: "/teto-egen", label: "Teto vs Egen" }, { href: "/mbti", label: "MBTI Test" },
@@ -238,8 +260,14 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "テスト", color: "amber",
+        label: "金融計算", color: "amber",
         links: [
+          { href: "/loan-calculator", label: "ローン", emoji: "🏦" },
+          { href: "/severance-calculator", label: "退職金", emoji: "💼" },
+          { href: "/salary-calculator", label: "手取り", emoji: "💰" },
+          { href: "/compound-calculator", label: "複利", emoji: "📈" },
+          { href: "/property-tax", label: "取得税", emoji: "🏠" },
+          { href: "/currency-converter", label: "為替", emoji: "💱" },
           { href: "/teto-egen", label: "テトvsエゲン", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "相性診断", emoji: "💕" },
@@ -271,6 +299,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/liar-game", label: "ライアーゲーム" }, { href: "/random-team", label: "チーム分け" },
         { href: "/balance-game", label: "バランスゲーム" }, { href: "/chosung-quiz", label: "ワードクイズ" },
         { href: "/truth-dare", label: "本音と挑戦" }, { href: "/worldcup", label: "理想型ワールドカップ" },
+      ]},
+      { label: "金融計算", links: [
+        { href: "/loan-calculator", label: "ローン計算機" }, { href: "/severance-calculator", label: "退職金計算機" },
+        { href: "/salary-calculator", label: "手取り計算機" }, { href: "/compound-calculator", label: "複利計算機" },
+        { href: "/property-tax", label: "取得税計算機" }, { href: "/currency-converter", label: "為替計算機" },
       ]},
       { label: "テスト", links: [
         { href: "/teto-egen", label: "テトvsエゲン" }, { href: "/mbti", label: "MBTI診断" },
@@ -327,8 +360,14 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "测试", color: "amber",
+        label: "金融计算", color: "amber",
         links: [
+          { href: "/loan-calculator", label: "贷款", emoji: "🏦" },
+          { href: "/severance-calculator", label: "离职金", emoji: "💼" },
+          { href: "/salary-calculator", label: "实发工资", emoji: "💰" },
+          { href: "/compound-calculator", label: "复利", emoji: "📈" },
+          { href: "/property-tax", label: "契税", emoji: "🏠" },
+          { href: "/currency-converter", label: "汇率", emoji: "💱" },
           { href: "/teto-egen", label: "人格测试", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "情侣匹配", emoji: "💕" },
@@ -360,6 +399,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/liar-game", label: "谁是卧底" }, { href: "/random-team", label: "随机分组" },
         { href: "/balance-game", label: "二选一" }, { href: "/chosung-quiz", label: "猜词游戏" },
         { href: "/truth-dare", label: "真心话大冒险" }, { href: "/worldcup", label: "理想型世界杯" },
+      ]},
+      { label: "金融计算", links: [
+        { href: "/loan-calculator", label: "贷款计算器" }, { href: "/severance-calculator", label: "离职金计算器" },
+        { href: "/salary-calculator", label: "实发工资计算器" }, { href: "/compound-calculator", label: "复利计算器" },
+        { href: "/property-tax", label: "契税计算器" }, { href: "/currency-converter", label: "汇率换算" },
       ]},
       { label: "测试", links: [
         { href: "/teto-egen", label: "人格测试" }, { href: "/mbti", label: "MBTI测试" },
@@ -416,8 +460,14 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         ],
       },
       {
-        label: "Tests", color: "amber",
+        label: "Finanzas", color: "amber",
         links: [
+          { href: "/loan-calculator", label: "Préstamo", emoji: "🏦" },
+          { href: "/severance-calculator", label: "Liquidación", emoji: "💼" },
+          { href: "/salary-calculator", label: "Salario", emoji: "💰" },
+          { href: "/compound-calculator", label: "Interés", emoji: "📈" },
+          { href: "/property-tax", label: "Impuesto", emoji: "🏠" },
+          { href: "/currency-converter", label: "Divisas", emoji: "💱" },
           { href: "/teto-egen", label: "Personalidad", emoji: "🧠" },
           { href: "/mbti", label: "MBTI", emoji: "✨" },
           { href: "/couple-test", label: "Pareja", emoji: "💕" },
@@ -449,6 +499,11 @@ const navData: Record<Locale, { categories: NavCategory[]; footer: FooterCategor
         { href: "/liar-game", label: "Juego del mentiroso" }, { href: "/random-team", label: "Formar equipos" },
         { href: "/balance-game", label: "Esto o aquello" }, { href: "/chosung-quiz", label: "Quiz de palabras" },
         { href: "/truth-dare", label: "Verdad o reto" }, { href: "/worldcup", label: "Copa del tipo ideal" },
+      ]},
+      { label: "Finanzas", links: [
+        { href: "/loan-calculator", label: "Calculadora de préstamos" }, { href: "/severance-calculator", label: "Liquidación" },
+        { href: "/salary-calculator", label: "Salario neto" }, { href: "/compound-calculator", label: "Interés compuesto" },
+        { href: "/property-tax", label: "Impuesto de propiedad" }, { href: "/currency-converter", label: "Conversor de divisas" },
       ]},
       { label: "Tests", links: [
         { href: "/teto-egen", label: "Test de personalidad" }, { href: "/mbti", label: "Test MBTI" },

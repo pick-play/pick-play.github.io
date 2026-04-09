@@ -361,6 +361,67 @@ const categories = [
       },
     ],
   },
+  {
+    id: "finance",
+    name: "금융 계산기",
+    tagline: "대출, 연봉, 투자 — 돈 계산은 정확하게",
+    services: [
+      {
+        title: "대출이자 계산기",
+        description: "원리금균등, 원금균등, 만기일시 상환 비교. 월별 상환 스케줄까지.",
+        href: "/loan-calculator",
+        emoji: "🏦",
+        gradient: "from-emerald-500 to-green-500",
+        bg: "bg-emerald-50 dark:bg-emerald-950/20",
+        stat: "3가지 상환",
+      },
+      {
+        title: "퇴직금 계산기",
+        description: "근속연수와 급여로 퇴직금 자동 계산. 퇴직소득세 포함.",
+        href: "/severance-calculator",
+        emoji: "💼",
+        gradient: "from-blue-500 to-indigo-500",
+        bg: "bg-blue-50 dark:bg-blue-950/20",
+        stat: "세금 포함",
+      },
+      {
+        title: "연봉 실수령액",
+        description: "4대보험, 소득세 자동 공제. 연봉별 실수령액 비교.",
+        href: "/salary-calculator",
+        emoji: "💰",
+        gradient: "from-violet-500 to-purple-500",
+        bg: "bg-violet-50 dark:bg-violet-950/20",
+        stat: "4대보험 계산",
+      },
+      {
+        title: "복리 계산기",
+        description: "단리/복리 비교, 적립식 투자 시뮬레이션. 72법칙 안내.",
+        href: "/compound-calculator",
+        emoji: "📈",
+        gradient: "from-amber-500 to-yellow-500",
+        bg: "bg-amber-50 dark:bg-amber-950/20",
+        stat: "투자 시뮬",
+      },
+      {
+        title: "취득세 계산기",
+        description: "주택/토지/상가 취득세. 다주택·생애최초 감면 자동 적용.",
+        href: "/property-tax",
+        emoji: "🏠",
+        gradient: "from-sky-500 to-blue-500",
+        bg: "bg-sky-50 dark:bg-sky-950/20",
+        stat: "부동산 세금",
+      },
+      {
+        title: "환율 계산기",
+        description: "실시간 환율로 20개국 통화 변환. 인기 환율 빠른 조회.",
+        href: "/currency-converter",
+        emoji: "💱",
+        gradient: "from-teal-500 to-emerald-500",
+        bg: "bg-teal-50 dark:bg-teal-950/20",
+        stat: "실시간 환율",
+      },
+    ],
+  },
 ];
 
 // Derive flat tool list from categories for the search bar
@@ -445,7 +506,7 @@ export default function Home() {
           transition={{ duration: 0.3 }}
           className="inline-block mb-6 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400 text-sm font-medium"
         >
-          36가지 도구 · 아케이드 · 파티 게임 · 심리 테스트
+          42가지 도구 · 금융 계산기 · 아케이드 · 파티 게임
         </motion.div>
 
         <motion.h1
@@ -466,9 +527,9 @@ export default function Home() {
           transition={{ duration: 0.35, delay: 0.18 }}
           className="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed"
         >
-          생활 도구, 아케이드 게임, 파티, 심리 테스트
+          생활 도구, 금융 계산기, 아케이드, 파티 게임
           <br className="hidden md:block" />
-          — 36가지 무료 도구를 지금 바로.
+          — 42가지 무료 도구를 지금 바로.
         </motion.p>
 
         <motion.div
@@ -645,6 +706,10 @@ export default function Home() {
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">아케이드 게임</h3>
               <p>반응속도 테스트, 타이핑 연습, 기억력 카드 게임, 색깔 맞추기, 에임 트레이너까지! 기록을 세우고 실력을 향상시키세요.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">금융 계산기</h3>
+              <p>대출이자, 퇴직금, 연봉 실수령액, 복리 계산, 취득세, 환율까지. 돈과 관련된 모든 계산을 무료로 정확하게.</p>
             </div>
           </div>
         </div>

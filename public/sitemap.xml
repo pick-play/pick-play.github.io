@@ -2181,4 +2181,346 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- loan-calculator -->
+  <url>
+    <loc>https://pick-play.github.io/loan-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/loan-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/loan-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/loan-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/loan-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/loan-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/loan-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/loan-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/loan-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/loan-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- severance-calculator -->
+  <url>
+    <loc>https://pick-play.github.io/severance-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/severance-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/severance-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/severance-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/severance-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/severance-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/severance-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/severance-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/severance-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/severance-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/severance-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- salary-calculator -->
+  <url>
+    <loc>https://pick-play.github.io/salary-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/salary-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/salary-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/salary-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/salary-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/salary-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/salary-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/salary-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/salary-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/salary-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/salary-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- compound-calculator -->
+  <url>
+    <loc>https://pick-play.github.io/compound-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/compound-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/compound-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/compound-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/compound-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/compound-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/compound-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/compound-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/compound-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/compound-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/compound-calculator/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- property-tax -->
+  <url>
+    <loc>https://pick-play.github.io/property-tax/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/property-tax/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/property-tax/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/property-tax/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/property-tax/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/property-tax/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/property-tax/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/property-tax/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/property-tax/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/property-tax/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/property-tax/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- currency-converter -->
+  <url>
+    <loc>https://pick-play.github.io/currency-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/currency-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/currency-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/currency-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/currency-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/currency-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/currency-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/currency-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/currency-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/currency-converter/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

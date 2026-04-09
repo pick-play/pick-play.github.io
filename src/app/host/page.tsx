@@ -51,6 +51,12 @@ const ALL_TOOLS = [
   { path: "/typing-test", name: "타이핑 속도" },
   { path: "/color-match", name: "색깔 맞추기" },
   { path: "/aim-test", name: "에임 테스트" },
+  { path: "/loan-calculator", name: "대출이자 계산기" },
+  { path: "/severance-calculator", name: "퇴직금 계산기" },
+  { path: "/salary-calculator", name: "연봉 실수령액" },
+  { path: "/compound-calculator", name: "복리 계산기" },
+  { path: "/property-tax", name: "취득세 계산기" },
+  { path: "/currency-converter", name: "환율 계산기" },
   { path: "/", name: "홈" },
   { path: "/en", name: "Home (EN)" },
   { path: "/jp", name: "ホーム (JP)" },
@@ -266,7 +272,7 @@ function Dashboard() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { label: "총 도구 수", value: "39", sub: "36 유틸 + 3 게임 추가", icon: "🛠" },
+                  { label: "총 도구 수", value: "42", sub: "31 유틸 + 5 게임 + 6 금융", icon: "🛠" },
                   { label: "지원 언어", value: "5", sub: "ko / en / jp / cn / es", icon: "🌐" },
                   { label: "총 페이지", value: "180+", sub: "로케일 포함", icon: "📄" },
                   { label: "마지막 배포", value: deployDate, sub: "근사치", icon: "🚀" },
