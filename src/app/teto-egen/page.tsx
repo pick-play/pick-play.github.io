@@ -45,6 +45,13 @@ const translations = {
     tetonam: "테토남",
     teto: "테토",
     egen: "에겐",
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      { q: "테토와 에겐이란 무엇인가요?", a: "테토(Teto)는 테스토스테론, 에겐(Egen)은 에스트로겐의 줄임말로, 성격과 연애 스타일을 분류하는 새로운 성향 테스트입니다. 테토 성향은 주도적이고 경쟁적이며 논리적인 특성을 보이고, 에겐 성향은 감수성이 풍부하고 공감 능력이 뛰어난 특성을 나타냅니다." },
+      { q: "테토 vs 에겐 테스트는 어떻게 진행되나요?", a: "먼저 성별을 선택한 후, 일상적인 상황에 대한 질문에 답변합니다. 각 답변이 테토 또는 에겐 성향에 얼마나 부합하는지 분석하여 최종 결과와 함께 테토/에겐 비율을 보여줍니다. 결과에는 성향 특징, 강점, 약점, 연애 스타일, 궁합 정보도 함께 제공됩니다." },
+      { q: "성별을 선택하는 이유는 무엇인가요?", a: "테토남/에겐남, 테토녀/에겐녀는 같은 성향이더라도 표현 방식과 특성이 다를 수 있기 때문입니다. 성별에 따라 맞춤화된 결과와 분석을 제공하기 위해 선택하게 됩니다." },
+      { q: "결과가 100% 테토 또는 100% 에겐으로 나올 수 있나요?", a: "대부분의 사람들은 테토와 에겐 성향을 모두 가지고 있으며, 비율이 다를 뿐입니다. 극단적으로 한쪽으로 쏠리는 경우는 드물며, 보통 60~70% 정도의 주요 성향을 갖게 됩니다. 어느 쪽이 더 강한지 파악하는 것이 이 테스트의 목적입니다." },
+    ],
   },
   en: {
     title: "Teto vs Egen Test",
@@ -83,6 +90,13 @@ const translations = {
     tetonam: "Teto M",
     teto: "Teto",
     egen: "Egen",
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      { q: "What are Teto and Egen?", a: "Teto stands for testosterone and Egen stands for estrogen — a trending personality test that categorizes your character and love style. Teto personalities tend to be assertive, competitive, and logical, while Egen personalities are characterized by sensitivity, empathy, and emotional depth." },
+      { q: "How does the Teto vs Egen test work?", a: "First, select your gender, then answer questions about everyday situations. The test analyzes how much each answer aligns with Teto or Egen tendencies, showing your final result along with a Teto/Egen percentage. Results also include personality traits, strengths, weaknesses, love style, and compatibility information." },
+      { q: "Why do I need to select a gender?", a: "Teto male/Egen male and Teto female/Egen female may express the same tendencies differently. Selecting your gender allows the test to provide customized results and analysis tailored to your experience." },
+      { q: "Can I get 100% Teto or 100% Egen?", a: "Most people have a mix of both Teto and Egen tendencies, just in different proportions. Extreme results leaning entirely one way are rare — most people end up with around 60-70% on one side. The purpose of this test is to identify which tendency is stronger." },
+    ],
   },
   ja: {
     title: "テト vs エゲン テスト",
@@ -121,6 +135,13 @@ const translations = {
     tetonam: "テト男",
     teto: "テト",
     egen: "エゲン",
+    faqTitle: "よくある質問",
+    faqItems: [
+      { q: "テトとエゲンとは何ですか？", a: "テト（Teto）はテストステロン、エゲン（Egen）はエストロゲンの略で、性格と恋愛スタイルを分類する新しい性格テストです。テト傾向は主体的・競争的・論理的な特性を持ち、エゲン傾向は感受性が豊かで共感能力に優れた特性を示します。" },
+      { q: "テスト vs エゲンテストはどのように進みますか？", a: "まず性別を選択し、日常的な状況についての質問に答えます。各回答がテトまたはエゲン傾向にどれほど合致するかを分析し、テト/エゲンの比率とともに最終結果を表示します。" },
+      { q: "性別を選択する理由は何ですか？", a: "テト男/エゲン男、テト女/エゲン女は同じ傾向でも表現の仕方や特性が異なることがあるためです。性別に応じてカスタマイズされた結果と分析を提供するために選択します。" },
+      { q: "100%テトまたは100%エゲンという結果が出ることはありますか？", a: "ほとんどの人はテトとエゲン両方の傾向を持っており、比率が異なるだけです。極端に片方に偏るケースは稀で、通常は60〜70%程度の主要傾向を持ちます。" },
+    ],
   },
   zh: {
     title: "Teto vs Egen 测试",
@@ -159,6 +180,13 @@ const translations = {
     tetonam: "Teto男",
     teto: "Teto",
     egen: "Egen",
+    faqTitle: "常见问题",
+    faqItems: [
+      { q: "Teto和Egen是什么？", a: "Teto代表睾酮，Egen代表雌激素，这是一种流行的性格测试，用于划分你的个性与恋爱风格。Teto性格倾向主动、有竞争性且逻辑性强，而Egen性格倾向感受性丰富、共情能力强。" },
+      { q: "Teto vs Egen测试如何进行？", a: "首先选择性别，然后回答关于日常情景的问题。测试分析每个答案与Teto或Egen倾向的契合度，显示最终结果和Teto/Egen比例。结果还包括性格特征、优点、缺点、恋爱风格和配对信息。" },
+      { q: "为什么需要选择性别？", a: "Teto男/Egen男和Teto女/Egen女即使倾向相同，表达方式和特性也可能不同。选择性别是为了提供针对您性别定制的结果和分析。" },
+      { q: "结果会是100% Teto或100% Egen吗？", a: "大多数人同时具有Teto和Egen两种倾向，只是比例不同。极端偏向一方的情况很少见，通常主要倾向约为60至70%。这个测试的目的是找出哪种倾向更强。" },
+    ],
   },
   es: {
     title: "Test Teto vs Egen",
@@ -197,6 +225,13 @@ const translations = {
     tetonam: "Teto M",
     teto: "Teto",
     egen: "Egen",
+    faqTitle: "Preguntas Frecuentes",
+    faqItems: [
+      { q: "¿Qué son Teto y Egen?", a: "Teto representa la testosterona y Egen representa el estrógeno — una prueba de personalidad de tendencia que clasifica tu carácter y estilo amoroso. Las personalidades Teto tienden a ser asertivas, competitivas y lógicas, mientras que las personalidades Egen se caracterizan por sensibilidad, empatía y profundidad emocional." },
+      { q: "¿Cómo funciona el test Teto vs Egen?", a: "Primero, selecciona tu género, luego responde preguntas sobre situaciones cotidianas. La prueba analiza cuánto se alinea cada respuesta con las tendencias Teto o Egen, mostrando tu resultado final junto con un porcentaje Teto/Egen. Los resultados también incluyen rasgos de personalidad, fortalezas, debilidades, estilo amoroso e información de compatibilidad." },
+      { q: "¿Por qué necesito seleccionar género?", a: "Teto masculino/Egen masculino y Teto femenino/Egen femenino pueden expresar las mismas tendencias de manera diferente. Seleccionar tu género permite que la prueba proporcione resultados y análisis personalizados según tu experiencia." },
+      { q: "¿Puedo obtener 100% Teto o 100% Egen?", a: "La mayoría de las personas tienen una mezcla de tendencias Teto y Egen, solo en proporciones diferentes. Los resultados extremos hacia un solo lado son raros — la mayoría termina con alrededor del 60-70% en un lado. El propósito de esta prueba es identificar cuál tendencia es más fuerte." },
+    ],
   },
 };
 
@@ -893,6 +928,25 @@ export default function TetoEgenPage() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </PageTransition>

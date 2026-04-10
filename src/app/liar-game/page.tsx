@@ -39,6 +39,8 @@ const translations: Record<Locale, {
   category: string;
   playAgain: string;
   discussionTimes: { label: string; seconds: number }[];
+  faqTitle: string;
+  faqItems: { q: string; a: string }[];
 }> = {
   ko: {
     title: "라이어 게임",
@@ -74,6 +76,13 @@ const translations: Record<Locale, {
       { label: "1분", seconds: 60 },
       { label: "2분", seconds: 120 },
       { label: "3분", seconds: 180 },
+    ],
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      { q: "라이어 게임이란 무엇인가요?", a: "라이어 게임은 한 명(또는 여러 명)의 라이어를 제외한 모든 플레이어가 같은 단어를 받는 파티 게임입니다. 라이어는 단어를 모르는 채로 토론에 참여해야 하고, 나머지 플레이어들은 라이어를 찾아야 합니다. 라이어는 들키지 않도록 자연스럽게 대화에 섞여야 하고, 다른 플레이어들은 누가 라이어인지 추리합니다." },
+      { q: "플레이어는 몇 명이 필요한가요?", a: "최소 3명에서 최대 20명까지 플레이할 수 있습니다. 가장 재미있는 인원은 5~8명으로, 너무 적으면 라이어를 찾기 쉽고 너무 많으면 토론이 길어질 수 있습니다. 라이어 수는 전체 인원의 절반 이하로 설정할 수 있습니다." },
+      { q: "라이어가 이길 수 있는 방법은 무엇인가요?", a: "라이어는 토론 중에 자연스럽게 단어를 아는 척하며 다른 플레이어들의 의심을 피해야 합니다. 투표에서 살아남거나, 투표 후 단어를 정확히 맞히면 라이어가 이깁니다. 다른 플레이어를 라이어로 의심하게 만드는 것도 좋은 전략입니다." },
+      { q: "주제 카테고리는 어떤 것들이 있나요?", a: "일반 장소, 음식, 직업, 동물, 스포츠 등 다양한 카테고리가 준비되어 있습니다. 각 카테고리마다 수십 가지 단어가 랜덤으로 선택되어 매번 다른 게임을 즐길 수 있습니다." },
     ],
   },
   en: {
@@ -111,6 +120,13 @@ const translations: Record<Locale, {
       { label: "2 min", seconds: 120 },
       { label: "3 min", seconds: 180 },
     ],
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      { q: "What is the Liar Game?", a: "The Liar Game is a party game where all players except one (or several) liars receive the same secret word. The liars must participate in discussion without knowing the word, while other players try to identify who the liar is. The liar must blend naturally into conversation without being caught." },
+      { q: "How many players do you need?", a: "You can play with 3 to 20 players. The sweet spot is 5–8 players — too few makes it easy to spot the liar, while too many can make discussions long. The number of liars can be set to up to half the total players." },
+      { q: "How can the liar win?", a: "The liar wins by surviving the vote without being caught, or by correctly guessing the word after being voted out. Good strategies include imitating how others describe the word and redirecting suspicion toward other players." },
+      { q: "What topic categories are available?", a: "There are diverse categories including general places, food, jobs, animals, sports, and more. Dozens of words are available in each category, selected randomly each round for a fresh experience every time." },
+    ],
   },
   ja: {
     title: "ライアーゲーム",
@@ -146,6 +162,13 @@ const translations: Record<Locale, {
       { label: "1分", seconds: 60 },
       { label: "2分", seconds: 120 },
       { label: "3分", seconds: 180 },
+    ],
+    faqTitle: "よくある質問",
+    faqItems: [
+      { q: "ライアーゲームとは何ですか？", a: "ライアーゲームは、1人（または複数）のライアーを除くすべてのプレイヤーが同じ秘密の単語を受け取るパーティーゲームです。ライアーは単語を知らないまま議論に参加し、他のプレイヤーはライアーを見つけ出そうとします。" },
+      { q: "何人で遊べますか？", a: "3人から20人まで遊べます。最も楽しい人数は5〜8人で、少なすぎるとライアーを見つけやすく、多すぎると議論が長くなります。ライアーの数は全体の半分以下に設定できます。" },
+      { q: "ライアーが勝つ方法は何ですか？", a: "ライアーは投票で生き残るか、投票後に単語を正確に当てると勝利します。他のプレイヤーを真似て自然に会話に溶け込むことや、他のプレイヤーへ疑いを向けることが有効な戦略です。" },
+      { q: "どんなトピックカテゴリーがありますか？", a: "一般的な場所、食べ物、職業、動物、スポーツなど様々なカテゴリーがあります。各カテゴリーに数十種類の単語があり、毎回ランダムに選ばれるので新鮮な体験が楽しめます。" },
     ],
   },
   zh: {
@@ -183,6 +206,13 @@ const translations: Record<Locale, {
       { label: "2分钟", seconds: 120 },
       { label: "3分钟", seconds: 180 },
     ],
+    faqTitle: "常见问题",
+    faqItems: [
+      { q: "什么是说谎者游戏？", a: "说谎者游戏是一种派对游戏，除了一名（或多名）说谎者外，所有玩家都会收到相同的秘密词语。说谎者在不知道词语的情况下参与讨论，其他玩家则试图找出谁是说谎者。说谎者必须自然地融入对话而不被发现。" },
+      { q: "需要多少玩家？", a: "可以3至20人参与游戏。最佳人数为5至8人，人数太少容易找到说谎者，人数太多讨论时间会变长。说谎者数量可以设置为总人数的一半以下。" },
+      { q: "说谎者如何获胜？", a: "说谎者在投票中存活下来，或者在被投票出局后猜出词语，就能获胜。模仿其他玩家描述词语的方式自然融入，以及将怀疑转移到其他玩家，都是有效的策略。" },
+      { q: "有哪些主题分类？", a: "有一般地点、食物、职业、动物、运动等多种分类。每个分类都有数十个词语，每轮随机选择，确保每次都有新鲜的游戏体验。" },
+    ],
   },
   es: {
     title: "El Juego del Mentiroso",
@@ -218,6 +248,13 @@ const translations: Record<Locale, {
       { label: "1 min", seconds: 60 },
       { label: "2 min", seconds: 120 },
       { label: "3 min", seconds: 180 },
+    ],
+    faqTitle: "Preguntas Frecuentes",
+    faqItems: [
+      { q: "¿Qué es el Juego del Mentiroso?", a: "El Juego del Mentiroso es un juego de fiesta donde todos los jugadores excepto uno (o varios) mentirosos reciben la misma palabra secreta. Los mentirosos deben participar en la discusión sin conocer la palabra, mientras otros jugadores intentan identificar quién es el mentiroso." },
+      { q: "¿Cuántos jugadores se necesitan?", a: "Puedes jugar con 3 a 20 jugadores. El número ideal es 5 a 8 jugadores — muy pocos hace fácil identificar al mentiroso, mientras que demasiados puede hacer largas las discusiones. El número de mentirosos puede configurarse hasta la mitad del total." },
+      { q: "¿Cómo puede ganar el mentiroso?", a: "El mentiroso gana sobreviviendo la votación sin ser descubierto, o adivinando correctamente la palabra después de ser votado. Imitar cómo otros describen la palabra y redirigir sospechas hacia otros jugadores son buenas estrategias." },
+      { q: "¿Qué categorías de temas hay disponibles?", a: "Hay categorías diversas incluyendo lugares generales, comida, empleos, animales, deportes y más. Hay decenas de palabras disponibles en cada categoría, seleccionadas aleatoriamente cada ronda para una experiencia fresca cada vez." },
     ],
   },
 };
@@ -899,6 +936,25 @@ export default function LiarGamePage() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </PageTransition>

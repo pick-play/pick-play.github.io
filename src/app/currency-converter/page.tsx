@@ -56,6 +56,8 @@ const translations: Record<
     loading: string;
     errorMsg: string;
     currencyNames: Record<CurrencyCode, string>;
+    faqTitle: string;
+    faqItems: { q: string; a: string }[];
   }
 > = {
   ko: {
@@ -94,6 +96,29 @@ const translations: Record<
       INR: "인도 루피",
       BRL: "브라질 레알",
     },
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      {
+        q: "환율 계산기는 어떻게 사용하나요?",
+        a: "변환할 금액을 입력하고 변환 전 통화와 변환 후 통화를 선택하면 실시간 환율을 기반으로 즉시 변환 결과를 확인할 수 있습니다. ↔ 버튼을 누르면 두 통화를 빠르게 교체할 수 있습니다.",
+      },
+      {
+        q: "환율 데이터는 얼마나 자주 업데이트되나요?",
+        a: "환율 데이터는 open.er-api.com의 공개 API를 통해 매일 1회 이상 업데이트됩니다. 페이지를 새로고침하면 최신 환율을 불러오며, 마지막 업데이트 시각이 화면에 표시됩니다. 실제 거래 환율과는 소폭 차이가 있을 수 있습니다.",
+      },
+      {
+        q: "지원하는 통화는 어떤 것들이 있나요?",
+        a: "미국 달러(USD), 유로(EUR), 한국 원(KRW), 일본 엔(JPY), 중국 위안(CNY), 영국 파운드(GBP), 스위스 프랑(CHF), 캐나다 달러(CAD), 호주 달러(AUD), 싱가포르 달러(SGD) 등 총 20개 주요 통화를 지원합니다.",
+      },
+      {
+        q: "역환율은 무엇인가요?",
+        a: "역환율은 기준 통화와 대상 통화의 위치를 바꾼 환율입니다. 예를 들어 1 USD = 1,400 KRW 이면, 역환율은 1 KRW = 0.000714 USD 입니다. 두 통화 간의 상호 교환 비율을 이해하는 데 유용합니다.",
+      },
+      {
+        q: "인기 환율 변환이란 무엇인가요?",
+        a: "한국 원(KRW) 기준으로 가장 많이 조회되는 통화 쌍인 USD, JPY, EUR, CNY 환율을 빠르게 확인할 수 있는 기능입니다. 버튼을 누르면 해당 통화 쌍으로 자동으로 전환됩니다.",
+      },
+    ],
   },
   en: {
     title: "Currency Converter",
@@ -131,6 +156,25 @@ const translations: Record<
       INR: "Indian Rupee",
       BRL: "Brazilian Real",
     },
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      {
+        q: "How do I use the currency converter?",
+        a: "Enter the amount you want to convert, select the source and target currencies, and the conversion result will appear instantly based on live exchange rates. Use the ↔ button to quickly swap the two currencies.",
+      },
+      {
+        q: "How often is the exchange rate data updated?",
+        a: "Exchange rate data is updated at least once daily via the open.er-api.com public API. Refreshing the page fetches the latest rates, and the last update time is shown on screen. Rates may differ slightly from actual transaction rates.",
+      },
+      {
+        q: "Which currencies are supported?",
+        a: "The converter supports 20 major currencies including USD, EUR, KRW, JPY, CNY, GBP, CHF, CAD, AUD, NZD, SGD, HKD, TWD, THB, VND, PHP, IDR, MYR, INR, and BRL.",
+      },
+      {
+        q: "What is the inverse rate?",
+        a: "The inverse rate shows the exchange rate with the currencies swapped. For example, if 1 USD = 1,400 KRW, the inverse rate is 1 KRW = 0.000714 USD. It helps understand the mutual exchange ratio between two currencies.",
+      },
+    ],
   },
   ja: {
     title: "為替計算機",
@@ -168,6 +212,25 @@ const translations: Record<
       INR: "インドルピー",
       BRL: "ブラジルレアル",
     },
+    faqTitle: "よくある質問",
+    faqItems: [
+      {
+        q: "為替計算機の使い方は？",
+        a: "変換したい金額を入力し、変換元と変換先の通貨を選択すると、リアルタイムの為替レートに基づいて即座に換算結果が表示されます。↔ボタンで2つの通貨を素早く入れ替えられます。",
+      },
+      {
+        q: "為替レートはどのくらいの頻度で更新されますか？",
+        a: "為替レートデータはopen.er-api.comの公開APIを通じて毎日1回以上更新されます。ページを再読み込みすると最新レートが取得され、最終更新時刻が画面に表示されます。実際の取引レートとは若干異なる場合があります。",
+      },
+      {
+        q: "対応している通貨は何ですか？",
+        a: "USD、EUR、KRW、JPY、CNY、GBP、CHF、CAD、AUD、NZD、SGD、HKD、TWD、THB、VND、PHP、IDR、MYR、INR、BRLの20主要通貨に対応しています。",
+      },
+      {
+        q: "逆レートとは何ですか？",
+        a: "逆レートは基準通貨と対象通貨の位置を入れ替えたレートです。例えば1 USD = 140 JPYの場合、逆レートは1 JPY = 0.00714 USDになります。2つの通貨間の相互交換比率を理解するのに役立ちます。",
+      },
+    ],
   },
   zh: {
     title: "汇率计算器",
@@ -205,6 +268,25 @@ const translations: Record<
       INR: "印度卢比",
       BRL: "巴西雷亚尔",
     },
+    faqTitle: "常见问题",
+    faqItems: [
+      {
+        q: "「如何使用汇率计算器？」",
+        a: "输入要换算的金额，选择换算前后的货币，即可根据实时汇率立即显示换算结果。点击↔按钮可以快速互换两种货币。",
+      },
+      {
+        q: "「汇率数据多久更新一次？」",
+        a: "汇率数据通过open.er-api.com公开API每天至少更新一次。刷新页面即可获取最新汇率，页面上会显示最后更新时间。实际交易汇率可能略有差异。",
+      },
+      {
+        q: "「支持哪些货币？」",
+        a: "支持20种主要货币，包括美元、欧元、韩元、日元、人民币、英镑、瑞士法郎、加拿大元、澳大利亚元、新加坡元等。",
+      },
+      {
+        q: "「反向汇率是什么？」",
+        a: "反向汇率是将基准货币和目标货币位置互换后的汇率。例如1美元=7元人民币，反向汇率则为1元人民币=0.143美元。有助于理解两种货币之间的相互兑换比率。",
+      },
+    ],
   },
   es: {
     title: "Conversor de Divisas",
@@ -242,6 +324,25 @@ const translations: Record<
       INR: "Rupia india",
       BRL: "Real brasileño",
     },
+    faqTitle: "Preguntas frecuentes",
+    faqItems: [
+      {
+        q: "¿Cómo uso el conversor de divisas?",
+        a: "Ingresa el monto a convertir, selecciona la divisa de origen y destino, y el resultado aparecerá al instante con tasas en tiempo real. Usa el botón ↔ para intercambiar rápidamente las dos divisas.",
+      },
+      {
+        q: "¿Con qué frecuencia se actualizan las tasas?",
+        a: "Los datos de tasas de cambio se actualizan al menos una vez al día a través de la API pública de open.er-api.com. Al recargar la página se obtienen las tasas más recientes. Puede haber pequeñas diferencias con las tasas de transacción reales.",
+      },
+      {
+        q: "¿Qué divisas están disponibles?",
+        a: "El conversor admite 20 divisas principales: USD, EUR, KRW, JPY, CNY, GBP, CHF, CAD, AUD, NZD, SGD, HKD, TWD, THB, VND, PHP, IDR, MYR, INR y BRL.",
+      },
+      {
+        q: "¿Qué es el tipo inverso?",
+        a: "El tipo inverso muestra la tasa con las divisas intercambiadas. Por ejemplo, si 1 USD = 1.400 KRW, el tipo inverso es 1 KRW = 0,000714 USD. Ayuda a entender la relación de intercambio mutuo entre dos divisas.",
+      },
+    ],
   },
 };
 
@@ -517,6 +618,25 @@ export default function CurrencyConverterPage() {
               </div>
             </div>
           )}
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
 
           <AdBanner format="rectangle" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
         </div>

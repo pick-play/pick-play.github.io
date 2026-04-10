@@ -5,6 +5,62 @@ import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
 import AdBanner from "@/components/AdBanner";
 import imageCompression from "browser-image-compression";
+import { useLocale } from "@/hooks/useLocale";
+
+// ─── Translations ─────────────────────────────────────────────────────────────
+
+const imageTranslations = {
+  ko: {
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      { q: "이미지 파일이 서버에 업로드되나요?", a: "아니요. 모든 이미지 처리는 브라우저(Canvas API) 내에서 완전히 이루어집니다. 파일이 인터넷으로 전송되지 않아 개인정보와 기업 기밀 이미지도 안전하게 처리할 수 있습니다." },
+      { q: "PNG를 JPG로 변환하면 투명 배경은 어떻게 되나요?", a: "JPG 형식은 투명도(알파 채널)를 지원하지 않습니다. PNG의 투명한 영역은 흰색 배경으로 채워집니다. 투명 배경을 유지하려면 PNG 형식을 그대로 사용하세요." },
+      { q: "이미지 압축 후 화질이 많이 낮아지나요?", a: "목표 크기 설정에 따라 다르지만, 500KB 이상으로 설정하면 대부분 육안으로 거의 차이를 느낄 수 없습니다. 100KB 이하로 설정하면 고해상도 이미지에서 일부 화질 저하가 생길 수 있습니다. 압축 전후 파일 크기가 표시되므로 적절한 설정을 선택하세요." },
+      { q: "크기 변경 시 비율 유지는 어떻게 작동하나요?", a: "비율 유지 토글을 켜면 너비를 변경할 때 높이가 자동으로 계산되고, 높이를 변경할 때 너비가 자동으로 계산됩니다. 원본 이미지의 가로세로 비율이 그대로 유지됩니다." },
+      { q: "일괄 변환에서 처리 가능한 파일 수 제한이 있나요?", a: "파일 수 제한은 없지만, 모든 처리가 브라우저 메모리에서 이루어지므로 파일이 많거나 크면 처리 시간이 길어질 수 있습니다. 한 번에 20~30개 정도의 이미지를 처리하는 것을 권장합니다." },
+    ],
+  },
+  en: {
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      { q: "Are my image files uploaded to a server?", a: "No. All image processing happens entirely within your browser using the Canvas API. Files are never sent over the internet, so personal and confidential images are processed safely and privately." },
+      { q: "What happens to transparent backgrounds when converting PNG to JPG?", a: "JPG format does not support transparency (alpha channel). Transparent areas in PNG images will be filled with a white background. If you need to keep the transparent background, use the PNG format." },
+      { q: "Does image compression significantly reduce quality?", a: "It depends on the target size setting. At 500KB or above, most people cannot notice a visible difference. Below 100KB, there may be some quality loss for high-resolution images. File sizes before and after compression are displayed so you can choose the right setting." },
+      { q: "How does aspect ratio lock work when resizing?", a: "When the aspect ratio lock is enabled, changing the width automatically calculates the height, and vice versa. The original image's aspect ratio is maintained. Disable the toggle for free-form resizing." },
+      { q: "Is there a file limit for batch conversion?", a: "There is no hard limit on file count, but since all processing happens in browser memory, many or large files may take longer. We recommend processing 20–30 images at a time for best performance." },
+    ],
+  },
+  ja: {
+    faqTitle: "よくある質問",
+    faqItems: [
+      { q: "画像ファイルはサーバーにアップロードされますか？", a: "いいえ。すべての画像処理はブラウザ（Canvas API）内で完全に行われます。ファイルはインターネットに送信されないため、個人情報や機密画像も安全に処理できます。" },
+      { q: "PNGをJPGに変換すると透明背景はどうなりますか？", a: "JPG形式は透明度（アルファチャンネル）をサポートしていません。PNGの透明な部分は白い背景で塗りつぶされます。透明背景を維持したい場合はPNG形式をそのまま使用してください。" },
+      { q: "画像圧縮後に画質は大きく落ちますか？", a: "目標サイズの設定によりますが、500KB以上に設定すれば肉眼でほとんど差がわからない場合がほとんどです。100KB以下に設定すると高解像度画像で多少の画質低下が生じる場合があります。" },
+      { q: "リサイズ時の縦横比維持はどのように機能しますか？", a: "縦横比維持トグルをオンにすると、幅を変更すると高さが自動計算され、高さを変更すると幅が自動計算されます。元の画像の縦横比がそのまま維持されます。" },
+      { q: "一括変換で処理できるファイル数の上限はありますか？", a: "ファイル数の制限はありませんが、すべての処理がブラウザメモリで行われるため、ファイルが多いか大きい場合は処理時間が長くなることがあります。一度に20〜30枚の処理をお勧めします。" },
+    ],
+  },
+  zh: {
+    faqTitle: "常见问题",
+    faqItems: [
+      { q: "图片文件会上传到服务器吗？", a: "不会。所有图片处理完全在浏览器（Canvas API）内进行。文件不会传输到互联网，因此个人和机密图片也可以安全处理。" },
+      { q: "将PNG转换为JPG后，透明背景会怎样？", a: "JPG格式不支持透明度（Alpha通道）。PNG中的透明区域将被白色背景填充。如果需要保留透明背景，请继续使用PNG格式。" },
+      { q: "图片压缩后画质会大幅降低吗？", a: "取决于目标大小设置。设置为500KB以上时，大多数情况下肉眼几乎看不出差异。设置在100KB以下时，高分辨率图片可能会出现一定程度的画质下降。压缩前后的文件大小均会显示，请选择合适的设置。" },
+      { q: "调整大小时如何保持宽高比？", a: "开启宽高比锁定后，修改宽度时高度会自动计算，修改高度时宽度会自动计算。原始图片的宽高比将保持不变。关闭开关可自由调整尺寸。" },
+      { q: "批量转换可处理的文件数量有限制吗？", a: "没有硬性文件数量限制，但由于所有处理在浏览器内存中进行，文件较多或较大时处理时间会变长。建议每次处理20至30张图片以获得最佳性能。" },
+    ],
+  },
+  es: {
+    faqTitle: "Preguntas Frecuentes",
+    faqItems: [
+      { q: "¿Se suben mis archivos de imagen a un servidor?", a: "No. Todo el procesamiento de imágenes ocurre completamente dentro de tu navegador usando la Canvas API. Los archivos nunca se envían por internet, por lo que las imágenes personales y confidenciales se procesan de forma segura y privada." },
+      { q: "¿Qué ocurre con los fondos transparentes al convertir PNG a JPG?", a: "El formato JPG no soporta transparencia (canal alfa). Las áreas transparentes en imágenes PNG se rellenarán con un fondo blanco. Si necesitas mantener el fondo transparente, usa el formato PNG." },
+      { q: "¿La compresión de imagen reduce significativamente la calidad?", a: "Depende del tamaño objetivo. A 500KB o más, la mayoría de personas no pueden notar una diferencia visible. Por debajo de 100KB, puede haber algo de pérdida de calidad para imágenes de alta resolución. Se muestran los tamaños antes y después de la compresión para que puedas elegir." },
+      { q: "¿Cómo funciona el bloqueo de proporción al cambiar el tamaño?", a: "Cuando el bloqueo de proporción está activado, cambiar el ancho calcula automáticamente la altura, y viceversa. La proporción original de la imagen se mantiene. Desactiva el interruptor para un cambio de tamaño libre." },
+      { q: "¿Hay un límite de archivos para la conversión por lotes?", a: "No hay un límite fijo, pero dado que todo el procesamiento ocurre en la memoria del navegador, muchos archivos o archivos grandes pueden tardar más. Recomendamos procesar 20–30 imágenes a la vez para mejor rendimiento." },
+    ],
+  },
+};
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -1366,6 +1422,8 @@ function BatchTab() {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function ImagePage() {
+  const locale = useLocale();
+  const t = imageTranslations[locale] ?? imageTranslations.ko;
   const [activeTab, setActiveTab] = useState<Tab>("convert-png-jpg");
 
   // Cleanup on unmount
@@ -1451,72 +1509,23 @@ export default function ImagePage() {
           />
 
           {/* FAQ Section */}
-          <section className="mt-16 mb-8">
-            <h2 className="text-2xl font-bold mb-6 text-center">자주 묻는 질문</h2>
-            <div className="space-y-4">
-
-              <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-500 transition-colors">
-                  이미지 파일이 서버에 업로드되나요?
-                  <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
-                  아니요. 모든 이미지 처리는 브라우저(Canvas API) 내에서 완전히 이루어집니다. 파일이 인터넷으로 전송되지 않아 개인정보와 기업 기밀 이미지도 안전하게 처리할 수 있습니다.
-                </p>
-              </details>
-
-              <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-500 transition-colors">
-                  PNG를 JPG로 변환하면 투명 배경은 어떻게 되나요?
-                  <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
-                  JPG 형식은 투명도(알파 채널)를 지원하지 않습니다. PNG의 투명한 영역은 흰색 배경으로 채워집니다. 투명 배경을 유지하려면 PNG 형식을 그대로 사용하세요.
-                </p>
-              </details>
-
-              <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-500 transition-colors">
-                  이미지 압축 후 화질이 많이 낮아지나요?
-                  <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
-                  목표 크기 설정에 따라 다르지만, 500KB 이상으로 설정하면 대부분 육안으로 거의 차이를 느낄 수 없습니다. 100KB 이하로 설정하면 고해상도 이미지에서 일부 화질 저하가 생길 수 있습니다. 압축 전후 파일 크기가 표시되므로 적절한 설정을 선택하세요.
-                </p>
-              </details>
-
-              <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-500 transition-colors">
-                  크기 변경 시 비율 유지는 어떻게 작동하나요?
-                  <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
-                  비율 유지 토글을 켜면 너비를 변경할 때 높이가 자동으로 계산되고, 높이를 변경할 때 너비가 자동으로 계산됩니다. 원본 이미지의 가로세로 비율이 그대로 유지됩니다. 자유롭게 크기를 설정하려면 토글을 끄세요.
-                </p>
-              </details>
-
-              <details className="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-slate-700 dark:text-slate-200 hover:text-blue-500 transition-colors">
-                  일괄 변환에서 처리 가능한 파일 수 제한이 있나요?
-                  <svg className="w-5 h-5 shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </summary>
-                <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 leading-relaxed">
-                  파일 수 제한은 없지만, 모든 처리가 브라우저 메모리에서 이루어지므로 파일이 많거나 크면 처리 시간이 길어질 수 있습니다. 한 번에 20~30개 정도의 이미지를 처리하는 것을 권장합니다.
-                </p>
-              </details>
-
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
             </div>
-          </section>
+          </div>
 
           {/* Ad - bottom */}
           <AdBanner

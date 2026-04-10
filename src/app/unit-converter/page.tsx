@@ -126,6 +126,8 @@ const translations: Record<
     result: string;
     quickLinks: string;
     invalidInput: string;
+    faqTitle: string;
+    faqItems: { q: string; a: string }[];
   }
 > = {
   ko: {
@@ -147,6 +149,13 @@ const translations: Record<
     result:       "결과",
     quickLinks:   "빠른 변환",
     invalidInput: "올바른 숫자를 입력하세요",
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      { q: "단위 변환기는 어떤 단위를 지원하나요?", a: "길이(mm, cm, m, km, in, ft, yd, mi), 무게(mg, g, kg, oz, lb, ton), 온도(°C, °F, K), 넓이(mm², cm², m², km², ft², ac, ha), 부피(mL, L, gal, fl oz, cup), 속도(m/s, km/h, mph, knot), 데이터(B, KB, MB, GB, TB) 등 7가지 카테고리를 지원합니다." },
+      { q: "온도 변환은 어떻게 작동하나요?", a: "섭씨(°C)와 화씨(°F) 간의 변환은 °F = °C × 9/5 + 32 공식을 사용합니다. 켈빈(K)은 절대영도를 기준으로 하며 K = °C + 273.15 공식으로 변환됩니다. 이 세 온도 단위를 자유롭게 변환할 수 있습니다." },
+      { q: "빠른 변환 버튼은 무엇인가요?", a: "빠른 변환 버튼은 자주 사용되는 단위 조합(예: cm→in, kg→lb, °C→°F 등)을 한 번의 클릭으로 바로 설정해주는 기능입니다. 자주 쓰는 변환을 빠르게 이용하고 싶을 때 편리하게 사용할 수 있습니다." },
+      { q: "결과가 소수점이 너무 많이 나와요. 어떻게 하나요?", a: "변환 결과는 최대 10자리 유효숫자로 표시되며 불필요한 0은 자동으로 제거됩니다. 매우 크거나 매우 작은 값은 지수 표기법(예: 1.23e-8)으로 표시됩니다." },
+    ],
   },
   en: {
     title: "Unit Converter",
@@ -167,6 +176,13 @@ const translations: Record<
     result:       "Result",
     quickLinks:   "Quick Links",
     invalidInput: "Please enter a valid number",
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      { q: "What units does the converter support?", a: "The converter supports 7 categories: length (mm, cm, m, km, in, ft, yd, mi), weight (mg, g, kg, oz, lb, ton), temperature (°C, °F, K), area (mm², cm², m², km², ft², ac, ha), volume (mL, L, gal, fl oz, cup), speed (m/s, km/h, mph, knot), and data (B, KB, MB, GB, TB)." },
+      { q: "How does temperature conversion work?", a: "Celsius to Fahrenheit uses the formula °F = °C × 9/5 + 32. Kelvin is based on absolute zero with the formula K = °C + 273.15. You can freely convert between all three temperature units." },
+      { q: "What are the Quick Link buttons?", a: "Quick Link buttons set up frequently used unit combinations (e.g., cm→in, kg→lb, °C→°F) with a single click, saving you time from manually selecting categories and units each time." },
+      { q: "The result has too many decimal places. What do I do?", a: "Conversion results are displayed with up to 10 significant figures, and trailing zeros are automatically removed. Very large or very small values are shown in scientific notation (e.g., 1.23e-8)." },
+    ],
   },
   ja: {
     title: "単位変換ツール",
@@ -187,6 +203,13 @@ const translations: Record<
     result:       "結果",
     quickLinks:   "クイック変換",
     invalidInput: "正しい数値を入力してください",
+    faqTitle: "よくある質問",
+    faqItems: [
+      { q: "単位変換ツールはどの単位に対応していますか？", a: "長さ（mm, cm, m, km, in, ft, yd, mi）、重さ（mg, g, kg, oz, lb, ton）、温度（°C, °F, K）、面積（mm², cm², m², km², ft², ac, ha）、体積（mL, L, gal, fl oz, cup）、速度（m/s, km/h, mph, knot）、データ（B, KB, MB, GB, TB）の7カテゴリに対応しています。" },
+      { q: "温度変換はどのように行われますか？", a: "摂氏から華氏への変換は °F = °C × 9/5 + 32 の公式を使用します。ケルビンは絶対零度を基準とし、K = °C + 273.15 で変換されます。3つの温度単位を自由に変換できます。" },
+      { q: "クイック変換ボタンとは何ですか？", a: "クイック変換ボタンは、よく使われる単位の組み合わせ（例：cm→in、kg→lb、°C→°F など）をワンクリックで設定できる機能です。毎回カテゴリと単位を手動で選択する手間を省けます。" },
+      { q: "結果の小数点が多すぎます。どうすればいいですか？", a: "変換結果は最大10桁の有効数字で表示され、不要な0は自動的に削除されます。非常に大きいまたは小さい値は指数表記（例：1.23e-8）で表示されます。" },
+    ],
   },
   zh: {
     title: "单位换算器",
@@ -207,6 +230,13 @@ const translations: Record<
     result:       "结果",
     quickLinks:   "快捷换算",
     invalidInput: "请输入有效数字",
+    faqTitle: "常见问题",
+    faqItems: [
+      { q: "单位换算器支持哪些单位？", a: "支持7个类别：长度（mm, cm, m, km, in, ft, yd, mi）、重量（mg, g, kg, oz, lb, ton）、温度（°C, °F, K）、面积（mm², cm², m², km², ft², ac, ha）、体积（mL, L, gal, fl oz, cup）、速度（m/s, km/h, mph, knot）和数据（B, KB, MB, GB, TB）。" },
+      { q: "温度换算是如何工作的？", a: "摄氏转华氏使用公式 °F = °C × 9/5 + 32。开尔文以绝对零度为基准，使用公式 K = °C + 273.15 进行换算。三种温度单位之间可以自由换算。" },
+      { q: "「快捷换算」按钮是什么？", a: "快捷换算按钮是一键设置常用单位组合（例如cm→in、kg→lb、°C→°F等）的功能，省去每次手动选择类别和单位的麻烦。" },
+      { q: "结果小数点太多怎么办？", a: "换算结果最多显示10位有效数字，多余的零会自动去除。极大或极小的值会以科学计数法（如1.23e-8）显示。" },
+    ],
   },
   es: {
     title: "Convertidor de Unidades",
@@ -227,6 +257,13 @@ const translations: Record<
     result:       "Resultado",
     quickLinks:   "Accesos rápidos",
     invalidInput: "Ingresa un número válido",
+    faqTitle: "Preguntas Frecuentes",
+    faqItems: [
+      { q: "¿Qué unidades soporta el conversor?", a: "El conversor soporta 7 categorías: longitud (mm, cm, m, km, in, ft, yd, mi), peso (mg, g, kg, oz, lb, ton), temperatura (°C, °F, K), área (mm², cm², m², km², ft², ac, ha), volumen (mL, L, gal, fl oz, cup), velocidad (m/s, km/h, mph, knot) y datos (B, KB, MB, GB, TB)." },
+      { q: "¿Cómo funciona la conversión de temperatura?", a: "De Celsius a Fahrenheit se usa la fórmula °F = °C × 9/5 + 32. Kelvin se basa en el cero absoluto con la fórmula K = °C + 273.15. Puedes convertir libremente entre las tres unidades de temperatura." },
+      { q: "¿Qué son los botones de Accesos rápidos?", a: "Los botones de acceso rápido configuran combinaciones de unidades de uso frecuente (por ejemplo, cm→in, kg→lb, °C→°F) con un solo clic, ahorrándote el tiempo de seleccionar manualmente categorías y unidades cada vez." },
+      { q: "El resultado tiene demasiados decimales. ¿Qué hago?", a: "Los resultados se muestran con hasta 10 cifras significativas y los ceros al final se eliminan automáticamente. Los valores muy grandes o pequeños se muestran en notación científica (por ejemplo, 1.23e-8)." },
+    ],
   },
 };
 
@@ -447,6 +484,25 @@ export default function UnitConverterPage() {
               ))}
             </div>
           </motion.div>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
 
           {/* Bottom Ad */}
           <div className="mt-2">

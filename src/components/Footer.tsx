@@ -52,8 +52,17 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="pt-6 border-t border-slate-200/60 dark:border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+        <div className="pt-6 border-t border-slate-200/60 dark:border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <span>&copy; {new Date().getFullYear()} PickPlay</span>
+          <nav className="flex flex-wrap items-center gap-3">
+            <Link href="/about" className="hover:text-primary-500 transition-colors">소개</Link>
+            <span className="text-slate-300 dark:text-slate-600">|</span>
+            <Link href="/privacy" className="hover:text-primary-500 transition-colors">개인정보처리방침</Link>
+            <span className="text-slate-300 dark:text-slate-600">|</span>
+            <Link href="/terms" className="hover:text-primary-500 transition-colors">이용약관</Link>
+            <span className="text-slate-300 dark:text-slate-600">|</span>
+            <Link href="/contact" className="hover:text-primary-500 transition-colors">연락처</Link>
+          </nav>
           <span>
             Made by{" "}
             <a

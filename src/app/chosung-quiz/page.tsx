@@ -77,6 +77,14 @@ const translations = {
     categoryResultLabel: "카테고리",
     playAgain: "다시 하기",
     changeSettings: "설정 변경",
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      { q: "초성 퀴즈란 무엇인가요?", a: "초성 퀴즈는 한국어 단어의 초성(자음)만 보고 해당 단어를 맞추는 게임입니다. 예를 들어 'ㅅㄱ'을 보고 '사과'를 맞히는 방식입니다. 한국어 어휘력을 키우고 두뇌를 자극하는 재미있는 학습 게임입니다." },
+      { q: "초성이란 무엇인가요?", a: "초성(初聲)은 한국어 음절의 맨 처음에 오는 자음을 의미합니다. 한글의 각 글자는 초성, 중성(모음), 종성으로 구성되며, 초성만 나열하면 단어의 힌트가 됩니다. 예를 들어 '대한민국'의 초성은 'ㄷㅎㅁㄱ'입니다." },
+      { q: "타이머를 설정하면 어떻게 달라지나요?", a: "30초 또는 60초 타이머를 설정하면 시간 내에 답을 맞혀야 합니다. 시간이 초과되면 정답이 공개되고 다음 문제로 넘어갑니다. 무제한 모드에서는 시간 제한 없이 천천히 생각할 수 있습니다." },
+      { q: "힌트는 어떻게 사용하나요?", a: "게임 화면에서 힌트 버튼을 누르면 먼저 카테고리 정보가 표시되고, 한 번 더 누르면 추가 힌트가 제공됩니다. 힌트를 사용하면 점수에는 영향이 없지만 연속 정답 기록은 유지됩니다." },
+      { q: "카테고리별로 다른 난이도가 있나요?", a: "카테고리마다 단어의 친숙도가 다르기 때문에 체감 난이도가 다를 수 있습니다. 음식이나 동물 카테고리는 비교적 쉽고, 유명인이나 브랜드 카테고리는 더 어려울 수 있습니다. 자신의 수준에 맞는 카테고리를 선택해 보세요." },
+    ],
   },
   en: {
     title: "Chosung Quiz",
@@ -117,6 +125,13 @@ const translations = {
     categoryResultLabel: "Category",
     playAgain: "Play Again",
     changeSettings: "Change Settings",
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      { q: "What is the Chosung Quiz?", a: "The Chosung Quiz is a game where you guess a Korean word by seeing only its initial consonants (chosung). For example, seeing 'ㅅㄱ' and guessing '사과' (apple). It's a fun learning game to build Korean vocabulary and stimulate your brain." },
+      { q: "What are chosung (initial consonants)?", a: "Chosung are the first consonants of Korean syllables. Each Korean character is made up of an initial consonant (chosung), a vowel (jungseong), and an optional final consonant (jongseong). Showing only the chosung provides a clue to guess the word." },
+      { q: "How does the timer work?", a: "Setting a 30-second or 60-second timer means you must answer within that time. If time runs out, the answer is revealed and the quiz moves to the next word. In unlimited mode, you can take your time without any pressure." },
+      { q: "How do hints work?", a: "Tap the hint button during the game to first reveal the category, and tap again for an additional clue. Using hints does not affect your score, but your streak record is maintained." },
+    ],
   },
   ja: {
     title: "チョソンクイズ",
@@ -157,6 +172,13 @@ const translations = {
     categoryResultLabel: "カテゴリー",
     playAgain: "もう一度",
     changeSettings: "設定変更",
+    faqTitle: "よくある質問",
+    faqItems: [
+      { q: "チョソンクイズとは何ですか？", a: "チョソンクイズは、韓国語の単語の初声（子音）だけを見て単語を当てるゲームです。例えば「ㅅㄱ」を見て「사과（リンゴ）」を当てる形式です。韓国語の語彙力を高め、脳を刺激する楽しい学習ゲームです。" },
+      { q: "タイマーを設定するとどう変わりますか？", a: "30秒か60秒のタイマーを設定すると、その時間内に答えなければなりません。時間切れになると正解が表示されて次の問題に進みます。無制限モードでは時間制限なくゆっくり考えることができます。" },
+      { q: "ヒントはどう使いますか？", a: "ゲーム中にヒントボタンを押すと、まずカテゴリー情報が表示され、もう一度押すと追加のヒントが表示されます。ヒントを使ってもスコアには影響しません。" },
+      { q: "カテゴリーによって難易度は変わりますか？", a: "カテゴリーによって単語の馴染み度が異なるため、体感難易度が変わります。食べ物や動物は比較的簡単で、有名人やブランドはより難しい場合があります。自分のレベルに合ったカテゴリーを選んでみてください。" },
+    ],
   },
   zh: {
     title: "初声猜词",
@@ -197,6 +219,13 @@ const translations = {
     categoryResultLabel: "分类",
     playAgain: "再玩一次",
     changeSettings: "更改设置",
+    faqTitle: "常见问题",
+    faqItems: [
+      { q: "什么是初声猜词游戏？", a: "初声猜词游戏是一种只看韩语单词的声母来猜出完整单词的游戏。例如看到「ㅅㄱ」猜出「사과（苹果）」。这是一个有趣的学习游戏，能增强韩语词汇量并刺激大脑。" },
+      { q: "计时器设置有什么区别？", a: "设置30秒或60秒计时器后，必须在时间内答出答案。时间到则显示正确答案并进入下一题。无限制模式下可以不受时间限制慢慢思考。" },
+      { q: "如何使用「提示」功能？", a: "游戏中点击提示按钮，首先会显示分类信息，再次点击会提供额外提示。使用提示不影响得分，但连续答对记录会保持。" },
+      { q: "不同分类的难度有区别吗？", a: "由于各分类单词的熟悉度不同，体感难度会有差异。美食和动物分类相对简单，名人和品牌分类可能更难。请根据自己的水平选择合适的分类。" },
+    ],
   },
   es: {
     title: "Quiz de Chosung",
@@ -237,6 +266,13 @@ const translations = {
     categoryResultLabel: "Categoría",
     playAgain: "Jugar de Nuevo",
     changeSettings: "Cambiar Ajustes",
+    faqTitle: "Preguntas Frecuentes",
+    faqItems: [
+      { q: "¿Qué es el Quiz de Chosung?", a: "El Quiz de Chosung es un juego en el que adivinas una palabra coreana viendo solo sus consonantes iniciales (chosung). Por ejemplo, ver 'ㅅㄱ' y adivinar '사과' (manzana). Es un divertido juego de aprendizaje para desarrollar vocabulario coreano." },
+      { q: "¿Cómo funciona el temporizador?", a: "Configurar un temporizador de 30 o 60 segundos significa que debes responder dentro de ese tiempo. Si se acaba el tiempo, la respuesta se revela y el quiz avanza a la siguiente palabra. En el modo sin límite puedes tomarte tu tiempo." },
+      { q: "¿Cómo funcionan las pistas?", a: "Toca el botón de pista durante el juego para revelar primero la categoría, y tócalo de nuevo para obtener una pista adicional. Usar pistas no afecta tu puntuación." },
+      { q: "¿Varía la dificultad según la categoría?", a: "Cada categoría tiene palabras con distinto nivel de familiaridad, así que la dificultad percibida varía. Comida y animales son relativamente fáciles, mientras que famosos y marcas pueden ser más difíciles. Elige la categoría adecuada para tu nivel." },
+    ],
   },
 };
 
@@ -917,6 +953,25 @@ export default function ChosungQuizPage() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </PageTransition>

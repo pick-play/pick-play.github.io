@@ -31,6 +31,8 @@ const translations: Record<Locale, {
   mediumDesc: string;
   hardDesc: string;
   sec: string;
+  faqTitle: string;
+  faqItems: { q: string; a: string }[];
 }> = {
   ko: {
     title: "에임 트레이너",
@@ -56,6 +58,25 @@ const translations: Record<Locale, {
     mediumDesc: "중간 타겟 · 1초마다",
     hardDesc: "작은 타겟 · 0.7초마다",
     sec: "초",
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      {
+        q: "에임 트레이너는 어떻게 사용하나요?",
+        a: "난이도(쉬움/보통/어려움)를 선택하고 시작하기 버튼을 누르면 30초 동안 화면에 타겟이 나타납니다. 타겟을 최대한 빠르고 정확하게 클릭하면 점수가 올라갑니다. 타겟을 놓치거나 빈 곳을 클릭하면 미스로 처리됩니다.",
+      },
+      {
+        q: "반응 속도란 무엇이고 어떻게 개선할 수 있나요?",
+        a: "반응 속도는 타겟이 나타나는 순간부터 클릭하기까지의 시간(ms, 밀리초)입니다. 평균적으로 200~300ms가 정상 범위입니다. 규칙적인 에임 훈련, 충분한 수면, 올바른 마우스 설정(DPI, 감도)이 반응 속도 개선에 도움이 됩니다.",
+      },
+      {
+        q: "난이도별 차이는 무엇인가요?",
+        a: "쉬움은 큰 타겟(60px)이 1.5초마다, 보통은 중간 타겟(40px)이 1초마다, 어려움은 작은 타겟(25px)이 0.7초마다 나타납니다. 타겟이 작고 생성 간격이 짧을수록 더 빠른 반응과 정밀한 조준이 필요합니다.",
+      },
+      {
+        q: "최고 점수는 어떻게 저장되나요?",
+        a: "최고 점수는 브라우저의 로컬 스토리지에 저장됩니다. 같은 브라우저를 사용하면 이전 기록이 유지되며, 브라우저 데이터를 삭제하면 초기화됩니다. 기록은 난이도별로 따로 저장됩니다.",
+      },
+    ],
   },
   en: {
     title: "Aim Trainer",
@@ -81,6 +102,25 @@ const translations: Record<Locale, {
     mediumDesc: "Medium targets · every 1s",
     hardDesc: "Small targets · every 0.7s",
     sec: "s",
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      {
+        q: "How do I use the Aim Trainer?",
+        a: "Select a difficulty (Easy/Medium/Hard) and press Start. Targets appear for 30 seconds — click them as fast and accurately as possible to score points. Missing a target or clicking empty space counts as a miss.",
+      },
+      {
+        q: "What is reaction time and how can I improve it?",
+        a: "Reaction time is the milliseconds between a target appearing and your click. The average is 200–300ms. Regular aim training, adequate sleep, and proper mouse settings (DPI, sensitivity) all help improve your reaction speed.",
+      },
+      {
+        q: "What is the difference between difficulty levels?",
+        a: "Easy has large targets (60px) every 1.5s, Medium has medium targets (40px) every 1s, and Hard has small targets (25px) every 0.7s. Smaller targets with shorter intervals require faster reactions and more precise aiming.",
+      },
+      {
+        q: "How are high scores saved?",
+        a: "High scores are saved in your browser's local storage. They persist as long as you use the same browser. Clearing browser data will reset your records. Scores are tracked separately for each difficulty level.",
+      },
+    ],
   },
   ja: {
     title: "エイムトレーナー",
@@ -106,6 +146,21 @@ const translations: Record<Locale, {
     mediumDesc: "中くらいのターゲット · 1秒ごと",
     hardDesc: "小さいターゲット · 0.7秒ごと",
     sec: "秒",
+    faqTitle: "よくある質問",
+    faqItems: [
+      {
+        q: "エイムトレーナーはどう使いますか？",
+        a: "難易度（かんたん/ふつう/むずかしい）を選んでスタートボタンを押すと、30秒間ターゲットが表示されます。できるだけ速く正確にクリックすることでスコアが上がります。ターゲットを見逃したり空白をクリックするとミスになります。",
+      },
+      {
+        q: "反応時間とは何ですか？改善方法は？",
+        a: "反応時間はターゲットが表示されてからクリックするまでの時間（ms）です。平均200〜300msが正常範囲です。定期的なトレーニング、十分な睡眠、適切なマウス設定（DPI・感度）が改善に効果的です。",
+      },
+      {
+        q: "難易度の違いは何ですか？",
+        a: "かんたんは大きいターゲット（60px）が1.5秒ごと、ふつうは中くらいのターゲット（40px）が1秒ごと、むずかしいは小さいターゲット（25px）が0.7秒ごとに出現します。",
+      },
+    ],
   },
   zh: {
     title: "瞄准训练器",
@@ -131,6 +186,21 @@ const translations: Record<Locale, {
     mediumDesc: "「中目标」每1秒",
     hardDesc: "「小目标」每0.7秒",
     sec: "秒",
+    faqTitle: "常见问题",
+    faqItems: [
+      {
+        q: "「如何使用瞄准训练器？」",
+        a: "选择难度（简单/普通/困难），点击开始按钮，30秒内会出现目标。尽可能快速准确地点击目标即可得分。错过目标或点击空白区域均计为未中。",
+      },
+      {
+        q: "「反应时间是什么？如何提高？」",
+        a: "反应时间是目标出现到你点击之间的毫秒数。平均200〜300ms为正常范围。规律训练、充足睡眠和合适的鼠标设置（DPI、灵敏度）都有助于提高反应速度。",
+      },
+      {
+        q: "「各难度有何不同？」",
+        a: "简单模式：大目标（60px）每1.5秒出现；普通模式：中目标（40px）每1秒出现；困难模式：小目标（25px）每0.7秒出现。目标越小、间隔越短，需要越快的反应和精准的瞄准。",
+      },
+    ],
   },
   es: {
     title: "Entrenador de Puntería",
@@ -156,6 +226,21 @@ const translations: Record<Locale, {
     mediumDesc: "Blancos medianos · cada 1s",
     hardDesc: "Blancos pequeños · cada 0.7s",
     sec: "s",
+    faqTitle: "Preguntas frecuentes",
+    faqItems: [
+      {
+        q: "¿Cómo se usa el Entrenador de Puntería?",
+        a: "Elige una dificultad (Fácil/Medio/Difícil) y pulsa Comenzar. Durante 30 segundos aparecerán blancos — haz clic en ellos lo más rápido y preciso posible para sumar puntos. Perder un blanco o hacer clic en el vacío cuenta como fallo.",
+      },
+      {
+        q: "¿Qué es el tiempo de reacción y cómo mejorarlo?",
+        a: "El tiempo de reacción es los milisegundos entre que aparece un blanco y tu clic. El promedio normal es 200–300ms. El entrenamiento regular, dormir bien y ajustar correctamente el ratón (DPI, sensibilidad) ayudan a mejorar.",
+      },
+      {
+        q: "¿En qué se diferencian los niveles de dificultad?",
+        a: "Fácil tiene blancos grandes (60px) cada 1,5s; Medio tiene blancos medianos (40px) cada 1s; Difícil tiene blancos pequeños (25px) cada 0,7s. Cuanto más pequeño el blanco e intervalo más corto, mayor precisión y velocidad se necesitan.",
+      },
+    ],
   },
 };
 
@@ -548,6 +633,25 @@ export default function AimTestPage() {
               </div>
             </motion.div>
           )}
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
 
           <AdBanner format="rectangle" className="mt-6" />
         </div>

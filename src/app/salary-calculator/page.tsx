@@ -39,6 +39,8 @@ const translations: Record<
     personUnit: string;
     people: string;
     totalLabel: string;
+    faqTitle: string;
+    faqItems: { q: string; a: string }[];
   }
 > = {
   ko: {
@@ -71,6 +73,29 @@ const translations: Record<
     personUnit: "명",
     people: "명",
     totalLabel: "합계",
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      {
+        q: "연봉 실수령액이란 무엇인가요?",
+        a: "연봉 실수령액이란 세전 연봉에서 국민연금, 건강보험, 장기요양보험, 고용보험 등 4대보험료와 소득세, 지방소득세를 모두 공제한 후 실제로 받는 금액을 의미합니다. 일반적으로 연봉의 80~90% 수준이며, 연봉이 높을수록 세율이 높아져 실수령 비율이 낮아집니다.",
+      },
+      {
+        q: "4대보험이란 무엇이고 얼마나 공제되나요?",
+        a: "4대보험은 국민연금(4.5%), 건강보험(3.545%), 장기요양보험(건강보험의 12.81%), 고용보험(0.9%)으로 구성됩니다. 이 비율은 근로자 부담분 기준이며, 사용자(회사)도 동일하거나 유사한 비율을 추가로 납부합니다.",
+      },
+      {
+        q: "비과세 금액이란 무엇인가요?",
+        a: "식대(월 20만원 한도), 자가운전보조금 등 근로소득세가 부과되지 않는 급여 항목입니다. 비과세 금액이 클수록 세금 계산 기준이 되는 과세표준이 낮아져 실수령액이 늘어납니다. 기본값은 식대 10만원으로 설정되어 있습니다.",
+      },
+      {
+        q: "부양가족 수가 세금에 영향을 주나요?",
+        a: "네, 부양가족 수에 따라 소득공제가 달라집니다. 부양가족 1인당 150만원, 20세 이하 자녀 1인당 추가 150만원의 인적공제가 적용되어 과세표준이 낮아지고 소득세가 줄어듭니다.",
+      },
+      {
+        q: "이 계산기 결과가 실제 급여와 다를 수 있나요?",
+        a: "네, 이 계산기는 2024년 기준 간소화된 공식을 적용하므로 실제 급여와 차이가 있을 수 있습니다. 정확한 금액은 회사 급여 담당자나 국민건강보험공단에 문의하시기 바랍니다. 참고용으로만 활용하세요.",
+      },
+    ],
   },
   en: {
     title: "Salary Net Pay Calculator",
@@ -102,6 +127,25 @@ const translations: Record<
     personUnit: "",
     people: "people",
     totalLabel: "Total",
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      {
+        q: "What is net pay (take-home pay)?",
+        a: "Net pay is your salary after all deductions including National Pension (4.5%), Health Insurance (3.545%), Long-term Care Insurance, Employment Insurance (0.9%), Income Tax, and Local Income Tax. It is typically 80–90% of your gross salary.",
+      },
+      {
+        q: "What are the four major social insurances in Korea?",
+        a: "Korea's four major social insurances are National Pension (4.5%), Health Insurance (3.545%), Long-term Care Insurance (12.81% of health premium), and Employment Insurance (0.9%). These are the employee contribution rates; employers pay a similar amount additionally.",
+      },
+      {
+        q: "What is the non-taxable amount?",
+        a: "Non-taxable amounts include meal allowances (up to 200,000 KRW/month) and commuting allowances that are exempt from income tax. Higher non-taxable amounts reduce your taxable base and increase your take-home pay. The default is set to 100,000 KRW.",
+      },
+      {
+        q: "How do dependents affect my taxes?",
+        a: "Each dependent reduces your taxable income by 1.5 million KRW, and each child under 20 provides an additional 1.5 million KRW deduction. More dependents mean a lower tax base and higher net pay.",
+      },
+    ],
   },
   ja: {
     title: "年収手取り計算機",
@@ -133,6 +177,25 @@ const translations: Record<
     personUnit: "人",
     people: "人",
     totalLabel: "合計",
+    faqTitle: "よくある質問",
+    faqItems: [
+      {
+        q: "手取りとは何ですか？",
+        a: "手取りとは、給与総額から国民年金（4.5%）、健康保険（3.545%）、介護保険、雇用保険（0.9%）、所得税、地方所得税を差し引いた実際に受け取る金額のことです。一般的に給与総額の80〜90%程度になります。",
+      },
+      {
+        q: "韓国の4大社会保険とは何ですか？",
+        a: "韓国の4大社会保険は国民年金（4.5%）、健康保険（3.545%）、介護保険（健康保険料の12.81%）、雇用保険（0.9%）です。これらは労働者の負担分で、雇用主も同様の金額を別途負担します。",
+      },
+      {
+        q: "非課税額とは何ですか？",
+        a: "食事手当（月20万ウォン限度）など、所得税がかからない給与項目です。非課税額が多いほど課税標準が下がり、手取りが増えます。デフォルトは食事手当10万ウォンに設定されています。",
+      },
+      {
+        q: "扶養家族数はどう影響しますか？",
+        a: "扶養家族1人につき150万ウォン、20歳以下の子供1人につきさらに150万ウォンの人的控除が適用され、課税標準が下がり所得税が減ります。",
+      },
+    ],
   },
   zh: {
     title: "年薪实得工资计算器",
@@ -164,6 +227,25 @@ const translations: Record<
     personUnit: "人",
     people: "人",
     totalLabel: "「合计」",
+    faqTitle: "常见问题",
+    faqItems: [
+      {
+        q: "「实得工资是什么意思？」",
+        a: "实得工资是指从税前薪资中扣除国民年金（4.5%）、健康保险（3.545%）、长期护理保险、就业保险（0.9%）、所得税和地方所得税后实际到手的金额。通常为税前薪资的80〜90%。",
+      },
+      {
+        q: "「韩国四大社会保险是什么？」",
+        a: "韩国四大社会保险包括国民年金（4.5%）、健康保险（3.545%）、长期护理保险（健康保险费的12.81%）和就业保险（0.9%）。以上为员工负担比例，雇主也需额外缴纳相似金额。",
+      },
+      {
+        q: "「免税金额是什么？」",
+        a: "免税金额包括餐补（每月最高20万韩元）等不计入所得税的工资项目。免税金额越高，应税基数越低，实得工资越多。默认设置为10万韩元餐补。",
+      },
+      {
+        q: "「赡养家属人数如何影响税额？」",
+        a: "每位赡养家属可减免150万韩元应税收入，每位20岁以下子女可额外减免150万韩元。赡养家属越多，应税基数越低，所得税越少，实得工资越多。",
+      },
+    ],
   },
   es: {
     title: "Calculadora de Salario Neto",
@@ -195,6 +277,25 @@ const translations: Record<
     personUnit: "",
     people: "personas",
     totalLabel: "Total",
+    faqTitle: "Preguntas frecuentes",
+    faqItems: [
+      {
+        q: "¿Qué es el salario neto?",
+        a: "El salario neto es el importe que recibes tras descontar la Pensión Nacional (4,5%), el Seguro de Salud (3,545%), el Seguro de Cuidados a Largo Plazo, el Seguro de Empleo (0,9%), el Impuesto sobre la Renta y el Impuesto Local. Suele representar entre el 80 y el 90% del salario bruto.",
+      },
+      {
+        q: "¿Qué son los cuatro seguros sociales de Corea?",
+        a: "Los cuatro seguros sociales de Corea son: Pensión Nacional (4,5%), Seguro de Salud (3,545%), Seguro de Cuidados a Largo Plazo (12,81% de la prima de salud) y Seguro de Empleo (0,9%). Estas son las tasas del empleado; el empleador también contribuye con un importe similar.",
+      },
+      {
+        q: "¿Qué es el monto no imponible?",
+        a: "Son partidas salariales exentas de impuestos, como el subsidio de comida (hasta 200.000 KRW/mes). A mayor monto no imponible, menor base imponible y mayor salario neto. El valor predeterminado es 100.000 KRW.",
+      },
+      {
+        q: "¿Cómo afectan los dependientes a mis impuestos?",
+        a: "Cada dependiente reduce tu base imponible en 1,5 millones KRW, y cada hijo menor de 20 años añade otra reducción de 1,5 millones KRW. Más dependientes equivale a menos impuestos y mayor salario neto.",
+      },
+    ],
   },
 };
 
@@ -608,6 +709,25 @@ export default function SalaryCalculatorPage() {
               </tbody>
             </table>
           </motion.div>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
 
           {/* Bottom Ad */}
           <div className="mt-2">

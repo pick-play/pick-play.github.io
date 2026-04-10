@@ -34,6 +34,8 @@ const translations: Record<
       overweight: string;
       obese: string;
     };
+    faqTitle: string;
+    faqItems: { q: string; a: string }[];
   }
 > = {
   ko: {
@@ -61,6 +63,13 @@ const translations: Record<
       overweight: "과체중",
       obese: "비만",
     },
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      { q: "BMI란 무엇인가요?", a: "BMI(체질량지수, Body Mass Index)는 체중(kg)을 키(m)의 제곱으로 나눈 값으로, 체중이 신장에 비해 적정한지 평가하는 국제 표준 지표입니다. 18.5 미만은 저체중, 18.5~24.9는 정상, 25~29.9는 과체중, 30 이상은 비만으로 분류합니다." },
+      { q: "BMI가 높으면 반드시 건강에 문제가 있나요?", a: "BMI는 체지방을 직접 측정하지 않기 때문에 한계가 있습니다. 근육량이 많은 운동선수는 BMI가 높더라도 건강할 수 있고, 반대로 BMI가 정상이더라도 체지방 비율이 높을 수 있습니다. 정확한 건강 평가를 위해서는 의료 전문가와 상담하는 것이 좋습니다." },
+      { q: "정상 체중 범위는 어떻게 계산되나요?", a: "정상 BMI 범위(18.5~24.9)에 해당하는 체중은 입력한 키를 기준으로 자동 계산됩니다. 예를 들어 키 170cm라면 18.5 × 1.7² = 53.5kg ~ 24.9 × 1.7² = 71.9kg이 정상 범위입니다." },
+      { q: "야드파운드법 단위는 어떻게 변환되나요?", a: "미터법과 야드파운드법을 선택할 수 있습니다. 야드파운드법 선택 시 키는 피트(ft)와 인치(in)로, 몸무게는 파운드(lbs)로 입력하며 내부적으로 자동 변환되어 BMI를 계산합니다." },
+    ],
   },
   en: {
     title: "BMI Calculator",
@@ -87,6 +96,13 @@ const translations: Record<
       overweight: "Overweight",
       obese: "Obese",
     },
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      { q: "What is BMI?", a: "BMI (Body Mass Index) is calculated by dividing your weight in kilograms by the square of your height in meters. It's an internationally recognized standard for assessing whether your weight is appropriate for your height. Below 18.5 is underweight, 18.5–24.9 is normal, 25–29.9 is overweight, and 30 or above is obese." },
+      { q: "Does a high BMI always mean health problems?", a: "BMI has limitations because it doesn't directly measure body fat. Athletes with high muscle mass may have a high BMI while being perfectly healthy. Conversely, someone with a normal BMI could have a high body fat percentage. For an accurate health assessment, consult a medical professional." },
+      { q: "How is the normal weight range calculated?", a: "The weight range corresponding to a normal BMI (18.5–24.9) is automatically calculated based on the height you enter. For example, at 170cm, the normal range is approximately 53.5kg to 71.9kg." },
+      { q: "How does the imperial unit conversion work?", a: "You can choose between metric and imperial units. When imperial is selected, height is entered in feet and inches, and weight in pounds. These are automatically converted internally to calculate your BMI accurately." },
+    ],
   },
   ja: {
     title: "BMI計算機",
@@ -113,6 +129,13 @@ const translations: Record<
       overweight: "過体重",
       obese: "肥満",
     },
+    faqTitle: "よくある質問",
+    faqItems: [
+      { q: "BMIとは何ですか？", a: "BMI（体格指数、Body Mass Index）は、体重（kg）を身長（m）の二乗で割った値で、体重が身長に対して適切かを評価する国際標準指標です。18.5未満は低体重、18.5〜24.9は普通体重、25〜29.9は過体重、30以上は肥満に分類されます。" },
+      { q: "BMIが高いと必ず健康に問題がありますか？", a: "BMIは体脂肪を直接測定しないため、限界があります。筋肉量の多いアスリートはBMIが高くても健康な場合があります。逆にBMIが正常でも体脂肪率が高い場合もあります。正確な健康評価には医療専門家への相談をお勧めします。" },
+      { q: "正常体重範囲はどのように計算されますか？", a: "正常BMI範囲（18.5〜24.9）に該当する体重は、入力した身長をもとに自動計算されます。例えば身長170cmであれば、18.5 × 1.7² ≈ 53.5kg〜24.9 × 1.7² ≈ 71.9kgが正常範囲です。" },
+      { q: "ヤード・ポンド法の単位換算はどのように行われますか？", a: "メートル法とヤード・ポンド法を選択できます。ヤード・ポンド法を選ぶと、身長はフィートとインチ、体重はポンドで入力し、内部で自動変換してBMIを計算します。" },
+    ],
   },
   zh: {
     title: "BMI计算器",
@@ -139,6 +162,13 @@ const translations: Record<
       overweight: "超重",
       obese: "肥胖",
     },
+    faqTitle: "常见问题",
+    faqItems: [
+      { q: "什么是BMI？", a: "BMI（体质量指数，Body Mass Index）是用体重（kg）除以身高（m）的平方所得的值，是评估体重是否适合身高的国际标准指标。低于18.5为偏瘦，18.5至24.9为正常，25至29.9为超重，30及以上为肥胖。" },
+      { q: "BMI高就一定有健康问题吗？", a: "由于BMI不直接测量体脂肪，因此有一定局限性。肌肉量大的运动员BMI可能较高，但身体很健康。相反，BMI正常者也可能体脂率偏高。为了准确评估健康状况，建议咨询医疗专业人员。" },
+      { q: "正常体重范围是如何计算的？", a: "对应正常BMI范围（18.5至24.9）的体重根据您输入的身高自动计算。例如身高170cm，正常范围约为18.5 × 1.7² ≈ 53.5kg至24.9 × 1.7² ≈ 71.9kg。" },
+      { q: "英制单位如何换算？", a: "可以选择公制或英制单位。选择英制时，身高以英尺和英寸输入，体重以磅输入，系统会自动换算后计算BMI。" },
+    ],
   },
   es: {
     title: "Calculadora de IMC",
@@ -165,6 +195,13 @@ const translations: Record<
       overweight: "Sobrepeso",
       obese: "Obesidad",
     },
+    faqTitle: "Preguntas Frecuentes",
+    faqItems: [
+      { q: "¿Qué es el IMC?", a: "El IMC (Índice de Masa Corporal, o BMI en inglés) se calcula dividiendo tu peso en kilogramos por el cuadrado de tu altura en metros. Es un estándar reconocido internacionalmente para evaluar si tu peso es apropiado para tu altura. Menos de 18.5 es bajo peso, 18.5–24.9 es normal, 25–29.9 es sobrepeso, y 30 o más es obesidad." },
+      { q: "¿Un IMC alto siempre significa problemas de salud?", a: "El IMC tiene limitaciones porque no mide directamente la grasa corporal. Los atletas con alta masa muscular pueden tener un IMC alto siendo completamente saludables. A la inversa, alguien con IMC normal podría tener un alto porcentaje de grasa corporal. Para una evaluación de salud precisa, consulta a un profesional médico." },
+      { q: "¿Cómo se calcula el rango de peso normal?", a: "El rango de peso correspondiente a un IMC normal (18.5–24.9) se calcula automáticamente según la altura que ingresas. Por ejemplo, a 170 cm, el rango normal es aproximadamente de 53.5 kg a 71.9 kg." },
+      { q: "¿Cómo funciona la conversión de unidades imperiales?", a: "Puedes elegir entre unidades métricas e imperiales. Cuando se selecciona imperial, la altura se introduce en pies y pulgadas, y el peso en libras. Estos se convierten automáticamente para calcular tu IMC con precisión." },
+    ],
   },
 };
 
@@ -553,6 +590,25 @@ export default function BmiPage() {
               </tbody>
             </table>
           </motion.div>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
 
           {/* Bottom Ad */}
           <div className="mt-2">

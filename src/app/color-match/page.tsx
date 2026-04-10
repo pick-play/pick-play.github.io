@@ -108,6 +108,8 @@ const translations: Record<
     changeMode: string;
     resultTitle: string;
     comboText: (n: number) => string;
+    faqTitle: string;
+    faqItems: { q: string; a: string }[];
   }
 > = {
   ko: {
@@ -140,6 +142,25 @@ const translations: Record<
     changeMode: "모드 변경",
     resultTitle: "결과",
     comboText: (n: number) => `${n}연속! 🔥`,
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      {
+        q: "스트룹 테스트(색깔 맞추기)란 무엇인가요?",
+        a: "스트룹 테스트는 1935년 심리학자 John Ridley Stroop이 개발한 인지 능력 테스트입니다. 글자의 의미(예: '빨강')와 글자의 색깔(예: 파란색으로 쓰인)이 다를 때 두뇌가 혼란을 겪는 스트룹 간섭 효과를 측정합니다. 집중력, 처리 속도, 인지 유연성을 훈련하는 데 효과적입니다.",
+      },
+      {
+        q: "색깔 맞추기와 단어 맞추기의 차이는 무엇인가요?",
+        a: "색깔 맞추기 모드는 글자의 폰트 색깔을 선택하는 것이고, 단어 맞추기 모드는 글자가 뜻하는 색깔을 선택하는 것입니다. 단어 맞추기가 글자 의미의 간섭을 더 강하게 받아 일반적으로 더 어렵습니다.",
+      },
+      {
+        q: "점수는 어떻게 계산되나요?",
+        a: "정답을 맞출 때마다 10점이 주어집니다. 3연속 이상은 2배(20점), 5연속 이상은 3배(30점) 점수를 얻습니다. 오답 시에는 5점이 차감됩니다. 연속 정답을 유지할수록 더 높은 점수를 얻을 수 있습니다.",
+      },
+      {
+        q: "어떻게 하면 높은 점수를 받을 수 있나요?",
+        a: "글자의 의미에 집중하지 말고 시각적 색깔에만 집중하는 연습이 필요합니다. 처음에는 천천히 정확하게 시작하고, 익숙해지면 속도를 높이세요. 연속 정답 콤보를 유지하면 점수가 2~3배로 불어납니다.",
+      },
+    ],
   },
   en: {
     title: "Color Match",
@@ -171,6 +192,25 @@ const translations: Record<
     changeMode: "Change Mode",
     resultTitle: "Result",
     comboText: (n: number) => `${n} Combo! 🔥`,
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      {
+        q: "What is a Stroop Test?",
+        a: "The Stroop Test, developed by psychologist John Ridley Stroop in 1935, measures the Stroop interference effect — the cognitive confusion when a word's meaning (e.g. 'Red') conflicts with its ink color (e.g. written in blue). It's an effective tool for training focus, processing speed, and cognitive flexibility.",
+      },
+      {
+        q: "What's the difference between Color mode and Word mode?",
+        a: "In Color mode you select the font color of the displayed word, while in Word mode you select the color the word means. Word mode is generally harder because the word's meaning creates stronger interference with your response.",
+      },
+      {
+        q: "How is the score calculated?",
+        a: "Each correct answer earns 10 points. Maintaining a streak of 3+ gives 2x points (20), and 5+ gives 3x points (30). Wrong answers deduct 5 points. Building and maintaining combos is key to a high score.",
+      },
+      {
+        q: "How can I get a higher score?",
+        a: "Train yourself to focus only on the visual color, ignoring the word's meaning. Start slowly for accuracy, then increase speed as you improve. Maintaining a combo streak multiplies your points by 2–3x.",
+      },
+    ],
   },
   ja: {
     title: "色マッチ",
@@ -202,6 +242,21 @@ const translations: Record<
     changeMode: "モード変更",
     resultTitle: "結果",
     comboText: (n: number) => `${n}連続！🔥`,
+    faqTitle: "よくある質問",
+    faqItems: [
+      {
+        q: "ストループテストとは何ですか？",
+        a: "ストループテストは1935年に心理学者John Ridley Stroopが開発した認知テストです。単語の意味（例：「赤」）とフォントカラー（例：青で書かれた）が異なる場合に脳が混乱するストループ干渉効果を測定します。集中力・処理速度・認知柔軟性のトレーニングに効果的です。",
+      },
+      {
+        q: "色モードと単語モードの違いは？",
+        a: "色モードは表示された文字のフォントカラーを選ぶモード、単語モードは文字が意味する色を選ぶモードです。単語モードは文字の意味による干渉が強く、一般的により難しいです。",
+      },
+      {
+        q: "スコアはどう計算されますか？",
+        a: "正解するたびに10点獲得。3連続以上は2倍（20点）、5連続以上は3倍（30点）になります。不正解は5点減点です。コンボを維持するほど高得点につながります。",
+      },
+    ],
   },
   zh: {
     title: "颜色匹配",
@@ -233,6 +288,25 @@ const translations: Record<
     changeMode: "切换模式",
     resultTitle: "结果",
     comboText: (n: number) => `${n}连续！🔥`,
+    faqTitle: "常见问题",
+    faqItems: [
+      {
+        q: "「什么是斯特鲁普测试？」",
+        a: "斯特鲁普测试由心理学家John Ridley Stroop于1935年开发，测量当单词含义（如「红色」）与字体颜色（如蓝色书写）不一致时大脑产生的干扰效应。对训练专注力、处理速度和认知灵活性非常有效。",
+      },
+      {
+        q: "「颜色模式和单词模式有什么区别？」",
+        a: "颜色模式是选择文字的字体颜色，单词模式是选择文字所表示的颜色。单词模式因文字含义干扰更强，通常更难。",
+      },
+      {
+        q: "「分数如何计算？」",
+        a: "每答对一题得10分。连续答对3次以上得2倍分（20分），5次以上得3倍分（30分）。答错扣5分。保持连击是获得高分的关键。",
+      },
+      {
+        q: "「如何获得高分？」",
+        a: "训练自己只关注视觉颜色而忽略单词含义。从准确开始，熟练后再提高速度。保持连击倍数可让分数提升2至3倍。",
+      },
+    ],
   },
   es: {
     title: "Combinar Colores",
@@ -264,6 +338,21 @@ const translations: Record<
     changeMode: "Cambiar Modo",
     resultTitle: "Resultado",
     comboText: (n: number) => `¡${n} seguidas! 🔥`,
+    faqTitle: "Preguntas frecuentes",
+    faqItems: [
+      {
+        q: "¿Qué es el Test de Stroop?",
+        a: "El Test de Stroop, desarrollado por el psicólogo John Ridley Stroop en 1935, mide el efecto de interferencia Stroop — la confusión cognitiva cuando el significado de una palabra (p. ej. 'Rojo') contradice su color de tinta (p. ej. escrito en azul). Es una herramienta eficaz para entrenar la concentración, velocidad de procesamiento y flexibilidad cognitiva.",
+      },
+      {
+        q: "¿En qué se diferencian el modo Color y el modo Palabra?",
+        a: "En el modo Color seleccionas el color de la fuente de la palabra mostrada; en el modo Palabra seleccionas el color que significa la palabra. El modo Palabra es más difícil porque el significado de la palabra crea mayor interferencia.",
+      },
+      {
+        q: "¿Cómo se calcula la puntuación?",
+        a: "Cada respuesta correcta otorga 10 puntos. Una racha de 3+ da 2x puntos (20), y de 5+ da 3x puntos (30). Las respuestas incorrectas restan 5 puntos. Mantener combos es clave para una puntuación alta.",
+      },
+    ],
   },
 };
 
@@ -773,6 +862,25 @@ export default function ColorMatchPage() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
 
           <AdBanner format="rectangle" className="mt-6" />
         </div>

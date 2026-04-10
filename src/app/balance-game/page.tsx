@@ -58,6 +58,14 @@ const translations = {
     choiceA: "A 선택",
     choiceB: "B 선택",
     playAgain: "다시 하기",
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      { q: "밸런스 게임이란 무엇인가요?", a: "밸런스 게임은 두 가지 선택지 중 하나를 반드시 골라야 하는 심리 게임입니다. 둘 다 싫거나 둘 다 좋더라도 반드시 하나를 선택해야 합니다. 자신의 가치관과 성향을 파악하고 친구들과 대화를 나누는 재미있는 방법입니다." },
+      { q: "질문 카테고리는 어떻게 되나요?", a: "상황, 음식, 연애, 취향, 극한, 학교/직장, 여행, 슈퍼파워 등 다양한 카테고리가 준비되어 있습니다. 원하는 카테고리를 선택하면 해당 주제의 질문만 모아서 게임을 즐길 수 있습니다." },
+      { q: "질문은 몇 개나 있나요?", a: "각 카테고리마다 수십 개의 질문이 준비되어 있으며, 전체 카테고리로 플레이하면 더 많은 질문을 접할 수 있습니다. 매번 질문 순서가 무작위로 섞여서 새로운 느낌으로 게임을 즐길 수 있습니다." },
+      { q: "친구들과 함께 할 수 있나요?", a: "네, 화면을 보면서 각자의 선택을 말하거나, 한 명씩 돌아가며 선택 이유를 설명하면 더 재미있게 즐길 수 있습니다. 서로 다른 선택에 대해 이유를 토론하면 서로를 더 깊이 이해하는 계기가 됩니다." },
+      { q: "결과 화면에서 A와 B 비율은 무엇을 의미하나요?", a: "게임 세션 동안 자신이 A를 몇 번, B를 몇 번 선택했는지를 보여주는 통계입니다. A 선택 비율이 높다면 주어진 선택지에서 앞쪽 옵션을 더 선호하는 경향이 있다는 것을 알 수 있습니다." },
+    ],
   },
   en: {
     title: "Balance Game",
@@ -68,6 +76,13 @@ const translations = {
     choiceA: "Chose A",
     choiceB: "Chose B",
     playAgain: "Play Again",
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      { q: "What is the Balance Game?", a: "The Balance Game is a psychology game where you must choose one of two options, no matter how difficult the choice. Even if you dislike both or love both, you must pick one. It's a fun way to understand your own values and have meaningful conversations with friends." },
+      { q: "What categories are available?", a: "There are diverse categories including Scenario, Food, Romance, Preference, Extreme, School/Work, Travel, and Superpower. Select any category to play with questions focused on that topic." },
+      { q: "Can I play with friends?", a: "Absolutely! You can each state your choice while looking at the screen, or take turns explaining your reasoning. Discussing why you made different choices is a great way to understand each other better." },
+      { q: "What does the A/B ratio in the result mean?", a: "It shows how many times you chose A versus B during the game session. A high A-selection rate suggests you tend to prefer the first option when presented with choices." },
+    ],
   },
   ja: {
     title: "バランスゲーム",
@@ -78,6 +93,13 @@ const translations = {
     choiceA: "Aを選択",
     choiceB: "Bを選択",
     playAgain: "もう一度",
+    faqTitle: "よくある質問",
+    faqItems: [
+      { q: "バランスゲームとは何ですか？", a: "バランスゲームは、2つの選択肢のうち必ずどちらかを選ばなければならない心理ゲームです。両方嫌いでも両方好きでも、必ず1つを選びます。自分の価値観を知り、友達との会話を楽しむ面白い方法です。" },
+      { q: "カテゴリはどんなものがありますか？", a: "シナリオ、グルメ、恋愛、好み、エクストリーム、学校/職場、旅行、超能力など様々なカテゴリがあります。好きなカテゴリを選ぶと、そのテーマの質問だけでゲームを楽しめます。" },
+      { q: "友達と一緒に遊べますか？", a: "もちろんです！画面を見ながらそれぞれの選択を言い合ったり、順番に理由を説明し合うとより楽しめます。違う選択をした理由を議論することで、お互いをより深く理解できます。" },
+      { q: "結果のA/B比率は何を意味しますか？", a: "ゲーム中にAを何回、Bを何回選んだかを示す統計です。A選択率が高い場合、選択肢の前者を好む傾向があることが分かります。" },
+    ],
   },
   zh: {
     title: "平衡游戏",
@@ -88,6 +110,13 @@ const translations = {
     choiceA: "选A",
     choiceB: "选B",
     playAgain: "再玩一次",
+    faqTitle: "常见问题",
+    faqItems: [
+      { q: "什么是平衡游戏？", a: "平衡游戏是一种心理游戏，无论选择多难，你必须从两个选项中选择一个。即使两个都讨厌或都喜欢，也必须选一个。这是了解自己价值观并与朋友展开有趣对话的好方法。" },
+      { q: "有哪些题目分类？", a: "有情景、美食、恋爱、偏好、极端、学校/职场、旅游、超能力等多种分类。选择您喜欢的分类，即可只玩该主题的题目。" },
+      { q: "可以和朋友一起玩吗？", a: "当然可以！大家一起看屏幕各自说出选择，或轮流说明理由，会更有趣。讨论为什么做出不同选择是互相深入了解的好机会。" },
+      { q: "结果中的A/B比例代表什么？", a: "这是显示您在游戏过程中选择A和B各多少次的统计。A选择率高说明您倾向于选择两个选项中的第一个选项。" },
+    ],
   },
   es: {
     title: "Juego de Balance",
@@ -98,6 +127,13 @@ const translations = {
     choiceA: "Eligió A",
     choiceB: "Eligió B",
     playAgain: "Jugar de Nuevo",
+    faqTitle: "Preguntas Frecuentes",
+    faqItems: [
+      { q: "¿Qué es el Juego de Balance?", a: "El Juego de Balance es un juego psicológico en el que debes elegir una de dos opciones sin importar lo difícil que sea. Aunque te disgusten o te gusten ambas, debes elegir una. Es una forma divertida de conocer tus valores y tener conversaciones interesantes con amigos." },
+      { q: "¿Qué categorías hay disponibles?", a: "Hay categorías diversas como Escenario, Comida, Romance, Preferencias, Extremo, Escuela/Trabajo, Viajes y Superpoder. Elige cualquier categoría para jugar con preguntas de ese tema." },
+      { q: "¿Puedo jugar con amigos?", a: "¡Por supuesto! Pueden decir sus elecciones mientras miran la pantalla o turnarse para explicar sus razonamientos. Discutir por qué hicieron elecciones diferentes es una manera de entenderse mejor." },
+      { q: "¿Qué significa la proporción A/B en el resultado?", a: "Muestra cuántas veces elegiste A versus B durante la sesión de juego. Una tasa alta de selección A sugiere que tiendes a preferir la primera opción cuando se presentan opciones." },
+    ],
   },
 };
 
@@ -458,6 +494,25 @@ export default function BalanceGamePage() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </PageTransition>

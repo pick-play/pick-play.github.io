@@ -34,6 +34,8 @@ const translations: Record<
     won: string;
     inputRequired: string;
     firstTimeBuyerNote: string;
+    faqTitle: string;
+    faqItems: { q: string; a: string }[];
   }
 > = {
   ko: {
@@ -62,6 +64,29 @@ const translations: Record<
     won: "원",
     inputRequired: "취득 가액을 입력하세요.",
     firstTimeBuyerNote: "생애최초 감면 적용 (최대 200만원)",
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      {
+        q: "취득세란 무엇인가요?",
+        a: "취득세는 부동산, 차량, 기계 등의 자산을 취득할 때 납부하는 지방세입니다. 주택의 경우 취득 가액에 따라 1~12% 세율이 적용되며, 이에 지방교육세와 농어촌특별세가 추가로 부과됩니다. 잔금일로부터 60일 이내에 신고·납부해야 합니다.",
+      },
+      {
+        q: "주택 수에 따라 취득세율이 달라지나요?",
+        a: "네, 취득 후 주택 보유 수에 따라 세율이 크게 달라집니다. 1주택은 취득 가액에 따라 1~3%, 2주택은 조정대상지역에서 8%, 3주택 이상은 12%의 중과세율이 적용됩니다. 따라서 다주택자는 취득 전 반드시 세율을 확인해야 합니다.",
+      },
+      {
+        q: "생애최초 주택 구입 감면이란 무엇인가요?",
+        a: "생애 처음으로 주택을 구입하는 경우 취득세의 50%를 감면받을 수 있으며, 감면 한도는 최대 200만원입니다. 단, 주택 가격이 12억원 이하이고 1주택이어야 합니다. 이 계산기에서 해당 옵션을 켜면 자동으로 감면액이 반영됩니다.",
+      },
+      {
+        q: "조정대상지역이란 무엇인가요?",
+        a: "조정대상지역은 부동산 가격 급등, 투기 과열 등의 이유로 정부가 지정한 지역으로, 이 지역에서 2주택 이상을 취득할 경우 높은 취득세율이 적용됩니다. 현재 조정대상지역 여부는 국토교통부 공시를 통해 확인할 수 있습니다.",
+      },
+      {
+        q: "이 계산기 결과는 정확한가요?",
+        a: "이 계산기는 일반적인 기준을 적용한 참고용 계산 도구입니다. 실제 취득세는 주택 전용면적(85㎡ 초과 여부), 지역, 취득 방법 등 다양한 요인에 따라 달라질 수 있습니다. 정확한 세액은 관할 시·군·구청 세무과에 문의하세요.",
+      },
+    ],
   },
   en: {
     title: "Property Acquisition Tax Calculator",
@@ -89,6 +114,25 @@ const translations: Record<
     won: "KRW",
     inputRequired: "Please enter the purchase price.",
     firstTimeBuyerNote: "First-time buyer reduction applied (max 2M KRW)",
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      {
+        q: "What is acquisition tax in Korea?",
+        a: "Acquisition tax (취득세) is a local tax paid when acquiring real estate, vehicles, or other assets. For housing, rates range from 1% to 12% based on price and ownership count. Local education tax and special rural tax are also added. It must be filed and paid within 60 days of the payment date.",
+      },
+      {
+        q: "Does owning multiple homes affect the tax rate?",
+        a: "Yes, significantly. A first home is taxed at 1–3% based on price, a second home in a regulated area at 8%, and three or more homes at 12%. Multi-home owners face heavy surcharges, so it's crucial to check the rate before purchasing.",
+      },
+      {
+        q: "What is the first-time buyer reduction?",
+        a: "First-time buyers can receive a 50% reduction on acquisition tax, capped at 2 million KRW. Requirements include purchasing a home priced under 1.2 billion KRW as your first and only home. Enable the toggle in this calculator to see the reduction applied automatically.",
+      },
+      {
+        q: "What is a regulated area (조정대상지역)?",
+        a: "A regulated area is a government-designated zone where rapid price increases or speculative overheating has occurred. Purchasing a second or subsequent home in these areas triggers higher tax rates. Check the Ministry of Land, Infrastructure and Transport for the current list.",
+      },
+    ],
   },
   ja: {
     title: "不動産取得税計算機",
@@ -116,6 +160,25 @@ const translations: Record<
     won: "ウォン",
     inputRequired: "取得価額を入力してください。",
     firstTimeBuyerNote: "初回購入者控除適用（最大200万ウォン）",
+    faqTitle: "よくある質問",
+    faqItems: [
+      {
+        q: "韓国の不動産取得税とは何ですか？",
+        a: "取得税とは、不動産や車両などの資産を取得する際に課される地方税です。住宅の場合、取得価額や保有戸数に応じて1〜12%の税率が適用されます。さらに地方教育税と農漁村特別税が追加されます。残金支払日から60日以内に申告・納付が必要です。",
+      },
+      {
+        q: "住宅保有数によって税率は変わりますか？",
+        a: "はい、大きく変わります。1戸目は取得価額に応じて1〜3%、調整対象地域での2戸目は8%、3戸目以上は12%の重課税率が適用されます。多住宅保有者は購入前に必ず税率を確認してください。",
+      },
+      {
+        q: "初回購入者控除とは何ですか？",
+        a: "生涯初めて住宅を購入する場合、取得税の50%（最大200万ウォン）が軽減されます。住宅価格が12億ウォン以下で1戸目であることが条件です。このオプションをオンにすると自動的に控除額が反映されます。",
+      },
+      {
+        q: "調整対象地域とは何ですか？",
+        a: "調整対象地域とは、価格急騰や投機過熱などの理由で政府が指定した地域です。この地域で2戸目以上を取得する場合、高い取得税率が適用されます。最新の指定地域は国土交通省の公示で確認できます。",
+      },
+    ],
   },
   zh: {
     title: "房产取得税计算器",
@@ -143,6 +206,25 @@ const translations: Record<
     won: "韩元",
     inputRequired: "请输入取得价格。",
     firstTimeBuyerNote: "已适用首次购房减免「最高200万韩元」",
+    faqTitle: "常见问题",
+    faqItems: [
+      {
+        q: "「韩国房产取得税是什么？」",
+        a: "取得税是购买房产、车辆等资产时需缴纳的地方税。住宅根据取得价格和持有套数适用1%至12%不同税率，并额外征收地方教育税和农渔村特别税。须在尾款支付日起60天内申报缴纳。",
+      },
+      {
+        q: "「持有多套住宅会影响税率吗？」",
+        a: "会产生重大影响。第1套住宅按取得价格适用1%至3%，调整对象地区第2套适用8%，第3套及以上适用12%重税率。多套房持有人购房前务必确认适用税率。",
+      },
+      {
+        q: "「首次购房减免是什么？」",
+        a: "生平首次购房可享受取得税50%减免，最高减免200万韩元。须满足住宅价格12亿韩元以下且为第1套住宅的条件。勾选此选项后计算器将自动反映减免金额。",
+      },
+      {
+        q: "「调整对象地区是什么？」",
+        a: "调整对象地区是政府因房价急涨或投机过热而指定的区域。在该区域购买第2套及以上住宅须适用更高税率。最新指定地区可通过韩国国土交通部公告查询。",
+      },
+    ],
   },
   es: {
     title: "Calculadora de Impuesto de Adquisición",
@@ -170,6 +252,25 @@ const translations: Record<
     won: "KRW",
     inputRequired: "Por favor, ingrese el precio de compra.",
     firstTimeBuyerNote: "Reducción primera compra aplicada (máx. 2M KRW)",
+    faqTitle: "Preguntas frecuentes",
+    faqItems: [
+      {
+        q: "¿Qué es el impuesto de adquisición en Corea?",
+        a: "El impuesto de adquisición (취득세) es un impuesto local que se paga al adquirir bienes inmuebles, vehículos u otros activos. Para viviendas, la tasa varía del 1% al 12% según el precio y el número de propiedades. Además se añaden el impuesto de educación local y el impuesto especial rural. Debe pagarse dentro de los 60 días del pago del saldo final.",
+      },
+      {
+        q: "¿Afecta poseer varias viviendas a la tasa impositiva?",
+        a: "Sí, considerablemente. La primera vivienda tributa entre el 1% y el 3% según el precio; la segunda en área regulada al 8%; y tres o más viviendas al 12%. Los propietarios de múltiples viviendas deben verificar la tasa antes de comprar.",
+      },
+      {
+        q: "¿Qué es la reducción para compradores primerizos?",
+        a: "Los compradores de su primera vivienda pueden obtener una reducción del 50% en el impuesto de adquisición, con un máximo de 2 millones KRW. Requisitos: vivienda de menos de 1.200 millones KRW y que sea la primera y única propiedad. Active la opción para verlo reflejado automáticamente.",
+      },
+      {
+        q: "¿Qué es un área regulada?",
+        a: "Un área regulada es una zona designada por el gobierno debido a subidas de precios o sobrecalentamiento especulativo. Comprar una segunda vivienda o más en estas zonas activa tasas impositivas más altas. Consulte el Ministerio de Territorio de Corea para la lista actualizada.",
+      },
+    ],
   },
 };
 
@@ -619,6 +720,25 @@ export default function PropertyTaxPage() {
             <p className="text-xs text-amber-700 dark:text-amber-400 text-center">
               ⚠️ {t.disclaimer}
             </p>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
           </div>
 
           {/* Bottom Ad */}

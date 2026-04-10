@@ -34,6 +34,14 @@ const translations = {
     },
     shareText: (mbti: string, title: string, e: number, i: number, s: number, n: number, tf: number, f: number, j: number, p: number) =>
       `나의 MBTI는 ${mbti} (${title})!\nE${e}% / I${i}% | S${s}% / N${n}% | T${tf}% / F${f}% | J${j}% / P${p}%\nPickPlay에서 MBTI 검사 해보기: https://pick-play.github.io/mbti`,
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      { q: "MBTI 검사는 얼마나 정확한가요?", a: "MBTI는 심리학적 이론을 기반으로 한 성격 유형 분류 도구입니다. 이 검사는 카를 융의 심리 유형론을 바탕으로 개발되었으며, 자신의 성향을 이해하는 데 도움을 줍니다. 다만 성격은 고정된 것이 아니라 상황과 시간에 따라 변할 수 있으므로, 참고 자료로 활용하는 것이 좋습니다." },
+      { q: "MBTI 4가지 지표는 무엇을 의미하나요?", a: "E/I(외향/내향)는 에너지를 어디서 얻는지, S/N(감각/직관)은 정보를 어떻게 수집하는지, T/F(사고/감정)는 결정을 어떻게 내리는지, J/P(판단/인식)는 외부 세계에 어떻게 대처하는지를 나타냅니다. 이 네 가지 조합으로 16가지 유형이 만들어집니다." },
+      { q: "결과가 예상과 다르게 나왔어요. 어떻게 하나요?", a: "MBTI 결과는 검사 당시의 심리 상태와 질문 해석 방식에 따라 달라질 수 있습니다. 다시 한번 차분한 상태에서 솔직하게 답해보세요. 경계선에 있는 지표(예: E/I 비율이 55%/45%처럼 근접한 경우)는 양쪽 성향을 모두 가지고 있을 수 있습니다." },
+      { q: "MBTI 유형은 바뀔 수 있나요?", a: "네, MBTI 유형은 나이가 들거나 환경이 바뀌면서 변할 수 있습니다. 특히 20대~30대에 많이 변하며, 스트레스 상황이나 삶의 큰 변화 후에 결과가 달라지는 경우가 많습니다. 주기적으로 재검사해보는 것도 자기 이해에 도움이 됩니다." },
+      { q: "어떤 MBTI 유형이 가장 좋은가요?", a: "MBTI의 모든 16가지 유형은 각각의 강점과 약점을 가지고 있습니다. 좋고 나쁜 유형은 없으며, 각 유형은 서로 다른 상황과 역할에서 빛을 발합니다. 중요한 것은 자신의 유형을 이해하고 강점을 활용하며 약점을 보완하는 것입니다." },
+    ],
   },
   en: {
     title: "MBTI Personality Test",
@@ -61,6 +69,13 @@ const translations = {
     },
     shareText: (mbti: string, title: string, e: number, i: number, s: number, n: number, tf: number, f: number, j: number, p: number) =>
       `My MBTI is ${mbti} (${title})!\nE${e}% / I${i}% | S${s}% / N${n}% | T${tf}% / F${f}% | J${j}% / P${p}%\nTake the MBTI test on PickPlay: https://pick-play.github.io/mbti`,
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      { q: "How accurate is the MBTI test?", a: "MBTI is a personality type classification tool based on psychological theory, developed from Carl Jung's theory of psychological types. It helps you understand your own tendencies and preferences. Since personality is not fixed and can change over time, it's best used as a reference rather than a definitive label." },
+      { q: "What do the 4 MBTI dimensions mean?", a: "E/I (Extraversion/Introversion) reflects where you get your energy; S/N (Sensing/Intuition) reflects how you gather information; T/F (Thinking/Feeling) reflects how you make decisions; J/P (Judging/Perceiving) reflects how you deal with the outside world. These four combinations create 16 personality types." },
+      { q: "My result seems different from what I expected. What should I do?", a: "MBTI results can vary depending on your mental state and how you interpret questions at the time of testing. Try taking the test again in a calm, relaxed state, answering as honestly as possible. If a dimension score is close (e.g., E55%/I45%), you likely exhibit traits of both sides." },
+      { q: "Which MBTI type is the best?", a: "All 16 MBTI types have their own unique strengths and weaknesses. There is no good or bad type — each shines in different situations and roles. What matters is understanding your type, leveraging your strengths, and working on your areas of growth." },
+    ],
   },
   ja: {
     title: "MBTI 性格タイプ診断",
@@ -88,6 +103,13 @@ const translations = {
     },
     shareText: (mbti: string, title: string, e: number, i: number, s: number, n: number, tf: number, f: number, j: number, p: number) =>
       `私のMBTIは${mbti}（${title}）！\nE${e}% / I${i}% | S${s}% / N${n}% | T${tf}% / F${f}% | J${j}% / P${p}%\nPickPlayでMBTI診断: https://pick-play.github.io/mbti`,
+    faqTitle: "よくある質問",
+    faqItems: [
+      { q: "MBTI検査はどれくらい正確ですか？", a: "MBTIはカール・ユングの心理的類型論をもとに開発された性格類型分類ツールです。自分の傾向を理解するのに役立ちます。ただし性格は固定されたものではなく、状況や時間とともに変化することがあるため、参考資料として活用することをお勧めします。" },
+      { q: "MBTI 4つの指標はどういう意味ですか？", a: "E/I（外向/内向）はエネルギーをどこから得るか、S/N（感覚/直観）は情報をどのように収集するか、T/F（思考/感情）はどのように意思決定するか、J/P（判断/知覚）は外の世界にどう対処するかを示します。この4つの組み合わせで16の類型が生まれます。" },
+      { q: "どのMBTI類型が最も優れていますか？", a: "MBTIの16すべての類型にはそれぞれの強みと弱みがあります。良い・悪い類型はなく、各類型は異なる状況や役割で輝きます。大切なのは自分の類型を理解し、強みを活かして弱みを補うことです。" },
+      { q: "MBTI類型は変わることがありますか？", a: "はい、MBTI類型は年齢を重ねたり環境が変わったりすることで変化することがあります。特に20〜30代に変化することが多く、ストレスや大きなライフイベントの後に結果が変わることもあります。" },
+    ],
   },
   zh: {
     title: "MBTI 性格类型测试",
@@ -115,6 +137,13 @@ const translations = {
     },
     shareText: (mbti: string, title: string, e: number, i: number, s: number, n: number, tf: number, f: number, j: number, p: number) =>
       `我的MBTI是${mbti}（${title}）！\nE${e}% / I${i}% | S${s}% / N${n}% | T${tf}% / F${f}% | J${j}% / P${p}%\n在PickPlay做MBTI测试: https://pick-play.github.io/mbti`,
+    faqTitle: "常见问题",
+    faqItems: [
+      { q: "MBTI测试有多准确？", a: "MBTI是基于卡尔·荣格心理类型理论开发的性格类型分类工具。它有助于了解自己的性格倾向。由于性格并非固定不变，会随时间和环境变化，建议将其作为参考资料使用。" },
+      { q: "MBTI四个维度分别代表什么？", a: "E/I（外向/内向）反映您从哪里获得能量；S/N（感觉/直觉）反映您如何收集信息；T/F（思考/情感）反映您如何做决定；J/P（判断/感知）反映您如何处理外部世界。这四个维度的组合产生了16种性格类型。" },
+      { q: "哪种MBTI类型最好？", a: "MBTI所有16种类型都有各自的优点和缺点。没有好坏之分，每种类型在不同情况和角色中都能发光发热。重要的是了解自己的类型，发挥优势，弥补不足。" },
+      { q: "MBTI类型会改变吗？", a: "是的，MBTI类型会随着年龄增长或环境变化而改变。特别是20至30岁之间变化较多，在压力或重大生活变化后结果也可能不同。定期重新测试有助于更好地了解自己。" },
+    ],
   },
   es: {
     title: "Test de Personalidad MBTI",
@@ -142,6 +171,13 @@ const translations = {
     },
     shareText: (mbti: string, title: string, e: number, i: number, s: number, n: number, tf: number, f: number, j: number, p: number) =>
       `Mi MBTI es ${mbti} (${title})!\nE${e}% / I${i}% | S${s}% / N${n}% | T${tf}% / F${f}% | J${j}% / P${p}%\nHaz el test MBTI en PickPlay: https://pick-play.github.io/mbti`,
+    faqTitle: "Preguntas Frecuentes",
+    faqItems: [
+      { q: "¿Qué tan preciso es el test MBTI?", a: "El MBTI es una herramienta de clasificación de tipos de personalidad basada en la teoría psicológica de Carl Jung. Ayuda a entender tus propias tendencias. Como la personalidad no es fija y puede cambiar con el tiempo, es mejor usarla como referencia en lugar de una etiqueta definitiva." },
+      { q: "¿Qué significan las 4 dimensiones del MBTI?", a: "E/I (Extraversión/Introversión) refleja de dónde obtienes energía; S/N (Sensación/Intuición) refleja cómo recopilas información; T/F (Pensamiento/Sentimiento) refleja cómo tomas decisiones; J/P (Juicio/Percepción) refleja cómo manejas el mundo exterior. Estas cuatro combinaciones crean 16 tipos de personalidad." },
+      { q: "¿Qué tipo MBTI es el mejor?", a: "Los 16 tipos MBTI tienen sus propias fortalezas y debilidades únicas. No hay un tipo bueno o malo — cada uno brilla en diferentes situaciones y roles. Lo importante es entender tu tipo, aprovechar tus fortalezas y trabajar en tus áreas de mejora." },
+      { q: "¿El tipo MBTI puede cambiar?", a: "Sí, el tipo MBTI puede cambiar a medida que envejecemos o cambia nuestro entorno. Es especialmente frecuente que cambie entre los 20 y 30 años, y después de eventos importantes de la vida. Repetir el test periódicamente puede ayudarte a entenderte mejor." },
+    ],
   },
 };
 
@@ -746,6 +782,25 @@ export default function MbtiPage() {
             )}
 
           </AnimatePresence>
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </PageTransition>

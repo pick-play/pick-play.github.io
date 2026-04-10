@@ -26,6 +26,14 @@ const translations = {
     minItemsWarning: "최소 2개 이상의 항목이 필요합니다",
     ariaRemove: (item: string) => `${item} 삭제`,
     defaultItems: ["한식", "중식", "일식", "양식", "분식", "패스트푸드"],
+    faqTitle: "자주 묻는 질문",
+    faqItems: [
+      { q: "룰렛 항목은 몇 개까지 추가할 수 있나요?", a: "최대 20개까지 항목을 추가할 수 있습니다. 항목이 많을수록 각 영역이 좁아지므로, 10개 이하로 설정하면 가독성이 좋습니다. 최소 2개의 항목이 있어야 룰렛을 돌릴 수 있습니다." },
+      { q: "결과는 완전히 랜덤인가요?", a: "네, 회전 각도는 매번 무작위로 생성됩니다. 각 항목이 선택될 확률은 동일하며, 어떤 항목에도 편향이 없습니다. 공정한 랜덤 방식으로 결정이 이루어집니다." },
+      { q: "프리셋은 어떻게 사용하나요?", a: "상단의 프리셋 버튼을 누르면 점심 메뉴, 벌칙 게임, 순서 정하기 등 미리 설정된 항목 세트가 자동으로 입력됩니다. 프리셋 적용 후 항목을 추가하거나 삭제해서 원하는 대로 커스터마이징할 수 있습니다." },
+      { q: "항목을 삭제하려면 어떻게 하나요?", a: "각 항목 태그의 오른쪽에 있는 × 버튼을 누르면 해당 항목이 삭제됩니다. 단, 항목이 2개 이하일 때는 삭제가 비활성화되어 최소 개수를 유지합니다." },
+      { q: "룰렛을 활용할 수 있는 상황은 어떤 게 있나요?", a: "점심 메뉴 고르기, 게임 순서 정하기, 파티 벌칙 결정, 공부 과목 선택, 업무 담당자 배정 등 다양한 상황에서 활용할 수 있습니다. 누군가를 설득하기 어려울 때 룰렛에 결정을 맡겨 중립적으로 해결할 수 있습니다." },
+    ],
   },
   en: {
     title: "Random Roulette",
@@ -46,6 +54,13 @@ const translations = {
     minItemsWarning: "At least 2 items are required",
     ariaRemove: (item: string) => `Remove ${item}`,
     defaultItems: ["Korean", "Chinese", "Japanese", "Western", "Snacks", "Fast Food"],
+    faqTitle: "Frequently Asked Questions",
+    faqItems: [
+      { q: "How many items can I add to the roulette?", a: "You can add up to 20 items. The more items you add, the narrower each segment becomes, so 10 or fewer items is recommended for readability. At least 2 items are required to spin." },
+      { q: "Is the result truly random?", a: "Yes, the spin angle is generated randomly each time. Every item has an equal probability of being selected, with no bias toward any particular option. The decision is made through a fair random process." },
+      { q: "How do I use the presets?", a: "Tap one of the preset buttons at the top to automatically load a predefined set of items such as lunch menus, penalty games, or order selection. After applying a preset, you can freely add or remove items to customize it." },
+      { q: "How do I remove an item?", a: "Tap the × button on the right side of any item tag to remove it. Deletion is disabled when there are 2 or fewer items to maintain the minimum count required to spin." },
+    ],
   },
   ja: {
     title: "ランダムルーレット",
@@ -66,6 +81,13 @@ const translations = {
     minItemsWarning: "最低2つ以上の項目が必要です",
     ariaRemove: (item: string) => `${item}を削除`,
     defaultItems: ["韓国料理", "中華", "和食", "洋食", "軽食", "ファストフード"],
+    faqTitle: "よくある質問",
+    faqItems: [
+      { q: "ルーレットに追加できる項目は何個までですか？", a: "最大20個まで項目を追加できます。項目が多いほど各セクションが狭くなるため、10個以下に設定すると見やすくなります。ルーレットを回すには最低2つの項目が必要です。" },
+      { q: "結果は完全にランダムですか？", a: "はい、回転角度は毎回ランダムに生成されます。各項目が選ばれる確率は均等で、特定の項目への偏りはありません。公平なランダム方式で決定されます。" },
+      { q: "プリセットはどのように使いますか？", a: "上部のプリセットボタンを押すと、ランチメニュー、罰ゲーム、順番決めなど、あらかじめ設定された項目セットが自動的に入力されます。適用後に項目を追加・削除してカスタマイズできます。" },
+      { q: "項目を削除するにはどうすればいいですか？", a: "各項目タグの右側にある × ボタンを押すと削除できます。ただし、項目が2つ以下の場合は削除が無効になり、最小数が維持されます。" },
+    ],
   },
   zh: {
     title: "随机转盘",
@@ -86,6 +108,13 @@ const translations = {
     minItemsWarning: "至少需要2个项目",
     ariaRemove: (item: string) => `删除${item}`,
     defaultItems: ["韩餐", "中餐", "日料", "西餐", "小吃", "快餐"],
+    faqTitle: "常见问题",
+    faqItems: [
+      { q: "转盘最多可以添加多少个选项？", a: "最多可以添加20个选项。选项越多，每个扇形区域越窄，建议设置10个以内以保证可读性。转动转盘至少需要2个选项。" },
+      { q: "结果是完全随机的吗？", a: "是的，每次旋转角度都是随机生成的。每个选项被选中的概率相同，不会偏向任何特定选项。通过公平的随机方式做出决定。" },
+      { q: "如何使用「预设」功能？", a: "点击顶部的预设按钮，即可自动加载预先设置好的选项组合，例如午餐菜单、惩罚游戏、顺序决定等。应用预设后，您可以自由添加或删除选项进行自定义。" },
+      { q: "如何删除选项？", a: "点击每个选项标签右侧的 × 按钮即可删除该选项。当选项数量为2个或以下时，删除功能将被禁用，以维持所需的最少数量。" },
+    ],
   },
   es: {
     title: "Ruleta aleatoria",
@@ -106,6 +135,13 @@ const translations = {
     minItemsWarning: "Se necesitan al menos 2 elementos",
     ariaRemove: (item: string) => `Eliminar ${item}`,
     defaultItems: ["Coreano", "Chino", "Japonés", "Occidental", "Snacks", "Comida rápida"],
+    faqTitle: "Preguntas Frecuentes",
+    faqItems: [
+      { q: "¿Cuántos elementos puedo agregar a la ruleta?", a: "Puedes agregar hasta 20 elementos. Cuantos más elementos agregues, más estrecho será cada segmento, por lo que se recomienda usar 10 o menos para mayor legibilidad. Se necesitan al menos 2 elementos para girar." },
+      { q: "¿El resultado es verdaderamente aleatorio?", a: "Sí, el ángulo de giro se genera aleatoriamente cada vez. Cada elemento tiene la misma probabilidad de ser seleccionado, sin ningún sesgo. La decisión se toma mediante un proceso completamente aleatorio y justo." },
+      { q: "¿Cómo uso los preajustes?", a: "Toca uno de los botones de preajuste en la parte superior para cargar automáticamente un conjunto predefinido de elementos como menús de almuerzo, juegos de penalti o selección de orden. Después puedes agregar o eliminar elementos para personalizar." },
+      { q: "¿Cómo elimino un elemento?", a: "Toca el botón × en el lado derecho de cualquier etiqueta de elemento para eliminarlo. La eliminación está desactivada cuando hay 2 o menos elementos para mantener el mínimo requerido." },
+    ],
   },
 };
 
@@ -479,6 +515,25 @@ export default function RoulettePage() {
           </motion.div>
 
           <AdBanner format="in-article" className="mt-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
+
+          {/* FAQ Section */}
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 mt-4">
+            <h2 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-3">
+              {t.faqTitle}
+            </h2>
+            <div className="space-y-2">
+              {t.faqItems.map((item: {q: string; a: string}, i: number) => (
+                <details key={i} className="group">
+                  <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200 py-2 hover:text-primary-500">
+                    {item.q}
+                  </summary>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 pb-3 pl-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
 
           <AdBanner format="rectangle" className="mt-6 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
         </div>
