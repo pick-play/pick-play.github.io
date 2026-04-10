@@ -11,7 +11,7 @@ export default function PrivacyPage() {
         </p>
 
         <p className="mb-6 leading-relaxed">
-          PickPlay(이하 "서비스")는 사용자의 개인정보를 소중하게 생각합니다. 본 개인정보처리방침은 PickPlay가 운영하는 웹사이트(https://pick-play.github.io/)에서 수집하는 정보의 종류, 수집 방법, 이용 목적, 그리고 사용자의 권리에 대해 설명합니다. 본 서비스를 이용함으로써 아래의 개인정보처리방침에 동의하시는 것으로 간주합니다.
+          PickPlay(이하 &quot;서비스&quot;)는 사용자의 개인정보를 소중하게 생각합니다. 본 개인정보처리방침은 PickPlay가 운영하는 웹사이트(https://pick-play.github.io/)에서 수집하는 정보의 종류, 수집 방법, 이용 목적, 그리고 사용자의 권리에 대해 설명합니다. 본 서비스를 이용함으로써 아래의 개인정보처리방침에 동의하시는 것으로 간주합니다.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">1. 수집하는 정보</h2>

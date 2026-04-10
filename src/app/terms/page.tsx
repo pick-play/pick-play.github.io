@@ -11,7 +11,7 @@ export default function TermsPage() {
         </p>
 
         <p className="mb-6 leading-relaxed">
-          본 이용약관(이하 "약관")은 PickPlay(이하 "서비스" 또는 "당사")가 운영하는 웹사이트 및 제공하는 모든 서비스의 이용에 관한 조건을 규정합니다. 서비스를 이용함으로써 본 약관에 동의하시는 것으로 간주됩니다. 약관에 동의하지 않으시는 경우 서비스를 이용하지 마세요.
+          본 이용약관(이하 &quot;약관&quot;)은 PickPlay(이하 &quot;서비스&quot; 또는 &quot;당사&quot;)가 운영하는 웹사이트 및 제공하는 모든 서비스의 이용에 관한 조건을 규정합니다. 서비스를 이용함으로써 본 약관에 동의하시는 것으로 간주됩니다. 약관에 동의하지 않으시는 경우 서비스를 이용하지 마세요.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">1. 서비스 설명</h2>
@@ -32,7 +32,7 @@ export default function TermsPage() {
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">3. 면책 조항</h2>
         <p className="mb-4 leading-relaxed">
-          PickPlay가 제공하는 모든 도구와 콘텐츠는 "있는 그대로(as-is)" 제공되며, 다음 사항에 대해 어떠한 보증도 하지 않습니다.
+          PickPlay가 제공하는 모든 도구와 콘텐츠는 &quot;있는 그대로(as-is)&quot; 제공되며, 다음 사항에 대해 어떠한 보증도 하지 않습니다.
         </p>
         <ul className="list-disc pl-6 mb-4 space-y-2">
           <li><strong>금융 계산기 결과:</strong> 대출 이자 계산기, 연봉 실수령액 계산기, 퇴직금 계산기, 부동산 취득세 계산기 등 금융 도구의 계산 결과는 참고용으로만 사용하세요. 실제 금융 결정에 앞서 반드시 공인 금융 전문가 또는 해당 기관에 확인하시기 바랍니다. 계산 결과에는 법적 효력이 없습니다.</li>
