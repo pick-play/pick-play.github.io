@@ -7,7 +7,7 @@ export default function TermsPage() {
       <div className="prose prose-slate dark:prose-invert max-w-none">
 
         <p className="mb-4 leading-relaxed text-slate-600 dark:text-slate-400">
-          시행일: 2024년 1월 1일 &nbsp;|&nbsp; 최종 수정일: 2024년 1월 1일
+          시행일: 2026년 4월 11일 &nbsp;|&nbsp; 최종 수정일: 2026년 4월 11일
         </p>
 
         <p className="mb-6 leading-relaxed">
@@ -105,7 +105,7 @@ export default function TermsPage() {
             {" "}·{" "}
             <Link href="/contact/" className="text-blue-600 dark:text-blue-400 hover:underline">연락처</Link>
           </p>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">시행일: 2024년 1월 1일</p>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">시행일: 2026년 4월 11일</p>
         </div>
       </div>
     </div>
