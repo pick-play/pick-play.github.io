@@ -246,6 +246,15 @@ const categories = [
         bg: "bg-orange-50 dark:bg-orange-950/20",
         stat: "정확도 %",
       },
+      {
+        title: "절대음감 테스트",
+        description: "피아노 음을 듣고 맞추세요! 4단계 난이도, 3옥타브.",
+        href: "/pitch-test",
+        emoji: "🎵",
+        gradient: "from-purple-500 to-violet-600",
+        bg: "bg-purple-50 dark:bg-purple-950/20",
+        stat: "4단계 난이도",
+      },
     ],
   },
   {

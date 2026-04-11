@@ -61,7 +61,7 @@ export const toolRoutes = [
   "teto-egen", "mbti", "couple-test", "color-test", "tarot",
   "password", "text-counter", "random-number", "timer",
   "qr-code", "age-calculator", "percentage", "bmi", "unit-converter",
-  "reaction-test", "typing-test", "memory-game", "color-match", "aim-test",
+  "reaction-test", "typing-test", "memory-game", "color-match", "aim-test", "pitch-test",
   "loan-calculator", "severance-calculator", "salary-calculator",
   "compound-calculator", "property-tax", "currency-converter",
 ] as const;

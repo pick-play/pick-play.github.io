@@ -2592,4 +2592,61 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- pitch-test -->
+  <url>
+    <loc>https://pick-play.github.io/pitch-test/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/pitch-test/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/en/pitch-test/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/pitch-test/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/jp/pitch-test/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/pitch-test/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/cn/pitch-test/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/pitch-test/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pick-play.github.io/es/pitch-test/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pick-play.github.io/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pick-play.github.io/en/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pick-play.github.io/jp/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pick-play.github.io/cn/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pick-play.github.io/es/pitch-test/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pick-play.github.io/pitch-test/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
