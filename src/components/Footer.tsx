@@ -62,6 +62,8 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-primary-500 transition-colors">이용약관</Link>
             <span className="text-slate-300 dark:text-slate-600">|</span>
             <Link href="/contact" className="hover:text-primary-500 transition-colors">연락처</Link>
+            <span className="text-slate-300 dark:text-slate-600">|</span>
+            <Link href="/blog" className="hover:text-primary-500 transition-colors">블로그</Link>
           </nav>
           <span>
             Made by{" "}

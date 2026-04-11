@@ -77,7 +77,7 @@ export default function AboutPage() {
           서비스에 대한 문의, 버그 신고, 기능 제안은 아래 채널을 통해 언제든지 연락해 주세요.
         </p>
         <ul className="list-disc pl-6 mb-4 space-y-2">
-          <li>이메일: <a href="mailto:pickplay.tools@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">pickplay.tools@gmail.com</a></li>
+          <li>이메일: <a href="mailto:gtech7859@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">gtech7859@gmail.com</a></li>
           <li>GitHub: <a href="https://github.com/pick-play" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">github.com/pick-play</a></li>
           <li>자세한 문의: <Link href="/contact/" className="text-blue-600 dark:text-blue-400 hover:underline">연락처 페이지</Link> 참고</li>
         </ul>

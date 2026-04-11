@@ -3,7 +3,6 @@ import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SidebarAds from "@/components/SidebarAds";
 import AnchorAd from "@/components/AnchorAd";
 import LanguageDetector from "@/components/LanguageDetector";
 import HtmlLangSetter from "@/components/HtmlLangSetter";
@@ -216,9 +215,7 @@ export default function RootLayout({
           <HtmlLangSetter />
           <VisitTracker />
           <div className="flex-1 flex">
-            <SidebarAds side="left" />
             <main className="flex-1 min-w-0 pb-20 md:pb-0">{children}</main>
-            <SidebarAds side="right" />
           </div>
           <Footer />
           <AnchorAd />

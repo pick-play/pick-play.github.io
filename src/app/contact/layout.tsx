@@ -45,7 +45,7 @@ const jsonLd = {
         "@type": "Organization",
         name: "PickPlay",
         url: "https://pick-play.github.io/",
-        email: "pickplay.tools@gmail.com",
+        email: "gtech7859@gmail.com",
       },
     },
     {
@@ -64,7 +64,7 @@ const jsonLd = {
           name: "버그나 오류를 발견했어요. 어떻게 신고하나요?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "pickplay.tools@gmail.com으로 이메일을 보내주시거나 GitHub 저장소에 이슈를 등록해 주세요. 빠르게 확인하겠습니다.",
+            text: "gtech7859@gmail.com으로 이메일을 보내주시거나 GitHub 저장소에 이슈를 등록해 주세요. 빠르게 확인하겠습니다.",
           },
         },
         {
@@ -72,7 +72,7 @@ const jsonLd = {
           name: "새로운 기능이나 도구를 제안할 수 있나요?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "물론입니다! pickplay.tools@gmail.com으로 아이디어를 보내주세요. 모든 제안을 검토합니다.",
+            text: "물론입니다! gtech7859@gmail.com으로 아이디어를 보내주세요. 모든 제안을 검토합니다.",
           },
         },
       ],

@@ -16,10 +16,10 @@ export default function ContactPage() {
           <h3 className="text-xl font-semibold mb-3">이메일</h3>
           <p className="mb-2">
             <a
-              href="mailto:pickplay.tools@gmail.com"
+              href="mailto:gtech7859@gmail.com"
               className="text-blue-600 dark:text-blue-400 hover:underline text-lg font-medium"
             >
-              pickplay.tools@gmail.com
+              gtech7859@gmail.com
             </a>
           </p>
           <p className="text-slate-600 dark:text-slate-400 text-sm">

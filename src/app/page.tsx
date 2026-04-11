@@ -575,6 +575,28 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* About PickPlay Section */}
+      <section className="max-w-4xl mx-auto px-4 py-12">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+          <h2 className="text-2xl font-bold mb-4">PickPlay란?</h2>
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            PickPlay는 일상의 크고 작은 선택을 도와주는 무료 온라인 도구 모음입니다.
+            회원가입 없이, 설치 없이, 브라우저만 있으면 바로 사용할 수 있습니다.
+            뭐 먹을지 고민될 때, 팀을 나눠야 할 때, 대출 이자를 계산할 때,
+            친구들과 파티 게임을 즐길 때 — PickPlay가 도와드립니다.
+          </p>
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            현재 42가지 도구를 한국어, English, 日本語, 中文, Español 5개 언어로 제공하고 있으며,
+            생활 도구, 금융 계산기, 아케이드 게임, 파티 게임, 심리 테스트 등
+            다양한 카테고리의 도구를 무료로 이용할 수 있습니다.
+          </p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+            모든 데이터는 사용자의 브라우저에서 처리되며, 서버에 개인정보를 저장하지 않습니다.
+            안심하고 사용하세요.
+          </p>
+        </div>
+      </section>
+
       {/* Stats Counter - Social Proof */}
       <StatsCounter />
 
@@ -660,19 +682,26 @@ export default function Home() {
               ))}
             </motion.div>
 
-            {(categoryIndex === 1 || categoryIndex === 2) && (
-              <div className="mt-10">
-                <AdBanner format="horizontal" className="my-4 rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" />
-              </div>
-            )}
           </div>
         ))}
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 mb-8"><AdBanner format="rectangle" className="rounded-2xl bg-white/50 dark:bg-slate-800/50 p-2" /></div>
-
       {/* Share Buttons - Floating */}
       <ShareButtons />
+
+      {/* Blog Highlight */}
+      <section className="max-w-4xl mx-auto px-4 mb-8">
+        <div className="bg-gradient-to-r from-primary-50 to-violet-50 dark:from-primary-950/20 dark:to-violet-950/20 rounded-2xl p-8 border border-primary-100 dark:border-primary-800">
+          <h2 className="text-xl font-bold mb-2">PickPlay 블로그</h2>
+          <p className="text-slate-600 dark:text-slate-300 mb-4">
+            유용한 팁과 가이드를 확인하세요. 비밀번호 보안, 복리의 마법, 대출 상환 방식 비교 등
+            다양한 주제의 글을 읽어보실 수 있습니다.
+          </p>
+          <Link href="/blog" className="inline-flex items-center gap-1 text-primary-500 font-semibold hover:underline">
+            블로그 보러가기 →
+          </Link>
+        </div>
+      </section>
 
       {/* SEO Content Section */}
       <section className="max-w-4xl mx-auto px-4 pb-20">
@@ -681,35 +710,35 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">오늘 뭐 먹지?</h3>
-              <p>매일 반복되는 메뉴 고민, PickPlay가 해결해 드립니다. 한식, 일식, 중식, 양식 등 130가지 메뉴 중에서 맛 지도로 취향에 맞는 음식을 추천받으세요.</p>
+              <p>매일 반복되는 메뉴 고민, PickPlay가 해결해 드립니다. 한식, 일식, 중식, 양식 등 130가지 메뉴 중에서 맛 지도로 취향에 맞는 음식을 추천받으세요. 매운 정도, 가격대, 분위기까지 조건을 설정하면 딱 맞는 메뉴를 바로 골라줍니다. 혼밥부터 단체 회식까지 어떤 상황에서도 유용하게 활용할 수 있습니다.</p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">파티 게임 모음</h3>
-              <p>라이어 게임, 밸런스 게임, 초성 퀴즈, 진실 or 도전, 사다리 타기, 이상형 월드컵까지! 친구들과 즐길 수 있는 7가지 파티 게임.</p>
+              <p>라이어 게임, 밸런스 게임, 초성 퀴즈, 진실 or 도전, 사다리 타기, 이상형 월드컵까지 7가지 파티 게임을 무료로 즐길 수 있습니다. 설치나 로그인 없이 링크 하나로 친구들과 바로 시작할 수 있어 모임이나 회식 자리에서 특히 인기입니다. 각 게임은 모바일에서도 쾌적하게 작동하도록 최적화되어 있습니다.</p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">생활 편의 도구</h3>
-              <p>회식비 정산, D-Day 계산, 제비뽑기, 자리 배치, 닉네임 생성까지. 일상에서 자주 쓰는 도구들을 한곳에 모았습니다.</p>
+              <p>회식비 정산, D-Day 계산, 제비뽑기, 자리 배치, 닉네임 생성까지 일상에서 자주 쓰는 도구들을 한곳에 모았습니다. 회식비 정산은 항목별 제외와 차등 분할, 최소 송금 경로 계산까지 지원해 복잡한 더치페이도 깔끔하게 해결합니다. PDF 합치기·분할·변환, 이미지 압축·크기 변경 등 파일 작업 도구도 제공하며 모든 처리는 브라우저에서 안전하게 이루어집니다.</p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">심리 & 성향 테스트</h3>
-              <p>MBTI 검사, 테토 vs 에겐, 커플 궁합, 색깔 테스트, 타로까지. 다양한 테스트로 나를 알아가세요.</p>
+              <p>MBTI 검사, 테토 vs 에겐, 커플 궁합, 색깔 테스트, 타로까지 5가지 성향 분석 도구로 나를 더 깊이 알아갈 수 있습니다. MBTI는 20문항으로 16가지 성격 유형과 궁합을 분석하며, 커플 궁합은 이름 기반으로 5가지 카테고리를 심층 분석합니다. 결과는 간결하면서도 재미있는 설명으로 제공되어 혼자 즐기거나 친구와 함께 보기 좋습니다.</p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">데이트 코스 추천</h3>
-              <p>서울, 부산, 대구 등 전국 10개 도시의 200가지 데이트 코스를 추천받으세요. 취향별 맞춤 코스를 낮/밤 시간대에 맞게 제공합니다.</p>
+              <p>서울, 부산, 대구, 인천, 광주, 대전, 수원, 전주, 경주, 제주 등 전국 10개 도시의 200가지 데이트 코스를 추천받을 수 있습니다. 분위기 지도에서 로맨틱·활동적·힐링 등 원하는 분위기를 선택하면 취향에 맞는 동선을 제안합니다. 낮과 밤 시간대별 코스, 예산 범위, 교통 수단까지 고려해 현실적인 데이트 플랜을 짤 수 있습니다.</p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">랜덤 결정 도구</h3>
-              <p>룰렛, 제비뽑기, 사다리 타기, 조 뽑기 등 결정이 어려울 때 랜덤으로 공정하게! 드라마틱한 애니메이션으로 재미까지.</p>
+              <p>룰렛, 제비뽑기, 사다리 타기, 조 뽑기 등 어떤 결정이든 공정하게 랜덤으로 해결할 수 있습니다. 모든 도구는 드라마틱한 애니메이션 효과를 제공해 단순한 결정도 즐거운 이벤트로 만들어줍니다. 룰렛은 항목을 자유롭게 추가·삭제·가중치 조정이 가능하고, 조 뽑기는 인원 수와 조 수를 설정해 단체 배정에 활용하기 좋습니다.</p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">아케이드 게임</h3>
-              <p>반응속도 테스트, 타이핑 연습, 기억력 카드 게임, 색깔 맞추기, 에임 트레이너까지! 기록을 세우고 실력을 향상시키세요.</p>
+              <p>반응속도 테스트, 타이핑 연습, 기억력 카드 게임, 색깔 맞추기(스트룹 테스트), 에임 트레이너까지 5가지 아케이드 게임으로 실력을 측정하고 향상시킬 수 있습니다. 반응속도는 밀리초(ms) 단위로 정밀하게 측정하고, 타이핑은 WPM(분당 단어 수)을 실시간으로 확인합니다. 개인 최고 기록을 갱신하며 꾸준히 도전하는 재미가 있습니다.</p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">금융 계산기</h3>
-              <p>대출이자, 퇴직금, 연봉 실수령액, 복리 계산, 취득세, 환율까지. 돈과 관련된 모든 계산을 무료로 정확하게.</p>
+              <p>대출이자, 퇴직금, 연봉 실수령액, 복리 계산, 취득세, 환율까지 6가지 금융 계산기를 무료로 사용할 수 있습니다. 대출이자 계산기는 원리금균등·원금균등·만기일시 3가지 상환 방식을 비교하고 월별 상환 스케줄 전체를 보여줍니다. 연봉 실수령액은 4대보험과 소득세를 자동으로 공제해 실제 수령액을 정확하게 계산합니다.</p>
             </div>
           </div>
         </div>

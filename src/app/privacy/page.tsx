@@ -59,7 +59,7 @@ export default function PrivacyPage() {
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">5. 아동 개인정보 보호</h2>
         <p className="mb-4 leading-relaxed">
-          PickPlay는 만 13세 미만 아동을 대상으로 하는 서비스가 아닙니다. 저희는 의도적으로 만 13세 미만 아동의 개인정보를 수집하지 않습니다. 만약 만 13세 미만 아동의 개인정보가 수집되었음을 발견하신 경우, 즉시 <a href="mailto:pickplay.tools@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">pickplay.tools@gmail.com</a>으로 연락해 주시면 해당 정보를 삭제하겠습니다.
+          PickPlay는 만 13세 미만 아동을 대상으로 하는 서비스가 아닙니다. 저희는 의도적으로 만 13세 미만 아동의 개인정보를 수집하지 않습니다. 만약 만 13세 미만 아동의 개인정보가 수집되었음을 발견하신 경우, 즉시 <a href="mailto:gtech7859@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">gtech7859@gmail.com</a>으로 연락해 주시면 해당 정보를 삭제하겠습니다.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">6. 정보 보안</h2>
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
           개인정보처리방침에 관한 질문이나 요청이 있으신 경우 아래로 연락해 주세요.
         </p>
         <ul className="list-disc pl-6 mb-4 space-y-2">
-          <li>이메일: <a href="mailto:pickplay.tools@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">pickplay.tools@gmail.com</a></li>
+          <li>이메일: <a href="mailto:gtech7859@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">gtech7859@gmail.com</a></li>
           <li>GitHub: <a href="https://github.com/pick-play" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">github.com/pick-play</a></li>
         </ul>
 
